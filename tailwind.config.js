@@ -1,3 +1,6 @@
+import defaultTheme from "tailwindcss/defaultTheme"
+
+
 module.exports = {
   darkMode: "class",
   content: [
@@ -14,7 +17,8 @@ module.exports = {
     extend: {
      
       fontFamily: {
-        display: ["var(--font-display)"],
+        displayAlt: ["var(--font-display)"],
+        display: ['Cabinet Grotesk', ...defaultTheme.fontFamily.sans],
       }, 
     },
   },

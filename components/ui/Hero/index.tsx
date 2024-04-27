@@ -9,8 +9,8 @@ export default () => {
   return (
     <>
       <section className="custom-screen mt-20">
-        <div className="relative z-10 max-w-5xl mx-auto space-y-4">
-          <h1 className="text-center text-5xl md:text-6xl mx-auto lg:text-[5.2rem] font-normal  font-display heading leading-4 mt-10">
+        <div className="relative z-10 max-w-6xl mx-auto space-y-4">
+          <h1 className="text-center text-5xl md:text-6xl tracking-tighter mx-auto lg:text-8xl font-bold font-display heading leading-4 mt-10">
             Take{" "}
             <span className="bg-gradient-to-tr from-purple-400 via-purple-400/90 to-pink-400 text-transparent bg-clip-text">
               shadcn
