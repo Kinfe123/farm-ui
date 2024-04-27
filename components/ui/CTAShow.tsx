@@ -29,7 +29,7 @@ const CTAshow = () => {
           <LinkItem
               href="/components"
               variant="shiny"
-              className="inline-flex justify-center items-center gap-3  absolute bottom-[-20px]  w-full hover:bg-zinc-700 sm:w-auto"
+              className="inline-flex px-4 py-5 bg-gradient-to-tr from-zinc-900/90 via-zinc-800/90 to-zinc-700/90 justify-center items-center gap-3  absolute bottom-[-20px]  w-full hover:bg-zinc-700 sm:w-auto"
             >
             Explore components <ChevronRightIcon  className="w-5 h-4"/>
             </LinkItem> 

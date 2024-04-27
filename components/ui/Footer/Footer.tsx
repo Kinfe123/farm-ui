@@ -13,7 +13,7 @@ const navigation = [
 ];
 
 const marsNavigation = [
-  { name: "Marsx", href: "https://www.marsx.dev/" },
+  { name: "FarmX", href: "https://www.marsx.dev/" },
   { name: "Unicorn Platform", href: "https://unicornplatform.com" },
   { name: "UI generator", href: "https://uigenerator.org/" },
   { name: "E-commerce store generator", href: "https://marketsy.ai/" },
@@ -69,7 +69,7 @@ export default () => (
             ))}
           </ul>
           <ul className="space-y-2">
-            <li className="text-zinc-100 font-medium">Mars Verse</li>
+            <li className="text-zinc-100 font-medium">More from us</li>
             {marsNavigation.map((item, idx) => (
               <li
                 key={idx}

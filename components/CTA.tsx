@@ -40,8 +40,8 @@ export const CTA = ({
           : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
         transition: "transform 0.1s ease-out",
       }}
-      className={cn(
-        "mx-auto relative max-w-[88rem] border-[1px] border-white/20 bg-transparent  rounded-2xl overflow-hidden max-h-full",
+       className={cn(
+        "mx-auto relative max-w-[95rem] pl-10 border-[1px] border-white/20 bg-transparent  rounded-2xl overflow-hidden max-h-full",
         containerClassName!
       )}
     >

@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 import featureCover from "public/feature-cover.svg";
 import Image from "next/image";
 import Card from "./Card";
-
+import bgback from './../../../public/bg-back.png'
 type Feature = {
   title: string;
   desc: string;
@@ -18,7 +18,7 @@ export default () => {
   const features: Feature[] = [
     {
       title: "Beautifully designed",
-      desc: "Float UI allows you build beautiful and modern websites regardless of your design skills.",
+      desc: "Farm UI allows you build beautiful and modern websites regardless of your design skills.",
       icon: <IconPennibLine />,
     },
     {
@@ -34,7 +34,8 @@ export default () => {
   ];
 
   return (
-    <section className="custom-screen mt-32">
+    <section className="custom-screen mb-40 relative mt-32">
+      <Image src={bgback} className="absolute -top-40 left-0 -z-10" />
       <div className="max-w-xl ml-auto space-y-4 text-right">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-display heading">Turn your ideas into reality</h2>
         <p className="text-zinc-400">
