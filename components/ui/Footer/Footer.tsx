@@ -27,7 +27,7 @@ export default () => (
       <BgGradient className="absolute inset-x-0 top-0 mx-auto" />
       <div className="custom-screen-lg pb-6 gap-x-8 items-start justify-between flex-wrap relative sm:flex">
         <div className="max-w-xs space-y-3">
-          <Brand />
+           <h1 className="font-display font-semibold bg-gradient-to-tr from-white/70 via-white/90 to-white/50 bg-clip-text text-transparent  text-4xl md:text-5xl lg:text-6xl">FarmUI</h1>
           <p className="text-sm text-zinc-300">
             We are in a mission to make the proccess of building UI components
             easier.
@@ -85,7 +85,7 @@ export default () => (
       </div>
       <div className="text-sm custom-screen text-center border-t border-zinc-800">
         <div className="text-zinc-300 py-8">
-          &copy; 2023 Float UI. All rights reserved.
+          &copy; {(new Date).getFullYear()} - FarmUI  All rights reserved.
         </div>
       </div>
     </div>
