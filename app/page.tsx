@@ -1,5 +1,5 @@
 import DashboardDemo from "components/Dashbboad/ShowCase";
-import CTA from "components/ui/CTA";
+import CTAshow from "components/ui/CTAShow";
 import Features from "components/ui/Features/Features";
 import Hero from "components/ui/Hero";
 import SupportedFrameworks from "components/ui/SupportedFrameworks";
@@ -14,8 +14,7 @@ export default () => {
       </div>
       <Features />
       <SupportedFrameworks />
-      <TemplateCTA />
-      <CTA />
+      <CTAshow />
     </>
   );
 };

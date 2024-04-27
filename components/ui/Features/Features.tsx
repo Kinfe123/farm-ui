@@ -35,10 +35,10 @@ export default () => {
 
   return (
     <section className="custom-screen mt-32">
-      <div className="max-w-xl mx-auto space-y-4 text-center">
-        <h2 className="text-4xl heading">Turn your ideas into reality</h2>
+      <div className="max-w-xl ml-auto space-y-4 text-right">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-display heading">Turn your ideas into reality</h2>
         <p className="text-zinc-400">
-          Float UI offers all the vital building blocks you need to transform
+           FarmUI offers all the vital building blocks you need to transform
           your idea into a great-looking startup.
         </p>
       </div>
