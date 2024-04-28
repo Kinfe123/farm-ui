@@ -53,7 +53,7 @@ export default () => {
               : ""
           }`}
         >
-          <div className="mt-5 max-w-3xl mx-auto border-2 py-5  px-10  border-white/10 rounded-3xl gp-x-14 items-center md:flex">
+          <div className="mt-5 max-w-3xl mx-auto border-2 py-5  px-10 backdrop-blur-md  border-white/10 rounded-3xl gp-x-14 items-center md:flex">
             <div className="flex items-center justify-between py-1 md:block">
               <Link href="/" className="bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl">
                  FarmUI 

@@ -10,7 +10,7 @@ export default () => {
     <div
       className={
         isInComponentsPage
-          ? "sticky z-50 top-0 bg-zinc-950 border-zinc-800 xl:border-b"
+          ? "sticky z-50 top-0 pb-9"
           : ""
       }
     >

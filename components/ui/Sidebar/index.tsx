@@ -64,7 +64,7 @@ export default () => {
 
   return (
     <div className="flex-none fixed inset-x-0 z-40 top-16 w-full xl:relative xl:max-w-[16rem] xl:top-0 xl:inset-x-[unset]">
-      <div className="py-2.5 px-4 bg-zinc-950 border-y border-zinc-800 xl:px-8 xl:hidden">
+      <div className="py-2.5 px-4 bg-transparent border-y border-zinc-800 xl:px-8 xl:hidden">
         <button
           className="flex gap-x-2 items-center text-gray-300"
           onClick={() => setOpen(!isOpen)}
@@ -77,7 +77,7 @@ export default () => {
       </div>
       <aside className="relative w-full">
         <div
-          className={`fixed inset-x-0 w-full h-full bg-zinc-950 px-4 border-r border-zinc-800 xl:inset-x-[unset] xl:block xl:max-w-[16rem] xl:top-auto xl:px-0 ${
+          className={`fixed inset-x-0 w-full h-full bg-transparent px-4 border-r border-zinc-800 xl:inset-x-[unset] xl:block xl:max-w-[16rem] xl:top-auto xl:px-0 ${
             isOpen ? "" : "hidden"
           }`}
         >
