@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-black  relative w-full h-full">
+    <html lang="en" className="bg-black  relative w-full h-full overflow-x-hidden">
       <head>
         <meta
           name="viewport"

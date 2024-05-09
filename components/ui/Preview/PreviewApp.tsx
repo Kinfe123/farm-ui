@@ -25,7 +25,7 @@ export default ({ components }: Props) => {
     <>
       {components?.map((item: ComponentData, idx: number) =>
         item.isActive ? (
-          <div key={idx}>
+          <div key={idx} >
             <Preview item={item} mdxSource={item.mdxSource} slug={pathname} />
           </div>
         ) : (
