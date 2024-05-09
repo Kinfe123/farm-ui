@@ -20,7 +20,7 @@ export default function FUIWithPreviousAndNextLink() {
                 </div>
                 <a href="javascript:void(0)" className="px-4 py-2 border rounded-lg duration-150 hover:bg-gray-50">Next</a>
             </div>
-        </div>
+        </div> 
     )
 }
         

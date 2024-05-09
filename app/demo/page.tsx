@@ -6,14 +6,14 @@ import PreviewApp from "components/ui/Preview/PreviewApp";
 import HeroBgGradient from "components/HeroBgGradient";
 import { serialize } from "next-mdx-remote/serialize";
 
-const title = "Float UI - Float UI components demo";
+const title = "FarmUI - Component Demo";
 
 export const metadata = {
-  metadataBase: new URL("https://floatui.com"),
+  metadataBase: new URL("https://farmui.com"),
   title,
   openGraph: {
     title,
-    url: "https://floatui.com",
+    url: "https://farmui.com",
   },
   twitter: {
     title,
@@ -49,15 +49,16 @@ export default async () => {
       })
       // .sort((a, b) => a.created_at - b.created_at)
     );
+    console.log("The data is: " , data)
 
     return (
       <>
         <section className="max-w-screen mt-20">
           <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 -translate-x-32 sm:-translate-x-10" />
           <div className="relative">
-            <div className="max-w-3xl mx-auto space-y-4 text-center">
-              <h1 className="text-4xl heading sm:text-5xl">
-                Discover the power of our UI Components with live demos
+            <div className="max-w-5xl mx-auto space-y-4 text-center">
+              <h1 className="text-center  text-5xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-display heading leading-4 mt-1">
+                Sneak showcase of the component we offer for you to copy
               </h1>
               <p className="text-zinc-400 max-w-xl mx-auto">
                 Take a closer look at our UI components and see how they can

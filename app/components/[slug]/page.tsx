@@ -4,7 +4,6 @@ import matter from "gray-matter";
 import PreviewApp from "components/ui/Preview/PreviewApp";
 import sections from "sections/sections.json";
 import { serialize } from "next-mdx-remote/serialize";
-import { useRouter } from "next/navigation";
 
 type Params = {
   slug: string;
@@ -31,7 +30,7 @@ export async function generateMetadata({
   ) as PageDetails;
 
   return {
-    metadataBase: new URL("https://floatui.com"),
+    metadataBase: new URL("https://farmui.com"),
     alternates: {
       canonical: `/components/${slug}`,
     },
@@ -90,7 +89,6 @@ export default async ({ params: { slug } }: { params: Params }) => {
       </>
     );
   } catch (err) {
-    const router = useRouter();
     return <></>;
   }
 };

@@ -42,7 +42,7 @@ const FeaturesAsGrid = () => {
           </LinkItem>
         </div>
       </div>
-      <Image src={ComponntDemoImg} />
+      <Image alt="demoimg" src={ComponntDemoImg} />
     </div>
   );
 };
