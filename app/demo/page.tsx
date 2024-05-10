@@ -5,9 +5,14 @@ import Link from "next/link";
 import PreviewApp from "components/ui/Preview/PreviewApp";
 import HeroBgGradient from "components/HeroBgGradient";
 import { serialize } from "next-mdx-remote/serialize";
-import Image from "next/image"
 import bghero from "../../public/img.png";
-
+import FeaturesAsGrid from "components/FeaturesAsGrid";
+import LinkItem from "components/ui/LinkItem";
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import Button from "components/ui/Button";
+import Shiny from "components/ShinyButton";
+import bgback from "../../public/bg-back.png";
+import Image from "next/image";
 const title = "FarmUI - Component Demo";
 
 export const metadata = {
@@ -51,29 +56,56 @@ export default async () => {
       })
       // .sort((a, b) => a.created_at - b.created_at)
     );
-    console.log("The data is: " , data)
+    console.log("The data is: ", data);
 
     return (
       <div className=" overflow-hidden">
-      <div className="absolute transform rotate-180 bg-transparent -top-20 z-[-2] h-screen w-screen overflow-hidden  [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#60e_100%)] opacity-30"></div>
+        <div className="absolute transform rotate-180 bg-transparent -top-20 z-[-2] h-screen w-screen overflow-hidden  [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#60e_100%)] opacity-30"></div>
         <section className=" custom-screen overflow-hidden mx-auto  mt-20">
-          <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 -translate-x-32 sm:-translate-x-10" />
+          {/* <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 -translate-x-32 sm:-translate-x-10" /> */}
           <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 -translate-x-32 sm:translate-x-20" />
           <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 translate-x-32 sm:translate-x-60" />
           <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 right-0" />
-
 
           <div className="relative z-10">
             <div className="max-w-[100rem] mx-auto space-y-4 text-center">
               <h1 className="text-center w-full  text-5xl md:text-7xl tracking-tighter mx-auto lg:text-8xl  font-display font-bold text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-4 mt-1">
                 Sneak pic of the component we got for you to copy
               </h1>
-              <p className="text-zinc-400 max-w-xl mx-auto">
+              <p className="text-zinc-400 max-w-xl text-sm sm:text-md md:text-lg lg:text-lg mx-auto">
                 Take a closer look at our UI components and see how they can
                 elevate your website or web application
               </p>
             </div>
           </div>
+          <div className="my-10 gap-3 flex justify-center items-center max-w-md mx-auto">
+            {/* <Button
+
+            variant="default"
+            // href="/components"
+            className="w-full bg-transparent text-white border-[1px] border-gray-500/10  py-5"
+          >
+            Read Docs 
+          </Button>
+          <LinkItem
+            variant="shiny"
+            href="/components"
+            className="w-full  bg-zinc-800   hover:bg-zinc-700 md:bg-shiny py-5"
+          >
+            Explore Components <ChevronRightIcon className="w-4 h-4 inline-flex"/>
+          </LinkItem> */}
+
+            <Shiny to="components" to_label="Explore components" />
+          </div>
+
+        <div className="relative w-full">
+            <FeaturesAsGrid />
+            <Image
+              src={bgback}
+              className="absolute  translatex-1/2 top-0 -translate-y-96 -z-10"
+            />
+          </div>
+
           <div className="mt-24 space-y-12 z-10">
             <PreviewApp components={data} />
           </div>
@@ -85,7 +117,7 @@ export default async () => {
               Browse all components
             </Link>
           </div>
-
+      
         </section>
         {/* <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute top-28 right-0 min-h-screen"> */}
         {/* <Image
@@ -95,7 +127,7 @@ export default async () => {
           className="w-full bg-center -z-1 "
           alt="Hero Image"
         /> */}
-      {/* </div> */}
+        {/* </div> */}
       </div>
     );
   } catch (err) {

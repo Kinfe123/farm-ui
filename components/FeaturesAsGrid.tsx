@@ -4,11 +4,11 @@ import { CheckIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import LinkItem from "./ui/LinkItem";
 const FeaturesAsGrid = () => {
   return (
-    <div className="max-w-7xl bg-black/90 mt-32 mb-10 rounded-lg border-2 border-white/10  mx-auto flex justify-between ">
+    <div className="max-w-7xl  mt-32 mb-10 rounded-lg border-2 border-white/10  mx-auto flex justify-between ">
       <div className="flex w-1/2 flex-col justify-between items-start">
         <div className="flex flex-col justify-start gap-6 items-start px-8 py-20">
           <h1 className="font-display bg-gradient-to-tr from-zinc-100 via-zinc-50 to-zinc-100/50 text-transparent bg-clip-text text-4xl md:text-5xl lg:text-6xl">
-            Get proper data & sales statistics.
+            Get your animated components.
           </h1>
 
           <p className="text-white/80">
