@@ -70,7 +70,7 @@ export default async () => {
           <div className="relative z-10">
             <div className="max-w-[100rem] mx-auto space-y-4 text-center">
               <h1 className="text-center w-full  text-5xl md:text-7xl tracking-tighter mx-auto lg:text-8xl  font-display font-bold text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-4 mt-1">
-                Sneak pic of the component we got for you to copy
+                Sneak peek of the component we got for you to copy
               </h1>
               <p className="text-zinc-400 max-w-xl text-sm sm:text-md md:text-lg lg:text-lg mx-auto">
                 Take a closer look at our UI components and see how they can

@@ -35,7 +35,7 @@ export default () => {
 
   return (
     <section className="custom-screen mb-40 relative mt-32">
-      <Image src={bgback} className="absolute -top-40 left-0 -z-10" />
+      <Image alt='bgback' src={bgback} className="absolute -top-40 left-0 -z-10" />
       <div className="max-w-xl ml-auto space-y-4 text-right">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-display heading">Turn your ideas into reality</h2>
         <p className="text-zinc-400">

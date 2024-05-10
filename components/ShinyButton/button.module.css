@@ -1,8 +1,8 @@
 .btn {
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
+    --glow-color: rgb(176, 181, 255);
+    --glow-spread-color: rgba(123, 132, 255, 0.781);
     --enhanced-glow-color: rgb(231, 206, 255);
-    --btn-color: rgb(100, 61, 136);
+    --btn-color: rgb(76, 61, 136);
     border: .15em solid var(--glow-color);
     padding: 1.4em 3em;
     color: var(--glow-color);
@@ -11,7 +11,7 @@
     background-color: var(--btn-color);
     border-radius: 1em;
     outline: none;
-    box-shadow: 0 0 1em .25em var(--glow-color),
+    box-shadow: 0 0 0.8mm .10em var(--glow-color),
            0 0 4em 1em var(--glow-spread-color),
            inset 0 0 .75em .25em var(--glow-color);
     text-shadow: 0 0 .5em var(--glow-color);
