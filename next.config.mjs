@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
-
+import {withContentlayer} from "next-contentlayer"
 const nextConfig = {
+
+
   env: {
     DB_URI: process.env.DB_URI,
     URL: process.env.URL,
@@ -49,4 +51,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default withContentlayer(nextConfig)

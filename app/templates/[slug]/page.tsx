@@ -28,20 +28,20 @@ export async function generateMetadata({
   })[0];
 
   return {
-    metadataBase: new URL("https://floatui.com"),
+    metadataBase: new URL("https://farmui.com"),
     alternates: {
       canonical: `/templates/${slug}`,
     },
-    title: `Float UI - ${template.template_name} Tailwind CSS Template`,
+    title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
     description: template.description,
     openGraph: {
       images: template.banner_url,
-      title: `Float UI - ${template.template_name} Tailwind CSS Template`,
+      title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
       description: template.description,
     },
     twitter: {
       images: [template.banner_url],
-      title: `Float UI - ${template.template_name} Tailwind CSS Template`,
+      title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
       description: template.description,
     },
   };

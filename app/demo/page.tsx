@@ -56,7 +56,6 @@ export default async () => {
       })
       // .sort((a, b) => a.created_at - b.created_at)
     );
-    console.log("The data is: ", data);
 
     return (
       <div className=" overflow-hidden">
