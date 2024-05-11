@@ -1,7 +1,8 @@
 const FUITestInfo = () => {
     return (
-        <div>
-            hello from test  info components
+        <div className="flex justify-center items-center my-auto">
+           <h1 className="text-3xl font-displayAlt tracking-tighter">Title</h1> 
+    
         </div>
     )
 }
