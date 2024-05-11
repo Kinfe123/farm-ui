@@ -355,7 +355,9 @@ import FUIBannerCentredWithBadge from "./previewsComponents/FUIBannerCentredWith
 import FUIPrimaryNewsletter from "./previewsComponents/FUIPrimaryNewsletter.jsx";
       
 import FUISelectMenuWithAvatars from "./previewsComponents/FUISelectMenuWithAvatars.jsx";
-      
+
+import FUITestInfo from "./previewsComponents/FUITests.jsx"
+
 import FUIPaymentCardsRadioGroup from "./previewsComponents/FUIPaymentCardsRadioGroup.jsx";
       
 import FUIBasicLoginForm from "./previewsComponents/FUIBasicLoginForm.jsx";
@@ -436,9 +438,11 @@ FUIBannerWithUnderlineLink,
 FUIVerticalTabs,
       
 FUIDarkFooter,
-      
+    
+FUITestInfo ,
+
 FUIPrimaryFaqs,
-      
+
 FUISidebarWithListOfLessons,
       
 FUINewsletterStacked,

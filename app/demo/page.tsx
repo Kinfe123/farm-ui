@@ -101,6 +101,7 @@ export default async () => {
         <div className="relative w-full">
             <FeaturesAsGrid />
             <Image
+               alt="bgbackimage"
               src={bgback}
               className="absolute  translatex-1/2 top-0 -translate-y-96 -z-10"
             />
