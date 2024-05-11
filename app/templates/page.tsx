@@ -2,6 +2,7 @@ import HeroBgGradient from "components/HeroBgGradient";
 import TemplateCard from "components/ui/TemplateCard";
 import { fetchDocs } from "../../firebase/config";
 import { Templates } from "types/types";
+import { allPages , allTemplates } from "contentlayer/generated";
 
 type MetaInfo = {
   title: string;
@@ -26,8 +27,15 @@ export const metadata = {
   },
 };
 
-const Template = () => {
+const Template = async () => {
+  const templates = allTemplates 
+  console.log('THe templates are: ' , templates) 
+ 
   return (
+
+
+
+    
     <>
       <section className="custom-screen mt-20">
         <div className="absolute transform rotate-180 bg-transparent -top-20 z-[-2] h-screen w-screen overflow-hidden  [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#60e_100%)] opacity-20"></div>
@@ -48,8 +56,15 @@ const Template = () => {
           </div>
           <ul
             id="templates"
-            className="mt-32 text-white space-y-7 divide-y divide-zinc-800 gap-14 grid-cols-2 lg:grid lg:space-y-0 lg:divide-y-0"
-          ></ul>
+            className="mt-32 text-white space-y-7 divide-y divide-zinc-800 gap-14 grid-cols-1 lg:grid lg:space-y-0 lg:divide-y-0"
+          >
+          
+           {templates.map((template) => {
+            return (
+              <TemplateCard  item={template}/>
+            )
+           })}         
+          </ul>
         </div>
       </section>
     </>

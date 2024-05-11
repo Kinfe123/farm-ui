@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
 import {withContentlayer} from "next-contentlayer"
 const nextConfig = {
-
-
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: '/coming-spon',
+      },
+    ];
+  },
   env: {
     DB_URI: process.env.DB_URI,
     URL: process.env.URL,
@@ -20,7 +26,7 @@ const nextConfig = {
 
     PADDLE_VENDOR_ID: process.env.PADDLE_VENDOR_ID,
     VENDOR_API_CODE: process.env.VENDOR_API_CODE,
-
+    
     ANALYTICS_KEY: process.env.ANALYTICS_KEY,
 
     GA_ID: process.env.GA_ID,
@@ -48,7 +54,9 @@ const nextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
-  },
+  }, 
+
+
 };
 
 export default withContentlayer(nextConfig)
