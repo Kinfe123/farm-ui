@@ -4,7 +4,6 @@ import "./customize.css";
 import "./prismjs-theme.css";
 import Navbar from "components/ui/Navbar";
 import Footer from "components/ui/Footer";
-import UsermavenSetup from "components/UsermavenSetup";
 import metatag from "metatag";
 import localFont from "next/font/local";
 import cn from "../utils/mergeTW";
