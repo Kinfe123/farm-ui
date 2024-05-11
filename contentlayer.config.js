@@ -171,7 +171,7 @@ export const Author = defineDocumentType(() => ({
 }));
 
 export const Templates = defineDocumentType(() => ({
-  name: "Page",
+  name: "Templates",
   filePathPattern: `templates/**/*.mdx`,
   contentType: "mdx",
   fields: {
@@ -194,7 +194,6 @@ export const Templates = defineDocumentType(() => ({
     
       type: "list",
       of: { type: "string" },
-      required: true,
     },
     date: {
         type:'date',
@@ -203,8 +202,13 @@ export const Templates = defineDocumentType(() => ({
     live_preview: {
         type:"string",   
     },
-    soruce_code: {
+    source_code: {
         type: "string"
+    },
+    stack_used: {
+        type: "list",
+        of: {type:"string"},
+        required:true
     }
 },
   computedFields,
@@ -212,7 +216,7 @@ export const Templates = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Page, Doc, Guide, Post, Author, Changelog],
+  documentTypes: [Templates, Doc, Guide, Post, Author, Changelog],
   mdx: {
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [
