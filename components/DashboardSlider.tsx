@@ -83,7 +83,7 @@ export const Card = ({
         rotateX: rotate,
         scale,
       }}
-      className="max-w-full -mt-12  mx-10  md:h-full w-full"
+      className="max-w-full -mt-12   md:h-full w-full"
     >
       <div className=" h-full w-full  overflow-hidden  bg-transparent ">
         {children}
