@@ -34,7 +34,7 @@ export default () => {
   ];
 
   return (
-    <section className="custom-screen  mb-40 relative mt-32">
+    <section className="custom-screen-lg mb-[-40px] z-10 relative mt-32">
       <Image alt='bgback' src={bgback} className="absolute -top-40 left-0" />
       <div className="max-w-xl ml-auto space-y-4 text-right">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-display heading">Turn your ideas into reality</h2>
@@ -43,7 +43,7 @@ export default () => {
           your idea into a great-looking startup.
         </p>
       </div>
-      <ul className="space-y-6 gap-6 mt-8 max-w-7xl mx-auto grid-cols-2 sm:grid lg:grid-cols-3 sm:space-y-0">
+      <ul className="space-y-6 gap-6 mt-8 custom-screen-lg mx-auto grid-cols-2 sm:grid lg:grid-cols-3 sm:space-y-0">
         {features.map((item: Feature, key: number) => (
           <Card icon={item.icon} title={item.title} desc={item.desc} />
         ))}

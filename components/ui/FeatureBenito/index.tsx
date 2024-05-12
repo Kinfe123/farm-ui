@@ -125,7 +125,7 @@ const features = [
 
 export function GridFeatureDemo() {
   return (
-    <div className="custom-screen flex flex-col">
+    <div className="custom-screen-lg flex flex-col">
       <div className="max-w-xl mr-auto  space-y-4 text-left mb-10">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-display heading">
           Turn your ideas into reality
