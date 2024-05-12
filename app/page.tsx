@@ -1,6 +1,7 @@
 import DashboardDemo from "components/Dashbboad/ShowCase";
 import FeaturesAsGrid from "components/FeaturesAsGrid";
 import CTAshow from "components/ui/CTAShow";
+import { GridFeatureDemo } from "components/ui/FeatureBenito";
 import Features from "components/ui/Features/Features";
 import Hero from "components/ui/Hero";
 import SupportedFrameworks from "components/ui/SupportedFrameworks";
@@ -14,6 +15,7 @@ export default () => {
         <DashboardDemo />
       </div>
       <Features />
+      <GridFeatureDemo />
       <FeaturesAsGrid />
       <SupportedFrameworks />
       <CTAshow />

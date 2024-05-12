@@ -9,6 +9,7 @@ import localFont from "next/font/local";
 import cn from "../utils/mergeTW";
 import Image from "next/image";
 import bgback from "../public/bg-back.png";
+import { ThemeProvider } from "components/ThemeProvider";
 const { title, desc, ogImage } = metatag;
 export const metadata = {
   metadataBase: new URL("https://farm-ui.com"),
@@ -43,7 +44,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-black  relative w-full h-full overflow-x-hidden">
+    <html
+      lang="en"
+      className="bg-black  relative w-full h-full overflow-x-hidden"
+    >
       <head>
         <meta
           name="viewport"
@@ -65,24 +69,31 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@farmui" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={cn(inter.className, displayFont.variable , 'bg-black')}>
-        <Image
-          className="absolute top-0 -translate-y-1/2 z-20 translate-x-1/2"
-          src={bgback}
-          width={1000}
-          height={1000}
-          alt="back bg"
-        />
-        <Image
-          className="absolute top-0 -translate-y-1/2 z-20 translate-x-1/2"
-          src={bgback}
-          width={1000}
-          height={1000}
-          alt="back bg"
-        />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <body className={cn(inter.className, displayFont.variable, "bg-black")}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Image
+            className="absolute top-0 -translate-y-1/2 z-20 translate-x-1/2"
+            src={bgback}
+            width={1000}
+            height={1000}
+            alt="back bg"
+          />
+          <Image
+            className="absolute top-0 -translate-y-1/2 z-20 translate-x-1/2"
+            src={bgback}
+            width={1000}
+            height={1000}
+            alt="back bg"
+          />
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
