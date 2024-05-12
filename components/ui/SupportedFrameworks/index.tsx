@@ -18,7 +18,7 @@ export default () => {
           {/* <PreviewCard /> */}
         </div>
       </div>
-      <Image src={bgback} className="-z-10 absolute top-0 left-0" />
+      <Image src={bgback} className="absolute -top-60 left-0" alt="bgbackimage" />
     </section>
   );
 };

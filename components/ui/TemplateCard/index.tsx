@@ -2,7 +2,7 @@ import Link from "next/link";
 import {type Templates} from '.contentlayer/generated/types'
 export default ({ item }: { item: Templates }) => (
   <li className="pt-10 lg:pt-0">
-    <Link href={`templates/${item.slug}`} className="gap-6 sm:flex">
+    <Link href={`${item.slug}`} className="gap-6 sm:flex">
       <div className="flex-1">
         <img
           src={item.image}

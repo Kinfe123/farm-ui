@@ -24,6 +24,7 @@
     "@types/babel__core": "^7.1.19",
     "@usermaven/sdk-js": "^1.1.9",
     "axios": "^0.24.0",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "contentlayer": "^0.3.2",
     "firebase": "^9.9.0",
@@ -32,6 +33,7 @@
     "google": "link:@next/third-parties/google",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.9.0",
+    "lucide-react": "^0.378.0",
     "moment": "^2.29.4",
     "next": "14.0.3",
     "next-contentlayer": "^0.3.2",
@@ -47,6 +49,7 @@
     "sharp": "^0.33.0",
     "shiki": "^0.14.6",
     "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7",
     "uuid": "^8.3.2",
     "zod": "^3.22.4"
   },

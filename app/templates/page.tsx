@@ -2,7 +2,7 @@ import HeroBgGradient from "components/HeroBgGradient";
 import TemplateCard from "components/ui/TemplateCard";
 import { fetchDocs } from "../../firebase/config";
 import { Templates } from "types/types";
-import { allPages , allTemplates } from "contentlayer/generated";
+import { allTemplates } from "contentlayer/generated";
 
 type MetaInfo = {
   title: string;
@@ -29,7 +29,6 @@ export const metadata = {
 
 const Template = async () => {
   const templates = allTemplates 
-  console.log('THe templates are: ' , templates) 
  
   return (
 

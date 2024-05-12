@@ -5,6 +5,7 @@ import { Templates } from "types/types";
 import { QueryDocumentSnapshot, QuerySnapshot } from "firebase/firestore";
 import LinkItem from "components/ui/LinkItem";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
+import { allTemplates } from "contentlayer/generated";
 
 type Params = {
   slug: string;
@@ -15,86 +16,65 @@ export async function generateMetadata({
 }: {
   params: Params;
 }) {
-  const querySnapshot = await getDoc(slug, "templates", "slug");
-  const template = querySnapshot.docs.map((item: QueryDocumentSnapshot) => {
-    const { banner_url, template_name, preview_url, description } = item.data();
+  // const querySnapshot = await getDoc(slug, "templates", "slug");
+  // const template = querySnapshot.docs.map((item: QueryDocumentSnapshot) => {
+  //   const { banner_url, template_name, preview_url, description } = item.data();
 
-    return {
-      banner_url,
-      template_name,
-      preview_url,
-      description,
-    };
-  })[0];
+  //   return {
+  //     banner_url,
+  //     template_name,
+  //     preview_url,
+  //     description,
+  //   };
+  // })[0];
 
-  return {
-    metadataBase: new URL("https://farmui.com"),
-    alternates: {
-      canonical: `/templates/${slug}`,
-    },
-    title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
-    description: template.description,
-    openGraph: {
-      images: template.banner_url,
-      title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
-      description: template.description,
-    },
-    twitter: {
-      images: [template.banner_url],
-      title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
-      description: template.description,
-    },
-  };
+  // return {
+  //   metadataBase: new URL("https://farmui.com"),
+  //   alternates: {
+  //     canonical: `/templates/${slug}`,
+  //   },
+  //   title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
+  //   description: template.description,
+  //   openGraph: {
+  //     images: template.banner_url,
+  //     title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
+  //     description: template.description,
+  //   },
+  //   twitter: {
+  //     images: [template.banner_url],
+  //     title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
+  //     description: template.description,
+  //   },
+  // };
 }
 
-export default async ({ params: { slug } }: { params: Params }) => {
-  const querySnapshot = await getDoc(slug, "templates", "slug");
-  const template = querySnapshot.docs.map((item: QueryDocumentSnapshot) => {
-    const {
-      id,
-      banner_url,
-      template_name,
-      product_id,
-      preview_url,
-      price,
-      description,
-      details,
-      templateFile,
-    } = item.data();
+const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
+  console.log("THE PARAMS: "  ,slug)
+ 
+  const template_mod = allTemplates.find((t) => (t.slug === `templates/${slug}`))
+  console.log("each template is: " , template_mod) 
 
-    return {
-      id: item.id,
-      banner_url,
-      template_name,
-      product_id,
-      preview_url,
-      price,
-      description,
-      details,
-      templateFile,
-    };
-  })[0];
-
+  
   return (
     <>
       <section className="mt-24">
         <div className="max-w-screen max-w-2xl mx-auto lg:max-w-none">
           <div className="gap-12 lg:flex">
             <div className="flex-1 rounded-xl">
-              <img src={template?.banner_url} className="rounded-xl" />
+              <img src={template_mod?.image} className="rounded-xl" />
             </div>
             <div className="flex-1 space-y-6 mt-12 lg:max-w-sm lg:mt-0 xl:max-w-md">
               <div className="text-zinc-50 font-semibold flex justify-between items-center">
                 <h1 className="text-3xl md:text-4xl">
-                  {template?.template_name}
+                  {template_mod?.title}
                 </h1>
                 <div className="flex items-center gap-x-2">
-                  <del className="text-lg">${template?.price}</del>
+                  <del className="text-lg">${template_mod?.price ?? "0"}</del>
                   <span className="text-xl sm:text-2xl">$0</span>
                 </div>
               </div>
               <p className="mt-6 text-zinc-300 md:text-lg">
-                {template?.description}
+                {template_mod?.description}
               </p>
               <div>
                 <h3 className="text-zinc-200 font-medium">
@@ -105,7 +85,7 @@ export default async ({ params: { slug } }: { params: Params }) => {
               <div className="text-sm font-medium mt-6">
                 <div className="flex flex-wrap items-center gap-3">
                   <LinkItem
-                    href={template?.preview_url || ""}
+                    href={template_mod?.live_preview || ""}
                     className="inline-flex w-full justify-center items-center gap-x-2 duration-200 shadow hover:bg-zinc-100 group sm:w-auto"
                   >
                     Full preview
@@ -113,7 +93,7 @@ export default async ({ params: { slug } }: { params: Params }) => {
                   </LinkItem>
                   <LinkItem
                     target="_blank"
-                    href={`https://drive.google.com/u/0/uc?id=${template?.templateFile}`}
+                    href={`${template_mod?.source_code}`}
                     variant="shiny"
                     className="inline-block w-full hover:bg-zinc-700 sm:w-auto"
                   >
@@ -125,10 +105,11 @@ export default async ({ params: { slug } }: { params: Params }) => {
           </div>
           <div
             className="mt-12 leading-relaxed prose prose-invert"
-            dangerouslySetInnerHTML={{ __html: template?.details }}
+            // dangerouslySetInnerHTML={{ __html: template_mod.description }}
           ></div>
         </div>
       </section>
     </>
   );
-};
+}
+export default TemplatePage

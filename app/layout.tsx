@@ -65,7 +65,7 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@farmui" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={cn(inter.className, displayFont.variable)}>
+      <body className={cn(inter.className, displayFont.variable , 'bg-black')}>
         <Image
           className="absolute top-0 -translate-y-1/2 z-20 translate-x-1/2"
           src={bgback}

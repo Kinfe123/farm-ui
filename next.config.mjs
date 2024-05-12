@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 import {withContentlayer} from "next-contentlayer"
 const nextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: '/coming-spon',
-      },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/:path*',
+  //       destination: '/coming-spon',
+  //     },
+  //   ];
+  // },
   env: {
     DB_URI: process.env.DB_URI,
     URL: process.env.URL,
