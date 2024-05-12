@@ -7,9 +7,9 @@ import { ChevronRightIcon } from "@heroicons/react/24/solid";
 const CTAshow = () => {
   return (
     <div className="mx-h-full relative">
-      <CTA key={2} containerClassName="col-span-1 mt-10  lg:col-span-3 bg-transparent min-h-[500px] lg:min-h-[600px] xl:min-h-[400px]">
-        <div className="max-w-sm ">
-          <h2 className="max-w-md font-display md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+      <CTA key={2} containerClassName="col-span-1 mt-10   lg:col-span-3 bg-transparent min-h-[500px] lg:min-h-[600px] xl:min-h-[600px]">
+        <div className="max-w-3xl ">
+          <h2 className="max-w-md font-display md:max-w-xl  text-left text-balance text-base md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
             Signup for accessing every possible UI that you can imagine:w;
 
           </h2>
@@ -24,7 +24,7 @@ const CTAshow = () => {
           width={700}
           height={700}
           alt="linear demo image"
-          className="absolute top-20 right-[-100px] bottom-[-100px] object-contain rounded-2xl"
+          className="absolute top-52 right-[-90px] bottom-[-100px]  scale-125 object-contain rounded-2xl"
         />
           <LinkItem
               href="/components"
@@ -34,6 +34,7 @@ const CTAshow = () => {
             Explore components <ChevronRightIcon  className="w-5 h-4"/>
             </LinkItem> 
       </CTA>
+      <Image src={bgback} width={900} height={900} alt="bgback" className="absolute bottom-0 -z-10"/>
     </div>
   );
 };

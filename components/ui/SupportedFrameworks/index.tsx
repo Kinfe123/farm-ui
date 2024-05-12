@@ -5,9 +5,9 @@ import Image from "next/image"
 export default () => {
   return (
     <section className="mt-52 mb-20 relative">
-      <div className="custom-screen z-[200px]">
-        <div className="max-w-xl mr-auto space-y-4 text-left">
-          <h2 className="text-4xl  md:text-5xl lg:text-6xl font-display heading">Use your favorite framework</h2>
+      <div className="custom-screen-lg z-[200px]">
+        <div className="max-w-3xl mx-auto space-y-4 text-center">
+          <h2 className="text-4xl  md:text-6xl lg:text-8xl font-display text-center heading upper">Use your favorite framework</h2>
           <p className="text-zinc-400">
             Copy and paste the components you want with your favorite JS
             framework

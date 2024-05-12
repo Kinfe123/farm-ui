@@ -41,19 +41,20 @@ export const CTA = ({
         transition: "transform 0.1s ease-out",
       }}
        className={cn(
-        "mx-auto relative max-w-[95rem] pl-10 border-[1px] border-white/20 bg-transparent  rounded-2xl overflow-hidden max-h-full",
+        "mx-auto relative max-w-[110rem] pl-10 border-[1px] border-white/20 bg-transparent  rounded-2xl overflow-hidden max-h-full",
         containerClassName!
       )}
     >
 
      <Image
-      className="absolute inset-0  w-full h-full " 
+      alt="bg-hero"
+      className="absolute inset-0 w-full h-full " 
       src={bghero} 
       
 
      />
       <div
-        className="relative  h-[480px] overflow-hidden"
+        className="relative h-[600px] overflow-hidden"
         // style={{
         //   boxShadow:
         //     "0 10px 32px rgba(34, 42, 53, 0.12), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.05), 0 4px 6px rgba(34, 42, 53, 0.08), 0 24px 108px rgba(47, 48, 55, 0.10)",
