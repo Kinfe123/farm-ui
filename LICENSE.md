@@ -1,6 +1,6 @@
 # License
 
-All you need to know about the Float UI licensing model
+All you need to know about the FarmUI licensing model
 
 ### With this license, you are granted permission to:
 
@@ -29,7 +29,7 @@ Additionally, creating and distributing themes, templates, or project starter ki
 
 ### The differnce between the team license and other licenses
 
-- A (Complete Package, and Marketing + Application) Licenses, on the other hand, are intended for individual users. With a this Licenses, a single user can access and use the website's features and services for their own personal use. This type of license is ideal for individuals who want to use Float UI for personal projects.
+- A (Complete Package, and Marketing + Application) Licenses, on the other hand, are intended for individual users. With a this Licenses, a single user can access and use the website's features and services for their own personal use. This type of license is ideal for individuals who want to use FarmUI for personal projects.
 
 - A Team License allows a group of users to access and use the website's features and services. This type of license is ideal for teams or organizations that need to collaborate on projects, The license grants permission for up to 33 Employees.
 

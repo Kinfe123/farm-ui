@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="https://floatui.com/" rel="noopener" target="_blank"><img width="200" src="public/logo.svg" alt="Float UI logo"></a>
+  <a href="https://floatui.com/" rel="noopener" target="_blank"><img width="200" src="public/logo.svg" alt="FarmUI logo"></a>
 </p>
 
-Float UI is collection of modern UI components and website templates built on top of React, and Vue (soon) with Tailwind CSS, the components are beautiful designed, expertly crafted, allow you to build beautiful websites.
+FarmUI is collection of modern UI components and website templates built on top of React, and Vue (soon) with Tailwind CSS, the components are beautiful designed, expertly crafted, allow you to build beautiful websites.
 
-## Why Float UI?
+## Why FarmUI?
 
-First, Float UI is fully free, and open source, you don't need to pay anything to use it, and we are working on it full-time, so we'll keep improving, and adding more UIs, the second thing if you’re working on a large project that requires a high level of UI customization or you find yourself repeating the same UI patterns across projects, consider creating an internal UI library, and in this case Float UI is a great choice. You should definitely use it.
+First, FarmUI is fully free, and open source, you don't need to pay anything to use it, and we are working on it full-time, so we'll keep improving, and adding more UIs, the second thing if you’re working on a large project that requires a high level of UI customization or you find yourself repeating the same UI patterns across projects, consider creating an internal UI library, and in this case FarmUI is a great choice. You should definitely use it.
 
 ## Getting Started
 
@@ -30,4 +30,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Contributing
 
-If you're interested in contributing to Float UI, please read our [contributing guide](https://github.com/MarsX-dev/floatui/blob/main/CONTRIBUTING.md) to learn about our development process before submitting a pull request.
+If you're interested in contributing to FarmUI, please read our [contributing guide](https://github.com/MarsX-dev/floatui/blob/main/CONTRIBUTING.md) to learn about our development process before submitting a pull request.

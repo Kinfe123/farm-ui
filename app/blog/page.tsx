@@ -7,8 +7,8 @@ import { BlogPost } from "types/types";
 import Pagination from "components/ui/Pagination";
 
 const { title, description } = {
-  title: "Float UI - Blog",
-  description: "The latest about Float UI, and some technical stuff.",
+  title: "FarmUI - Blog",
+  description: "The latest about FarmUI, and some technical stuff.",
 };
 
 export const metadata = {
@@ -42,7 +42,7 @@ export default async ({
         <div className="text-center mt-20">
           <h1 className="text-4xl font-extrabold heading">Blog</h1>
           <p className="mt-3 text-lg text-gray-400">
-            The latest about Float UI, and some technical stuff.
+            The latest about FarmUI, and some technical stuff.
           </p>
         </div>
         <ul className="mt-12">

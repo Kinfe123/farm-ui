@@ -60,7 +60,7 @@ export default function FUIFooterWithDownloadLinks() {
                     </div>
                 </div>
                 <div className="mt-10 py-10 border-t md:text-center">
-                    <p>© 2022 Float UI Inc. All rights reserved.</p>
+                    <p>© 2022 FarmUI Inc. All rights reserved.</p>
                 </div>
             </div>
         </footer>

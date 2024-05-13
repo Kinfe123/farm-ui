@@ -18,7 +18,7 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL("https://floatui.com"),
-    title: `${headline} - Float UI Blog`,
+    title: `${headline} - FarmUI Blog`,
     description: metaDescription,
     alternates: {
       canonical: `/blog/${slug}`,
@@ -26,11 +26,11 @@ export async function generateMetadata({
 
     openGraph: {
       type: "article",
-      title: `${headline} - Float UI Blog`,
+      title: `${headline} - FarmUI Blog`,
       description: metaDescription,
     },
     twitter: {
-      title: `${headline} - Float UI Blog`,
+      title: `${headline} - FarmUI Blog`,
       description: metaDescription,
     },
   };

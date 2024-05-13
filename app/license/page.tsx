@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import MDXRemoteClient from "components/MDXRemoteClient";
 
-const title = "Float UI - License";
+const title = "FarmUI - License";
 
 export const metadata = {
   metadataBase: new URL("https://floatui.com"),
@@ -34,7 +34,7 @@ export default async () => {
             License
           </h1>
           <p className="text-zinc-400 mt-3">
-            All you need to know about the Float UI licensing model
+            All you need to know about the FarmUI licensing model
           </p>
         </div>
         <article className="prose prose-invert mt-12 mx-4 sm:mx-auto">

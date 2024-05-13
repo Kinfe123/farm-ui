@@ -27,7 +27,7 @@ export default function FUIPrimaryNavbar() {
                             src="/logo.svg" 
                             width={120} 
                             height={50}
-                            alt="Float UI logo"
+                            alt="FarmUI logo"
                         />
                     </a>
                   <div className="md:hidden">

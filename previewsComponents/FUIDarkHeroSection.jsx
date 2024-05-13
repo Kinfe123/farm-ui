@@ -23,7 +23,7 @@ export default function FUIDarkHeroSection() {
                             src="https://www.floatui.com/images/logo.svg" 
                             width={120} 
                             height={50}
-                            alt="Float UI logo"
+                            alt="FarmUI logo"
                         />
                     </a>
                     <ul className="py-4 flex-1 items-center flex space-x-3 sm:space-x-6 sm:justify-end">

@@ -5,7 +5,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import MDXRemoteClient from "components/MDXRemoteClient";
 import SupportedLibraries from "components/ui/SupportedLibraries";
 
-const title = "Float UI - Introduction";
+const title = "FarmUI - Introduction";
 const description =
   "Beautiful and responsive UI components and templates for React and Vue with Tailwind CSS.";
 

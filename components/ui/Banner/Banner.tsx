@@ -8,7 +8,7 @@ export default () => {
     //         alt="PH kitty"
     //         className="w-24"
     //       />
-    //       <p>Support our project: Float UI on Product Hunt now</p>
+    //       <p>Support our project: FarmUI on Product Hunt now</p>
     //     </div>
     //     <a
     //       className="px-4 rounded-lg text-sm flex-none inline-block w-full mt-3 py-2 text-center text-orange-600 font-medium bg-white duration-150 hover:bg-gray-100 active:bg-gray-200 sm:w-auto sm:mt-0 btnshake"

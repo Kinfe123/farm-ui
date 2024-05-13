@@ -28,7 +28,7 @@ export default function FUIPrimaryHeroSection() {
                                 src="/logo.svg" 
                                 width={120} 
                                 height={50}
-                                alt="Float UI logo"
+                                alt="FarmUI logo"
                             />
                         </a>
                         <button className="text-gray-500 outline-none md:hidden"
