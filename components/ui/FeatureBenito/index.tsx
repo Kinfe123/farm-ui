@@ -14,7 +14,7 @@ import { CalendarIcon, FileTextIcon, GlobeIcon, InfoIcon } from "lucide-react";
 
 const files = [
   {
-    name: "bitcoin.pdf",
+    name: "Shadow",
     body: "Bitcoin is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto.",
   },
   {
@@ -38,7 +38,7 @@ const files = [
 const features = [
   {
     Icon: FileTextIcon,
-    name: "Save your files",
+    name: "Templates",
     description: "We automatically save your files as you type.",
     href: "/",
     cta: "Learn more",
