@@ -73,8 +73,8 @@ const features = [
   },
   {
     Icon: InfoIcon,
-    name: "Full text search",
-    description: "Search through all your files in one place.",
+    name: "Search for UI",
+    description: "Search through all your available component right from one place",
     href: "/",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
@@ -84,12 +84,12 @@ const features = [
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
-            <CommandItem>screenshot.png</CommandItem>
-            <CommandItem>bitcoin.pdf</CommandItem>
-            <CommandItem>finances.xlsx</CommandItem>
-            <CommandItem>logo.svg</CommandItem>
-            <CommandItem>keys.gpg</CommandItem>
-            <CommandItem>seed.txt</CommandItem>
+            <CommandItem>Alert</CommandItem>
+            <CommandItem>FAQ</CommandItem>
+            <CommandItem>Hero</CommandItem>
+            <CommandItem>Features</CommandItem>
+            <CommandItem>CTA</CommandItem>
+            <CommandItem>Footer</CommandItem>
           </CommandGroup>
         </CommandList>
       </Command>
