@@ -10,7 +10,7 @@ const CTAshow = () => {
       <CTA key={2} containerClassName="col-span-1 mt-10   lg:col-span-3 bg-transparent min-h-[500px] lg:min-h-[600px] xl:min-h-[600px]">
         <div className="max-w-3xl ">
           <h2 className="max-w-md font-display md:max-w-xl  text-left text-balance text-base md:text-2xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
-            Signup for accessing every possible UI that you can imagine:w;
+            Signup for accessing every possible UI that you can imagine at zero cost
 
           </h2>
           <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
