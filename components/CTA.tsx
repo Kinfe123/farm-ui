@@ -41,7 +41,7 @@ export const CTA = ({
         transition: "transform 0.1s ease-out",
       }}
        className={cn(
-        "mx-auto relative max-w-[110rem] pl-10 border-[1px] border-white/20 bg-transparent  rounded-2xl overflow-hidden max-h-full",
+        "mx-auto relative max-w-[110rem] border-[1px] border-white/20 bg-transparent  rounded-2xl overflow-hidden max-h-full",
         containerClassName!
       )}
     >
