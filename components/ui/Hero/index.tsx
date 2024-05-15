@@ -13,12 +13,12 @@ export default () => {
         <div className="relative z-10 max-w-6xl mx-auto space-y-4">
           <h1 className="text-center max-w-4xl text-5xl md:text-6xl tracking-tight mx-auto lg:text-[4.9rem] font-light font-geist  leading-0 mt-10">
             Take{" "}
-            <span className="bg-gradient-to-tr from-purple-400 via-purple-400/90 to-pink-400 text-transparent bg-clip-text">
+            <span className="font-normal bg-gradient-to-tr from-purple-400 via-purple-400/90 to-pink-400 text-transparent bg-clip-text">
               shadcn
             </span>{" "}
             to the next level for modern web <br />  experience.
           </h1>
-          <p className="mx-auto text-zinc-400 text-center text-lg lg:max-w-4xl">
+          <p className="mx-auto text-zinc-400 text-center text-lg lg:max-w-2xl py-5">
             Move faster with beautiful, responsive UI components and website
             templates with modern design, 100% free and open-source.
           </p>

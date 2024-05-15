@@ -19,7 +19,7 @@ export default () => {
     { title: "Demo", path: "/demo" },
     {
       title: "Github",
-      path: "https://github.com/MarsX-dev/floatui",
+      path: "https://github.com/Kinfe123/farm-ui",
       props: { target: "_blank" },
     },
   ];
@@ -60,9 +60,6 @@ export default () => {
               
               </Link>
               <div className="flex md:hidden">
-                <div className="mr-3">
-                  {/* <EditorWithAiButton /> */}
-                </div>
                 <button
                   aria-label="menu button"
                   className="menu-btn group"
