@@ -1,11 +1,12 @@
 import Image from "next/image";
 import ComponntDemoImg from "../public/showcase-1.png";
+import bgback from '../public/bg-back.png'
 import { CheckIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import LinkItem from "./ui/LinkItem";
 const FeaturesAsGrid = () => {
   return (
     <div className="custom-screen-lg relative max-w-full [border:1px_solid_rgba(255,255,255,.09)] dark:[box-shadow:0_-10px_20px_-20px_#ffffff1f_inset]  mt-32 mb-10 overflow-hidden rounded-lg border-2 border-white/10  mx-auto flex ">
-      <div className="flex w-1/2 flex-col justify-between items-start">
+      <div className="flex md:w-full  lg:w-1/2 flex-col justify-between items-start">
         <div className="flex flex-col justify-start gap-6 items-start px-8 py-20">
           <h1 className="font-display bg-gradient-to-tr from-zinc-100 via-zinc-50 to-zinc-100/50 text-transparent bg-clip-text text-4xl md:text-5xl lg:text-6xl">
             Get your animated components.
@@ -32,7 +33,7 @@ const FeaturesAsGrid = () => {
             </div>
           </div>
         </div>
-        <div className="w-full mb-20 ml-10">
+        <div className="w-full mb-20 ml-10 z-20">
           <LinkItem
             variant="shiny"
             href="/components"
@@ -42,8 +43,11 @@ const FeaturesAsGrid = () => {
           </LinkItem>
         </div>
       </div>
+      <div className="md:absolute right-0 lg:hidden -z-1">
+        <Image src={bgback} alt="bgback" className="" />
+      </div>
       <div className="absolute bottom-[-40px] top-10 right-0">
-      <Image className="md:hidden lg:block " alt="demoimg" src={ComponntDemoImg} />
+      <Image className="md:hidden lg:block" alt="demoimg" src={ComponntDemoImg} />
 
       </div>
     </div>
