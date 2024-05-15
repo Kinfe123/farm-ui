@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { DM_Sans  , Inter } from "next/font/google";
 import "./tailwind.css";
 import "./customize.css";
 import "./prismjs-theme.css";
@@ -10,6 +10,8 @@ import cn from "../utils/mergeTW";
 import Image from "next/image";
 import bgback from "../public/bg-back.png";
 import { ThemeProvider } from "components/ThemeProvider";
+import { GeistSans } from "geist/font/sans";
+
 const { title, desc, ogImage } = metatag;
 export const metadata = {
   metadataBase: new URL("https://farm-ui.com"),
@@ -36,6 +38,12 @@ const displayFont = localFont({
   src: "../public/fonts/cal.ttf",
   variable: "--font-display",
 });
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+})
 export default function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
@@ -46,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-black  relative w-full h-full overflow-x-hidden"
+      className="bg-black relative w-full h-full overflow-x-hidden"
     >
       <head>
         <meta
@@ -69,7 +77,7 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@farmui" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={cn(inter.className, displayFont.variable, "bg-black")}>
+      <body className={cn(inter.className, displayFont.variable , dmSans.variable, GeistSans.variable , "bg-black")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

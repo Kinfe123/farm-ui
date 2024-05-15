@@ -10,8 +10,10 @@ import {
 import { cn } from "@/lib/utils";
 import { BentoCard, BentoGrid } from "./bento-show";
 import Marquee from "./marquee";
+import Image from "next/image"
 import { CalendarIcon, FileTextIcon, GlobeIcon, InfoIcon } from "lucide-react";
 
+import bgback from '../../../public/bg-back.png'
 const files = [
   {
     name: "Shadow",
@@ -125,7 +127,7 @@ const features = [
 
 export function GridFeatureDemo() {
   return (
-    <div className="custom-screen-lg flex flex-col">
+    <div className="custom-screen-lg relative flex flex-col">
       <div className="max-w-xl mr-auto  space-y-4 text-left mb-10">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-display heading">
           Turn your ideas into reality
@@ -140,6 +142,8 @@ export function GridFeatureDemo() {
           <BentoCard key={idx} {...feature} />
         ))}
       </BentoGrid>
+      <Image src={bgback} className="absolute top-[-400px] -z-10 overflow-visible" alt="bgback"/>
     </div>
+
   );
 }

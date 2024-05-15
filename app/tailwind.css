@@ -10,11 +10,11 @@
   
     .bg-shiny:hover {
       @apply duration-200;
-      background: linear-gradient(180deg, #27272a 10%, rgba(15, 23, 42, 0) 100%);
+      background: linear-gradient(-180deg, #27272a 10%, rgba(15, 23, 42, 0) 100%);
     }
   
     .heading {
-      @apply font-extrabold text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)];
+      @apply font-extrabold text-transparent bg-clip-text bg-[linear-gradient(-180deg,_#FFF_0%,_rgba(255,_255,_255,_0.3)_202.08%)];
     }
   }
   @layer base {

@@ -42,7 +42,7 @@ export default () => {
       onValueChange={(value) => setSelectedTab(value)}
     >
       <Tabs.List
-        className="flex items-center px-4 py-2 border-b border-b-zinc-800 overflow-auto bg-[linear-gradient(175deg,_rgba(24,_24,_27,_0.80)_3.95%,_rgba(24,_24,_27,_0.00)_140.01%)]"
+        className="flex items-center justify-center px-4 py-2 border-b border-b-zinc-800 overflow-auto bg-[linear-gradient(175deg,_rgba(24,_24,_27,_0.80)_3.95%,_rgba(24,_24,_27,_0.00)_140.01%)]"
         aria-label="Switch between supported frameworks"
       >
         {tabs.map((item, idx) => (

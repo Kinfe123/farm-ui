@@ -66,6 +66,8 @@ module.exports = {
       fontFamily: {
         displayAlt: ["var(--font-display)"],
         display: ["Cabinet Grotesk", ...defaultTheme.fontFamily.sans],
+        dmSans:"var(--font-dm-san)",
+        geist: ['var(--font-geist-sans)'],
       },
       borderRadius: {
         lg: "var(--radius)",
