@@ -9,14 +9,14 @@ import { ChevronRight } from "lucide-react";
 export default () => {
   return (
     <>
-      <section className="custom-screen mt-20">
+      <section className="custom-screen mt-32">
         <div className="relative z-10 max-w-6xl mx-auto space-y-4">
-          <h1 className="text-center  text-5xl md:text-6xl tracking-tighter mx-auto lg:text-8xl font-normal font-geist heading leading-4 mt-10">
+          <h1 className="text-center max-w-4xl text-5xl md:text-6xl tracking-tight mx-auto lg:text-[4.9rem] font-light font-geist  leading-0 mt-10">
             Take{" "}
             <span className="bg-gradient-to-tr from-purple-400 via-purple-400/90 to-pink-400 text-transparent bg-clip-text">
               shadcn
             </span>{" "}
-            to the next level for modern web <br />  experience
+            to the next level for modern web <br />  experience.
           </h1>
           <p className="mx-auto text-zinc-400 text-center text-lg lg:max-w-4xl">
             Move faster with beautiful, responsive UI components and website
