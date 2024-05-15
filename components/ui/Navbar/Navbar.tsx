@@ -12,7 +12,6 @@ export default () => {
   const [state, setState] = useState(false);
   const [isNewsletterModalActive, setNewsletterModalActive] = useState(false);
 
-  // Replace javascript:void(0) paths with your paths
   const navigation = [
     { title: "Components", path: "/components" },
     { title: "Templates", path: "/templates" },
@@ -49,13 +48,13 @@ export default () => {
         <nav
           className={` ${
             state
-              ? "absolute inset-x-0 shadow-lg rounded-xl bg-zinc-900 border border-zinc-800 mx-2 pb-5 mt-2 md:shadow-none md:border-none md:mx-2 md:mt-0 md:bg-transparent md:pb-0"
+              ? "absolute inset-x-0 shadow-lg rounded-xl bg-gradient-to-tr from-transparent via-transparent/10 to-transparent/5 backdrop-blur-lg border border-zinc-800 mx-2 pb-5 mt-2 md:shadow-none md:border-none md:mx-2 md:mt-0 md:bg-transparent md:pb-0"
               : ""
           }`}
         >
           <div className="mt-5 max-w-3xl mx-auto border-2 py-5  px-10 backdrop-blur-md  border-white/10 rounded-3xl gp-x-14 items-center md:flex">
             <div className="flex items-center justify-between py-1 md:block">
-              <Link href="/" className="bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl">
+            <Link href="/" className="bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl">
                  FarmUI 
               
               </Link>
@@ -88,12 +87,11 @@ export default () => {
                       <Link {...item.props} href={item.path} className="block">
                         {item.title}
                       </Link>
+                      {state ? <hr className="opacity-50 text-gray-400 my-2 pt-3"/> : ""}
                     </li>
                   );
                 })}
-                <li>
-                  {/* <EditorWithAiButton /> */}
-                </li>
+              
               </ul>
               <div className="mt-6 md:mt-0">
                 <LinkItem
