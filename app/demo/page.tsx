@@ -60,7 +60,7 @@ export default async () => {
 
     return (
       <div className=" overflow-hidden">
-        <div className="absolute transform rotate-180 bg-transparent -top-20 z-[-2] h-screen w-screen overflow-hidden  [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#60e_100%)] opacity-30"></div>
+        <div className="absolute transform rotate-180 bg-transparent z-[-2] h-screen w-screen overflow-hidden  [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#60e_100%)] opacity-30"></div>
         <section className=" custom-screen overflow-hidden mx-auto  mt-20">
           {/* <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 -translate-x-32 sm:-translate-x-10" /> */}
           <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 -translate-x-32 sm:translate-x-20" />
