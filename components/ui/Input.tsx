@@ -6,10 +6,11 @@ interface Props extends HTMLAttributes<HTMLInputElement> {
   value?: string;
   type?: "text" | "email" | "password";
   name?: string;
+  placeholder?: string;
+  autoFocus?:boolean;
   validate?: {};
   required?: boolean;
   disabled?: boolean;
-  autoFocus?: boolean;
 }
 
 export default ({ className, required, validate, ...props }: Props) => (
