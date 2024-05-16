@@ -5,7 +5,6 @@ import { QueryDocumentSnapshot, QuerySnapshot } from "firebase/firestore";
 import LinkItem from "components/ui/LinkItem";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 import { allTemplates } from "contentlayer/generated";
-
 type Params = {
   slug: string;
 };
@@ -48,26 +47,25 @@ export async function generateMetadata({
 }
 
 const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
- 
-  const template_mod = allTemplates.find((t) => (t.slug === `templates/${slug}`))
-
+  
+  const template_mod = allTemplates.find((t) => (t.slug === `/templates/${slug}`))
   
   return (
     <>
-      <section className="mt-24">
-        <div className="max-w-screen max-w-2xl mx-auto lg:max-w-none">
-          <div className="gap-12 lg:flex">
+      <section className="mt-24 custom-screen-lg mx-auto">
+        <div className="max-w-screen max-w-3xl mx-auto lg:max-w-none">
+          <div className="gap-10 lg:flex">
             <div className="flex-1 rounded-xl">
-              <img src={template_mod?.image} className="rounded-xl" />
+              <img src={`/${template_mod?.image}`} className="rounded-xl" />
             </div>
             <div className="flex-1 space-y-6 mt-12 lg:max-w-sm lg:mt-0 xl:max-w-md">
               <div className="text-zinc-50 font-semibold flex justify-between items-center">
-                <h1 className="text-3xl md:text-4xl">
+                <h1 className="text-3xl font-geist md:text-4xl">
                   {template_mod?.title}
                 </h1>
                 <div className="flex items-center gap-x-2">
-                  <del className="text-lg">${template_mod?.price ?? "0"}</del>
-                  <span className="text-xl sm:text-2xl">$0</span>
+                  <del className="text-lg">${10.99 + +(template_mod?.price ?? "0")}</del>
+                  <span className="text-xl sm:text-2xl">${template_mod?.price}</span>
                 </div>
               </div>
               <p className="mt-6 text-zinc-300 md:text-lg">
@@ -83,7 +81,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                 <div className="flex flex-wrap items-center gap-3">
                   <LinkItem
                     href={template_mod?.live_preview || ""}
-                    className="inline-flex w-full justify-center items-center gap-x-2 duration-200 shadow hover:bg-zinc-100 group sm:w-auto"
+                    className="inline-flex text-black w-full justify-center items-center gap-x-2 duration-200 shadow hover:bg-zinc-100 group sm:w-auto"
                   >
                     Full preview
                     <ArrowTopRightOnSquareIcon className="w-4 h-4 duration-200 group-hover:translate-x-1" />
