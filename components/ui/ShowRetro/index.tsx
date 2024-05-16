@@ -8,7 +8,7 @@ const GridSlide = () => {
       <span className="font-normal font-display uppercase text-5xl md:text-6xl lg:text-8xl text-center">
         elevate  your web{" "} <br />
         <span className=" ">
-          <RotateText rotatedString={["BUILD", "SHIPS", "SCALE"]} className="bg-gradient-to-tr from-purple-600 via-purple-500/90 to-pink-600 border-input rounded-xl bg-clip-text text-transparent font-light font-geist" />
+          <RotateText rotatedString={["BUILD", "SHIPS", "SCALE"]} className="bg-gradient-to-tr from-purple-600 via-purple-500/90 to-pink-600 border-input rounded-xl bg-clip-text text-transparent font-extralight font-geist" />
         </span>
       </span>
       <RetroGrid />
