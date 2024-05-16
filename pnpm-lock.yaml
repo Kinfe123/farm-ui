@@ -132,7 +132,7 @@ dependencies:
     specifier: ^0.1.5
     version: 0.1.5
   sharp:
-    specifier: ^0.33.0
+    specifier: ^0.33.1
     version: 0.33.3
   shiki:
     specifier: ^0.14.6
