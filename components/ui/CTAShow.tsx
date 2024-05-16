@@ -12,7 +12,7 @@ const CTAshow = () => {
         containerClassName="col-span-1 mt-10  lg:col-span-3 bg-transparent min-h-[500px] lg:min-h-[600px] xl:min-h-[600px]"
       >
         <div className="md:max-w-full md:mr-auto lg:max-w-3xl lg:mr-auto">
-          <h2 className="max-w-full font-display md:max-w-5xl lg:max-w-xl md:text-center  lg:text-left text-balance text-2xl sm:text-3xl md:text-5xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
+          <h2 className="max-w-full font-display md:max-w-5xl lg:max-w-full md:text-center  lg:text-left text-balance text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.015em] text-white">
             Signup for accessing every possible UI that you can imagine at zero
             cost
           </h2>

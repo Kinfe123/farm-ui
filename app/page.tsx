@@ -17,7 +17,9 @@ export default () => {
       </div>
       <Features />
       <GridSlide />
-      <GridFeatureDemo />
+      <div className="relative overflow-hidden">
+        <GridFeatureDemo />
+      </div>
       <FeaturesAsGrid />
       <SupportedFrameworks />
       <CTAshow />

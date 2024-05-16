@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import { BentoCard, BentoGrid } from "./bento-show";
 import Marquee from "./marquee";
 import Image from "next/image"
-import { CalendarIcon, FileTextIcon, GlobeIcon, InfoIcon } from "lucide-react";
+import { CalendarIcon, FileTextIcon, GlobeIcon, InfoIcon, SearchIcon } from "lucide-react";
 
 import bgback from '../../../public/bg-back.png'
 const files = [
@@ -74,7 +74,7 @@ const features = [
     ),
   },
   {
-    Icon: InfoIcon,
+    Icon: SearchIcon,
     name: "Search for UI",
     description: "Search through all your available component right from one place",
     href: "/",
