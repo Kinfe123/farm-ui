@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import React from "react";
 import { FADE_UP_ANIMATION_VARIANTS } from "utils/animationConfig";
@@ -19,6 +20,10 @@ const HeroAnimated = ({
   descriptionClassName?: string;
   childrenClassName?: string;
 }) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <motion.div
       initial="hidden"

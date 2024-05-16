@@ -15,7 +15,7 @@ export default () => {
           <HeroAnimated
             header="Take shadcn to the next level for modern web dev experience"
             headerClassName="text-center max-w-4xl text-5xl md:text-6xl tracking-tight mx-auto lg:text-[4.9rem] font-light font-geist  leading-0 mt-10"
-            description="   Move faster with beautiful, responsive UI components and website
+            description="Move faster with beautiful, responsive UI components and website
             templates with modern design, 100% free and open-source."
             descriptionClassName="mx-auto text-zinc-400 text-center text-lg lg:max-w-2xl py-5"
           >
@@ -76,8 +76,8 @@ export default () => {
       <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute top-28 right-0 min-h-screen">
         <Image
           src={bghero}
-          width={1000}
-          height={1000}
+          width={800}
+          height={800}
           className="w-full bg-center "
           alt="Hero Image"
         />
