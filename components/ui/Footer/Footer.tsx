@@ -13,7 +13,7 @@ const navigation = [
 ];
 
 const marsNavigation = [
-  { name: "FarmX", href: "https://www.marsx.dev/" },
+  { name: "FarmX", href: "https://www.farmui.dev/" },
   { name: "Unicorn Platform", href: "https://unicornplatform.com" },
   { name: "UI generator", href: "https://uigenerator.org/" },
   { name: "E-commerce store generator", href: "https://marketsy.ai/" },
@@ -54,7 +54,7 @@ export default () => (
             </a>
           </div>
         </div>
-        <div className="flex-1 mt-4 pb-8 flex flex-wrap gap-4 font-medium sm:justify-end sm:mt-0">
+        <div className="flex-1 mt-4 pb-8 flex sm:flex-col md:flex-row md:flex-wrap gap-4 font-medium sm:justify-end sm:mt-0">
           <ul className="flex-grow max-w-[15rem] space-y-2">
             <li className="text-zinc-100 font-medium">Resources</li>
             {navigation.map((item, idx) => (
