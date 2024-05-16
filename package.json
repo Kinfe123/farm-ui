@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "content:build": "contentlayer build",
     "start": "next start",
     "tailwind": "npx tailwindcss -i ./styles/tailwind.css -o ./public/tailwind.css --watch"
   },
