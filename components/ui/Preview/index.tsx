@@ -56,9 +56,6 @@ export default ({
     svelte: "svelteTail",
   }[selectedFramework];
 
-  const previewCode: string = item.ltr?.preview;
-  console.log("Preview code: ") , previewCode
-
   const copyCode = (code: string) => {
     const textare = document.createElement("textarea");
     textare.textContent = code;
