@@ -1,5 +1,4 @@
 import TemplateTechStack from "components/ui/TemplateTechStackGroup";
-import { fetchDocs, getDoc } from "../../../firebase/config";
 import Head from "next/head";
 import { Templates } from "types/types";
 import { QueryDocumentSnapshot, QuerySnapshot } from "firebase/firestore";
@@ -49,10 +48,8 @@ export async function generateMetadata({
 }
 
 const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
-  console.log("THE PARAMS: "  ,slug)
  
   const template_mod = allTemplates.find((t) => (t.slug === `templates/${slug}`))
-  console.log("each template is: " , template_mod) 
 
   
   return (

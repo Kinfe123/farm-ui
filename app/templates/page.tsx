@@ -1,6 +1,5 @@
 import HeroBgGradient from "components/HeroBgGradient";
 import TemplateCard from "components/ui/TemplateCard";
-import { fetchDocs } from "../../firebase/config";
 import { Templates } from "types/types";
 import { allTemplates } from "contentlayer/generated";
 import HeroAnimated from "components/HeroAnimated";

@@ -139,7 +139,7 @@ export function GridFeatureDemo() {
       </div>
       <BentoGrid>
         {features.map((feature, idx) => (
-          <BentoCard key={idx} {...feature} />
+          <BentoCard  {...feature} />
         ))}
       </BentoGrid>
       <Image src={bgback} className="absolute top-[-400px] -z-10 overflow-visible" alt="bgback"/>
