@@ -11,10 +11,10 @@ export default () => {
   return (
     <>
       <section className="custom-screen mt-32">
-        <div className="relative z-10 max-w-6xl mx-auto space-y-4">
+        <div className="relative z-10 max-w-4xl mx-auto space-y-4">
           <HeroAnimated
             header="Take shadcn to the next level for modern web dev experience"
-            headerClassName="text-center max-w-4xl text-5xl md:text-6xl tracking-tight mx-auto lg:text-[4.9rem] font-light font-geist  leading-0 mt-10"
+            headerClassName="text-center max-w-full text-5xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-4 mt-1"
             description="Move faster with beautiful, responsive UI components and website
             templates with modern design, 100% free and open-source."
             descriptionClassName="mx-auto text-zinc-400 text-center text-lg lg:max-w-2xl py-5"
