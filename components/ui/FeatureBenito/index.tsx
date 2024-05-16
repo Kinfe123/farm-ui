@@ -20,19 +20,19 @@ const files = [
     body: "Bitcoin is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto.",
   },
   {
-    name: "finances.xlsx",
+    name: "DumpAI",
     body: "A spreadsheet or worksheet is a   file made of rows and columns that help sort data, arrange data easily, and calculate numerical data.",
   },
   {
-    name: "logo.svg",
+    name: "Elastic",
     body: "Scalable Vector Graphics is an Extensible Markup Language-based vector image format for two-dimensional graphics with support for interactivity and animation.",
   },
   {
-    name: "keys.gpg",
+    name: "PerDev",
     body: "GPG keys are used to encrypt and decrypt email, files, directories, and whole disk partitions and to authenticate messages.",
   },
   {
-    name: "seed.txt",
+    name: "Cosmos",
     body: "A seed phrase, seed recovery phrase or backup seed phrase is a list of words which store all the information needed to recover Bitcoin funds on-chain.",
   },
 ];
@@ -99,13 +99,13 @@ const features = [
   },
   {
     Icon: GlobeIcon,
-    name: "Multilingual",
-    description: "Supports 100+ languages and counting.",
+    name: "MultiFrameworker",
+    description: "Supports 10+ JS frameworks.",
     href: "/",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <GlobeIcon className="top-0 h-[600px] w-[600px] transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_30%,#000_100%)] group-hover:scale-105 sm:left-40" />
+      <GlobeIcon className="absolute right-[-20px] top-5 h-[600px] -z-20 w-[600px] transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_30%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
@@ -130,7 +130,7 @@ export function GridFeatureDemo() {
     <div className="custom-screen-lg relative flex flex-col">
       <div className="max-w-3xl mr-auto  space-y-4 text-left mb-10">
         <h2 className="text-4xl md:text-5xl lg:text-6xl  font-bold font-display bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent">
-          A Wide range of templates and components.
+          A wide range of templates and components.
         </h2>
         <p className="text-zinc-400">
           FarmUI offers all the vital building blocks you need to transform your
