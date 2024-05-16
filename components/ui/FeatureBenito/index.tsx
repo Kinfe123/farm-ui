@@ -128,9 +128,9 @@ const features = [
 export function GridFeatureDemo() {
   return (
     <div className="custom-screen-lg relative flex flex-col">
-      <div className="max-w-xl mr-auto  space-y-4 text-left mb-10">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-display heading">
-          Turn your ideas into reality
+      <div className="max-w-3xl mr-auto  space-y-4 text-left mb-10">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl  font-bold font-display bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent">
+          A Wide range of templates and components.
         </h2>
         <p className="text-zinc-400">
           FarmUI offers all the vital building blocks you need to transform your
