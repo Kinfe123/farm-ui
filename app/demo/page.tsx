@@ -13,6 +13,7 @@ import Button from "components/ui/Button";
 import Shiny from "components/ShinyButton";
 import bgback from "../../public/bg-back.png";
 import Image from "next/image";
+import HeroAnimated from "components/HeroAnimated";
 const title = "FarmUI - Component Demo";
 
 export const metadata = {
@@ -68,13 +69,15 @@ export default async () => {
 
           <div className="relative z-10">
             <div className="max-w-[70reem] mx-auto space-y-4 text-center">
-              <h1 className="text-center w-full  text-5xl md:text-7xl tracking-tighter mx-auto lg:text-8xl  font-display font-bold text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-4 mt-1">
-                Sneak pic of the component we got for you to copy
-              </h1>
-              <p className="text-zinc-400 max-w-xl text-sm sm:text-md md:text-lg lg:text-lg mx-auto">
-                Take a closer look at our UI components and see how they can
-                elevate your website or web application
-              </p>
+              <HeroAnimated
+                header="Sneak peek of the component we got for you to copy"
+                headerClassName="text-center w-full  text-5xl md:text-7xl tracking-tighter mx-auto lg:text-8xl  font-geist font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-4 mt-1"
+                description=" Take a closer look at our UI components and see how they can
+            elevate your website or web application"
+                descriptionClassName="text-zinc-400 max-w-xl text-sm sm:text-md md:text-lg lg:text-lg mx-auto"
+              >
+                <div className="flex flex-wrap items-center justify-center  gap-3"></div>
+              </HeroAnimated>
             </div>
           </div>
           <div className="my-10 gap-3 flex justify-center items-center max-w-md mx-auto">
@@ -97,10 +100,10 @@ export default async () => {
             <Shiny to="components" to_label="Explore components" />
           </div>
 
-        <div className="relative w-full">
+          <div className="relative w-full">
             <FeaturesAsGrid />
             <Image
-               alt="bgbackimage"
+              alt="bgbackimage"
               src={bgback}
               className="absolute  translatex-1/2 top-0 -translate-y-96 -z-10"
             />
@@ -117,7 +120,6 @@ export default async () => {
               Browse all components
             </Link>
           </div>
-      
         </section>
         {/* <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute top-28 right-0 min-h-screen"> */}
         {/* <Image
