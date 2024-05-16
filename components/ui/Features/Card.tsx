@@ -52,7 +52,7 @@ export default ({
         <LinkItem
           href="/components"
           variant="default"
-          className="inline-flex group items-center w-full bg-transparent  border-input border-none hover:bg-transparent/10 transition-colors sm:w-auto"
+          className="inline-flex group items-center w-full bg-transparent  border-input border-none hover:bg-transparent/10 transition-colors mr-auto"
         >
           Explore more
           <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />

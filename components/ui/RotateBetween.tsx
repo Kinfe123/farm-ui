@@ -26,7 +26,7 @@ export default function RotateText({rotatedString , className}: RotatedString) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
-        className={cn(className , "inline text-center font-display text-5xl md:text-6xl lg:text-8x font-bold tracking-[-0.02em] drop-shadow-sm md:leading-[5rem]")}
+        className={cn(className , "inline text-center tracking-[-0.02em] drop-shadow-sm md:leading-[5rem]")}
       >
         {words[index]}
       </motion.h1>
