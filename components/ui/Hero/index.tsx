@@ -26,7 +26,7 @@ export default () => {
             <LinkItem
               href="/components"
               variant="default"
-              className="inline-flex group items-center w-full bg-gradient-to-tr from-black/90 via-zinc-800 to-black  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10"
+              className="inline-flex text-center group items-center w-full justify-center bg-gradient-to-tr from-black/90 via-zinc-800 to-black  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10"
             >
               Browser Components
               <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300"/>

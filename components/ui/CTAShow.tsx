@@ -12,7 +12,7 @@ const CTAshow = () => {
         containerClassName="col-span-1 mt-10  lg:col-span-3 bg-transparent min-h-[500px] lg:min-h-[600px] xl:min-h-[600px]"
       >
         <div className="md:max-w-full md:mr-auto lg:max-w-3xl lg:mr-auto">
-          <h2 className="max-w-full font-display md:max-w-5xl lg:max-w-xl md:text-center  lg:text-left text-balance text-base md:text-5xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
+          <h2 className="max-w-full font-display md:max-w-5xl lg:max-w-xl md:text-center  lg:text-left text-balance text-2xl sm:text-3xl md:text-5xl lg:text-4xl font-semibold tracking-[-0.015em] text-white">
             Signup for accessing every possible UI that you can imagine at zero
             cost
           </h2>
@@ -23,7 +23,7 @@ const CTAshow = () => {
         <LinkItem
           href="/components"
           variant="shiny"
-          className="flex md:w-fit md:mx-auto my-2  px-4 py-5 bg-gradient-to-tr from-zinc-900/90 via-zinc-800/90 to-zinc-700/90 justify-center items-center gap-3  lg:absolute lg:bottom-[-20px]  lg:w-fit hover:bg-zinc-700"
+          className="flex w-fit md:w-fit md:mx-auto my-2  px-4 py-5 bg-gradient-to-tr from-zinc-900/90 via-zinc-800/90 to-zinc-700/90 justify-center items-center gap-3  lg:absolute lg:bottom-[-20px]  lg:w-fit hover:bg-zinc-700"
         >
           Explore components <ChevronRightIcon className="w-5 h-4" />
         </LinkItem>
@@ -33,7 +33,7 @@ const CTAshow = () => {
           width={700}
           height={700}
           alt="linear demo image"
-          className="md:flex md:justify-center  md:translate-y-20 md:mx-auto lg:translate-y-0  md:items-center lg:absolute lg:top-52 lg:right-[-90px] lg:bottom-[-100px] -z-10  scale-125 object-contain rounded-2xl"
+          className="md:flex md:justify-center md:mx-auto md:bg-center md:object-contain md:scale-100  md:translate-y-20 lg:translate-y-0  md:items-center lg:absolute lg:top-52 lg:right-[-90px] lg:bottom-[-100px] -z-10  lg:scale-125 object-contain rounded-2xl"
         />
       </CTA>
       <Image
