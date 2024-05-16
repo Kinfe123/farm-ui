@@ -13,7 +13,7 @@ export default () => {
       <section className="custom-screen mt-32">
         <div className="relative z-10 max-w-6xl mx-auto space-y-4">
           <HeroAnimated
-            header="  Take shadcn to the next level for modern web experience"
+            header="Take shadcn to the next level for modern web dev experience"
             headerClassName="text-center max-w-4xl text-5xl md:text-6xl tracking-tight mx-auto lg:text-[4.9rem] font-light font-geist  leading-0 mt-10"
             description="   Move faster with beautiful, responsive UI components and website
             templates with modern design, 100% free and open-source."
@@ -40,7 +40,7 @@ export default () => {
             </div>
           </HeroAnimated>
 
-          <h1 className="text-center max-w-4xl text-5xl md:text-6xl tracking-tight mx-auto lg:text-[4.9rem] font-light font-geist  leading-0 mt-10">
+          {/* <h1 className="text-center max-w-4xl text-5xl md:text-6xl tracking-tight mx-auto lg:text-[4.9rem] font-light font-geist  leading-0 mt-10">
             Take{" "}
             <span className="font-normal bg-gradient-to-tr from-purple-400 via-purple-400/90 to-pink-400 text-transparent bg-clip-text">
               shadcn
@@ -69,7 +69,7 @@ export default () => {
               <IconGithub className="w-5 h-5" />
               Star on GitHub
             </LinkItem>
-          </div>
+          </div> */}
         </div>
         <HeroBgGradientClient />
       </section>
