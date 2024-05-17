@@ -1,5 +1,7 @@
 import Link from "next/link";
 import {type Templates} from '.contentlayer/generated/types'
+import LinkItem from "../LinkItem";
+import { ChevronRight } from "lucide-react";
 export default ({ item }: { item: Templates }) => (
   <li className="pt-10 lg:pt-0">
     <Link href={`${item.slug}`} className="gap-6 sm:flex">
@@ -20,6 +22,14 @@ export default ({ item }: { item: Templates }) => (
           </div>
           <p className="mt-6 text-gray-300">{item.description}</p>
         </div>
+        <LinkItem
+          href={`${item.slug}`}
+          variant="default"
+          className="inline-flex group items-center w-full bg-transparent  border-input border-none hover:bg-transparent/10 transition-colors mr-auto"
+        >
+          Explore more
+          <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+        </LinkItem>
       </div>
     </Link>
   </li>
