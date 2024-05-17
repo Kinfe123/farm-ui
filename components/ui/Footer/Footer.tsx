@@ -36,14 +36,14 @@ export default () => (
             <a
               aria-label="Facebook account"
               target="_blank"
-              href="https://github.com/MarsX-dev/floatui"
+              href="https://github.com/kkinfe123/farm-ui"
             >
               <IconGithub className="w-6 h-6 text-zinc-400" />
             </a>
             <a
               aria-label="Facebook account"
               target="_blank"
-              href="https://twitter.com/float_ui?s=09"
+              href="https://twitter.com/farm-ui?s=09"
             >
               <Image
                 src="/images/tw-icon.svg"
