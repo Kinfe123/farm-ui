@@ -21,9 +21,7 @@ const HeroAnimated = ({
   childrenClassName?: string;
 }) => {
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+
   return (
     <motion.div
       initial="hidden"
@@ -41,7 +39,7 @@ const HeroAnimated = ({
       <motion.h1
         className={cn(
           headerClassName,
-          "text-center drop-shadow-sm md:text-7xl md:leading-[5rem]"
+          "text-center drop-shadow-sm"
         )}
         variants={FADE_UP_ANIMATION_VARIANTS}
       >
