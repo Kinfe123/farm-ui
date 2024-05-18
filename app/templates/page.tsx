@@ -50,18 +50,10 @@ const Template = async () => {
               <div className="flex flex-wrap items-center justify-center  gap-3"></div>
             </HeroAnimated>
 
-            {/* <h1 className="text-center w-full text-5xl md:text-7xl tracking-tighter lg:text-8xl font-display font-bold text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]  ">
-               Collections of beautifully crafted modern website templates 
-            
-            </h1>
-            <p className="text-zinc-400 max-w-xl mx-auto">
-              A collection of styled and beautifully designed website
-              templates, built with React, Next.js with Tailwind CSS.
-            </p> */}
           </div>
           <ul
             id="templates"
-            className="mt-32 text-white space-y-7 divide-y divide-zinc-800 gap-14 grid-cols-1 lg:grid lg:space-y-0 lg:divide-y-0"
+            className="mt-32 max-w-4xl mx-auto  text-white space-y-7 divide-y divide-zinc-800 gap-14 grid-cols-1 lg:grid lg:space-y-0 lg:divide-y-0"
           >
             {templates.map((template) => {
               return <TemplateCard item={template} />;
