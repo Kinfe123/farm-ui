@@ -50,7 +50,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
   const template_mod = allTemplates.find(
     (t) => t.slug === `/templates/${slug}`
   );
-
+  console.log("the price is :" , template_mod?.price)
   return (
     <>
       <section className="mt-24 custom-screen-lg mx-auto">
@@ -69,7 +69,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                     ${10.99 + +(template_mod?.price ?? "0")}
                   </del>
                   <span className="text-xl sm:text-2xl">
-                    ${template_mod?.price}
+                   {template_mod?.is_free ? `0$` : `$` + template_mod?.price} 
                   </span>
                 </div>
               </div>
