@@ -5,6 +5,7 @@ import { GridFeatureDemo } from "components/ui/FeatureBenito";
 import Features from "components/ui/Features/Features";
 import Hero from "components/ui/Hero";
 import GridSlide from "components/ui/ShowRetro";
+import { GetStarted } from "components/ui/Subscribe";
 import SupportedFrameworks from "components/ui/SupportedFrameworks";
 import TemplateCTA from "components/ui/TemplateCTA";
 
@@ -21,6 +22,7 @@ export default () => {
       <FeaturesAsGrid />
       <SupportedFrameworks />
       <CTAshow />
+      <GetStarted />
     </>
   );
 };

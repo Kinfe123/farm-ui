@@ -35,7 +35,7 @@ export default () => (
           <div className="flex items-center gap-3">
             <a
               aria-label="Facebook account"
-              target="_blank"
+              target="_blank"e
               href="https://github.com/kkinfe123/farm-ui"
             >
               <IconGithub className="w-6 h-6 text-zinc-400" />
