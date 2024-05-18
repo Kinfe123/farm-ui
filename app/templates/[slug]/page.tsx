@@ -104,7 +104,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
             </div>
           </div>
           <div
-            className="mt-12 leading-relaxed prose prose-invert"
+            className="mt-20 leading-relaxed prose prose-invert max-w-full"
             // dangerouslySetInnerHTML={{ __html: template_mod.description }}
           >
             <Mdx code={template_mod?.body.code ?? ""} />
