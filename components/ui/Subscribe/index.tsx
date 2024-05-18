@@ -61,15 +61,17 @@ export function GetStarted() {
 
   return (
     <section id="newsletter" aria-label="Newsletter" className="font-display ">
-      <div className="rounded-3xl custom-screen-lg mx-auto">
+      <div className="rounded-3xl custom-screen-lg mx-auto mt-[-20px] -z-1">
         <div className="relative font-display -mx-4 overflow-hidden bg-gradient-to-tr from-transparent via-transparent/10 to-transparent/5 px-4 py-20 sm:-mx-6 sm:px-6 md:mx-0 md:rounded-[2.0rem] md:px-16 xl:px-24 xl:py-36">
-          <Image
-            className="absolute left-1/2 top-0 translate-x-[-10%] h-[1000px] w-[1450px] translate-y-[-45%] lg:translate-x-[-32%]"
+        <Image
             src={backgroundImage}
-            alt=""
-            // width={919}
-            height={1351}
-            unoptimized
+            width={900}
+            height={900}
+            alt="bgback"
+            className="absolute left-1/2 top-0 translate-x-[-10%] translate-y-[-10%] lg:translate-x-[-32%] inset-x-0  z-10  max-w-full mx-auto"
+          />
+          <div
+            className="absolute left-1/2 top-0 translate-x-[-10%] h-full w-[1450px] hidden translate-y-[-45%] lg:translate-x-[-32%] animate-pulse duration-[4s] linear infinite"
           />
           <Image
             src={bgback}
@@ -85,13 +87,7 @@ export function GetStarted() {
             alt="bgback"
             className="absolute inset-x-0 top-[-300px] z-10 -translate-x-10 max-w-full mx-auto"
           />
-          <Image
-            src={bgback}
-            width={900}
-            height={900}
-            alt="bgback"
-            className="absolute inset-x-0 top-[100px] z-10 translate-x-10 max-w-full mx-auto"
-          />
+         
           <Image
             src={bgback}
             width={900}

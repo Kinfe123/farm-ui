@@ -9,7 +9,7 @@ import BgGradient from "./Footer/BgGradient";
 import circle from "../../public/circle.png"
 const CTAshow = () => {
   return (
-    <div className="mx-h-full relative mx-10 mt-44">
+    <div className="mx-h-full relative mx-10 mt-44 z-20">
       <Image src={circle} alt="circle image" className="absolute top-0 inset-x-0  -translate-y-32 max-w-full mx-auto"/>
       <Image
         src={bgback}
