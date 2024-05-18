@@ -4,10 +4,12 @@ import LinkItem from "../LinkItem";
 import { ChevronRight } from "lucide-react";
 import TemplateTechStack from "components/ui/TemplateTechStackGroup";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image"
+import bgback from "../../../public/bg-back.png"
 export default ({ item }: { item: Templates }) => (
-  <li className="pt-10 lg:pt-0">
+  <li className="relative pt-10 lg:pt-0 h-fit overflow-hidden rounded-3xl">
     <Link href={`${item.slug}`} className="gap-6 sm:flex sm:flex-col ">
-      <div className="flex-1 w-full block">
+      <div className="flex-1 w-full block z-20">
         <img src={item.image} className="rounded-lg" alt="Website template" />
       </div>
       <div className="flex-1 mt-6 flex flex-col justify-between sm:mt-0">
@@ -35,6 +37,7 @@ export default ({ item }: { item: Templates }) => (
         >
           Explore more
           <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+          <Image src={bgback} className="absolute top-0 translate-y-30  z-10 opacity-80 w-[1000px] h-[800px] overflow-hidden"  alt="bgback"/>
         </LinkItem>
       </div>
     </Link>

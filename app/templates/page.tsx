@@ -3,6 +3,7 @@ import TemplateCard from "components/ui/TemplateCard";
 import { Templates } from "types/types";
 import { allTemplates } from "contentlayer/generated";
 import HeroAnimated from "components/HeroAnimated";
+import {Tabs , TabsContent , TabsTrigger , TabsList} from "@/components/ui/tabs"
 
 type MetaInfo = {
   title: string;
@@ -49,7 +50,6 @@ const Template = async () => {
             >
               <div className="flex flex-wrap items-center justify-center  gap-3"></div>
             </HeroAnimated>
-
           </div>
           <ul
             id="templates"
