@@ -13,7 +13,7 @@ const HeroAnimated = ({
   childrenClassName = "",
   description,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   header: string;
   headerClassName?: string;
   description: string;
@@ -39,7 +39,7 @@ const HeroAnimated = ({
       <motion.h1
         className={cn(
           headerClassName,
-          "text-center drop-shadow-sm"
+          "drop-shadow-sm"
         )}
         variants={FADE_UP_ANIMATION_VARIANTS}
       >
