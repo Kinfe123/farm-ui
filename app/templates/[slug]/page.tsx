@@ -5,6 +5,8 @@ import { QueryDocumentSnapshot, QuerySnapshot } from "firebase/firestore";
 import LinkItem from "components/ui/LinkItem";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 import { allTemplates } from "contentlayer/generated";
+import { Mdx } from "components/MdxComponent";
+
 type Params = {
   slug: string;
 };
@@ -17,7 +19,6 @@ export async function generateMetadata({
   // const querySnapshot = await getDoc(slug, "templates", "slug");
   // const template = querySnapshot.docs.map((item: QueryDocumentSnapshot) => {
   //   const { banner_url, template_name, preview_url, description } = item.data();
-
   //   return {
   //     banner_url,
   //     template_name,
@@ -25,7 +26,6 @@ export async function generateMetadata({
   //     description,
   //   };
   // })[0];
-
   // return {
   //   metadataBase: new URL("https://farmui.com"),
   //   alternates: {
@@ -47,9 +47,10 @@ export async function generateMetadata({
 }
 
 const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
-  
-  const template_mod = allTemplates.find((t) => (t.slug === `/templates/${slug}`))
-  
+  const template_mod = allTemplates.find(
+    (t) => t.slug === `/templates/${slug}`
+  );
+
   return (
     <>
       <section className="mt-24 custom-screen-lg mx-auto">
@@ -64,8 +65,12 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                   {template_mod?.title}
                 </h1>
                 <div className="flex items-center gap-x-2">
-                  <del className="text-lg">${10.99 + +(template_mod?.price ?? "0")}</del>
-                  <span className="text-xl sm:text-2xl">${template_mod?.price}</span>
+                  <del className="text-lg">
+                    ${10.99 + +(template_mod?.price ?? "0")}
+                  </del>
+                  <span className="text-xl sm:text-2xl">
+                    ${template_mod?.price}
+                  </span>
                 </div>
               </div>
               <p className="mt-6 text-zinc-300 md:text-lg">
@@ -101,10 +106,12 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
           <div
             className="mt-12 leading-relaxed prose prose-invert"
             // dangerouslySetInnerHTML={{ __html: template_mod.description }}
-          ></div>
+          >
+            <Mdx code={template_mod?.body.code ?? ""} />
+          </div>
         </div>
       </section>
     </>
   );
-}
-export default TemplatePage
+};
+export default TemplatePage;
