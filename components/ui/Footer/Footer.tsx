@@ -20,6 +20,8 @@ const marsNavigation = [
   { name: "Dev Hunt", href: "https://devhunt.org" },
 ];
 
+
+
 export default () => (
   <footer className="relative mt-40 pt-24 overflow-hidden">
     <div>
