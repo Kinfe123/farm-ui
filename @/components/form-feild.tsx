@@ -20,7 +20,6 @@ import circle from "../../public/circle.png";
 export function FormField() {
   return (
     <section className="custom-screen-lg  mx-auto z-20">
-      
       <div className="relative backdrop-blur-3xl z-10 max-w-4xl mx-auto  space-y-4">
         <Card className="relative mt-20 py-10 z-20 backdrop-blur-3xl">
           <CardHeader>
@@ -30,14 +29,7 @@ export function FormField() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="">
-              {/* <Image
-            src={cube}
-            alt="FarmUI UI"
-            className="absolute left-1/2 translate-x-[-10%] -translate-y-96 lg:translate-x-[-32%] inset-x-0   max-w-full mx-auto"
-
-          /> */}
-            </div>
+            <div className=""></div>
             <form className="space-y-4 z-20">
               <div className="grid grid-cols-2 gap-4 z-20">
                 <div className="space-y-2">

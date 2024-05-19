@@ -9,9 +9,9 @@ import Card from "components/ui/Features/Card";
 import Features from "components/ui/Features/Features";
 import LinkItem from "components/ui/LinkItem";
 import { ChevronRight } from "lucide-react";
-import Image from "next/image"
-import circle from '../../public/circle.png'
-import bgback from '../../public/bg-back.png'
+import Image from "next/image";
+import circle from "../../public/circle.png";
+import bgback from "../../public/bg-back.png";
 type Feature = {
   title: string;
   desc: string;
@@ -70,29 +70,28 @@ const CareerPage = () => {
           </ul>
         </div>
         <div className=" mt-[-30px] pt-20 relative overflow-y-hidden overflow-x-hidden custom-screen-lg">
-        <HeroAnimated
+          <HeroAnimated
             header="Say something."
             headerClassName="text-center mx-auto max-w-4xl text-5xl md:text-6xl tracking-tighter lg:text-7xl font-bold font-geist  font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0  md:pb-0 mt-1"
             description="We will hear you for sure."
             descriptionClassName="mx-auto text-center text-zinc-400 text-lg lg:max-w-2xl mb-[-80px]"
           ></HeroAnimated>
-        <FormField />
+          <FormField />
 
-        <Image
-          src={circle}
-          width={900}
-          height={900}
-          alt="bgback"
-          className="absolute blur-[4px] translate-y-[-100%]  translate-x-32 max-w-full mx-auto"
-        />
-        <Image
-          src={bgback}
-          width={900}
-          height={900}
-          alt="bgback"
-          className="absolute inset-x-0 top-[50px]  -translate-x-40 max-w-full mx-auto"
-        />
-
+          <Image
+            src={circle}
+            width={900}
+            height={900}
+            alt="bgback"
+            className="absolute blur-[4px] translate-y-[-100%]  translate-x-32 max-w-full mx-auto"
+          />
+          <Image
+            src={bgback}
+            width={900}
+            height={900}
+            alt="bgback"
+            className="absolute inset-x-0 top-[50px]  -translate-x-40 max-w-full mx-auto"
+          />
         </div>
       </section>
     </div>
