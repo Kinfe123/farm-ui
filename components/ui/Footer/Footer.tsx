@@ -4,7 +4,7 @@ import Brand from "components/ui/Brand";
 import BorderGradient from "./BorderGradient";
 import BgGradient from "./BgGradient";
 import { IconGithub } from "components/icons";
-
+import { CommandShortcut, Command } from "@/components/ui/command";
 const navigation = [
   { name: "Demo", href: "/demo" },
   { name: "License", href: "/license" },
@@ -20,8 +20,6 @@ const marsNavigation = [
   { name: "Dev Hunt", href: "https://devhunt.org" },
 ];
 
-
-
 export default () => (
   <footer className="relative mt-40 pt-24 overflow-hidden">
     <div>
@@ -29,7 +27,9 @@ export default () => (
       <BgGradient className="absolute inset-x-0 top-0 mx-auto" />
       <div className="custom-screen-lg pb-6 gap-x-8 items-start justify-between flex-wrap relative sm:flex">
         <div className="max-w-xs space-y-3">
-           <h1 className="font-display font-semibold bg-gradient-to-tr from-white/70 via-white/90 to-white/50 bg-clip-text text-transparent  text-4xl md:text-5xl lg:text-6xl">FarmUI</h1>
+          <h1 className="font-display font-semibold bg-gradient-to-tr from-white/70 via-white/90 to-white/50 bg-clip-text text-transparent  text-4xl md:text-5xl lg:text-6xl">
+            FarmUI
+          </h1>
           <p className="text-sm text-zinc-300">
             We are in a mission to make the proccess of building UI components
             easier.
@@ -87,7 +87,24 @@ export default () => (
       </div>
       <div className="text-sm custom-screen text-center border-t border-zinc-800">
         <div className="text-zinc-300 py-8">
-          &copy; {(new Date).getFullYear()} - FarmUI  All rights reserved.
+          &copy; {new Date().getFullYear()} - FarmUI All rights reserved.
+        <div className="mx-auto max-w-full mt-4 ">
+          <Command className="inline-flex">
+            <h1>
+              Made with{" "}
+              <CommandShortcut className="bg-gradient-to-tr from-zinc-600 via-zinc-600/90 to-zinc-500 rounded-xl px-2">
+                <code>:cup-of-tea</code>
+              </CommandShortcut>{" "}
+              by{" "}
+              <a
+                href="https://github.com/Kinfe123"
+                className="cursor-pointer underline underline-offset-2 underline-red-900"
+              >
+                KiNFiSH
+              </a>
+            </h1>
+          </Command>
+        </div>
         </div>
       </div>
     </div>
