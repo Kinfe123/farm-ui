@@ -71,7 +71,7 @@ export default async () => {
             <div className="max-w-[70reem] mx-auto space-y-4 text-center">
               <HeroAnimated
                 header="Sneak peek of the component we got for you to copy"
-                headerClassName="text-center w-full  text-5xl md:text-7xl tracking-tighter mx-auto lg:text-8xl  font-geist font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-4 mt-1"
+                headerClassName="text-center w-full  text-5xl md:text-7xl tracking-tighter mx-auto lg:text-8xl  font-geist font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0  md:pb-0 mt-1"
                 description=" Take a closer look at our UI components and see how they can
             elevate your website or web application"
                 descriptionClassName="text-zinc-400 max-w-xl text-sm sm:text-md md:text-lg lg:text-lg mx-auto"

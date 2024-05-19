@@ -8,15 +8,9 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import featureCover from "public/feature-cover.svg";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import LinkItem from "components/ui/LinkItem";
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import bgback from "../../public/bg-back.png";
-import cube from "../../public/cube.png";
-import circle from "../../public/circle.png";
 export function FormField() {
   return (
     <section className="custom-screen-lg  mx-auto z-20">
