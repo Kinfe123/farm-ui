@@ -97,6 +97,7 @@ export default () => (
               </CommandShortcut>{" "}
               by{" "}
               <a
+                target="_blank"
                 href="https://github.com/Kinfe123"
                 className="cursor-pointer underline underline-offset-2 underline-red-900"
               >
