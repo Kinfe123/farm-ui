@@ -7,6 +7,7 @@ import bgback from "../../../public/bg-back.png";
 import { toast } from "@/components/ui/use-toast";
 import { ChevronRightIcon, Loader } from "lucide-react";
 import LinkItem from "../LinkItem";
+import { addSubscription } from "actions/emailSubRelated";
 
 function ArrowRightIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -39,23 +40,24 @@ export function GetStarted() {
       return;
     }
     startTransition(() => {
-      //   addSubscription(email)
-      //     .then((res) => {
-      //       toast({
-      //         title: "Subscription Added",
-      //         description:
-      //           "You have successfully subscribed to codenight news letter",
-      //       });
-      //       setEmail("")
-      //     })
-      //     .catch((err) => {
-      //       toast({
-      //         title: "Something went wrong",
-      //         description:
-      //           "There is something wrong while subscribing to codenight news letter",
-      //         variant: "destructive",
-      //       });
-      //     });
+
+        addSubscription(email)
+          .then((res) => {
+            toast({
+              title: "Subscription Added",
+              description:
+                "You have successfully subscribed to codenight news letter",
+            });
+            setEmail("")
+          })
+          .catch((err) => {
+            toast({
+              title: "Something went wrong",
+              description:
+                "There is something wrong while subscribing to codenight news letter",
+              variant: "destructive",
+            });
+          });
     });
   };
 

@@ -15,7 +15,7 @@ import LinkItem from "components/ui/LinkItem";
 import { ChevronRight, Loader2 } from "lucide-react";
 import { useState, useTransition } from "react";
 import { useToast } from "@/components/ui/use-toast";
-import { saySomething } from "actions/saySomething";
+import { saySomething } from "actions/emailSubRelated";
 import {Button} from "@/components/ui/button";
 type FormType = {
   firstName: string;
