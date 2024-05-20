@@ -100,8 +100,8 @@ export default function RootLayout({
             alt="back bg"
           />
           <Navbar />
-          <main>{children}</main>
           <Toaster />
+          <main>{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

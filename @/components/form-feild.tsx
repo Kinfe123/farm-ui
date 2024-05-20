@@ -33,8 +33,8 @@ export function FormField() {
     email: "",
     message: "",
   });
+  
   const handleChange = (e: any) => {
-    console.log("Hello world", e);
     setForms({ ...forms, [e.target.name]: e.target.value });
   };
   const onSubmit = (e:any) => {
@@ -48,15 +48,21 @@ export function FormField() {
       })
         .then((res) => {
           toast({
-            // position: "bottom-left",
+            position: "bottom-left",
             title: "Message submitted",
             description:
               "You have successfully submitted your message. we will keep in touch with you with the speed of light :)",
           });
+          setForms({
+            firstName:"",
+            lastName:"",
+            email: "",
+            message: ""
+          })
         })
         .catch((err) => {
           toast({
-            // position: "bottom-left",
+            position: "bottom-left",
 
             title: "Something went wrong",
             description:
@@ -117,9 +123,12 @@ export function FormField() {
                 <Textarea
                   required
                   value={forms.message}
+                  
                   onChange={handleChange}
                   className="min-h-[100px]"
                   name="message"
+                  maxLength={200}
+                  
                   placeholder="Enter your message"
                 />
               </div>
