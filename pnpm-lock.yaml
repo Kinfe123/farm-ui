@@ -79,7 +79,7 @@ dependencies:
     version: 3.6.0
   drizzle-orm:
     specifier: ^0.29.2
-    version: 0.29.5(@neondatabase/serverless@0.9.3)(@opentelemetry/api@1.8.0)(@types/react@18.3.2)(react@18.3.1)
+    version: 0.29.5(@neondatabase/serverless@0.9.3)(@opentelemetry/api@1.8.0)(@types/react@18.3.2)(postgres@3.4.4)(react@18.3.1)
   firebase:
     specifier: ^9.9.0
     version: 9.23.0
@@ -122,6 +122,9 @@ dependencies:
   path:
     specifier: ^0.12.7
     version: 0.12.7
+  postgres:
+    specifier: ^3.4.4
+    version: 3.4.4
   prismjs:
     specifier: ^1.29.0
     version: 1.29.0
@@ -4272,7 +4275,7 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.29.5(@neondatabase/serverless@0.9.3)(@opentelemetry/api@1.8.0)(@types/react@18.3.2)(react@18.3.1):
+  /drizzle-orm@0.29.5(@neondatabase/serverless@0.9.3)(@opentelemetry/api@1.8.0)(@types/react@18.3.2)(postgres@3.4.4)(react@18.3.1):
     resolution: {integrity: sha512-jS3+uyzTz4P0Y2CICx8FmRQ1eplURPaIMWDn/yq6k4ShRFj9V7vlJk67lSf2kyYPzQ60GkkNGXcJcwrxZ6QCRw==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
@@ -4346,6 +4349,7 @@ packages:
       '@neondatabase/serverless': 0.9.3
       '@opentelemetry/api': 1.8.0
       '@types/react': 18.3.2
+      postgres: 3.4.4
       react: 18.3.1
     dev: false
 
@@ -7725,6 +7729,11 @@ packages:
 
   /postgres-range@1.1.4:
     resolution: {integrity: sha512-i/hbxIE9803Alj/6ytL7UHQxRvZkI9O4Sy+J3HGc4F4oo/2eQAjTSNJ0bfxyse3bH0nuVesCk+3IRLaMtG3H6w==}
+    dev: false
+
+  /postgres@3.4.4:
+    resolution: {integrity: sha512-IbyN+9KslkqcXa8AO9fxpk97PA4pzewvpi2B3Dwy9u4zpV32QicaEdgmF3eSQUzdRk7ttDHQejNgAEr4XoeH4A==}
+    engines: {node: '>=12'}
     dev: false
 
   /prelude-ls@1.2.1:

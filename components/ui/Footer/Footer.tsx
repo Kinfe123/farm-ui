@@ -38,7 +38,7 @@ export default () => (
             <a
               aria-label="Facebook account"
               target="_blank"
-              href="https://github.com/kkinfe123/farm-ui"
+              href="https://github.com/kinfe123/farm-ui"
             >
               <IconGithub className="w-6 h-6 text-zinc-400" />
             </a>

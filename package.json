@@ -48,6 +48,7 @@
     "next-mdx-remote": "^3.0.8",
     "next-themes": "^0.2.1",
     "path": "^0.12.7",
+    "postgres": "^3.4.4",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-day-picker": "^8.10.1",

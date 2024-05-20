@@ -1,5 +1,7 @@
 'use server'
 
+import { db } from "db"
+import {subscribers , messages} from 'db/schema'
 type SaySomethingProps = {
     firstName: string,
     lastName: string,
@@ -8,5 +10,15 @@ type SaySomethingProps = {
 }
 
 export const saySomething  = async({firstName , lastName , email , message}: SaySomethingProps) => {
-    // const say_something = await db
-}
+    const say_something = await db.insert(messages).values({
+        email,
+        firstName,
+        lastName,
+        message,
+    })
+    console.log("the messages are; "  , say_something)
+    return say_something
+
+    
+
+}                           
