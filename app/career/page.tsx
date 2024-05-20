@@ -88,12 +88,12 @@ const CareerPage = () => {
             ))}
           </ul>
         </div>
-        <div className=" mt-[-30px] pt-20 relative overflow-y-hidden overflow-x-hidden custom-screen-lg">
+        <div className=" mt-10 pt-20 relative overflow-y-hidden overflow-x-hidden custom-screen-lg">
           <HeroAnimated
             header="Say something."
-            headerClassName="text-center mx-auto max-w-4xl text-5xl md:text-6xl tracking-tighter lg:text-7xl font-bold font-geist  font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0  md:pb-0 mt-1"
+            headerClassName="text-center mx-auto max-w-4xl text-5xl md:text-6xl tracking-tighter lg:text-7xl font-bold font-geist  font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0  md:pb-0 mt-1 mb-[-115px]"
             description="We will hear you for sure."
-            descriptionClassName="mx-auto text-center text-zinc-400 text-lg lg:max-w-2xl mb-[-80px]"
+            descriptionClassName="mx-auto text-center text-zinc-400 text-lg lg:max-w-2xl mb-[-10px]"
           ></HeroAnimated>
           <FormField />
 
