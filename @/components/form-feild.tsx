@@ -90,6 +90,7 @@ export function FormField() {
                 <div className="space-y-2">
                   <Label htmlFor="first-name">First Name</Label>
                   <Input
+
                     value={forms.firstName}
                     onChange={(e) => handleChange(e)}
                     name="firstName"
@@ -110,6 +111,7 @@ export function FormField() {
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
+
                   value={forms.email}
                   name="email"
                   onChange={handleChange}
@@ -124,8 +126,8 @@ export function FormField() {
                   required
                   value={forms.message}
                   
-                  onChange={handleChange}
-                  className="min-h-[100px]"
+                   className="bg-transparent"
+                   onChange={handleChange}
                   name="message"
                   maxLength={200}
                   

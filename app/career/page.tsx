@@ -102,7 +102,7 @@ const CareerPage = () => {
             width={900}
             height={900}
             alt="bgback"
-            className="absolute blur-[4px] translate-y-[-100%]  translate-x-32 max-w-full mx-auto"
+            className="absolute blur-[4px] backdrop-blur-sm opacity-40 animate-pulse translate-y-[-100%]  translate-x-32 max-w-full mx-auto"
           />
           <Image
             src={bgback}
