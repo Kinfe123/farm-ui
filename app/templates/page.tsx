@@ -4,6 +4,7 @@ import { Templates } from "types/types";
 import { allTemplates } from "contentlayer/generated";
 import HeroAnimated from "components/HeroAnimated";
 import {Tabs , TabsContent , TabsTrigger , TabsList} from "@/components/ui/tabs"
+import { Separator } from "@/components/ui/separator";
 
 type MetaInfo = {
   title: string;
@@ -55,6 +56,7 @@ const Template = async () => {
             id="templates"
             className="mt-32 max-w-4xl mx-auto  text-white space-y-7 divide-y divide-zinc-800 gap-14 grid-cols-1 lg:grid lg:space-y-0 lg:divide-y-0"
           >
+          <Separator className="h-[2px] bg-white/5 max-w-3xl mx-auto" />
             {templates.map((template) => {
               return <TemplateCard item={template} />;
             })}
