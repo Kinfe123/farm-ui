@@ -28,5 +28,6 @@ export const addSubscription = async ({ email }: { email: string }) => {
   const email_sub = await db.insert(subscribers).values({
     email,
   });
+  console.log("mail sb" , email_sub)
   return email_sub;
 };

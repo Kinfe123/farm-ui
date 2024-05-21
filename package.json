@@ -41,6 +41,7 @@
     "google": "link:@next/third-parties/google",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.9.0",
+    "hono": "^4.3.8",
     "lucide-react": "^0.378.0",
     "moment": "^2.29.4",
     "next": "14.0.3",

@@ -1,3 +1,4 @@
+import Calendy from "components/Calendly";
 import DashboardDemo from "components/Dashbboad/ShowCase";
 import FeaturesAsGrid from "components/FeaturesAsGrid";
 import CTAshow from "components/ui/CTAShow";
@@ -23,6 +24,8 @@ export default () => {
       <SupportedFrameworks />
       <CTAshow />
       <GetStarted />
+      <Calendy />
+      
     </>
   );
 };

@@ -8,6 +8,7 @@ import { toast } from "@/components/ui/use-toast";
 import { ChevronRightIcon, Loader, Loader2 } from "lucide-react";
 import LinkItem from "../LinkItem";
 import { addSubscription } from "actions/emailSubRelated";
+import { cn } from "@/lib/utils";
 
 function ArrowRightIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -127,14 +128,15 @@ export function GetStarted() {
                   className="-my-2.5 flex-auto  bg-transparent pl-6 pr-2.5 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none"
                 />
                 <LinkItem
+                  
                   onClick={handleSubmit}
                   variant="shiny"
                   href=""
-                  className="group w-fit px-10  bg-zinc-800 hover:bg-zinc-700 py-4"
+                  className={cn(`group w-fit px-10  bg-zinc-800 hover:bg-zinc-700 py-4`, pending ? "bg-opacity-75 cursor-not-allowed" : "")}
                 >
                   Subscribe{" "}
                   {pending ? (
-                    <Loader2 className="animate-spin w-3 h-3 flex items-center" />
+                    <Loader2 className="ml-1 inline animate-spin w-3 h-3  items-center" />
                   ) : (
                     <ChevronRightIcon className="w-4 h-4 inline-flex group-hover:translate-x-1 group-hover:duration-300 group-hover:transition-all " />
                   )}
