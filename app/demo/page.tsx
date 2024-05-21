@@ -81,21 +81,7 @@ export default async () => {
             </div>
           </div>
           <div className="my-10 gap-3 flex justify-center items-center max-w-md mx-auto">
-            {/* <Button
-
-            variant="default"
-            // href="/components"
-            className="w-full bg-transparent text-white border-[1px] border-gray-500/10  py-5"
-          >
-            Read Docs 
-          </Button>
-          <LinkItem
-            variant="shiny"
-            href="/components"
-            className="w-full  bg-zinc-800   hover:bg-zinc-700 md:bg-shiny py-5"
-          >
-            Explore Components <ChevronRightIcon className="w-4 h-4 inline-flex"/>
-          </LinkItem> */}
+        
 
             <Shiny to="components" to_label="Explore components" />
           </div>
@@ -121,15 +107,6 @@ export default async () => {
             </Link>
           </div>
         </section>
-        {/* <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute top-28 right-0 min-h-screen"> */}
-        {/* <Image
-          src={bghero}
-          width={100}
-          height={1000}
-          className="w-full bg-center -z-1 "
-          alt="Hero Image"
-        /> */}
-        {/* </div> */}
       </div>
     );
   } catch (err) {

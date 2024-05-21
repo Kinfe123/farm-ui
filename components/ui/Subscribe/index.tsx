@@ -5,8 +5,10 @@ import { Button } from "@/components/ui/button";
 import backgroundImage from "../../../public/circle.png";
 import bgback from "../../../public/bg-back.png";
 import { toast } from "@/components/ui/use-toast";
-import { ChevronRightIcon, Loader } from "lucide-react";
+import { ChevronRightIcon, Loader, Loader2 } from "lucide-react";
 import LinkItem from "../LinkItem";
+import { addSubscription } from "actions/emailSubRelated";
+import { cn } from "@/lib/utils";
 
 function ArrowRightIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -26,36 +28,36 @@ function ArrowRightIcon(props: React.ComponentPropsWithoutRef<"svg">) {
 export function GetStarted() {
   const [pending, startTransition] = useTransition();
   const [email, setEmail] = useState<string>("");
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
 
     if (!email.length) {
       toast({
         title: "Email is not provided",
         description:
-          "Email must be provided to subscribe to the codenight news",
+          "Email must be provided to subscribe to the farmui news",
         variant: "destructive",
       });
       return;
     }
     startTransition(() => {
-      //   addSubscription(email)
-      //     .then((res) => {
-      //       toast({
-      //         title: "Subscription Added",
-      //         description:
-      //           "You have successfully subscribed to codenight news letter",
-      //       });
-      //       setEmail("")
-      //     })
-      //     .catch((err) => {
-      //       toast({
-      //         title: "Something went wrong",
-      //         description:
-      //           "There is something wrong while subscribing to codenight news letter",
-      //         variant: "destructive",
-      //       });
-      //     });
+      addSubscription({email:email})
+        .then((res) => {
+          toast({
+            title: "Subscription Added",
+            description:
+              "You have successfully subscribed to farmui news letter",
+          });
+          setEmail("");
+        })
+        .catch((err) => {
+          toast({
+            title: "Something went wrong",
+            description:
+              "There is something wrong while subscribing to farmui news letter",
+            variant: "destructive",
+          });
+        });
     });
   };
 
@@ -63,16 +65,14 @@ export function GetStarted() {
     <section id="newsletter" aria-label="Newsletter" className="font-display ">
       <div className="rounded-3xl custom-screen-lg mx-auto mt-[-20px] -z-1">
         <div className="relative font-display -mx-4 overflow-hidden bg-gradient-to-tr from-transparent via-transparent/10 to-transparent/5 px-4 py-20 sm:-mx-6 sm:px-6 md:mx-0 md:rounded-[2.0rem] md:px-16 xl:px-24 xl:py-36">
-        <Image
+          <Image
             src={backgroundImage}
             width={900}
             height={900}
             alt="bgback"
             className="absolute left-1/2 top-0 translate-x-[-10%] translate-y-[-10%] lg:translate-x-[-32%] inset-x-0  z-10  max-w-full mx-auto"
           />
-          <div
-            className="absolute left-1/2 top-0 translate-x-[-10%] h-full w-[1450px] hidden translate-y-[-45%] lg:translate-x-[-32%] animate-pulse duration-[4s] linear infinite"
-          />
+          <div className="absolute left-1/2 top-0 translate-x-[-10%] h-full w-[1450px] hidden translate-y-[-45%] lg:translate-x-[-32%] animate-pulse duration-[4s] linear infinite" />
           <Image
             src={bgback}
             width={900}
@@ -87,7 +87,7 @@ export function GetStarted() {
             alt="bgback"
             className="absolute inset-x-0 top-[-300px] z-10 -translate-x-10 max-w-full mx-auto"
           />
-         
+
           <Image
             src={bgback}
             width={900}
@@ -110,7 +110,7 @@ export function GetStarted() {
               </p>
               <p className="mt-4 text-lg tracking-tight text-white">
                 Get updates on all of our events and be the first to get
-                notified when tickets go on sale.
+                notified when we launch something cool.
               </p>
             </div>
             <form>
@@ -120,7 +120,7 @@ export function GetStarted() {
               <div className="mt-5 flex w-full ml-auto rounded-3xl bg-white py-2.5 pr-2.5 shadow-xl shadow-white/5 focus-within:ring-2 focus-within:ring-black">
                 <input
                   type="email"
-                  // required
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email address"
@@ -128,12 +128,18 @@ export function GetStarted() {
                   className="-my-2.5 flex-auto  bg-transparent pl-6 pr-2.5 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none"
                 />
                 <LinkItem
+                  
+                  onClick={handleSubmit}
                   variant="shiny"
-                  href="/components"
-                  className="group w-fit px-10  bg-zinc-800 hover:bg-zinc-700 py-4"
+                  href=""
+                  className={cn(`group w-fit px-10  bg-zinc-800 hover:bg-zinc-700 py-4`, pending ? "bg-opacity-75 cursor-not-allowed" : "")}
                 >
                   Subscribe{" "}
-                  <ChevronRightIcon className="w-4 h-4 inline-flex group-hover:translate-x-1 group-hover:duration-300 group-hover:transition-all " />
+                  {pending ? (
+                    <Loader2 className="ml-1 inline animate-spin w-3 h-3  items-center" />
+                  ) : (
+                    <ChevronRightIcon className="w-4 h-4 inline-flex group-hover:translate-x-1 group-hover:duration-300 group-hover:transition-all " />
+                  )}
                 </LinkItem>
               </div>
             </form>

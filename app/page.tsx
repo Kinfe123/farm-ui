@@ -1,5 +1,7 @@
+import Calendy from "components/Calendly";
 import DashboardDemo from "components/Dashbboad/ShowCase";
 import FeaturesAsGrid from "components/FeaturesAsGrid";
+import GithubOpenSource from "components/Github";
 import CTAshow from "components/ui/CTAShow";
 import { GridFeatureDemo } from "components/ui/FeatureBenito";
 import Features from "components/ui/Features/Features";
@@ -18,11 +20,14 @@ export default () => {
       </div>
       <Features />
       <GridSlide />
+      <Calendy />
       <GridFeatureDemo />
       <FeaturesAsGrid />
       <SupportedFrameworks />
       <CTAshow />
       <GetStarted />
+      {/* <GithubOpenSource /> */}
+      
     </>
   );
 };

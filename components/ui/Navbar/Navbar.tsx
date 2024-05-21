@@ -17,9 +17,7 @@ export default () => {
     { title: "Templates", path: "/templates" },
     { title: "Demo", path: "/demo" },
     {
-      title: "Github",
-      path: "https://github.com/Kinfe123/farm-ui",
-      props: { target: "_blank" },
+      title: "Join",path:'/join'
     },
   ];
 
@@ -84,7 +82,7 @@ export default () => {
                       key={idx}
                       className="font-medium text-sm text-zinc-400 hover:text-zinc-200 duration-200"
                     >
-                      <Link {...item.props} href={item.path} className="block">
+                      <Link  href={item.path} className="block">
                         {item.title}
                       </Link>
                       {state ? <hr className="opacity-50 text-gray-400 my-2 pt-3"/> : ""}

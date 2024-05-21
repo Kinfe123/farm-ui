@@ -11,6 +11,7 @@ import Image from "next/image";
 import bgback from "../public/bg-back.png";
 import { ThemeProvider } from "components/ThemeProvider";
 import { GeistSans } from "geist/font/sans";
+import { Toaster } from "@/components/ui/toaster"
 
 const { title, desc, ogImage } = metatag;
 export const metadata = {
@@ -99,6 +100,7 @@ export default function RootLayout({
             alt="back bg"
           />
           <Navbar />
+          <Toaster />
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
