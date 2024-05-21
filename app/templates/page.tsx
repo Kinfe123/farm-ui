@@ -31,7 +31,6 @@ export const metadata = {
 
 const Template = async () => {
   const templates = allTemplates;
-
   return (
     <>
       <section className="custom-screen mt-20">

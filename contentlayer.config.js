@@ -182,8 +182,10 @@ export const Templates = defineDocumentType(() => ({
     description: {
       type: "string",
     },
-    image: {
-        type: "string",
+    images: {
+        type: "list",
+        of: { type: "string" },
+        
         required:true
     },
     is_free: {

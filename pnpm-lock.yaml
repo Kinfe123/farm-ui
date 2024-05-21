@@ -80,6 +80,9 @@ dependencies:
   drizzle-orm:
     specifier: ^0.29.2
     version: 0.29.5(@neondatabase/serverless@0.9.3)(@opentelemetry/api@1.8.0)(@types/react@18.3.2)(postgres@3.4.4)(react@18.3.1)
+  embla-carousel-react:
+    specifier: ^8.1.3
+    version: 8.1.3(react@18.3.1)
   firebase:
     specifier: ^9.9.0
     version: 9.23.0
@@ -4361,6 +4364,28 @@ packages:
 
   /electron-to-chromium@1.4.773:
     resolution: {integrity: sha512-87eHF+h3PlCRwbxVEAw9KtK3v7lWfc/sUDr0W76955AdYTG4bV/k0zrl585Qnj/skRMH2qOSiE+kqMeOQ+LOpw==}
+
+  /embla-carousel-react@8.1.3(react@18.3.1):
+    resolution: {integrity: sha512-YrezDPgxPDKa+OKMhSrwuPEU2OgF5147vFW473EWT3bx9DETV3W/RyWTxq0/2pf3M4VXkjqFNbS/W1xM8lTaVg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.1 || ^18.0.0
+    dependencies:
+      embla-carousel: 8.1.3
+      embla-carousel-reactive-utils: 8.1.3(embla-carousel@8.1.3)
+      react: 18.3.1
+    dev: false
+
+  /embla-carousel-reactive-utils@8.1.3(embla-carousel@8.1.3):
+    resolution: {integrity: sha512-D8tAK6NRQVEubMWb+b/BJ3VvGPsbEeEFOBM6cCCwfiyfLzNlacOAt0q2dtUEA9DbGxeWkB8ExgXzFRxhGV2Hig==}
+    peerDependencies:
+      embla-carousel: 8.1.3
+    dependencies:
+      embla-carousel: 8.1.3
+    dev: false
+
+  /embla-carousel@8.1.3:
+    resolution: {integrity: sha512-GiRpKtzidV3v50oVMly8S+D7iE1r96ttt7fSlvtyKHoSkzrAnVcu8fX3c4j8Ol2hZSQlVfDqDIqdrFPs0u5TWQ==}
+    dev: false
 
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
