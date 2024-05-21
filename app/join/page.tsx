@@ -18,6 +18,11 @@ type Feature = {
   icon: React.ReactNode;
 };
 
+export const metadata = {
+  title: "Join Us.",
+  description:'Join the gang for creating awesome products '
+}
+
 const CareerPage = () => {
   const features: Feature[] = [
     {
