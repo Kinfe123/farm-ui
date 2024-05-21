@@ -19,12 +19,12 @@ export default () => {
       </div>
       <Features />
       <GridSlide />
+      <Calendy />
       <GridFeatureDemo />
       <FeaturesAsGrid />
       <SupportedFrameworks />
       <CTAshow />
       <GetStarted />
-      <Calendy />
       
     </>
   );

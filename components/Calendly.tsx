@@ -69,13 +69,6 @@ export default function Calendly() {
             descriptionClassName="mr-auto text-zinc-400 text-left text-lg lg:max-w-2xl py-5"
           >
         </HeroAnimated>
-          {/* <h1 className="mt-10 text-4xl font-bold font-geist tracking-tight text-white sm:text-6xl">
-            Deploy to the cloud with confidence
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-            fugiat veniam occaecat fugiat aliqua.
-          </p> */}
           <div className="group mt-0 flex items-center gap-x-6">
             <LinkItem 
               href="https://calendly.com/kinfetare83/30min"
