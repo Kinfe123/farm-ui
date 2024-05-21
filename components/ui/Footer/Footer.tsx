@@ -26,7 +26,7 @@ export default () => (
     <div>
       <BorderGradient className=" absolute inset-x-0 top-0 mx-auto" />
       <BgGradient className="absolute inset-x-0 top-0 mx-auto" />
-      <Image src={githubIcon} alt="github icon" className="absolute  md:block   -translate-x-1/2 -translate-y-1/2absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-tl-2xl z-20 opacity-30"/>
+      <Image src={githubIcon} alt="github icon" className="absolute   top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] rounded-tl-2xl z-20 opacity-40"/>
       <div className="custom-screen-lg pb-6 gap-x-8 items-start justify-between flex-wrap relative sm:flex">
         <div className="max-w-xs space-y-3">
           <h1 className="font-display font-semibold bg-gradient-to-tr from-white/70 via-white/90 to-white/50 bg-clip-text text-transparent  text-4xl md:text-5xl lg:text-6xl">
