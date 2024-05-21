@@ -57,7 +57,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
         <div className="max-w-screen max-w-3xl mx-auto lg:max-w-none">
           <div className="gap-10 lg:flex">
             <div className="flex-1 rounded-xl">
-              <img src={`/${template_mod?.image}`} className="rounded-xl" />
+              <img src={`/${template_mod?.images[0]}`} className="rounded-xl" />
             </div>
             <div className="flex-1 space-y-6 mt-12 lg:max-w-sm lg:mt-0 xl:max-w-md">
               <div className="text-zinc-50 font-semibold flex justify-between items-center">
