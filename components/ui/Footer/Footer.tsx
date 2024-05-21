@@ -4,7 +4,7 @@ import Brand from "components/ui/Brand";
 import BorderGradient from "./BorderGradient";
 import BgGradient from "./BgGradient";
 import { IconGithub } from "components/icons";
-import githubIcon from '../../../public/github.webp'
+import githubIcon from "../../../public/github.webp";
 import { CommandShortcut, Command } from "@/components/ui/command";
 const navigation = [
   { name: "Demo", href: "/demo" },
@@ -26,8 +26,12 @@ export default () => (
     <div>
       <BorderGradient className=" absolute inset-x-0 top-0 mx-auto" />
       <BgGradient className="absolute inset-x-0 top-0 mx-auto" />
-      <Image src={githubIcon} alt="github icon" className="absolute   top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] rounded-tl-2xl z-20 opacity-40"/>
-      <div className="custom-screen-lg pb-6 gap-x-8 items-start justify-between flex-wrap relative sm:flex">
+      <Image
+        src={githubIcon}
+        alt="github icon"
+        className="absolute  rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-[44%] rounded-tl-2xl -z-2 opacity-40 -z-2"
+      />
+      <div className="custom-screen-lg z-20 pb-6 gap-x-8 items-start justify-between flex-wrap relative sm:flex">
         <div className="max-w-xs space-y-3">
           <h1 className="font-display font-semibold bg-gradient-to-tr from-white/70 via-white/90 to-white/50 bg-clip-text text-transparent  text-4xl md:text-5xl lg:text-6xl">
             FarmUI
@@ -47,7 +51,7 @@ export default () => (
             <a
               aria-label="Facebook account"
               target="_blank"
-              href="https://twitter.com/farm-ui?s=09"
+              href="https://twitter.com/KinfishT-ui?s=09"
             >
               <Image
                 src="/images/tw-icon.svg"
@@ -87,27 +91,27 @@ export default () => (
           </ul>
         </div>
       </div>
-      <div className="text-sm custom-screen text-center ">
+      <div className="text-sm custom-screen text-center z-20">
         <div className="text-zinc-300 py-8">
           &copy; {new Date().getFullYear()} - FarmUI All rights reserved.
-        <div className="mx-auto max-w-full mt-4 ">
-          <Command className="inline-flex">
-            <h1>
-              Made with{" "}
-              <CommandShortcut className="bg-gradient-to-tr from-zinc-600 via-zinc-600/90 to-zinc-500 rounded-xl px-2">
-                <code>:cup-of-tea</code>
-              </CommandShortcut>{" "}
-              by{" "}
-              <a
-                target="_blank"
-                href="https://github.com/Kinfe123"
-                className="cursor-pointer underline underline-offset-2 underline-red-900"
-              >
-                KiNFiSH
-              </a>
-            </h1>
-          </Command>
-        </div>
+          <div className="mx-auto max-w-full mt-4">
+            <Command className="z-[100]">
+              <h1>
+                Made with{" "}
+                <CommandShortcut className="bg-gradient-to-tr from-zinc-600 via-zinc-600/90 to-zinc-500 rounded-xl px-2">
+                  <code>:cup-of-tea</code>
+                </CommandShortcut>{" "}
+                by{" "}
+                <a
+                  target="_blank"
+                  href="https://github.com/Kinfe123"
+                  className="cursor-pointer z-2- underline underline-offset-2 underline-red-900"
+                >
+                  KiNFiSH
+                </a>
+              </h1>
+            </Command>
+          </div>
         </div>
       </div>
     </div>

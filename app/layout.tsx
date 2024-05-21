@@ -78,10 +78,10 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@farmui" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={cn(inter.className, displayFont.variable , dmSans.variable, GeistSans.variable , "bg-black")}>
+      <body className={cn(inter.className, displayFont.variable , dmSans.variable, GeistSans.variable , "bg-black overflow-x-hidden")}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
@@ -93,7 +93,7 @@ export default function RootLayout({
             alt="back bg"
           />
           <Image
-            className="absolute top-0 -translate-y-1/2 z-20 translate-x-1/2"
+            className="absolute top-0 -translate-y-1/2 z-20 translate-x-1/2 "
             src={bgback}
             width={1000}
             height={1000}
