@@ -19,7 +19,7 @@ type Feature = {
 };
 
 export const metadata = {
-  title: "Join Us.",
+  title: "Join Us",
   description:'Join the gang for creating awesome products '
 }
 
@@ -71,7 +71,7 @@ const CareerPage = () => {
                   ></path>
                 </g>
               </svg>{" "}
-              Join our telegram.
+              Join our telegram
               <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
             </LinkItem>
             <LinkItem

@@ -80,7 +80,7 @@ export default async ({ params: { slug } }: { params: Params }) => {
     return (
       <>
         <div>
-          <h1 className="heading text-3xl">{pageDetails.section_name}</h1>
+          <h1 className="font-semibold text-4xl font-geist">{pageDetails.section_name}</h1>
           <p className="mt-3 text-zinc-300">{pageDetails.description}</p>
         </div>
         <div className="mt-12 space-y-12">

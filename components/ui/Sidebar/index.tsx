@@ -63,7 +63,7 @@ export default () => {
   };
 
   return (
-    <div className="flex-none fixed inset-x-0 z-40 top-16 w-full xl:relative xl:max-w-[16rem] xl:top-0 xl:inset-x-[unset]">
+    <div className="flex-none fixed inset-x-0 z-40 top-16 w-full xl:relative xl:max-w-[18rem] xl:top-0 xl:inset-x-[unset]">
       <div className="py-2.5 px-4 bg-transparent border-y border-zinc-800 xl:px-8 xl:hidden">
         <button
           className="flex gap-x-2 items-center text-gray-300"
