@@ -24,12 +24,14 @@ const marsNavigation = [
 export default () => (
   <footer className="relative mt-40 pt-24 overflow-hidden">
     <div>
-      <BorderGradient className=" absolute inset-x-0 top-0 mx-auto" />
+      <BorderGradient className=" absolute inset-x-0 top-0  mx-auto" />
       <BgGradient className="absolute inset-x-0 top-0 mx-auto" />
+      <BgGradient className="absolute  bottom-0 left-0 top-0" />
+      
       <Image
         src={githubIcon}
         alt="github icon"
-        className="absolute  rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-[44%] rounded-tl-2xl -z-2 opacity-40 -z-2"
+        className="absolute top-1/2 left-10 -translate-x-1/2 -translate-y-[44%]  -z-2 opacity-40 -z-2"
       />
       <div className="custom-screen-lg z-20 pb-6 gap-x-8 items-start justify-between flex-wrap relative sm:flex">
         <div className="max-w-xs space-y-3">
@@ -76,7 +78,7 @@ export default () => (
               </li>
             ))}
           </ul>
-          <ul className="space-y-2">
+          {/* <ul className="space-y-2">
             <li className="text-zinc-100 font-medium">More from us</li>
             {marsNavigation.map((item, idx) => (
               <li
@@ -88,14 +90,15 @@ export default () => (
                 </Link>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
-      <div className="text-sm custom-screen text-center z-20">
-        <div className="text-zinc-300 py-8">
+    </div>
+      <div className="text-sm custom-screen-lg text-center">
+        <div className="text-zinc-300 py-8  ">
           &copy; {new Date().getFullYear()} - FarmUI All rights reserved.
           <div className="mx-auto max-w-full mt-4">
-            <Command className="z-[100]">
+            <Command className="z-[20]">
               <h1>
                 Made with{" "}
                 <CommandShortcut className="bg-gradient-to-tr from-zinc-600 via-zinc-600/90 to-zinc-500 rounded-xl px-2">
@@ -114,6 +117,5 @@ export default () => (
           </div>
         </div>
       </div>
-    </div>
   </footer>
 );
