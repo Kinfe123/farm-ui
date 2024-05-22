@@ -7,7 +7,7 @@ export default () => {
     <section className="mt-52 mb-32 relative">
       <div className="custom-screen-lg z-[200px]">
         <div className="max-w-3xl mx-auto space-y-4 text-center">
-          <h2 className="text-4xl  md:text-6xl lg:text-7xl font-geist leading-5 heading text-center  upper">Use your favorite framework</h2>
+          <h2 className="text-4xl  md:text-6xl lg:text-7xl font-geist md:leading-5 heading text-center  upper">Use your favorite framework</h2>
           <p className="text-zinc-400">
             Copy and paste the components you want with your favorite JS
             framework
