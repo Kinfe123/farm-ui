@@ -18,7 +18,7 @@ export default () => {
   return (
     <>
       <section className="mt-20 max-w-3xl mx-auto">
-      <div className="text-left mx-10">
+      <div className="text-left mx-14">
           <h1 className="text-5xl mx-auto font-geist tracking-tight mb-4 sm:text-4.5xl">
           Privacy Policy
           </h1>

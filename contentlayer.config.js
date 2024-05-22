@@ -209,7 +209,7 @@ export const Templates = defineDocumentType(() => ({
         type:"string",   
     },
     source_code: {
-        type: "string"
+        type: "string",
     },
     stack_used: {
         type: "list",
