@@ -26,7 +26,7 @@ export default () => (
     <div>
       <BorderGradient className=" absolute inset-x-0 top-0  mx-auto" />
       <BgGradient className="absolute inset-x-0 top-0 mx-auto" />
-      <BgGradient className="absolute  bottom-0 left-0 top-0" />
+      <BgGradient className="absolute  bottom-0 -left-40 top-0" />
       
       <Image
         src={githubIcon}
