@@ -1,4 +1,4 @@
-import { DM_Sans  , Inter } from "next/font/google";
+import { DM_Sans, Inter } from "next/font/google";
 import "./tailwind.css";
 import "./customize.css";
 import "./prismjs-theme.css";
@@ -11,7 +11,8 @@ import Image from "next/image";
 import bgback from "../public/bg-back.png";
 import { ThemeProvider } from "components/ThemeProvider";
 import { GeistSans } from "geist/font/sans";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
+import Loglib from "@loglib/tracker/react";
 
 const { title, desc, ogImage } = metatag;
 export const metadata = {
@@ -40,11 +41,11 @@ const displayFont = localFont({
   variable: "--font-display",
 });
 const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  display: 'swap',
-  variable: '--font-dm-sans',
-})
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-dm-sans",
+});
 export default function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
@@ -78,7 +79,15 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@farmui" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={cn(inter.className, displayFont.variable , dmSans.variable, GeistSans.variable , "bg-black overflow-x-hidden")}>
+      <body
+        className={cn(
+          inter.className,
+          displayFont.variable,
+          dmSans.variable,
+          GeistSans.variable,
+          "bg-black overflow-x-hidden"
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -99,9 +108,15 @@ export default function RootLayout({
             height={1000}
             alt="back bg"
           />
+
           <Navbar />
           <Toaster />
           <main>{children}</main>
+          <Loglib
+            config={{
+              id: "farmui_vercel"
+            }}
+          />
           <Footer />
         </ThemeProvider>
       </body>
