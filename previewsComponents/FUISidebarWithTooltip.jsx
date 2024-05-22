@@ -165,7 +165,7 @@ export default function FUISidebarWithTooltip() {
           <div className="h-20 flex items-center justify-center px-8">
             <a href="javascript:void(0)" className="flex-none">
               <img
-                src="https://floatui.com/logo-letter.png"
+                src="https://farmui.com/logo-letter.png"
                 width={35}
                 className="mx-auto"
               />

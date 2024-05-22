@@ -24,7 +24,7 @@ export default function FUINavbarWithDividedItems() {
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
                     <a href="javascript:void(0)">
                         <img
-                            src="https://www.floatui.com/logo.svg"
+                            src="https://www.farmui.com/logo.svg"
                             width={120}
                             height={50}
                             alt="FarmUI logo"

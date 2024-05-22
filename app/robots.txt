@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 Disallow: /private/
-Sitemap: https://floatui.com/sitemap.xml
+Sitemap: https://farmui.com/sitemap.xml

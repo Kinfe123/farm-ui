@@ -33,4 +33,4 @@ Additionally, creating and distributing themes, templates, or project starter ki
 
 - A Team License allows a group of users to access and use the website's features and services. This type of license is ideal for teams or organizations that need to collaborate on projects, The license grants permission for up to 33 Employees.
 
-Have a question? Feel free to [contact us](mailto:support@floatui.com) and we'll help you out.
+Have a question? Feel free to [contact us](mailto:support@farmui.com) and we'll help you out.

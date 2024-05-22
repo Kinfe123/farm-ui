@@ -23,9 +23,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Quick start
 
-- <strong>[UI components](https://floatui.com/components) :</strong> UI components for React and Vue (soon) with Tailwind, every example support both directions LTR and RTL.
+- <strong>[UI components](https://farmui.com/components) :</strong> UI components for React and Vue (soon) with Tailwind, every example support both directions LTR and RTL.
 
-- <strong>[Website templates](https://floatui.com/templates) :</strong> A collection of professional and beautifully designed website templates, built on top of React, Next.js and Nuxt (soon) with Tailwind CSS.
+- <strong>[Website templates](https://farmui.com/templates) :</strong> A collection of professional and beautifully designed website templates, built on top of React, Next.js and Nuxt (soon) with Tailwind CSS.
 
 ## Contributing
 

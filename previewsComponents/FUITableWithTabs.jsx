@@ -29,7 +29,7 @@ export default function FUITableWithTabs() {
                     impression: "Great"
                 },
                 {
-                    prop: "https://www.floatui.com",
+                    prop: "https://www.farmui.com",
                     clicks: "678",
                     impression: "Bad"
                 },

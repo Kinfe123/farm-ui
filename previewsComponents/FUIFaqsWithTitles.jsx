@@ -62,7 +62,7 @@ export default function FUIFaqsWithTitles() {
                             Can’t find the answer you’re looking for? feel free to{" "}
                             <a
                                 className='text-indigo-600 font-semibold whitespace-nowrap'
-                                href='support@floatui.com'>
+                                href='support@farmui.com'>
                                 contact us
                             </a>
                             .

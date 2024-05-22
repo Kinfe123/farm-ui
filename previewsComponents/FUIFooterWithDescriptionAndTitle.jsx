@@ -30,7 +30,7 @@ export default function FUIFooterWithDescriptionAndTitle() {
         <footer className="pt-10">
             <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
                 <div className="space-y-6 sm:max-w-md sm:mx-auto sm:text-center">
-                    <img src="https://www.floatui.com/logo.svg" className="w-32 sm:mx-auto" />
+                    <img src="https://www.farmui.com/logo.svg" className="w-32 sm:mx-auto" />
                     <p>
                         Nulla auctor metus vitae lectus iaculis, vel euismod massa efficitur.
                     </p>

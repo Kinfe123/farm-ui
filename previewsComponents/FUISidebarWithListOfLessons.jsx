@@ -21,7 +21,7 @@ export default function FUISidebarWithListOfLessons() {
                 <div className="sticky top-0 space-y-8 bg-white">
                     <div className='h-20 flex items-center px-4 border-b md:px-8'>
                         <a href='javascript:void(0)' className='flex-none'>
-                            <img src="https://floatui.com/logo.svg" width={140} className="mx-auto" />
+                            <img src="https://farmui.com/logo.svg" width={140} className="mx-auto" />
                         </a>
                     </div>
                     <div className='px-4 md:px-8'>

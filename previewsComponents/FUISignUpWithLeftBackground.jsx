@@ -11,7 +11,7 @@ export default function FUISignUpWithLeftBackground() {
         <main className="w-full flex">
             <div className="relative flex-1 hidden items-center justify-center h-[700px] bg-gray-900 lg:flex">
                 <div className="relative z-10 w-full max-w-md">
-                    <img src="https://floatui.com/logo-dark.svg" width={150} />
+                    <img src="https://farmui.com/logo-dark.svg" width={150} />
                     <div className=" mt-16 space-y-3">
                         <h3 className="text-white text-3xl font-bold">Start growing your business quickly</h3>
                         <p className="text-gray-300">
@@ -41,7 +41,7 @@ export default function FUISignUpWithLeftBackground() {
             <div className="flex-1 flex items-center justify-center h-[700px]">
                 <div className="w-full max-w-md space-y-8 px-4 bg-white text-gray-600 sm:px-0">
                     <div className="">
-                        <img src="https://floatui.com/logo.svg" width={150} className="lg:hidden" />
+                        <img src="https://farmui.com/logo.svg" width={150} className="lg:hidden" />
                         <div className="mt-5 space-y-2">
                             <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">Sign up</h3>
                             <p className="">Already have an account? <a href="javascript:void(0)" className="font-medium text-indigo-600 hover:text-indigo-500">Log in</a></p>

@@ -11,7 +11,7 @@ export default function FUILoginWithListedProvider() {
         <main className="w-full h-[800px] flex flex-col items-center justify-center px-4">
             <div className="max-w-sm w-full text-gray-600 space-y-8">
                 <div className="text-center">
-                    <img src="https://floatui.com/logo.svg" width={150} className="mx-auto" />
+                    <img src="https://farmui.com/logo.svg" width={150} className="mx-auto" />
                     <div className="mt-5 space-y-2">
                         <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">Log in to your account</h3>
                         <p className="">Don't have an account? <a href="javascript:void(0)" className="font-medium text-indigo-600 hover:text-indigo-500">Sign up</a></p>

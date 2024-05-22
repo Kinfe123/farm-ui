@@ -78,7 +78,7 @@ export default function FUISidebarWithItemsInBottom() {
                 <div class="flex flex-col h-full">
                     <div className='h-20 flex items-center px-8'>
                         <a href='javascript:void(0)' className='flex-none'>
-                            <img src="https://floatui.com/logo.svg" width={140} className="mx-auto" />
+                            <img src="https://farmui.com/logo.svg" width={140} className="mx-auto" />
                         </a>
                     </div>
                     <div className="flex-1 flex flex-col h-full overflow-auto">

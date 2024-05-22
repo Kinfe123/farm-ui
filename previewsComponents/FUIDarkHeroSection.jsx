@@ -20,7 +20,7 @@ export default function FUIDarkHeroSection() {
                 <nav className="items-center pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 sm:flex sm:space-x-6">
                     <a href="javascript:void(0)">
                         <img
-                            src="https://www.floatui.com/images/logo.svg" 
+                            src="https://www.farmui.com/images/logo.svg" 
                             width={120} 
                             height={50}
                             alt="FarmUI logo"
