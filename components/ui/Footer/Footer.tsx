@@ -25,6 +25,8 @@ export default () => (
   <footer className="relative mt-40 pt-24 overflow-hidden">
     <div>
       <BorderGradient className=" absolute inset-x-0 top-0  mx-auto" />
+      <BorderGradient className=" absolute left-0 top-0  mx-auto" />
+     
       <BgGradient className="absolute inset-x-0 top-0 mx-auto" />
       <BgGradient className="absolute  bottom-0 -left-40 top-0" />
       
