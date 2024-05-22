@@ -30,8 +30,8 @@ export default async () => {
   return (
     <>
       <main className="mt-20 max-w-3xl mx-auto">
-        <div className="text-left mx-14">
-          <h1 className="text-5xl mx-auto font-geist tracking-tight mb-4 sm:text-4.5xl">
+        <div className="text-left">
+          <h1 className="text-5xl mr-auto font-geist tracking-tight mb-4 sm:text-4.5xl">
             License
           </h1>
           <p className="text-zinc-400 mt-3">
@@ -40,7 +40,7 @@ export default async () => {
         <Separator className="h-[1px] bg-white/5 mt-5"/>
         </div>
         
-        <article className="prose prose-invert mt-12 mx-0 sm:mx-auto">
+        <article className="prose prose-invert mt-12 mx-4 md:mx-0 sm:mx-auto">
           <MDXRemoteClient mdxSource={{ ...mdxSource }} />
         </article>
       </main>
