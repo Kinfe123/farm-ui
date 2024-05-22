@@ -39,12 +39,6 @@ const SupportedLibraries = () => {
       icon: <MeltUILogo />,
       href: "https://www.melt-ui.com/",
     },
-    {
-      title: "Alpine.js",
-      desc: "Alpine is a rugged, minimal tool for composing behavior directly in your markup.",
-      icon: <IconAlpinejs />,
-      href: "https://alpinejs.dev/",
-    },
   ];
 
   return (

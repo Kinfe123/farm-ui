@@ -39,7 +39,7 @@ export default async ({
       <section className="max-w-7xl px-4 mx-auto mt-base">
         <div className="text-center mt-20">
           <HeroAnimated
-            header="Collections of beautifully crafted thoughts and dumps "
+            header="Collections of beautifully crafted thoughts and dumps."
             headerClassName="text-left w-full  text-5xl md:text-7xl tracking-tighter mr-auto lg:text-8xl  font-geist font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-4 mt-1"
             description="The latest about FarmUI, and some technical stuff."
             descriptionClassName="ml-2 text-zinc-400 max-w-full mr-auto text-sm sm:text-md md:text-lg lg:text-lg mr-auto text-left"
