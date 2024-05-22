@@ -86,7 +86,7 @@ export function FormField() {
           <CardContent>
             <div className=""></div>
             <form className="space-y-4 z-20" onSubmit={onSubmit}>
-              <div className="grid grid-cols-2 gap-4 z-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 z-20">
                 <div className="space-y-2">
                   <Label htmlFor="first-name">First Name</Label>
                   <Input

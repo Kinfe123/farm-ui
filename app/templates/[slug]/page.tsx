@@ -16,41 +16,38 @@ export async function generateMetadata({
 }: {
   params: Params;
 }) {
-  // const querySnapshot = await getDoc(slug, "templates", "slug");
-  // const template = querySnapshot.docs.map((item: QueryDocumentSnapshot) => {
-  //   const { banner_url, template_name, preview_url, description } = item.data();
-  //   return {
-  //     banner_url,
-  //     template_name,
-  //     preview_url,
-  //     description,
-  //   };
-  // })[0];
-  // return {
-  //   metadataBase: new URL("https://farmui.com"),
-  //   alternates: {
-  //     canonical: `/templates/${slug}`,
-  //   },
-  //   title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
-  //   description: template.description,
-  //   openGraph: {
-  //     images: template.banner_url,
-  //     title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
-  //     description: template.description,
-  //   },
-  //   twitter: {
-  //     images: [template.banner_url],
-  //     title: `FarmUI - ${template.template_name} Tailwind CSS Template`,
-  //     description: template.description,
-  //   },
-  // };
+  const template = allTemplates.find((tmplt) => tmplt.slug === `/templates/${slug}`)
+  if(!template) {
+    return {
+      title: "No such template found",
+      description:"There is no such template found with in our repository"
+
+    }
+  }
+  return {
+    metadataBase: new URL("https://farmui.com"),
+    alternates: {
+      canonical: `/templates/${slug}`,
+    },
+    title: `FarmUI - ${template.title} Tailwind CSS Template`,
+    description: template.description,
+    openGraph: {
+      images: template.images[0],
+      title: `FarmUI - ${template.title} Tailwind CSS Template`,
+      description: template.description,
+    },
+    twitter: {
+      images: [template.images[0]],
+      title: `FarmUI - ${template.title} Tailwind CSS Template`,
+    description: template.description,
+    },
+  };
 }
 
 const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
   const template_mod = allTemplates.find(
     (t) => t.slug === `/templates/${slug}`
   );
-  console.log("the price is :" , template_mod?.price)
   return (
     <>
       <section className="mt-24 custom-screen-lg mx-auto">
@@ -82,11 +79,11 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                 </h3>
                 <TemplateTechStack />
               </div>
-              <div className="text-sm font-medium mt-6">
+              <div className="text-sm font-medium mt-6 z-20">
                 <div className="flex flex-wrap items-center gap-3">
                   <LinkItem
                     href={template_mod?.live_preview || ""}
-                    className="inline-flex text-black w-full justify-center items-center gap-x-2 duration-200 shadow hover:bg-zinc-100 group sm:w-auto"
+                    className="z-20 inline-flex text-black w-full justify-center items-center gap-x-2 duration-200 shadow hover:bg-zinc-100 group sm:w-auto"
                   >
                     Full preview
                     <ArrowTopRightOnSquareIcon className="w-4 h-4 duration-200 group-hover:translate-x-1" />
@@ -95,7 +92,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                     target="_blank"
                     href={`${template_mod?.source_code}`}
                     variant="shiny"
-                    className="inline-block w-full hover:bg-zinc-700 sm:w-auto"
+                    className="z-20 inline-block w-full hover:bg-zinc-700 sm:w-auto"
                   >
                     Download template
                   </LinkItem>
