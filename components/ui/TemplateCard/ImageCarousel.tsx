@@ -16,7 +16,7 @@ export function ImageSlider({images}:{images:string[]}) {
         {images.map((image, index) => (
           <CarouselItem key={index} className="w-full">
             <div className="w-full h-full">
-                <img className="z-0"  src={image} alt='template preview image' />
+                <img className="z-20"  src={image} alt='template preview image' />
             </div>
           </CarouselItem>
         ))}

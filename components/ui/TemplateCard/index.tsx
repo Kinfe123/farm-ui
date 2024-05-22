@@ -16,7 +16,7 @@ export default ({ item }: { item: Templates }) => (
       <div className="flex-1 mt-6 flex flex-col justify-between sm:mt-0">
         <div>
           <div className="text-gray-100 text-lg font-semibold flex justify-between items-center">
-            <h3 className="font-display font-bold text-2xl">{item.title}</h3>
+            <h3 className="font-geist mt-4 font-bold text-2xl">{item.title}</h3>
             <div className="flex items-center gap-x-2">
               <del className="text-base">${item.price ?? "10.99"}</del>
             </div>

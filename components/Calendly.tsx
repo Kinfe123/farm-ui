@@ -71,7 +71,7 @@ export default function Calendly() {
         </HeroAnimated>
           <div className="group mt-0 flex items-center gap-x-6">
             <LinkItem 
-              href="https://cal.com/kinfish/30min"
+              href="https://cal.com/kinfish/15min"
               target='_blank'
               className="z-20 inline-flex w-full hover:bg-transparent justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
             >

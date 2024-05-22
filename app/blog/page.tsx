@@ -5,6 +5,7 @@ import BlogCard from "components/ui/BlogCard";
 import { getPosts } from "utils/seobot";
 import { BlogPost } from "types/types";
 import Pagination from "components/ui/Pagination";
+import HeroAnimated from "components/HeroAnimated";
 
 const { title, description } = {
   title: "FarmUI - Blog",
@@ -17,7 +18,7 @@ export const metadata = {
   openGraph: {
     title,
     description,
-    url: "https://floatui.com",
+    url: "https://farmui.com",
   },
   twitter: {
     card: "summary_large_image",
@@ -32,37 +33,21 @@ export default async ({
   searchParams: { page: number };
 }) => {
   const pageNumber = Math.max((page || 0) - 1, 0);
-  const { total, articles } = await getPosts(pageNumber);
-  const posts = articles || [];
-  const lastPage = Math.ceil(total / 10);
 
   return (
     <>
-      <section className="max-w-3xl px-4 mx-auto mt-base">
+      <section className="max-w-7xl px-4 mx-auto mt-base">
         <div className="text-center mt-20">
-          <h1 className="text-4xl font-extrabold heading">Blog</h1>
-          <p className="mt-3 text-lg text-gray-400">
-            The latest about FarmUI, and some technical stuff.
-          </p>
+          <HeroAnimated
+            header="Collections of beautifully crafted thoughts and dumps "
+            headerClassName="text-left w-full  text-5xl md:text-7xl tracking-tighter mr-auto lg:text-8xl  font-geist font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-4 mt-1"
+            description="The latest about FarmUI, and some technical stuff."
+            descriptionClassName="ml-2 text-zinc-400 max-w-full mr-auto text-sm sm:text-md md:text-lg lg:text-lg mr-auto text-left"
+          >
+            <div className="flex flex-wrap items-center justify-center  gap-3"></div>
+          </HeroAnimated>
+          <p className="mt-3 text-2xl text-gray-400/50 font-geist">Coming soon.</p>
         </div>
-        <ul className="mt-12">
-          {posts.map((item: BlogPost, idx: number) => (
-            <BlogCard
-              key={idx}
-              href={item.slug}
-              date={item.createdAt}
-              title={item.headline}
-              desc={item.metaDescription}
-            />
-          ))}
-        </ul>
-        {lastPage > 1 && (
-          <Pagination
-            slug="/blog"
-            pageNumber={pageNumber}
-            lastPage={lastPage}
-          />
-        )}
       </section>
     </>
   );
