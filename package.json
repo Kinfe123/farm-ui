@@ -28,6 +28,7 @@
     "@tailwindcss/typography": "^0.5.0",
     "@types/babel__core": "^7.1.19",
     "@usermaven/sdk-js": "^1.1.9",
+    "@vercel/analytics": "^1.2.2",
     "axios": "^0.24.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

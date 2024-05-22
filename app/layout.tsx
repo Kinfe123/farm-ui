@@ -13,7 +13,7 @@ import { ThemeProvider } from "components/ThemeProvider";
 import { GeistSans } from "geist/font/sans";
 import { Toaster } from "@/components/ui/toaster";
 import Loglib from "@loglib/tracker/react";
-
+import { Analytics } from "@vercel/analytics/react"
 const { title, desc, ogImage } = metatag;
 export const metadata = {
   metadataBase: new URL("https://farm-ui.com"),
@@ -117,6 +117,7 @@ export default function RootLayout({
               id: "farmui_vercel"
             }}
           />
+          <Analytics/>
           <Footer />
         </ThemeProvider>
       </body>
