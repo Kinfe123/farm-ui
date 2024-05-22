@@ -9,7 +9,7 @@ import bgback from "../../../public/bg-back.png"
 import { ImageSlider } from "./ImageCarousel";
 export default ({ item }: { item: Templates }) => (
   <li className="relative pt-10 lg:pt-0 h-fit overflow-hidden rounded-3xl">
-      <div className="flex-1 w-full block z-20">
+      <div className="flex-1 w-full block z-30">
         <ImageSlider images={item.images} />
         {/* <img src={item.image} className="rounded-lg" alt="Website template" /> */}
       </div>
@@ -41,7 +41,7 @@ export default ({ item }: { item: Templates }) => (
         >
           Explore more
           <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-          <Image src={bgback} className="absolute top-0 translate-y-30  z-10 opacity-100 w-[1000px] h-[800px] overflow-hidden"  alt="bgback"/>
+          <Image src={bgback} className="absolute top-0 translate-y-30  z-1 opacity-70 w-[1000px] h-[800px] overflow-hidden"  alt="bgback"/>
         </LinkItem>
       </div>
   </li>
