@@ -1,3 +1,5 @@
+import { Separator } from "@/components/ui/separator";
+
 const title = "FarmUI - Privacy Policy";
 
 export const metadata = {
@@ -15,15 +17,18 @@ export const metadata = {
 export default () => {
   return (
     <>
-      <section className="mt-20">
-        <div className="text-center mx-4">
-          <h1 className="text-3xl heading font-extrabold tracking-tight mb-4 sm:text-4.5xl">
-            Privacy Policy
+      <section className="mt-20 max-w-3xl mx-auto">
+      <div className="text-left mx-10">
+          <h1 className="text-5xl mx-auto font-geist tracking-tight mb-4 sm:text-4.5xl">
+          Privacy Policy
           </h1>
           <p className="text-zinc-400 mt-3">
-            Your data is protected and respected.
+          Your data is protected and respected.
+            
           </p>
+        <Separator className="h-[1px] bg-white/5 mt-5"/>
         </div>
+      
         <div className="prose prose-invert mt-12 mx-4 sm:mx-auto">
           <h2>Collection of non-personal information</h2>
           <p>

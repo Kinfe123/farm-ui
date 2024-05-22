@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import MDXRemoteClient from "components/MDXRemoteClient";
+import { Separator } from "@/components/ui/separator";
 
 const title = "FarmUI - License";
 
@@ -28,16 +29,18 @@ export default async () => {
 
   return (
     <>
-      <main className="mt-20">
-        <div className="text-center mx-4">
-          <h1 className="text-4xl heading tracking-tight mb-4 sm:text-4.5xl">
+      <main className="mt-20 max-w-3xl mx-auto">
+        <div className="text-left mx-10">
+          <h1 className="text-5xl mx-auto font-geist tracking-tight mb-4 sm:text-4.5xl">
             License
           </h1>
           <p className="text-zinc-400 mt-3">
             All you need to know about the FarmUI licensing model
           </p>
+        <Separator className="h-[1px] bg-white/5 mt-5"/>
         </div>
-        <article className="prose prose-invert mt-12 mx-4 sm:mx-auto">
+        
+        <article className="prose prose-invert mt-12 mx-0 sm:mx-auto">
           <MDXRemoteClient mdxSource={{ ...mdxSource }} />
         </article>
       </main>

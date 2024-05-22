@@ -105,7 +105,7 @@ export default () => (
                 <a
                   target="_blank"
                   href="https://github.com/Kinfe123"
-                  className="cursor-pointer z-2- underline underline-offset-2 underline-red-900"
+                  className="cursor-pointer z-20 underline underline-offset-2 underline-red-900"
                 >
                   KiNFiSH
                 </a>
