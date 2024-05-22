@@ -69,7 +69,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
 
                   </del>
                   <span className="text-xl sm:text-2xl">
-                   {template_mod?.is_free ? `0$` :  template_mod?.price} 
+                   ${template_mod?.is_free ? `0` :  template_mod?.price} 
                   </span>
                 </div>
               </div>

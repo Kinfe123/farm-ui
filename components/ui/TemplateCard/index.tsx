@@ -20,7 +20,7 @@ export default ({ item }: { item: Templates }) => (
             <div className="flex items-center gap-x-2">
               <del className="text-base">${item.price ?? "10.99"}</del>
               <span className="text-xl sm:text-2xl">
-                   {item?.is_free ? `0$` :  item?.price} 
+                   ${item?.is_free ? `0` :  item?.price} 
               </span>
             </div>
           </div>
