@@ -48,6 +48,8 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
   const template_mod = allTemplates.find(
     (t) => t.slug === `/templates/${slug}`
   );
+  const del_price = 10.99 + +(template_mod?.price?.split("$")[1] ?? "0")
+  
   return (
     <>
       <section className="mt-24 custom-screen-lg mx-auto">
@@ -63,10 +65,11 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                 </h1>
                 <div className="flex items-center gap-x-2">
                   <del className="text-lg">
-                    ${10.99 + +(template_mod?.price ?? "0")}
+                   ${del_price.toFixed(2)} 
+
                   </del>
                   <span className="text-xl sm:text-2xl">
-                   {template_mod?.is_free ? `0$` : `$` + template_mod?.price} 
+                   {template_mod?.is_free ? `0$` :  template_mod?.price} 
                   </span>
                 </div>
               </div>
@@ -88,6 +91,8 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                     Full preview
                     <ArrowTopRightOnSquareIcon className="w-4 h-4 duration-200 group-hover:translate-x-1" />
                   </LinkItem>
+                  {
+                    template_mod?.is_free ? 
                   <LinkItem
                     target="_blank"
                     href={`${template_mod?.source_code}`}
@@ -96,6 +101,16 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                   >
                     Download template
                   </LinkItem>
+                  : 
+                  <LinkItem
+                  target="_blank"
+                  href={`mailto:kinfetare83@gmail.com?subject=New%20Order%20for%20${template_mod?.title}`}
+                  variant="shiny"
+                  className="z-20 inline-block w-full hover:bg-zinc-700 sm:w-auto"
+                >
+                  Buy template
+                </LinkItem>
+                  }
                 </div>
               </div>
             </div>
