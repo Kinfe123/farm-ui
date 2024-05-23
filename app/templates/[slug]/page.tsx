@@ -1,4 +1,4 @@
-import TemplateTechStack from "components/ui/TemplateTechStackGroup";
+import {TechStackDisplay} from "components/ui/TemplateTechStackGroup";
 import Head from "next/head";
 import { Templates } from "types/types";
 import { QueryDocumentSnapshot, QuerySnapshot } from "firebase/firestore";
@@ -80,7 +80,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                 <h3 className="text-zinc-200 font-medium">
                   Built with modern technologies
                 </h3>
-                <TemplateTechStack />
+                <TechStackDisplay />
               </div>
               <div className="text-sm font-medium mt-6 z-20">
                 <div className="flex flex-wrap items-center gap-3">

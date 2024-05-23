@@ -154,8 +154,7 @@ ReactJs.displayName = "ReactJs";
 const Supabase = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
   ({ className, ...props }, ref) => (
     <svg
-      width="109"
-      height="113"
+    {...props}
       viewBox="0 0 109 113"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

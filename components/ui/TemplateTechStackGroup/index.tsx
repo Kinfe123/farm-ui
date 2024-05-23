@@ -36,7 +36,7 @@ type TechStackIconType = {
 };
 export const TechStackDisplay = ({icons}: {icons: string[]}) => {
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex gap-2 mt-3 justify-end items-center">
       {icons.map((icon) => {
         return <span>{techStackIcons[icon].icon}</span>;
       })}

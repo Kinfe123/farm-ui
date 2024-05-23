@@ -19,30 +19,30 @@ type TechStackIconType = {
 export const techStackIcons: TechStackIconType = {
   drizzle: {
     name: "Drizzle",
-    icon: <Drizzle />,
+    icon: <Drizzle className="w-7 h-7 mx-1" />,
   },
   primsa: {
     name: "Prisma",
-    icon: <Prisma />,
+    icon: <Prisma className="w-7 h-7 mx-1" />,
   },
   react: {
     name: "ReactJS",
-    icon: <ReactJs />,
+    icon: <ReactJs className="w-7 h-7 mx-1"  />,
   },
   tailwind: {
     name: "TailwindCSS",
-    icon: <TailwindCss />,
+    icon: <TailwindCss className="w-7 h-7 mx-1"  />,
   },
   shadcn: {
     name: "ShadCn",
-    icon: <ShadcnUi />,
+    icon: <ShadcnUi className="w-7 h-7 mx-1" />,
   },
   nextjs: {
     name: "NextJS",
-    icon: <NextjsLight />,
+    icon: <NextjsDark className="w-7 h-7 mx-1" />,
   },
   supabase: {
     name: "Supabase",
-    icon: <Supabase />,
+    icon: <Supabase className="w-7 h-7 mx-1" />,
   },
 };
