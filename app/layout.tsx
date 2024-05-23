@@ -34,8 +34,6 @@ export const metadata = {
 
 const inter = Inter({ subsets: ["latin"] });
 
-const GA_ID = process.env.GA_ID;
-const GOOGLE_SITE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION;
 const displayFont = localFont({
   src: "../public/fonts/cal.ttf",
   variable: "--font-display",
@@ -95,14 +93,14 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Image
-            className="absolute top-0 -translate-y-1/2 z-20 translate-x-1/2"
+            className="absolute top-0 -translate-y-1/2 z-20 translate-x-0 md:translate-x-1/3 lg:translate-x-1/2 "
             src={bgback}
             width={1000}
             height={1000}
             alt="back bg"
           />
           <Image
-            className="absolute top-0 -translate-y-1/2 z-20 translate-x-1/2 "
+            className="absolute top-0 -translate-y-1/2 z-20 -translate-x-32 md:translate-x-1/3 lg:translate-x-45"
             src={bgback}
             width={1000}
             height={1000}

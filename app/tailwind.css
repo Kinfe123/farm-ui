@@ -16,6 +16,8 @@
     .heading {
       @apply font-extrabold text-transparent bg-clip-text bg-[linear-gradient(-180deg,_#FFF_0%,_rgba(255,_255,_255,_0.3)_202.08%)];
     }
+    
+    
   }
   @layer base {
     :root {
@@ -92,6 +94,8 @@
 
 
 
+
+
 .custom-screen {
   @apply max-w-screen-xl mx-auto px-4 md:px-8;
 }
@@ -134,4 +138,7 @@
 .code-block .Code pre {
   max-height: 580px !important;
   overflow-y: auto !important;
+}
+.body {
+  background-color: red;
 }

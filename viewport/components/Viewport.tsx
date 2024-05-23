@@ -114,7 +114,7 @@ const Viewport = ({ children, dir, srcDoc = template, ...props }: Props) => {
   return (
     <div
       ref={containerRef}
-      className="w-full overflow-hidden border border-zinc-800 rounded-lg"
+      className="w-full overflow-hidden bg-black/90 border border-zinc-800 rounded-lg"
       onMouseMove={mouseMove}
       onMouseUp={mouseUp}
       onTouchMove={touchMove}
@@ -126,7 +126,7 @@ const Viewport = ({ children, dir, srcDoc = template, ...props }: Props) => {
         <iframe
           srcDoc={template}
           ref={iframe}
-          className="w-full bg-white appearance-none mr-4 min-h-[300px] iframes"
+          className="w-full bg-black/90 appearance-none mr-4 min-h-[300px] iframes"
           id="iframe"
           loading="lazy"
         >
