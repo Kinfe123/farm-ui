@@ -18,7 +18,7 @@ export default ({ item }: { item: Templates }) => (
           <div className="text-gray-100 text-lg font-semibold flex justify-between items-center">
             <h3 className="font-geist mt-4 font-bold text-2xl">{item.title}</h3>
             <div className="flex items-center gap-x-2">
-              <del className="text-base">${item.price ?? "10.99"}</del>
+              <del className="text-base">${item.price ? `${(parseInt(item.price)  + 10.99).toFixed(2)}` : `10.99`}</del>
               <span className="text-xl sm:text-2xl">
                    ${item?.is_free ? `0` :  item?.price} 
               </span>
