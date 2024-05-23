@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { techStackIcons } from "constants/techStackIcon";
 // export default () => (
 //   <div className="mt-3 text-zinc-400 flex items-center gap-5">
@@ -34,9 +35,9 @@ type TechStackIconType = {
     icon: any;
   };
 };
-export const TechStackDisplay = ({icons}: {icons: string[]}) => {
+export const TechStackDisplay = ({icons , className}: {icons: string[] , className?:string}) => {
   return (
-    <div className="flex gap-2 mt-3 justify-end items-center">
+    <div className={cn("flex gap-2 mt-3 items-center" , className)}>
       {icons.map((icon) => {
         return <span>{techStackIcons[icon].icon}</span>;
       })}

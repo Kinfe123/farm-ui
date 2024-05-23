@@ -33,7 +33,7 @@ export default ({ item }: { item: Templates }) => (
           <h3 className="text-zinc-200 font-medium">
             Built with modern technologies
           </h3>
-          <TechStackDisplay icons={item.stack_used} /> 
+          <TechStackDisplay icons={item.stack_used} className="justify-end" /> 
         </div>
         <LinkItem
           href={`${item.slug}`}

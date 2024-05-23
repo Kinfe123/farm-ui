@@ -80,7 +80,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                 <h3 className="text-zinc-200 font-medium">
                   Built with modern technologies
                 </h3>
-                <TechStackDisplay />
+                <TechStackDisplay icons={template_mod!.stack_used} />
               </div>
               <div className="text-sm font-medium mt-6 z-20">
                 <div className="flex flex-wrap items-center gap-3">
