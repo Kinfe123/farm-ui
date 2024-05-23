@@ -2,12 +2,13 @@ import Link from "next/link";
 import { type Templates } from ".contentlayer/generated/types";
 import LinkItem from "../LinkItem";
 import { ChevronRight } from "lucide-react";
-import TemplateTechStack from "components/ui/TemplateTechStackGroup";
+import { TechStackDisplay } from "components/ui/TemplateTechStackGroup";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image"
 import bgback from "../../../public/bg-back.png"
 import { ImageSlider } from "./ImageCarousel";
 export default ({ item }: { item: Templates }) => (
+  
   <li className="relative pt-10 lg:pt-0 h-fit overflow-hidden rounded-3xl">
       <div className="flex-1 w-full block z-30">
         <ImageSlider images={item.images} />
@@ -32,7 +33,7 @@ export default ({ item }: { item: Templates }) => (
           <h3 className="text-zinc-200 font-medium">
             Built with modern technologies
           </h3>
-          <TemplateTechStack /> 
+          <TechStackDisplay icons={item.stack_used} /> 
         </div>
         <LinkItem
           href={`${item.slug}`}
