@@ -1,5 +1,12 @@
 import { cn } from "@/lib/utils";
 import { techStackIcons } from "constants/techStackIcon";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 // export default () => (
 //   <div className="mt-3 text-zinc-400 flex items-center gap-5">
 //     <svg
@@ -35,11 +42,30 @@ type TechStackIconType = {
     icon: any;
   };
 };
-export const TechStackDisplay = ({icons , className}: {icons: string[] , className?:string}) => {
+export const TechStackDisplay = ({
+  icons,
+  className,
+}: {
+  icons: string[];
+  className?: string;
+}) => {
   return (
-    <div className={cn("flex gap-3 mt-3 items-center" , className)}>
+    <div className={cn("flex gap-3 mt-3 items-center", className)}>
       {icons.map((icon) => {
-        return <span>{techStackIcons[icon].icon}</span>;
+        return (
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <span className="transform duration-300 hover:rotate-12 transition-transform">
+                  {techStackIcons[icon].icon}
+                </span>
+              </TooltipTrigger>
+              <TooltipContent className="bg-gradient-to-tr from-black/80 via-black  to-black/90 z-1">
+                {techStackIcons[icon].name}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        );
       })}
     </div>
   );
