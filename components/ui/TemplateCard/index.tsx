@@ -37,7 +37,10 @@ export default ({ item }: { item: Templates }) => (
         <h3 className="text-zinc-200 font-medium">
           Built with modern technologies
         </h3>
-        <TechStackDisplay icons={item.stack_used} className="justify-end z-20 cursor-pointer    hover:" />
+        <TechStackDisplay
+          icons={item.stack_used}
+          className="justify-end z-20 cursor-pointer    hover:"
+        />
       </div>
       <LinkItem
         href={`${item.slug}`}

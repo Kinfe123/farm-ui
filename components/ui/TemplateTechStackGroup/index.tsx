@@ -56,11 +56,13 @@ export const TechStackDisplay = ({
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-               <span className="transform duration-300 hover:rotate-12 transition-transform">
-                {techStackIcons[icon].icon}
-               </span>
+                <span className="transform duration-300 hover:rotate-12 transition-transform">
+                  {techStackIcons[icon].icon}
+                </span>
               </TooltipTrigger>
-              <TooltipContent className="bg-gradient-to-tr from-black/80 via-zinc-900  to-zinc-700 z-1">{techStackIcons[icon].name}</TooltipContent>
+              <TooltipContent className="bg-gradient-to-tr from-black/80 via-black  to-black/90 z-1">
+                {techStackIcons[icon].name}
+              </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         );
