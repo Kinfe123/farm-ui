@@ -126,7 +126,7 @@ const Viewport = ({ children, dir, srcDoc = template, ...props }: Props) => {
         <iframe
           srcDoc={template}
           ref={iframe}
-          className="w-full bg-black/90 appearance-none mr-4 min-h-[300px] iframes"
+          className="w-full bg-black appearance-none mr-4 min-h-[400px] iframe"
           id="iframe"
           loading="lazy"
         >

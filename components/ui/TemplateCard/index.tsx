@@ -52,7 +52,7 @@ export default ({ item }: { item: Templates }) => (
       </LinkItem>
       <Image
         src={bgback}
-        className="absolute top-0 translate-y-30  z-1 opacity-70 w-[1000px] h-[800px] overflow-hidden"
+        className="absolute top-0 translate-y-30  z-1 opacity-30 w-[1000px] h-[800px] overflow-hidden"
         alt="bgback"
       />
     </div>

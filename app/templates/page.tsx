@@ -79,7 +79,7 @@ const Template = async () => {
 
 export default Template;
 
-export function Stats({
+function Stats({
   free,
   paid,
   total,

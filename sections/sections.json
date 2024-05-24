@@ -50,6 +50,16 @@
     "isNew": false
   },
   {
+    "slug": "/form-field",
+    "category": "Marketing",
+    "count": 7,
+    "cover_url": "FAQS.png",
+    "id": "001",
+    "section_name": "Form Field",
+    "description": "Beautifully designed, fully responsive, expertly crafted Form examples",
+    "isNew": true
+  },
+  {
     "cover_url": "Stats.png",
     "category": "Marketing",
     "description": "Beautifully designed, fully responsive, expertly crafted stat examples",
@@ -59,4 +69,5 @@
     "section_name": "Stats",
     "isNew": false
   }
+  
 ]
