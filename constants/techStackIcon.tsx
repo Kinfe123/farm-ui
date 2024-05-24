@@ -21,7 +21,7 @@ export const techStackIcons: TechStackIconType = {
     name: "Drizzle",
     icon: <Drizzle className="w-7 h-7 mx-1" />,
   },
-  primsa: {
+  prisma: {
     name: "Prisma",
     icon: <Prisma className="w-7 h-7 mx-1" />,
   },

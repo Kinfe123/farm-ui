@@ -7,20 +7,20 @@ import Brand from "../Brand";
 import Link from "next/link";
 import NewsletterModal from "../NewsletterModal";
 import { SparklesIcon } from "@heroicons/react/24/outline";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default () => {
   const [state, setState] = useState(false);
   const [isNewsletterModalActive, setNewsletterModalActive] = useState(false);
-
+  const pathname = usePathname();
   const navigation = [
     { title: "Components", path: "/components" },
     { title: "Templates", path: "/templates" },
     { title: "Demo", path: "/demo" },
-    {
-      title: "Join",path:'/join'
+    { title: "Join", path: "/join",
     },
   ];
-
   useEffect(() => {
     document.onclick = (e) => {
       const target = e.target as HTMLElement;
@@ -52,9 +52,14 @@ export default () => {
         >
           <div className="mt-5 max-w-3xl mx-auto border-2 py-5  px-10 backdrop-blur-md  border-white/10 rounded-3xl gp-x-14 items-center md:flex">
             <div className="flex items-center justify-between py-1 md:block">
-            <Link href="/" className="relative bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl">
-                 FarmUI 
-                <span className="font-geist text-sm absolute top-0 right-[-40px] z-10 text-white/70">BETA</span>
+              <Link
+                href="/"
+                className="relative bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl"
+              >
+                FarmUI
+                <span className="font-geist text-sm absolute top-0 right-[-40px] z-10 text-white/70">
+                  BETA
+                </span>
               </Link>
               <div className="flex md:hidden">
                 <button
@@ -80,16 +85,22 @@ export default () => {
                   return (
                     <li
                       key={idx}
-                      className="font-medium text-sm text-zinc-400 hover:text-zinc-200 duration-200"
+                      className={cn(
+                        "font-medium text-sm text-zinc-400 hover:text-zinc-200 duration-200",
+                        pathname === item.path ? "text-white" : ""
+                      )}
                     >
-                      <Link  href={item.path} className="block">
+                      <Link href={item.path} className="block">
                         {item.title}
                       </Link>
-                      {state ? <hr className="opacity-50 text-gray-400 my-2 pt-3"/> : ""}
+                      {state ? (
+                        <hr className="opacity-50 text-gray-400 my-2 pt-3" />
+                      ) : (
+                        ""
+                      )}
                     </li>
                   );
                 })}
-              
               </ul>
               <div className="mt-6 md:mt-0">
                 <LinkItem
