@@ -355,7 +355,7 @@ import FUIBannerCentredWithBadge from "./previewsComponents/FUIBannerCentredWith
 import FUIPrimaryNewsletter from "./previewsComponents/FUIPrimaryNewsletter.jsx";
       
 import FUISelectMenuWithAvatars from "./previewsComponents/FUISelectMenuWithAvatars.jsx";
-
+// @ts-ignore
 import FUIForm from "./previewsComponents/FUIForm.tsx"
 
 import FUIPaymentCardsRadioGroup from "./previewsComponents/FUIPaymentCardsRadioGroup.jsx";

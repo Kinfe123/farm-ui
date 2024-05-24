@@ -34,7 +34,7 @@ const Template = async () => {
   const templates = allTemplates;
   const free_templates = templates.filter((temp) => temp.is_free);
   const paid_templates = templates.filter((temp) => !temp.is_free);
-  const total_purchased = 4; // to be later moved to an end point
+  const total_purchased = 4; // to be later moved to an endpoint
 
   return (
     <>
