@@ -5,6 +5,7 @@ import { allTemplates } from "contentlayer/generated";
 import HeroAnimated from "components/HeroAnimated";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 type MetaInfo = {
   title: string;
@@ -33,7 +34,7 @@ const Template = async () => {
   const templates = allTemplates;
   const free_templates = templates.filter((temp) => temp.is_free);
   const paid_templates = templates.filter((temp) => !temp.is_free);
-  const total_purchased = 3; // to be later moved to an end point
+  const total_purchased = 4; // to be later moved to an end point
 
   return (
     <>
@@ -151,7 +152,7 @@ export function Stats({
                 {stat.name}
               </p>
               <p className="mt-2 flex items-baseline gap-x-2">
-                <span className="text-4xl font-semibold tracking-tight text-white">
+                <span className={cn("text-4xl font-semibold tracking-tight text-white", stat.name === "Purchased Website" ? 'blur-sm' : 'blur-0')}>
                   {stat.value}
                 </span>
               </p>
