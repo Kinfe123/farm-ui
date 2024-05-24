@@ -76,16 +76,13 @@ export function GetStarted() {
             alt="bgback"
             className="absolute inset-x-0 top-[-300px] z-10 -translate-y-10 max-w-full mx-auto"
           />
-          <Image
+          {/* <Image
             src={bgback}
             width={900}
             height={900}
             alt="bgback"
             className="absolute inset-x-0 top-[-300px] z-10 -translate-x-10 max-w-full mx-auto"
-          />
-
-          
-
+          /> */}     
           <div className="relative z-10  mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-32 gap-y-14 xl:max-w-none xl:grid-cols-2">
             <div>
               <p className="font-display text-4xl font-medium tracking-tighter text-white sm:text-5xl">
