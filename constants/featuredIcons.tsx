@@ -155,8 +155,11 @@ const Supabase = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
   ({ className, ...props }, ref) => (
     <svg
       {...props}
+      ref={ref}
+      width={"30px"}
+      height={"30px"}
       viewBox="0 0 109 113"
-      fill="none"
+      fill="#ffffff"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -170,7 +173,7 @@ const Supabase = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
       />
       <path
         d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z"
-        fill="#3ECF8E"
+        fill="#ffffff"
       />
       <defs>
         <linearGradient
@@ -181,8 +184,8 @@ const Supabase = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
           y2="71.8295"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#249361" />
-          <stop offset="1" stop-color="#3ECF8E" />
+          <stop stop-color="#b3afaf" />
+          <stop offset="1" stop-color="#b3afaf" />
         </linearGradient>
         <linearGradient
           id="paint1_linear"
@@ -263,6 +266,8 @@ const Drizzle = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(
     <svg
       ref={ref}
       {...props}
+      width={"30px"}
+      height={"30px"}
       viewBox="0 0 160 160"
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
