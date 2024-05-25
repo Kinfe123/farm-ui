@@ -12,6 +12,7 @@ import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import componentsNames from "componentsNames";
 import TabsTrigger from "../Tabs/TabsTrigger";
 import { motion } from "framer-motion";
+import { componentToPreview } from "viewport/components/reactComponents";
 
 const tabs = [
   {
@@ -40,10 +41,12 @@ export default ({
   item,
   mdxSource,
   slug,
+  files,
 }: {
   item: any;
   mdxSource: MDXRemoteSerializeResult;
   slug: string;
+  files: string[]
 }) => {
   const [isPreview, setPreview] = useState<boolean>(true);
   const [selectedFramework, setFramework] = useState("react");
@@ -65,14 +68,16 @@ export default ({
     textare.remove();
     setCopyed(true);
   };
+  
 
   useEffect(() => {
     if (copied) {
       setTimeout(() => setCopyed(false), 2000);
     }
   }, [copied]);
-
+  const reactCompToRender = componentToPreview[item?.id] ?? <></>
   return (
+
     <>
       <div className="items-start justify-between sm:flex">
         <h3 className="text-sm text-zinc-300 font-medium py-4">
@@ -83,7 +88,7 @@ export default ({
         </div>
       </div>
       {isPreview ? (
-        <Viewport>
+        <Viewport comp={reactCompToRender}>
           <MDXRemoteClient mdxSource={mdxSource} components={componentsNames} />
         </Viewport>
       ) : (

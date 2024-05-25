@@ -20,6 +20,10 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "pipe.com",
+      },
+      {
+        protocol: "https",
         hostname: "api.uifaces.co",
       },
       {

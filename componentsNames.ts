@@ -375,7 +375,7 @@ import FUIIntegrationsCard from "./previewsComponents/FUIIntegrationsCard.jsx";
 import FUITeamSectionWithCentredAvatars from "./previewsComponents/FUITeamSectionWithCentredAvatars.jsx";
       
 import FUIAvatarGroupStackedWithJoinButton from "./previewsComponents/FUIAvatarGroupStackedWithJoinButton.jsx";
-      
+    
 import FUIUploadFileCard from "./previewsComponents/FUIUploadFileCard.jsx";
       
 import FUISearchInputWithSelectMenuAndAvatars from "./previewsComponents/FUISearchInputWithSelectMenuAndAvatars.jsx";

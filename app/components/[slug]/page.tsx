@@ -75,8 +75,7 @@ export default async ({ params: { slug } }: { params: Params }) => {
         };
       })
       // .sort((a, b) => a.created_at - b.created_at)
-    );
-
+    );  
     return (
       <>
         <div>
@@ -84,7 +83,7 @@ export default async ({ params: { slug } }: { params: Params }) => {
           <p className="mt-3 text-zinc-300">{pageDetails.description}</p>
         </div>
         <div className="mt-12 space-y-12">
-          <PreviewApp components={data} />
+          <PreviewApp components={data} files={files} />
         </div>
       </>
     );
