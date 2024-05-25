@@ -5,6 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as Select from "@radix-ui/react-select";
 import * as Tabs from "@radix-ui/react-tabs";
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import { Separator } from "@/components/ui/separator";
 
 export default function FUIFaqsWithDividedRows() {
 
@@ -32,16 +33,25 @@ export default function FUIFaqsWithDividedRows() {
     ]
 
     return (
-        <section className='py-14'>
-            <div className="max-w-screen-xl mx-auto px-4 gap-12 md:flex md:px-8">
-                <div className='flex-1'>
+        <section className='relative'>
+            <img
+        className="absolute inset-x-0 -top-20 opacity-20 "
+        src={"https://pipe.com/_next/image?url=%2Fassets%2Fimg%2Fhero-left.png&w=384&q=75"}
+        width={1000}
+        height={1000}
+        alt="back bg"
+      />
+    
+            <div className="py-14 relative  max-w-screen-xl mx-auto px-4 gap-12 md:flex md:px-8">
+                <div className='flex-1 '>
                     <div className="max-w-lg">
-                        <h3 className='font-semibold text-indigo-600'>
+                        <h3 className='font-semibold text-cyan-600'>
                             Frequently asked questions
                         </h3>
-                        <p className='mt-3 text-gray-800 text-3xl font-extrabold sm:text-4xl'>
+                        <p className='mt-3 text-gray-400 text-3xl font-extrabold sm:text-4xl'>
                             All information you need to know
                         </p>
+                    <Separator className="h-[1px] mt-5 bg-white/10"/>
                     </div>
                 </div>
                 <div className='flex-1 mt-12 md:mt-0'>
@@ -56,7 +66,7 @@ export default function FUIFaqsWithDividedRows() {
                                 </summary>
                                 <p
                                     dangerouslySetInnerHTML={{ __html: item.a }}
-                                    className='mt-3 text-gray-600 leading-relaxed'>
+                                    className='mt-3 text-gray-300 leading-relaxed'>
                                 </p>
                             </li>
                         ))}
