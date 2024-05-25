@@ -1,44 +1,5 @@
 [
-  {
-    "description": "Beautifully designed, fully responsive, expertly crafted input examples",
-    "section_name": "Inputs",
-    "id": "aff12693-c78a-4a74-89ec-80856ebc770e",
-    "category": "Application",
-    "slug": "/inputs",
-    "cover_url": "Inputs.png",
-    "count": 12,
-    "isNew": false
-  },
-  {
-    "category": "Marketing",
-    "slug": "/banners",
-    "description": "Beautifully designed, fully responsive, expertly crafted banner examples",
-    "count": 5,
-    "cover_url": "Banner.png",
-    "section_name": "Banners",
-    "id": "d3003bc1-fb65-4157-ae76-c460e7ca43d9",
-    "isNew": false
-  },
-  {
-    "cover_url": "CTA-Section.png",
-    "category": "Marketing",
-    "id": "0fb7f422-029c-4eff-914d-cf228942b180",
-    "description": "Beautifully designed, fully responsive, expertly crafted CTA section examples",
-    "slug": "/cta-sections",
-    "count": 9,
-    "section_name": "CTA Sections",
-    "isNew": false
-  },
-  {
-    "description": "Beautifully designed, fully responsive, expertly crafted table examples",
-    "section_name": "Tables",
-    "id": "d9c5c70d-0a0a-4909-89aa-0c66661d3d54",
-    "slug": "/tables",
-    "category": "Application",
-    "count": 8,
-    "cover_url": "Table.png",
-    "isNew": false
-  },
+
   {
     "slug": "/faqs",
     "category": "Marketing",
@@ -58,16 +19,6 @@
     "section_name": "Form Field",
     "description": "Beautifully designed, fully responsive, expertly crafted Form examples",
     "isNew": true
-  },
-  {
-    "cover_url": "Stats.png",
-    "category": "Marketing",
-    "description": "Beautifully designed, fully responsive, expertly crafted stat examples",
-    "slug": "/stats",
-    "id": "985029d3-8f34-4c36-a960-3b00be079226",
-    "count": 6,
-    "section_name": "Stats",
-    "isNew": false
   }
   
 ]

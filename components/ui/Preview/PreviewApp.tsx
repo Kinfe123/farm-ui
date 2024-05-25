@@ -16,17 +16,18 @@ interface ComponentData extends Component, ComponentDetails, CodeBlock {
 
 interface Props {
   components: ComponentData[];
+  files: string[]
 }
 
-export default ({ components }: Props) => {
+export default ({ components , files }: Props) => {
   const pathname = usePathname();
-
+  
   return (
     <>
       {components?.map((item: ComponentData, idx: number) =>
         item.isActive ? (
           <div key={idx} >
-            <Preview item={item} mdxSource={item.mdxSource} slug={pathname} />
+            <Preview item={item} files={files} mdxSource={item.mdxSource} slug={pathname} />
           </div>
         ) : (
           ""

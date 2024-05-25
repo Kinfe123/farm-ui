@@ -11,7 +11,7 @@ const template:string = `
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet" />
     <title>Document</title>
 </head>
-<body class="body">
+<body class="body"  >
 
 </body>
 </html>

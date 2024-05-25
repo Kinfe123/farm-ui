@@ -23,13 +23,13 @@ const FeaturesAsGrid = () => {
             </div>
 
             <div className="flex gap-2 justify-center items-center">
-              <CheckIcon  className="w-4 h-4 font-bold text-green-600" /> Full Course on Centeri div
+              <CheckIcon  className="w-4 h-4 font-bold text-green-600" /> Full Course on Centering div
             </div>
             <div className="flex gap-2 justify-center items-center">
               <CheckIcon className="w-4 h-4 text-green-600" /> May be it is just flex 
             </div>
             <div className="flex gap-2 justify-center items-center">
-              <CheckIcon className="w-4 h-4 text-green-600" /> I guess , you used tried us.
+              <CheckIcon className="w-4 h-4 text-green-600" /> or , use translate
             </div>
           </div>
         </div>

@@ -8,18 +8,27 @@ import React, {
 } from "react";
 import { createPortal } from "react-dom";
 import template from "../template/index";
+import FUIForm from "previewsComponents/FUIForm";
+import { componentToPreview } from "./reactComponents";
 
 interface Props {
   children: React.ReactNode;
   dir?: string;
   srcDoc?: string;
+  files?: string[]
+  comp: {
+    component:React.ReactNode,
+    description: string,
+}
 }
 
-const Viewport = ({ children, dir, srcDoc = template, ...props }: Props) => {
+const Viewport = ({ children, files , comp, dir, srcDoc = template, ...props }: Props) => {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [compContent, setCompContent] = useState<any>(null);
   const [pressure, setPressure] = useState<boolean>(false);
 
+  
+  
   const containerRef = useRef<HTMLDivElement>(null);
   const iframe = useRef<HTMLIFrameElement>(null);
   const iframeContainerRef = useRef<HTMLDivElement>(null);
@@ -107,7 +116,7 @@ const Viewport = ({ children, dir, srcDoc = template, ...props }: Props) => {
       (
         iframeContainerRef.current as HTMLIFrameElement
       ).style.width = `${pageX}px`;
-      handleIframeHeight();
+    handleIframeHeight();
     }
   };
 
@@ -123,7 +132,8 @@ const Viewport = ({ children, dir, srcDoc = template, ...props }: Props) => {
         ref={iframeContainerRef}
         className="relative max-w-full min-w-full h-auto sm:min-w-[400px] sm:flex"
       >
-        <iframe
+        {comp.component}
+        {/* <iframe
           srcDoc={template}
           ref={iframe}
           className="w-full bg-black appearance-none mr-4 min-h-[400px] iframe"
@@ -131,7 +141,7 @@ const Viewport = ({ children, dir, srcDoc = template, ...props }: Props) => {
           loading="lazy"
         >
           {compContent}
-        </iframe>
+        </iframe> */}
         <div
           className="absolute top-0 right-0 items-center hidden w-5 h-full bg-zinc-700 border-l border-zinc-800 sm:flex"
           style={{ cursor: "ew-resize" }}
@@ -159,3 +169,8 @@ const Viewport = ({ children, dir, srcDoc = template, ...props }: Props) => {
 };
 
 export default Viewport;
+
+const splitToTag = (tag: string) => {
+  const splitted = tag.split(".mdx")
+  return splitted[0]
+}
