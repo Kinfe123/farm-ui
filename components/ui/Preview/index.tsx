@@ -13,7 +13,6 @@ import componentsNames from "componentsNames";
 import TabsTrigger from "../Tabs/TabsTrigger";
 import { motion } from "framer-motion";
 import { componentToPreview } from "viewport/components/reactComponents";
-
 const tabs = [
   {
     name: "React.js",
@@ -51,7 +50,6 @@ export default ({
   const [isPreview, setPreview] = useState<boolean>(true);
   const [selectedFramework, setFramework] = useState("react");
   const [copied, setCopyed] = useState(false);
-
   const fullTech = {
     react: "jsxTail",
     vue: "vueTail",
@@ -69,6 +67,7 @@ export default ({
     setCopyed(true);
   };
   
+  // console.log('the compoent is: ' , item.codeCopy['react'])
 
   useEffect(() => {
     if (copied) {
@@ -76,6 +75,9 @@ export default ({
     }
   }, [copied]);
   const reactCompToRender = componentToPreview[item?.id] ?? <></>
+  const comp = reactCompToRender.path
+  const codeCopy = reactCompToRender.codeCopy['react'].toString()
+  console.log("copde copy : " , codeCopy)
   return (
 
     <>
@@ -122,7 +124,7 @@ export default ({
             <button
               className="w-7 h-7 absolute top-16 right-6 flex items-center justify-center font-medium text-zinc-300 text-sm hover:bg-zinc-600 rounded-md duration-200"
               onClick={() =>
-                copyCode(item.ltr[selectedFramework].jsxTail[0].code)
+                copyCode(codeCopy)
               }
             >
               {copied ? (
@@ -149,7 +151,8 @@ export default ({
                 >
                   <SyntaxHeighlight
                     code={
-                      item.ltr[selectedFramework][fullTech as string][0]?.code
+                      codeCopy
+                      // item.ltr[selectedFramework][fullTech as string][0]?.code
                     }
                   />
                 </motion.div>
