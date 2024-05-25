@@ -6,6 +6,7 @@ import * as Select from "@radix-ui/react-select";
 import * as Tabs from "@radix-ui/react-tabs";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Separator } from "@/components/ui/separator";
+import { Mail } from "lucide-react";
 
 export default function FUIFaqsWithSearchBox() {
   const faqsList = [
@@ -40,12 +41,14 @@ export default function FUIFaqsWithSearchBox() {
     <section className="relative">
       <img
         className="absolute inset-x-0 -top-20 opacity-25 "
-        src={"https://pipe.com/_next/image?url=%2Fassets%2Fimg%2Fhero-left.png&w=384&q=75"}
+        src={
+          "https://pipe.com/_next/image?url=%2Fassets%2Fimg%2Fhero-left.png&w=384&q=75"
+        }
         width={1000}
         height={1000}
         alt="back bg"
       />
-    
+
       <div className="absolute -z-1 inset-0  h-[600px] w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
 
       <div className="pt-10 max-w-screen-xl mx-auto px-4 md:px-8">
@@ -69,18 +72,7 @@ export default function FUIFaqsWithSearchBox() {
             className="mx-auto sm:mx-auto "
           >
             <div className="relative">
-              <svg
-                className="w-6 h-6 text-gray-100 absolute left-3 inset-y-0 my-auto"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                  clipRule="evenodd"
-                />
-              </svg>
+              <Mail className="w-6 h-6 text-gray-500 absolute left-3 inset-y-0 my-auto" />
               <input
                 type="text"
                 placeholder="Enter your email"
@@ -89,7 +81,7 @@ export default function FUIFaqsWithSearchBox() {
             </div>
           </form>
         </div>
-        <Separator className="h-[1px] bg-white/10 mt-4"/>
+        <Separator className="h-[1px] bg-white/10 mt-4" />
         <div className="mt-12">
           <ul className="space-y-8 gap-12 grid-cols-2 sm:grid sm:space-y-0 lg:grid-cols-3">
             {faqsList.map((item, idx) => (
