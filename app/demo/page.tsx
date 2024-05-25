@@ -96,7 +96,7 @@ export default async () => {
           </div>
 
           <div className="mt-24 space-y-12 z-10">
-            <PreviewApp components={data} />
+            <PreviewApp files={files} components={data} />
           </div>
           <div className="flex justify-center mt-12 text-sm font-medium z-10">
             <Link
