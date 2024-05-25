@@ -146,12 +146,12 @@ function Stats({
           {stats.map((stat) => (
             <div
               key={stat.name}
-              className="mx-auto relative bg-transparent px-4 py-6 sm:px-6 lg:px-8 backdrop-blur-2xl"
+              className="mx-auto flex-col  relative bg-transparent px-4 py-6 sm:px-6 lg:px-8 backdrop-blur-2xl"
             >
-              <p className="text-sm font-medium text-ellipsis leading-6 text-gray-400">
+              <p className="text-sm font-medium text-ellipsis leading-6 text-gray-400 text">
                 {stat.name}
               </p>
-              <p className="mt-2 flex items-baseline gap-x-2">
+              <p className="mt-2 flex items-center justify-center  md:items-baseline md:justify-start gap-x-2">
                 <span className={cn("text-4xl font-semibold tracking-tight text-white", stat.name === "Purchased Website" ? 'blur-sm' : 'blur-0')}>
                   {stat.value}
                 </span>
