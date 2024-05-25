@@ -13,7 +13,7 @@ const DashboardDemo = () => {
             src={dashboard}
             width={1000}
             height={1000}
-            className="w-full object-contain shadow-lg"
+            className="hidden sm:hidden md:block w-full object-contain shadow-lg"
             alt="Dashboard showcase"
           />
          <BorderBeam size={250} duration={12} delay={9} />
