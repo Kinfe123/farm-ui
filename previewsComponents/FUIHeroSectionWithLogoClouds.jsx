@@ -5,6 +5,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as Select from "@radix-ui/react-select";
 import * as Tabs from "@radix-ui/react-tabs";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { ChevronRight } from "lucide-react";
 export default function FUIHeroSectionWithLogoClouds() {
   const [state, setState] = React.useState(false);
 
@@ -24,13 +25,7 @@ export default function FUIHeroSectionWithLogoClouds() {
         height={1000}
         alt="back bg"
       />
-      <img
-        className="absolute top-0 z-0 translate-y-1/2 z-20 translate-x-0 md:translate-x-1/3 lg:translate-x-1/2 "
-        src={"https://farmui.vercel.app/bg-back.png"}
-        width={1000}
-        height={1000}
-        alt="back bg"
-      />
+
       <div className="absolute -z-1 inset-0  h-[600px] w-full bg-transparent opacity-10 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
       <nav className="relative items-center pt-5 px-4 mx-auto w-full sm:px-8 lg:flex md:space-x-6">
         <div className="flex justify-between">
@@ -94,22 +89,20 @@ export default function FUIHeroSectionWithLogoClouds() {
             ))}
           </div>
           <li className="order-2 py-5 md:py-0">
-            <a
-              href="javascript:void(0)"
-              className="py-2 px-5 rounded-lg font-medium text-white text-center bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 duration-150 block md:py-3 md:inline"
-            >
-              Get started
-            </a>
+            <button className="inline-flex h-12 items-center justify-center font-geist rounded-md border border-gray-800 bg-gradient-to-t from-[#8678f9] from-0% to-[#c7d2fe] px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 ">
+              Get Started
+            </button>
           </li>
         </ul>
       </nav>
       <section className="py-28 z-10">
         <div className="max-w-screen-xl mx-auto text-gray-600 gap-x-12 items-center justify-between overflow-hidden md:flex md:px-8">
           <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
-            <h1 className="text-sm text-indigo-600 font-medium font-displayAlt">
-              Over 200 successful deals
+            <h1 className="text-sm  text-gray-400 group font-geist mr-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit">
+              Over 200+ deals finished
+              <ChevronRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
             </h1>
-            <h2 className="text-4xl md:text-5xl lg:text-5xl text-transparent font-extrabold  font-displayAlt bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
+            <h2 className="text-4xl md:text-5xl font-geist font-normal tracking-tighter lg:text-5xl text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)]">
               We help startups to grow and make money
             </h2>
             <p className="font-geist">
@@ -119,7 +112,7 @@ export default function FUIHeroSectionWithLogoClouds() {
             <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
               <a
                 href="javascript:void(0)"
-                className="block py-2 px-4 text-center text-white font-medium bg-indigo-600 duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none"
+                className="block py-2 px-4 text-center text-white/80 font-normal bg-gradient-to-tr from-zinc-300/5 via-gray-400/10 to-transparent bg-zinc-900  border-input border-[1px] hover:bg-transparent/10  duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none"
               >
                 Let's get started
               </a>
