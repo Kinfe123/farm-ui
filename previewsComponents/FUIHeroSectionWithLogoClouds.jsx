@@ -110,22 +110,13 @@ export default function FUIHeroSectionWithLogoClouds() {
               doloremque laudantium, totam rem aperiam, eaque ipsa quae.
             </p>
             <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
-              <a
-                href="javascript:void(0)"
-                className="block py-2 px-4 text-center text-white/80 font-normal bg-gradient-to-tr from-zinc-300/5 via-gray-400/10 to-transparent bg-zinc-900  border-input border-[1px] hover:bg-transparent/10  duration-150 hover:bg-indigo-500 active:bg-indigo-700 rounded-lg shadow-lg hover:shadow-none"
-              >
-                Let's get started
-              </a>
-              <a
-                href="javascript:void(0)"
-                className="flex items-center  text-gray-100justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex"
-              >
-                Get access
+              <button className="inline-flex h-12 items-center justify-center font-geist rounded-md border border-gray-800 bg-gradient-to-t from-[#8678f9] from-0% to-[#c7d2fe] px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 ">
+                Get Started 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="w-5 h-5"
+                  className="w-5 h-5 ml-2"
                 >
                   <path
                     fillRule="evenodd"
@@ -133,7 +124,8 @@ export default function FUIHeroSectionWithLogoClouds() {
                     clipRule="evenodd"
                   />
                 </svg>
-              </a>
+              </button>
+             
             </div>
           </div>
           <div className="flex-none mt-14 md:mt-0 md:max-w-xl">
