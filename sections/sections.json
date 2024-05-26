@@ -19,6 +19,16 @@
     "section_name": "Form Field",
     "description": "Beautifully designed, fully responsive, expertly crafted Form examples",
     "isNew": true
+  },
+  {
+    "slug": "/hero-section",
+    "category": "Application",
+    "count": 7,
+    "cover_url": "FAQS.png",
+    "id": "100",
+    "section_name": "Hero Section",
+    "description": "Beautifully designed, fully responsive, expertly crafted Hero examples",
+    "isNew": true
   }
   
 ]
