@@ -62,7 +62,6 @@ export default async ({ params: { slug } }: { params: Params }) => {
     const dir = path.join(process.cwd(), `componentsDB/${slug}`);
 
     const files = fs.readdirSync(dir);
-     console.log({files})
     const data: any = await Promise.all(
       files.map(async (filename) => {
         const filePath = path.join(dir, filename);
