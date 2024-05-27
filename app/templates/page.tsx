@@ -6,6 +6,7 @@ import HeroAnimated from "components/HeroAnimated";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import BgGradient from "components/ui/BgGradient";
 
 type MetaInfo = {
   title: string;
@@ -56,12 +57,19 @@ const Template = async () => {
               <div className="flex flex-wrap gap-3 justify-center items-center"></div>
             </HeroAnimated>
           </div>
-          <Stats
-            free={`${free_templates.length}`}
-            paid={`${paid_templates.length}`}
-            total={`${templates.length}`}
-            purchased={`${total_purchased}`}
-          />
+          <div className="flex flex-col gap-2 relative">
+
+            <div className="opacity-50">
+
+              <BgGradient />
+            </div>
+            <Stats
+              free={`${free_templates.length}`}
+              paid={`${paid_templates.length}`}
+              total={`${templates.length}`}
+              purchased={`${total_purchased}`}
+            />
+          </div>
           <ul
             id="templates"
             className="grid-cols-1 gap-14 mx-auto mt-32 space-y-7 max-w-4xl text-white divide-y lg:grid lg:space-y-0 lg:divide-y-0 divide-zinc-800"
@@ -109,7 +117,7 @@ function Stats({
     },
   ];
   return (
-    <div className="relative bg-gradient-to-tr from-black/90 via-black/90 to-black/90 border-none border-zinc-800 mx-2 pb-5 mt-2 md:shadow-none md:border-none backdrop-blur-sm rounded-md">
+    <div className="relative bg-gradient-to-tr from-black/10 via-black/5 to-black/15 border-none border-zinc-800 mx-2 pb-5 mt-2 md:shadow-none md:border-none backdrop-blur-sm rounded-md">
       <div className="absolute -z-1 inset-0  h-[300px] z-20 opacity-5 w-full bg-black/90  bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] rounded-xl"></div>
       <div className="mx-auto max-w-7xl">
         <div className="relative   rounded-2xl grid grid-cols-1 gap-px bg-gradient-to-tr from-black to-purple-400/5 pb-10  border  mt-2 md:shadow-none md:border-none sm:grid-cols-2 lg:grid-cols-4">
@@ -146,7 +154,7 @@ function Stats({
           {stats.map((stat) => (
             <div
               key={stat.name}
-              className="mx-auto flex-col  relative bg-transparent px-4 py-6 sm:px-6 lg:px-8 backdrop-blur-2xl"
+              className="mx-auto flex-col  relative bg-transparent px-4 py-6 sm:px-6 lg:px-8 "
             >
               <p className="text-sm font-medium text-ellipsis leading-6 text-gray-400 text">
                 {stat.name}
@@ -157,7 +165,7 @@ function Stats({
                 </span>
               </p>
 
-              <svg
+              {/* <svg
                 className="absolute inset-0 z-20 stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
                 aria-hidden="true"
               >
@@ -189,7 +197,7 @@ function Stats({
                   strokeWidth={0}
                   fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
                 />
-              </svg>
+              </svg> */}
             </div>
           ))}
         </div>

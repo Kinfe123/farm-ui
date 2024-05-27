@@ -34,7 +34,7 @@ export const techStackIcons: TechStackIconType = {
     icon: <TailwindCss className="w-7 h-7 mx-1"  />,
   },
   shadcn: {
-    name: "ShadCn",
+    name: "Shadcn",
     icon: <ShadcnUi className="w-7 h-7 mx-1" />,
   },
   nextjs: {
