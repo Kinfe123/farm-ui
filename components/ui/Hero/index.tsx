@@ -45,7 +45,7 @@ const Hero = async () => {
               <Suspense fallback={<></>}>
                 <a href="https://github.com/Kinfe123/farm-ui" target="_blank">
                  <span className="font-bold">
-                 {stars}
+                 {stars ?? 'Somehow many'}
                   
                   </span> stars on Github
                 </a>
