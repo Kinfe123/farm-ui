@@ -28,7 +28,7 @@ async function getGitHubStars() {
     return null;
   }
 }
-const Hero = async () => {
+export default async function(){
   const stars = await getGitHubStars();
   return (
     <>
@@ -91,4 +91,3 @@ const Hero = async () => {
   );
 };
 
-export default Hero;
