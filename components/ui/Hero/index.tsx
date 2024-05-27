@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { Suspense } from "react";
 import LinkItem from "../LinkItem";
 import { IconGithub } from "components/icons";
 import HeroBgGradientClient from "./HeroBgGradient.Client";
@@ -7,18 +7,49 @@ import bghero from "../../../public/img.png";
 import { ChevronRight } from "lucide-react";
 import HeroAnimated from "components/HeroAnimated";
 import { cn } from "@/lib/utils";
-import heroStyle from 'components/HeroNit/hero.module.css'
-export default () => {
+import heroStyle from "components/HeroNit/hero.module.css";
+async function getGitHubStars() {
+  try {
+    const response = await fetch(
+      "https://api.github.com/repos/Kinfe123/farm-ui",
+      {
+        next: {
+          revalidate: 60,
+        },
+      }
+    );
+    if (!response?.ok) {
+      return null;
+    }
+    const json = await response.json();
+    const stars = parseInt(json.stargazers_count).toLocaleString();
+    return stars;
+  } catch {
+    return null;
+  }
+}
+export default async function(){
+  const stars = await getGitHubStars();
   return (
     <>
       <section className="custom-screen mt-32">
         <div className="relative z-20 max-w-5xl mx-auto space-y-4">
-      
-          <h1 className={"z-20 text-sm text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit flex justify-center items-center"}>
-          🎉 <div className="w-[1px] h-[20px] bg-white/10 inline-flex mx-2 group-hover:bg-white/20" />
-
-           <span className={cn(heroStyle.magicText)}>
-            Build products for everyone
+          <h1
+            className={
+              "z-20 text-sm text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit flex justify-center items-center"
+            }
+          >
+            🎉{" "}
+            <div className="w-[1px] h-[20px] bg-white/10 inline-flex mx-2 group-hover:bg-white/20" />
+            <span className={cn(heroStyle.magicText)}>
+              <Suspense fallback={<></>}>
+                <a href="https://github.com/Kinfe123/farm-ui" target="_blank">
+                 <span className="font-bold">
+                 {stars ?? 'Somehow many'}
+                  
+                  </span> stars on Github
+                </a>
+              </Suspense>
             </span>
             <ChevronRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
           </h1>
@@ -35,7 +66,6 @@ export default () => {
                 href="/templates"
                 variant="shiny"
                 className="inline-flex group justify-center items-center  bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-purple-400/10  border-white/5 border-[1px] hover:bg-transparent/5  py-4 px-10"
-
               >
                 Coocked for you
                 <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
@@ -55,12 +85,9 @@ export default () => {
         <HeroBgGradientClient />
       </section>
       <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute top-0 md:-top-2 right-0 min-h-screen">
-        <Image
-          src={bghero}
-          className="w-full bg-center "
-          alt="Hero Image"
-        />
+        <Image src={bghero} className="w-full bg-center " alt="Hero Image" />
       </div>
     </>
   );
 };
+
