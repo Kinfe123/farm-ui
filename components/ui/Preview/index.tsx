@@ -85,7 +85,7 @@ export default ({
           {item?.title}
         </h3>
         <div className="flex gap-3 items-center my-3 sm:mt-0">
-        <div><pre className='text-white/50 text-sm'>npx farmui add farmui-{item.id}</pre></div>
+        {/* <div><pre className='text-white/50 text-sm'>npx farmui add farmui-{item.id}</pre></div> */}
 
           <PreviewSwitch preview={isPreview} setPreview={setPreview} />
         </div>

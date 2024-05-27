@@ -6,17 +6,24 @@ import HeroBgGradientClient from "./HeroBgGradient.Client";
 import bghero from "../../../public/img.png";
 import { ChevronRight } from "lucide-react";
 import HeroAnimated from "components/HeroAnimated";
+import { cn } from "@/lib/utils";
+import heroStyle from 'components/HeroNit/hero.module.css'
 export default () => {
   return (
     <>
       <section className="custom-screen mt-32">
-        <div className="relative z-10 max-w-5xl mx-auto space-y-4">
+        <div className="relative z-20 max-w-5xl mx-auto space-y-4">
+          <h1 className={cn(heroStyle.magicText , "z-20 text-sm text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit")}>
+            Build products for everyone
+            <ChevronRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+          </h1>
+
           <HeroAnimated
             header="Take shadcn to the next level for modern web dev experience"
             headerClassName="text-center max-w-5xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful, responsive UI components and website
             templates with modern design, 100% free and open-source."
-            descriptionClassName="mx-auto text-zinc-400 text-center text-lg lg:max-w-2xl py-5"
+            descriptionClassName="mx-auto text-zinc-300 text-center text-lg lg:max-w-2xl py-5"
           >
             <div className="flex flex-wrap items-center justify-center  gap-3">
               <LinkItem
