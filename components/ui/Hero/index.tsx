@@ -13,8 +13,13 @@ export default () => {
     <>
       <section className="custom-screen mt-32">
         <div className="relative z-20 max-w-5xl mx-auto space-y-4">
-          <h1 className={cn(heroStyle.magicText , "z-20 text-sm text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit")}>
+      
+          <h1 className={"z-20 text-sm text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit flex justify-center items-center"}>
+          🎉 <div className="w-[1px] h-[20px] bg-white/10 inline-flex mx-2 group-hover:bg-white/20" />
+
+           <span className={cn(heroStyle.magicText)}>
             Build products for everyone
+            </span>
             <ChevronRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
           </h1>
 
@@ -27,12 +32,13 @@ export default () => {
           >
             <div className="flex flex-wrap items-center justify-center  gap-3">
               <LinkItem
-                href="/components"
-                variant="default"
-                className="inline-flex text-center group items-center w-full justify-center bg-gradient-to-bl from-black/90 via-zinc-800 to-black  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10"
+                href="/templates"
+                variant="shiny"
+                className="inline-flex group justify-center items-center  bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-purple-400/10  border-white/5 border-[1px] hover:bg-transparent/5  py-4 px-10"
+
               >
-                Browser Components
-                <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+                Coocked for you
+                <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
               </LinkItem>
               <LinkItem
                 href="https://github.com/Kinfe123/farm-ui"
@@ -40,7 +46,7 @@ export default () => {
                 className="inline-flex w-full justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
                 target="_blank"
               >
-                <IconGithub className="w-5 h-5" />
+                <IconGithub className="iw-5 h-5" />
                 Star on GitHub
               </LinkItem>
             </div>

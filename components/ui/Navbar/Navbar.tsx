@@ -9,6 +9,7 @@ import NewsletterModal from "../NewsletterModal";
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { ChevronRight } from "lucide-react";
 
 export default () => {
   const [state, setState] = useState(false);
@@ -106,9 +107,11 @@ export default () => {
                 <LinkItem
                   variant="shiny"
                   href="/components"
-                  className="w-full block bg-zinc-800 hover:bg-zinc-700 md:bg-shiny"
+                  className="w-full group block bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-transparent  border-input border-[1px] hover:bg-transparent/10  hover:bg-zinc-700 "
                 >
-                  Get started
+                  Browse more 
+                <ChevronRight className="inline-flex w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+
                 </LinkItem>
               </div>
             </div>
