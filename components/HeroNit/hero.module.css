@@ -53,8 +53,8 @@
 
 .magicText {
   --purple: rgba(165, 86, 243, 0.868);
-  --violet: rgba(225, 47, 130, 0.79);
-  --pink: #ce32f1;
+  --violet: #ffaa40;
+  --pink: #9c40ff;
   animation: background-pan 3s linear infinite;
   background: linear-gradient(
     to right,

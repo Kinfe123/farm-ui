@@ -88,7 +88,7 @@ export default () => {
                       key={idx}
                       className={cn(
                         "font-medium text-sm text-zinc-400 hover:text-zinc-200 duration-200",
-                        pathname === item.path ? "text-white" : ""
+                        pathname === item.path ? "text-white/80" : ""
                       )}
                     >
                       <Link href={item.path} className="block">
