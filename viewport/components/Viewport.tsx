@@ -124,9 +124,9 @@ const Viewport = ({ children, files , comp, dir, srcDoc = template, ...props }: 
     <div
       ref={containerRef}
       className="w-full overflow-hidden bg-black/90 border border-zinc-800 rounded-lg"
-      onMouseMove={mouseMove}
-      onMouseUp={mouseUp}
-      onTouchMove={touchMove}
+      // onMouseMove={mouseMove}
+      // onMouseUp={mouseUp}
+      // onTouchMove={touchMove}
     >
       <div
         ref={iframeContainerRef}

@@ -23,16 +23,16 @@ const FUIHeroWithGrid = () => {
         <div className="relative z-10 max-w-4xl translate-y-[33%]  mx-auto space-y-4">
           <HeroAnimated
             header="Take shadcn to the next level for modern web dev experience"
-            headerClassName="text-center max-w-5xl text-2xl md:text-5xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+            headerClassName="text-center max-w-5xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful, responsive UI components and website
             templates with modern design, 100% free and open-source."
-            descriptionClassName="mx-auto text-zinc-400 text-center text-lg lg:max-w-2xl py-5"
+            descriptionClassName="mx-auto text-zinc-400 text-center text-md lg:max-w-2xl md:py-5"
           >
             <div className="flex flex-wrap items-center justify-center  gap-3">
               <LinkItem
                 href="/components"
                 variant="default"
-                className="inline-flex text-center group items-center w-full justify-center bg-gradient-to-bl from-black/90 via-zinc-800 to-black  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10"
+                className="inline-flex text-center group items-center w-full justify-center bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-transparent  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10"
               >
                 Browser Components
                 <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />

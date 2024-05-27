@@ -57,7 +57,7 @@ const FUIHeroWithGridSimple = () => {
         </div>
         {/* <div className="absolute -z-1 inset-0 opacity-15  h-[600px] w-full bg-transparent  bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div> */}
 
-        <div className="relative z-10 max-w-4xl ml-10 translate-y-[33%]  mr-auto  space-y-4">
+        <div className="relative z-10 max-w-4xl ml-5 md:ml-10  translate-y-[33%]  mr-auto  space-y-4">
           <h1 className="text-sm  text-gray-400 group font-geist mr-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit">
             <pre className="tracking-tight uppercase">
               Build products for everyone
@@ -66,18 +66,18 @@ const FUIHeroWithGridSimple = () => {
           </h1>
           <HeroAnimated
             header="Take shadcn to the next level for modern web dev experience."
-            headerClassName="text-left tracking-tight max-w-5xl text-2xl md:text-5xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+            headerClassName="ml-2 text-left tracking-tight max-w-md md:max-w-3xl text-3xl md:text-4xl tracking-tighter mr-auto lg:text-6xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description=""
             descriptionClassName="  "
           >
-            <div className="mr-auto ml-2 text-zinc-400 text-left text-lg lg:max-w-2xl py-5">
-              <pre className="tracking-tight uppercase max-w-2xl text-wrap">
+            <div className="mr-auto text-[0.84rem] ml-2 text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-5">
+              <pre className="tracking-tight uppercase max-w-md md:max-w-3xl text-wrap">
                 Move faster with beautiful responsive UI components and website
                 templates with modern design, 100% free and open-source.
               </pre>
             </div>
           </HeroAnimated>
-            <div className="mr-auto ml-2  flex flex-wrap items-start justify-start gap-x-3">
+            <div className="mr-auto ml-2  flex flex-wrap gap-y-4 items-start justify-start gap-x-3">
               <LinkItem
                 href="/components"
                 className="inline-flex rounded-none uppercase font-mono  text-center group items-center w-full justify-center  bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-zinc-900  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10"

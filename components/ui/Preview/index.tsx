@@ -77,7 +77,6 @@ export default ({
   const reactCompToRender = componentToPreview[item?.id] ?? <></>
   const comp = reactCompToRender.path
   const codeCopy = reactCompToRender.codeCopy['react'].toString()
-  console.log("copde copy : " , codeCopy)
   return (
 
     <>
@@ -86,6 +85,8 @@ export default ({
           {item?.title}
         </h3>
         <div className="flex gap-3 items-center my-3 sm:mt-0">
+        <div><pre className='text-white/50 text-sm'>npx farmui add farmui-{item.id}</pre></div>
+
           <PreviewSwitch preview={isPreview} setPreview={setPreview} />
         </div>
       </div>
@@ -140,7 +141,7 @@ export default ({
             <Tabs.Content
               key={idx}
               className="overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1"
-              value={tab.value}
+              value={tab.value} 
             >
               {item.ltr[selectedFramework] &&
               item.ltr[selectedFramework][fullTech as string].length > 0 ? (
