@@ -13,7 +13,7 @@ const SwitchBtn = ({ preview, setPreview }: Props) => (
     onClick={() => setPreview(!preview)}
     className="flex gap-x-3 text-sm text-zinc-50 bg-zinc-800 hover:bg-zinc-700 rounded-lg w-50 py-2 shadow-sm"
   >
-    Code
+        {preview ? "Preview" : "Editor"}
     {preview ? (
       <CodeBracketIcon className="w-5 h-5" />
     ) : (
