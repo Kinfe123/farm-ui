@@ -23,4 +23,4 @@ FarmUI is client first and animation rich ui component library built on top of r
 
 ## Contributing
 
-See [here](./.github/CONTRIBUTING.md) for more information on how to contribute to Loglib.
+See [here](./.github/CONTRIBUTING.md) for more information on how to contribute.
