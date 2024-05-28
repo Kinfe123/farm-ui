@@ -1,0 +1,23 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsup --watch",
+    "studio": "dotenv -e ../../.env drizzle-kit studio",
+    "push:pg": "dotenv  drizzle-kit push:pg"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.29.2",
+    "postgres": "^3.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.4",
+    "drizzle-kit": "^0.20.9"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
