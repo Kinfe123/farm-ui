@@ -14,7 +14,6 @@ export default function FUIBasicTabs() {
     "Transactions",
     "plans",
   ];
-
   return (
     <Tabs.Root
       className="max-w-screen-xl mx-auto px-4 md:px-8"

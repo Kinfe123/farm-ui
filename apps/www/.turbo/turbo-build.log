@@ -1,0 +1,8 @@
+
+> web@0.1.0 build /home/kinfish/oss/ui-mess/apps/www
+> next build
+
+  [1m[38;2;173;127;168m ▲ Next.js 14.0.3[39m[22m
+   - Environments: .env
+
+[?25l [37m[1m [22m[39m Creating an optimized production build  [36m.[39m[2K[1G [37m[1m [22m[39m Creating an optimized production build  [36m..[39m[2K[1G [37m[1m [22m[39m Creating an optimized production build  [36m...[39m
