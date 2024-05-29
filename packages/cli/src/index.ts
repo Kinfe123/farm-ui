@@ -1,4 +1,4 @@
-
+import "dotenv/config"
 import { Command } from "commander";
 
 import { add } from "./commands/add";
