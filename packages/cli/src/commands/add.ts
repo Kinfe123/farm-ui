@@ -11,6 +11,13 @@ import prompts from "prompts";
 import { FARMUI_GRAFFITI } from "../utils/ascii-arts";
 import { logger } from "../utils/logger";
 import { z } from "zod";
+
+
+process.on("SIGINT", () => process.exit(0));
+process.on("SIGTERM", () => process.exit(0));
+
+
+
 const COMPONENT_REGISTERY_URL = process.env.COMPONENTS_REGISTRY_URL ?? "http://localhost:3000/api/components";
 type CompToAddProps = {
   comp_path: string;
@@ -56,8 +63,9 @@ export const add = new Command()
         const { dir } = await prompts({
           type: "text",
           name: "dir",
-          message: "A directory where it should be living",
-          hint: "./components ",
+          message: `A directory to dump the components? `,
+          hint: "components ",
+          
         });
         if (dir) {
           defaultDir = dir;
@@ -65,7 +73,7 @@ export const add = new Command()
       }
       // should be prompting it for the component place to be stored
       const path_ = path.join(custom_cwd, defaultDir);
-      const root_dir = path.join(path_, "/ui");
+      const root_dir = path.join(path_, "/farmui");
       const comp_fetch = await fetch(COMPONENT_REGISTERY_URL!);
       let comp_db: any[] = await comp_fetch.json();
       const select_files_by_id = comp_db.find((x) => x.id === options.id);
