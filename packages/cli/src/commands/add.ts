@@ -11,9 +11,7 @@ import prompts from "prompts";
 import { FARMUI_GRAFFITI } from "../utils/ascii-arts";
 import { logger } from "../utils/logger";
 import { z } from "zod";
-const COMPONENT_REGISTERY_URL =
-  process.env.COMPONENTS_REGISTRY_URL ?? "http://localhost:3000/api/components";
-console.log({ COMPONENT_REGISTERY_URL });
+const COMPONENT_REGISTERY_URL = process.env.COMPONENTS_REGISTRY_URL ?? "http://localhost:3000/api/components";
 type CompToAddProps = {
   comp_path: string;
   comp_content: string;
@@ -48,17 +46,24 @@ export const add = new Command()
       process.exit(0);
     }
     let defaultDir = "components";
-
+    const custom_cwd_flag = process.cwd() === options.cwd
+    console.log({custom_cwd , options})
+    console.log(process.cwd())
     // already found the id and next will be finding the component id
     try {
-      const { dir } = await prompts({
-        type: "text",
-        name: "dir",
-        message: "A directory where it should be living",
-        hint: "./components ",
-      });
-      if (dir) {
-        defaultDir = dir;
+      if(!custom_cwd_flag) {
+        logger.info(`We are dumping the component inside of ${custom_cwd} ` )
+      }else {
+
+        const { dir } = await prompts({
+          type: "text",
+          name: "dir",
+          message: "A directory where it should be living",
+          hint: "./components ",
+        });
+        if (dir) {
+          defaultDir = dir;
+        }
       }
       console.log({ defaultDir });
       // should be prompting it for the component place to be stored
@@ -93,6 +98,8 @@ export const add = new Command()
         logger.error("No such component exists with in this ID.");
         process.exit(0);
       }
+      const spinner = ora(`Dumping your components...`);
+      spinner.start();
       console.log({ select_files_by_id });
       // for now , the content we will support will be react based , toll we have updated the ednpoint
       const root_comp_name = select_files_by_id.files[0].root.name;
@@ -100,14 +107,12 @@ export const add = new Command()
         select_files_by_id.files[0].root.contents[0].content;
       const root_comp_path = path.join(root_dir, root_comp_name);
       const child_comp = select_files_by_id.files[1].child;
-
       path_to_add.push({
         comp_content: root_comp_content,
         comp_path: root_comp_path,
       });
 
       const child_path: string[] = [];
-      const spinner = ora(`Dumping your components...`);
       const depends_on: any[] = child_comp;
       depends_on.map((dep) => {
         const child_comp_name = dep.name;
@@ -119,7 +124,6 @@ export const add = new Command()
         });
       });
       const dependencies: string[] = select_files_by_id.dependencies;
-      spinner.start();
       if (!path_to_add) {
         logger.warn("No component to add");
       } else {
