@@ -1,6 +1,6 @@
 [
   {
-    "id": "1001",
+    "id": "farmui-1001",
     "name": "FUIForms",
     "dependencies": [],
     "files": [
@@ -33,7 +33,7 @@
     "type": "ui"
   },
   {
-    "id": "bb87ffac-1579-4670-80be-7c1180404b4e",
+    "id": "farmui-bb87ffac-1579-4670-80be-7c1180404b4e",
     "name": "FUIFaqs",
     "dependencies": ["@radix-ui/react-accordion", "@radix-ui/alert"],
     "files": [
