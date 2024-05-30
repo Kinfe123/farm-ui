@@ -3,17 +3,22 @@ import "dotenv/config"
 import { existsSync, promises as fs } from "fs"
 import path from "path"
 import chalk from "chalk"
+import gradient from "gradient-string"
+import {toBlock , toBlockString} from "terminal-block-fonts"
 import { Command } from "commander"
 import ora from "ora"
 import { execa } from "execa";
 import prompts from "prompts"
 import { logger } from "../utils/logger"
-const COMPONENT_REGISTERY_URL =  process.env.COMPONENTS_REGISTRY_URL ?? "http://localhost:3000"
+const COMPONENT_REGISTERY_URL =  process.env.COMPONENTS_REGISTRY_URL ?? "http://localhost:3000/api/components"
 console.log({COMPONENT_REGISTERY_URL})
 type CompToAddProps = {
    comp_path: string,
    comp_content: string,
 }
+
+console.log(gradient('cyan', 'pink')('FARMUI'));
+
 export const add = new Command()
 
 
@@ -44,13 +49,13 @@ export const add = new Command()
       }
       // should be prompting it for the component place to be stored
       const path_ = path.join(process.cwd(), defaultDir)
-      const root_dir = path.join(process.cwd(), "/ui")
+      const root_dir = path.join(path_, "/ui")
 
       const exist = existsSync(path_)
 
       if (exist) {
         // logic for existed
-        console.log("The component alredy existed")
+        logger.info("The component already existed")
         const { proceed } = await prompts({
           type: "confirm",
           name: "proceed",
@@ -58,20 +63,23 @@ export const add = new Command()
           initial: true,
         })
       }
-      await fs.mkdir(path_, { recursive: true })
-      let formattedText = ""
-      formattedText = `${id}.tsx`
+      console.log(path_)
+      console.log({root_dir})
+      await fs.mkdir(root_dir, { recursive: true })
       const path_to_add: CompToAddProps[] = []
       // const comp_db = path.join(process.cwd() + "/ui", "comp.json")
       const comp_fetch = await fetch(COMPONENT_REGISTERY_URL!)
-      const comp_db = await comp_fetch.json()
-      console.log({comp_db})
+      console.log(comp_fetch)
+      let comp_db: any[] = await comp_fetch.json()
+      
+      console.log("The file is : ", comp_db)
     
 
       // const comp_file = await fs.readFile(comp_db, "utf8")
       // const parsed_json = await JSON.parse(comp_file)
       // const select_files_by_id = parsed_json.find((x) => x.id === id)
       const select_files_by_id = comp_db.find((x) => x.id === id)
+      console.log({select_files_by_id})
       // for now , the content we will support will be react based , toll we have updated the ednpoint
       const root_comp_name = select_files_by_id.files[0].root.name
       const root_comp_content = select_files_by_id.files[0].root.contents[0].content
@@ -88,7 +96,7 @@ export const add = new Command()
       depends_on.map((dep)=> {
         const child_comp_name = dep.name 
         const child_comp_content = dep.contents[0].content
-        const child_comp_path = path.join(root_dir , child_comp_name)
+        const child_comp_path = path.join(root_dir  , child_comp_name)
         path_to_add.push({
           comp_content: child_comp_content,
           comp_path: child_comp_path
@@ -100,7 +108,7 @@ export const add = new Command()
         logger.warn("No component to add")
       }else {
         path_to_add.map(async({comp_content , comp_path}) => {
-          await fs.writeFile(comp_path , comp_content)
+          await fs.writeFile(`${comp_path}.tsx` , comp_content)
         })
       }
 

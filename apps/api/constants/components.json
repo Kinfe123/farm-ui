@@ -1,8 +1,8 @@
 [
   {
-    "id": "001",
+    "id": "1001",
     "name": "FUIForms",
-    "dependencies": ["@radix-ui/react-accordion", "@radix-ui/alert"],
+    "dependencies": [],
     "files": [
       {
         "root": {
