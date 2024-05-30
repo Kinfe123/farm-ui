@@ -51,22 +51,18 @@ export const add = new Command()
 
     // already found the id and next will be finding the component id
     try {
-      if (custom_cwd) {
-        defaultDir = custom_cwd;
-      } else {
-        const { dir } = await prompts({
-          type: "text",
-          name: "dir",
-          message: "A directory where it should be living",
-          hint: "./components ",
-        });
-        if (dir) {
-          defaultDir = dir;
-        }
+      const { dir } = await prompts({
+        type: "text",
+        name: "dir",
+        message: "A directory where it should be living",
+        hint: "./components ",
+      });
+      if (dir) {
+        defaultDir = dir;
       }
-      console.log({defaultDir})
+      console.log({ defaultDir });
       // should be prompting it for the component place to be stored
-      const path_ = path.join(process.cwd(), defaultDir);
+      const path_ = path.join(custom_cwd, defaultDir);
       const root_dir = path.join(path_, "/ui");
 
       const exist = existsSync(path_);
@@ -86,9 +82,8 @@ export const add = new Command()
           );
           process.exit(0);
         }
-      }else {
+      } else {
         await fs.mkdir(root_dir, { recursive: true });
-
       }
       const path_to_add: CompToAddProps[] = [];
       const comp_fetch = await fetch(COMPONENT_REGISTERY_URL!);
@@ -112,7 +107,7 @@ export const add = new Command()
       });
 
       const child_path: string[] = [];
-      const spinner = ora(`Dumping your components...`)
+      const spinner = ora(`Dumping your components...`);
       const depends_on: any[] = child_comp;
       depends_on.map((dep) => {
         const child_comp_name = dep.name;
@@ -124,7 +119,7 @@ export const add = new Command()
         });
       });
       const dependencies: string[] = select_files_by_id.dependencies;
-      spinner.start()
+      spinner.start();
       if (!path_to_add) {
         logger.warn("No component to add");
       } else {
@@ -137,7 +132,7 @@ export const add = new Command()
           cwd: process.cwd(),
         });
       }
-      spinner.stop()
+      spinner.stop();
       spinner.succeed("Successfully installed");
     } catch (err) {
       console.log("Error: ", err);
