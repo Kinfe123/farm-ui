@@ -18,7 +18,7 @@ process.on("SIGTERM", () => process.exit(0));
 
 
 
-const COMPONENT_REGISTERY_URL = process.env.COMPONENTS_REGISTRY_URL ?? "http://localhost:3000/api/components";
+const COMPONENT_REGISTERY_URL = "" ?? "https://farmui-api.vercel.app/api/components";
 type CompToAddProps = {
   comp_path: string;
   comp_content: string;

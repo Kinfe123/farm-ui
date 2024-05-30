@@ -1,8 +1,20 @@
 {
   "name": "farm-ui",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Add farmui components and building blocks",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "kinfish",
+    "url": "https://twitter.com/KinfishT"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kinfe123/farm-ui.git",
+    "directory": "packages/cli"
+  },
   "files": [
     "dist"
   ],
@@ -71,6 +83,5 @@
     "type-fest": "^3.8.0",
     "typescript": "^4.9.3"
   },
-  "author": "",
   "license": "ISC"
 }
