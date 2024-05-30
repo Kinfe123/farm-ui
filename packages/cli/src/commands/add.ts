@@ -56,16 +56,16 @@ export const add = new Command()
     const custom_cwd_flag = process.cwd() === options.cwd
     // already found the id and next will be finding the component id
     try {
-      if(!custom_cwd_flag) {
-        logger.info(`We are dumping the component inside of ${custom_cwd} ` )
-      }else {
+      if (!custom_cwd_flag) {
+        logger.info(`We are dumping the component inside of ${custom_cwd} `)
+      } else {
 
         const { dir } = await prompts({
           type: "text",
           name: "dir",
           message: `A directory to dump the components? `,
           hint: "components ",
-          
+
         });
         if (dir) {
           defaultDir = dir;
@@ -141,6 +141,24 @@ export const add = new Command()
         });
       }
       spinner.stop();
+      if (dependencies.length) {
+        logger.info(`Dependencies - ${dependencies.length} added`)
+        dependencies.map((dep) => {
+          logger.success(` + ${dep}`)
+        })
+
+      }
+      if (path_to_add) {
+        const path_for_comp = root_dir.split("/")
+        const last_two = path_for_comp[path_for_comp.length - 2] + path_for_comp[path_for_comp.length - 1]
+
+        logger.info(`Components - ${path_to_add.length} added inside of ${last_two}`)
+        path_to_add.map((comps) => {
+          const comp_names = comps.comp_path.split("/")
+          const comp_name = comp_names[comp_names.length - 1]
+          logger.success(` + ${comp_name}`)
+        })
+      }
       spinner.succeed("Successfully installed");
     } catch (err) {
       logger.error("Error has occured!")
