@@ -47,8 +47,6 @@ export const add = new Command()
     }
     let defaultDir = "components";
     const custom_cwd_flag = process.cwd() === options.cwd
-    console.log({custom_cwd , options})
-    console.log(process.cwd())
     // already found the id and next will be finding the component id
     try {
       if(!custom_cwd_flag) {
@@ -65,12 +63,18 @@ export const add = new Command()
           defaultDir = dir;
         }
       }
-      console.log({ defaultDir });
       // should be prompting it for the component place to be stored
       const path_ = path.join(custom_cwd, defaultDir);
       const root_dir = path.join(path_, "/ui");
+      const comp_fetch = await fetch(COMPONENT_REGISTERY_URL!);
+      let comp_db: any[] = await comp_fetch.json();
+      const select_files_by_id = comp_db.find((x) => x.id === options.id);
+      if (!select_files_by_id) {
+        logger.error("No such component exists with in this ID.");
+        process.exit(0);
+      }
 
-      const exist = existsSync(path_);
+      const exist = existsSync(root_dir);
 
       if (exist) {
         // logic for existed
@@ -91,16 +95,6 @@ export const add = new Command()
         await fs.mkdir(root_dir, { recursive: true });
       }
       const path_to_add: CompToAddProps[] = [];
-      const comp_fetch = await fetch(COMPONENT_REGISTERY_URL!);
-      let comp_db: any[] = await comp_fetch.json();
-      const select_files_by_id = comp_db.find((x) => x.id === options.id);
-      if (!select_files_by_id) {
-        logger.error("No such component exists with in this ID.");
-        process.exit(0);
-      }
-      const spinner = ora(`Dumping your components...`);
-      spinner.start();
-      console.log({ select_files_by_id });
       // for now , the content we will support will be react based , toll we have updated the ednpoint
       const root_comp_name = select_files_by_id.files[0].root.name;
       const root_comp_content =
@@ -123,6 +117,8 @@ export const add = new Command()
           comp_path: child_comp_path,
         });
       });
+      const spinner = ora(`Dumping your components...`);
+      spinner.start();
       const dependencies: string[] = select_files_by_id.dependencies;
       if (!path_to_add) {
         logger.warn("No component to add");
@@ -139,6 +135,7 @@ export const add = new Command()
       spinner.stop();
       spinner.succeed("Successfully installed");
     } catch (err) {
+      logger.error("Error has occured!")
       console.log("Error: ", err);
     }
   });

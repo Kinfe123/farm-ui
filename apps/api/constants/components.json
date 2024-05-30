@@ -2,7 +2,7 @@
   {
     "id": "farmui-1001",
     "name": "FUIForms",
-    "dependencies": [],
+    "dependencies": ["dotenv"],
     "files": [
       {
         "root": {
