@@ -21,10 +21,11 @@ type CompToAddProps = {
 console.log(gradient('pink', 'blue')(FARMUI_GRAFFITI));
 
 export const add = new Command()
+
   .name("add")
   .description("add a new component or UI from farmui")
-  .argument("<string>", "Id of the componnt from farmui.com")
-  .option("--id", "id of the component")
+  .argument("<string>", "id of the component from https://farmui.com")
+  // .option("--id", "id of the component")
   .option(
     "-c, --cwd <cwd>",
     "the working directory. defaults to the current directory.",

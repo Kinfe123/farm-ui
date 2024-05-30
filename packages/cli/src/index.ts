@@ -1,4 +1,4 @@
-import "dotenv/config";
+import "dotenv/config"
 import { Command } from "commander";
 
 import { add } from "./commands/add";
@@ -11,17 +11,16 @@ async function main() {
   const packageInfo = await getPackageInfo();
 
   const program = new Command()
-    .name("farm-ui")
-    .description(
-      "Treating UI libs as first class citizen and making sure they are headless\nfor more, visit us - https://farmui.com"
-    )
+    .name("farmui")
+    .description("Add natively farmed farmUI blocks ")
     .version(
-      packageInfo.version || "0.0.1",
+      packageInfo.version || "1.0.0",
       "-v, --version",
-      "display the version number"
+      "display the version number",
     );
 
-  program.addCommand(add);
+  program.addCommand(add)
+
   program.parse();
 }
 
