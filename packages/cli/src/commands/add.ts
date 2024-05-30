@@ -9,6 +9,7 @@ import { Command } from "commander"
 import ora from "ora"
 import { execa } from "execa";
 import prompts from "prompts"
+import {FARMUI_GRAFFITI} from "../utils/ascii-arts"
 import { logger } from "../utils/logger"
 const COMPONENT_REGISTERY_URL =  process.env.COMPONENTS_REGISTRY_URL ?? "http://localhost:3000/api/components"
 console.log({COMPONENT_REGISTERY_URL})
@@ -17,13 +18,11 @@ type CompToAddProps = {
    comp_content: string,
 }
 
-console.log(gradient('cyan', 'pink')('FARMUI'));
+console.log(gradient('pink', 'blue')(FARMUI_GRAFFITI));
 
 export const add = new Command()
-
-
-  .name("farmui-add")
-  .description("Adding a new component for farmui from terminal")
+  .name("add")
+  .description("add a new component or UI from farmui")
   .argument("<string>", "Id of the componnt from farmui.com")
   .option("--id", "id of the component")
   .option(
@@ -62,9 +61,11 @@ export const add = new Command()
           message: `Ready to install components and dependencies. Proceed?`,
           initial: true,
         })
+        if(!proceed) {
+          logger.info("Make sure you have the right path to dump the components")
+          process.exit(0)
+        }
       }
-      console.log(path_)
-      console.log({root_dir})
       await fs.mkdir(root_dir, { recursive: true })
       const path_to_add: CompToAddProps[] = []
       // const comp_db = path.join(process.cwd() + "/ui", "comp.json")

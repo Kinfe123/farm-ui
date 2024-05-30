@@ -1,7 +1,7 @@
 {
   "name": "farmui",
   "version": "1.0.0",
-  "description": "Add farmui component",
+  "description": "Add farmui components and building blocks",
   "main": "index.js",
   "files": [
     "dist"
