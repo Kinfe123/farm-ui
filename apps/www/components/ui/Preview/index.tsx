@@ -47,7 +47,7 @@ export default ({
   item: any;
   mdxSource: MDXRemoteSerializeResult;
   slug: string;
-  files: string[]
+  files: string[];
 }) => {
   const [isPreview, setPreview] = useState<boolean>(true);
   const [selectedFramework, setFramework] = useState("react");
@@ -68,7 +68,7 @@ export default ({
     textare.remove();
     setCopyed(true);
   };
-  
+
   // console.log('the compoent is: ' , item.codeCopy['react'])
 
   useEffect(() => {
@@ -76,21 +76,22 @@ export default ({
       setTimeout(() => setCopyed(false), 2000);
     }
   }, [copied]);
-  const reactCompToRender = componentToPreview[item?.id] ?? <></>
-  const comp = reactCompToRender.path
-  const codeCopy = reactCompToRender.codeCopy['react'].toString()
+  const reactCompToRender = componentToPreview[item?.id] ?? <></>;
+  const comp = reactCompToRender.path;
+  const codeCopy = reactCompToRender.codeCopy["react"].toString();
   return (
-
     <>
       <div className="items-start justify-between sm:flex">
         <h3 className="text-sm text-zinc-300 font-medium py-4">
           {item?.title}
         </h3>
         <div className="flex gap-3 items-center my-3 sm:mt-0 z-20">
-        <div className="border-input animate-background-shine bg-[linear-gradient(110deg,#000,45%,#4D4B4B,55%,#000)] bg-[length:250%_100%]   border-[2px] py-2 px-4 rounded-lg flex gap-2 justify-center items-center">
-          <Terminal className="w-4 h-4 text-white/80"  />
-          <pre className='text-white/50 tracking-tight text-sm '>pnpm farmui add {item.id}</pre>
-          <CopyNpmCommandButton commands={`farmui add ${item.id}`}/>
+          <div className="border-input animate-background-shine bg-[linear-gradient(110deg,#000,45%,#4D4B4B,55%,#000)] bg-[length:250%_100%]   border-[2px] py-2 px-4 rounded-lg flex gap-2 justify-center items-center">
+            <Terminal className="w-4 h-4 text-white/80" />
+            <pre className="text-white/50 tracking-tight text-sm ">
+              pnpm farmui add {item.id}
+            </pre>
+            <CopyNpmCommandButton commands={`farm-ui add ${item.id}`} />
           </div>
 
           <PreviewSwitch preview={isPreview} setPreview={setPreview} />
@@ -130,9 +131,7 @@ export default ({
           item.ltr[selectedFramework][fullTech as string].length > 0 ? (
             <button
               className="w-7 h-7 absolute top-16 right-6 flex items-center justify-center font-medium text-zinc-300 text-sm hover:bg-zinc-600 rounded-md duration-200"
-              onClick={() =>
-                copyCode(codeCopy)
-              }
+              onClick={() => copyCode(codeCopy)}
             >
               {copied ? (
                 <CheckIcon className="w-5 h-5" />
@@ -147,7 +146,7 @@ export default ({
             <Tabs.Content
               key={idx}
               className="overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1"
-              value={tab.value} 
+              value={tab.value}
             >
               {item.ltr[selectedFramework] &&
               item.ltr[selectedFramework][fullTech as string].length > 0 ? (
