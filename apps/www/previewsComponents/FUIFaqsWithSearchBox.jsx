@@ -1,3 +1,5 @@
+import { Separator } from "@/components/ui/separator";
+import { Mail } from "lucide-react";
 import React from "react";
 
 export default function FUIFaqsWithSearchBox() {
@@ -24,7 +26,7 @@ export default function FUIFaqsWithSearchBox() {
     },
     {
       q: "What do you wish you had more talent doing?",
-      a: "If you've been searching for a way to get random questions, you've landed on the correct webpage. We created the Random Question Generator to ask you as many random questions as your heart desires.",
+    a: "If you've been searching for a way to get random questions, you've landed on the correct webpage. We created the Random Question Generator to ask you as many random questions as your heart desires.",
       href: "javascript:void(0)",
     },
   ];

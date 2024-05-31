@@ -1,5 +1,6 @@
 import React from "react";
 import RetroGrid from "components/ui/Grid";
+import { ChevronRight } from "lucide-react";
 
 export default function FUIHeroSectionWithBottomImage() {
   return (
