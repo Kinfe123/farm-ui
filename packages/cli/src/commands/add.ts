@@ -77,6 +77,7 @@ export const add = new Command()
       const root_dir = path.join(path_, "/farmui");
       const comp_fetch = await fetch(COMPONENT_REGISTERY_URL!);
       let comp_db: any[] = await comp_fetch.json();
+      console.log({comp_db})
       const select_files_by_id = comp_db.find((x) => x.id === options.id);
       if (!select_files_by_id) {
         logger.error("No such component exists with in this ID.");
@@ -109,7 +110,11 @@ export const add = new Command()
       const root_comp_content =
         select_files_by_id.files[0].root.contents[0].content;
       const root_comp_path = path.join(root_dir, root_comp_name);
-      const child_comp = select_files_by_id.files[1].child;
+      let  child_comp  = []
+      if(select_files_by_id[1]) {
+        child_comp = select_files_by_id.files[1].child;
+
+      }
       path_to_add.push({
         comp_content: root_comp_content,
         comp_path: root_comp_path,
