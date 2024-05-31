@@ -1,10 +1,10 @@
 ## FarmUI  ![GitHub stars](https://img.shields.io/github/stars/Kinfe123/farm-ui)
 
 FarmUI is client first and animation rich ui component library built on top of radix and shadcn as well other primitive providers that we would like to cover.
+## FarmUI  ![GitHub stars](https://img.shields.io/github/stars/Kinfe123/farm-ui)
 
-<p align="center">
-  <img src="apps/www/public/opengraph-image.jpg" alt="landing-image" />
-</p>
+FarmUI is client first and animation rich ui component library built on top of radix and shadcn as well other primitive providers that we would like to cover.
+
 
 
 ## Why tho?
