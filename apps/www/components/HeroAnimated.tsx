@@ -1,10 +1,12 @@
 "use client";
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import React from "react";
-import { FADE_UP_ANIMATION_VARIANTS } from "utils/animationConfig";
 import { cn } from "@/lib/utils";
-type FadeUpAnimationProps = {};
+
+const FADE_UP_ANIMATION_VARIANTS = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { type: "spring" } },
+}
 const HeroAnimated = ({
   children,
   header,

@@ -1,8 +1,5 @@
-import Image from "next/image";
-
 import LinkItem from "components/ui/LinkItem";
 import { IconGithub } from "components/icons";
-import bghero from "../../../public/img.png";
 import { ChevronRight } from "lucide-react";
 import HeroAnimated from "components/HeroAnimated";
 import BgGradient from "components/ui/BgGradient";

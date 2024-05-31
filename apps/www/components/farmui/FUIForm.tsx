@@ -12,10 +12,10 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import LinkItem from "components/ui/LinkItem";
 import { ChevronRight, Loader2 } from "lucide-react";
 import { useState, useTransition } from "react";
 import { useToast } from "@/components/ui/use-toast";
+// raplace it with your actions.
 import { saySomething } from "actions/emailSubRelated";
 import {Button} from "@/components/ui/button";
 type FormType = {
@@ -154,5 +154,6 @@ export default function FUIForm() {
     </section>
   );
 }
+
 
 
