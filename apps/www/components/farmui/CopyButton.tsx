@@ -52,14 +52,14 @@ export function CopyNpmCommandButton({commands , className} : {commands: string 
             )}
           >
             {hasCopied ? (
-              <CheckIcon className="h-3 w-3" />
+              <CheckIcon className="h-4 w-4 mx-auto" />
             ) : (
-              <ClipboardIcon className="h-3 w-3" />
+              <ClipboardIcon className="h-4 w-4 mx-auto" />
             )}
             <span className="sr-only">Copy</span>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="z-20">
+        <DropdownMenuContent align="start" className="z-20 bg-black/80">
           <DropdownMenuItem
             onClick={() => copyCommand(commands, "npm")}
           >
