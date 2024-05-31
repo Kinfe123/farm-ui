@@ -150,7 +150,7 @@ export const add = new Command()
       }
       if (path_to_add) {
         const path_for_comp = root_dir.split("/")
-        const last_two = path_for_comp[path_for_comp.length - 2] + path_for_comp[path_for_comp.length - 1]
+        const last_two = path_for_comp[path_for_comp.length - 2] + "/" +  path_for_comp[path_for_comp.length - 1]
 
         logger.info(`Components - ${path_to_add.length} added inside of ${last_two}`)
         path_to_add.map((comps) => {
