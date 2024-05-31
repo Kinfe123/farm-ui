@@ -1,8 +1,5 @@
-import Image from "next/image";
-
 import LinkItem from "components/ui/LinkItem";
 import { IconGithub } from "components/icons";
-import bghero from "../../../public/img.png";
 import { ChevronRight } from "lucide-react";
 import HeroAnimated from "components/HeroAnimated";
 const FUIHeroWithGrid = () => {
@@ -19,7 +16,6 @@ const FUIHeroWithGrid = () => {
           height={1000}
           alt="back bg"
         />
-
         <div className="relative z-10 max-w-4xl translate-y-[33%]  mx-auto space-y-4">
           <HeroAnimated
             header="Take shadcn to the next level for modern web dev experience"

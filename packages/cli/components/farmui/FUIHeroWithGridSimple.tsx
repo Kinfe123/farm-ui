@@ -1,3 +1,4 @@
+
 import LinkItem from "components/ui/LinkItem";
 import { IconGithub } from "components/icons";
 import { ChevronRight } from "lucide-react";
@@ -98,3 +99,4 @@ const FUIHeroWithGridSimple = () => {
   );
 };
 export default FUIHeroWithGridSimple;
+

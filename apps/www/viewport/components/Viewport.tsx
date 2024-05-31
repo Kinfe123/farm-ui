@@ -130,7 +130,7 @@ const Viewport = ({ children, files , comp, dir, srcDoc = template, ...props }: 
     >
       <div
         ref={iframeContainerRef}
-        className="relative max-w-full min-w-full h-auto sm:min-w-[400px] sm:flex"
+        className="relative max-w-full  min-w-full h-auto sm:min-w-[400px] sm:flex"
       >
         {comp.component}
         {/* <iframe

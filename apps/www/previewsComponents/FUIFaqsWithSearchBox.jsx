@@ -1,12 +1,6 @@
-import React from "react";
-import * as Avatar from "@radix-ui/react-avatar";
-import * as ContextMenu from "@radix-ui/react-context-menu";
-import * as Dialog from "@radix-ui/react-dialog";
-import * as Select from "@radix-ui/react-select";
-import * as Tabs from "@radix-ui/react-tabs";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Separator } from "@/components/ui/separator";
 import { Mail } from "lucide-react";
+import React from "react";
 
 export default function FUIFaqsWithSearchBox() {
   const faqsList = [
@@ -32,7 +26,7 @@ export default function FUIFaqsWithSearchBox() {
     },
     {
       q: "What do you wish you had more talent doing?",
-      a: "If you've been searching for a way to get random questions, you've landed on the correct webpage. We created the Random Question Generator to ask you as many random questions as your heart desires.",
+    a: "If you've been searching for a way to get random questions, you've landed on the correct webpage. We created the Random Question Generator to ask you as many random questions as your heart desires.",
       href: "javascript:void(0)",
     },
   ];
