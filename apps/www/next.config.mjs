@@ -11,6 +11,7 @@ const nextConfig = {
   // },
   env: {
     DATABASE_URL: process.env.DATABASE_URL,
+    COMPONENT_REGISTERY_API_URL: process.env.COMPONENT_REGISTERY_API_URL,
   },
   images: {
     remotePatterns: [

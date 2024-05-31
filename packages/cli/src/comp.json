@@ -1,0 +1,8 @@
+[
+  {
+    "id": "1001",
+    "comp_path": "add.ts",
+    "depends_on": ["diff.ts", "init.ts"],
+    "dependencies": ["dotenv", "prisma"]
+  }
+]

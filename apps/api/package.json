@@ -1,12 +1,15 @@
 {
   "name": "api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vercel dev",
+    "deploy": "vercel"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "hono": "^4.4.0"
+  },
+  "devDependencies": {
+    "vercel": "^32.4.1"
+  }
 }
