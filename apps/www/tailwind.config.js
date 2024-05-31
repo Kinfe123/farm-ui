@@ -81,6 +81,14 @@ module.exports = {
             "offset-distance": "100%",
           },
         },
+        "background-shine": {
+          "from": {
+            "backgroundPosition": "0 0"
+          },
+          "to": {
+            "backgroundPosition": "-200% 0"
+          }
+        },
         grid: {
           "0%": { transform: "translateY(-50%)" },
           "100%": { transform: "translateY(0)" },
@@ -109,6 +117,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        "background-shine": "background-shine 2s linear infinite"
+
 
       },
     },
