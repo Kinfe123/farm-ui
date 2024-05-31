@@ -10,7 +10,8 @@ import { execa } from "execa";
 import prompts from "prompts";
 import { FARMUI_GRAFFITI } from "../utils/ascii-arts";
 import { logger } from "../utils/logger";
-import { z } from "zod";
+import { custom, z } from "zod";
+import { getPackageManager } from "../utils/get-package-manager";
 
 
 process.on("SIGINT", () => process.exit(0));
@@ -135,8 +136,9 @@ export const add = new Command()
           await fs.writeFile(`${comp_path}.tsx`, comp_content);
         });
       }
+      const packageManager = await getPackageManager(custom_cwd)
       if (dependencies?.length) {
-        await execa("pnpm", ["install", ...dependencies], {
+        await execa(`${packageManager}`, ["install", ...dependencies], {
           cwd: process.cwd(),
         });
       }
