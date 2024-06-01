@@ -68,7 +68,7 @@ export const Guide = defineDocumentType(() => ({
 }));
 export const Changelog = defineDocumentType(() => ({
   name: "Changelog",
-  filePathPattern: "changelog/**/*.mdx",
+  filePathPattern: "changelogs/**/*.mdx",
   contentType: "mdx",
   fields: {
     title: {
