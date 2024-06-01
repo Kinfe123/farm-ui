@@ -8,12 +8,11 @@ FarmUI is client first and animation rich ui component library built on top of r
 
 
 ## Why tho?
-- Free and Paid Beatifull and modern  Website template for Porfolio , Agency , SaaS , Docs , DX tools , frameworks..... 
 - We give you a full flexiblity of the source code that we styled and animated with framer motion built on top of radix and shadcn and
   wee will add more
 - Framework agnostic for generic components
 - Full block of components as copy and paste solution.
-- v0
+- Free and Paid Beatifull and modern  Website template for Porfolio , Agency , SaaS , Docs , DX tools , frameworks as well personalized requests are also accepted [here](https://t.me/Kinfe123) 
 
 
 
