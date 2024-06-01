@@ -128,7 +128,6 @@ export const add = new Command()
       const path_to_add: CompToAddProps[] = [];
       // for now , the content we will support will be react based , toll we have updated the ednpoint
       const root_comp_name = select_files_by_id.files[0].root.name;
-      console.log(select_files_by_id.files[0].root.contents[framework]);
       const root_comp_content =
         select_files_by_id.files[0].root.contents[framework].content;
       const root_comp_path = path.join(root_dir, root_comp_name);
