@@ -14,16 +14,19 @@ const ChangeLogPage = () => {
       <div className="relative">
         <section className="relative max-w-full mx-auto  z-1">
 
-          <div className="max-w-screen-xl z-30 mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8">
-            <div className="space-y-5 max-w-3xl px-[-40px] leading-0  lg:leading-0 mx-auto text-center">
-              <h1 className="text-sm text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit">
+          <div className="max-w-screen-xl z-30  px-4 py-28 gap-12 text-gray-600 md:px-8">
+            <div className="space-y-5 max-w-[56rem] px-[-40px] leading-0  lg:leading-0 mx-auto text-center">
+              <h1 className="text-sm text-gray-400 group font-geist  px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit mx-auto">
                 Building one at a time
                 <ChevronRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
               </h1>
 
-              <h2 className="text-4xl tracking-tighter font-geist bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] text-transparent   mx-auto md:text-5xl lg:text-7xl">
-              Changes , Anouncements and All the jazz  {" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-orange-200">
+              <h2 className=" text-4xl tracking-tighter font-geist  bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] text-transparent   mx-auto md:text-7xl ">
+              <span className="bg-gradient-to-r from-purple-300 to-orange-200 text-transparent bg-clip-text">
+              Changes </span> <br/> <span className="bg-gradient-to-r from-green-100 to-orange-200 text-transparent bg-clip-text">Anouncements <br /></span> and <span className="bg-gradient-to-r from-white to-orange-200 text-transparent bg-clip-text">
+              All the jazz 
+                </span> {" "}
+                <span className=" ">
                 will  be dumped here.
                 </span>
               </h2>
