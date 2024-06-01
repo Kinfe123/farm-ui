@@ -43,7 +43,7 @@ export default () => {
 
   return (
     <>
-      <header className="h-[4rem] relative z-20">
+      <header className="h-[4rem] relative z-30">
         <nav
           className={` ${
             state
@@ -81,7 +81,7 @@ export default () => {
                 state ? "block" : "hidden"
               } `}
             >
-              <ul className="flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+              <ul className="z-30 flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
                 {navigation.map((item, idx) => {
                   return (
                     <li
