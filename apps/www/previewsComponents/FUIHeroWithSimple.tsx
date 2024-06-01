@@ -6,8 +6,8 @@ import BgGradient from "components/ui/BgGradient";
 const FUIHeroWithGridSimple = () => {
   return (
     <>
-      <section className="min-h-[800px] w-full  mt-0 relative">
-        <div className="absolute -top-0 inset-x-0 opacity-45">
+      <section className="relative mt-0 w-full min-h-[800px]">
+        <div className="absolute inset-x-0 -top-0 opacity-45">
           <BgGradient />
         </div>
 
@@ -55,10 +55,10 @@ const FUIHeroWithGridSimple = () => {
         {/* <div className="absolute -z-1 inset-0 opacity-15  h-[600px] w-full bg-transparent  bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div> */}
 
         <div className="relative z-10 max-w-4xl ml-5 md:ml-10  translate-y-[33%]  mr-auto  space-y-4">
-          <h1 className="text-sm  text-gray-400 group font-geist mr-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit">
+          <h1 className="py-2 px-5 mr-auto text-sm text-gray-400 bg-gradient-to-tr to-transparent rounded-3xl group font-geist from-zinc-300/5 via-gray-400/5 border-[2px] border-white/5 w-fit">
             <pre className="tracking-tight uppercase">
               Build products for everyone
-              <ChevronRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+              <ChevronRight className="inline ml-2 w-4 h-4 duration-300 group-hover:translate-x-1" />
             </pre>
           </h1>
           <HeroAnimated
@@ -67,31 +67,31 @@ const FUIHeroWithGridSimple = () => {
             description=""
             descriptionClassName="  "
           >
-            <div className="mr-auto text-[0.84rem] ml-2 text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-5">
-              <pre className="tracking-tight uppercase max-w-md md:max-w-3xl text-wrap">
+            <div className="mr-auto ml-2 max-w-md text-left md:py-5 md:text-lg lg:max-w-2xl text-[0.84rem] text-zinc-400">
+              <pre className="max-w-md tracking-tight uppercase md:max-w-3xl text-wrap">
                 Move faster with beautiful responsive UI components and website
                 templates with modern design, 100% free and open-source.
               </pre>
             </div>
           </HeroAnimated>
-            <div className="mr-auto ml-2  flex flex-wrap gap-y-4 items-start justify-start gap-x-3">
-              <LinkItem
-                href="/components"
-                className="inline-flex rounded-none uppercase font-mono  text-center group items-center w-full justify-center  bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-zinc-900  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10"
-              >
-                Browser Components
-                <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-              </LinkItem>
-              <LinkItem
-                href="https://github.com/Kinfe123/farm-ui"
-                variant="shiny"
-                className="inline-flex font-mono uppercase tracking-tight rounded-none w-full justify-center items-center gap-x-3 border border-zinc-800 hover:border-zinc-600 bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
-                target="_blank"
-              >
-                <IconGithub className="w-5 h-5 " />
-                Star on GitHub
-              </LinkItem>
-            </div>
+          <div className="flex flex-wrap gap-x-3 gap-y-4 justify-start items-start mr-auto ml-2">
+            <LinkItem
+              href="/components"
+              className="inline-flex justify-center items-center py-4 px-10 w-full font-mono text-center uppercase bg-gradient-to-tr to-transparent rounded-none transition-colors sm:w-auto group from-zinc-300/5 via-gray-400/5 bg-zinc-900 border-input border-[1px] hover:bg-transparent/10"
+            >
+              Browser Components
+              <ChevronRight className="ml-2 w-4 h-4 duration-300 group-hover:translate-x-1" />
+            </LinkItem>
+            <LinkItem
+              href="https://github.com/Kinfe123/farm-ui"
+              variant="shiny"
+              className="inline-flex gap-x-3 justify-center items-center py-4 px-10 w-full font-mono tracking-tight uppercase rounded-none border duration-200 sm:w-auto border-zinc-800 bg-zinc-950 hover:border-zinc-600 hover:text-zinc-100"
+              target="_blank"
+            >
+              <IconGithub className="w-5 h-5" />
+              Star on GitHub
+            </LinkItem>
+          </div>
         </div>
       </section>
     </>
