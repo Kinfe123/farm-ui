@@ -12,6 +12,7 @@ import { FARMUI_GRAFFITI } from "../utils/ascii-arts";
 import { logger } from "../utils/logger";
 import { custom, z } from "zod";
 import { getPackageManager } from "../utils/get-package-manager";
+import { framework_supports } from "../utils/get-suppoted";
 
 
 process.on("SIGINT", () => process.exit(0));
@@ -49,7 +50,8 @@ export const add = new Command()
     });
 
     const custom_cwd = path.resolve(options.cwd);
-    let framework = 'react' // the default one we supoort.
+    const default_fm = framework_supports[0]
+    let framework = default_fm.value // the default one we supoort.
     if (!existsSync(custom_cwd)) {
       logger.error(`There is no ${custom_cwd} exists your paths.`);
       process.exit(0);
@@ -74,6 +76,20 @@ export const add = new Command()
           defaultDir = dir;
         }
       }
+      const { fm } = await prompts({
+        type: "multiselect",
+        name: "fm",
+        message: "Which components would you like to add?",
+        hint: "Space to select. A to toggle all. Enter to submit.",
+        instructions: false,
+        choices:framework_supports.map((entry) => ({
+          title: entry,name,
+          value: entry.value,
+          selected: default_fm,
+
+         
+        })),
+      })
       // should be prompting it for the component place to be stored
       const path_ = path.join(custom_cwd, defaultDir);
       const root_dir = path.join(path_, "/farmui");
