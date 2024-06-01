@@ -72,7 +72,7 @@ export const add = new Command()
         }
       }
       const { fm } = await prompts({
-        type: "multiselect",
+        type: "select",
         name: "fm",
         message: "Which framework are you looking for?",
         hint: "Space to select. A to toggle all. Enter to submit.",
@@ -86,7 +86,7 @@ export const add = new Command()
         
       });
       if(fm) {
-        framework = fm[0]
+        framework = fm
       }
       if(framework !== 'react') {
         logger.error(`We are currently not supporting ${fm} on farmui.com.`)
