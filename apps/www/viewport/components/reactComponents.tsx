@@ -8,12 +8,12 @@ import FUIHeroWithGridSimple from "previewsComponents/FUIHeroWithSimple";
 import React from "react";
 
 type ComponentProps = {
-  [key: string]: {
+  [id: string]: {
     component: React.ReactNode;
     description: string;
     path: string;
     codeCopy: {
-      [key: string]: string;
+      [codeType: string]: string;
     };
   };
 };
@@ -28,6 +28,7 @@ export const componentToPreview: ComponentProps = {
 
             
             `,
+    
     },
   },
   

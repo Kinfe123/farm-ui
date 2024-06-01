@@ -49,11 +49,13 @@ export const add = new Command()
     });
 
     const custom_cwd = path.resolve(options.cwd);
+    let framework = 'react' // the default one we supoort.
     if (!existsSync(custom_cwd)) {
       logger.error(`There is no ${custom_cwd} exists your paths.`);
       process.exit(0);
     }
     let defaultDir = "components";
+    
     const custom_cwd_flag = process.cwd() === options.cwd
     // already found the id and next will be finding the component id
     try {
@@ -75,6 +77,7 @@ export const add = new Command()
       // should be prompting it for the component place to be stored
       const path_ = path.join(custom_cwd, defaultDir);
       const root_dir = path.join(path_, "/farmui");
+      
       const comp_fetch = await fetch(COMPONENT_REGISTERY_URL!);
       let comp_db: any[] = await comp_fetch.json();
       const select_files_by_id = comp_db.find((x) => x.id === options.id);
@@ -106,8 +109,9 @@ export const add = new Command()
       const path_to_add: CompToAddProps[] = [];
       // for now , the content we will support will be react based , toll we have updated the ednpoint
       const root_comp_name = select_files_by_id.files[0].root.name;
+      console.log(select_files_by_id.files[0].root.contents[framework])
       const root_comp_content =
-        select_files_by_id.files[0].root.contents[0].content;
+        select_files_by_id.files[0].root.contents[framework].content;
       const root_comp_path = path.join(root_dir, root_comp_name);
       let  child_comp  = []
       if(select_files_by_id[1]) {
@@ -123,7 +127,7 @@ export const add = new Command()
       const depends_on: any[] = child_comp;
       depends_on.map((dep) => {
         const child_comp_name = dep.name;
-        const child_comp_content = dep.contents[0].content;
+        const child_comp_content = dep.contents[framework].content
         const child_comp_path = path.join(root_dir, child_comp_name);
         path_to_add.push({
           comp_content: child_comp_content,
