@@ -85,7 +85,7 @@ export default ({
         <h3 className="text-sm text-zinc-300 font-medium py-4">
           {item?.title}
         </h3>
-        <div className="flex gap-3 items-center my-3 sm:mt-0 z-20">
+        <div className="flex flex-wrap gap-3 items-center my-3 sm:mt-0 z-20">
           <div className="border-input animate-background-shine bg-[linear-gradient(110deg,#000,55%,#4D4B4B,65%,#000)] bg-opacity-20 bg-[length:250%_100%]   border-[2px] py-2 px-4 rounded-lg flex gap-2 justify-center items-center">
             <Terminal className="w-4 h-4 text-white/80" />
             <pre className="text-white/50 tracking-tight text-sm mt-1 mr-5">
