@@ -1,5 +1,6 @@
-import {afterEach, expect, test, vi } from "vitest"
+import { afterEach, expect, test, vi } from "vitest"
 
-test("Adding a component test."  , async () => {
+// here mock the commander cli for the user flow and use 'execa' for excuting those mocks
+test("Adding a component test.", async () => {
     await expect(true).toBe(true)
 })

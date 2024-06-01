@@ -74,24 +74,24 @@ export const add = new Command()
       const { fm } = await prompts({
         type: "select",
         name: "fm",
-        message: "Which framework are you looking for?",
-        hint: "Space to select. A to toggle all. Enter to submit.",
+        message: "Which framework do you want to use with?",
+        hint: "Space to select and Enter to submit.",
         instructions: false,
         choices: framework_supports.map((fm) => ({
           title: fm.name,
           value: fm.value,
           selected: fm.value === "react",
         })),
-      
-        
       });
-      if(fm) {
-        framework = fm
+      if (fm) {
+        framework = fm;
       }
-      if(framework !== 'react') {
-        logger.error(`We are currently not supporting ${fm} on farmui.com.`)
-        logger.info("Be a part of by adding for your favorite framework, go for https://github.com/Kinfe123/farm-ui")
-        process.exit(0)
+      if (framework !== "react") {
+        logger.error(`We are not currently supporting ${fm} on farmui.com.`);
+        logger.info(
+          "Be a part of by adding for your favorite framework, go for https://github.com/Kinfe123/farm-ui"
+        );
+        process.exit(0);
       }
       // should be prompting it for the component place to be stored
       const path_ = path.join(custom_cwd, defaultDir);
