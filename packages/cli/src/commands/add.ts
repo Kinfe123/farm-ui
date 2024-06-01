@@ -12,12 +12,10 @@ import { FARMUI_GRAFFITI } from "../utils/ascii-arts";
 import { logger } from "../utils/logger";
 import { custom, z } from "zod";
 import { getPackageManager } from "../utils/get-package-manager";
-
+import { framework_supports } from "../utils/get-suppoted";
 
 process.on("SIGINT", () => process.exit(0));
 process.on("SIGTERM", () => process.exit(0));
-
-
 
 const COMPONENT_REGISTERY_URL = "https://farmui-api.vercel.app/api/components";
 type CompToAddProps = {
@@ -49,32 +47,56 @@ export const add = new Command()
     });
 
     const custom_cwd = path.resolve(options.cwd);
+    const default_fm = framework_supports[0];
+    let framework = default_fm.value; // the default one we supoort.
     if (!existsSync(custom_cwd)) {
       logger.error(`There is no ${custom_cwd} exists your paths.`);
       process.exit(0);
     }
     let defaultDir = "components";
-    const custom_cwd_flag = process.cwd() === options.cwd
+
+    const custom_cwd_flag = process.cwd() === options.cwd;
     // already found the id and next will be finding the component id
     try {
       if (!custom_cwd_flag) {
-        logger.info(`We are dumping the component inside of ${custom_cwd} `)
+        logger.info(`We are dumping the component inside of ${custom_cwd} `);
       } else {
-
         const { dir } = await prompts({
           type: "text",
           name: "dir",
           message: `A directory to dump the components? `,
           hint: "components ",
-
         });
         if (dir) {
           defaultDir = dir;
         }
       }
+      const { fm } = await prompts({
+        type: "select",
+        name: "fm",
+        message: "Which framework are you looking for?",
+        hint: "Space to select. A to toggle all. Enter to submit.",
+        instructions: false,
+        choices: framework_supports.map((fm) => ({
+          title: fm.name,
+          value: fm.value,
+          selected: fm.value === "react",
+        })),
+      
+        
+      });
+      if(fm) {
+        framework = fm
+      }
+      if(framework !== 'react') {
+        logger.error(`We are currently not supporting ${fm} on farmui.com.`)
+        logger.info("Be a part of by adding for your favorite framework, go for https://github.com/Kinfe123/farm-ui")
+        process.exit(0)
+      }
       // should be prompting it for the component place to be stored
       const path_ = path.join(custom_cwd, defaultDir);
       const root_dir = path.join(path_, "/farmui");
+
       const comp_fetch = await fetch(COMPONENT_REGISTERY_URL!);
       let comp_db: any[] = await comp_fetch.json();
       const select_files_by_id = comp_db.find((x) => x.id === options.id);
@@ -107,12 +129,11 @@ export const add = new Command()
       // for now , the content we will support will be react based , toll we have updated the ednpoint
       const root_comp_name = select_files_by_id.files[0].root.name;
       const root_comp_content =
-        select_files_by_id.files[0].root.contents[0].content;
+        select_files_by_id.files[0].root.contents[framework].content;
       const root_comp_path = path.join(root_dir, root_comp_name);
-      let  child_comp  = []
-      if(select_files_by_id[1]) {
+      let child_comp = [];
+      if (select_files_by_id[1]) {
         child_comp = select_files_by_id.files[1].child;
-
       }
       path_to_add.push({
         comp_content: root_comp_content,
@@ -123,7 +144,7 @@ export const add = new Command()
       const depends_on: any[] = child_comp;
       depends_on.map((dep) => {
         const child_comp_name = dep.name;
-        const child_comp_content = dep.contents[0].content;
+        const child_comp_content = dep.contents[framework].content;
         const child_comp_path = path.join(root_dir, child_comp_name);
         path_to_add.push({
           comp_content: child_comp_content,
@@ -140,7 +161,7 @@ export const add = new Command()
           await fs.writeFile(`${comp_path}.tsx`, comp_content);
         });
       }
-      const packageManager = await getPackageManager(custom_cwd)
+      const packageManager = await getPackageManager(custom_cwd);
       if (dependencies?.length) {
         await execa(`${packageManager}`, ["install", ...dependencies], {
           cwd: process.cwd(),
@@ -148,26 +169,30 @@ export const add = new Command()
       }
       spinner.stop();
       if (dependencies.length) {
-        logger.info(`Dependencies - ${dependencies.length} added`)
+        logger.info(`Dependencies - ${dependencies.length} added`);
         dependencies.map((dep) => {
-          logger.success(` + ${dep}`)
-        })
-
+          logger.success(` + ${dep}`);
+        });
       }
       if (path_to_add) {
-        const path_for_comp = root_dir.split("/")
-        const last_two = path_for_comp[path_for_comp.length - 2] + "/" +  path_for_comp[path_for_comp.length - 1]
+        const path_for_comp = root_dir.split("/");
+        const last_two =
+          path_for_comp[path_for_comp.length - 2] +
+          "/" +
+          path_for_comp[path_for_comp.length - 1];
 
-        logger.info(`Components - ${path_to_add.length} added inside of ${last_two}`)
+        logger.info(
+          `Components - ${path_to_add.length} added inside of ${last_two}`
+        );
         path_to_add.map((comps) => {
-          const comp_names = comps.comp_path.split("/")
-          const comp_name = comp_names[comp_names.length - 1]
-          logger.success(` + ${comp_name}`)
-        })
+          const comp_names = comps.comp_path.split("/");
+          const comp_name = comp_names[comp_names.length - 1];
+          logger.success(` + ${comp_name}`);
+        });
       }
       spinner.succeed("Successfully installed");
     } catch (err) {
-      logger.error("Error has occured!")
+      logger.error("Error has occured!");
       console.log("Error: ", err);
     }
   });
