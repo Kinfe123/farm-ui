@@ -1,6 +1,6 @@
 {
   "name": "@kinfe123/farm-ui",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Add farmui components and building blocks",
   "main": "index.js",
   "publishConfig": {
