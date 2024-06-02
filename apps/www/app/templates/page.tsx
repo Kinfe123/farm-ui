@@ -24,10 +24,19 @@ export const metadata = {
   openGraph: {
     title,
     description: desc,
+    images: [
+      {
+        url: "https://farmui.com/og.png",
+      },
+    ],
+    url: "https://farmui.com",
   },
   twitter: {
+    card: "summary_large_image",
     title,
     description: desc,
+    images: ["https://farmui.com/og.png"],
+    creator: "@farmui",
   },
 };
 
@@ -58,9 +67,7 @@ const Template = async () => {
             </HeroAnimated>
           </div>
           <div className="flex flex-col gap-2 relative">
-
             <div className="opacity-50">
-
               <BgGradient />
             </div>
             <Stats
@@ -160,7 +167,12 @@ function Stats({
                 {stat.name}
               </p>
               <p className="mt-2 flex items-center justify-center  md:items-baseline md:justify-start gap-x-2">
-                <span className={cn("text-4xl font-semibold tracking-tight text-white", stat.name === "Purchased Website" ? 'blur-sm' : 'blur-0')}>
+                <span
+                  className={cn(
+                    "text-4xl font-semibold tracking-tight text-white",
+                    stat.name === "Purchased Website" ? "blur-sm" : "blur-0"
+                  )}
+                >
                   {stat.value}
                 </span>
               </p>

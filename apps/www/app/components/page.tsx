@@ -4,7 +4,8 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import MDXRemoteClient from "components/MDXRemoteClient";
 import SupportedLibraries from "components/ui/SupportedLibraries";
-
+import metatag from "metatag";
+const {ogImage} = metatag
 const title = "FarmUI - Introduction";
 const description =
   "Beautiful and responsive UI components and templates for React and Vue with Tailwind CSS.";
@@ -15,12 +16,20 @@ export const metadata = {
   description,
   openGraph: {
     title,
+    description: description,
+    images: [
+      {
+        url: ogImage,
+      },
+    ],
     url: "https://farmui.com",
-    description,
   },
   twitter: {
+    card: "summary_large_image",
     title,
     description,
+    images: [ogImage],
+    creator: "@farmui",
   },
 };
 

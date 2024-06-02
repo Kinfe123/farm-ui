@@ -18,11 +18,33 @@ type Feature = {
   icon: React.ReactNode;
 };
 
-export const metadata = {
+const {title , description} : {title: string , description: string} = {
   title: "Join Us",
   description:'Join the gang for creating awesome products '
 }
 
+export const metadata = {
+  metadataBase: new URL("https://farmui.com"),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    images: [
+      {
+        url: "https://farmui.com/og.png",
+      },
+    ],
+    url: "https://farmui.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["https://farmui.com/og.png"],
+    creator: "@farmui",
+  },
+};
 const CareerPage = () => {
   const features: Feature[] = [
     {

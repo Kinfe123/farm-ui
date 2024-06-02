@@ -1,6 +1,8 @@
 import Link from "next/link";
 import moment from "moment";
+import metatag from "metatag";
 
+const {title , desc , ogImage} = metatag
 type Params = {
   slug: string;
 };
@@ -12,7 +14,7 @@ export async function generateMetadata({
 }) {
 
   const headline = 'farmui'
-  const metaDescription = 'farmui'
+  const metaDescription = 'FarmUI'
 
   return {
     metadataBase: new URL("https://farmui.com"),
@@ -26,6 +28,11 @@ export async function generateMetadata({
       type: "article",
       title: `${headline} - FarmUI Blog`,
       description: metaDescription,
+      images: [
+        {
+          url:ogImage
+        }
+      ]
     },
     twitter: {
       title: `${headline} - FarmUI Blog`,

@@ -19,17 +19,25 @@ export const metadata = {
   metadataBase: new URL("https://farmui.com"),
   title,
   description: desc,
+  image: ogImage,
   openGraph: {
     title,
     description: desc,
-    images: ogImage,
+    images: [
+      {
+        url: ogImage,
+      },
+    ],
     url: "https://farmui.com",
   },
   twitter: {
+    card: "summary_large_image",
     title,
     description: desc,
     images: [ogImage],
+    creator: "@farmui",
   },
+ 
 };
 
 const inter = Inter({ subsets: ["latin"] });
