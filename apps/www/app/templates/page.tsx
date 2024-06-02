@@ -18,16 +18,25 @@ const { title, desc }: MetaInfo = {
 };
 
 export const metadata = {
-  metadataBase: new URL("https://farm-ui.com"),
+  metadataBase: new URL("https://farmui.com"),
   title,
   description: desc,
   openGraph: {
     title,
     description: desc,
+    images: [
+      {
+        url: "https://farmui.com/og.png",
+      },
+    ],
+    url: "https://farmui.com",
   },
   twitter: {
+    card: "summary_large_image",
     title,
     description: desc,
+    images: ["https://farmui.com/og.png"],
+    creator: "@farmui",
   },
 };
 
@@ -58,9 +67,7 @@ const Template = async () => {
             </HeroAnimated>
           </div>
           <div className="flex flex-col gap-2 relative">
-
             <div className="opacity-50">
-
               <BgGradient />
             </div>
             <Stats
@@ -117,8 +124,8 @@ function Stats({
     },
   ];
   return (
-    <div className="relative bg-gradient-to-tr from-black/10 via-black/5 to-black/15 border-none border-zinc-800 mx-2 pb-5 mt-2 md:shadow-none md:border-none backdrop-blur-sm rounded-md">
-      <div className="absolute -z-1 inset-0  h-[300px] z-20 opacity-5 w-full bg-black/90  bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] rounded-xl"></div>
+    <div className="relative  bg-gradient-to-tr from-black/10 via-black/5 to-black/15 border-none border-zinc-800 mx-2 pb-5 mt-2 md:shadow-none md:border-none backdrop-blur-md rounded-md">
+      <div className="absolute -z-1 inset-0  h-[200px] z-20 opacity-5 w-full bg-black/5  bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] rounded-xl"></div>
       <div className="mx-auto max-w-7xl">
         <div className="relative   rounded-2xl grid grid-cols-1 gap-px bg-gradient-to-tr from-black to-purple-400/5 pb-10  border  mt-2 md:shadow-none md:border-none sm:grid-cols-2 lg:grid-cols-4">
           <svg
@@ -160,7 +167,12 @@ function Stats({
                 {stat.name}
               </p>
               <p className="mt-2 flex items-center justify-center  md:items-baseline md:justify-start gap-x-2">
-                <span className={cn("text-4xl font-semibold tracking-tight text-white", stat.name === "Purchased Website" ? 'blur-sm' : 'blur-0')}>
+                <span
+                  className={cn(
+                    "text-4xl font-semibold tracking-tight text-white",
+                    stat.name === "Purchased Website" ? "blur-sm" : "blur-0"
+                  )}
+                >
                   {stat.value}
                 </span>
               </p>

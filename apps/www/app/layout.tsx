@@ -16,20 +16,28 @@ import Loglib from "@loglib/tracker/react";
 import { Analytics } from "@vercel/analytics/react"
 const { title, desc, ogImage } = metatag;
 export const metadata = {
-  metadataBase: new URL("https://farm-ui.com"),
+  metadataBase: new URL("https://farmui.com"),
   title,
   description: desc,
+  image: ogImage,
   openGraph: {
     title,
     description: desc,
-    images: ogImage,
-    url: "https://farm-ui.com",
+    images: [
+      {
+        url: ogImage,
+      },
+    ],
+    url: "https://farmui.com",
   },
   twitter: {
+    card: "summary_large_image",
     title,
     description: desc,
     images: [ogImage],
+    creator: "@farmui",
   },
+ 
 };
 
 const inter = Inter({ subsets: ["latin"] });
