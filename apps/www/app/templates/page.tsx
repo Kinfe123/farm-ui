@@ -18,7 +18,7 @@ const { title, desc }: MetaInfo = {
 };
 
 export const metadata = {
-  metadataBase: new URL("https://farm-ui.com"),
+  metadataBase: new URL("https://farmui.com"),
   title,
   description: desc,
   openGraph: {

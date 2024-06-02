@@ -2,7 +2,7 @@ import ChangelogDisplay from "components/Changelog/ChangelogDisplay";
 import RetroGrid from "components/ui/Grid";
 import { ChevronRight } from "lucide-react";
 export const metadata = {
-  title: "Changelog",
+  title: "Changelog - Any Iteration and Updates.",
   description: "Changes and all jazzes will dumped here",
 };
 
