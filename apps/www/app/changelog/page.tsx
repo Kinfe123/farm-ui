@@ -30,7 +30,7 @@ export const metadata = {
 };
 const ChangeLogPage = () => {
   return (
-    <div className="mt-[-10px] custom-screen"> 
+    <div className="lg:mt-[-40px] custom-screen"> 
           <RetroGrid />
 
       <div className="relative">
