@@ -1,9 +1,7 @@
 import "dotenv/config";
 import { existsSync, promises as fs } from "fs";
 import path from "path";
-import chalk from "chalk";
 import gradient from "gradient-string";
-import { toBlock, toBlockString } from "terminal-block-fonts";
 import { Command } from "commander";
 import ora from "ora";
 import { execa } from "execa";
