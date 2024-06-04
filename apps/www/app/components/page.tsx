@@ -5,6 +5,8 @@ import { serialize } from "next-mdx-remote/serialize";
 import MDXRemoteClient from "components/MDXRemoteClient";
 import SupportedLibraries from "components/ui/SupportedLibraries";
 import metatag from "metatag";
+import { Mdx } from "components/MdxComponent";
+import { allComponents } from "contentlayer/generated";
 const {ogImage} = metatag
 const title = "FarmUI - Introduction";
 const description =
@@ -34,6 +36,9 @@ export const metadata = {
 };
 
 export default async () => {
+  const nativeComponnts = allComponents
+  const introDocs = allComponents.find((comp) => comp.slug === '/nativeComponents/intro')
+
   const markdownWithMeta = fs.readFileSync(
     path.join(process.cwd(), "content/intro.mdx"),
     "utf-8"
@@ -44,10 +49,11 @@ export default async () => {
   return (
     <>
       <article className="prose prose-invert max-w-7xl">
-        <MDXRemoteClient
+        <Mdx code={introDocs?.body.code ?? ""}/>
+        {/* <MDXRemoteClient
           mdxSource={{ ...mdxSource }}
           components={{ SupportedLibraries }}
-        />
+        /> */}
       </article>
     </>
   );

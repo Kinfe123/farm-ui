@@ -11,6 +11,8 @@ import Image from "next/image";
 import bgback from "../public/bg-back.png";
 import { ThemeProvider } from "components/ThemeProvider";
 import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+
 import { Toaster } from "@/components/ui/toaster";
 import Loglib from "@loglib/tracker/react";
 import { Analytics } from "@vercel/analytics/react"

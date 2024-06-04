@@ -9,7 +9,7 @@ export const components = {
  
   h1: ({ className, ...props }) => (
       <h1
-          className={cn("mt-2 scroll-m-20 text-4xl font-bold tracking-wide", className)}
+          className={cn("mt-2 scroll-m-20 text-4xl font-semibold font-geist tracking-normal", className)}
           {...props}
       />
   ),

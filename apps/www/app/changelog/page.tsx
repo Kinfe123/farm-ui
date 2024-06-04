@@ -1,7 +1,7 @@
 import ChangelogDisplay from "components/Changelog/ChangelogDisplay";
 import RetroGrid from "components/ui/Grid";
 import { ChevronRight } from "lucide-react";
-const {title , description}: {title: string , description:string} = {
+const { title, description }: { title: string; description: string } = {
   title: "Changelog - Any Iteration and Updates.",
   description: "Changes and all jazzes will dumped here",
 };
@@ -30,12 +30,11 @@ export const metadata = {
 };
 const ChangeLogPage = () => {
   return (
-    <div className="lg:mt-[-40px] custom-screen"> 
-          <RetroGrid />
+    <div className="lg:mt-[-40px] custom-screen">
+      <RetroGrid />
 
       <div className="relative">
         <section className="relative max-w-full mr-auto  z-1">
-
           <div className="max-w-screen-xl z-30  px-4 py-28 gap-12 text-gray-600 md:px-8">
             <div className="space-y-5 max-w-[60rem] px-[-40px] leading-0  lg:leading-0 mr-auto text-left">
               <h1 className="text-sm text-gray-400 group font-geist  px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit mr-auto">
@@ -44,19 +43,22 @@ const ChangeLogPage = () => {
               </h1>
 
               <h2 className=" text-5xl md:text-6xl tracking-tighter font-geist  bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] text-transparent   mr-auto lg:text-7xl ">
-              <span className="bg-gradient-to-r from-purple-300 to-orange-200 text-transparent bg-clip-text">
-              Changes </span> <br/> <span className="bg-gradient-to-r from-green-100 to-orange-200 text-transparent bg-clip-text">Anouncements <br /></span> and <span className="bg-gradient-to-r from-white to-orange-200 text-transparent bg-clip-text">
-              All the jazz 
-                </span> {" "}
-                <span className=" ">
-                will  be dumped here.
-                </span>
+                <span className="bg-gradient-to-r from-purple-300 to-orange-200 text-transparent bg-clip-text">
+                  Changes{" "}
+                </span>{" "}
+                <br />{" "}
+                <span className="bg-gradient-to-r from-green-100 to-orange-200 text-transparent bg-clip-text">
+                  Anouncements <br />
+                </span>{" "}
+                and{" "}
+                <span className="bg-gradient-to-r from-white to-orange-200 text-transparent bg-clip-text">
+                  All the jazz
+                </span>{" "}
+                <span className=" ">will be dumped here.</span>
               </h2>
 
               <p className="max-w-2xl mr-auto text-gray-300">
-              We will update you on our iterations.
-
-
+                We will update you on our iterations.
               </p>
               <div className="items-start z-30 justify-start gap-x-3 space-y-3 sm:flex sm:space-y-0">
                 <span className="relative inline-block overflow-hidden rounded-full p-[1.5px]">
@@ -73,13 +75,10 @@ const ChangeLogPage = () => {
               </div>
             </div>
           </div>
-        
         </section>
         <ChangelogDisplay />
       </div>
     </div>
-
-
   );
 };
 

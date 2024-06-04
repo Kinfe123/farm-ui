@@ -33,7 +33,10 @@ export const add = new Command()
 
   .name("add")
   .description("add a new component or UI from farmui")
-  .argument("<string>", "id of the component from https://farmui.com")
+  .argument(
+    "<string>",
+    "id of the component from https://farmui.com/components"
+  )
   // .option("--id", "id of the component")
   .option(
     "-c, --cwd <cwd>",
@@ -59,7 +62,7 @@ export const add = new Command()
     // already found the id and next will be finding the component id
     try {
       if (!custom_cwd_flag) {
-        logger.info(`We are dumping the component inside of ${custom_cwd} `);
+        logger.info(`We are dumping the components inside of ${custom_cwd} `);
       } else {
         const { dir } = await prompts({
           type: "text",
@@ -87,13 +90,15 @@ export const add = new Command()
         framework = fm;
       }
       if (framework !== "react") {
-        logger.error(`We are not currently supporting ${fm} on farmui.com.`);
+        logger.error(
+          `We are not currently supporting ${fm} on https://farmui.com.`
+        );
         logger.info(
           "Be a part of the community by adding an integration to your favorite framework, go for https://github.com/Kinfe123/farm-ui"
         );
         process.exit(0);
       }
-      // should be prompting it for the component place to be stored
+      // should be prompting it for directory the components to be stored (defaults to /components)
       const path_ = path.join(custom_cwd, defaultDir);
       const root_dir = path.join(path_, "/farmui");
 
@@ -108,7 +113,7 @@ export const add = new Command()
       const exist = existsSync(root_dir);
 
       if (exist) {
-        // logic for existed
+        // logic for existing directory for componnts to be stored
         const { proceed } = await prompts({
           type: "confirm",
           name: "proceed",
@@ -140,7 +145,6 @@ export const add = new Command()
         comp_path: root_comp_path,
       });
 
-      const child_path: string[] = [];
       const depends_on: any[] = child_comp;
       depends_on.map((dep) => {
         const child_comp_name = dep.name;

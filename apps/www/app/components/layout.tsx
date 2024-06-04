@@ -25,7 +25,7 @@ export default (props: Props) => {
     <main className="relative custom-screen-lg ">
       <div className="lg:flex">
         <Sidebar />
-        <div className="flex-1 overflow-hidden mt-20 mb-12 xl:px-8 xl:mt-10">
+        <div className="flex-1 overflow-hidden mt-20 mb-12 xl:px-8 xl:mt-10 z-20">
           {children}
         </div>
       </div>
