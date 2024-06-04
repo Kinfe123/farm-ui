@@ -7,7 +7,7 @@ import SupportedLibraries from "components/ui/SupportedLibraries";
 import metatag from "metatag";
 import { Mdx } from "components/MdxComponent";
 import { allComponents } from "contentlayer/generated";
-const {ogImage} = metatag
+const { ogImage } = metatag;
 const title = "FarmUI - Introduction";
 const description =
   "Beautiful and responsive UI components and templates for React and Vue with Tailwind CSS.";
@@ -36,24 +36,14 @@ export const metadata = {
 };
 
 export default async () => {
-  const nativeComponnts = allComponents
-  const introDocs = allComponents.find((comp) => comp.slug === '/nativeComponents/intro')
-
-  const markdownWithMeta = fs.readFileSync(
-    path.join(process.cwd(), "content/intro.mdx"),
-    "utf-8"
+  const introDocs = allComponents.find(
+    (comp) => comp.slug === "/nativeComponents/intro"
   );
-  const { data: frontMatter, content } = matter(markdownWithMeta);
-  const mdxSource = await serialize(content);
 
   return (
     <>
       <article className="prose prose-invert max-w-7xl">
-        <Mdx code={introDocs?.body.code ?? ""}/>
-        {/* <MDXRemoteClient
-          mdxSource={{ ...mdxSource }}
-          components={{ SupportedLibraries }}
-        /> */}
+        <Mdx code={introDocs?.body.code ?? ""} />
       </article>
     </>
   );

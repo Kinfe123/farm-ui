@@ -11,6 +11,8 @@ import { logger } from "../utils/logger";
 import { custom, z } from "zod";
 import { getPackageManager } from "../utils/get-package-manager";
 import { framework_supports } from "../utils/get-suppoted";
+import { type Config } from "tailwindcss/types/config";
+import { TAILWIND_CONFIG } from "../utils/templates";
 
 process.on("SIGINT", () => process.exit(0));
 process.on("SIGTERM", () => process.exit(0));
@@ -24,7 +26,7 @@ const addCommandInput = z.object({
   id: z.string(),
   cwd: z.string(),
 });
-
+const TAILWIND_EXTEND_PROPS = ['animation', 'keyframes']
 console.log(gradient("pink", "blue")(FARMUI_GRAFFITI));
 
 export const add = new Command()
@@ -131,6 +133,55 @@ export const add = new Command()
       const path_to_add: CompToAddProps[] = [];
       // for now , the content we will support will be react based , toll we have updated the ednpoint
       const root_comp_name = select_files_by_id.files[0].root.name;
+      const tailwind_values = select_files_by_id["tailwind"];
+      if (tailwind_values) {
+        logger.info("The components need tailwind.config.(ts/js) change");
+
+        const tailwind_config_js = path.join(
+          process.cwd(),
+          "tailwind.config.js"
+        );
+        const tailwind_config_ts = path.join(
+          process.cwd(),
+          "tailwind.config.ts"
+        );
+        let config_exists = "ts";
+        let is_config_exist = true;
+        if (
+          !existsSync(tailwind_config_ts) &&
+          !existsSync(tailwind_config_js)
+        ) {
+          is_config_exist = false;
+        }
+        if (!is_config_exist) {
+          logger.warn(
+            "The tailwind.config.(js/ts) can not be found with in the given directory , Please make sure to intialize your project with tailwindcss or shadcn , may be any UI component that build on top of tailwind"
+          );
+          logger.info("Skipping... and importing the components")
+        } else {
+          // means the either the js or tailwind config exists
+          if (existsSync(tailwind_config_js)) {
+            config_exists = "js";
+          }
+          const tailwind_config_file = `tailwind.config.${config_exists}`;
+
+          const tailwin_config_path = path.join(
+            process.cwd(),
+            tailwind_config_file
+          );
+          const read_tailwind_config = await fs.readFile(
+            tailwin_config_path,
+            "utf8"
+          );
+          TAILWIND_EXTEND_PROPS.map((props) => {
+            if (props in tailwind_values) {
+              logger.info(`For ${props} - copy the following and paste it to your ${tailwind_config_file}`)
+              console.log(tailwind_values[props].content)
+            }
+          })
+
+        }
+      }
       const root_comp_content =
         select_files_by_id.files[0].root.contents[framework].content;
       const root_comp_path = path.join(root_dir, root_comp_name);

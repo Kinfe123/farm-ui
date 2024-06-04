@@ -1,5 +1,36 @@
 [
   {
+    "id": "farmui-form-01-test",
+    "name": "FUIForms",
+    "dependencies": ["lucide-react"],
+    "files": [
+      {
+        "root": {
+          "name": "FUIForm",
+          "contents": {
+            "react": {
+              "code_for": "react",
+              "content": "\n\"use client\";\n\nimport {\n  CardTitle,\n  CardDescription,\n  CardHeader,\n  CardContent,\n  CardFooter,\n  Card,\n} from \"@/components/ui/card\";\nimport { Label } from \"@/components/ui/label\";\nimport { Input } from \"@/components/ui/input\";\nimport { Textarea } from \"@/components/ui/textarea\";\nimport { ChevronRight, Loader2 } from \"lucide-react\";\nimport { useState, useTransition } from \"react\";\nimport { useToast } from \"@/components/ui/use-toast\";\n// raplace it with your actions.\nimport { saySomething } from \"actions/emailSubRelated\";\nimport {Button} from \"@/components/ui/button\";\ntype FormType = {\n  firstName: string;\n  lastName?: string;\n  email: string;\n  message: string;\n};\nexport default function FUIForm() {\n  const [pending, startTransition] = useTransition();\n  const { toast } = useToast()\n\n  const [forms, setForms] = useState({\n    firstName: \"\",\n    lastName: \"\",\n    email: \"\",\n    message: \"\",\n  });\n  \n  const handleChange = (e: any) => {\n    setForms({ ...forms, [e.target.name]: e.target.value });\n  };\n  const onSubmit = (e:any) => {\n    e.preventDefault();\n    startTransition(async () => {\n      saySomething({\n        firstName: forms.firstName,\n        lastName: forms.lastName,\n        email: forms.email,\n        message: forms.message,\n      })\n        .then((res) => {\n          toast({\n            position: \"bottom-left\",\n            title: \"Message submitted\",\n            description:\n              \"You have successfully submitted your message. we will keep in touch with you with the speed of light :)\",\n          });\n          setForms({\n            firstName:\"\",\n            lastName:\"\",\n            email: \"\",\n            message: \"\"\n          })\n        })\n        .catch((err) => {\n          toast({\n            position: \"bottom-left\",\n\n            title: \"Something went wrong\",\n            description:\n              \"There is an error while submitting the form, Please try again later :(\",\n            variant: \"destructive\",\n\n          });\n        });\n    });\n  };\n  return (\n    <section className=\"custom-screen-lg mx-auto z-20\">\n      <div className=\"relative backdrop-blur-3xl z-10 max-w-4xl mx-auto  space-y-4\">\n        <Card className=\"relative mt-20 py-10 z-20 backdrop-blur-3xl\">\n          <CardHeader>\n            <CardDescription>\n              Fill out the form below and we'll get back to you as soon as\n              possible.\n            </CardDescription>\n          </CardHeader>\n          <CardContent>\n            <div className=\"\"></div>\n            <form className=\"space-y-4 z-20\" onSubmit={onSubmit}>\n              <div className=\"grid grid-cols-1 md:grid-cols-2 gap-4 z-20\">\n                <div className=\"space-y-2\">\n                  <Label htmlFor=\"first-name\">First Name</Label>\n                  <Input\n\n                    value={forms.firstName}\n                    onChange={(e) => handleChange(e)}\n                    name=\"firstName\"\n                    placeholder=\"Enter your first name\"\n                    required\n                  />\n                </div>\n                <div className=\"space-y-2\">\n                  <Label htmlFor=\"last-name\">Last Name</Label>\n                  <Input\n                    value={forms.lastName}\n                    onChange={handleChange}\n                    name=\"lastName\"\n                    placeholder=\"Enter your last name\"\n                  />\n                </div>\n              </div>\n              <div className=\"space-y-2\">\n                <Label htmlFor=\"email\">Email</Label>\n                <Input\n\n                  value={forms.email}\n                  name=\"email\"\n                  onChange={handleChange}\n                  placeholder=\"Enter your email\"\n                  type=\"email\"\n                  required\n                />\n              </div>\n              <div className=\"space-y-2\">\n                <Label htmlFor=\"message\">Message</Label>\n                <Textarea\n                  required\n                  value={forms.message}\n                  \n                   className=\"bg-transparent\"\n                   onChange={handleChange}\n                  name=\"message\"\n                  maxLength={200}\n                  \n                  placeholder=\"Enter your message\"\n                />\n              </div>\n                <Button\n                  disabled={pending}\n                  variant=\"default\"\n                  className=\"inline-flex rounded-3xl  text-center group items-center w-full justify-center bg-gradient-to-tr from-black/90 via-zinc-800 to-black  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-6 px-10\"\n                >\n                  Submit\n                  {pending ? (\n                    <Loader2 className=\"animate-spin ml-3 w-4 h-4 flex items-center\" />\n                  ) : (\n                    <ChevronRight className=\"w-4 h-4 ml-2 group-hover:translate-x-1 duration-300\" />\n                  )}\n                </Button>\n            </form>\n          </CardContent>\n        </Card>\n      </div>\n    </section>\n  );\n}\n\n\n"
+            }
+          }
+        }
+      }
+    ],
+    "tailwind": {
+      "animation": {
+        "content": [
+          "something: something needs to be animated",
+          "somewhat: somewhat neeeds to be animated"
+        ]
+      },
+      "keyframes": {
+        "content": ["something: some keyframe values"]
+      }
+    },
+    "depends_on": ["bb87ffac-1579-4670-80be-7c1180404b4e"],
+    "type": "ui"
+  },
+  {
     "id": "farmui-form-01",
     "name": "FUIForms",
     "dependencies": ["lucide-react"],
@@ -16,7 +47,6 @@
         }
       }
     ],
-    "depends_on": ["bb87ffac-1579-4670-80be-7c1180404b4e"],
     "type": "ui"
   },
   {
