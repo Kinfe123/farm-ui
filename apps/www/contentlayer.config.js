@@ -170,6 +170,23 @@ export const Author = defineDocumentType(() => ({
   computedFields,
 }));
 
+export const Components = defineDocumentType(() => ({
+  name: "Components",
+  filePathPattern: `nativeComponents/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+    },
+    description: {
+      type: "string",
+    },
+    lastModified: {
+      type: "date",
+    },
+  },
+  computedFields,
+}));
 export const Templates = defineDocumentType(() => ({
   name: "Templates",
   filePathPattern: `templates/**/*.mdx`,
@@ -183,46 +200,44 @@ export const Templates = defineDocumentType(() => ({
       type: "string",
     },
     images: {
-        type: "list",
-        of: { type: "string" },
-        
-        required:true
+      type: "list",
+      of: { type: "string" },
+
+      required: true,
     },
     is_free: {
       type: "boolean",
       required: true,
     },
     price: {
-        type: "string",
-
+      type: "string",
     },
     authors: {
-    
       type: "list",
       of: { type: "string" },
     },
     date: {
-        type:'date',
-        required: true
+      type: "date",
+      required: true,
     },
     live_preview: {
-        type:"string",   
+      type: "string",
     },
     source_code: {
-        type: "string",
+      type: "string",
     },
     stack_used: {
-        type: "list",
-        of: {type:"string"},
-        required:true
-    }
-},
+      type: "list",
+      of: { type: "string" },
+      required: true,
+    },
+  },
   computedFields,
 }));
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Templates, Doc, Guide, Post, Author, Changelog],
+  documentTypes: [Templates, Doc, Guide, Post, Author, Changelog , Components],
   mdx: {
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [

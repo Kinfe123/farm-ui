@@ -1,6 +1,6 @@
 {
   "name": "@kinfe123/farm-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add farmui components and building blocks",
   "main": "index.js",
   "publishConfig": {
@@ -61,6 +61,7 @@
     "gradient-string": "^2.0.2",
     "https-proxy-agent": "^6.2.0",
     "lodash.template": "^4.5.0",
+    "lucide-react": "^0.378.0",
     "node-fetch": "^3.3.0",
     "ora": "^6.1.2",
     "prompts": "^2.4.2",
