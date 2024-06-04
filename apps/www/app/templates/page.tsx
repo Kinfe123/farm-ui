@@ -5,7 +5,7 @@ import { allTemplates } from "contentlayer/generated";
 import HeroAnimated from "components/HeroAnimated";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
+import { cn, dateConvert } from "@/lib/utils";
 import BgGradient from "components/ui/BgGradient";
 
 type MetaInfo = {
@@ -41,7 +41,10 @@ export const metadata = {
 };
 
 const Template = async () => {
-  const templates = allTemplates;
+  const templates = allTemplates.sort(
+    (a, b) => dateConvert(b.date) - dateConvert(a.date)
+  );
+
   const free_templates = templates.filter((temp) => temp.is_free);
   const paid_templates = templates.filter((temp) => !temp.is_free);
   const total_purchased = 4; // to be later moved to an endpoint
