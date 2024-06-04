@@ -14,3 +14,9 @@ export function formatDate(input: string | number): string {
     year: "numeric",
   })
 }
+
+
+export const dateConvert = (input: string) => {
+   const date = new Date(input)
+   return date.getTime()
+}
