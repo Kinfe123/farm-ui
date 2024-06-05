@@ -144,13 +144,13 @@ export default ({
             {tabs.map((tab, idx) => (
               <Tabs.Content
                 key={idx}
-                className="overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1"
+                className="max-w-[76rem] overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1"
                 value={tab.value}
               >
                 {item.ltr[selectedFramework] &&
                 item.ltr[selectedFramework][fullTech as string].length > 0 ? (
                   <motion.div
-                    className="opacity-0 h-[640px]"
+                    className="opacity-0 h-[640px] w-full"
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.9 }}
                   >
