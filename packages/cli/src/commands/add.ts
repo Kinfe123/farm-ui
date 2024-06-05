@@ -26,7 +26,7 @@ const addCommandInput = z.object({
   id: z.string(),
   cwd: z.string(),
 });
-const TAILWIND_EXTEND_PROPS = ['animation', 'keyframes']
+const TAILWIND_EXTEND_PROPS = ["animation", "keyframes"];
 console.log(gradient("pink", "blue")(FARMUI_GRAFFITI));
 
 export const add = new Command()
@@ -157,7 +157,7 @@ export const add = new Command()
           logger.warn(
             "The tailwind.config.(js/ts) can not be found with in the given directory , Please make sure to intialize your project with tailwindcss or shadcn , may be any UI component that build on top of tailwind"
           );
-          logger.info("Skipping... and importing the components")
+          logger.info("Skipping... and importing the components");
         } else {
           // means the either the js or tailwind config exists
           if (existsSync(tailwind_config_js)) {
@@ -175,11 +175,13 @@ export const add = new Command()
           );
           TAILWIND_EXTEND_PROPS.map((props) => {
             if (props in tailwind_values) {
-              logger.info(`For ${props} - copy the following and paste it to your ${tailwind_config_file}`)
-              console.log(tailwind_values[props].content)
+              logger.info(
+                `For ${props} - copy the following and paste it to your ${tailwind_config_file}`
+              );
+              const tailwind_props_value = tailwind_values[props].content;
+              console.log({ [props]: tailwind_props_value });
             }
-          })
-
+          });
         }
       }
       const root_comp_content =
@@ -205,13 +207,35 @@ export const add = new Command()
         });
       });
       const spinner = ora(`Dumping your components...`);
-      spinner.start();
+      let spinner_overwrite = ora("Overriting");
       const dependencies: string[] = select_files_by_id.dependencies;
       if (!path_to_add) {
         logger.warn("No component to add");
       } else {
         path_to_add.map(async ({ comp_content, comp_path }) => {
-          await fs.writeFile(`${comp_path}.tsx`, comp_content);
+          const comp_write_path = `${comp_path}.tsx`;
+          if (existsSync(comp_write_path)) {
+            const { overwrite } = await prompts({
+              type: "confirm",
+              name: "overwrite",
+              message: `Override already existed component? Proceed?`,
+              initial: true,
+            });
+            if (overwrite) {
+              spinner_overwrite = ora(
+                `Overwriting the component at ${comp_write_path}....`
+              );
+              spinner_overwrite.start();
+              await fs.writeFile(`${comp_path}.tsx`, comp_content);
+            } else {
+              logger.info(
+                `Skipping: The component ${comp_write_path} already existed`
+              );
+            }
+          } else {
+            spinner.start();
+            await fs.writeFile(`${comp_path}.tsx`, comp_content);
+          }
         });
       }
       const packageManager = await getPackageManager(custom_cwd);
@@ -221,6 +245,7 @@ export const add = new Command()
         });
       }
       spinner.stop();
+      spinner_overwrite.stop();
       if (dependencies.length) {
         logger.info(`Dependencies - ${dependencies.length} added`);
         dependencies.map((dep) => {
