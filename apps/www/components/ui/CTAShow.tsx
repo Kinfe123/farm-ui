@@ -1,7 +1,7 @@
 import Image from "next/image";
 import dashboardimg from "../../public/dashboard.png";
 import { CTA } from "./../CTA";
-import bgback from "../../public/bg-back.png";
+import bgback from "../../../public/bg-back.png";
 import LinkItem from "./LinkItem";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import BorderGradient from "./Footer/BorderGradient";

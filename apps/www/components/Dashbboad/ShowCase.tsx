@@ -1,6 +1,6 @@
 import Image from "next/image";
 import dashboard from "../../public/dashboard.png";
-import bgback from "../../public/bg-back.png";
+import bgback from "../../../public/bg-back.png";
 import { ContainerScroll } from "components/DashboardSlider";
 import { BorderBeam } from "components/ui/BorderBeam";
 

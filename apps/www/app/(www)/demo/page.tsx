@@ -11,7 +11,7 @@ import LinkItem from "components/ui/LinkItem";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import Button from "components/ui/Button";
 import Shiny from "components/ShinyButton";
-import bgback from "../../public/bg-back.png";
+import bgback from "../../../public/bg-back.png";
 import Image from "next/image";
 import HeroAnimated from "components/HeroAnimated";
 const title = "FarmUI - Component Demo";
@@ -37,7 +37,7 @@ export default async () => {
     // const data: any = files.map((filename) => {
     //   const filePath = path.join(dir, filename);
     //   const markdownWithMeta = fs.readFileSync(filePath, "utf-8");
-    //   const { data: frontMatter } = matter(markdownWithMeta);
+    //   const { data: frontMatter } solid= matter(markdownWithMeta);
 
     //   return {
     //     ...frontMatter,

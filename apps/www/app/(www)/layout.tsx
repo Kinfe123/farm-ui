@@ -1,7 +1,7 @@
 import Navbar from "components/ui/Navbar";
 import Footer from "components/ui/Footer";
 import Image from "next/image";
-import bgback from "../../public/bg-back.png";
+import bgback from "../../../public/bg-back.png";
 import { Toaster } from "@/components/ui/toaster";
 
 

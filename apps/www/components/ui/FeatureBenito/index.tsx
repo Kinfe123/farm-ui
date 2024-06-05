@@ -13,7 +13,7 @@ import Marquee from "./marquee";
 import Image from "next/image"
 import { CalendarIcon, FileTextIcon, GlobeIcon, InfoIcon, SearchIcon } from "lucide-react";
 
-import bgback from '../../../public/bg-back.png'
+import bgback from '../../../../public/bg-back.png'
 const files = [
   {
     name: "Shadow",
