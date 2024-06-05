@@ -11,7 +11,7 @@ import LinkItem from "components/ui/LinkItem";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import circle from "../../public/circle.png";
-import bgback from "../../../public/bg-back.png";
+import bgback from "../../public/bg-back.png";
 type Feature = {
   title: string;
   desc: string;
