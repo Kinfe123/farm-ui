@@ -1,3 +1,4 @@
+"use client"
 import { Separator } from "@radix-ui/react-context-menu";
 import React from "react";
 export default function FUIFaqsWithDividedRows() {
