@@ -22,7 +22,6 @@ const {title , description} : {title: string , description: string} = {
   title: "Join Us",
   description:'Join the gang for creating awesome products '
 }
-
 export const metadata = {
   metadataBase: new URL("https://farmui.com"),
   title,
