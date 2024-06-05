@@ -16,7 +16,7 @@ import { ChevronRight, Loader2 } from "lucide-react";
 import { useState, useTransition } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { saySomething } from "actions/emailSubRelated";
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 type FormType = {
   firstName: string;
   lastName?: string;
@@ -25,7 +25,7 @@ type FormType = {
 };
 export default function FUIForm() {
   const [pending, startTransition] = useTransition();
-  const { toast } = useToast()
+  const { toast } = useToast();
 
   const [forms, setForms] = useState({
     firstName: "",
@@ -33,11 +33,11 @@ export default function FUIForm() {
     email: "",
     message: "",
   });
-  
+
   const handleChange = (e: any) => {
     setForms({ ...forms, [e.target.name]: e.target.value });
   };
-  const onSubmit = (e:any) => {
+  const onSubmit = (e: any) => {
     e.preventDefault();
     startTransition(async () => {
       saySomething({
@@ -54,11 +54,11 @@ export default function FUIForm() {
               "You have successfully submitted your message. we will keep in touch with you with the speed of light :)",
           });
           setForms({
-            firstName:"",
-            lastName:"",
+            firstName: "",
+            lastName: "",
             email: "",
-            message: ""
-          })
+            message: "",
+          });
         })
         .catch((err) => {
           toast({
@@ -68,7 +68,6 @@ export default function FUIForm() {
             description:
               "There is an error while submitting the form, Please try again later :(",
             variant: "destructive",
-
           });
         });
     });
@@ -76,8 +75,11 @@ export default function FUIForm() {
   return (
     <section className="custom-screen-lg mx-auto z-20">
       <div className="relative backdrop-blur-3xl z-10 max-w-4xl mx-auto  space-y-4">
-        <Card className="relative mt-20 py-10 z-20 backdrop-blur-3xl">
+        <Card className="relative mt-20 py-10 z-20 backdrop-blur-3xl transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
           <CardHeader>
+            <h2 className="text-xl tracking-tighter font-geist  bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] text-transparent text-left md:text-3xl">
+              Say Something.
+            </h2>
             <CardDescription>
               Fill out the form below and we'll get back to you as soon as
               possible.
@@ -90,7 +92,6 @@ export default function FUIForm() {
                 <div className="space-y-2">
                   <Label htmlFor="first-name">First Name</Label>
                   <Input
-
                     value={forms.firstName}
                     onChange={(e) => handleChange(e)}
                     name="firstName"
@@ -111,7 +112,6 @@ export default function FUIForm() {
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
-
                   value={forms.email}
                   name="email"
                   onChange={handleChange}
@@ -125,27 +125,26 @@ export default function FUIForm() {
                 <Textarea
                   required
                   value={forms.message}
-                  
-                   className="bg-transparent"
-                   onChange={handleChange}
+                  className="bg-transparent"
+                  onChange={handleChange}
                   name="message"
                   maxLength={200}
-                  
                   placeholder="Enter your message"
                 />
               </div>
-                <Button
-                  disabled={pending}
-                  variant="default"
-                  className="inline-flex rounded-3xl text-black dark:text-white text-center group items-center w-full justify-center bg-gradient-to-tr from-black/90 via-zinc-800 to-black  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-6 px-10"
-                >
-                  Submit
-                  {pending ? (
-                    <Loader2 className="animate-spin ml-3 w-4 h-4 flex items-center" />
-                  ) : (
-                    <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-                  )}
-                </Button>
+              <Button
+                disabled={pending}
+                variant="default"
+                // onClick={onSubmit}
+                className="inline-flex rounded-3xl text-white bg-transaprent/10  text-center group items-center w-full justify-center   border-input border-[1px] hover:bg-transparent/10  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] transition-colors sm:w-auto py-6 px-10"
+              >
+                Submit
+                {pending ? (
+                  <Loader2 className="animate-spin ml-3 w-4 h-4 flex items-center" />
+                ) : (
+                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+                )}
+              </Button>
             </form>
           </CardContent>
         </Card>
