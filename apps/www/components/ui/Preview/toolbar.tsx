@@ -19,16 +19,16 @@ export function BlockToolbar({
   return (
     <div className="flex flex-col items-center gap-4 sm:flex-row">
       <div className="flex items-center gap-2">
-        <TabsList className="hidden p-0 px-4 py-2 rounded-md h-7 sm:flex">
+        <TabsList className="hidden p-0 px-1 py-5  h-7 sm:flex">
           <TabsTrigger
             value="preview"
-            className="h-[1.45rem] rounded-sm px-2 text-sm hover:text-white"
+            className="h-[3rem] rounded-sm px-2  text-sm hover:text-white"
           >
             Preview
           </TabsTrigger>
           <TabsTrigger
             value="code"
-            className="h-[1.45rem] rounded-sm px-2 text-sm hover:text-white"
+            className="h-[3rem] rounded-sm px-2 text-sm hover:text-white"
           >
             Code
           </TabsTrigger>

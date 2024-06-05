@@ -17,6 +17,7 @@ module.exports = {
     "./examples/**/*.{js,ts,jsx,tsx}",
     "./viewport/**/*.{js,ts,jsx,tsx}",
     "./componentsDB/**/*.md",
+    './@/**/*.{ts,tsx}', 
   ],
   prefix: "",
   theme: {
@@ -127,8 +128,6 @@ module.exports = {
   plugins: [
     require("tailwindcss-animate"),
     require("@tailwindcss/typography"),
-    require("@tailwindcss/forms")({
-      strategy: "class", // only generate classes
-    }),
+    require("@tailwindcss/forms")
   ],
 };

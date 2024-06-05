@@ -87,7 +87,7 @@ export default ({
   return (
     <>
     <ShadTab
-        id={"ghjg"}
+        id={"shad-tab-1"}
         defaultValue="preview"
         className="relative grid w-full gap-4 scroll-m-20"
         style={

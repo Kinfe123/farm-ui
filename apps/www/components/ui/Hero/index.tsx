@@ -66,7 +66,7 @@ export default async function() {
                 variant="shiny"
                 className="inline-flex w-full  group justify-center items-center  bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-zinc-700/50  border-white/5 border-[1px] sm:w-auto hover:bg-transparent/5  py-4 px-10"
               >
-                Coocked for you
+                Cooked for you
                 <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
               </LinkItem>
               <LinkItem
