@@ -1,12 +1,12 @@
 import Image from "next/image";
-import dashboardimg from "../../public/dashboard.png";
+import dashboardimg from "/public/dashboard.png";
 import { CTA } from "./../CTA";
-import bgback from "../../../public/bg-back.png";
+import bgback from "/public/bg-back.png";
 import LinkItem from "./LinkItem";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
 import BorderGradient from "./Footer/BorderGradient";
 import BgGradient from "./Footer/BgGradient";
-import circle from "../../public/circle.png"
+import circle from "/public/circle.png"
 const CTAshow = () => {
   return (
     <div className="mx-h-full relative mx-10 mt-44 z-20">

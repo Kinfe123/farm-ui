@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import LinkItem from "../LinkItem";
 import { IconGithub } from "components/icons";
 import HeroBgGradientClient from "./HeroBgGradient.Client";
-import bghero from "../../../public/img.png";
+import bghero from "/public/img.png";
 import { ChevronRight } from "lucide-react";
 import HeroAnimated from "components/HeroAnimated";
 import { cn } from "@/lib/utils";

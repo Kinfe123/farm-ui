@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { TechStackDisplay } from "components/ui/TemplateTechStackGroup";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import bgback from "../../../../public/bg-back.png";
+import bgback from "/public/bg-back.png";
 import { ImageSlider } from "./ImageCarousel";
 export default ({ item }: { item: Templates }) => (
   <li className="relative pt-10 lg:pt-0 h-fit overflow-hidden rounded-3xl">

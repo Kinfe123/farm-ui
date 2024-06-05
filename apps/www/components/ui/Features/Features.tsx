@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 import featureCover from "public/feature-cover.svg";
 import Image from "next/image";
 import Card from "./Card";
-import bgback from './../../../../public/bg-back.png'
+import bgback from './../../../public/bg-back.png'
 type Feature = {
   title: string;
   desc: string;

@@ -1,6 +1,6 @@
 import FrameworksTabs from "./FrameworksTabs";
 import PreviewCard from "./PreviewCard";
-import bgback from '../../../../public/bg-back.png'
+import bgback from '../../../public/bg-back.png'
 import Image from "next/image"
 export default () => {
   return (
