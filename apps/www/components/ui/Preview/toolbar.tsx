@@ -49,7 +49,7 @@ export function BlockToolbar({
         <Separator orientation="vertical" className="hidden h-4 mx-2 md:flex" />
 
 
-        <div className="hidden h-10 items-center gap-1.5 rounded-md border p-[2px] shadow-sm md:flex px-4">
+        <div className="hidden h-10 items-center gap-1.5 rounded-md border p-[2px] shadow-sm md:flex px-4 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
           <ToggleGroup
             type="single"
             defaultValue="100"

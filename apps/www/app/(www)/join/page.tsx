@@ -71,7 +71,7 @@ const CareerPage = () => {
             <LinkItem
               href="https://t.me/farmui"
               variant="default"
-              className="inline-flex gap-1 text-center group items-center w-full justify-center bg-gradient-to-tr from-black/90 via-zinc-800 to-black  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10"
+              className="inline-flex gap-1 text-center group items-center w-full justify-center  bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10"
             >
               <svg
                 viewBox="0 0 24 24"

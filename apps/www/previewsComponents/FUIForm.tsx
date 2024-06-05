@@ -137,7 +137,7 @@ export default function FUIForm() {
                 <Button
                   disabled={pending}
                   variant="default"
-                  className="inline-flex rounded-3xl  text-center group items-center w-full justify-center bg-gradient-to-tr from-black/90 via-zinc-800 to-black  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-6 px-10"
+                  className="inline-flex rounded-3xl text-black dark:text-white text-center group items-center w-full justify-center bg-gradient-to-tr from-black/90 via-zinc-800 to-black  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-6 px-10"
                 >
                   Submit
                   {pending ? (
