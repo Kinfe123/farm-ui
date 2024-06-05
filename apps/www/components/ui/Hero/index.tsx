@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import LinkItem from "../LinkItem";
 import { IconGithub } from "components/icons";
 import HeroBgGradientClient from "./HeroBgGradient.Client";
-import bghero from "../../../public/img.png";
+import bghero from "/public/img.png";
 import { ChevronRight } from "lucide-react";
 import HeroAnimated from "components/HeroAnimated";
 import { cn } from "@/lib/utils";
@@ -40,7 +40,6 @@ export default async function() {
             }
           >
             <IconGithub />
-
             <div className="w-[1px] h-[20px] bg-white/10 inline-flex mx-2 group-hover:bg-white/20" />
             <span className={cn(heroStyle.magicText)}>
               <Suspense fallback={<></>}>

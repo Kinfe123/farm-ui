@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import * as Avatar from "@radix-ui/react-avatar";
 import * as ContextMenu from "@radix-ui/react-context-menu";

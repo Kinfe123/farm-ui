@@ -15,13 +15,12 @@ import { GeistMono } from "geist/font/mono";
 
 import { Toaster } from "@/components/ui/toaster";
 import Loglib from "@loglib/tracker/react";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 const { title, desc, ogImage } = metatag;
 export const metadata = {
   metadataBase: new URL("https://farmui.com"),
   title,
   description: desc,
-  image: ogImage,
   openGraph: {
     title,
     description: desc,
@@ -39,7 +38,6 @@ export const metadata = {
     images: [ogImage],
     creator: "@farmui",
   },
- 
 };
 
 const inter = Inter({ subsets: ["latin"] });
@@ -64,7 +62,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-black relative w-full h-full overflow-x-hidden"
+      className="relative w-full h-full overflow-x-hidden bg-black"
     >
       <head>
         <meta
@@ -102,31 +100,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Image
-            className="absolute top-0 -translate-y-1/2 z-20 translate-x-0 md:translate-x-1/3 lg:translate-x-1/2 "
-            src={bgback}
-            width={1000}
-            height={1000}
-            alt="back bg"
-          />
-          <Image
-            className="absolute top-0 -translate-y-1/2 z-20 -translate-x-32 md:translate-x-1/3 lg:translate-x-45"
-            src={bgback}
-            width={1000}
-            height={1000}
-            alt="back bg"
-          />
-
-          <Navbar />
           <Toaster />
           <main>{children}</main>
           <Loglib
             config={{
-              id: "farmui_vercel"
+              id: "farmui_vercel",
             }}
           />
-          <Analytics/>
-          <Footer />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

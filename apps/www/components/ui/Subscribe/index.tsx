@@ -2,8 +2,8 @@
 import { useEffect, useState, useTransition } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import backgroundImage from "../../../public/circly.png";
-import bgback from "../../../public/bg-back.png";
+import backgroundImage from "/public/circly.png";
+import bgback from "/public/bg-back.png";
 import { toast } from "@/components/ui/use-toast";
 import { ChevronRightIcon, Loader, Loader2 } from "lucide-react";
 import LinkItem from "../LinkItem";

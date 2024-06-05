@@ -1,3 +1,4 @@
+"use client"
 import { Separator } from "@/components/ui/separator";
 import { Mail } from "lucide-react";
 import React from "react";
@@ -34,7 +35,7 @@ export default function FUIFaqsWithSearchBox() {
   return (
     <section className="relative">
       <img
-        className="absolute inset-x-0 -top-20 opacity-25 "
+        className="absolute inset-x-0 opacity-25 -top-20 "
         src={
           "https://pipe.com/_next/image?url=%2Fassets%2Fimg%2Fhero-left.png&w=384&q=75"
         }
@@ -45,16 +46,16 @@ export default function FUIFaqsWithSearchBox() {
 
       <div className="absolute -z-1 inset-0  h-[600px] w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
 
-      <div className="pt-10 max-w-screen-xl mx-auto px-4 md:px-8">
+      <div className="max-w-screen-xl px-4 pt-10 mx-auto md:px-8">
         <div className="space-y-5 sm:text-left sm:max-w-md sm:mr-auto">
-          <h3 className="text-gray-300 font-geist text-3xl font-extrabold sm:text-4xl">
+          <h3 className="text-3xl font-extrabold text-gray-300 font-geist sm:text-4xl">
             How can we help?
           </h3>
           <p className="text-gray-100">
             Everything you need to know about the product. Can’t find the answer
             you’re looking for? feel free to{" "}
             <a
-              className="text-cyan-700 font-semibold whitespace-nowrap"
+              className="font-semibold text-cyan-700 whitespace-nowrap"
               href="javascript:void(0)"
             >
               contact us
@@ -62,22 +63,22 @@ export default function FUIFaqsWithSearchBox() {
             .
           </p>
           <form
-            onSubmit={(e) => e.preventDefault()}
+            // onSubmit={(e) => e.preventDefault()}
             className="mx-auto sm:mx-auto "
           >
             <div className="relative">
-              <Mail className="w-6 h-6 text-gray-500 absolute left-3 inset-y-0 my-auto" />
+              <Mail className="absolute inset-y-0 w-6 h-6 my-auto text-gray-500 left-3" />
               <input
                 type="text"
                 placeholder="Enter your email"
-                className="w-full pl-12 pr-3 py-2 text-gray-200 bg-transparent outline-none border focus:border-cyan-600 shadow-sm rounded-lg"
+                className="w-full py-2 pl-12 pr-3 text-gray-200 bg-transparent border rounded-lg shadow-sm outline-none focus:border-cyan-600"
               />
             </div>
           </form>
         </div>
         <Separator className="h-[1px] bg-white/10 mt-4" />
         <div className="mt-12">
-          <ul className="space-y-8 gap-12 grid-cols-2 sm:grid sm:space-y-0 lg:grid-cols-3">
+          <ul className="grid-cols-2 gap-12 space-y-8 sm:grid sm:space-y-0 lg:grid-cols-3">
             {faqsList.map((item, idx) => (
               <li key={idx} className="space-y-3">
                 <summary className="flex items-center justify-between font-semibold text-gray-500">
@@ -85,11 +86,11 @@ export default function FUIFaqsWithSearchBox() {
                 </summary>
                 <p
                   dangerouslySetInnerHTML={{ __html: item.a }}
-                  className="text-gray-200 leading-relaxed"
+                  className="leading-relaxed text-gray-200"
                 ></p>
                 <a
                   href={item.href}
-                  className="flex items-center gap-x-1 text-sm text-cyan-600 hover:text-cyan-400 duration-150 font-medium"
+                  className="flex items-center text-sm font-medium duration-150 gap-x-1 text-cyan-600 hover:text-cyan-400"
                 >
                   Read more
                   <svg
