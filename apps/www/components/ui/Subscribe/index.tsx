@@ -97,7 +97,7 @@ export function GetStarted() {
               <h3 className="text-lg font-semibold tracking-tight text-white">
                 Sign up to our newsletter <span aria-hidden="true">&darr;</span>
               </h3>
-              <div className="mt-5 flex w-full ml-auto rounded-3xl bg-white py-2.5 pr-2.5 shadow-xl shadow-white/5 focus-within:ring-2 focus-within:ring-black">
+              <div className="mt-5 overflow-clip flex w-full ml-auto rounded-3xl bg-white py-2.5 pr-2.5">
                 <input
                   type="email"
                   required
@@ -105,7 +105,7 @@ export function GetStarted() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email address"
                   aria-label="Email address"
-                  className="-my-2.5 flex-auto  bg-transparent pl-6 pr-2.5 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none"
+                  className="-my-2.5 flex-auto  bg-transparent pl-6 pr-2.5 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-none border-none active:border-none"
                 />
                 <LinkItem
                   
