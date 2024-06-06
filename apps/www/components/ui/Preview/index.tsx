@@ -4,7 +4,13 @@ import PreviewSwitch from "components/ui/PreviewSwitch";
 import { useEffect, useRef, useState } from "react";
 
 import * as Tabs from "@radix-ui/react-tabs";
-import { IconHTML, IconReact, IconSvelte, IconVue } from "components/icons";
+import {
+  IconGithub,
+  IconHTML,
+  IconReact,
+  IconSvelte,
+  IconVue,
+} from "components/icons";
 import SyntaxHeighlight from "components/SyntaxHeighlight";
 import { CheckIcon, Square2StackIcon } from "@heroicons/react/24/outline";
 import MDXRemoteClient from "components/MDXRemoteClient";
@@ -20,8 +26,8 @@ import { BlockToolbar } from "./toolbar";
 
 import { ImperativePanelHandle } from "react-resizable-panels";
 import Viewport from "./Viewport";
-
-
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const tabs = [
   {
     name: "React.js",
@@ -86,7 +92,7 @@ export default ({
 
   return (
     <>
-    <ShadTab
+      <ShadTab
         id={"shad-tab-1"}
         defaultValue="preview"
         className="relative grid w-full gap-4 scroll-m-20"
@@ -101,9 +107,7 @@ export default ({
           value="preview"
           className="relative after:absolute after:inset-0 after:right-3 after:z-0 after:rounded-lg after:bg-muted"
         >
-      
-        <Viewport id={item.id} resizablePanelRef={ref} />
-
+          <Viewport id={item.id} resizablePanelRef={ref} />
         </TabsContent>
         <TabsContent value="code">
           <Tabs.Root
@@ -128,8 +132,7 @@ export default ({
                 </TabsTrigger>
               ))}
             </Tabs.List>
-            {item.ltr[selectedFramework] &&
-            item.ltr[selectedFramework][fullTech as string].length > 0 && (
+            {!!codeCopy && selectedFramework === "react" && (
               <button
                 className="absolute flex items-center justify-center text-sm font-medium duration-200 rounded-md w-7 h-7 top-16 right-6 text-zinc-300 hover:bg-zinc-600"
                 onClick={() => copyCode(codeCopy)}
@@ -147,8 +150,7 @@ export default ({
                 className="max-w-[76rem] overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1"
                 value={tab.value}
               >
-                {item.ltr[selectedFramework] &&
-                item.ltr[selectedFramework][fullTech as string].length > 0 ? (
+                {!!codeCopy && tab.value === "react" ? (
                   <motion.div
                     className="opacity-0 h-[640px] w-full"
                     animate={{ opacity: 1 }}
@@ -162,8 +164,22 @@ export default ({
                     />
                   </motion.div>
                 ) : (
-                  <div className="py-20 text-lg font-semibold text-center text-white bg-zinc-800 rounded-xl">
-                    In progress...
+                  <div className="py-20 text-lg font-normal text-center text-white transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  rounded-xl">
+                    <h2 className="text-2xl tracking-tighter font-geist  bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] text-transparent   mx-auto md:text-4xl">
+                      Be the first{" "}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-orange-200">
+                        contributor for {selectedFramework.toUpperCase()}
+                      </span>
+                    </h2>
+                    <a
+                      target="_blank"
+                      href="https://github.com/Kinfe123/farm-ui/blob/main/.github/CONTRIBUTING.md"
+                    >
+                      <Button className="inline-flex mt-2 rounded-lg text-white/80 bg-transaprent/10  text-center group items-center  justify-center gap-2   border-input border-[1px] hover:bg-transparent/10  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] transition-colors text-base py-4 px-6">
+                        <IconGithub className="w-4 h-4" />
+                        Start here
+                      </Button>
+                    </a>
                   </div>
                 )}
               </Tabs.Content>
