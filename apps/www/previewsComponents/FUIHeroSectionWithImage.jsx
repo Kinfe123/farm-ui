@@ -104,7 +104,7 @@ export default function FUIHeroSectionWithImage() {
                   state ? "block" : "hidden"
                 } `}
               >
-                <ul className="flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+                <ul className="mx-auto flex justify-center items-center space-y-6  md:space-x-6 md:space-y-0 rounded-full dark:bg-zinc-800/10  dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] px-6 py-4 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur  dark:text-zinc-200 dark:ring-white/10 w-fit ">
                   {navigation.map((item, idx) => {
                     return (
                       <li key={idx} className="text-white/70 hover:text-white">
@@ -118,7 +118,7 @@ export default function FUIHeroSectionWithImage() {
                 <div className="items-center justify-end mt-6 space-y-6 md:flex md:mt-0">
                   <a
                     href="javascript:void(0)"
-                    className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-full md:inline-flex"
+                    className="flex items-center justify-center gap-x-1 py-3 px-4 text-white font-medium transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-full md:inline-flex "
                   >
                     Sign in
                     <svg
@@ -175,7 +175,7 @@ export default function FUIHeroSectionWithImage() {
               <div className="flex items-center gap-x-3 sm:text-sm">
                 <a
                   href="javascript:void(0)"
-                  className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-full md:inline-flex"
+                  className="flex items-center justify-center gap-x-1 py-3 px-4 text-white font-medium transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-full md:inline-flex"
                 >
                   Get started
                   <svg
@@ -193,7 +193,7 @@ export default function FUIHeroSectionWithImage() {
                 </a>
                 <a
                   href="javascript:void(0)"
-                  className="flex items-center justify-center gap-x-1 py-2 px-4 text-white hover:text-white font-medium duration-150 md:inline-flex"
+                  className="flex items-center justify-center gap-x-1 py-4 px-4 text-white hover:text-white font-medium duration-150 md:inline-flex"
                 >
                   Contact sales
                 </a>
