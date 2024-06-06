@@ -4,7 +4,13 @@ import PreviewSwitch from "components/ui/PreviewSwitch";
 import { useEffect, useRef, useState } from "react";
 
 import * as Tabs from "@radix-ui/react-tabs";
-import { IconGithub, IconHTML, IconReact, IconSvelte, IconVue } from "components/icons";
+import {
+  IconGithub,
+  IconHTML,
+  IconReact,
+  IconSvelte,
+  IconVue,
+} from "components/icons";
 import SyntaxHeighlight from "components/SyntaxHeighlight";
 import { CheckIcon, Square2StackIcon } from "@heroicons/react/24/outline";
 import MDXRemoteClient from "components/MDXRemoteClient";
@@ -21,7 +27,7 @@ import { BlockToolbar } from "./toolbar";
 import { ImperativePanelHandle } from "react-resizable-panels";
 import Viewport from "./Viewport";
 import { Button } from "@/components/ui/button";
-import Link from 'next/link'
+import Link from "next/link";
 const tabs = [
   {
     name: "React.js",
@@ -126,18 +132,18 @@ export default ({
                 </TabsTrigger>
               ))}
             </Tabs.List>
-            {((!!codeCopy && selectedFramework === 'react') &&
-                <button
-                  className="absolute flex items-center justify-center text-sm font-medium duration-200 rounded-md w-7 h-7 top-16 right-6 text-zinc-300 hover:bg-zinc-600"
-                  onClick={() => copyCode(codeCopy)}
-                >
-                  {copied ? (
-                    <CheckIcon className="w-5 h-5" />
-                  ) : (
-                    <Square2StackIcon className="w-5 h-5" />
-                  )}
-                </button>
-              )}
+            {!!codeCopy && selectedFramework === "react" && (
+              <button
+                className="absolute flex items-center justify-center text-sm font-medium duration-200 rounded-md w-7 h-7 top-16 right-6 text-zinc-300 hover:bg-zinc-600"
+                onClick={() => copyCode(codeCopy)}
+              >
+                {copied ? (
+                  <CheckIcon className="w-5 h-5" />
+                ) : (
+                  <Square2StackIcon className="w-5 h-5" />
+                )}
+              </button>
+            )}
             {tabs.map((tab, idx) => (
               <Tabs.Content
                 key={idx}
@@ -162,18 +168,18 @@ export default ({
                     <h2 className="text-2xl tracking-tighter font-geist  bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] text-transparent   mx-auto md:text-4xl">
                       Be the first{" "}
                       <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-orange-200">
-                        contributor
+                        contributor for {selectedFramework.toUpperCase()}
                       </span>
                     </h2>
-                    <a href="https://github.com/Kinfe123/farm-ui/blob/main/.github/CONTRIBUTING.md">
-
-                    <Button className="inline-flex mt-2 rounded-lg text-white/80 bg-transaprent/10  text-center group items-center  justify-center gap-2   border-input border-[1px] hover:bg-transparent/10  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] transition-colors text-base py-4 px-6">
-                      
-                      <IconGithub className="w-4 h-4"/>
-                      Start here
-                    </Button>
+                    <a
+                      target="_blank"
+                      href="https://github.com/Kinfe123/farm-ui/blob/main/.github/CONTRIBUTING.md"
+                    >
+                      <Button className="inline-flex mt-2 rounded-lg text-white/80 bg-transaprent/10  text-center group items-center  justify-center gap-2   border-input border-[1px] hover:bg-transparent/10  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] transition-colors text-base py-4 px-6">
+                        <IconGithub className="w-4 h-4" />
+                        Start here
+                      </Button>
                     </a>
-                    
                   </div>
                 )}
               </Tabs.Content>
