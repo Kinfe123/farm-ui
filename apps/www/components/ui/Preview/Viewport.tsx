@@ -1,3 +1,4 @@
+'use client'
 import { Loader2 } from "lucide-react";
 import {
   ResizableHandle,
@@ -37,7 +38,6 @@ const Viewport = ({ id, resizablePanelRef }: Props) => {
           <iframe
             src={baseURL +"/example/"+id}
             height={700}
-            
             className="relative z-20 w-full chunk-mode bg-background"
             onLoad={() => {
               setIsLoading(false);
