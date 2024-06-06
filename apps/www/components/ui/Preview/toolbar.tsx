@@ -1,13 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { Monitor, Smartphone, Tablet, Terminal } from "lucide-react";
+import { Maximize, Monitor, Smartphone, Tablet, Terminal } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { CopyNpmCommandButton } from "components/farmui/CopyButton";
 import { ImperativePanelHandle } from "react-resizable-panels";
-
+import { getBaseURL } from "utils/getBaseURL";
+import Link from "next/link"
 
 export function BlockToolbar({
   resizablePanelRef,
@@ -16,6 +17,7 @@ export function BlockToolbar({
   resizablePanelRef: React.RefObject<ImperativePanelHandle>;
   id: string;
 }) {
+  const baseUrl = getBaseURL()
   return (
     <div className="flex flex-col items-center gap-4 sm:flex-row">
       <div className="flex items-center gap-2">
@@ -79,6 +81,12 @@ export function BlockToolbar({
               <Smartphone className="w-5 h-5" />
             </ToggleGroupItem>
           </ToggleGroup>
+          <div className="flex gap-2">
+            <div className="inline-flex h-[[20px] w-px bg-white/20"/>
+           <Link href={`${baseUrl}/example/${id}`}>
+            <Maximize className="w-5 h-5" />
+           </Link>
+          </div>
         </div>
       </div>
     </div>

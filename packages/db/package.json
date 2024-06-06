@@ -11,7 +11,8 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "drizzle-orm": "^0.29.2",
-    "postgres": "^3.4.4"
+    "postgres": "^3.4.4",
+    "tsup": "^6.6.3"
   },
   "devDependencies": {
     "@types/node": "^18.0.4",
