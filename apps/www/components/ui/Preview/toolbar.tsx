@@ -20,8 +20,8 @@ export function BlockToolbar({
   const baseUrl = getBaseURL()
   return (
     <div className="flex flex-col items-center gap-4 sm:flex-row">
-      <div className="flex items-center gap-2">
-        <TabsList className="hidden p-0 px-1 py-5  h-7 sm:flex">
+      <div className="flex flex-col sm:flex-row items-center gap-2">
+        <TabsList className="p-0 px-1 py-5  h-7 flex">
           <TabsTrigger
             value="preview"
             className="h-[3rem] rounded-sm px-2  text-sm hover:text-white"
