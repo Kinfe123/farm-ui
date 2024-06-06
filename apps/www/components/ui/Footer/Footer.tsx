@@ -100,7 +100,7 @@ export default () => (
         <div className="text-zinc-300 py-8  ">
           &copy; {new Date().getFullYear()} - FarmUI All rights reserved.
           <div className="mx-auto max-w-full mt-4">
-            <Command className="z-[20]">
+            <Command className="z-[20] bg-transparent">
               <h1>
                 Made with{" "}
                 <CommandShortcut className="bg-gradient-to-tr from-zinc-600 via-zinc-600/90 to-zinc-500 rounded-xl px-2">

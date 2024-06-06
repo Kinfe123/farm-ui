@@ -26,7 +26,6 @@ export default async () => {
       <SupportedFrameworks />
       <CTAshow />
       <GetStarted />
-      {/* <GithubOpenSource /> */}
       
     </>
   );
