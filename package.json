@@ -5,15 +5,16 @@
   "packageManager": "pnpm@6.14.1",
   "scripts": {
     "dev": "turbo dev",
-    "api:build": "turbo --filter api build",
-    "web:build": "turbo --filter web build",
-    "api:dev": "turbo --filter api dev",
-    "web:dev": "turbo --filter web dev",
+    "api:build": "dotenv -- turbo --filter api build",
+    "web:build": "dotenv -- turbo --filter web build",
+    "api:dev": "dotenv -- turbo --filter api dev",
+    "web:dev": "dotenv -- turbo --filter web dev",
     "test": "turbo test"
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.1",
+    "dotenv-cli": "^7.4.2",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.31.1"
   }
