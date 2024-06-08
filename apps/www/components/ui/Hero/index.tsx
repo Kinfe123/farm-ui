@@ -8,6 +8,7 @@ import { ChevronRight } from "lucide-react";
 import HeroAnimated from "components/HeroAnimated";
 import { cn } from "@/lib/utils";
 import heroStyle from "components/HeroNit/hero.module.css";
+import NumberTicker from "components/NumberCounter";
 async function getGitHubStars() {
   try {
     const response = await fetch(
@@ -39,12 +40,13 @@ export default async function() {
               "z-20 text-sm text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit flex justify-center items-center"
             }
           >
+           
             <IconGithub />
             <div className="w-[1px] h-[20px] bg-white/10 inline-flex mx-2 group-hover:bg-white/20" />
             <span className={cn(heroStyle.magicText)}>
               <Suspense fallback={<></>}>
                 <a href="https://github.com/Kinfe123/farm-ui" target="_blank">
-                  <span className="font-bold">{stars ?? "Somehow many"}</span>{" "}
+                  <span className="font-bold">{ <NumberTicker value={stars ?? 100}/> ?? "Somehow many"}</span>{" "}
                   stars on Github
                   <ChevronRight className="inline w-4 h-4 ml-1 group-hover:translate-x-1 duration-300" />
                 </a>
