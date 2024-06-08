@@ -52,7 +52,7 @@ export function CopyNpmCommandButton({
           size="icon"
           variant="ghost"
           className={cn(
-            "relative z-20 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
+            "relative z-30 h-6 w-6 text-zinc-50  hover:text-zinc-50",
             className
           )}
         >
@@ -71,20 +71,20 @@ export function CopyNpmCommandButton({
           <span className="sr-only">Copy</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="z-20 bg-black/80">
+      <DropdownMenuContent align="start" className="z-30 bg-black/80">
         <DropdownMenuItem onClick={() => copyCommand(commands, "npm")}>
           npm
         </DropdownMenuItem>
-        <Separator className="border-[1px] border-white/10" />
+        <Separator className="" />
         <DropdownMenuItem onClick={() => copyCommand(commands, "yarn")}>
           yarn
         </DropdownMenuItem>
-        <Separator className="border-[1px] border-white/10" />
+        <Separator className="" />
 
         <DropdownMenuItem onClick={() => copyCommand(commands, "pnpm")}>
           pnpm
         </DropdownMenuItem>
-        <Separator className="border-[1px] border-white/10" />
+        <Separator className="" />
 
         <DropdownMenuItem onClick={() => copyCommand(commands, "bun")}>
           bun
