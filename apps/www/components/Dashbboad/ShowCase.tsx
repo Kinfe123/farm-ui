@@ -11,15 +11,26 @@ const DashboardDemo = () => {
         <div className="flex relative mx-auto  w-[calc(100%-300px)] justify-center items-center mt-20 ">
           <Image
             src={dashboard}
-            width={1000}
-            height={1000}
-            className="hidden sm:hidden md:block w-full object-contain shadow-lg"
+            width={2000}
+            height={2000}
+            className="hidden  sm:hidden md:block w-[92%] mt-20 mx-auto  object-cover shadow-lg"
             alt="Dashboard showcase"
           />
-         <BorderBeam size={250} duration={12} delay={9} />
-        <Image src={bgback} width={1000} height={1000} alt="Shadow image" className="absolute  bottom-0 z-10 opacity-45" />
-        <Image src={bgback} width={1000} height={1000} alt="Shadow image" className="absolute left-0  bottom-0 z-10 opacity-35" />
-
+          {/* <BorderBeam size={250} duration={12} delay={9} /> */}
+          <Image
+            src={bgback}
+            width={1000}
+            height={1000}
+            alt="Shadow image"
+            className="absolute  bottom-0 z-10 opacity-45"
+          />
+          <Image
+            src={bgback}
+            width={1000}
+            height={1000}
+            alt="Shadow image"
+            className="absolute left-0  bottom-0 z-10 opacity-35"
+          />
         </div>
       </ContainerScroll>
     </div>

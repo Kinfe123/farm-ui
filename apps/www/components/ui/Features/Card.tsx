@@ -45,7 +45,7 @@ export default ({
         <div className="text-gray-500 w-12 h-12 rounded-full bg-[linear-gradient(180deg,_rgba(39,_39,_42,_0.68)_0%,_rgba(39,_39,_42,_0.00)_100%)] flex items-center justify-center border border-zinc-700">
           {icon}
         </div>
-        <h3 className="text-zinc-100  uppercase font-semibold text-xl md:text-2xl lg:text-2xl font-displayAlt text-left pt-2">
+        <h3 className="text-zinc-100  uppercase font-normal font-geist text-xl md:text-2xl lg:text-2xl text-left pt-2">
           {title}
         </h3>
         <p className="text-zinc-300">{desc}</p>
