@@ -46,7 +46,7 @@ export default async function() {
             <span className={cn(heroStyle.magicText)}>
               <Suspense fallback={<></>}>
                 <a href="https://github.com/Kinfe123/farm-ui" target="_blank">
-                  <span className="font-bold">{ <NumberTicker value={stars ?? 100}/> ?? "Somehow many"}</span>{" "}
+                  <span className="font-bold">{ <NumberTicker value={parseInt(stars ?? '100')}/> ?? "Somehow many"}</span>{" "}
                   stars on Github
                   <ChevronRight className="inline w-4 h-4 ml-1 group-hover:translate-x-1 duration-300" />
                 </a>
