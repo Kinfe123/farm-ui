@@ -44,7 +44,7 @@ const CTAshow = () => {
         containerClassName="col-span-1 mt-10 z-5 lg:col-span-3 bg-transparent min-h-[500px] lg:min-h-[600px] xl:min-h-[600px]"
       >
         <div className="max-w-full mr-auto lg:max-w-3xl lg:mr-auto">
-          <h2 className="max-w-full font-geist md:max-w-5xl lg:max-w-full text-center  lg:text-left text-balance text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-[-0.015em] text-white">
+          <h2 className="max-w-full font-geist font-nomral tracking-tighter md:max-w-5xl lg:max-w-full text-center  lg:text-left text-balance text-2xl sm:text-3xl md:text-5xl lg:text-6xl  bg-gradient-to-tr from-zinc-100 via-zinc-50 to-zinc-100/50 text-transparent bg-clip-text ">
             Signup for accessing every possible UI that you can imagine at zero
             cost
           </h2>
@@ -62,8 +62,8 @@ const CTAshow = () => {
         </div>
         <Image
           src={dashboardimg}
-          width={700}
-          height={700}
+          width={900}
+          height={900}
           alt="linear demo image"
           className="md:flex md:justify-center md:mx-auto md:bg-center md:object-contain md:scale-100  md:translate-y-20 lg:translate-y-0  md:items-center lg:absolute lg:top-52 lg:right-[-90px] lg:bottom-[-100px] -z-10  lg:scale-125 object-contain rounded-2xl"
         />

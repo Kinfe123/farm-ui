@@ -10,10 +10,16 @@ import {
 import { cn } from "@/lib/utils";
 import { BentoCard, BentoGrid } from "./bento-show";
 import Marquee from "./marquee";
-import Image from "next/image"
-import { CalendarIcon, FileTextIcon, GlobeIcon, InfoIcon, SearchIcon } from "lucide-react";
+import Image from "next/image";
+import {
+  CalendarIcon,
+  FileTextIcon,
+  GlobeIcon,
+  InfoIcon,
+  SearchIcon,
+} from "lucide-react";
 
-import bgback from '../../../public/bg-back.png'
+import bgback from "../../../public/bg-back.png";
 const files = [
   {
     name: "Shadow",
@@ -76,12 +82,13 @@ const features = [
   {
     Icon: SearchIcon,
     name: "Search for UI",
-    description: "Search through all your available component right from one place",
+    description:
+      "Search through all your available component right from one place",
     href: "/",
     cta: "Learn more",
     className: "col-span-3 relative lg:col-span-2",
     background: (
-      <Command className="absolute right-10 top-10 w-[70%]  translate-x-0 border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-x-10">
+      <Command className="absolute right-10 top-10 w-[70%]  translate-x-0 border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-x-10 z-20">
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
@@ -105,12 +112,7 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 relative lg:col-span-2",
     background: (
-      <Calendar
-        mode="single"
-        selected={new Date(2022, 4, 11, 0, 0, 0)}
-        className="absolute right-0 top-10  rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
-      />
-       // <GlobeIcon className="absolute right-[-40px] top-5 h-[600px] -z-20 w-[600px] transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_30%,#000_100%)] group-hover:scale-105" />
+      <GlobeIcon className="absolute right-[-40px] top-5 h-[600px] -z-20 w-[600px] transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_30%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
@@ -144,11 +146,14 @@ export function GridFeatureDemo() {
       </div>
       <BentoGrid>
         {features.map((feature, idx) => (
-          <BentoCard  {...feature} />
+          <BentoCard {...feature} />
         ))}
       </BentoGrid>
-      <Image src={bgback} className="absolute top-[-400px] -z-10 overflow-visible" alt="bgback"/>
+      <Image
+        src={bgback}
+        className="absolute top-[-400px] -z-10 overflow-visible"
+        alt="bgback"
+      />
     </div>
-
   );
 }

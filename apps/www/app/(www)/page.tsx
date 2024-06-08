@@ -1,5 +1,6 @@
 import Calendy from "components/Calendly";
 import DashboardDemo from "components/Dashbboad/ShowCase";
+import NpmCommandGetStarted from "components/farmui/FUIHeroWithGridSimple";
 import FeaturesAsGrid from "components/FeaturesAsGrid";
 import GithubOpenSource from "components/Github";
 import CTAshow from "components/ui/CTAShow";
@@ -23,8 +24,10 @@ export default async () => {
       <Calendy />
       <GridFeatureDemo />
       <FeaturesAsGrid />
+      <NpmCommandGetStarted />
       <SupportedFrameworks />
       <CTAshow />
+
       <GetStarted />
       
     </>
