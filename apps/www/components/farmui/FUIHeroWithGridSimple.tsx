@@ -7,8 +7,8 @@ import { CopyNpmCommandButton } from "./CopyButton";
 const NpmCommandGetStarted = () => {
   return (
     <>
-      <section className="custom-screen-lg min-h-[800px] w-full  mt-0 relative">
-        <div className="absolute -top-0 inset-x-0 opacity-35">
+      <section className="custom-screen-lg min-h-[800px] w-full mt-[-40px]  relative">
+        <div className="absolute -top-0 inset-x-0 opacity-25">
           <BgGradient />
         </div>
 
@@ -73,15 +73,15 @@ const NpmCommandGetStarted = () => {
                 Move faster with beautiful responsive UI components and website
                 templates with modern design, 100% free and open-source.
               </pre>
-            <div className="mt-5 mb-6 w-fit mr-auto border-input animate-background-shine bg-[linear-gradient(110deg,#000,55%,#4D4B4B,65%,#000)] bg-opacity-20 bg-[length:250%_100%]   border-[2px] py-2 px-4 rounded-lg flex gap-2 justify-center items-center">
-              <Terminal className="w-4 h-4 text-white/80" />
-              <pre className="mt-1 mr-5 text-sm tracking-tight text-white/50">
-                <span className="font-extrabold text-white">pnpm</span>{" "}
-                <span className="text-white/90">farm-ui</span> add{" "}
-                <span className="text-purple-100/80">farmui-hero-03 </span>
-              </pre>
-              <CopyNpmCommandButton commands={`farm-ui add farmui-hero-03`} />
-            </div>
+              <div className="mt-5 mb-6 w-fit mr-auto border-input animate-background-shine bg-[linear-gradient(110deg,#000,55%,#4D4B4B,65%,#000)] bg-opacity-20 bg-[length:250%_100%]   border-[2px] py-2 px-4 rounded-lg flex gap-2 justify-center items-center">
+                <Terminal className="w-4 h-4 text-white/80" />
+                <pre className="mt-1 mr-5 text-sm tracking-tight text-white/50">
+                  <span className="font-extrabold text-white">pnpm</span>{" "}
+                  <span className="text-white/90">farm-ui</span> add{" "}
+                  <span className="text-purple-100/80">farmui-hero-03 </span>
+                </pre>
+                <CopyNpmCommandButton commands={`farm-ui add farmui-hero-03`} />
+              </div>
             </div>
           </HeroAnimated>
 

@@ -71,21 +71,19 @@ export function CopyNpmCommandButton({
           <span className="sr-only">Copy</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="z-30 bg-black/80">
+      <DropdownMenuContent align="start" className="z-30 bg-black/80 space-y-1">
         <DropdownMenuItem onClick={() => copyCommand(commands, "npm")}>
           npm
-        </DropdownMenuItem>
+        </DropdownMenuItem> 
         <Separator className="" />
         <DropdownMenuItem onClick={() => copyCommand(commands, "yarn")}>
           yarn
         </DropdownMenuItem>
         <Separator className="" />
-
         <DropdownMenuItem onClick={() => copyCommand(commands, "pnpm")}>
           pnpm
         </DropdownMenuItem>
         <Separator className="" />
-
         <DropdownMenuItem onClick={() => copyCommand(commands, "bun")}>
           bun
         </DropdownMenuItem>
