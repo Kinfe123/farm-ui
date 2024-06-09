@@ -128,7 +128,7 @@ export const add = new Command()
           process.exit(0);
         }
       } else {
-        await fs.mkdir(root_dir, { recursive: true });
+          await fs.mkdir(root_dir, { recursive: true });
       }
       const path_to_add: CompToAddProps[] = [];
       // for now , the content we will support will be react based , toll we have updated the ednpoint

@@ -37,7 +37,7 @@ const Viewport = ({ id, resizablePanelRef }: Props) => {
           ) : null}
           <iframe
             src={baseURL +"/example/"+id}
-            height={700}
+            height={800}
             className="relative z-20 w-full chunk-mode bg-background"
             onLoad={() => {
               setIsLoading(false);
