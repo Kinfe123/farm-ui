@@ -6,7 +6,7 @@ import FUIHeroSectionWithImage from "previewsComponents/FUIHeroSectionWithImage"
 import FUIHeroSectionWithLogoClouds from "previewsComponents/FUIHeroSectionWithLogoClouds";
 import FUIHeroWithGrid from "previewsComponents/FUIHeroWithGrid";
 import FUIHeroWithGridSimple from "previewsComponents/FUIHeroWithSimple";
-import FUILoginWithGridProvider from "previewsComponents/FUILoginWithGridProvider";
+import FUILoginWithGridProvider from "previewsComponents/FUILoginWithGridProvider.tsx";
 import React from "react";
 
 type ComponentProps = {

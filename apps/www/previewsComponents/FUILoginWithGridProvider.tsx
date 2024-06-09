@@ -1,13 +1,14 @@
 "use client";
 import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
 export default function FUILoginWithGridProvider() {
+  const [reset, setReset] = useState(false);
   return (
     <main className="w-full min-h-screen flex flex-col items-center justify-center sm:px-4 relative">
-      <div class="absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-
+      <div className="absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
       <div className="w-full space-y-6 text-gray-600 sm:max-w-md px-5 py-3 rounded-2xl  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
         <div className="text-center">
           <img
@@ -19,7 +20,7 @@ export default function FUILoginWithGridProvider() {
             <h3 className="text-gray-200 text-2xl font-normal sm:text-3xl tracking-tighter font-geist">
               Log in to your account
             </h3>
-            <p className="">
+            <p className="text-gray-400">
               Don't have an account?{" "}
               <a
                 href="javascript:void(0)"
@@ -32,9 +33,16 @@ export default function FUILoginWithGridProvider() {
         </div>
         <div className="bg-transparent shadow p-4 py-6 space-y-8 sm:p-6 sm:rounded-lg">
           <div className="grid grid-cols-3 gap-x-3">
-            <button className="flex transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100">
+            <button
+              onMouseEnter={() => setReset(false)}
+              onMouseLeave={() => setReset(true)}
+              className="group flex transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-2.5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+            >
               <svg
-                className="w-5 h-5"
+                className={cn(
+                  "w-5 h-5 group-hover:-translate-y-1 duration-300 transition-all ",
+                  reset ? "translate-y-0" : "tranistion-transform"
+                )}
                 viewBox="0 0 48 48"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -64,9 +72,17 @@ export default function FUILoginWithGridProvider() {
                 </defs>
               </svg>
             </button>
-            <button className="flex transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100">
+
+            <button
+              onMouseEnter={() => setReset(false)}
+              onMouseLeave={() => setReset(true)}
+              className="group flex transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-2.5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+            >
               <svg
-                className="w-5 h-5"
+                className={cn(
+                  "w-5 h-5 group-hover:-translate-y-1 duration-300 transition-all ",
+                  reset ? "translate-y-0" : "tranistion-transform"
+                )}
                 viewBox="0 0 48 48"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,9 +93,16 @@ export default function FUILoginWithGridProvider() {
                 />
               </svg>
             </button>
-            <button className="flex transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100">
+            <button
+              onMouseEnter={() => setReset(false)}
+              onMouseLeave={() => setReset(true)}
+              className="group flex transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-2.5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+            >
               <svg
-                className="w-5 h-5"
+                className={cn(
+                  "w-5 h-5 group-hover:-translate-y-1 duration-300 transition-all ",
+                  reset ? "translate-y-0" : "tranistion-transform"
+                )}
                 viewBox="0 0 48 48"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +159,9 @@ export default function FUILoginWithGridProvider() {
           </div>
           <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
             <div>
-              <label className="font-medium text-gray-100/50 font-geist">Email</label>
+              <label className="font-medium text-gray-100/50 font-geist">
+                Email
+              </label>
               <Input
                 type="email"
                 required
@@ -144,7 +169,9 @@ export default function FUILoginWithGridProvider() {
               />
             </div>
             <div>
-              <label className="font-medium text-gray-100/50 font-geist">Password</label>
+              <label className="font-medium text-gray-100/50 font-geist">
+                Password
+              </label>
               <Input
                 type="password"
                 required
@@ -154,7 +181,6 @@ export default function FUILoginWithGridProvider() {
             <button className="w-full group px-4 py-4 font-geist tracking-tighter text-xl text-white font-medium bg-purple-200/10 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] hover:bg-transparent/10 active:bg-purple-600 rounded-lg duration-150">
               Sign in
               <ChevronRight className="inline-flex justify-center items-center w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-
             </button>
           </form>
         </div>

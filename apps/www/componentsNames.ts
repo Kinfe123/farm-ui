@@ -22,7 +22,7 @@ import FUIBasicContextMenu from "./previewsComponents/FUIBasicContextMenu.jsx";
       
 import FUIPricingCardsRadioGroup from "./previewsComponents/FUIPricingCardsRadioGroup.jsx";
       
-import FUILoginWithGridProvider from "./previewsComponents/FUILoginWithGridProvider.jsx";
+import FUILoginWithGridProvider from "./previewsComponents/FUILoginWithGridProvider.tsx";
       
 import FUINavbarWithAdvencedDropdown from "./previewsComponents/FUINavbarWithAdvencedDropdown.jsx";
       
