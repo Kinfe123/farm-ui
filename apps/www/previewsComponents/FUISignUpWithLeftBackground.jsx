@@ -99,7 +99,7 @@ export default function FUISignUpWithLeftBackground() {
               <h3 className="text-gray-200 text-3xl  font-semibold tracking-tighter sm:text-4xl">
                 Sign up - Start journey
               </h3>
-              <p className="">
+              <p className="text-gray-400">
                 Already have an account?{" "}
                 <a
                   href="javascript:void(0)"
