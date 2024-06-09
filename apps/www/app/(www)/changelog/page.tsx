@@ -54,7 +54,7 @@ const ChangeLogPage = () => {
                 <span className="bg-gradient-to-r from-white to-orange-200 text-transparent bg-clip-text">
                   All the jazz
                 </span>{" "}
-                <span className=" ">will be dumped here.</span>
+                <span className=" ">will be <br />dumped here.</span>
               </h2>
 
               <p className="max-w-2xl mr-auto text-gray-300">
