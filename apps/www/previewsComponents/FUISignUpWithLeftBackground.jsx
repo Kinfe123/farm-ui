@@ -16,7 +16,7 @@ export default function FUISignUpWithLeftBackground() {
             className="rounded-full"
           />
           <div className=" mt-10 space-y-3">
-            <h3 className="text-white text-3xl md:text-4xl lg:text-6xl font-normal font-geist tracking-tighter">
+            <h3 className="text-white text-3xl md:text-4xl lg:text-5xl font-normal font-geist tracking-tighter">
               Start growing your business quickly
             </h3>
 
@@ -86,8 +86,8 @@ export default function FUISignUpWithLeftBackground() {
           <div className="relative">
             <img
               src="https://farmui.com/logo.svg"
-              width={150}
-              className="lg:hidden"
+              width={100}
+              className="lg:hidden rounded-full"
             />
             <div className="mt-5 space-y-2">
               <h3 className="text-gray-200 text-3xl  font-semibold tracking-tighter sm:text-4xl">

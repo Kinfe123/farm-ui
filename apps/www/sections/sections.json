@@ -39,6 +39,16 @@
     "section_name": "Auth Section",
     "description": "Beautifully designed, fully responsive, expertly crafted Aith examples",
     "isNew": true
+  },
+  {
+    "slug": "/pricing",
+    "category": "Application",
+    "count": 7,
+    "cover_url": "FAQS.png",
+    "id": "100",
+    "section_name": "Pricing ",
+    "description": "Beautifully designed, fully responsive, expertly crafted Aith examples",
+    "isNew": true
   }
   
 ]
