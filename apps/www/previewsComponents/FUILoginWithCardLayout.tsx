@@ -2,7 +2,6 @@
 
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function FUILoginWithCardLayout() {
@@ -68,11 +67,11 @@ export default function FUILoginWithCardLayout() {
         <div className="mt-6 border-t pt-6">
           <div className="flex items-center justify-center gap-4">
            
-            <button className="relative flex justify-start items-center  h-12 w-full mx-auto text-center font-geist tracking-tighter  overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2" variant="outline">
+            <button className="relative flex justify-start items-center  h-12 w-full mx-auto text-center font-geist tracking-tighter  overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2">
               <GithubIcon className="mr-2 h-4 w-4" />
               Sign in with GitHub
             </button>
-            <button className="relative flex justify-start items-center  h-12 w-full mx-auto text-center font-geist tracking-tighter  overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2" variant="outline">
+            <button className="relative flex justify-start items-center  h-12 w-full mx-auto text-center font-geist tracking-tighter  overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2">
               <ChromeIcon className="mr-2 h-4 w-4" />
               Sign in with Google
             </button>
@@ -83,7 +82,7 @@ export default function FUILoginWithCardLayout() {
   );
 }
 
-function ChromeIcon(props) {
+function ChromeIcon(props:any) {
   return (
     <svg
       {...props}
@@ -106,7 +105,7 @@ function ChromeIcon(props) {
   );
 }
 
-function GithubIcon(props) {
+function GithubIcon(props:any) {
   return (
     <svg
       {...props}
