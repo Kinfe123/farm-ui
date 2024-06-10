@@ -58,11 +58,11 @@ export default function FUIPricingSectionWithBadge() {
   ];
 
   return (
-    <section className="py-14 relative min-h-screen">
+    <section className="py-14 relative">
       <div class="absolute top-0 z-[0] h-screen w-screen bg-indigo-950/20  bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-      <div className="relative max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+      <div className="relative max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8 min-h-screen">
         <div className="relative max-w-xl mx-auto sm:text-center">
-          <h3 className="text-gray-300 font-geist tracking-tighter text-3xl font-semibold sm:text-4xl">
+          <h3 className="text-gray-300 font-geist tracking-tighter text-3xl font-semibold sm:text-5xl">
             Pricing for all sizes
           </h3>
           <div className="mt-3 max-w-xl text-white/40 font-geist font-normal">
@@ -81,7 +81,7 @@ export default function FUIPricingSectionWithBadge() {
               }`}
             >
               {item.isMostPop ? (
-                <span class="w-32 absolute -top-5 left-0 right-0 mx-auto px-3 py-2 rounded-full border shadow-md bg-white text-center text-gray-700 text-sm font-semibold">
+                <span class="w-32 absolute -top-5 left-0 right-0 mx-auto px-3 py-2 rounded-full border shadow-md bg-indigo-950/50 text-white/90  bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] animate-background-shine text-center text-gray-700 text-sm font-semibold">
                   Most popular
                 </span>
               ) : (
