@@ -1,12 +1,6 @@
 "use client";
 import React from "react";
 import { cn } from "@/lib/utils";
-import * as Avatar from "@radix-ui/react-avatar";
-import * as ContextMenu from "@radix-ui/react-context-menu";
-import * as Dialog from "@radix-ui/react-dialog";
-import * as Select from "@radix-ui/react-select";
-import * as Tabs from "@radix-ui/react-tabs";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 
@@ -22,7 +16,7 @@ export default function FUISignUpWithLeftBackground() {
             className="rounded-full"
           />
           <div className=" mt-10 space-y-3">
-            <h3 className="text-white text-3xl md:text-4xl lg:text-6xl font-normal font-geist tracking-tighter">
+            <h3 className="text-white text-3xl md:text-4xl lg:text-5xl font-normal font-geist tracking-tighter">
               Start growing your business quickly
             </h3>
 
@@ -92,8 +86,8 @@ export default function FUISignUpWithLeftBackground() {
           <div className="relative">
             <img
               src="https://farmui.com/logo.svg"
-              width={150}
-              className="lg:hidden"
+              width={100}
+              className="lg:hidden rounded-full"
             />
             <div className="mt-5 space-y-2">
               <h3 className="text-gray-200 text-3xl  font-semibold tracking-tighter sm:text-4xl">

@@ -25,7 +25,9 @@ import FUIPricingCardsRadioGroup from "./previewsComponents/FUIPricingCardsRadio
 import FUILoginWithGridProvider from "./previewsComponents/FUILoginWithGridProvider.tsx";
       
 import FUINavbarWithAdvencedDropdown from "./previewsComponents/FUINavbarWithAdvencedDropdown.jsx";
-      
+
+import FUILoginWithCardLayout from "previewsComponents/FUILoginWithCardLayout.tsx";
+
 import FUISelectMenuWithSearchBox2 from "./previewsComponents/FUISelectMenuWithSearchBox2.jsx";
       
 import FUISidebarWithSubmenu from "./previewsComponents/FUISidebarWithSubmenu.jsx";
@@ -478,6 +480,8 @@ FUITeamSectionCentredWithLargeImages,
 FUIDarkStatsWithInCards,
       
 FUIStepsWithTitlesOnTheBottom,
+
+FUILoginWithCardLayout,
       
 FUINewsletterWithDescription,
       
