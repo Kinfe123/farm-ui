@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import * as Avatar from "@radix-ui/react-avatar";
 import * as ContextMenu from "@radix-ui/react-context-menu";
@@ -8,7 +9,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 export default function FUIPricingSectionWithTable() {
 
-    const checkIcon = <svg className="w-5 h-5 mx-auto text-indigo-600" fill="currentColor" viewBox="0 0 20 20"><path d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" /></svg>
+    const checkIcon = <svg className="w-5 h-5 mx-auto text-zinc-600" fill="currentColor" viewBox="0 0 20 20"><path d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" /></svg>
     const minusIcon = <svg className="w-5 h-5 mx-auto text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z" /></svg>
 
     const plans = [
@@ -146,13 +147,14 @@ export default function FUIPricingSectionWithTable() {
     const [selectedPlan, setSelectedPlan] = React.useState(plans[0].name)
 
     return (
-        <section className="py-14 text-gray-600">
+        <section className="py-14 max-w-screen-xl mx-auto text-gray-100 relative">
+        <img src='https://tailwindcss.com/_next/static/media/docs@30.8b9a76a2.avif' className="absolute top-0 left-0"/>
             <div className="">
-                <div className='relative max-w-xl mx-auto space-y-3 px-4 sm:text-center md:px-0'>
-                    <h3 className="text-indigo-600 font-semibold">
+                <div className='relative ml-6 max-w-xl mr-auto  space-y-3 px-4 sm:text-left md:px-0'>
+                    <h3 className="text-zinc-100 font-semibold">
                         Pricing
                     </h3>
-                    <p className='text-gray-800 text-3xl font-semibold sm:text-4xl'>
+                    <p className='text-gray-200 tracking-tighter font-geist text-3xl font-normal sm:text-6xl '>
                         Compare our plans and find yours
                     </p>
                     <div className='max-w-xl'>
@@ -162,7 +164,7 @@ export default function FUIPricingSectionWithTable() {
                     </div>
                 </div>
                 <div className="mt-16">
-                    <div className="sticky top-0 py-6 border-b bg-white">
+                    <div className="sticky top-0 py-6 border-b bg-transparent dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-xl">
                         <div className="max-w-screen-xl mx-auto">
                             <ul className="ml-auto flex gap-x-6 px-4 md:px-8 lg:max-w-3xl">
                                 {
@@ -186,13 +188,13 @@ export default function FUIPricingSectionWithTable() {
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div className='text-gray-800 text-3xl font-semibold'>
-                                                ${item.price} <span className="text-xl text-gray-600 font-normal">/mo</span>
+                                            <div className='text-gray-200 text-3xl font-semibold'>
+                                                ${item.price} <span className="text-xl text-gray-100 font-normal">/mo</span>
                                             </div>
                                             <p className="text-sm">
                                                 {item.desc}
                                             </p>
-                                            <button className='px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700'>
+                                            <button className='mt-4 w-full font-geist tracking-tighter text-center rounded-md text-md bg-gradient-to-br from-zinc-400 to-zinc-700 px-4 py-2 text-lg text-zinc-50 ring-2 ring-zinc-500/50 ring-offset-2 ring-offset-zinc-950 transition-all hover:scale-[1.02] hover:ring-transparent active:scale-[0.98] active:ring-zinc-500/70 flex items-center justify-center gap-2'>
                                                 Get Started
                                             </button>
                                         </li>
@@ -205,21 +207,21 @@ export default function FUIPricingSectionWithTable() {
                         {
                             tables.map((table, idx) => (
                                 <table key={idx} className="w-full table-auto text-sm text-left">
-                                    <thead className="text-gray-600 font-medium border-b">
+                                    <thead className="text-gray-100 font-medium border-b">
                                         <tr>
                                             <th className="z-20 top-12 py-6 lg:sticky">
                                                 <div className="flex items-center gap-x-3">
-                                                    <div className="w-12 h-12 text-indigo-600 rounded-full border flex items-center justify-center">
+                                                    <div className="w-12 h-12 text-zinc-600 rounded-full border flex items-center justify-center">
                                                         {table.label_icon}
                                                     </div>
-                                                    <h4 className="text-gray-800 text-xl font-medium">
+                                                    <h4 className="text-gray-200 text-xl font-medium">
                                                         {table.label}
                                                     </h4>
                                                 </div>
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody className="text-gray-600 divide-y">
+                                    <tbody className="text-gray-100 divide-y">
                                         {
                                             table.items.map((item, idx) => (
                                                 <>
