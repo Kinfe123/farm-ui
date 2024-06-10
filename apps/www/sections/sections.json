@@ -26,7 +26,7 @@
     "count": 7,
     "cover_url": "FAQS.png",
     "id": "100",
-    "section_name": "Hero Section",
+    "section_name": "Hero",
     "description": "Beautifully designed, fully responsive, expertly crafted Hero examples",
     "isNew": true
   },
@@ -36,7 +36,7 @@
     "count": 7,
     "cover_url": "FAQS.png",
     "id": "100",
-    "section_name": "Auth Section",
+    "section_name": "Authentication",
     "description": "Beautifully designed, fully responsive, expertly crafted Aith examples",
     "isNew": true
   },
