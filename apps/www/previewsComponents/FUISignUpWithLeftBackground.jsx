@@ -1,12 +1,6 @@
 "use client";
 import React from "react";
 import { cn } from "@/lib/utils";
-import * as Avatar from "@radix-ui/react-avatar";
-import * as ContextMenu from "@radix-ui/react-context-menu";
-import * as Dialog from "@radix-ui/react-dialog";
-import * as Select from "@radix-ui/react-select";
-import * as Tabs from "@radix-ui/react-tabs";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 

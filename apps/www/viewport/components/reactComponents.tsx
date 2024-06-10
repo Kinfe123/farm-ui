@@ -6,7 +6,7 @@ import FUIHeroSectionWithImage from "previewsComponents/FUIHeroSectionWithImage"
 import FUIHeroSectionWithLogoClouds from "previewsComponents/FUIHeroSectionWithLogoClouds";
 import FUIHeroWithGrid from "previewsComponents/FUIHeroWithGrid";
 import FUIHeroWithGridSimple from "previewsComponents/FUIHeroWithSimple";
-import FUILoginWithCardLayout from "previewsComponents/FUILoginWithCardLayout";
+import FUILoginWithCardLayout from "previewsComponents/FUILoginWithCardLayout.tsx";
 import FUILoginWithGridProvider from "previewsComponents/FUILoginWithGridProvider.tsx";
 import FUILoginWithListedProvider from "previewsComponents/FUILoginWithListedProvider";
 import FUISignUpWithLeftBackground from "previewsComponents/FUISignUpWithLeftBackground";
