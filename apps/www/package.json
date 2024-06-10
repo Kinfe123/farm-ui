@@ -12,6 +12,7 @@
     "@babel/core": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
     "@heroicons/react": "^2.0.18",
+    "@hookform/resolvers": "^3.6.0",
     "@kinfe123/farm-ui": "workspace:1.0.4",
     "@loglib/tracker": "^0.8.0",
     "@neondatabase/serverless": "^0.9.3",
@@ -62,6 +63,7 @@
     "react": "^18.2.0",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.5",
     "react-resizable-panels": "^2.0.19",
     "rehype-code-titles": "^1.2.0",
     "remark-code-import": "^1.2.0",
@@ -70,7 +72,7 @@
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^8.3.2",
-    "zod": "^3.22.4"
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
