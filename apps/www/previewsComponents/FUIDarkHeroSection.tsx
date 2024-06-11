@@ -2,7 +2,6 @@ import React from "react";
 import clsx from "clsx";
 
 export default function FUIDarkHeroSection() {
-  // Replace javascript:void(0) path with your path
   const navigation = [
     { title: "Customers", path: "javascript:void(0)" },
     { title: "Careers", path: "javascript:void(0)" },
@@ -21,7 +20,7 @@ export default function FUIDarkHeroSection() {
             <span className="sr-only">DeceptiConf - </span>A design conference
             for the dark side.
           </h1>
-          <div className="mt-6 space-y-6 font-display text-2xl tracking-tight text-gray-500">
+          <div className="mt-6 space-y-6 font-geist text-md sm:text-xl tracking-tight text-gray-500">
             <p>
               The next generation of web users are tech-savvy and suspicious.
               They know how to use dev tools, they can detect a phishing scam

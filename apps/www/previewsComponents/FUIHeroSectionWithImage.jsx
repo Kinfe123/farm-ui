@@ -4,7 +4,6 @@ import React from "react";
 export default function FUIHeroSectionWithImage() {
   const [state, setState] = React.useState(false);
 
-  // Replace javascript:void(0) paths with your paths
   const navigation = [
     { title: "Features", path: "javascript:void(0)" },
     { title: "Integrations", path: "javascript:void(0)" },
