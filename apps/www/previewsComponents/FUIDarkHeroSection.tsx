@@ -17,7 +17,7 @@ export default function FUIDarkHeroSection() {
         />
 
         <div className="mx-auto max-w-2xl lg:max-w-4xl lg:px-12">
-          <h1 className="font-geist text-5xl font-normal  tracking-tighter bg-gradient-to-t from-zinc-200/80 via-zinc-100/90 to-zinc-50 text-transparent bg-clip-text sm:text-7xl">
+          <h1 className="font-geist text-5xl font-normal  tracking-tighter  bg-gradient-to-r from-zinc-100 via-stone-200/50 to-purple-200/70 bg-clip-text  text-transparent sm:text-7xl">
             <span className="sr-only">DeceptiConf - </span>A design conference
             for the dark side.
           </h1>
