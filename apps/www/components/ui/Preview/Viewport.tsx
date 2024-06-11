@@ -17,7 +17,6 @@ interface Props {
 
 const Viewport = ({ id, resizablePanelRef }: Props) => {
   const [isLoading, setIsLoading] = useState(true);
-  console.log({ isLoading });
   const baseURL = getBaseURL();
 
   return (
@@ -41,18 +40,13 @@ const Viewport = ({ id, resizablePanelRef }: Props) => {
               )}
             />
           </div>
-        ) : // <div className="absolute inset-0 z-10 flex h-[--container-height] w-full items-center justify-center gap-2 text-sm text-muted-foreground">
-        //   <Loader2 className="w-4 h-4 text-black animate-spin fleex just" />
-        //   Loading...
-        // </div>
-        null}
+        ) : null}
         <iframe
           src={baseURL + "/example/" + id}
           height={800}
           className="relative z-20 w-full chunk-mode bg-background"
           onLoad={() => {
             setIsLoading(false);
-            console.log("Loaded");
           }}
         />
       </ResizablePanel>
