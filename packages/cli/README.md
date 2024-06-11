@@ -1,6 +1,6 @@
 ## FarmUI  ![GitHub stars](https://img.shields.io/github/stars/Kinfe123/farm-ui)
 
-FarmUI is client first and animation rich ui component library built on top of radix and shadcn as well other primitive providers that we would like to cover.
+FarmUI is client first and animation rich ui component library built on top of radix and shadcn as well other primitive providers that we would like to support in near feature..
 
 ## Prerequisites
 - [Node.js](https://nodejs.org/) version 14 or higher installed

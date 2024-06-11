@@ -1,7 +1,6 @@
 "use client";
 
-import PreviewSwitch from "components/ui/PreviewSwitch";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
 import * as Tabs from "@radix-ui/react-tabs";
 import {
@@ -13,21 +12,18 @@ import {
 } from "components/icons";
 import SyntaxHeighlight from "components/SyntaxHeighlight";
 import { CheckIcon, Square2StackIcon } from "@heroicons/react/24/outline";
-import MDXRemoteClient from "components/MDXRemoteClient";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import componentsNames from "componentsNames";
 import TabsTrigger from "../Tabs/TabsTrigger";
 import { motion } from "framer-motion";
 import { componentToPreview } from "viewport/components/reactComponents";
 import { ClipboardIcon, Terminal } from "lucide-react";
-import { CopyNpmCommandButton } from "components/farmui/CopyButton";
 import { TabsContent, Tabs as ShadTab } from "@/components/ui/tabs";
 import { BlockToolbar } from "./toolbar";
-
 import { ImperativePanelHandle } from "react-resizable-panels";
 import Viewport from "./Viewport";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { parseIt } from "./parser";
+import CodeBlockServerComp from "./codeblock";
 const tabs = [
   {
     name: "React.js",
@@ -156,6 +152,9 @@ export default ({
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.9 }}
                   >
+                    {/* <Suspense fallback={<>Loading...</>}>
+                  <CodeBlockServerComp path={comp} />
+                    </Suspense> */}
                     <SyntaxHeighlight
                       code={
                         codeCopy
