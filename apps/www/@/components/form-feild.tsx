@@ -12,11 +12,13 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import LinkItem from "components/ui/LinkItem";
-import { ChevronRight, Loader2 } from "lucide-react";
+import { ChevronRight, Loader2, PlusSquare } from "lucide-react";
 import { useState, useTransition } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { saySomething } from "actions/emailSubRelated";
 import { Button } from "@/components/ui/button";
+import { PlusSvg } from "components/SectionSvg";
+import { BottomLine } from "components/LineUtils";
 type FormType = {
   firstName: string;
   lastName?: string;
@@ -73,9 +75,13 @@ export function FormField() {
     });
   };
   return (
-    <section className="custom-screen-lg mx-auto z-20">
-      <div className="relative backdrop-blur-3xl z-10 max-w-4xl mx-auto  space-y-4">
-        <Card className="relative mt-20 py-10 z-20 backdrop-blur-3xl transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
+    <section className="custom-screen-lg mx-auto z-20 pb-20">
+      <div className="relative border-none z-10 max-w-4xl mx-auto  space-y-4">
+       
+        <Card className="relative bg-page-gradient mt-20 py-10 z-20 backdrop-blur-3xl rounded-none">
+          <PlusSvg className="size-5 absolute top-[-6px] left-[-6px]"/>
+          <PlusSvg className="size-5 absolute bottom-[-14px] right-[-16px] "/>
+
           <CardHeader>
               <h2 className="text-xl tracking-tighter font-geist  bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] text-transparent text-left md:text-3xl">
                 Say Something.
@@ -136,7 +142,7 @@ export function FormField() {
                 disabled={pending}
                 variant="default"
                 // onClick={onSubmit}
-                className="inline-flex rounded-3xl text-white bg-transaprent/10  text-center group items-center w-full justify-center   border-input border-[1px] hover:bg-transparent/10  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] transition-colors sm:w-auto py-6 px-10"
+                className="inline-flex rounded-lg text-white bg-transaprent/10  text-center group items-center w-full justify-center   border-input border-[1px] hover:bg-transparent/10  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] transition-colors sm:w-auto py-6 px-10"
               >
                 Submit
                 {pending ? (
@@ -148,7 +154,9 @@ export function FormField() {
             </form>
           </CardContent>
         </Card>
+
       </div>
+    
     </section>
   );
 }
