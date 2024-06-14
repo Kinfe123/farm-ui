@@ -78,7 +78,7 @@ export function FormField() {
     <section className="custom-screen-lg mx-auto z-20 pb-20">
       <div className="relative border-none z-10 max-w-4xl mx-auto  space-y-4">
        
-        <Card className="relative bg-page-gradient mt-20 py-10 z-20 backdrop-blur-3xl rounded-none">
+        <Card className="relative bg-page-gradient mt-20 py-10 z-20 backdrop-blur-3xl rounded-none rounded-tr-2xl rounded-bl-2xl">
           <PlusSvg className="size-5 absolute top-[-6px] left-[-6px]"/>
           <PlusSvg className="size-5 absolute bottom-[-14px] right-[-16px] "/>
 
