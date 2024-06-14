@@ -20,7 +20,7 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Fast Refresh',
+      title: 'Blazingly fast UI',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
     },
     {
@@ -40,7 +40,7 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Analytics',
+      title: 'Dashboard UI ',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
     },
     {
@@ -60,7 +60,7 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Datacenter security',
+      title: 'Auth Starter UI',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
     },
     {
@@ -80,7 +80,7 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Build on your terms',
+      title: 'Team UI',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
     },
     {
@@ -100,7 +100,7 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Safe to use',
+      title: 'Toast & Alert UI ',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
     },
     {
@@ -120,7 +120,7 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Flexible',
+      title: 'Hero UI',
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
     },
   ]
