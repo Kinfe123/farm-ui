@@ -64,11 +64,11 @@ const NpmCommandGetStarted = () => {
           </h1>
           <HeroAnimated
             header="Get your component up and running with just one command - our CLI."
-            headerClassName="ml-2 text-left tracking-tight max-w-md md:max-w-6xl text-5XL md:text-7XL tracking-tighter mr-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+            headerClassName="md:ml-2 text-left tracking-tight max-w-md md:max-w-6xl text-2xl md:text-7xl tracking-tighter mr-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description=""
             descriptionClassName="  "
           >
-            <div className="mr-auto text-[0.84rem] ml-2 text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-5 ">
+            <div className="mr-auto text-[0.84rem] ml-6 text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-5 ">
               <pre className="tracking-tight uppercase max-w-md md:max-w-3xl text-wrap">
                 Move faster with beautiful responsive UI components and website
                 templates with modern design, 100% free and open-source.
