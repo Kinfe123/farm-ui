@@ -24,12 +24,9 @@ export default async () => {
       <Calendy />
       <GridFeatureDemo />
       <FeaturesAsGrid />
-
       <NpmCommandGetStarted />
-
       <SupportedFrameworks />
       <CTAshow />
-
       <GetStarted />
     </>
   );
