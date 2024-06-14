@@ -85,7 +85,7 @@ export default async function() {
         </div>
         <HeroBgGradientClient />
       </section>
-      <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute top-0 md:-top-2 right-0 min-h-screen">
+      <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute hidden sm:block md:-top-2 right-0 min-h-screen">
         <Image src={bghero} className="w-full bg-center " alt="Hero Image" />
       </div>
     </>
