@@ -36,8 +36,8 @@ export default () => {
   return (
     <section className="custom-screen-lg mb-[-40px] z-10 relative mt-32">
       <Image alt='bgback' src={bgback} className="absolute -top-40 left-0 opacity-60" />
-      <div className="max-w-xl ml-auto space-y-4 text-right">
-        <h2 className="text-4xl md:text-5xl lg:text-7xl bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent font-geist tracking-tighter font-normal ">Turn your ideas into reality</h2>
+      <div className="max-w-xl ml-auto space-y-4 text-right px-3 md:px-0">
+        <h2 className="text-4xl md:text-5xl lg:text-7xl  bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent font-geist tracking-tighter font-normal ">Turn your ideas into reality</h2>
         <p className="text-zinc-400">
            FarmUI offers all the vital building blocks you need to transform
           your idea into a great-looking startup.
