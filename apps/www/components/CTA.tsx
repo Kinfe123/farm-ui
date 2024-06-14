@@ -48,7 +48,7 @@ export const CTA = ({
 
      <Image
       alt="bg-hero"
-      className="absolute inset-0 w-full h-full scale-150 tranform rotate-360" 
+      className="hidden sm:block absolute inset-0 w-full h-full scale-150 tranform rotate-360" 
       src={bghero} 
       
 

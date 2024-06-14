@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 
 import bgback from "../../../public/bg-back.png";
+import FUIFeatureSectionWithCards from "components/farmui/FUIFeatureCard";
 const files = [
   {
     name: "Shadow",
@@ -134,26 +135,32 @@ const features = [
 
 export function GridFeatureDemo() {
   return (
-    <div className="custom-screen-lg relative flex flex-col">
-      <div className="max-w-3xl mr-auto  space-y-4 text-left mb-10">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl  font-nomral tracking-tighter font-geist bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent">
-          A wide range of templates and components.
-        </h2>
-        <p className="text-zinc-400">
-          FarmUI offers all the vital building blocks you need to transform your
-          idea into a great-looking startup.
-        </p>
-      </div>
-      <BentoGrid>
+    <div className="relative bg-page-gradient ">
+      <div className="-z-1 absolute inset-x-0 -top-0 h-screen  w-full bg-transparent bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)]  bg-[size:6rem_4rem] opacity-5 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+
+      <div className="custom-screen-lg   relative flex flex-col">
+        <div className="max-w-3xl mr-auto  space-y-4 text-left mb-10">
+          <h2 className="pt-16 text-4xl md:text-5xl lg:text-6xl  font-nomral tracking-tighter font-geist bg-gradient-to-tr from-zinc-400/50 via-white to-white/60 bg-clip-text text-transparent">
+            A wide range of templates and components.
+          </h2>
+          <p className="text-zinc-400">
+            FarmUI offers all the vital building blocks you need to transform
+            your idea into a great-looking startup.
+          </p>
+        </div>
+        <FUIFeatureSectionWithCards />
+
+        {/* <BentoGrid>
         {features.map((feature, idx) => (
           <BentoCard {...feature} />
         ))}
-      </BentoGrid>
-      <Image
-        src={bgback}
-        className="absolute top-[-400px] -z-10 overflow-visible"
-        alt="bgback"
-      />
+      </BentoGrid> */}
+        <Image
+          src={bgback}
+          className="absolute top-[-400px] -z-10 overflow-visible"
+          alt="bgback"
+        />
+      </div>
     </div>
   );
 }
