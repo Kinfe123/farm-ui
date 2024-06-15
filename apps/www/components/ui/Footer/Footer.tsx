@@ -104,7 +104,7 @@ export default () => (
               <h1>
                 Made with{" "}
                 <CommandShortcut className="bg-gradient-to-tr from-zinc-600 via-zinc-600/90 to-zinc-500 rounded-xl px-2">
-                  <code>:cup-of-tea</code>
+                  <code>:cup-of-tea:</code>
                 </CommandShortcut>{" "}
                 by{" "}
                 <a
