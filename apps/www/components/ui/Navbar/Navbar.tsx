@@ -9,10 +9,18 @@ import NewsletterModal from "../NewsletterModal";
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, User } from "lucide-react";
+import { useSession } from "next-auth/react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default () => {
   const [state, setState] = useState(false);
+  const session = useSession();
   const [isNewsletterModalActive, setNewsletterModalActive] = useState(false);
   const pathname = usePathname();
   const navigation = [
@@ -21,8 +29,7 @@ export default () => {
     { title: "Demo", path: "/demo" },
     { title: "Logs", path: "/changelog" },
 
-    { title: "Join", path: "/join",
-    },
+    { title: "Join", path: "/join" },
   ];
   useEffect(() => {
     document.onclick = (e) => {
@@ -30,6 +37,8 @@ export default () => {
       if (target && !target.closest(".menu-btn")) setState(false);
     };
   }, []);
+
+  const user = session.data?.user;
 
   function EditorWithAiButton() {
     return (
@@ -106,15 +115,35 @@ export default () => {
                 })}
               </ul>
               <div className="mt-6 md:mt-0">
-                <LinkItem
-                  variant="shiny"
-                  href="/components"
-                  className="w-full group block bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-transparent  border-input border-[1px] hover:bg-transparent/50 "
-                >
-                  Join FarmUI 
-                <ChevronRight className="inline-flex w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-
-                </LinkItem>
+                {!!user ? (
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        {!!user.image ? (
+                          <img
+                            src={user.image}
+                            className="w-10 h-10 rounded-full"
+                            alt=""
+                          />
+                        ) : (
+                          <User className="w-10 h-10 bg-white/80 rounded-full" />
+                        )}
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{user.name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                ) : (
+                  <LinkItem
+                    variant="shiny"
+                    href="/login"
+                    className="w-full group block bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-transparent  border-input border-[1px] hover:bg-transparent/50 "
+                  >
+                    Join FarmUI
+                    <ChevronRight className="inline-flex w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+                  </LinkItem>
+                )}
               </div>
             </div>
           </div>

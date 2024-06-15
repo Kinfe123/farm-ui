@@ -16,6 +16,7 @@ import { GeistMono } from "geist/font/mono";
 import { Toaster } from "@/components/ui/toaster";
 import Loglib from "@loglib/tracker/react";
 import { Analytics } from "@vercel/analytics/react";
+import { SessionProvider } from "next-auth/react";
 const { title, desc, ogImage } = metatag;
 export const metadata = {
   metadataBase: new URL("https://farmui.com"),
@@ -85,31 +86,34 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@farmui" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body
-        className={cn(
-          inter.className,
-          displayFont.variable,
-          dmSans.variable,
-          GeistSans.variable,
-          "bg-black overflow-x-hidden"
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
+
+      <SessionProvider>
+        <body
+          className={cn(
+            inter.className,
+            displayFont.variable,
+            dmSans.variable,
+            GeistSans.variable,
+            "bg-black overflow-x-hidden"
+          )}
         >
-          <Toaster />
-          <main>{children}</main>
-          <Loglib
-            config={{
-              id: "farmui_vercel",
-            }}
-          />
-          <Analytics />
-        </ThemeProvider>
-      </body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Toaster />
+            <main>{children}</main>
+            <Loglib
+              config={{
+                id: "farmui_vercel",
+              }}
+            />
+            <Analytics />
+          </ThemeProvider>
+        </body>
+      </SessionProvider>
     </html>
   );
 }
