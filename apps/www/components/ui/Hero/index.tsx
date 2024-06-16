@@ -75,7 +75,7 @@ export default async function () {
               <LinkItem
                 href="/templates"
                 variant="shiny"
-              className="z-20 group inline-flex w-full bg-page-gradient justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 hover:bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
+              className="z-20 group inline-flex w-full bg-page-gradient justify-center items-center gap-x-2 border border-input hover:border-zinc-600 hover:bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
 
                 // className="inline-flex w-full  group justify-center items-center bg-zinc-900 bg-page-gradient   border-white/5 border-[1px] sm:w-auto hover:bg-transparent/50  py-4 px-10 "
               >
