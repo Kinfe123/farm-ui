@@ -61,7 +61,7 @@ const CareerPage = () => {
   ];
   return (
     <div className="relative overflow-hidden pb-20">
-      <section className="custom-screen mt-20 mx-auto">
+      <section className="custom-screen mt-48 mx-auto">
         <div className="relative z-10 max-w-4xl mx-auto text-right space-y-4">
           <HeroAnimated
             header="Join the gang and create amazing hands down products."
