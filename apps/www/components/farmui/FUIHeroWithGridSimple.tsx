@@ -9,7 +9,7 @@ import { BottomLine } from "components/LineUtils";
 const NpmCommandGetStarted = () => {
   return (
     <>
-      <section className="custom-screen-lg min-h-[800px] w-full mt-10 relative bg-page-gradient bg-opacity-10">
+      <section className="custom-screen-lg min-h-[800px] w-full mt-10 relative  bg-opacity-10">
         <BottomLine />
         <Section
           className="relative max-w-full "
