@@ -34,7 +34,7 @@ export default async function () {
   const stars = await getGitHubStars();
   return (
     <>
-      <section className="custom-screen mt-32">
+      <section className="custom-screen mt-48">
         <div className="relative z-20 max-w-5xl mx-auto space-y-4">
           <h1
             className={
@@ -59,10 +59,10 @@ export default async function () {
 
           <HeroAnimated
             header="Primitive first - well curated UI library. "
-            headerClassName="text-center max-w-3xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+            headerClassName="text-center max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful, responsive UI components and website
             templates with modern design, 100% free and open-source."
-            descriptionClassName="mx-auto text-zinc-300 text-center text-lg lg:max-w-2xl py-5"
+            descriptionClassName="mx-auto text-zinc-300 text-center text-lg  max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl  py-5"
           >
             <Image
               src={bgback}
@@ -99,7 +99,7 @@ export default async function () {
           {/* Background image */}
           <Image
             src={bghero}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hidden sm:block"
             alt="Hero Image"
           />
 
