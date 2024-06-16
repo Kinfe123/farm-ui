@@ -22,7 +22,7 @@ const DashboardDemo = () => {
             width={1000}
             height={1000}
             alt="Shadow image"
-            className="absolute top-[-280px] bottom-0 z-10 opacity-100"
+            className="absolute top-[-280px] bottom-0 z-10 opacity-70"
           />
           <Image
             src={bgback}

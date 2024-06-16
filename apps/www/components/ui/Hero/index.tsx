@@ -9,6 +9,7 @@ import HeroAnimated from "components/HeroAnimated";
 import { cn } from "@/lib/utils";
 import heroStyle from "components/HeroNit/hero.module.css";
 import NumberTicker from "components/NumberCounter";
+import bgback from "../../../public/bg-back.png";
 async function getGitHubStars() {
   try {
     const response = await fetch(
@@ -63,6 +64,13 @@ export default async function () {
             templates with modern design, 100% free and open-source."
             descriptionClassName="mx-auto text-zinc-300 text-center text-lg lg:max-w-2xl py-5"
           >
+            <Image
+              src={bgback}
+              width={1000}
+              height={1000}
+              alt="Shadow image"
+              className="absolute top-[-200px] bottom-0 -z-10 opacity-100"
+            />
             <div className="flex flex-wrap items-center justify-center  gap-3">
               <LinkItem
                 href="/templates"
