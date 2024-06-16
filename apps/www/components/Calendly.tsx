@@ -1,9 +1,9 @@
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import ellipsback from "../public/ellipse-back.png"
-import dashboard2 from '../public/dashboard-2.png'
-import Image from 'next/image'
-import HeroAnimated from './HeroAnimated'
-import LinkItem from './ui/LinkItem'
+import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import ellipsback from "../public/ellipse-back.png";
+import dashboard2 from "../public/dashboard-2.png";
+import Image from "next/image";
+import HeroAnimated from "./HeroAnimated";
+import LinkItem from "./ui/LinkItem";
 export default function Calendly() {
   return (
     <div className="relative isolate overflow-hidden bg-gradient-to-tr from-transparent/10 via-transparent to-transparent/5">
@@ -29,7 +29,12 @@ export default function Calendly() {
             strokeWidth={0}
           />
         </svg>
-        <rect width="100%" height="100%" strokeWidth={0} fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)" />
+        <rect
+          width="100%"
+          height="100%"
+          strokeWidth={0}
+          fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
+        />
       </svg>
       <div
         className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
@@ -39,7 +44,7 @@ export default function Calendly() {
           className="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#9c80ff] to-[#e546d5] opacity-20"
           style={{
             clipPath:
-              'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
+              "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
           }}
         />
       </div>
@@ -55,9 +60,14 @@ export default function Calendly() {
               <span className="rounded-full bg-purple-500/10 px-3 py-1 text-sm font-semibold leading-6 text-purple-400 ring-1 ring-inset ring-indigo-500/20">
                 What's new
               </span>
-              <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
-                <span>Just shipped v1.0</span>
-                <ChevronRightIcon className="h-5 w-5 text-gray-500" aria-hidden="true" />
+              <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300 z-20 group">
+                <a href="/changelog" className="cursor-pointer">
+                  Just shipped v1.0
+                </a>
+                <ChevronRightIcon
+                  className="h-5 w-5 text-gray-500 group-hover:translate-x-1  duration-400"
+                  aria-hidden="true"
+                />
               </span>
             </a>
           </div>
@@ -67,19 +77,20 @@ export default function Calendly() {
             description="Move faster with beautiful, responsive UI components and website
             templates with modern design, 100% free and open-source."
             descriptionClassName="mr-auto text-zinc-400 text-left text-lg lg:max-w-2xl py-5"
-          >
-        </HeroAnimated>
-          <div className="group mt-0 flex items-center gap-x-6">
-            <LinkItem 
+          ></HeroAnimated>
+          <div className=" mt-0 flex items-center gap-x-6">
+            <LinkItem
               href="https://cal.com/kinfish/15min"
-              target='_blank'
-              className="z-20 inline-flex w-full hover:bg-transparent justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
+              target="_blank"
+              className="z-20 group inline-flex w-full hover:bg-transparent justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
             >
               Schedule Call
               <ChevronRightIcon className="w-4 h-4 group-hover:translate-x-1 duration-300" />
-
             </LinkItem>
-            <a href="/templates" className="text-sm z-20 font-semibold leading-6 text-white">
+            <a
+              href="/components"
+              className="text-sm z-20 font-semibold leading-6 text-white"
+            >
               Learn more <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -93,16 +104,14 @@ export default function Calendly() {
               height={1442}
               className="w-[76rem] shadow-2xl"
             />
-
           </div>
-          <Image 
-             src={ellipsback}
-             className='absolute top-10 -left-[100%] opacity-45'
-             alt='ellipse back'
-          
+          <Image
+            src={ellipsback}
+            className="absolute top-10 -left-[100%] opacity-45"
+            alt="ellipse back"
           />
         </div>
       </div>
     </div>
-  )
+  );
 }
