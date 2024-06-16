@@ -9,10 +9,10 @@ import { BottomLine } from "components/LineUtils";
 const NpmCommandGetStarted = () => {
   return (
     <>
-      <section className="custom-screen-lg min-h-[800px] w-full mt-[-40px]  relative">
+      <section className="custom-screen-lg min-h-[800px] w-full mt-10 relative bg-page-gradient bg-opacity-10">
         <BottomLine />
         <Section
-          className="relative max-w-full"
+          className="relative max-w-full "
           crosses
           crossesOffset="lg:translate-y-[14rem]"
           customPaddings
