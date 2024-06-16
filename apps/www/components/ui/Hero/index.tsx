@@ -67,7 +67,7 @@ export default async function () {
               <LinkItem
                 href="/templates"
                 variant="shiny"
-                className="inline-flex w-full  group justify-center items-center  bg-glass-gradient   border-white/5 border-[1px] sm:w-auto hover:bg-transparent/50  py-4 px-10"
+                className="inline-flex w-full  group justify-center items-center bg-zinc-900 bg-page-gradient   border-white/5 border-[1px] sm:w-auto hover:bg-transparent/50  py-4 px-10 "
               >
                 Cooked for you
                 <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
@@ -96,7 +96,7 @@ export default async function () {
           />
 
           {/* Overlay */}
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60"></div>
           <div className="absolute top-0 left-0 bg-gradient-to-t from-transparent/30 to-transparent w-[100px] h-[400px]  opacity-40"></div>
         </div>
       </div>
