@@ -57,8 +57,8 @@ export default async function () {
           </h1>
 
           <HeroAnimated
-            header="Take shadcn to the next level for modern web dev experience"
-            headerClassName="text-center max-w-5xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+            header="Primitive first - well curated UI library. "
+            headerClassName="text-center max-w-3xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful, responsive UI components and website
             templates with modern design, 100% free and open-source."
             descriptionClassName="mx-auto text-zinc-300 text-center text-lg lg:max-w-2xl py-5"
