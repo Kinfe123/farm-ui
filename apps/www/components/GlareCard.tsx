@@ -126,7 +126,7 @@ export const GlareCard = ({
           <div className={cn("h-full w-full bg-hero-gradient", className)}>
             {children}
           </div>
-          <button className="py-5 invisible bg-glass-gradient cursor-pointer">Get started </button>
+          <button className="py-5 invisible bg-inherit cursor-pointer">Get started </button>
         </div>
         <div className="w-full pb-10 bg-glass-gradient h-full grid [grid-area:1/1] mix-blend-soft-light [clip-path:inset(0_0_1px_0_round_var(--radius))] opacity-[var(--opacity)] transition-opacity transition-background duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-background [background:radial-gradient(farthest-corner_circle_at_var(--m-x)_var(--m-y),_rgba(255,255,255,0.8)_10%,_rgba(255,255,255,0.65)_20%,_rgba(255,255,255,0)_90%)]" />
         <div
