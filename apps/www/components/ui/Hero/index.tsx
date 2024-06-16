@@ -97,7 +97,10 @@ export default async function () {
           />
 
           {/* Overlay */}
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+          <div className="absolute top-0 left-0 w-full h-[100px] bg-black opacity-80"></div>
+
+          
         </div>
       </div>
     </>
