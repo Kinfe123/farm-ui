@@ -60,7 +60,7 @@ export default () => {
                 className="relative bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl"
               >
                 FarmUI
-                <span className="font-geist text-sm absolute top-0 right-[-40px] z-10 text-white/70">
+                <span className="font-geist text-sm absolute top-0 right-[-40px] z-10 text-white/70 md:mr-4">
                   BETA
                 </span>
               </Link>
