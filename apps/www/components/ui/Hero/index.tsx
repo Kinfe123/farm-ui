@@ -54,7 +54,6 @@ export default async function () {
                 </a>
               </Suspense>
             </span>
-            <ChevronRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
           </h1>
 
           <HeroAnimated
@@ -99,8 +98,6 @@ export default async function () {
           {/* Overlay */}
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
           <div className="absolute top-0 left-0 w-full h-[100px] bg-black opacity-80"></div>
-
-          
         </div>
       </div>
     </>
