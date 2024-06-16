@@ -155,7 +155,7 @@ export default function FUIFeatureSectionWithCards() {
               <GlareCard key={idx}>
                 <li
                   key={idx}
-                  className="z-20 transform-gpu space-y-3 rounded-t-xl border  border-white/10 bg-transparent/20 p-4 [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset]"
+                  className="z-20 transform-gpu bg-page-gradient space-y-3 rounded-t-xl border  border-white/10 bg-transparent/20 p-4 [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset]"
                 >
                   <div className="w-fit transform-gpu rounded-full p-4 text-purple-600 dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
                     {item.icon}

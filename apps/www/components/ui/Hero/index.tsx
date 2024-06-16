@@ -9,6 +9,7 @@ import HeroAnimated from "components/HeroAnimated";
 import { cn } from "@/lib/utils";
 import heroStyle from "components/HeroNit/hero.module.css";
 import NumberTicker from "components/NumberCounter";
+import bgback from "../../../public/bg-back.png";
 async function getGitHubStars() {
   try {
     const response = await fetch(
@@ -33,7 +34,7 @@ export default async function () {
   const stars = await getGitHubStars();
   return (
     <>
-      <section className="custom-screen mt-32">
+      <section className="custom-screen mt-48">
         <div className="relative z-20 max-w-5xl mx-auto space-y-4">
           <h1
             className={
@@ -54,21 +55,29 @@ export default async function () {
                 </a>
               </Suspense>
             </span>
-            <ChevronRight className="inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
           </h1>
 
           <HeroAnimated
-            header="Take shadcn to the next level for modern web dev experience"
-            headerClassName="text-center max-w-5xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+            header="Primitive first - well curated UI library. "
+            headerClassName="text-center max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful, responsive UI components and website
             templates with modern design, 100% free and open-source."
-            descriptionClassName="mx-auto text-zinc-300 text-center text-lg lg:max-w-2xl py-5"
+            descriptionClassName="mx-auto text-zinc-300 text-center text-lg  max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl  py-5"
           >
+            <Image
+              src={bgback}
+              width={1000}
+              height={1000}
+              alt="Shadow image"
+              className="absolute top-[-200px] bottom-0 -z-10 opacity-100"
+            />
             <div className="flex flex-wrap items-center justify-center  gap-3">
               <LinkItem
                 href="/templates"
                 variant="shiny"
-                className="inline-flex w-full  group justify-center items-center  bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-zinc-700/50  border-white/5 border-[1px] sm:w-auto hover:bg-transparent/5  py-4 px-10"
+              className="z-20 group inline-flex w-full bg-page-gradient justify-center items-center gap-x-2 border border-input hover:border-zinc-600 hover:bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
+
+                // className="inline-flex w-full  group justify-center items-center bg-zinc-900 bg-page-gradient   border-white/5 border-[1px] sm:w-auto hover:bg-transparent/50  py-4 px-10 "
               >
                 Cooked for you
                 <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
@@ -92,12 +101,13 @@ export default async function () {
           {/* Background image */}
           <Image
             src={bghero}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hidden sm:block"
             alt="Hero Image"
           />
 
           {/* Overlay */}
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60"></div>
+          <div className="absolute top-0 left-0 bg-gradient-to-t from-transparent/30 to-transparent w-[100px] h-[400px]  opacity-40"></div>
         </div>
       </div>
     </>

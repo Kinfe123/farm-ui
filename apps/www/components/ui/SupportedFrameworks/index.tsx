@@ -18,7 +18,7 @@ export default () => {
           {/* <PreviewCard /> */}
         </div>
       </div>
-      <Image src={bgback} className="absolute -top-60 left-0 -z-1" alt="bgbackimage" />
+      <Image src={bgback} className="absolute -top-60 left-0 -z-1 opacity-55" alt="bgbackimage" />
     </section>
   );
 };
