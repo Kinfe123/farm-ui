@@ -49,8 +49,8 @@ const CTAshow = () => {
       >
 
         <div className="max-w-full mr-auto lg:max-w-3xl lg:mr-auto z-20">
-        <div className="absolute bittom-0 left-0 w-full h-full bg-black opacity-20 -z-20 "></div>
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10 -z-10"></div>
+        <div className="absolute bittom-0 h-full left-0 w-full bg-black opacity-10 -z-20 "></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 -z-10"></div>
 
           <h2 className="max-w-ful mt-8 flex items-center justify-start font-geist font-nomral tracking-tighter md:max-w-5xl lg:max-w-full text-center  lg:text-left text-balance text-2xl sm:text-3xl md:text-5xl lg:text-6xl  bg-gradient-to-tr from-zinc-100 via-zinc-50 to-zinc-100/50 text-transparent bg-clip-text ">
             Treating UI component as first class citizen cost
