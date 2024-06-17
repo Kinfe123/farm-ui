@@ -86,18 +86,13 @@ export function FUITestimonialWithGrid() {
 
       <div
         className="absolute inset-x-0 -top-10 opacity-50 z-10 m-auto h-[27rem] max-w-lg sm:h-64 sm:max-w-7xl"
-        // style={{
-        //   background:
-        //     'linear-gradient(106.89deg, rgba(192, 132, 252, 0.11) 15.73%, rgba(14, 165, 233, 0.41) 15.74%, rgba(232, 121, 249, 0.26) 56.49%, rgba(79, 70, 229, 0.4) 115.91%)',
-        //   filter: 'blur(118px)',
-        // }}
       ></div>
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-geist text-3xl tracking-tighter text-gray-100 sm:text-6xl">
             <span className='bg-gradient-to-br from-indigo-400 via-indigo-300 to-indigo-700 bg-clip-text text-transparent'>Loved</span> by businesses worldwide.
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-gray-300 font-geist tracking-tight">
+          <p className="mt-4 text-lg tracking-tight text-gray-300 font-geist">
             Our software is so simple that people can’t help but fall in love
             with it. Simplicity is easy when you just skip tons of
             mission-critical features.
@@ -145,9 +140,7 @@ export function FUITestimonialWithGrid() {
             </li>
           ))}
         </ul>
-      {/* <div className='bg-transparent bg-radial-faded mask-radial-faded pointer-events-none relative z-[-1] my-[-12.8rem] h-[60rem] overflow-hidden [--color:#7877C6] before:absolute before:inset-0 before:bg-radial-faded before:opacity-[0.4] after:absolute after:top-1/2 after:-left-1/2 after:h-[142.8%] after:w-[200%] after:rounded-[50%] after:border-t after:border-[rgba(120,119,198,0.4)] after:bg-black'>
     
-      </div> */}
       </Container>
     </section>
   )

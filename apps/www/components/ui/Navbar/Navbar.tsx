@@ -123,7 +123,7 @@ export default () => {
                         <Avatar>
                           <AvatarImage
                             src={user.image!}
-                            alt={user.name}
+                            alt={user.name ?? "avatar pic"}
                           />
                           <AvatarFallback>{user.name?.slice(0 , 2).toUpperCase()}</AvatarFallback>
                         </Avatar>
