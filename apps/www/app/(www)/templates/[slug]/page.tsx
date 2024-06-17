@@ -55,7 +55,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
 
   return (
     <>
-      <section className="mt-24 custom-screen-lg mx-auto">
+      <section className="mt-48 custom-screen-lg mx-auto">
         <div className="max-w-full md:max-w-3xl mx-auto lg:max-w-4xl">
           <div className="text-zinc-50 mr-auto text-left">
             <h1 className="text-4xl font-geist md:text-6xl tracking-tighter">
