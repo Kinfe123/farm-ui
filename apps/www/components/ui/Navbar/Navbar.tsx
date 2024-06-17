@@ -115,15 +115,6 @@ export default () => {
                 })}
               </ul>
               <div className="mt-6 md:mt-0">
-                <LinkItem
-                  variant="shiny"
-                  href="/components"
-                  className="w-full group block bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-transparent  border-input border-[1px] hover:bg-transparent/50 "
-                >
-                  Join FarmUI 
-                <ChevronRight className="inline-flex w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-
-                </LinkItem>
                 {!!user ? (
                   <TooltipProvider>
                     <Tooltip>
@@ -153,7 +144,6 @@ export default () => {
                     <ChevronRight className="inline-flex w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
                   </LinkItem>
                 )}
-
               </div>
             </div>
           </div>

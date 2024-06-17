@@ -40,7 +40,7 @@ const LogInPage = async () => {
         redirect("/")
     }
   return (
-    <div className="lg:mt-[-30px] custom-screen">
+    <div className="lg:mt-14 custom-screen">
       <Section
         className="relative max-w-7xl"
         crosses
