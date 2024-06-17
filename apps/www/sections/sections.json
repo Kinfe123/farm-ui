@@ -69,6 +69,16 @@
     "section_name": "Newsletter ",
     "description": "Beautifully designed, fully responsive, expertly crafted Newsletter examples",
     "isNew": true
+  },
+  {
+    "slug": "/testimonial",
+    "category": "Application",
+    "count": 7,
+    "cover_url": "FAQS.png",
+    "id": "100",
+    "section_name": "Testimonial ",
+    "description": "Beautifully designed, fully responsive, expertly crafted Testimonial examples",
+    "isNew": true
   }
   
 ]

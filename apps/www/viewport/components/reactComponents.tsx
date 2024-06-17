@@ -17,6 +17,7 @@ import FUIPricingSectionWithOnePlan from "previewsComponents/FUIPricingSectionWi
 import FUIPricingSectionWithTable from "previewsComponents/FUIPricingSectionWithTable";
 import FUIPricingWithSpecialTwo from "previewsComponents/FUIPricingWithSpecialTwo";
 import FUISignUpWithLeftBackground from "previewsComponents/FUISignUpWithLeftBackground";
+import FUITestimonialWithThreeColumn from "previewsComponents/FUITestimonialWithThreeColumn";
 import React from "react";
 
 type ComponentProps = {
@@ -569,6 +570,14 @@ export default function FUIPricingWithSpecialTwo() {
     component: <FUINewsletterWithBackground />,
     description: "Newsletter section with background",
     path: "previewsComponents/FUINewsletterWithBackground",
+    codeCopy: {
+      react: "codecopy",
+    },
+  },
+  "farmui-testimonial-00": {
+    component: <FUITestimonialWithThreeColumn />,
+    description: "Testimonial with three column",
+    path: "previewsComponents/FUITestimonialWithThreeColumn",
     codeCopy: {
       react: "codecopy",
     },
