@@ -28,12 +28,12 @@ export const CTA = ({
   };
   return (
     <motion.section
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => {
-        setIsHovering(false);
-        setMousePosition({ x: 0, y: 0 });
-      }}
+      // onMouseMove={handleMouseMove}
+      // onMouseEnter={() => setIsHovering(true)}
+      // onMouseLeave={() => {
+      //   setIsHovering(false);
+      //   setMousePosition({ x: 0, y: 0 });
+      // }}
       style={{
         transform: isHovering
           ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1, 1, 1)`
@@ -41,7 +41,7 @@ export const CTA = ({
         transition: "transform 0.1s ease-out",
       }}
        className={cn(
-        "mx-auto relative max-w-[110rem] border-[1px] border-white/20 bg-transparent  rounded-2xl overflow-hidden max-h-full",
+        "mx-auto  relative max-w-[110rem] border-[1px] border-white/20 bg-page-gradient  rounded-2xl overflow-hidden max-h-full",
         containerClassName!
       )}
     >

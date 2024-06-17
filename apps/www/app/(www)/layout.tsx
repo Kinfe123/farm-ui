@@ -13,15 +13,16 @@ export default function RootLayout({
 }) {
   return (
     <>
+  
       <Image
-        className="absolute top-0 z-20 translate-x-0 -translate-y-1/2 md:translate-x-1/3 lg:translate-x-1/2 "
+        className="absolute top-0 z-20 translate-x-0 -translate-y-1/2 md:translate-x-1/3 lg:translate-x-1/2 opacity-80  "
         src={bgback}
         width={1000}
         height={1000}
         alt="back bg"
       />
       <Image
-        className="absolute top-0 z-20 -translate-x-32 -translate-y-1/2 md:translate-x-1/3 lg:translate-x-45"
+        className="absolute top-0 z-20 -translate-x-32 -translate-y-1/2 md:translate-x-1/3 lg:translate-x-45 opacity-85"
         src={bgback}
         width={1000}
         height={1000}

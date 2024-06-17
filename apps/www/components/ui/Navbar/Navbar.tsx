@@ -54,7 +54,7 @@ export default () => {
 
   return (
     <>
-      <header className="h-[4rem] relative z-30">
+      <header className="h-[4rem] fixed top-0 left-0 right-0 mx-auto z-30">
         <nav
           className={` ${
             state
@@ -66,10 +66,10 @@ export default () => {
             <div className="flex items-center justify-between py-1 md:block">
               <Link
                 href="/"
-                className="relative bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl"
+                className="relative bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl md:mr-4"
               >
                 FarmUI
-                <span className="font-geist text-sm absolute top-0 right-[-40px] z-10 text-white/70">
+                <span className="font-geist text-sm absolute top-0 right-[-40px] z-10 text-white/70 ">
                   BETA
                 </span>
               </Link>

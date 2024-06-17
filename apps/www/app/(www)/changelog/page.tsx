@@ -34,7 +34,7 @@ const ChangeLogPage = () => {
       <RetroGrid />
 
       <div className="relative">
-        <section className="relative max-w-full mr-auto  z-1">
+        <section className="relative max-w-full mr-auto mt-24  z-1">
           <div className="max-w-screen-xl z-30  px-4 py-28 gap-12 text-gray-600 md:px-8">
             <div className="space-y-5 max-w-[60rem] px-[-40px] leading-0  lg:leading-0 mr-auto text-left">
               <h1 className="text-sm text-gray-400 group font-geist  px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit mr-auto">

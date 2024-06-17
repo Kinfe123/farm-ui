@@ -30,7 +30,7 @@ export const ContainerScroll = ({
     return isMobile ? [0.7, 0.9] : [1.15, 1];
   };
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [10, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
@@ -44,6 +44,7 @@ export const ContainerScroll = ({
         style={{
           perspective: "1000px",
         }}
+
       >
         <Header translate={translate} titleComponent={titleComponent} />
         <Card rotate={rotate} translate={translate} scale={scale}>
@@ -59,6 +60,7 @@ export const Header = ({ translate, titleComponent }: any) => {
     <motion.div
       style={{
         translateY: translate,
+
       }}
       className="div max-w-5xl mx-auto text-center"
     >
@@ -82,6 +84,12 @@ export const Card = ({
       style={{
         rotateX: rotate,
         scale,
+      }}
+      whileInView={{
+        transition:{duration:10}
+      }}
+      transition={{
+        duration:10
       }}
       className="max-w-full -mt-12   md:h-full w-full"
     >

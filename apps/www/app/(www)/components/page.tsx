@@ -42,7 +42,7 @@ export default async () => {
 
   return (
     <>
-      <article className="prose prose-invert max-w-7xl">
+      <article className="prose prose-invert max-w-7xl mt-24">
         <Mdx code={introDocs?.body.code ?? ""} />
       </article>
     </>
