@@ -9,7 +9,9 @@ import HeroAnimated from "components/HeroAnimated";
 import { cn } from "@/lib/utils";
 import heroStyle from "components/HeroNit/hero.module.css";
 import NumberTicker from "components/NumberCounter";
+import { signIn } from "../../../auth";
 import bgback from "../../../public/bg-back.png";
+
 async function getGitHubStars() {
   try {
     const response = await fetch(
@@ -94,6 +96,7 @@ export default async function () {
             </div>
           </HeroAnimated>
         </div>
+
         <HeroBgGradientClient />
       </section>
       <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute sm:block md:-top-2 right-0 min-h-screen">
@@ -111,5 +114,18 @@ export default async function () {
         </div>
       </div>
     </>
+  );
+}
+
+export function SignIn() {
+  return (
+    <form
+      action={async () => {
+        "use server";
+        await signIn("google");
+      }}
+    >
+      <button type="submit">Signin with Google</button>
+    </form>
   );
 }
