@@ -17,6 +17,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default () => {
   const [state, setState] = useState(false);
@@ -119,15 +120,13 @@ export default () => {
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger>
-                        {!!user.image ? (
-                          <img
-                            src={user.image}
-                            className="w-10 h-10 rounded-full"
-                            alt=""
+                        <Avatar>
+                          <AvatarImage
+                            src={user.image!}
+                            alt={user.name}
                           />
-                        ) : (
-                          <User className="w-10 h-10 bg-white/80 rounded-full" />
-                        )}
+                          <AvatarFallback>{user.name?.slice(0 , 2).toUpperCase()}</AvatarFallback>
+                        </Avatar>
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>{user.name}</p>
