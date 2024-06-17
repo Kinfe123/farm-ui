@@ -42,7 +42,7 @@ export default async function () {
             }
           >
             <IconGithub />
-            <div className="w-[1px] h-[20px] bg-white/10 inline-flex mx-2 group-hover:bg-white/20" />
+            <div className="w-[16px] h-[20px] bg-white/10 inline-flex mx-2 group-hover:bg-white/20" />
             <span className={cn(heroStyle.magicText)}>
               <Suspense fallback={<></>}>
                 <a href="https://github.com/Kinfe123/farm-ui" target="_blank">

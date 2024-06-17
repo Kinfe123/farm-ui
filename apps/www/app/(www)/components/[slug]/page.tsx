@@ -79,8 +79,8 @@ export default async ({ params: { slug } }: { params: Params }) => {
     );
     return (
       <>
-        <div className="">
-          <div className="z-30 flex items-center space-x-1 text-sm text-muted-foreground mb-10">
+        <div className="mt-16">
+          <div className="z-30 flex items-center space-x-1 text-sm text-muted-foreground mb-8">
             <Link
               href={"/components"}
               className="overflow-hidden cursor-pointer text-ellipsis whitespace-nowrap font-geistMono tracking-tight uppercase"
