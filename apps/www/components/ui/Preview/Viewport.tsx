@@ -13,9 +13,10 @@ import DotPattern from "components/GridPattern/DotGrid";
 interface Props {
   id: string;
   resizablePanelRef: React.RefObject<ImperativePanelHandle>;
+  height: number,
 }
 
-const Viewport = ({ id, resizablePanelRef }: Props) => {
+const Viewport = ({ id, resizablePanelRef , height}: Props) => {
   const [isLoading, setIsLoading] = useState(true);
   const baseURL = getBaseURL();
 
@@ -43,7 +44,7 @@ const Viewport = ({ id, resizablePanelRef }: Props) => {
         ) : null}
         <iframe
           src={baseURL + "/example/" + id}
-          height={800}
+          height={height}
           className="relative z-20 w-full chunk-mode bg-background"
           onLoad={() => {
             setIsLoading(false);
