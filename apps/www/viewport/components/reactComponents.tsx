@@ -17,6 +17,7 @@ import FUIPricingSectionWithOnePlan from "previewsComponents/FUIPricingSectionWi
 import FUIPricingSectionWithTable from "previewsComponents/FUIPricingSectionWithTable";
 import FUIPricingWithSpecialTwo from "previewsComponents/FUIPricingWithSpecialTwo";
 import FUISignUpWithLeftBackground from "previewsComponents/FUISignUpWithLeftBackground";
+import { FUITestimonialWithGrid } from "previewsComponents/FUITestimonialGrid";
 import FUITestimonialWithThreeColumn from "previewsComponents/FUITestimonialWithThreeColumn";
 import React from "react";
 
@@ -578,6 +579,14 @@ export default function FUIPricingWithSpecialTwo() {
     component: <FUITestimonialWithThreeColumn />,
     description: "Testimonial with three column",
     path: "previewsComponents/FUITestimonialWithThreeColumn",
+    codeCopy: {
+      react: "codecopy",
+    },
+  },
+  "farmui-testimonial-01": {
+    component: <FUITestimonialWithGrid />,
+    description: "Testimonial with grid",
+    path: "previewsComponents/FUITestimonialWithGrid",
     codeCopy: {
       react: "codecopy",
     },
