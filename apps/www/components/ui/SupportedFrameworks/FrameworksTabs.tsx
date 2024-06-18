@@ -57,7 +57,7 @@ export default () => {
       {supportedFrameworksJSON.map((item, idx) => (
         <Tabs.Content
           key={idx}
-          className="h-[640px] overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1"
+          className="h-[640px] overflow-auto z-20  p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1"
           value={item.value}
         >
           <LazyMotionWrapper>

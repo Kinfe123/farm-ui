@@ -73,7 +73,7 @@ function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function FUITestimonialWithGrid() {
+export default function FUITestimonialWithGrid() {
   return (
     <section
       id="testimonials"

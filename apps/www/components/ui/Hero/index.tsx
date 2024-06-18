@@ -54,7 +54,7 @@ export default async function () {
                   </span>{" "}
                   stars on Github
                   <ChevronRight className="inline w-4 h-4 ml-1 group-hover:translate-x-1 duration-300" />
-                </a>
+              </a>
               </Suspense>
             </span>
           </h1>
