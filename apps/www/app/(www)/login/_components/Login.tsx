@@ -104,7 +104,6 @@ export default function FUILoginWithGridProvider() {
               </svg>
             </button>
             <button
-              disabled={true}
               onClick={() => signIn("github")}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
