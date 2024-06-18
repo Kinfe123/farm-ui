@@ -10,6 +10,7 @@ import { FARMUI_GRAFFITI } from "../utils/ascii-arts";
 import { logger } from "../utils/logger";
 import { custom, z } from "zod";
 import { getPackageManager } from "../utils/get-package-manager";
+import { getPackageInfo } from "../utils/get-package-info";
 import { framework_supports } from "../utils/get-suppoted";
 import { type Config } from "tailwindcss/types/config";
 import { TAILWIND_CONFIG } from "../utils/templates";
@@ -62,13 +63,13 @@ export const add = new Command()
     // already found the id and next will be finding the component id
     try {
       if (!custom_cwd_flag) {
-        logger.info(`We are dumping the components inside of ${custom_cwd} `);
+        logger.info(`The component is being dumped inside of ${custom_cwd} `);
       } else {
         const { dir } = await prompts({
           type: "text",
           name: "dir",
-          message: `A directory to dump the components? `,
-          hint: "components ",
+          message: `A directory to dump the components? (Leave it blank which default to /components dir) `,
+          hint: "components",
         });
         if (dir) {
           defaultDir = dir;
@@ -101,12 +102,37 @@ export const add = new Command()
       // should be prompting it for directory the components to be stored (defaults to /components)
       const path_ = path.join(custom_cwd, defaultDir);
       const root_dir = path.join(path_, "/farmui");
+      const comp_spinner = ora(
+        `Looking for the components with id ${options.id}`
+      );
+      comp_spinner.start();
+      let comp_fetch = null;
+      let comp_db: any[] = [];
+      try {
+        comp_fetch = await fetch(COMPONENT_REGISTERY_URL!);
 
-      const comp_fetch = await fetch(COMPONENT_REGISTERY_URL!);
-      let comp_db: any[] = await comp_fetch.json();
+        comp_db = await comp_fetch.json();
+      } catch (err) {
+        logger.error(
+          "\nCant import the components. Please check your network connection"
+        );
+        logger.info(
+          "If you think this is an bug, Please make an issue - https://github.com/Kinfe123/farm-ui/issues/new"
+        );
+        process.exit(0);
+      }
+      comp_spinner.succeed(
+        `Found a component. Preview here - https://farmui.com/example/${options.id}`
+      );
+      comp_spinner.stop();
       const select_files_by_id = comp_db.find((x) => x.id === options.id);
       if (!select_files_by_id) {
-        logger.error("No such component exists with in this ID.");
+        logger.error(
+          "No such component exists with in this ID, Please hop on https://farmui.com/components to double check the component ID"
+        );
+        logger.info(
+          "If you think this is an bug, Please make an issue - https://github.com/Kinfe123/farm-ui/issues/new"
+        );
         process.exit(0);
       }
 
@@ -128,10 +154,10 @@ export const add = new Command()
           process.exit(0);
         }
       } else {
-          await fs.mkdir(root_dir, { recursive: true });
+        await fs.mkdir(root_dir, { recursive: true });
       }
       const path_to_add: CompToAddProps[] = [];
-      // for now , the content we will support will be react based , toll we have updated the ednpoint
+      // for now , the content we will support will be react based , till we have updated the ednpoint
       const root_comp_name = select_files_by_id.files[0].root.name;
       const tailwind_values = select_files_by_id["tailwind"];
       if (tailwind_values) {
@@ -155,7 +181,10 @@ export const add = new Command()
         }
         if (!is_config_exist) {
           logger.warn(
-            "The tailwind.config.(js/ts) can not be found with in the given directory , Please make sure to intialize your project with tailwindcss or shadcn , may be any UI component that build on top of tailwind"
+            "The tailwind.config.(js/ts) can not be found with in the given directory , Please make sure to intialize your project with tailwindcss or shadcn , may be any UI component library that built on top of tailwind"
+          );
+          logger.warn(
+            "Please use this instructions to setup your tailwindcss - https://tailwindcss.com/docs/installation"
           );
           logger.info("Skipping... and importing the components");
         } else {
@@ -246,10 +275,14 @@ export const add = new Command()
       }
       spinner.stop();
       spinner_overwrite.stop();
+      const packageInfo = getPackageInfo();
+      const dependenciesMeta = packageInfo.dependencies;
       if (dependencies.length) {
         logger.info(`Dependencies - ${dependencies.length} added`);
         dependencies.map((dep) => {
-          logger.success(` + ${dep}`);
+          let version =
+            (dependenciesMeta && String(dependenciesMeta[dep])) ?? "";
+          logger.success(` + ${dep} @ ${version}`);
         });
       }
       if (path_to_add) {
