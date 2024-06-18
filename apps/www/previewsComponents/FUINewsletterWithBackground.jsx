@@ -20,14 +20,14 @@ export default function FUINewsletterWithBackground() {
                     <div className="mt-6">
                         <form
                             onSubmit={(e) => e.preventDefault()}
-                            className="flex items-center justify-center bg-white rounded-lg p-1 sm:max-w-md sm:mx-auto">
+                            className="flex items-center justify-center bg-white rounded-lg p-1 sm:max-w-md sm:mx-auto ocus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500">
                             <input
                                 type="email"
                                 placeholder="Enter your email"
-                                className="text-gray-500 w-full p-2 outline-none border-none active:border-none focus:border-none"
+                                className="text-gray-500 w-full p-2 outline-none border-none active:border-none focus:outline-none focus:ring-0 focus:border-none"
                             />
                             <button
-                                className="p-2 px-3 rounded-lg font-medium bg-gradient-to-br from-zinc-400 to-zinc-700 px-4 py-2 text-lg text-zinc-50 ring-2 ring-white   transition-all hover:scale-[1.02] hover:ring-transparent active:scale-[0.98] active:ring-zinc-500/70  duration-150 outline-none shadow-md focus:shadow-none sm:px-4"
+                                className="p-2  rounded-lg font-medium bg-gradient-to-br from-zinc-400 to-zinc-700 px-4 py-2 text-lg text-zinc-50 ring-2 ring-white   transition-all hover:scale-[1.02] hover:ring-transparent active:scale-[0.98] active:ring-zinc-500/70  duration-150 outline-none shadow-md focus:shadow-none sm:px-4"
                             >
                                 Subscribe
                             </button>
