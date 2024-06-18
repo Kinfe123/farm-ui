@@ -17,7 +17,7 @@ import FUIPricingSectionWithOnePlan from "previewsComponents/FUIPricingSectionWi
 import FUIPricingSectionWithTable from "previewsComponents/FUIPricingSectionWithTable";
 import FUIPricingWithSpecialTwo from "previewsComponents/FUIPricingWithSpecialTwo";
 import FUISignUpWithLeftBackground from "previewsComponents/FUISignUpWithLeftBackground";
-import { FUITestimonialWithGrid } from "previewsComponents/FUITestimonialGrid";
+import FUITestimonialWithGrid  from "previewsComponents/FUITestimonialGrid";
 import FUITestimonialWithThreeColumn from "previewsComponents/FUITestimonialWithThreeColumn";
 import React from "react";
 
