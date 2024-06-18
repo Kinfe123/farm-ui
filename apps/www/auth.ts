@@ -1,5 +1,7 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
+import Github from "next-auth/providers/github";
+
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "db";
 import { accounts, sessions, users } from "db/schema";
@@ -14,7 +16,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     sessionsTable: sessions,
 
   }),
-  providers: [Google],
+  providers: [Google , Github({
+    clientId: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET
+  })],
   callbacks: {
     jwt: ({ token, user }) => {
       if (user) {
