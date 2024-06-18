@@ -21,6 +21,7 @@ interface Props {
 
 export default ({ components , files }: Props) => {
   const pathname = usePathname();
+  console.log({components})
   
   return (
     <>

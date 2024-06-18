@@ -103,7 +103,7 @@ export default ({
           value="preview"
           className="relative after:absolute after:inset-0 after:right-3 after:z-0 after:rounded-lg after:bg-muted"
         >
-          <Viewport id={item.id} resizablePanelRef={ref} />
+          <Viewport id={item.id} height={item.height ?? 800} resizablePanelRef={ref} />
         </TabsContent>
         <TabsContent value="code">
           <Tabs.Root

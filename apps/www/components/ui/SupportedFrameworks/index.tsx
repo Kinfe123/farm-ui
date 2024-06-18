@@ -13,12 +13,12 @@ export default () => {
             framework
           </p>
         </div>
-        <div className="mt-10 flex items-center justify-between gap-x-6">
+        <div className="mt-10 flex items-center justify-between gap-x-6 z-10">
           <FrameworksTabs />
           {/* <PreviewCard /> */}
         </div>
       </div>
-      <Image src={bgback} className="absolute -top-60 left-0 -z-1 opacity-55" alt="bgbackimage" />
+      <Image src={bgback} className="absolute -top-60 left-0 -z-2 opacity-55" alt="bgbackimage" />
     </section>
   );
 };

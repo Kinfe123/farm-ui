@@ -45,11 +45,11 @@ export default function FUILoginWithGridProvider() {
               onClick={() => signIn("google")}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
-              className="group flex transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+              className="group flex  transform-gpu bg-page-gradient   dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
             >
               <svg
                 className={cn(
-                  "w-5 h-5 group-hover:-translate-y-1 duration-300 transition-all ",
+                  "w-8 h-8 group-hover:-translate-y-1 duration-300 transition-all opacity-60 group-hover:opacity-100 ",
                   reset ? "translate-y-0" : "tranistion-transform"
                 )}
                 viewBox="0 0 48 48"
@@ -82,13 +82,15 @@ export default function FUILoginWithGridProvider() {
               </svg>
             </button>
             <button
+              disabled={true}
+
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
-              className="group flex transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+              className="group flex transform-gpu bg-page-gradient bg-page-gradient dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
             >
               <svg
                 className={cn(
-                  "w-5 h-5 group-hover:-translate-y-1 duration-300 transition-all ",
+                  "w-8 h-8 group-hover:-translate-y-1 duration-300 transition-all ",
                   reset ? "translate-y-0" : "tranistion-transform"
                 )}
                 viewBox="0 0 48 48"
@@ -102,13 +104,14 @@ export default function FUILoginWithGridProvider() {
               </svg>
             </button>
             <button
+              onClick={() => signIn("github")}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
-              className="group flex transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+              className="group flex transform-gpu bg-page-gradient dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
             >
               <svg
                 className={cn(
-                  "w-5 h-5 group-hover:-translate-y-1 duration-300 transition-all ",
+                  "w-8 h-8 group-hover:-translate-y-1 duration-300 transition-all ",
                   reset ? "translate-y-0" : "tranistion-transform"
                 )}
                 viewBox="0 0 48 48"
@@ -172,6 +175,7 @@ export default function FUILoginWithGridProvider() {
               </label>
               <Input
                 type="email"
+                readOnly
                 required
                 className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
               />
@@ -182,6 +186,7 @@ export default function FUILoginWithGridProvider() {
               </label>
               <Input
                 type="password"
+                readOnly
                 required
                 className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
               />

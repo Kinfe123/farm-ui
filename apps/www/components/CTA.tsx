@@ -50,6 +50,9 @@ export const CTA = ({
       alt="bg-hero"
       className="hidden sm:block absolute inset-0 w-full h-full scale-150 tranform rotate-360" 
       src={bghero} 
+      style={{
+        maskImage: `linear-gradient(to top, transparent, black 5%)`,
+      }}
       
 
      />

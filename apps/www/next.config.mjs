@@ -12,6 +12,8 @@ const nextConfig = {
   env: {
     DATABASE_URL: process.env.DATABASE_URL,
     COMPONENT_REGISTERY_API_URL: process.env.COMPONENT_REGISTERY_API_URL,
+    GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+    GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET
   },
   images: {
     remotePatterns: [
