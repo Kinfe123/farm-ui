@@ -76,13 +76,13 @@ export default function FUIHeroSectionWithLogoClouds() {
           </button>
         </div>
         <ul
-          className={`flex-1 justify-between mt-12 md:text-sm md:font-medium md:flex md:mt-0 ${
+          className={`flex-1 justify-between  md:text-sm md:font-medium md:flex md:mt-0 ${
             state
-              ? "absolute inset-x-0 px-4 border-b bg-white md:border-none md:static"
+              ? "absolute inset-x-0 px-4 border-b bg-white z-50 md:border-none md:static"
               : "hidden"
           }`}
         >
-          <div className="items-center space-y-5 md:flex md:space-x-6 md:space-y-0 md:ml-12">
+          <div className="items-center space-y-5 mt-1  md:flex md:space-x-6 md:space-y-0 md:ml-12">
             {navigation.map((item, idx) => (
               <li className="text-gray-500 hover:text-indigo-600" key={idx}>
                 <a href={item.path}>{item.title}</a>
