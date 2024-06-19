@@ -231,7 +231,7 @@
   {
     "id": "farmui-retro-grid",
     "name": "RetroGrid",
-    "dependencies": ["tailwind-merge"],
+    "dependencies": ["tailwind-merge", "clsx"],
     "files": [
       {
         "root": {
@@ -307,7 +307,7 @@
   {
     "id": "farmui-pricing-03",
     "name": "FUIPricingSectionWithTable",
-    "dependencies": ["tailwind-merge"],
+    "dependencies": ["tailwind-merge" , "clsx"],
     "files": [
       {
         "root": {
@@ -364,7 +364,7 @@
   {
     "id": "farmui-auth-02",
     "name": "FUISignUpWithLeftBackground",
-    "dependencies": ["tailwind-merge"],
+    "dependencies": ["tailwind-merge" , "clsx"],
     "files": [
       {
         "root": {
@@ -383,7 +383,7 @@
   {
     "id": "farmui-auth-03",
     "name": "FUILoginWithCardLayout",
-    "dependencies": ["tailwind-merge"],
+    "dependencies": ["tailwind-merge" , "clsx"],
     "files": [
       {
         "root": {
@@ -403,7 +403,7 @@
   {
     "id": "farmui-feature-00",
     "name": "FUIFeatureSectionWithCards",
-    "dependencies": ["tailwind-merge"],
+    "dependencies": [],
     "files": [
       {
         "root": {
@@ -441,7 +441,7 @@
   {
     "id": "farmui-testimonial-01",
     "name": "FUITestimonialWithGrid",
-    "dependencies": ["clsx"],
+    "dependencies": ["clsx", "tailwind-merge"],
     "files": [
       {
         "root": {
@@ -460,7 +460,7 @@
   {
     "id": "farmui-testimonial-01",
     "name": "FUITestimonialWithGrid",
-    "dependencies": ["clsx"],
+    "dependencies": ["clsx" , "tailwind-merge"],
     "files": [
       {
         "root": {
