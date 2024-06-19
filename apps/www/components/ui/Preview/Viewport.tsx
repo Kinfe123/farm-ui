@@ -1,5 +1,5 @@
 "use client";
-import { Loader2 } from "lucide-react";
+import { Loader } from "lucide-react";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -31,7 +31,7 @@ const Viewport = ({ id, resizablePanelRef , height}: Props) => {
         {isLoading ? (
           <div className="relative flex h-full w-full max-w-full items-center justify-center overflow-hidden rounded-lg border bg-black/90 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  p-20 md:shadow-xl">
             <div className="flex flex-col justify-start items-center">
-              <Loader2 className="w-12 h-12  animate-spin fleex justify-center items-center mb-2" />
+              <Loader className="w-12 h-12 text-white/50  animate-spin flex  justify-center items-center mb-2" />
               <p>Loading</p>
             </div>
 
