@@ -110,14 +110,14 @@ export default function FUIHeroSectionWithImage() {
                 <div className="items-center justify-end mt-6 space-y-6 md:flex md:mt-0">
                   <a
                     href="javascript:void(0)"
-                    className="flex items-center justify-center gap-x-1 py-3 px-4 text-white font-medium transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-full md:inline-flex "
+                    className="flex items-center group justify-center gap-x-1 py-3 px-4 text-white font-medium transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-full md:inline-flex "
                   >
                     Sign in
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      className="w-5 h-5"
+                      className="w-5 h-5 group-hover:translate-x-1 duration-300"
                     >
                       <path
                         fillRule="evenodd"
@@ -157,7 +157,7 @@ export default function FUIHeroSectionWithImage() {
                   </svg>
                 </p>
               </a>
-              <h1 className="text-left tracking-tight max-w-md md:max-w-3xl text-3xl md:text-4xl tracking-tighter mr-auto lg:text-6xl font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1">
+              <h1 className="text-left  max-w-md md:max-w-3xl text-3xl md:text-4xl tracking-tighter mr-auto lg:text-6xl font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1">
                 Build your SAAS exactly how you want
               </h1>
               <p>
@@ -167,14 +167,14 @@ export default function FUIHeroSectionWithImage() {
               <div className="flex items-center gap-x-3 sm:text-sm">
                 <a
                   href="javascript:void(0)"
-                  className="flex items-center justify-center gap-x-1 py-3 px-4 text-white font-medium transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-full md:inline-flex"
+                  className="flex items-center group justify-center gap-x-1 py-3 px-4 text-white font-medium transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-full md:inline-flex"
                 >
                   Get started
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    className="w-5 h-5"
+                    className="w-5 h-5 group-hover:translate-x-1 duration-300"
                   >
                     <path
                       fillRule="evenodd"

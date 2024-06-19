@@ -99,6 +99,7 @@ export function FormField() {
                   <Label htmlFor="first-name">First Name</Label>
                   <Input
                     value={forms.firstName}
+                    className=""
                     onChange={(e) => handleChange(e)}
                     name="firstName"
                     placeholder="Enter your first name"
