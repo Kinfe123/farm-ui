@@ -564,7 +564,180 @@ export default function FUIPricingWithSpecialTwo() {
     description: "Feature Section With Cards ",
     path: "previewsComponents/FUIFeatureSectionWithCards",
     codeCopy: {
-      react: `"\n'use client'\nimport React from \"react\";\nexport default function FUIPricingSectionWithTable() {\n\n    const checkIcon = <svg className=\"w-5 h-5 mx-auto text-zinc-600\" fill=\"currentColor\" viewBox=\"0 0 20 20\"><path d=\"M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z\" /></svg>\n    const minusIcon = <svg className=\"w-5 h-5 mx-auto text-gray-500\" fill=\"currentColor\" viewBox=\"0 0 20 20\"><path d=\"M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z\" /></svg>\n\n    const plans = [\n        {\n            name: \"Basic\",\n            desc: \"Lorem ipsum dolor sit amet torrel, consectet adipiscing elit.\",\n            price: \"15\"\n        },\n        {\n            name: \"Business\",\n            desc: \"Lorem ipsum dolor sit amet torrel, consectet adipiscing elit.\",\n            price: \"20\"\n        },\n        {\n            name: \"Enterprise\",\n            desc: \"Lorem ipsum dolor sit amet torrel, consectet adipiscing elit.\",\n            price: \"50\"\n        },\n    ]\n\n    const tables = [\n        {\n            label: \"Features\",\n            label_icon:\n                <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" strokeWidth={1.5} stroke=\"currentColor\" className=\"w-6 h-6\">\n                    <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z\" />\n                </svg>,\n            items: [\n                {\n                    name: \"Aliquam finibus\",\n                    basic: checkIcon,\n                    business: checkIcon,\n                    enterprise: checkIcon\n                },\n                {\n                    name: \"Vestibulum tristique\",\n                    basic: minusIcon,\n                    business: checkIcon,\n                    enterprise: checkIcon\n                },\n                {\n                    name: \"Aliquam finibus\",\n                    basic: minusIcon,\n                    business: minusIcon,\n                    enterprise: checkIcon\n                },\n                {\n                    name: \"Praesent aliquet\",\n                    basic: minusIcon,\n                    business: \"150GB\",\n                    enterprise: \"Unlimited\"\n                },\n            ]\n        },\n        {\n            label: \"Analytics\",\n            label_icon:\n                <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" strokeWidth={1.5} stroke=\"currentColor\" className=\"w-6 h-6\">\n                    <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z\" />\n                </svg>,\n            items: [\n                {\n                    name: \"Aliquam finibus\",\n                    basic: checkIcon,\n                    business: checkIcon,\n                    enterprise: checkIcon\n                },\n                {\n                    name: \"Vestibulum tristique\",\n                    basic: minusIcon,\n                    business: checkIcon,\n                    enterprise: checkIcon\n                },\n                {\n                    name: \"Aliquam finibus\",\n                    basic: minusIcon,\n                    business: minusIcon,\n                    enterprise: checkIcon\n                },\n                {\n                    name: \"Lorinto dinor\",\n                    basic: \"30\",\n                    business: \"60\",\n                    enterprise: \"Custom\"\n                },\n                {\n                    name: \"Praesent aliquet\",\n                    basic: \"Limited\",\n                    business: \"Limited\",\n                    enterprise: checkIcon\n                },\n                {\n                    name: \"Praesent aliquet\",\n                    basic: minusIcon,\n                    business: \"150GB\",\n                    enterprise: \"Unlimited\"\n                },\n            ]\n        },\n        {\n            label: \"Support\",\n            label_icon:\n                <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" strokeWidth={1.5} stroke=\"currentColor\" className=\"w-6 h-6\">\n                    <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z\" />\n                </svg>,\n            items: [\n                {\n                    name: \"Aliquam finibus\",\n                    basic: checkIcon,\n                    business: checkIcon,\n                    enterprise: checkIcon\n                },\n                {\n                    name: \"Vestibulum tristique\",\n                    basic: minusIcon,\n                    business: checkIcon,\n                    enterprise: checkIcon\n                },\n                {\n                    name: \"Aliquam finibus\",\n                    basic: minusIcon,\n                    business: minusIcon,\n                    enterprise: checkIcon\n                },\n                {\n                    name: \"Praesent aliquet\",\n                    basic: minusIcon,\n                    business: \"150GB\",\n                    enterprise: \"Unlimited\"\n                },\n            ]\n        }\n    ]\n\n    const [selectedPlan, setSelectedPlan] = React.useState(plans[0].name)\n\n    return (\n        <section className=\"py-14 max-w-screen-xl mx-auto text-gray-100 relative\">\n        <img src='https://tailwindcss.com/_next/static/media/docs@30.8b9a76a2.avif' className=\"absolute top-0 left-0\"/>\n            <div className=\"\">\n                <div className='relative ml-6 max-w-xl mr-auto  space-y-3 px-4 sm:text-left md:px-0'>\n                    <h3 className=\"text-zinc-100 font-semibold\">\n                        Pricing\n                    </h3>\n                    <p className='text-gray-200 tracking-tighter font-geist text-3xl font-normal sm:text-6xl '>\n                        Compare our plans and find yours\n                    </p>\n                    <div className='max-w-xl'>\n                        <p>\n                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur consequat nunc.\n                        </p>\n                    </div>\n                </div>\n                <div className=\"mt-16\">\n                    <div className=\"sticky top-0 py-6 border-b bg-transparent dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] rounded-xl\">\n                        <div className=\"max-w-screen-xl mx-auto\">\n                            <ul className=\"ml-auto flex gap-x-6 px-4 md:px-8 lg:max-w-3xl\">\n                                {\n                                    plans.map((item, idx) => (\n                                        <li key={idx} className={\`space-y-4 w-full hidden lg:block\`}>\n                                            <div className=\"flex items-center justify-between\">\n                                                <span className='text-gray-700 font-medium'>\n                                                    {item.name}\n                                                </span>\n                                                <div className=\"relative lg:hidden\">\n                                                    <svg className=\"w-5 h-5 text-gray-500 absolute right-0 inset-y-0 my-auto\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\">\n                                                        <path fillRule=\"evenodd\" d=\"M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z\" clipRule=\"evenodd\" />\n                                                    </svg>\n                                                    <select value=\"Switch plan\" className=\"bg-transparent appearance-none outline-none px-8 cursor-pointer\"\n                                                        onChange={(e) => setSelectedPlan(e.target.value)}\n                                                    >\n                                                        <option disabled selected>Switch plan</option>\n                                                        {plans.map((option, idx) => (\n                                                            <option key={idx}>{option.name}</option>\n                                                        ))}\n                                                    </select>\n                                                </div>\n                                            </div>\n                                            <div className='text-gray-200 text-3xl font-semibold'>\n                                                undefined <span className=\"text-xl text-gray-100 font-normal\">/mo</span>\n                                            </div>\n                                            <p className=\"text-sm\">\n                                                {item.desc}\n                                            </p>\n                                            <button className='mt-4 w-full font-geist tracking-tighter text-center rounded-md text-md bg-gradient-to-br from-zinc-400 to-zinc-700 px-4 py-2 text-lg text-zinc-50 ring-2 ring-zinc-500/50 ring-offset-2 ring-offset-zinc-950 transition-all hover:scale-[1.02] hover:ring-transparent active:scale-[0.98] active:ring-zinc-500/70 flex items-center justify-center gap-2'>\n                                                Get Started\n                                            </button>\n                                        </li>\n                                    ))\n                                }\n                            </ul>\n                        </div>\n                    </div>\n                    <div className=\"max-w-screen-xl mx-auto mt-10 space-y-4 px-4 overflow-auto md:overflow-visible md:px-8\">\n                        {\n                            tables.map((table, idx) => (\n                                <table key={idx} className=\"w-full table-auto text-sm text-left\">\n                                    <thead className=\"text-gray-100 font-medium border-b\">\n                                        <tr>\n                                            <th className=\"z-20 top-12 py-6 lg:sticky\">\n                                                <div className=\"flex items-center gap-x-3\">\n                                                    <div className=\"w-12 h-12 text-zinc-600 rounded-full border flex items-center justify-center\">\n                                                        {table.label_icon}\n                                                    </div>\n                                                    <h4 className=\"text-gray-200 text-xl font-medium\">\n                                                        {table.label}\n                                                    </h4>\n                                                </div>\n                                            </th>\n                                        </tr>\n                                    </thead>\n                                    <tbody className=\"text-gray-100 divide-y\">\n                                        {\n                                            table.items.map((item, idx) => (\n                                                <>\n                                                    <tr key={idx}>\n                                                        <td className=\"px-6 py-4 whitespace-nowrap\">{item.name}</td>\n                                                     \n                                                        <td className=\"text-center w-[250px] px-6 py-4 whitespace-nowrap hidden lg:table-cell\">{item.basic}</td>\n                                                        <td className=\"text-center w-[250px] px-6 py-4 whitespace-nowrap hidden lg:table-cell\">{item.business}</td>\n                                                        <td className=\"text-center w-[250px] px-6 py-4 whitespace-nowrap hidden lg:table-cell\">{item.enterprise}</td>\n                                                    \n                                                        <td className=\"text-center w-[250px] px-6 py-4 whitespace-nowrap lg:hidden\">\n                                                            {item[selectedPlan.toLowerCase()]}\n                                                        </td>\n                                                    </tr>\n                                                </>\n                                            ))\n                                        }\n                                    </tbody>\n                                </table>\n                            ))\n                        }\n                    </div>\n                </div>\n            </div>\n        </section>\n    )\n}\n        \n\n\n\n"`,
+      react: `
+import React from "react";
+export default function FUIFeatureSectionWithCards() {
+  const features = [
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+          />
+        </svg>
+      ),
+      title: "Fast Refresh",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"
+          />
+        </svg>
+      ),
+      title: "Analytics",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+          />
+        </svg>
+      ),
+      title: "Datacenter security",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"
+          />
+        </svg>
+      ),
+      title: "Build on your terms",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+          />
+        </svg>
+      ),
+      title: "Safe to use",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+          />
+        </svg>
+      ),
+      title: "Flexible",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.",
+    },
+  ];
+
+  return (
+    <section className="py-14 relative">
+      <img
+        src="https://tailwindcss.com/_next/static/media/docs@30.8b9a76a2.avif"
+        className="absolute z-2 -top-0 left-10"
+      />
+      <div className="max-w-screen-xl mx-auto px-4 text-gray-400 md:px-8">
+        <div className="relative max-w-2xl mx-auto sm:text-center">
+          <div className="relative z-10">
+            <h3 className="text-gray-200 mt-4 text-3xl font-normal font-geist tracking-tighter md:text-5xl sm:text-4xl">
+              Let’s help power your SaaS
+            </h3>
+            <p className="mt-3 font-geist text-gray-200">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+              congue, nisl eget molestie varius, enim ex faucibus purus.
+            </p>
+          </div>
+          <div
+            className="absolute inset-0 max-w-xs mx-auto h-44 blur-[118px]"
+            style={{
+              background:
+                "linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%)",
+            }}
+          ></div>
+        </div>
+        <hr className="bg-white/30 h-px w-1/2 mx-auto  mt-5"/>
+        <div className="relative mt-12">
+          <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((item, idx) => (
+              <li
+                key={idx}
+                className="bg-transparent transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  space-y-3 p-4 border rounded-xl"
+              >
+                <div className="text-purple-600 rounded-full p-4 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] w-fit">{item.icon}</div>
+                <h4 className="text-lg text-gray-300 font-bold font-geist tracking-tighter">
+                  {item.title}
+                </h4>
+                <p className="text-gray-500">{item.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+      `,
     },
   },
   "farmui-newsletter-00": {
@@ -628,7 +801,7 @@ export default function FUINewsletterWithBackground() {
     path: "previewsComponents/FUITestimonialWithThreeColumn",
     codeCopy: {
       react: `
-      import React from "react";
+import React from "react";
 export default function FUITestimonialWithThreeColumn() {
   const testimonials = [
     {
@@ -732,7 +905,7 @@ export default function FUITestimonialWithThreeColumn() {
     path: "previewsComponents/FUITestimonialWithGrid",
     codeCopy: {
       react: `
-      import clsx from 'clsx';
+import clsx from 'clsx';
 import Image from 'next/image'
 
 

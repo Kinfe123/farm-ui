@@ -398,5 +398,24 @@
       }
     ],
     "type": "ui"
+  },
+  {
+    "id": "farmui-auth-03",
+    "name": "FUISignUpWithLeftBackground",
+    "dependencies": ["tailwind-merge"],
+    "files": [
+      {
+        "root": {
+          "name": "FUISignUpWithLeftBackground",
+          "contents": {
+            "react": {
+              "code_for": "react",
+              "content": 
+            }
+          }
+        }
+      }
+    ],
+    "type": "ui"
   }
 ]
