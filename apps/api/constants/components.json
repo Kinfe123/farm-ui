@@ -250,7 +250,7 @@
   {
     "id": "farmui-pricing-00",
     "name": "FUIPricingSectionWithBadge",
-    "dependencies": ["tailwind-merge"],
+    "dependencies": ["@heroicons/react"],
     "files": [
       {
         "root": {
@@ -269,7 +269,7 @@
   {
     "id": "farmui-pricing-01",
     "name": "FUIPricingSectionWithOnePlan",
-    "dependencies": ["tailwind-merge"],
+    "dependencies": [],
     "files": [
       {
         "root": {
@@ -288,7 +288,7 @@
   {
     "id": "farmui-pricing-02",
     "name": "FUIPricingWithSpecialTwo",
-    "dependencies": ["tailwind-merge"],
+    "dependencies": ["@heroicons/react"],
     "files": [
       {
         "root": {
