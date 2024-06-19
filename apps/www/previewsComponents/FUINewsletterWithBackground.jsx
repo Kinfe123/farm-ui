@@ -1,3 +1,4 @@
+
 'use client'
 import React from "react";
 
@@ -13,14 +14,14 @@ export default function FUINewsletterWithBackground() {
                             Subscribe to our newsletter
                         </h3>
                         <hr className="w-1/2 h-[1px] mx-auto mb-5"/>
-                        <p className="text-blue-100 leading-relaxed">
+                        <p className="text-gray-100 leading-relaxed">
                             Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.
                         </p>
                     </div>
                     <div className="mt-6">
                         <form
                             onSubmit={(e) => e.preventDefault()}
-                            className="flex items-center justify-center bg-white rounded-lg p-1 sm:max-w-md sm:mx-auto ocus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500">
+                            className="flex items-center justify-center bg-white rounded-lg p-1 sm:max-w-md sm:mx-auto ocus-within:outline-none focus-within:ring-2 focus-within:ring-gray-500">
                             <input
                                 type="email"
                                 placeholder="Enter your email"
@@ -32,7 +33,7 @@ export default function FUINewsletterWithBackground() {
                                 Subscribe
                             </button>
                         </form>
-                        <p className="mt-5 max-w-lg text-[15px] text-blue-100 sm:mx-auto">
+                        <p className="mt-5 max-w-lg text-[15px] text-gray-100 sm:mx-auto">
                             No spam ever, we are care about the protection of your data.
                             Read our <a className="underline" href="javascript:void(0)"> Privacy Policy </a>
                         </p>
