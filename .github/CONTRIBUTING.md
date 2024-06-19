@@ -5,7 +5,7 @@ The project is bootstrapped with turborepo for making the use of monorepo arch.
 # Contributing
 
 We really appreciate any kind of contribution regardless of your coding skills.
-We believe loglib should be really easy for anyone who wants to get into
+We believe farm-ui should be really easy for anyone who wants to get into
 contributing to open-source projects. So if this is your first-time contribution
 we'd love to support you in any way to get in there. Read the above instructions
 to get the project overview better.
