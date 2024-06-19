@@ -17,7 +17,7 @@ import FUIPricingSectionWithOnePlan from "previewsComponents/FUIPricingSectionWi
 import FUIPricingSectionWithTable from "previewsComponents/FUIPricingSectionWithTable";
 import FUIPricingWithSpecialTwo from "previewsComponents/FUIPricingWithSpecialTwo";
 import FUISignUpWithLeftBackground from "previewsComponents/FUISignUpWithLeftBackground";
-import FUITestimonialWithGrid  from "previewsComponents/FUITestimonialGrid";
+import FUITestimonialWithGrid from "previewsComponents/FUITestimonialGrid";
 import FUITestimonialWithThreeColumn from "previewsComponents/FUITestimonialWithThreeColumn";
 import React from "react";
 
@@ -572,7 +572,54 @@ export default function FUIPricingWithSpecialTwo() {
     description: "Newsletter section with background",
     path: "previewsComponents/FUINewsletterWithBackground",
     codeCopy: {
-      react: "codecopy",
+      react: `
+      
+'use client'
+import React from "react";
+
+export default function FUINewsletterWithBackground() {
+
+    return (
+        <section className="py-14 max-w-screen-xl mx-auto ">
+            <div className="relative overflow-hidden mx-4 px-4 py-14 bg-transparent rounded-2xl border border-input  bg-page-gradient md:px-8 md:mx-8">
+                <div className="relative z-10 max-w-xl mx-auto sm:text-center">
+                    <div className="space-y-3">
+
+                        <h3 className="text-3xl text-white font-bold tracking-tighter font-geist">
+                            Subscribe to our newsletter
+                        </h3>
+                        <hr className="w-1/2 h-[1px] mx-auto mb-5"/>
+                        <p className="text-gray-100 leading-relaxed">
+                            Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.
+                        </p>
+                    </div>
+                    <div className="mt-6">
+                        <form
+                            onSubmit={(e) => e.preventDefault()}
+                            className="flex items-center justify-center bg-white rounded-lg p-1 sm:max-w-md sm:mx-auto ocus-within:outline-none focus-within:ring-2 focus-within:ring-gray-500">
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                className="text-gray-500 w-full p-2 outline-none border-none active:border-none focus:outline-none focus:ring-0 focus:border-none"
+                            />
+                            <button
+                                className="p-2  rounded-lg font-medium bg-gradient-to-br from-zinc-400 to-zinc-700 px-4 py-2 text-lg text-zinc-50 ring-2 ring-white   transition-all hover:scale-[1.02] hover:ring-transparent active:scale-[0.98] active:ring-zinc-500/70  duration-150 outline-none shadow-md focus:shadow-none sm:px-4"
+                            >
+                                Subscribe
+                            </button>
+                        </form>
+                        <p className="mt-5 max-w-lg text-[15px] text-gray-100 sm:mx-auto">
+                            No spam ever, we are care about the protection of your data.
+                            Read our <a className="underline" href="javascript:void(0)"> Privacy Policy </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+        
+      `,
     },
   },
   "farmui-testimonial-00": {
@@ -580,7 +627,103 @@ export default function FUIPricingWithSpecialTwo() {
     description: "Testimonial with three column",
     path: "previewsComponents/FUITestimonialWithThreeColumn",
     codeCopy: {
-      react: "codecopy",
+      react: `
+      import React from "react";
+export default function FUITestimonialWithThreeColumn() {
+  const testimonials = [
+    {
+      avatar: "https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg",
+      name: "Martin escobar",
+      title: "Founder of meta",
+      quote:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et est hendrerit, porta nunc vitae.",
+    },
+    {
+      avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+      name: "Simon andrew",
+      title: "Software engineer",
+      quote:
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+    },
+    {
+      avatar: "https://randomuser.me/api/portraits/men/86.jpg",
+      name: "Micheal worin",
+      title: "Product designer",
+      quote:
+        "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain.",
+    },
+  ];
+
+  return (
+    <section className="relative min-h-screen">
+      <div className="absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+
+      <img
+        src="https://tailwindcss.com/_next/static/media/docs@30.8b9a76a2.avif"
+        className="absolute z-2 -top-0 left-10 opacity-30"
+      />
+      <div className="relative  py-14  z-10 max-w-screen-xl mx-auto px-4 md:px-8">
+        <div className="max-w-xl sm:text-center md:mx-auto">
+          <h3 className="text-gray-200 text-3xl font-semibold sm:text-4xl font-geist tracking-tighter">
+            Hear from our customers
+          </h3>
+          <p className="mt-3 text-gray-400">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et est
+            hendrerit, porta nunc vitae, gravida justo. Nunc fermentum magna
+            lorem, euismod volutpat arcu volutpat et.
+          </p>
+        </div>
+        <div className="mt-12">
+          <ul className="grid items-center gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((item, idx) => (
+              <li
+                key={idx}
+                className="bg-transparent bg-glass-gradient rounded-xl border shadow-md"
+              >
+                <div className="p-4">
+                  <svg
+                    className="w-9 h-9 text-gray-300"
+                    viewBox="0 0 35 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.47895 14.5833C9.15374 14.5833 8.84166 14.6329 8.53103 14.6781C8.63166 14.3398 8.7352 13.9956 8.90145 13.6865C9.0677 13.2373 9.32728 12.8479 9.58541 12.4556C9.80124 12.0312 10.1819 11.7439 10.4619 11.3808C10.755 11.0279 11.1546 10.7931 11.471 10.5C11.7817 10.1937 12.1885 10.0406 12.5123 9.82478C12.8506 9.63082 13.1452 9.41645 13.4602 9.31437L14.2462 8.99062L14.9375 8.70332L14.2302 5.87708L13.3596 6.08707C13.081 6.15707 12.7412 6.23874 12.3548 6.33645C11.9596 6.40937 11.5381 6.60916 11.0685 6.79145C10.6048 6.99853 10.0681 7.13853 9.56937 7.47103C9.0677 7.78895 8.48874 8.05437 7.97833 8.4802C7.48395 8.91916 6.88749 9.29978 6.44708 9.85833C5.96583 10.3804 5.49041 10.9287 5.12145 11.5529C4.69416 12.1479 4.40395 12.8012 4.0977 13.4473C3.82062 14.0933 3.59749 14.754 3.4152 15.3956C3.06958 16.6819 2.91499 17.904 2.8552 18.9496C2.80562 19.9967 2.83478 20.8673 2.89603 21.4973C2.91791 21.7948 2.95874 22.0835 2.98791 22.2833L3.02437 22.5283L3.06228 22.5196C3.32167 23.7312 3.91877 24.8446 4.78452 25.7311C5.65028 26.6175 6.7493 27.2408 7.95447 27.5287C9.15963 27.8166 10.4217 27.7575 11.5946 27.3581C12.7676 26.9587 13.8035 26.2354 14.5825 25.2719C15.3616 24.3083 15.8519 23.1439 15.9969 21.9133C16.1418 20.6828 15.9353 19.4363 15.4014 18.3181C14.8675 17.2 14.028 16.2558 12.9799 15.5949C11.9318 14.934 10.718 14.5832 9.47895 14.5833ZM25.5206 14.5833C25.1954 14.5833 24.8833 14.6329 24.5727 14.6781C24.6733 14.3398 24.7769 13.9956 24.9431 13.6865C25.1094 13.2373 25.369 12.8479 25.6271 12.4556C25.8429 12.0312 26.2235 11.7439 26.5035 11.3808C26.7967 11.0279 27.1962 10.7931 27.5127 10.5C27.8233 10.1937 28.2302 10.0406 28.554 9.82478C28.8923 9.63082 29.1869 9.41645 29.5019 9.31437L30.2879 8.99062L30.9792 8.70332L30.2719 5.87708L29.4012 6.08707C29.1227 6.15707 28.7829 6.23874 28.3965 6.33645C28.0012 6.40937 27.5798 6.60916 27.1102 6.79145C26.6479 6.99999 26.1098 7.13853 25.611 7.47249C25.1094 7.79041 24.5304 8.05582 24.02 8.48166C23.5256 8.92062 22.9292 9.30124 22.4887 9.85833C22.0075 10.3804 21.5321 10.9287 21.1631 11.5529C20.7358 12.1479 20.4456 12.8012 20.1394 13.4473C19.8623 14.0933 19.6392 14.754 19.4569 15.3956C19.1112 16.6819 18.9567 17.904 18.8969 18.9496C18.8473 19.9967 18.8765 20.8673 18.9377 21.4973C18.9596 21.7948 19.0004 22.0835 19.0296 22.2833L19.066 22.5283L19.104 22.5196C19.3633 23.7312 19.9604 24.8446 20.8262 25.7311C21.6919 26.6175 22.791 27.2408 23.9961 27.5287C25.2013 27.8166 26.4634 27.7575 27.6363 27.3581C28.8093 26.9587 29.8452 26.2354 30.6242 25.2719C31.4033 24.3083 31.8936 23.1439 32.0385 21.9133C32.1834 20.6828 31.977 19.4363 31.4431 18.3181C30.9092 17.2 30.0697 16.2558 29.0216 15.5949C27.9735 14.934 26.7597 14.5832 25.5206 14.5833Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <figure>
+                  <blockquote>
+                    <p className="text-gray-500 tracking-tighter font-geist text-lg font-normal px-4 py-1">
+                      {item.quote}
+                    </p>
+                  </blockquote>
+                  <div className="flex items-center gap-x-4 p-4 mt-6 bg-page-gradient">
+                    <img
+                      src={item.avatar}
+                      className="w-16 h-16 rounded-full border-2 border-gray-500"
+                    />
+                    <div>
+                      <span className="block text-gray-500 font-semibold">
+                        {item.name}
+                      </span>
+                      <span className="block text-gray-600 text-sm mt-0.5">
+                        {item.title}
+                      </span>
+                    </div>
+                  </div>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      {/* <div className="absolute top-0 w-full h-[350px]" style={{ background: "linear-gradient(152.92deg, rgba(192, 132, 252, 0.1) 4.54%, rgba(232, 121, 249, 0.09) 34.2%, rgba(192, 132, 252, 0.09) 77.55%)" }}></div> */}
+    </section>
+  );
+}
+`,
     },
   },
   "farmui-testimonial-01": {
@@ -588,7 +731,166 @@ export default function FUIPricingWithSpecialTwo() {
     description: "Testimonial with grid",
     path: "previewsComponents/FUITestimonialWithGrid",
     codeCopy: {
-      react: "codecopy",
+      react: `
+      import clsx from 'clsx';
+import Image from 'next/image'
+
+
+const testimonials = [
+  [
+    {
+      content:
+        'TaxPal is so easy to use I can’t help but wonder if it’s really doing the things the government expects me to do.',
+      author: {
+        name: 'Sheryl Berge',
+        role: 'CEO at Lynch LLC',
+        image: "https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+      },
+    },
+    {
+      content:
+        'I’m trying to get a hold of someone in support, I’m in a lot of trouble right now and they are saying it has something to do with my books. Please get back to me right away.',
+      author: {
+        name: 'Amy Hahn',
+        role: 'Director at Velocity Industries',
+        image: "https://images.unsplash.com/photo-1623605931891-d5b95ee98459?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80",
+      },
+    },
+  ],
+  [
+    {
+      content:
+        'The best part about TaxPal is every time I pay my employees, my bank balance doesn’t go down like it used to. Looking forward to spending this extra cash when I figure out why my card is being declined.',
+      author: {
+        name: 'Leland Kiehn',
+        role: 'Founder of Kiehn and Sons',
+        image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+      },
+    },
+    {
+      content:
+        'There are so many things I had to do with my old software that I just don’t do at all with TaxPal. Suspicious but I can’t say I don’t love it.',
+      author: {
+        name: 'Erin Powlowski',
+        role: 'COO at Armstrong Inc',
+        image: 'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+      },
+    },
+  ],
+  [
+    {
+      content:
+        'I used to have to remit tax to the EU and with TaxPal I somehow don’t have to do that anymore. Nervous to travel there now though.',
+      author: {
+        name: 'Peter Renolds',
+        role: 'Founder of West Inc',
+        image: 'https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
+      },
+    },
+    {
+      content:
+        'This is the fourth email I’ve sent to your support team. I am literally being held in jail for tax fraud. Please answer your damn emails, this is important.',
+      author: {
+        name: 'Amy Hahn',
+        role: 'Director at Velocity Industries',
+        image: 'https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
+      },
+    },
+  ],
+]
+
+function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg aria-hidden="true" width={105} height={78} {...props}>
+      <path d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z" />
+    </svg>
+  )
+}
+
+export default function FUITestimonialWithGrid() {
+  return (
+    <section
+      id="testimonials"
+      aria-label="What our customers are saying"
+      className=" relative bg-transpaarent py-20 sm:py-10 z-1 bg-page-gradient"
+    >
+      <div className="absolute -z-1 inset-0  h-[600px] w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+
+      <div className="absolute top-0 z-[0] h-screen opacity-20 w-screen bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+
+      <div
+        className="absolute inset-x-0 -top-10 opacity-50 z-10 m-auto h-[27rem] max-w-lg sm:h-64 sm:max-w-7xl"
+      ></div>
+      <Container>
+        <div className="mx-auto max-w-2xl md:text-center">
+          <h2 className="font-geist text-3xl tracking-tighter text-gray-100 sm:text-6xl">
+            <span className='bg-gradient-to-br from-indigo-400 via-indigo-300 to-indigo-700 bg-clip-text text-transparent'>Loved</span> by businesses worldwide.
+          </h2>
+          <p className="mt-4 text-lg tracking-tight text-gray-300 font-geist">
+            Our software is so simple that people can’t help but fall in love
+            with it. Simplicity is easy when you just skip tons of
+            mission-critical features.
+          </p>
+        </div>
+        <ul
+          role="list"
+          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3"
+        >
+          {testimonials.map((column, columnIndex) => (
+            <li key={columnIndex}>
+              <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
+                {column.map((testimonial, testimonialIndex) => (
+                  <li key={testimonialIndex}>
+                    <figure className="relative rounded-2xl bg-transparent transform-gpu [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset] p-6 shadow-xl ">
+                      <QuoteIcon className="absolute left-6 top-6 fill-slate-950" />
+                      <blockquote className="relative">
+                        <p className="text-lg tracking-tight text-gray-100">
+                          {testimonial.content}
+                        </p>
+                      </blockquote>
+                      <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100/10 pt-6">
+                        <div>
+                          <div className="font-display text-base text-gray-100">
+                            {testimonial.author.name}
+                          </div>
+                          <div className="mt-1 text-sm text-slate-500">
+                            {testimonial.author.role}
+                          </div>
+                        </div>
+                        <div className="overflow-hidden rounded-full bg-slate-50">
+                          <Image
+                            className="h-14 w-14 object-cover"
+                            src={testimonial.author.image}
+                            alt=""
+                            width={56}
+                            height={56}
+                          />
+                        </div>
+                      </figcaption>
+                    </figure>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+    
+      </Container>
+    </section>
+  )
+}
+export function Container({
+    className,
+    ...props
+  }: React.ComponentPropsWithoutRef<"div">) {
+    return (
+      <div
+        className={clsx("mx-auto max-w-7xl px-4 sm:px-6 lg:px-8", className)}
+        {...props}
+      />
+    );
+  }
+  `,
     },
   },
 };

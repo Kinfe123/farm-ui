@@ -305,13 +305,13 @@
     "type": "ui"
   },
   {
-    "id": "farmui-pricing-02",
-    "name": "FUIPricingWithSpecialTwo",
+    "id": "farmui-pricing-03",
+    "name": "FUIPricingSectionWithTable",
     "dependencies": ["tailwind-merge"],
     "files": [
       {
         "root": {
-          "name": "FUIPricingWithSpecialTwo",
+          "name": "FUIPricingSectionWithTable",
           "contents": {
             "react": {
               "code_for": "react",
