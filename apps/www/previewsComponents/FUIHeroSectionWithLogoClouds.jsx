@@ -78,7 +78,7 @@ export default function FUIHeroSectionWithLogoClouds() {
         <ul
           className={`flex-1 justify-between  md:text-sm md:font-medium md:flex md:mt-0 ${
             state
-              ? "absolute inset-x-0 px-4 border-b bg-white z-50 md:border-none md:static"
+              ? "absolute inset-x-0 mt-[-10px] pt-4 px-4 border-b bg-white rounded-xl z-50 md:border-none md:static"
               : "hidden"
           }`}
         >
@@ -86,11 +86,12 @@ export default function FUIHeroSectionWithLogoClouds() {
             {navigation.map((item, idx) => (
               <li className="text-gray-500 hover:text-indigo-600" key={idx}>
                 <a href={item.path}>{item.title}</a>
+                {state ? <hr className="h-[0.1px] border-gray-200 w-full mr-auto" /> : ""}
               </li>
             ))}
           </div>
-          <li className="order-2 py-5 md:py-0">
-            <button className="inline-flex h-12 items-center justify-center font-geist rounded-md border border-gray-800 bg-gradient-to-t from-[#8678f9] from-0% to-[#c7d2fe] px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 ">
+          <li className="py-5 md:py-0">
+            <button className="inline-flex cursor-pointer h-12 items-center justify-center font-geist  border border-transparent rounded-md bg-gradient-to-t from-[#8678f9] from-0% to-[#c7d2fe] px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-1 focus:ring-offset-gray-50 ">
               Get Started
             </button>
           </li>
