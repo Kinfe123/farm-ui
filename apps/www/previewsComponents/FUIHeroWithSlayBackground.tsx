@@ -6,11 +6,12 @@ import BgGradient from "components/ui/BgGradient";
 const FUIHeroWithSlayBackground = () => {
   return (
     <>
-      <section className="relative mt-0 w-full min-h-screen">
-        <div className="absolute inset-x-0 -top-0 opacity-60">
+      <section className="overflow-x-hidden relative mt-0 w-full min-h-screen">
+        <div className="absolute inset-x-0 top-0 opacity-60">
           <img
             src="https://framerusercontent.com/images/pDq7rLE52jOGJP8CVW8tTsKdjA.png"
             alt="bgback"
+            className="w-full h-full"
           />
           <BgGradient />
         </div>
@@ -66,11 +67,11 @@ const FUIHeroWithSlayBackground = () => {
           </h1>
           <HeroAnimated
             header="Take shadcn to the next level for modern web dev experience."
-            headerClassName="ml-2 text-left tracking-tight max-w-md md:max-w-3xl text-3xl md:text-4xl tracking-tighter mr-auto lg:text-6xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+            headerClassName="ml-2 text-left tracking-tight max-w-xl md:max-w-4xl text-5xl md:text-6xl tracking-tighter mr-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description=""
             descriptionClassName="  "
           >
-            <div className="mr-auto ml-2 max-w-md text-left md:py-5 md:text-lg lg:max-w-2xl text-[0.84rem] text-zinc-400">
+            <div className="mr-auto ml-2 max-w-md text-left md:py-5 md:text-lg lg:max-w-3xl text-[0.84rem] text-zinc-400">
               <pre className="max-w-md tracking-tight uppercase md:max-w-3xl text-wrap">
                 Move faster with beautiful responsive UI components and website
                 templates with modern design, 100% free and open-source.
