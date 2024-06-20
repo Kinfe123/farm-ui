@@ -58,7 +58,7 @@ const FUIHeroWithSlayBackground = () => {
           />
         </div>
 
-        <div className="relative z-10 max-w-4xl ml-5 md:ml-10  translate-y-[33%]  mr-auto  space-y-4">
+        <div className="relative z-10 max-w-4xl ml-5 md:ml-20  translate-y-[33%]  mr-auto  space-y-4">
           <h1 className="py-2 px-5 mr-auto text-sm text-gray-400 bg-gradient-to-tr to-transparent rounded-3xl group font-geist from-zinc-300/5 via-gray-400/5 border-[2px] border-white/5 w-fit">
             <pre className="tracking-tight uppercase">
               Build products for everyone
