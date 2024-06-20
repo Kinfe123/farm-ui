@@ -6,13 +6,17 @@ import BgGradient from "components/ui/BgGradient";
 const FUIHeroWithSlayBackground = () => {
   return (
     <>
-      <section className="relative mt-0 w-full min-h-[800px]">
-        <div className="absolute inset-x-0 -top-0 opacity-45">
+      <section className="relative mt-0 w-full min-h-screen">
+        <div className="absolute inset-x-0 -top-0 opacity-60">
+          <img
+            src="https://framerusercontent.com/images/pDq7rLE52jOGJP8CVW8tTsKdjA.png"
+            alt="bgback"
+          />
           <BgGradient />
         </div>
 
         <svg
-          className="absolute inset-0 z-1 h-full w-full  stroke-white/5 [mask-image:radial-gradient(100%_100%_at_top_left  ,white,transparent)]"
+          className="absolute inset-0 z-1 h-full w-full opacity-40 stroke-white/5 [mask-image:radial-gradient(100%_100%_at_top_left  ,white,transparent)]"
           aria-hidden="true"
         >
           <defs>
