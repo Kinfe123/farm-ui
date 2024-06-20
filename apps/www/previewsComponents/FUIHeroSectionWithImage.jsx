@@ -87,25 +87,25 @@ export default function FUIHeroSectionWithImage() {
             )}
           </div>
           <nav
-            className={`pb-5 md:text-sm ${
+            className={` md:text-sm ${
               state
-                ? "absolute z-50 top-0 inset-x-0 bg-black/50 shadow-lg rounded-xl border mx-2 mt-2 md:shadow-none md:border-none md:mx-0 md:mt-0 md:relative md:bg-transparent"
+                ? "absolute z-50 top-0 inset-x-0 pb-5  bg-black/50 shadow-lg rounded-xl border mx-2 mt-2 md:shadow-none md:border-none md:mx-0 md:mt-0 md:relative"
                 : ""
             }`}
           >
-            <div className="gap-x-14 md:bg-transparent backdrop-blur rounded-2xl items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8">
+            <div className="gap-x-14 md:bg-transparent backdrop-blur rounded-2xl items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8 pb-10">
               <Brand />
               <div
                 className={`flex-1 text-white/90 items-center lg:mt-8 md:mt-0 md:flex ${
                   state ? "block" : "hidden"
                 } `}
               >
-                <ul className="mx-auto flex lg:flex-row flex-col w-full justify-center items-center space-y-6 md:space-x-6 md:space-y-0 lg:rounded-full dark:bg-zinc-800/10 lg:dark:[border:1px_solid_rgba(255,255,255,.1)] lg:dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] px-6 py-4 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 lg:ring-1 ring-zinc-900/5 lg:backdrop-blur dark:text-zinc-200 dark:ring-white/10 lg:w-fit ">
+                <ul className="mx-auto flex md:flex-row flex-col w-full justify-center items-center space-y-6 py-10 md:space-x-6 md:space-y-0 md:rounded-full dark:bg-zinc-800/10 md:dark:[border:1px_solid_rgba(255,255,255,.1)] md:dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] px-6 md:py-4 text-sm font-medium text-zinc-800 shadow-md shadow-zinc-800/5 md:ring-1 ring-zinc-900/5 md:backdrop-blur dark:text-zinc-200 dark:ring-white/10 md:w-fit ">
                   {navigation.map((item, idx) => {
                     return (
                       <li
                         key={idx}
-                        className="text-lg lg:text-sm text-white/70 hover:text-white flex"
+                        className="text-md lg:text-sm text-white/70 hover:text-white flex"
                       >
                         <a href={item.path} className="block">
                           {item.title}

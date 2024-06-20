@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "globalEnv": ["FARMUI_SYS"],
   "globalDependencies": ["**/.env"],
-  "tasks": {
+  "pipeline": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"],
