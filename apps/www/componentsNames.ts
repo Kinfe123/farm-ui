@@ -67,6 +67,8 @@ import FUINavbarWithSubmenu from "./previewsComponents/FUINavbarWithSubmenu.jsx"
 import FUICtaWithLinkOnTheSide from "./previewsComponents/FUICtaWithLinkOnTheSide.jsx";
       
 import FUITestimonialGrid from "./previewsComponents/FUITestimonialGrid.jsx";
+
+import FUIHeroWithSlayBackground from "previewsComponents/FUIHeroWithSlayBackground.tsx";
       
 import FUIFeatureSectionWithCards from "./previewsComponents/FUIFeatureSectionWithCards.jsx";
       
