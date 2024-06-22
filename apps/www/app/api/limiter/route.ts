@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ratelimit } from "utils/ratelimit";
+import { Redis } from "@upstash/redis";
+import { Ratelimit } from "@upstash/ratelimit";
+const ratelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
+  limiter: Ratelimit.slidingWindow(1, "30 m"),
+});
 export async function POST(req: NextRequest, res: NextResponse) {
+
   try {
     const res = await req.json();
     const ip = req.headers.get("x-forwarded-for") ?? "";
