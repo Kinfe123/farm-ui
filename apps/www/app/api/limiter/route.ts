@@ -12,7 +12,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     }
     return new Response("The data logged: " + JSON.stringify(res));
   } catch (err) {
-    console.log("Error has occured : ", err);
+    console.log("Error has occured  ", err);
     return new Response("Error has occured", { status: 404 });
   }
 }
