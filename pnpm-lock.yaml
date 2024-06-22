@@ -105,6 +105,12 @@ importers:
       '@types/babel__core':
         specifier: ^7.1.19
         version: 7.20.5
+      '@upstash/ratelimit':
+        specifier: ^1.2.1
+        version: 1.2.1
+      '@upstash/redis':
+        specifier: ^1.31.6
+        version: 1.31.6
       '@usermaven/sdk-js':
         specifier: ^1.1.9
         version: 1.4.0
@@ -4440,6 +4446,25 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
+  /@upstash/core-analytics@0.0.9:
+    resolution: {integrity: sha512-9NXXxZ5y1/A/zqKLlVT7NsAWSggJfOjB0hG6Ffx29b4jbzHOiQVWB55h5+j2clT9Ib+mNPXn0iB5zN3aWLkICw==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@upstash/redis': 1.31.6
+    dev: false
+
+  /@upstash/ratelimit@1.2.1:
+    resolution: {integrity: sha512-o01lV1yFS5Fzj5KONZmNyVch/Qrlj785B2ob+kStUmxn8F6xXk7IHTQqVcHE+Ce3CmT/qQIwvMxDZftyJ5wYpQ==}
+    dependencies:
+      '@upstash/core-analytics': 0.0.9
+    dev: false
+
+  /@upstash/redis@1.31.6:
+    resolution: {integrity: sha512-7sDQQqvVnnV+2PUVGjocITa34CULGLoWhmfSY/LtpxNYv24EsgOk9VXhmGXIyzJBcXxB614wOF6ccEN0Lr7fqQ==}
+    dependencies:
+      crypto-js: 4.2.0
+    dev: false
+
   /@usermaven/sdk-js@1.4.0:
     resolution: {integrity: sha512-6z+AmGDMotZQ7TFOYAMi+onnD4H8SLzFh97zX29jSWNb4/NeHt0Y3OCqyj2PU24s47M1Od8btX62vvzNTp+anQ==}
     dev: false
@@ -5621,6 +5646,10 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  /crypto-js@4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
+    dev: false
 
   /cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
