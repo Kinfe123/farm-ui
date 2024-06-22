@@ -1,18 +1,11 @@
-import { NextRequest, NextResponse } from "next/server";
-import { Redis } from "@upstash/redis";
-import { Ratelimit } from "@upstash/ratelimit";
-const ratelimit = new Ratelimit({
-  redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(1, "30 m"),
-});
-export async function POST(req: NextRequest, res: NextResponse) {
-
+import { ratelimit } from "utils/ratelimit";
+export async function POST(req: Request) {
   try {
     const res = await req.json();
     const ip = req.headers.get("x-forwarded-for") ?? "";
     const data = await ratelimit.limit(ip);
     if (!data.success) {
-      return new NextResponse("You can only send 1 req / 30min.", {
+      return new Response("You can only send 1 req / 30min.", {
         status: 429,
       });
     }
