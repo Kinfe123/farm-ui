@@ -7,7 +7,7 @@ export const db: Redis = new Redis({
 
 export const ratelimit = new Ratelimit({
   redis: db,
-  limiter: Ratelimit.slidingWindow(1, "30 m")
+  limiter: Ratelimit.slidingWindow(10, "30 m")
 
 })
 

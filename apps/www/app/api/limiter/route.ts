@@ -1,7 +1,6 @@
 import { ratelimit } from "utils/ratelimit";
 export async function POST(req: Request) {
   try {
-    const res = await req.json();
     const ip = req.headers.get("x-forwarded-for") ?? "";
     const data = await ratelimit.limit(ip);
     if (!data.success) {
@@ -9,9 +8,10 @@ export async function POST(req: Request) {
         status: 429,
       });
     }
-    return new Response("The data logged: " + JSON.stringify(res));
+    return new Response("Made an attempt");
   } catch (err) {
     console.log("Error has occured  ", err);
     return new Response("Error has occured", { status: 404 });
   }
 }
+
