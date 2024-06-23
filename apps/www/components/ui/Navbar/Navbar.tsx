@@ -65,7 +65,7 @@ export default () => {
         >
           <div
             className={`mt-5 max-w-3xl mx-auto border-2 py-5  px-10 backdrop-blur-md rounded-3xl gp-x-14 items-center md:flex border-white/10 ${
-              state ? "border-white/0" : ""
+              state ? "border-none" : ""
             }`}
           >
             <div className="flex items-center justify-between py-1 md:block">
