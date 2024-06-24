@@ -18,9 +18,29 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  AnimatePresence,
+  useMotionValueEvent,
+  useScroll,
+  motion,
+} from "framer-motion";
 
 export default () => {
   const [state, setState] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const [visible, setVisible] = useState(true);
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    // Check if current is not undefined and is a number
+    if (typeof current === "number") {
+      let direction = current! - scrollYProgress.getPrevious()!;
+      if (direction < 0) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    }
+  });
+
   const session = useSession();
   const [isNewsletterModalActive, setNewsletterModalActive] = useState(false);
   const pathname = usePathname();
@@ -54,108 +74,124 @@ export default () => {
   }
 
   return (
-    <>
-      <header className="h-[4rem] fixed top-0 left-0 right-0 mx-auto z-30 px-2">
-        <nav
-          className={` ${
-            state
-              ? "absolute inset-x-0 shadow-lg rounded-xl bg-gradient-to-tr from-transparent via-transparent/10 to-transparent/5 backdrop-blur-lg border border-zinc-800 mx-2 pb-5 mt-2 md:shadow-none md:border-none md:mx-2 md:mt-0 md:bg-transparent md:pb-0"
-              : ""
-          }`}
-        >
-          <div
-            className={`mt-5 max-w-3xl mx-auto border-2 py-5  px-10 backdrop-blur-md rounded-3xl gp-x-14 items-center md:flex border-white/10 ${
-              state ? "border-none" : ""
+    <AnimatePresence mode="wait">
+      <motion.nav
+        initial={{
+          y: -130,
+          opacity: 1,
+        }}
+        animate={{
+          y: visible ? 0 : -100,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+      >
+        <header className="h-[4rem] fixed top-0 left-0 right-0 mx-auto z-30 px-2">
+          <nav
+            className={` ${
+              state
+                ? "absolute inset-x-0 shadow-lg rounded-xl bg-gradient-to-tr from-transparent via-transparent/10 to-transparent/5 backdrop-blur-lg border border-zinc-800 mx-2 pb-5 mt-2 md:shadow-none md:border-none md:mx-2 md:mt-0 md:bg-transparent md:pb-0"
+                : ""
             }`}
           >
-            <div className="flex items-center justify-between py-1 md:block">
-              <Link
-                href="/"
-                className="relative bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl md:mr-4"
-              >
-                FarmUI
-                <span className="font-geist text-sm absolute top-0 right-[-40px] z-10 text-white/70 ">
-                  BETA
-                </span>
-              </Link>
-              <div className="flex md:hidden">
-                <button
-                  aria-label="menu button"
-                  className="menu-btn group"
-                  onClick={() => setState(!state)}
-                >
-                  {state ? (
-                    <XMarkIcon className="w-5 h-5 pointer-events-none text-zinc-500 group-hover:text-zinc-400" />
-                  ) : (
-                    <Bars3Icon className="w-5 h-5 pointer-events-none text-zinc-500 group-hover:text-zinc-400" />
-                  )}
-                </button>
-              </div>
-            </div>
             <div
-              className={`flex-1 items-center mt-8 md:mt-0 md:flex ${
-                state ? "block" : "hidden"
-              } `}
+              className={`mt-5 max-w-3xl mx-auto border-2 py-5  px-10 backdrop-blur-md rounded-3xl gp-x-14 items-center md:flex border-white/10 ${
+                state ? "border-none" : ""
+              }`}
             >
-              <ul className="z-30 flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
-                {navigation.map((item, idx) => {
-                  return (
-                    <li
-                      key={idx}
-                      className={cn(
-                        "font-medium text-sm text-zinc-400 hover:text-zinc-200 duration-200",
-                        pathname === item.path ? "text-white/80" : ""
-                      )}
-                    >
-                      <Link href={item.path} className="block">
-                        {item.title}
-                      </Link>
-                      {state ? (
-                        <hr className="opacity-50 text-gray-400 my-2 pt-3" />
-                      ) : (
-                        ""
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-              <div className="mt-6 md:mt-0">
-                {!!user ? (
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <Avatar>
-                          <AvatarImage
-                            src={user.image!}
-                            alt={user.name ?? "avatar pic"}
-                          />
-                          <AvatarFallback>{user.name?.slice(0 , 2).toUpperCase()}</AvatarFallback>
-                        </Avatar>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>{user.name}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                ) : (
-                  <LinkItem
-                    variant="shiny"
-                    href="/login"
-                    className="w-full group block bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-transparent  border-input border-[1px] hover:bg-transparent/50 "
+              <div className="flex items-center justify-between py-1 md:block">
+                <Link
+                  href="/"
+                  className="relative bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl md:mr-4"
+                >
+                  FarmUI
+                  <span className="font-geist text-sm absolute top-0 right-[-40px] z-10 text-white/70 ">
+                    BETA
+                  </span>
+                </Link>
+                <div className="flex md:hidden">
+                  <button
+                    aria-label="menu button"
+                    className="menu-btn group"
+                    onClick={() => setState(!state)}
                   >
-                    Join FarmUI
-                    <ChevronRight className="inline-flex w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-                  </LinkItem>
-                )}
+                    {state ? (
+                      <XMarkIcon className="w-5 h-5 pointer-events-none text-zinc-500 group-hover:text-zinc-400" />
+                    ) : (
+                      <Bars3Icon className="w-5 h-5 pointer-events-none text-zinc-500 group-hover:text-zinc-400" />
+                    )}
+                  </button>
+                </div>
+              </div>
+              <div
+                className={`flex-1 items-center mt-8 md:mt-0 md:flex ${
+                  state ? "block" : "hidden"
+                } `}
+              >
+                <ul className="z-30 flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+                  {navigation.map((item, idx) => {
+                    return (
+                      <li
+                        key={idx}
+                        className={cn(
+                          "font-medium text-sm text-zinc-400 hover:text-zinc-200 duration-200",
+                          pathname === item.path ? "text-white/80" : ""
+                        )}
+                      >
+                        <Link href={item.path} className="block">
+                          {item.title}
+                        </Link>
+                        {state ? (
+                          <hr className="opacity-50 text-gray-400 my-2 pt-3" />
+                        ) : (
+                          ""
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="mt-6 md:mt-0">
+                  {!!user ? (
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <Avatar>
+                            <AvatarImage
+                              src={user.image!}
+                              alt={user.name ?? "avatar pic"}
+                            />
+                            <AvatarFallback>
+                              {user.name?.slice(0, 2).toUpperCase()}
+                            </AvatarFallback>
+                          </Avatar>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{user.name}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  ) : (
+                    <LinkItem
+                      variant="shiny"
+                      href="/login"
+                      className="w-full group block bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-transparent  border-input border-[1px] hover:bg-transparent/50 "
+                    >
+                      Join FarmUI
+                      <ChevronRight className="inline-flex w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+                    </LinkItem>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        </nav>
-      </header>
-      <NewsletterModal
-        isActive={isNewsletterModalActive}
-        closeModal={setNewsletterModalActive}
-      />
-    </>
+          </nav>
+        </header>
+        <NewsletterModal
+          isActive={isNewsletterModalActive}
+          closeModal={setNewsletterModalActive}
+        />
+      </motion.nav>
+    </AnimatePresence>
   );
 };
