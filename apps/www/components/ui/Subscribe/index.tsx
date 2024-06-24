@@ -34,14 +34,13 @@ export function GetStarted() {
     if (!email.length) {
       toast({
         title: "Email is not provided",
-        description:
-          "Email must be provided to subscribe to the farmui news",
+        description: "Email must be provided to subscribe to the farmui news",
         variant: "destructive",
       });
       return;
     }
     startTransition(() => {
-      addSubscription({email:email})
+      addSubscription({ email: email })
         .then((res) => {
           toast({
             title: "Subscription Added",
@@ -62,12 +61,15 @@ export function GetStarted() {
   };
 
   return (
-    <section id="newsletter" aria-label="Newsletter" className="font-display relative ">
+    <section
+      id="newsletter"
+      aria-label="Newsletter"
+      className="font-display relative "
+    >
       <div className="absolute -z-1 inset-0  h-[600px] w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
-  
+
       <div className="rounded-3xl custom-screen-lg mx-auto mt-[-20px] -z-1">
         <div className="relative font-display -mx-4 overflow-hidden bg-gradient-to-tr from-transparent via-transparent/10 to-transparent/5 px-4 py-20 sm:-mx-6 sm:px-6 md:mx-0 md:rounded-[2.0rem] md:px-16 xl:px-24 xl:py-36">
-        
           <div className="absolute left-1/2 top-0 translate-x-[-10%] h-full w-[1450px] hidden translate-y-[-45%] lg:translate-x-[-32%] animate-pulse duration-[4s] linear infinite" />
           <Image
             src={bgback}
@@ -82,8 +84,10 @@ export function GetStarted() {
             height={900}
             alt="bgback"
             className="absolute inset-x-0 top-[-300px] z-10 -translate-x-10 max-w-full mx-auto"
-          /> */}     
+          /> */}
           <div className="relative z-10  mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-32 gap-y-14 xl:max-w-none xl:grid-cols-2">
+        
+
             <div>
               <p className="font-display text-4xl font-medium tracking-tighter text-white sm:text-5xl">
                 Stay up to date
@@ -112,13 +116,13 @@ export function GetStarted() {
                   onClick={handleSubmit}
                   variant="shiny"
                   href=""
-                  className={cn(`group w-fit px-10  bg-zinc-800 hover:bg-zinc-700 py-4`, pending ? "bg-opacity-75 cursor-not-allowed" : "")}
+                  className={cn(`group w-fit px-10 ml-[-33px]  bg-zinc-800 hover:bg-zinc-700 py-4`, pending ? "bg-opacity-75 cursor-not-allowed" : "")}
                 >
                   Subscribe{" "}
                   {pending ? (
                     <Loader2 className="ml-1 inline animate-spin w-3 h-3  items-center" />
                   ) : (
-                    <ChevronRightIcon className="w-4 h-4 inline-flex group-hover:translate-x-1 group-hover:duration-300 group-hover:transition-all " />
+                    <ChevronRightIcon className="hidden w-4 h-4 sm:inline-flex group-hover:translate-x-1 group-hover:duration-300 group-hover:transition-all " />
                   )}
                 </LinkItem>
               </div>
