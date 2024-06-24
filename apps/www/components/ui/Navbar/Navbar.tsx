@@ -89,7 +89,7 @@ export default () => {
           type:"spring"
         }}
       >
-        <header className="h-[4rem] fixed top-0 left-0 right-0 mx-auto z-30 px-2">
+        <header className="h-[3rem] fixed top-0 left-0 right-0 mx-auto z-30 px-2">
           <nav
             className={` ${
               state
@@ -98,7 +98,7 @@ export default () => {
             }`}
           >
             <div
-              className={`mt-5 max-w-3xl mx-auto border-2 py-5  px-10 backdrop-blur-md rounded-3xl gp-x-14 items-center md:flex border-white/10 ${
+              className={`mt-5 max-w-3xl mx-auto border-2 py-3  px-10 backdrop-blur-md rounded-3xl gp-x-14 items-center md:flex border-white/10 ${
                 state ? "border-none" : ""
               }`}
             >
