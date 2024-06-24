@@ -16,6 +16,8 @@ const nextConfig = {
     GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
     UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
     UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
+    REDIS_URL: process.env.REDIS_URL,
+    REDIS_TOKEN: process.env.REDIS_TOKEN
   },
   images: {
     remotePatterns: [
