@@ -8,6 +8,7 @@ import mergeTW from "utils/mergeTW";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import Input from "../Input";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { AnimatePresence, useMotionValueEvent, useScroll, motion } from "framer-motion";
 
 const Heading = ({ children }: { children: ReactNode }) => (
   <h3 className="pb-6 font-medium text-zinc-50">{children}</h3>
@@ -33,6 +34,8 @@ const NavList = ({
 export default () => {
   const [isOpen, setOpen] = useState<boolean>(false);
   const [searchValue, setSearchValue] = useState<string>("");
+  const { scrollYProgress } = useScroll();
+  const [visible, setVisible] = useState(true);
   const [searchResults, setSearchResults] = useState<
     { section_name: string; slug: string }[]
   >([]);
@@ -51,6 +54,18 @@ export default () => {
     setSearchValue("");
     setSearchResults([]);
   }, [pathname]);
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    // Check if current is not undefined and is a number
+    if (typeof current === "number") {
+      let direction = current! - scrollYProgress.getPrevious()!;
+      if (direction < 0) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    }
+  });
+
 
   const handleSearch = (e: React.MouseEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value;
@@ -64,17 +79,35 @@ export default () => {
 
   return (
     <div className="flex-none fixed inset-x-0 z-40 top-32 w-full xl:relative xl:max-w-[18rem] xl:top-0 xl:inset-x-[unset]">
-      <div className="py-2.5 px-4 bg-transparent border-y border-zinc-800 xl:px-8 xl:hidden">
-        <button
-          className="flex gap-x-2 items-center text-gray-300"
-          onClick={() => setOpen(!isOpen)}
+      <AnimatePresence mode="wait">
+        <motion.nav
+          initial={{
+            y: -130,
+            opacity: 1,
+          }}
+          animate={{
+            y: visible ? 0 : -100,
+            opacity: visible ? 1 : 0,
+          }}
+          transition={{
+            duration: 0.2,
+            type: "spring",
+          }}
         >
-          <ChevronRightIcon
-            className={`w-5 h-5 duration-200 ${isOpen ? "rotate-90" : ""}`}
-          />
-         Menu
-        </button>
-      </div>
+          <div className="py-2.5 px-4 ml-auto  mt-[-29px] h-10 backdrop-blur-lg rounded-l-2xl w-fit xl:px-8 xl:hidden">
+            <button
+              className="flex gap-x-2 items-center text-gray-300"
+              onClick={() => setOpen(!isOpen)}
+            >
+              <ChevronRightIcon
+                className={`w-5 h-5 duration-200 ${isOpen ? "rotate-90" : ""}`}
+              />
+              Menu
+            </button>
+          </div>
+        </motion.nav>
+      </AnimatePresence>
+
       <aside className="relative w-full">
         <div
           className={`fixed inset-x-0 w-full h-full bg-transparent/90 backdrop-blur-sm px-4 border-r border-zinc-800 xl:inset-x-[unset] xl:block xl:max-w-[16rem] xl:top-auto xl:px-0 ${

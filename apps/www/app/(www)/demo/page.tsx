@@ -63,9 +63,11 @@ export default async () => {
         <div className="absolute transform rotate-180 bg-transparent z-[-2] h-screen w-screen overflow-hidden  [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#60e_100%)] opacity-30"></div>
         <section className=" custom-screen overflow-hidden mx-auto  mt-48">
           {/* <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 -translate-x-32 sm:-translate-x-10" /> */}
-          <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 -translate-x-32 sm:translate-x-20" />
-          <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 translate-x-32 sm:translate-x-60" />
-          <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 right-0" />
+          <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 translate-x-0 sm:translate-x-24" />
+          <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 translate-x-4 sm:translate-x-32" />
+
+          {/* <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 -translate-x-32 sm:translate-x-20" />
+          <HeroBgGradient className="absolute inset-x-0 mx-auto duration-500 top-0 right-0" /> */}
 
           <div className="relative z-10">
             <div className="max-w-[70reem] mx-auto space-y-4 text-center">

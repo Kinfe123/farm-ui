@@ -55,8 +55,10 @@ const Template = async () => {
     <>
       <section className="mt-48 custom-screen">
         <div className="absolute transform rotate-180 bg-transparent z-[-2] h-screen w-screen overflow-hidden  [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#60e_100%)] opacity-20"></div>
+       
+       
         <HeroBgGradient className="absolute inset-x-0 top-0 mx-auto duration-500 -translate-x-32 sm:translate-x-20" />
-        <HeroBgGradient className="absolute inset-x-0 top-0 mx-auto duration-500 translate-x-32 sm:translate-x-60" />
+        <HeroBgGradient className="absolute inset-x-0 top-0 mx-auto duration-500 translate-x-0 sm:translate-x-60" />
         <HeroBgGradient className="absolute inset-x-0 top-0 right-0 mx-auto duration-500" />
 
         <div className="relative z-10">
@@ -129,7 +131,7 @@ function Stats({
     },
   ];
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden max-w-full">
       <BottomLine />
       <Section
         className="relative max-w-full "
