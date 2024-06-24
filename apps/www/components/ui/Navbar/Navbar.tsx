@@ -86,6 +86,7 @@ export default () => {
         }}
         transition={{
           duration: 0.2,
+          type:"spring"
         }}
       >
         <header className="h-[4rem] fixed top-0 left-0 right-0 mx-auto z-30 px-2">
