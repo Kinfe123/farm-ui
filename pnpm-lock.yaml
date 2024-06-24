@@ -109,7 +109,7 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1
       '@upstash/redis':
-        specifier: ^1.31.6
+        specifier: ^1.27.1
         version: 1.31.6
       '@usermaven/sdk-js':
         specifier: ^1.1.9
