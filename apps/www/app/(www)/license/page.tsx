@@ -29,18 +29,18 @@ export default async () => {
 
   return (
     <>
-      <main className="mt-20 max-w-3xl mx-auto">
+      <main className="mx-auto mt-20 max-w-3xl">
         <div className="text-left">
-          <h1 className="text-5xl mr-auto font-geist tracking-tight mb-4 sm:text-4.5xl">
+          <h1 className="mr-auto mb-4 text-5xl tracking-tight font-geist sm:text-4.5xl">
             License
           </h1>
-          <p className="text-zinc-400 mt-3">
+          <p className="mt-3 text-zinc-400">
             All you need to know about the FarmUI licensing model
           </p>
-        <Separator className="h-[1px] bg-white/5 mt-5"/>
+          <Separator className="mt-5 h-[1px] bg-white/5" />
         </div>
-        
-        <article className="prose prose-invert mt-12 mx-4 md:mx-0 sm:mx-auto">
+
+        <article className="mx-4 mt-12 sm:mx-auto md:mx-0 prose prose-invert">
           <MDXRemoteClient mdxSource={{ ...mdxSource }} />
         </article>
       </main>

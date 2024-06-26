@@ -17,19 +17,18 @@ export const metadata = {
 export default () => {
   return (
     <>
- <section className="mt-20 max-w-3xl mx-auto">
+      <section className="mx-auto mt-32 max-w-3xl">
         <div className="text-left">
-          <h1 className="text-5xl mr-auto font-geist tracking-tight mb-4 sm:text-4.5xl">
-          Privacy Policy
+          <h1 className="mr-auto mb-4 text-5xl tracking-tight font-geist sm:text-4.5xl">
+            Privacy Policy
           </h1>
-          <p className="text-zinc-400 mt-3">
-          Your data is protected and respected.
-            
+          <p className="mt-3 text-zinc-400">
+            Your data is protected and respected.
           </p>
-        <Separator className="h-[1px] bg-white/5 mt-5"/>
+          <Separator className="mt-5 h-[1px] bg-white/5" />
         </div>
-      
-        <div className="prose prose-invert mt-12 mx-4 md:mx-0 sm:mx-auto">
+
+        <div className="mx-4 mt-12 sm:mx-auto md:mx-0 prose prose-invert">
           <h2>Collection of non-personal information</h2>
           <p>
             When you visit the Website our servers automatically record
