@@ -157,8 +157,35 @@ export const add = new Command()
         await fs.mkdir(root_dir, { recursive: true });
       }
       const path_to_add: CompToAddProps[] = [];
+
       // for now , the content we will support will be react based , till we have updated the ednpoint
-      const root_comp_name = select_files_by_id.files[0].root.name;
+      // here , we are eccepting the custom name for the root component name
+      let root_comp_name = select_files_by_id.files[0].root.name;
+      let is_customed = false;
+      while (!is_customed) {
+        const { componentName } = await prompts({
+          type: "text",
+          name: "componentName",
+          message: `What do you want the component to be called? (leave it blank which defaults to ${root_comp_name})`,
+          hint: "component name",
+        });
+        if (!componentName) {
+          break;
+        }
+
+        const named_comp_dir = path.join(root_dir, `${componentName}.tsx`);
+
+        const already_existd_comp_name = existsSync(named_comp_dir);
+        if (already_existd_comp_name) {
+          logger.warn(
+            "The component with that name already existed. Please with another name"
+          );
+        } else {
+          root_comp_name = componentName;
+          is_customed = true;
+        }
+      }
+
       const tailwind_values = select_files_by_id["tailwind"];
       if (tailwind_values) {
         logger.info("The components need tailwind.config.(ts/js) change");
