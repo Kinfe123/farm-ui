@@ -29,7 +29,7 @@ export default async () => {
 
   return (
     <>
-      <main className="mx-auto mt-20 max-w-3xl">
+      <main className="mx-auto mt-32 max-w-3xl">
         <div className="text-left">
           <h1 className="mr-auto mb-4 text-5xl tracking-tight font-geist sm:text-4.5xl">
             License
