@@ -159,6 +159,7 @@ export const add = new Command()
       const path_to_add: CompToAddProps[] = [];
 
       // for now , the content we will support will be react based , till we have updated the ednpoint
+      // here , we are eccepting the custom name for the root component name
       let root_comp_name = select_files_by_id.files[0].root.name;
       let is_customed = false;
       while (!is_customed) {
@@ -168,6 +169,9 @@ export const add = new Command()
           message: `What do you want the component to be called? (leave it blank which defaults to ${root_comp_name})`,
           hint: "component name",
         });
+        if (!componentName) {
+          break;
+        }
 
         const named_comp_dir = path.join(root_dir, `${componentName}.tsx`);
 
