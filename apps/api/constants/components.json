@@ -155,7 +155,7 @@
   {
     "id": "farmui-hero-04",
     "name": "FUIHeroWithImage",
-    "dependencies": [""],
+    "dependencies": [],
     "files": [
       {
         "root": {
@@ -174,7 +174,7 @@
   {
     "id": "farmui-hero-05",
     "name": "FUIHeroDarkSection",
-    "dependencies": [""],
+    "dependencies": [],
     "files": [
       {
         "root": {

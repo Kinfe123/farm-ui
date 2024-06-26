@@ -20,7 +20,7 @@ export default function FUIFeatureSectionWithCards() {
       ),
       title: "Fast Refresh",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.",
-    },https://vercel.com/kinfe123s-projects/farmui-api/deployments
+    },
     {
       icon: (
         <svg
