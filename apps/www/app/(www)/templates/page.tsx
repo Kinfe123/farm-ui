@@ -9,6 +9,7 @@ import { cn, dateConvert } from "@/lib/utils";
 import BgGradient from "components/ui/BgGradient";
 import Section from "components/SectionView";
 import { BottomLine } from "components/LineUtils";
+import TemplateDisplay from "components/ui/TemplateCard/TemplateDisplay";
 
 type MetaInfo = {
   title: string;
@@ -55,8 +56,7 @@ const Template = async () => {
     <>
       <section className="mt-48 custom-screen">
         <div className="absolute transform rotate-180 bg-transparent z-[-2] h-screen w-screen overflow-hidden  [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#60e_100%)] opacity-20"></div>
-       
-       
+
         <HeroBgGradient className="absolute inset-x-0 top-0 mx-auto duration-500 -translate-x-32 sm:translate-x-20" />
         <HeroBgGradient className="absolute inset-x-0 top-0 mx-auto duration-500 translate-x-0 sm:translate-x-60" />
         <HeroBgGradient className="absolute inset-x-0 top-0 right-0 mx-auto duration-500" />
@@ -88,10 +88,10 @@ const Template = async () => {
             id="templates"
             className="grid-cols-1 gap-14 mx-auto mt-32 space-y-7 max-w-4xl text-white divide-y lg:grid lg:space-y-0 lg:divide-y-0 divide-zinc-800"
           >
-            <Separator className="mx-auto max-w-3xl h-[2px] bg-white/5" />
-            {templates.map((template) => {
+            <TemplateDisplay />
+            {/* {templates.map((template) => {
               return <TemplateCard item={template} />;
-            })}
+            })} */}
           </ul>
         </div>
       </section>
@@ -231,7 +231,6 @@ function Stats({
             </div>
           </div>
         </div>
-
       </Section>
     </section>
   );
