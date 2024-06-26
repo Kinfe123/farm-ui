@@ -33,7 +33,7 @@ export default () => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
-      if (direction < 0) {
+      if (direction <= 0) {
         setVisible(true);
       } else {
         setVisible(false);
@@ -64,11 +64,11 @@ export default () => {
   function EditorWithAiButton() {
     return (
       <button
-        className="w-full font-medium text-sm text-zinc-400 hover:text-zinc-200 flex items-center gap-2 duration-200 group"
+        className="flex gap-2 items-center w-full text-sm font-medium duration-200 text-zinc-400 group hover:text-zinc-200"
         onClick={() => setNewsletterModalActive(true)}
       >
         Editor with AI
-        <SparklesIcon className="w-4 h-4 opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-125 duration-150" />
+        <SparklesIcon className="w-4 h-4 opacity-0 duration-150 scale-50 group-hover:opacity-100 group-hover:scale-125" />
       </button>
     );
   }
@@ -86,10 +86,10 @@ export default () => {
         }}
         transition={{
           duration: 0.2,
-          type:"spring"
+          type: "spring",
         }}
       >
-        <header className="h-[3rem] fixed top-0 left-0 right-0 mx-auto z-30 px-2">
+        <header className="fixed top-0 right-0 left-0 z-30 px-2 mx-auto h-[3rem]">
           <nav
             className={` ${
               state
@@ -102,13 +102,13 @@ export default () => {
                 state ? "border-none" : ""
               }`}
             >
-              <div className="flex items-center justify-between py-1 md:block">
+              <div className="flex justify-between items-center py-1 md:block">
                 <Link
                   href="/"
-                  className="relative bg-gradient-to-tr from-white/60 via-white/90 to-white/50 text-transparent bg-clip-text font-display font-semibold  text-2xl md:mr-4"
+                  className="relative text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-tr md:mr-4 from-white/60 via-white/90 to-white/50 font-display"
                 >
                   FarmUI
-                  <span className="font-geist text-sm absolute top-0 right-[-40px] z-10 text-white/70 ">
+                  <span className="absolute top-0 z-10 text-sm font-geist right-[-40px] text-white/70">
                     BETA
                   </span>
                 </Link>
@@ -131,7 +131,7 @@ export default () => {
                   state ? "block" : "hidden"
                 } `}
               >
-                <ul className="z-30 flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+                <ul className="z-30 flex-1 justify-center items-center space-y-6 md:flex md:space-y-0 md:space-x-6">
                   {navigation.map((item, idx) => {
                     return (
                       <li
@@ -145,7 +145,7 @@ export default () => {
                           {item.title}
                         </Link>
                         {state ? (
-                          <hr className="opacity-50 text-gray-400 my-2 pt-3" />
+                          <hr className="pt-3 my-2 text-gray-400 opacity-50" />
                         ) : (
                           ""
                         )}
@@ -177,10 +177,10 @@ export default () => {
                     <LinkItem
                       variant="shiny"
                       href="/login"
-                      className="w-full group block bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-transparent  border-input border-[1px] hover:bg-transparent/50 "
+                      className="block w-full bg-transparent bg-gradient-to-tr to-transparent group from-zinc-300/5 via-gray-400/5 border-input border-[1px] hover:bg-transparent/50"
                     >
                       Join FarmUI
-                      <ChevronRight className="inline-flex w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+                      <ChevronRight className="inline-flex ml-2 w-4 h-4 duration-300 group-hover:translate-x-1" />
                     </LinkItem>
                   )}
                 </div>
