@@ -82,8 +82,6 @@ export default ({
     }
   }, [copied]);
   const reactCompToRender = componentToPreview[item?.id] ?? <></>;
-  const comp = reactCompToRender.path;
-  const codeCopy = reactCompToRender.codeCopy["react"].toString();
   const ref = useRef<ImperativePanelHandle>(null);
 
   return (
@@ -128,17 +126,22 @@ export default ({
                 </TabsTrigger>
               ))}
             </Tabs.List>
-            {!!codeCopy && selectedFramework === "react" && (
-              <button
-                className="absolute flex items-center justify-center text-sm font-medium duration-200 rounded-md w-7 h-7 top-16 right-6 text-zinc-300 hover:bg-zinc-600"
-                onClick={() => copyCode(codeCopy)}
-              >
+            {tabs.map(
+              (tab, idx) =>
+                tab.value === selectedFramework &&
+                !!reactCompToRender.codeCopy[tab.value] && (
+                  <button
+                    key={idx}
+                    className="absolute flex items-center justify-center text-sm font-medium duration-200 rounded-md w-7 h-7 top-16 right-6 text-zinc-300 hover:bg-zinc-600"
+                    onClick={() => copyCode(reactCompToRender.codeCopy[tab.value])}
+                  >
                 {copied ? (
                   <CheckIcon className="w-5 h-5" />
                 ) : (
                   <Square2StackIcon className="w-5 h-5" />
                 )}
-              </button>
+                  </button>
+                )
             )}
             {tabs.map((tab, idx) => (
               <Tabs.Content
@@ -146,7 +149,7 @@ export default ({
                 className="max-w-[76rem] overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1"
                 value={tab.value}
               >
-                {!!codeCopy && tab.value === "react" ? (
+                {!!reactCompToRender.codeCopy[tab.value] && tab.value === selectedFramework ? (
                   <motion.div
                     className="opacity-0 h-[640px] w-full"
                     animate={{ opacity: 1 }}
@@ -157,7 +160,7 @@ export default ({
                     </Suspense> */}
                     <SyntaxHeighlight
                       code={
-                        codeCopy
+                        reactCompToRender.codeCopy[tab.value]
                         // item.ltr[selectedFramework][fullTech as string][0]?.code
                       }
                     />
