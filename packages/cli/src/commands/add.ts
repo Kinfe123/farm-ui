@@ -122,7 +122,7 @@ export const add = new Command()
         process.exit(0);
       }
       comp_spinner.succeed(
-        `Found a component. Preview here - https://farmui.com/example/${options.id}`
+        `Found the component. Preview here - https://farmui.com/example/${options.id}`
       );
       comp_spinner.stop();
       const select_files_by_id = comp_db.find((x) => x.id === options.id);
@@ -239,6 +239,13 @@ export const add = new Command()
             }
           });
         }
+      }
+      const supported_fm = select_files_by_id.files[0].root.contents[framework];
+      if (!supported_fm) {
+        logger.info(
+          "We have not added the component yet. But you can be the on to add this. hop on https://github.com/Kinfe123/farm-ui"
+        );
+        process.exit(0);
       }
       const root_comp_content =
         select_files_by_id.files[0].root.contents[framework].content;
