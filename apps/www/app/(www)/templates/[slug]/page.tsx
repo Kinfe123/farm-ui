@@ -68,10 +68,10 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
               <Separator className="h-[1px] bg-white/10 my-3" />
 
               <div className="flex  items-center gap-x-2">
-                <del className="text-lg">${del_price.toFixed(2)}</del>
                 <span className="text-xl sm:text-2xl">
                   ${template_mod?.is_free ? `0` : template_mod?.price}
                 </span>
+                <del className="text-lg">${del_price.toFixed(2)}</del>
               </div>
             </div>
           </div>
