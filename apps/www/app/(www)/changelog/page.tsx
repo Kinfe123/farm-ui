@@ -76,7 +76,10 @@ const ChangeLogPage = () => {
             </div>
           </div>
         </section>
+        <div className="h-full">
         <ChangelogDisplay />
+
+        </div>
       </div>
     </div>
   );
