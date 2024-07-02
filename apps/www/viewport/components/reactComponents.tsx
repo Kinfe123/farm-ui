@@ -326,6 +326,172 @@ export default function FUIHeroSectionWithImage() {
       react: `
       \nimport React from \"react\";\n\nexport default function FUIFaqsWithSearchBox() {\n  const faqsList = [\n    {\n      q: \"What are some random questions to ask?\",\n      a: \"That's exactly the reason we created this random question generator. There are hundreds of random questions to choose from so you're able to find the perfect random question.\",\n      href: \"javascript:void(0)\",\n    },\n    {\n      q: \"Do you include common questions?\",\n      a: \"This generator doesn't include most common questions. The thought is that you can come up with common questions on your own so most of the questions in this generator.\",\n      href: \"javascript:void(0)\",\n    },\n    {\n      q: \"Can I use this for 21 questions?\",\n      a: \"Yes! there are two ways that you can use this question generator depending on what you're after. You can indicate that you want 21 questions generated.\",\n      href: \"javascript:void(0)\",\n    },\n    {\n      q: \"Are these questions for girls or for boys?\",\n      a: \"The questions in this generator are gender neutral and can be used to ask either male of females (or any other gender the person identifies with).\",\n      href: \"javascript:void(0)\",\n    },\n    {\n      q: \"What do you wish you had more talent doing?\",\n      a: \"If you've been searching for a way to get random questions, you've landed on the correct webpage. We created the Random Question Generator to ask you as many random questions as your heart desires.\",\n      href: \"javascript:void(0)\",\n    },\n  ];\n\n  return (\n    <section className=\"relative\">\n      <img\n        className=\"absolute inset-x-0 -top-20 opacity-25 \"\n        src={\n          \"https://pipe.com/_next/image?url=%2Fassets%2Fimg%2Fhero-left.png&w=384&q=75\"\n        }\n        width={1000}\n        height={1000}\n        alt=\"back bg\"\n      />\n\n      <div className=\"absolute -z-1 inset-0  h-[600px] w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]\"></div>\n\n      <div className=\"pt-10 max-w-screen-xl mx-auto px-4 md:px-8\">\n        <div className=\"space-y-5 sm:text-left sm:max-w-md sm:mr-auto\">\n          <h3 className=\"text-gray-300 font-geist text-3xl font-extrabold sm:text-4xl\">\n            How can we help?\n          </h3>\n          <p className=\"text-gray-100\">\n            Everything you need to know about the product. Can’t find the answer\n            you’re looking for? feel free to{\" \"}\n            <a\n              className=\"text-cyan-700 font-semibold whitespace-nowrap\"\n              href=\"javascript:void(0)\"\n            >\n              contact us\n            </a>\n            .\n          </p>\n          <form\n            onSubmit={(e) => e.preventDefault()}\n            className=\"mx-auto sm:mx-auto \"\n          >\n            <div className=\"relative\">\n              <Mail className=\"w-6 h-6 text-gray-500 absolute left-3 inset-y-0 my-auto\" />\n              <input\n                type=\"text\"\n                placeholder=\"Enter your email\"\n                className=\"w-full pl-12 pr-3 py-2 text-gray-200 bg-transparent outline-none border focus:border-cyan-600 shadow-sm rounded-lg\"\n              />\n            </div>\n          </form>\n        </div>\n        <Separator className=\"h-[1px] bg-white/10 mt-4\" />\n        <div className=\"mt-12\">\n          <ul className=\"space-y-8 gap-12 grid-cols-2 sm:grid sm:space-y-0 lg:grid-cols-3\">\n            {faqsList.map((item, idx) => (\n              <li key={idx} className=\"space-y-3\">\n                <summary className=\"flex items-center justify-between font-semibold text-gray-500\">\n                  {item.q}\n                </summary>\n                <p\n                  dangerouslySetInnerHTML={{ __html: item.a }}\n                  className=\"text-gray-200 leading-relaxed\"\n                ></p>\n                <a\n                  href={item.href}\n                  className=\"flex items-center gap-x-1 text-sm text-cyan-600 hover:text-cyan-400 duration-150 font-medium\"\n                >\n                  Read more\n                  <svg\n                    xmlns=\"http://www.w3.org/2000/svg\"\n                    viewBox=\"0 0 20 20\"\n                    fill=\"currentColor\"\n                    className=\"w-5 h-5\"\n                  >\n                    <path\n                      fillRule=\"evenodd\"\n                      d=\"M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z\"\n                      clipRule=\"evenodd\"\n                    />\n                  </svg>\n                </a>\n              </li>\n            ))}\n          </ul>\n        </div>\n      </div>\n    </section>\n  );\n}\n\n
             `,
+      html: `<body class="bg-gray-900 text-gray-100">
+  <section class="relative">
+    <img
+      class="absolute inset-x-0 -top-20 opacity-25 -z-10 w-full h-full"
+      src="https://pipe.com/_next/image?url=%2Fassets%2Fimg%2Fhero-left.png&w=384&q=75"
+      alt="back bg"
+    />
+
+    <div
+      class="absolute -z-10 inset-0 h-[600px] w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"
+    ></div>
+
+    <div class="pt-10 max-w-screen-xl mx-auto px-4 md:px-8">
+      <div class="space-y-5 sm:text-left sm:max-w-md sm:mr-auto">
+        <h3 class="text-gray-300 font-geist text-3xl font-extrabold sm:text-4xl">How can we help?</h3>
+        <p class="text-gray-100">
+          Everything you need to know about the product. Can’t find the answer you’re looking for? feel free to
+          <a href="javascript:void(0)" class="text-cyan-700 font-semibold whitespace-nowrap hover:text-cyan-400">
+            contact us
+          </a>
+          .
+        </p>
+        <form class="mx-auto sm:mx-auto" onsubmit="event.preventDefault()">
+          <div class="relative">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-mail absolute inset-y-0 w-6 h-6 my-auto text-gray-500 left-3"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <input
+              type="text"
+              placeholder="Enter your email"
+              class="w-full pl-12 pr-3 py-2 text-gray-200 bg-transparent outline-none border border-[#6b7280] focus:border-cyan-600 focus:ring-1 shadow-sm rounded-lg"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="h-[1px] bg-white/10 mt-4"></div>
+      <div class="mt-12">
+        <ul class="space-y-8 gap-12 grid-cols-2 sm:grid sm:space-y-0 lg:grid-cols-3">
+          <li class="space-y-3">
+            <summary class="flex items-center justify-between font-semibold text-gray-500">
+              What are some random questions to ask?
+            </summary>
+            <p class="text-gray-200 leading-relaxed">
+              That's exactly the reason we created this random question generator. There are hundreds of random
+              questions to choose from so you're able to find the perfect random question.
+            </p>
+            <a
+              href="javascript:void(0)"
+              class="flex items-center gap-x-1 text-sm text-cyan-600 hover:text-cyan-400 duration-150 font-medium"
+            >
+              Read more
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="space-y-3">
+            <summary class="flex items-center justify-between font-semibold text-gray-500">
+              Do you include common questions?
+            </summary>
+            <p class="text-gray-200 leading-relaxed">
+              This generator doesn't include most common questions. The thought is that you can come up with common
+              questions on your own so most of the questions in this generator.
+            </p>
+            <a
+              href="javascript:void(0)"
+              class="flex items-center gap-x-1 text-sm text-cyan-600 hover:text-cyan-400 duration-150 font-medium"
+            >
+              Read more
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="space-y-3">
+            <summary class="flex items-center justify-between font-semibold text-gray-500">
+              Can I use this for 21 questions?
+            </summary>
+            <p class="text-gray-200 leading-relaxed">
+              Yes! there are two ways that you can use this question generator depending on what you're after. You can
+              indicate that you want 21 questions generated..
+            </p>
+            <a
+              href="javascript:void(0)"
+              class="flex items-center gap-x-1 text-sm text-cyan-600 hover:text-cyan-400 duration-150 font-medium"
+            >
+              Read more
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="space-y-3">
+            <summary class="flex items-center justify-between font-semibold text-gray-500">
+              Are these questions for girls or for boys?
+            </summary>
+            <p class="text-gray-200 leading-relaxed">
+              The questions in this generator are gender neutral and can be used to ask either male of females (or any
+              other gender the person identifies with).
+            </p>
+            <a
+              href="javascript:void(0)"
+              class="flex items-center gap-x-1 text-sm text-cyan-600 hover:text-cyan-400 duration-150 font-medium"
+            >
+              Read more
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="space-y-3">
+            <summary class="flex items-center justify-between font-semibold text-gray-500">
+              What do you wish you had more talent doing?
+            </summary>
+            <p class="text-gray-200 leading-relaxed">
+              If you've been searching for a way to get random questions, you've landed on the correct webpage. We
+              created the Random Question Generator to ask you as many random questions as your heart desires.
+            </p>
+            <a
+              href="javascript:void(0)"
+              class="flex items-center gap-x-1 text-sm text-cyan-600 hover:text-cyan-400 duration-150 font-medium"
+            >
+              Read more
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path
+                  fill-rule="evenodd"
+                  d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+`,
     },
   },
   "farmui-faq-01": {
