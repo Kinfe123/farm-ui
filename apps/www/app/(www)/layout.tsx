@@ -3,8 +3,7 @@ import Footer from "components/ui/Footer";
 import Image from "next/image";
 import bgback from "/public/bg-back.png";
 import { Toaster } from "@/components/ui/toaster";
-
-
+import SmoothScrolling from "components/SmoothScrolling/SmoothScrolling";
 
 export default function RootLayout({
   children,
@@ -12,8 +11,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-  
+    <SmoothScrolling>
       <Image
         className="absolute top-0 z-20 translate-x-0 -translate-y-1/2 md:translate-x-1/3 lg:translate-x-1/2 opacity-80  "
         src={bgback}
@@ -33,6 +31,6 @@ export default function RootLayout({
       <Toaster />
       <main>{children}</main>
       <Footer />
-    </>
+    </SmoothScrolling>
   );
 }
