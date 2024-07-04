@@ -23,7 +23,7 @@ import {
   EllipsisHorizontalIcon,
   PlusSmallIcon,
 } from '@heroicons/react/20/solid'
-import { Bell , X } from 'lucide-react'
+import { Bell , X , DollarSign } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const navigation = [
@@ -157,7 +157,7 @@ export default function FUIDashboardSells() {
               <span className="sr-only">Your profile</span>
               <img
                 className="h-8 w-8 rounded-full bg-gray-800"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                src="https://github.com/shadcn.png"
                 alt=""
               />
             </a>
@@ -184,14 +184,14 @@ export default function FUIDashboardSells() {
                 className="ml-auto flex items-center gap-x-1 rounded-md bg-purple-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
               >
                 <PlusSmallIcon className="-ml-1.5 h-5 w-5" aria-hidden="true" />
-                New invoice
+                Add New Count
               </a>
             </div>
           </header>
 
           {/* Stats */}
-          <div className="border-b border-b-gray-300/10 lg:border-t lg:border-t-gray-300/5">
-            <dl className="mx-auto grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:px-2 xl:px-0">
+          <div className="border-b border-b-gray-300/10 lg:border-t lg:border-t-gray-300/5 bg-page-gradient bg-opacity-10">
+            <dl className="mx-auto relative group grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:px-2 xl:px-0">
               {stats.map((stat, statIdx) => (
                 <div
                   key={stat.name}
@@ -199,7 +199,9 @@ export default function FUIDashboardSells() {
                     statIdx % 2 === 1 ? 'sm:border-l' : statIdx === 2 ? 'lg:border-l' : '',
                     'flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 border-t border-gray-300/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8',
                   )}
+                  
                 >
+                  <DollarSign className='text-white/10 -z-10  group-hover:opacity-100  group-hover:rotate-3 opacity-50 transform transition-opacity duration-300 absolute bottom-[-35px] w-36 h-36 font-thin  right-[-30px]'  />
                   <dt className="text-sm font-medium leading-6 text-gray-500">{stat.name}</dt>
                   <dd
                     className={cn(
@@ -222,7 +224,7 @@ export default function FUIDashboardSells() {
             aria-hidden="true"
           >
             <div
-              className="aspect-[1154/678] w-[72.125rem] bg-gradient-to-br from-[#FF80B5] to-[#9089FC]"
+              className="aspect-[1154/678] w-[72.125rem] opacity-50 bg-gradient-to-br from-[#FF80B5] to-[#9089FC]"
               style={{
                 clipPath:
                   'polygon(100% 38.5%, 82.6% 100%, 60.2% 37.7%, 52.4% 32.1%, 47.5% 41.8%, 45.2% 65.6%, 27.5% 23.4%, 0.1% 35.3%, 17.9% 0%, 27.7% 23.4%, 76.2% 2.5%, 74.2% 56%, 100% 38.5%)',
@@ -334,7 +336,7 @@ export default function FUIDashboardSells() {
               <ul role="list" className="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3 xl:gap-x-8">
                 {clients.map((client) => (
                   <li key={client.id} className="overflow-hidden rounded-xl border border-white/10">
-                    <div className="flex items-center gap-x-4 border-b border-white/5 bg-transparent  p-6">
+                    <div className="flex items-center gap-x-4 border-b border-white/5 bg-glass-gradient  p-6">
                       <img
                         src={client.imageUrl}
                         alt={client.name}
@@ -347,13 +349,13 @@ export default function FUIDashboardSells() {
                           <EllipsisHorizontalIcon className="h-5 w-5" aria-hidden="true" />
                         </DropdownMenuTrigger>
                         <DropdownMenuContent
-                          className="absolute right-0 z-10 mt-0.5 w-32 origin-top-right rounded-md  py-2 shadow-lg ring-1 ring-gray-300/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                          className="absolute right-0 z-10 mt-0.5 w-32 bg-black origin-top-right rounded-md  py-2 shadow-lg ring-1 ring-gray-300/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                         >
                           <DropdownMenuItem>
                               <a
                                 href="#"
                                 className={cn(
-                                  'block px-3 py-1 text-sm leading-6 text-gray-300',
+                                  'block  text-sm leading-6 text-gray-300',
                                 )}
                               >
                                 View<span className="sr-only">, {client.name}</span>
@@ -363,7 +365,7 @@ export default function FUIDashboardSells() {
                               <a
                                 href="#"
                                 className={cn(
-                                  'block px-3 py-1 text-sm leading-6 text-gray-300',
+                                  'block  text-sm leading-6 text-gray-300',
                                 )}
                               >
                                 Edit<span className="sr-only">, {client.name}</span>
