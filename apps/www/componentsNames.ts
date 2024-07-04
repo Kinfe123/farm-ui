@@ -44,6 +44,8 @@ import FUIDarkFooter from "./previewsComponents/FUIDarkFooter.jsx";
       
 import FUIPrimaryFaqs from "./previewsComponents/FUIPrimaryFaqs.jsx";
       
+import FUIDashboardSells from "previewsComponents/FUIDashbaordSells.tsx";
+
 import FUISidebarWithListOfLessons from "./previewsComponents/FUISidebarWithListOfLessons.jsx";
       
 import FUINewsletterStacked from "./previewsComponents/FUINewsletterStacked.jsx";
