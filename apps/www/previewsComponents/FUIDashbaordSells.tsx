@@ -190,7 +190,7 @@ export default function FUIDashboardSells() {
           </header>
 
           {/* Stats */}
-          <div className="border-b border-b-gray-300/10 lg:border-t lg:border-t-gray-300/5 bg-page-gradient bg-opacity-10">
+          <div className="border-b  border-b-gray-300/10 lg:border-t lg:border-t-gray-300/5 bg-page-gradient bg-opacity-10">
             <dl className="mx-auto  grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:px-2 xl:px-0">
               {stats.map((stat, statIdx) => (
                 <div
@@ -233,7 +233,7 @@ export default function FUIDashboardSells() {
           </div>
         </div>
 
-        <div className="space-y-16 py-16 xl:space-y-20">
+        <div className="space-y-16 py-16  max-w-7xl mx-auto xl:space-y-20">
           {/* Recent activity table */}
           <div>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
