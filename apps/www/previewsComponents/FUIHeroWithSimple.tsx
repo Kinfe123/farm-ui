@@ -75,10 +75,11 @@ const FUIHeroWithGridSimple = () => {
           </HeroAnimated>
           <div className="flex flex-wrap gap-x-3 gap-y-4 justify-start items-start mr-auto ml-2">
             <LinkItem
-              href="/components"
+              href="https://farmui.com/templates/spotter"
+              target="_blank"
               className="inline-flex justify-center items-center py-4 px-10 w-full font-mono text-center uppercase bg-gradient-to-tr to-transparent rounded-none transition-colors sm:w-auto group from-zinc-300/5 via-gray-400/5 bg-zinc-900 border-input border-[1px] hover:bg-transparent/10"
             >
-              Browser Components
+              Buy the full template
               <ChevronRight className="ml-2 w-4 h-4 duration-300 group-hover:translate-x-1" />
             </LinkItem>
             <LinkItem

@@ -8,6 +8,8 @@ import FUIHeroSectionWithBottomImage from "previewsComponents/FUIHeroSectionWith
 import FUIHeroSectionWithImage from "previewsComponents/FUIHeroSectionWithImage";
 import FUIHeroSectionWithLogoClouds from "previewsComponents/FUIHeroSectionWithLogoClouds";
 import FUIHeroWithGrid from "previewsComponents/FUIHeroWithGrid";
+import FUIHeroWithJelly from "previewsComponents/FUIHeroWithJelly";
+import FUIDarkHeroSectionWithScrolls from "previewsComponents/FUIHeroWithScrolls";
 import FUIHeroWithGridSimple from "previewsComponents/FUIHeroWithSimple";
 import FUIHeroWithSlayBackground from "previewsComponents/FUIHeroWithSlayBackground";
 import FUILoginWithCardLayout from "previewsComponents/FUILoginWithCardLayout.tsx";
@@ -315,6 +317,207 @@ export default function FUIHeroSectionWithImage() {
     codeCopy: {
       react: `
       \nimport LinkItem from \"components/ui/LinkItem\";\nimport { IconGithub } from \"components/icons\";\nimport { ChevronRight } from \"lucide-react\";\nimport HeroAnimated from \"components/HeroAnimated\";\nimport BgGradient from \"components/ui/BgGradient\";\nconst FUIHeroWithGridSimple = () => {\n  return (\n    <>\n      <section className=\"min-h-[800px] w-full  mt-0 relative\">\n        <div className=\"absolute -top-0 inset-x-0 opacity-45\">\n          <BgGradient />\n        </div>\n\n        <svg\n          className=\"absolute inset-0 z-1 h-full w-full  stroke-white/5 [mask-image:radial-gradient(100%_100%_at_top_left  ,white,transparent)]\"\n          aria-hidden=\"true\"\n        >\n          <defs>\n            <pattern\n              id=\"983e3e4c-de6d-4c3f-8d64-b9761d1534cc\"\n              width={200}\n              height={200}\n              x=\"50%\"\n              y={-1}\n              patternUnits=\"userSpaceOnUse\"\n            >\n              <path d=\"M.5 200V.5H200\" fill=\"none\" />\n            </pattern>\n          </defs>\n          <svg x=\"50%\" y={-1} className=\"overflow-visible fill-gray-800/20\">\n            <path\n              d=\"M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z\"\n              strokeWidth={0}\n            />\n          </svg>\n          <rect\n            width=\"100%\"\n            height=\"100%\"\n            strokeWidth={0}\n            fill=\"url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)\"\n          />\n        </svg>\n        <div\n          className=\"absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]\"\n          aria-hidden=\"true\"\n        >\n          <div\n            className=\"aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#9c80ff] to-[#e546d5] opacity-20\"\n            style={{\n              clipPath:\n                \"polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)\",\n            }}\n          />\n        </div>\n        {/* <div className=\"absolute -z-1 inset-0 opacity-15  h-[600px] w-full bg-transparent  bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]\"></div> */}\n\n        <div className=\"relative z-10 max-w-4xl ml-5 md:ml-10  translate-y-[33%]  mr-auto  space-y-4\">\n          <h1 className=\"text-sm  text-gray-400 group font-geist mr-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit\">\n            <pre className=\"tracking-tight uppercase\">\n              Build products for everyone\n              <ChevronRight className=\"inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300\" />\n            </pre>\n          </h1>\n          <HeroAnimated\n            header=\"Take shadcn to the next level for modern web dev experience.\"\n            headerClassName=\"ml-2 text-left tracking-tight max-w-md md:max-w-3xl text-3xl md:text-4xl tracking-tighter mr-auto lg:text-6xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1\"\n            description=\"\"\n            descriptionClassName=\"  \"\n          >\n            <div className=\"mr-auto text-[0.84rem] ml-2 text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-5\">\n              <pre className=\"tracking-tight uppercase max-w-md md:max-w-3xl text-wrap\">\n                Move faster with beautiful responsive UI components and website\n                templates with modern design, 100% free and open-source.\n              </pre>\n            </div>\n          </HeroAnimated>\n            <div className=\"mr-auto ml-2  flex flex-wrap gap-y-4 items-start justify-start gap-x-3\">\n              <LinkItem\n                href=\"/components\"\n                className=\"inline-flex rounded-none uppercase font-mono  text-center group items-center w-full justify-center  bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-zinc-900  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10\"\n              >\n                Browser Components\n                <ChevronRight className=\"w-4 h-4 ml-2 group-hover:translate-x-1 duration-300\" />\n              </LinkItem>\n              <LinkItem\n                href=\"https://github.com/Kinfe123/farm-ui\"\n                variant=\"shiny\"\n                className=\"inline-flex font-mono uppercase tracking-tight rounded-none w-full justify-center items-center gap-x-3 border border-zinc-800 hover:border-zinc-600 bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10\"\n                target=\"_blank\"\n              >\n                <IconGithub className=\"w-5 h-5 \" />\n                Star on GitHub\n              </LinkItem>\n            </div>\n        </div>\n      </section>\n    </>\n  );\n};\nexport default FUIHeroWithGridSimple;\n\n
+      
+      `,
+    },
+  },
+  "farmui-hero-07": {
+    component: <FUIHeroWithJelly />,
+    description: "Hero Section With Simple and Aligned",
+    path: "previewsComponents/FUIHeroWithJelly",
+    codeCopy: {
+      react: `
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function FUIHeroWithJelly() {
+  return (
+    <section className="relative dark:text-white">
+      <div className="px-4 mx-auto sm:px-6 md:px-0">
+        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+          <div className="pb-12 text-center md:pb-16">
+            <h1
+              className="mb-6 border-y dark:border-none text-5xl max-w-3xl mx-auto font-normal tracking-tighter [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.),transparent)1] md:text-6xl"
+              data-aos="zoom-y-out"
+              data-aos-delay={150}
+            >
+              Manage your sales and analytics in one place.
+              <br className="max-lg:hidden" />
+              looking for
+            </h1>
+            <div className="relative mx-auto max-w-3xl">
+              <p
+                className="mb-8 text-lg text-gray-700"
+                data-aos="zoom-y-out"
+                data-aos-delay={300}
+              >
+                Simple is a modern website builder powered by AI that changes
+                how companies create user interfaces together.
+              </p>
+              <div
+                className="absolute left-0 top-0 h-80 w-[90%] opacity-60 overflow-x-hidden bg-[rgb(54,157,253)] bg-opacity-40 blur-[337.4px]"
+                style={{ transform: "rotate(-30deg)" }}
+              />
+              <div className="relative before:absolute before:inset-0 before:border-y dark:before:border-none before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]">
+                <div
+                  className="mx-auto z-20 max-w-xs mt-[-20px] mb-[20px] sm:flex sm:justify-center items-center sm:max-w-none gap-5"
+                  data-aos="zoom-y-out"
+                  data-aos-delay={450}
+                >
+                  <Link
+                    href="https://farmui.com/templates/ease"
+                    className="group inline-flex text-lg gap-x-2 mt-2 backdrop-blur-md text-white justify-center items-center py-3 px-5 ml-3 w-fit rounded-xl border duration-200 group bg-page-gradient border-white/30 text-md font-geistSans hover:border-zinc-600 hover:bg-transparent/10 hover:text-zinc-100"
+                  >
+                    Buy this template
+                    <div className="flex overflow-hidden relative justify-center items-center ml-1 w-5 h-5">
+                      <ArrowUpRight className="absolute transition-all duration-500 group-hover:translate-x-4 group-hover:-translate-y-5" />
+                      <ArrowUpRight className="absolute transition-all duration-500 -translate-x-4 -translate-y-5 group-hover:translate-x-0 group-hover:translate-y-0" />
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Hero image */}
+
+          <div className="relative">
+            <div className="absolute top-0 right-0 left-0 mx-auto mt-12 max-w-6xl border-white/10">
+              <img
+                src="https://framerusercontent.com/images/jvlcne0ABTxg7RFwM1Ra0R1p47E.png?scale-down-to=1024"
+                className="w-full rounded-3xl shadow-lg border-white/10"
+                alt=""
+              />
+            </div>
+          </div>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            src="https://ease-one.vercel.app/bg/something.mp4"
+            className="overflow-hidden w-screen mt-[-100px]"
+          />
+          <div
+            className="mx-auto max-w-3xl"
+            data-aos="zoom-y-out"
+            data-aos-delay={600}
+          ></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+      
+      `,
+    },
+  },
+  "farmui-hero-08": {
+    component: <FUIDarkHeroSectionWithScrolls />,
+    description: "Hero Section With Simple and Aligned",
+    path: "previewsComponents/FUIDarkHeroSectionWithScrolls",
+    codeCopy: {
+      react: `
+      "use client";
+
+import React, { useRef } from "react";
+import clsx from "clsx";
+import { MarqueeDemoVertical } from "components/Scrolls";
+import GradualSpacing from "components/GradualSpacing";
+import { useInView } from "framer-motion";
+import {
+  TopLeftShiningLight,
+  TopRightShiningLight,
+} from "components/Svgs/ShinyLighs";
+
+export default function FUIDarkHeroSectionWithScrolls() {
+  const navigation = [
+    { title: "Customers", path: "javascript:void(0)" },
+    { title: "Careers", path: "javascript:void(0)" },
+  ];
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  return (
+    <div className="relative px-10 mt-10 w-full min-h-full">
+      <TopRightShiningLight />
+      <TopLeftShiningLight />
+      <div className="absolute -z-1 inset-0  h-[600px] w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+      <div className="justify-between md:flex">
+        <Container className="relative py-20 ml-auto sm:pt-36 sm:pb-24">
+          <div ref={ref} className="mx-auto max-w-2xl lg:px-12 lg:max-w-4xl">
+            <GradualSpacing
+              textClassName="justify-start"
+              visiblity={isInView}
+              className="max-w-2xl text-5xl font-normal tracking-tighter text-transparent text-white sm:text-7xl font-geist"
+              text={"A design conference"}
+            />
+            <GradualSpacing
+              textClassName="justify-start"
+              visiblity={isInView}
+              className="max-w-2xl text-5xl font-normal tracking-tighter text-transparent text-white sm:text-7xl font-geist"
+              text={"for a dark side"}
+            />
+
+            <div className="mt-6 space-y-6 tracking-tight text-gray-500 sm:text-xl font-geist text-md">
+              <p>
+                The next generation of web users are tech-savvy and suspicious.
+                They know how to use dev tools, they can detect a phishing scam
+                from a mile away, and they certainly aren’t accepting any checks
+                from Western Union.
+              </p>
+              <p>
+                At DeceptiConf you’ll learn about the latest dark patterns being
+                developed to trick even the smartest visitors, and you’ll learn
+                how to deploy them without ever being detected.
+              </p>
+            </div>
+            <button className="flex gap-2 justify-center items-center py-2 px-10 mt-5 text-lg tracking-tighter text-center bg-gradient-to-br rounded-md ring-2 ring-offset-2 transition-all hover:ring-transparent group/button w-fit from-zinc-100 to-zinc-300 font-geist text-md text-zinc-900 ring-zinc-500/80 ring-offset-zinc-950 hover:scale-[1.02] active:scale-[0.98] active:ring-zinc-500/70">
+              Get Started
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 opacity-0 group-hover/button:[animation-delay:.2s] group-hover/button:animate-shineButton rounded-[inherit] bg-[length:200%_100%] bg-[linear-gradient(110deg,transparent,35%,rgba(255,255,255,.7),75%,transparent)]"
+              />
+            </button>
+
+            <dl className="grid grid-cols-2 gap-y-6 gap-x-10 mt-10 sm:gap-y-10 sm:gap-x-16 sm:mt-16 sm:text-center lg:grid-cols-none lg:grid-flow-col lg:auto-cols-auto lg:justify-start lg:text-left">
+              {[
+                ["Speakers", "18"],
+                ["People Attending", "2,091"],
+                ["Venue", "Staples Center"],
+                ["Location", "Los Angeles"],
+              ].map(([name, value]) => (
+                <div key={name}>
+                  <dt className="font-mono text-sm text-gray-300">{name}</dt>
+                  <dd className="mt-0.5 text-2xl font-normal tracking-tight text-gray-300 font-geist">
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </Container>
+        <div className="hidden mr-auto md:block md:w-1/2">
+          <MarqueeDemoVertical />
+        </div>
+      </div>
+      <div className="absolute right-0 bottom-0 left-0 mx-auto opacity-20">
+      </div>
+    </div>
+  );
+}
+
+export function Container({
+  className,
+  ...props
+}: React.ComponentPropsWithoutRef<"div">) {
+  return (
+    <div
+      className={clsx("mx-auto max-w-7xl px-4 sm:px-6 lg:px-8", className)}
+      {...props}
+    />
+  );
+} 
       
       `,
     },

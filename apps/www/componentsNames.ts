@@ -71,7 +71,11 @@ import FUICtaWithLinkOnTheSide from "./previewsComponents/FUICtaWithLinkOnTheSid
 import FUITestimonialGrid from "./previewsComponents/FUITestimonialGrid.jsx";
 
 import FUIHeroWithSlayBackground from "previewsComponents/FUIHeroWithSlayBackground.tsx";
-      
+     
+import FUIHeroWithJelly from "previewsComponents/FUIHeroWithJelly.tsx";
+
+import FUIDarkHeroSectionWithScrolls from "previewsComponents/FUIHeroWithScrolls.tsx";
+
 import FUIFeatureSectionWithCards from "./previewsComponents/FUIFeatureSectionWithCards.jsx";
       
 import FUIDividedFeatureSection from "./previewsComponents/FUIDividedFeatureSection.jsx";

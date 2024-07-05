@@ -8,6 +8,7 @@ import { allTemplates } from "contentlayer/generated";
 import { Mdx } from "components/MdxComponent";
 import { ImageSlider } from "components/ui/TemplateCard/ImageCarousel";
 import { Separator } from "@/components/ui/separator";
+import { ArrowLeft } from "lucide-react";
 
 type Params = {
   slug: string;
@@ -56,8 +57,12 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
   return (
     <>
       <section className="mt-48 custom-screen-lg mx-auto">
-        <div className="max-w-full md:max-w-3xl mx-auto lg:max-w-4xl">
-          <div className="text-zinc-50 mr-auto text-left">
+        
+        <div className="relative max-w-full md:max-w-3xl mx-auto lg:max-w-4xl z-30">
+        <a href="/templates" className="m">  
+          <ArrowLeft className="w-5 h-5 cursor-pointer ny-5 text-white/40 border border-white/40 rounded-full" />
+        </a>
+          <div className="text-zinc-50 mr-auto text-left mt-3">
             <h1 className="text-4xl font-geist md:text-6xl tracking-tighter">
               {template_mod?.title}
             </h1>
