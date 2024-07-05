@@ -1124,10 +1124,409 @@ export function Container({
     description: "Dashboard page With Sells and Client ",
     path: "previewsComponents/FUIDashboardSells",
     codeCopy: {
-      react: `\nimport React from \"react\";\nexport default function FUIPricingSectionWithOnePlan() {\n  const plan = {\n    name: \"Basic plan\",\n    desc: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\",\n    price: 32,\n    isMostPop: true,\n    features: [\n      \"Curabitur faucibus\",\n      \"Curabitur faucibus\",\n      \"Curabitur faucibus\",\n      \"Curabitur faucibus\",\n      \"Curabitur faucibus\",\n      \"Curabitur faucibus\",\n      \"Curabitur faucibus\",\n      \"Curabitur faucibus\",\n    ],\n  };\n\n  const features = [\n    {\n      name: \"Scalable\",\n      desc: \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\",\n      icon: (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          strokeWidth={1.5}\n          stroke=\"currentColor\"\n          className=\"w-6 h-6\"\n        >\n          <path\n            strokeLinecap=\"round\"\n            strokeLinejoin=\"round\"\n            d=\"M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15\"\n          />\n        </svg>\n      ),\n    },\n    {\n      name: \"Flexible\",\n      desc: \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\",\n      icon: (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          strokeWidth={1.5}\n          stroke=\"currentColor\"\n          className=\"w-6 h-6\"\n        >\n          <path\n            strokeLinecap=\"round\"\n            strokeLinejoin=\"round\"\n            d=\"M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3\"\n          />\n        </svg>\n      ),\n    },\n    {\n      name: \"Smooth\",\n      desc: \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\",\n      icon: (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          strokeWidth={1.5}\n          stroke=\"currentColor\"\n          className=\"w-6 h-6\"\n        >\n          <path\n            strokeLinecap=\"round\"\n            strokeLinejoin=\"round\"\n            d=\"M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z\"\n          />\n        </svg>\n      ),\n    },\n    {\n      name: \"Secure\",\n      desc: \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text\",\n      icon: (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          strokeWidth={1.5}\n          stroke=\"currentColor\"\n          className=\"w-6 h-6\"\n        >\n          <path\n            strokeLinecap=\"round\"\n            strokeLinejoin=\"round\"\n            d=\"M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z\"\n          />\n        </svg>\n      ),\n    },\n  ];\n\n  return (\n    <section className=\"relative py-14\">\n      <div className=\"absolute top-0 z-[0] h-screen w-screen bg-purple-950/10 bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]\"></div>\n\n      <div className=\"max-w-screen-xl mx-auto text-gray-400 md:px-8\">\n        <div className=\"relative max-w-xl space-y-3 px-4 md:px-0\">\n          <h3 className=\"text-purple-600 font-semibold\">Pricing</h3>\n          <p className=\"mt-2 text-4xl font-geist text-white/90 font-normal  tracking-tighter  sm:text-5xl\">\n            The right price for you{\" \"}\n            <br className=\"hidden sm:inline lg:hidden\" />\n            whoever you are\n          </p>\n          <div className=\"max-w-xl\">\n            <p>\n              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam\n              efficitur consequat nunc.\n            </p>\n          </div>\n        </div>\n        <div className=\"mt-16 justify-between gap-8 md:flex\">\n          <ul className=\"flex-1 max-w-md space-y-10 px-4 md:px-0\">\n            {features.map((item, idx) => (\n              <li key={idx} className=\"flex gap-x-3\">\n                <div className=\"flex-none w-12 h-12 rounded-full  bg-transparent dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  text-purple-600 flex items-center justify-center\">\n                  {item.icon}\n                </div>\n                <div>\n                  <h4 className=\"text-lg text-gray-100  font-normal tracking-tight font-geist\">\n                    {item.name}\n                  </h4>\n                  <p className=\"text-gray-400 mt-2 md:text-sm\">{item.desc}</p>\n                </div>\n              </li>\n            ))}\n          </ul>\n          <div className=\"flex-1 flex flex-col border-y mt-6 md:max-w-xl md:rounded-xl md:border md:border-x-none md:shadow-lg md:mt-0 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]\">\n            <div className=\"p-4 py-8 border-b md:p-8\">\n              <div className=\"justify-between flex\">\n                <div className=\"max-w-xs\">\n                  <span className=\"text-2xl text-gray-100  font-semibold font-geist tracking-tighter sm:text-3xl\">\n                    {plan.name}\n                  </span>\n                  <p className=\"mt-3 sm:text-sm\">{plan.desc}</p>\n                </div>\n                <div className=\"flex-none text-gray-100  text-2xl font-semibold font-geist sm:text-3xl\">\n                  \${plan.price}{\" \"}\n                  <span className=\"text-xl text-gray-400 font-normal\">/mo</span>\n                </div>\n              </div>\n              <button className=\"mt-4 w-full font-geist tracking-tighter text-center rounded-md text-md bg-gradient-to-br from-purple-400 to-purple-700 px-4 py-2 text-lg text-zinc-50 ring-2 ring-purple-500/50 ring-offset-2 ring-offset-zinc-950 transition-all hover:scale-[1.02] hover:ring-transparent active:scale-[0.98] active:ring-purple-500/70 flex items-center justify-center gap-2\">\n                Get Started\n              </button>\n            </div>\n            <ul className=\"p-4 space-y-3 sm:grid sm:grid-cols-2 md:block md:p-8 lg:grid\">\n              <div className=\"pb-2 col-span-2 text-gray-100  font-medium\">\n                <p>Features</p>\n              </div>\n              {plan.features.map((featureItem, idx) => (\n                <li key={idx} className=\"flex items-center gap-5\">\n                  <svg\n                    xmlns=\"http://www.w3.org/2000/svg\"\n                    className=\"h-5 w-5 text-purple-600\"\n                    viewBox=\"0 0 20 20\"\n                    fill=\"currentColor\"\n                  >\n                    <path\n                      fill-rule=\"evenodd\"\n                      d=\"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z\"\n                      clip-rule=\"evenodd\"\n                    ></path>\n                  </svg>\n                  {featureItem}\n                </li>\n              ))}\n            </ul>\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n}\n        \n\n\n\n
-            
-            `,
+      react: `
+      'use client'
+import { Fragment, useState } from 'react'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+import {
+  ArrowDownCircleIcon,
+  ArrowPathIcon,
+  ArrowUpCircleIcon,
+  Bars3Icon,
+  EllipsisHorizontalIcon,
+  PlusSmallIcon,
+} from '@heroicons/react/20/solid'
+import { Bell , X , DollarSign } from 'lucide-react'
+import { cn } from '@/lib/utils'
+
+const navigation = [
+  { name: 'Home', href: '#' },
+  { name: 'Invoices', href: '#' },
+  { name: 'Clients', href: '#' },
+  { name: 'Expenses', href: '#' },
+]
+const secondaryNavigation = [
+  { name: 'Last 7 days', href: '#', current: true },
+  { name: 'Last 30 days', href: '#', current: false },
+  { name: 'All-time', href: '#', current: false },
+]
+const stats = [
+  { name: 'Revenue', value: '$405,091.00', change: '+4.75%', changeType: 'positive' },
+  { name: 'Overdue invoices', value: '$12,787.00', change: '+54.02%', changeType: 'negative' },
+  { name: 'Outstanding invoices', value: '$245,988.00', change: '-1.39%', changeType: 'positive' },
+  { name: 'Expenses', value: '$30,156.00', change: '+10.18%', changeType: 'negative' },
+]
+type StatusType = {
+  [key: string]: string
+}
+const statuses: StatusType = {
+  'Paid': 'text-green-700 bg-green-50 ring-green-600/20',
+  'Withdraw': 'text-gray-600 bg-transparent  ring-gray-500/10',
+  'Overdue': 'text-red-700 bg-red-50 ring-red-600/10',
+}
+const days = [
+  {
+    date: 'Today',
+    dateTime: '2023-03-22',
+    transactions: [
+      {
+        id: 1,
+        invoiceNumber: '00012',
+        href: '#',
+        amount: '$7,600.00 USD',
+        tax: '$500.00',
+        status: 'Paid',
+        client: 'Reform',
+        description: 'Website redesign',
+        icon: ArrowUpCircleIcon,
+      },
+      {
+        id: 2,
+        invoiceNumber: '00011',
+        href: '#',
+        amount: '$10,000.00 USD',
+        status: 'Withdraw',
+        client: 'Tom Cook',
+        description: 'Salary',
+        icon: ArrowDownCircleIcon,
+      },
+      {
+        id: 3,
+        invoiceNumber: '00009',
+        href: '#',
+        amount: '$2,000.00 USD',
+        tax: '$130.00',
+        status: 'Overdue',
+        client: 'Tuple',
+        description: 'Logo design',
+        icon: ArrowPathIcon,
+      },
+    ],
+  },
+  {
+    date: 'Yesterday',
+    dateTime: '2023-03-21',
+    transactions: [
+      {
+        id: 4,
+        invoiceNumber: '00010',
+        href: '#',
+        amount: '$14,000.00 USD',
+        tax: '$900.00',
+        status: 'Paid',
+        client: 'SavvyCal',
+        description: 'Website redesign',
+        icon: ArrowUpCircleIcon,
+      },
+    ],
+  },
+]
+const clients = [
+  {
+    id: 1,
+    name: 'Tuple',
+    imageUrl: 'https://tailwindui.com/img/logos/48x48/tuple.svg',
+    lastInvoice: { date: 'December 13, 2022', dateTime: '2022-12-13', amount: '$2,000.00', status: 'Overdue' },
+  },
+  {
+    id: 2,
+    name: 'SavvyCal',
+    imageUrl: 'https://tailwindui.com/img/logos/48x48/savvycal.svg',
+    lastInvoice: { date: 'January 22, 2023', dateTime: '2023-01-22', amount: '$14,000.00', status: 'Paid' },
+  },
+  {
+    id: 3,
+    name: 'Reform',
+    imageUrl: 'https://tailwindui.com/img/logos/48x48/reform.svg',
+    lastInvoice: { date: 'January 23, 2023', dateTime: '2023-01-23', amount: '$7,600.00', status: 'Paid' },
+  },
+]
+
+
+export default function FUIDashboardSells() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  return (
+    <>
+      <header className="absolute inset-x-0 top-0 z-50 flex h-16 border-b border-gray-300/10">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-1 items-center gap-x-6">
+            <button type="button" className="-m-3 p-3 md:hidden" onClick={() => setMobileMenuOpen(true)}>
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-5 w-5 text-gray-300" aria-hidden="true" />
+            </button>
+            <h1 className='uppercase font-geistMono tracking-tighter'>SHARP.</h1>
+          </div>
+          <nav className="hidden md:flex md:gap-x-11 md:text-sm md:font-semibold md:leading-6 md:text-gray-200">
+            {navigation.map((item, itemIdx) => (
+              <a key={itemIdx} href={item.href}>
+                {item.name}
+              </a>
+            ))}
+          </nav>
+          <div className="flex flex-1 items-center justify-end gap-x-8">
+            <button type="button" className="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
+              <span className="sr-only">View notifications</span>
+              <Bell className="h-6 w-6" aria-hidden="true" />
+            </button>
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your profile</span>
+              <img
+                className="h-8 w-8 rounded-full bg-gray-800"
+                src="https://github.com/shadcn.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+       
+      </header>
+
+      <main>
+        <div className="relative isolate overflow-hidden pt-16">
+          <header className="pb-4 pt-6 sm:pb-6">
+            <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-6 px-4 sm:flex-nowrap sm:px-6 lg:px-8">
+              <h1 className="text-base font-semibold leading-7 text-gray-300">Sharps</h1>
+              <div className="order-last flex w-full gap-x-8 text-sm font-semibold leading-6 sm:order-none sm:w-auto sm:border-l sm:border-white/10 sm:pl-6 sm:leading-7">
+                {secondaryNavigation.map((item) => (
+                  <a key={item.name} href={item.href} className={item.current ? 'text-purple-600' : 'text-gray-200'}>
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              <a
+                href="#"
+                className="ml-auto flex items-center gap-x-1 rounded-md bg-purple-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
+              >
+                <PlusSmallIcon className="-ml-1.5 h-5 w-5" aria-hidden="true" />
+                Add New Count
+              </a>
+            </div>
+          </header>
+
+          <div className="border-b  border-b-gray-300/10 lg:border-t lg:border-t-gray-300/5 bg-page-gradient bg-opacity-10">
+            <dl className="mx-auto  grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:px-2 xl:px-0">
+              {stats.map((stat, statIdx) => (
+                <div
+                  key={stat.name}
+                  className={cn(
+                    statIdx % 2 === 1 ? 'sm:border-l' : statIdx === 2 ? 'lg:border-l' : '',
+                    'flex flex-wrap group  relative items-baseline justify-between gap-x-4 gap-y-2 border-t border-gray-300/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8',
+                  )}
+                  
+                >
+                  <DollarSign className='text-white/10 -z-10  group-hover:opacity-100  group-hover:rotate-3 opacity-10   transform transition-opacity duration-500 absolute bottom-[-35px] w-36 h-36 font-thin  right-[-30px]'  />
+                  <dt className="text-sm font-medium leading-6 text-gray-500">{stat.name}</dt>
+                  <dd
+                    className={cn(
+                      stat.changeType === 'negative' ? 'text-rose-600' : 'text-gray-200',
+                      'text-xs font-medium',
+                    )}
+                  >
+                    {stat.change}
+                  </dd>
+                  <dd className="w-full flex-none text-3xl font-medium leading-10 tracking-tight text-gray-300">
+                    {stat.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div
+            className="absolute left-0 top-full -z-10 mt-96 origin-top-left translate-y-40 -rotate-90 transform-gpu opacity-20 blur-3xl sm:left-1/2 sm:-ml-96 sm:-mt-10 sm:translate-y-0 sm:rotate-0 sm:transform-gpu sm:opacity-50"
+            aria-hidden="true"
+          >
+            <div
+              className="aspect-[1154/678] w-[72.125rem] opacity-50 bg-gradient-to-br from-[#FF80B5] to-[#9089FC]"
+              style={{
+                clipPath:
+                  'polygon(100% 38.5%, 82.6% 100%, 60.2% 37.7%, 52.4% 32.1%, 47.5% 41.8%, 45.2% 65.6%, 27.5% 23.4%, 0.1% 35.3%, 17.9% 0%, 27.7% 23.4%, 76.2% 2.5%, 74.2% 56%, 100% 38.5%)',
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="space-y-16 py-16  max-w-7xl mx-auto    xl:space-y-20"> 
+          <div>
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <h2 className="mx-auto max-w-2xl text-base font-semibold leading-6 text-gray-300 lg:mx-0 lg:max-w-none">
+                Recent activity
+              </h2>
+            </div>
+            <div className="mt-6 overflow-hidden border-t border-white/5">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+                  <table className="w-full text-left">
+                    <thead className="sr-only">
+                      <tr>
+                        <th>Amount</th>
+                        <th className="hidden sm:table-cell">Client</th>
+                        <th>More details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {days.map((day) => (
+                        <Fragment key={day.dateTime}>
+                          <tr className="text-sm leading-6 text-gray-300">
+                            <th scope="colgroup" colSpan={3} className="relative isolate py-2 font-semibold">
+                              <time dateTime={day.dateTime}>{day.date}</time>
+                              <div className="absolute inset-y-0 right-full -z-10 w-screen border-b border-white/10 bg-transparent " />
+                              <div className="absolute inset-y-0 left-0 -z-10 w-screen border-b border-white/10 bg-transparent " />
+                            </th>
+                          </tr>
+                          {day.transactions.map((transaction) => (
+                            <tr key={transaction.id}>
+                              <td className="relative py-5 pr-6">
+                                <div className="flex gap-x-6">
+                                  <transaction.icon
+                                    className="hidden h-6 w-5 flex-none text-gray-400 sm:block"
+                                    aria-hidden="true"
+                                  />
+                                  <div className="flex-auto">
+                                    <div className="flex items-start gap-x-3">
+                                      <div className="text-sm font-medium leading-6 text-gray-300">
+                                        {transaction.amount}
+                                      </div>
+                                      <div
+                                        className={cn(
+                                          statuses[transaction.status] ,
+                                          'rounded-md px-2 py-1 text-xs bg-transparent  font-medium ring-1 ring-inset',
+                                        )}
+                                      >
+                                        {transaction.status}
+                                      </div>
+                                    </div>
+                                    {transaction.tax ? (
+                                      <div className="mt-1 text-xs leading-5 text-gray-500">{transaction.tax} tax</div>
+                                    ) : null}
+                                  </div>
+                                </div>
+                                <div className="absolute bottom-0 right-full h-px w-screen bg-gray-100/10" />
+                                <div className="absolute bottom-0 left-0 h-px w-screen bg-gray-100/10" />
+                              </td>
+                              <td className="hidden py-5 pr-6 sm:table-cell">
+                                <div className="text-sm leading-6 text-gray-300">{transaction.client}</div>
+                                <div className="mt-1 text-xs leading-5 text-gray-500">{transaction.description}</div>
+                              </td>
+                              <td className="py-5 text-right">
+                                <div className="flex justify-end">
+                                  <a
+                                    href={transaction.href}
+                                    className="text-sm font-medium leading-6 text-purple-600 hover:text-purple-500"
+                                  >
+                                    View<span className="hidden sm:inline"> transaction</span>
+                                    <span className="sr-only">
+                                      , invoice #{transaction.invoiceNumber}, {transaction.client}
+                                    </span>
+                                  </a>
+                                </div>
+                                <div className="mt-1 text-xs leading-5 text-gray-500">
+                                  Invoice <span className="text-gray-300">#{transaction.invoiceNumber}</span>
+                                </div>
+                              </td>
+                            </tr>
+                          ))}
+                        </Fragment>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         
+          
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+              <div className="flex items-center justify-between">
+                <h2 className="text-base font-semibold leading-7 text-gray-300">Recent clients</h2>
+                <a href="#" className="text-sm font-semibold leading-6 text-purple-600 hover:text-purple-500">
+                  View all<span className="sr-only">, clients</span>
+                </a>
+              </div>
+              <ul role="list" className="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3 xl:gap-x-8">
+                {clients.map((client) => (
+                  <li key={client.id} className="overflow-hidden rounded-xl border border-white/10">
+                    <div className="flex items-center gap-x-4 border-b border-white/5 bg-glass-gradient  p-6">
+                      <img
+                        src={client.imageUrl}
+                        alt={client.name}
+                        className="h-12 w-12 flex-none rounded-lg bg-transparent object-cover ring-1 ring-gray-300/10"
+                      />
+                      <div className="text-sm font-medium leading-6 text-gray-300">{client.name}</div>
+                      <DropdownMenu >
+                        <DropdownMenuTrigger className="-m-2.5 block p-2.5 text-gray-400 hover:text-gray-500 ml-auto">
+                          <span className="sr-only">Open options</span>
+                          <EllipsisHorizontalIcon className="h-5 w-5" aria-hidden="true" />
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent
+                          className="absolute right-0 z-10 mt-0.5 w-32 bg-black origin-top-right rounded-md  py-2 shadow-lg ring-1 ring-gray-300/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                        >
+                          <DropdownMenuItem>
+                              <a
+                                href="#"
+                                className={cn(
+                                  'block  text-sm leading-6 text-gray-300',
+                                )}
+                              >
+                                View<span className="sr-only">, {client.name}</span>
+                              </a>
+                          </DropdownMenuItem>
+                          <DropdownMenuItem>
+                              <a
+                                href="#"
+                                className={cn(
+                                  'block  text-sm leading-6 text-gray-300',
+                                )}
+                              >
+                                Edit<span className="sr-only">, {client.name}</span>
+                              </a>
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
+                    <dl className="-my-3 divide-y divide-gray-100/10 px-6 py-4 text-sm leading-6">
+                      <div className="flex justify-between gap-x-4 py-3">
+                        <dt className="text-gray-500">Last invoice</dt>
+                        <dd className="text-gray-200">
+                          <time dateTime={client.lastInvoice.dateTime}>{client.lastInvoice.date}</time>
+                        </dd>
+                      </div>
+                      <div className="flex justify-between gap-x-4 py-3">
+                        <dt className="text-gray-500">Amount</dt>
+                        <dd className="flex items-start gap-x-2">
+                          <div className="font-medium text-gray-300">{client.lastInvoice.amount}</div>
+                          <div
+                            className={cn(
+                              statuses[client.lastInvoice.status],
+                              'rounded-md px-2 py-1 text-xs font-medium bg-transparent bg-hero-gradient ring-1 ring-inset',
+                            )}
+                          >
+                            {client.lastInvoice.status}
+                          </div>
+                        </dd>
+                      </div>
+                    </dl>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  )
+}
+
+      `,
     },
   },
- 
 };
