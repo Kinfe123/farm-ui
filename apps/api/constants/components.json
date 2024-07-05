@@ -231,6 +231,26 @@
   },
 
   {
+    "id": "farmui-hero-08",
+    "name": "FUIDarkHeroSectionWithScrolls",
+    "dependencies": [],
+    "files": [
+      {
+        "root": {
+          "name": "FUIDarkHeroSectionWithScrolls",
+          "contents": {
+            "react": {
+              "code_for": "react",
+              "content": "\n\"use client\";\n\nimport React, { useRef } from \"react\";\nimport clsx from \"clsx\";\nimport { MarqueeDemoVertical } from \"components/Scrolls\";\nimport GradualSpacing from \"components/GradualSpacing\";\nimport { useInView } from \"framer-motion\";\nimport {\n  TopLeftShiningLight,\n  TopRightShiningLight,\n} from \"components/Svgs/ShinyLighs\";\n\nexport default function FUIDarkHeroSectionWithScrolls() {\n  const navigation = [\n    { title: \"Customers\", path: \"javascript:void(0)\" },\n    { title: \"Careers\", path: \"javascript:void(0)\" },\n  ];\n  const ref = useRef(null);\n  const isInView = useInView(ref);\n\n  return (\n    <div className=\"relative px-10 mt-10 w-full min-h-full\">\n      <TopRightShiningLight />\n      <TopLeftShiningLight />\n      <div className=\"absolute -z-1 inset-0  h-[600px] w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]\"></div>\n      <div className=\"justify-between md:flex\">\n        <Container className=\"relative py-20 ml-auto sm:pt-36 sm:pb-24\">\n          <div ref={ref} className=\"mx-auto max-w-2xl lg:px-12 lg:max-w-4xl\">\n            <GradualSpacing\n              textClassName=\"justify-start\"\n              visiblity={isInView}\n              className=\"max-w-2xl text-5xl font-normal tracking-tighter text-transparent text-white sm:text-7xl font-geist\"\n              text={\"A design conference\"}\n            />\n            <GradualSpacing\n              textClassName=\"justify-start\"\n              visiblity={isInView}\n              className=\"max-w-2xl text-5xl font-normal tracking-tighter text-transparent text-white sm:text-7xl font-geist\"\n              text={\"for a dark side\"}\n            />\n\n            <div className=\"mt-6 space-y-6 tracking-tight text-gray-500 sm:text-xl font-geist text-md\">\n              <p>\n                The next generation of web users are tech-savvy and suspicious.\n                They know how to use dev tools, they can detect a phishing scam\n                from a mile away, and they certainly aren’t accepting any checks\n                from Western Union.\n              </p>\n              <p>\n                At DeceptiConf you’ll learn about the latest dark patterns being\n                developed to trick even the smartest visitors, and you’ll learn\n                how to deploy them without ever being detected.\n              </p>\n            </div>\n            <button className=\"flex gap-2 justify-center items-center py-2 px-10 mt-5 text-lg tracking-tighter text-center bg-gradient-to-br rounded-md ring-2 ring-offset-2 transition-all hover:ring-transparent group/button w-fit from-zinc-100 to-zinc-300 font-geist text-md text-zinc-900 ring-zinc-500/80 ring-offset-zinc-950 hover:scale-[1.02] active:scale-[0.98] active:ring-zinc-500/70\">\n              Get Started\n              <div\n                aria-hidden\n                className=\"pointer-events-none absolute inset-0 opacity-0 group-hover/button:[animation-delay:.2s] group-hover/button:animate-shineButton rounded-[inherit] bg-[length:200%_100%] bg-[linear-gradient(110deg,transparent,35%,rgba(255,255,255,.7),75%,transparent)]\"\n              />\n            </button>\n\n            <dl className=\"grid grid-cols-2 gap-y-6 gap-x-10 mt-10 sm:gap-y-10 sm:gap-x-16 sm:mt-16 sm:text-center lg:grid-cols-none lg:grid-flow-col lg:auto-cols-auto lg:justify-start lg:text-left\">\n              {[\n                [\"Speakers\", \"18\"],\n                [\"People Attending\", \"2,091\"],\n                [\"Venue\", \"Staples Center\"],\n                [\"Location\", \"Los Angeles\"],\n              ].map(([name, value]) => (\n                <div key={name}>\n                  <dt className=\"font-mono text-sm text-gray-300\">{name}</dt>\n                  <dd className=\"mt-0.5 text-2xl font-normal tracking-tight text-gray-300 font-geist\">\n                    {value}\n                  </dd>\n                </div>\n              ))}\n            </dl>\n          </div>\n        </Container>\n        <div className=\"hidden mr-auto md:block md:w-1/2\">\n          <MarqueeDemoVertical />\n        </div>\n      </div>\n      <div className=\"absolute right-0 bottom-0 left-0 mx-auto opacity-20\">\n      </div>\n    </div>\n  );\n}\n\nexport function Container({\n  className,\n  ...props\n}: React.ComponentPropsWithoutRef<\"div\">) {\n  return (\n    <div\n      className={clsx(\"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8\", className)}\n      {...props}\n    />\n  );\n}   \n"
+            }
+          }
+        }
+      }
+    ],
+    "type": "ui"
+  },
+
+  {
     "id": "farmui-faq-00",
     "name": "FUIFaqsWithSearchBox",
     "dependencies": ["lucide-react"],
@@ -249,6 +269,7 @@
     ],
     "type": "ui"
   },
+
   {
     "id": "farmui-faq-01",
     "name": "FUIFaqsWithDividedRows",
