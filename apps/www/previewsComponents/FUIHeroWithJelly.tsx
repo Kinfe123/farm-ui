@@ -1,5 +1,6 @@
-
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FUIHeroWithJelly() {
   return (
@@ -7,7 +8,6 @@ export default function FUIHeroWithJelly() {
       <div className="px-4 mx-auto sm:px-6 md:px-0">
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
           <div className="pb-12 text-center md:pb-16">
-          
             <h1
               className="mb-6 border-y dark:border-none text-5xl max-w-3xl mx-auto font-normal tracking-tighter [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.),transparent)1] md:text-6xl"
               data-aos="zoom-y-out"
@@ -17,7 +17,7 @@ export default function FUIHeroWithJelly() {
               <br className="max-lg:hidden" />
               looking for
             </h1>
-            <div className="mx-auto max-w-3xl">
+            <div className="relative mx-auto max-w-3xl">
               <p
                 className="mb-8 text-lg text-gray-700"
                 data-aos="zoom-y-out"
@@ -26,29 +26,26 @@ export default function FUIHeroWithJelly() {
                 Simple is a modern website builder powered by AI that changes
                 how companies create user interfaces together.
               </p>
+              <div
+                className="absolute left-0 top-0 h-80 w-[90%] opacity-60 overflow-x-hidden bg-[rgb(54,157,253)] bg-opacity-40 blur-[337.4px]"
+                style={{ transform: "rotate(-30deg)" }}
+              />
               <div className="relative before:absolute before:inset-0 before:border-y dark:before:border-none before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]">
                 <div
-                  className="mx-auto z-20 max-w-xs sm:flex sm:justify-center sm:max-w-none"
+                  className="mx-auto z-20 max-w-xs mt-[-20px] mb-[20px] sm:flex sm:justify-center items-center sm:max-w-none gap-5"
                   data-aos="zoom-y-out"
                   data-aos-delay={450}
                 >
-                  <a
-                    className="btn group z-20 mb-4 w-full bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
+                  <Link
                     href="https://farmui.com/templates/ease"
+                    className="group inline-flex text-lg gap-x-2 mt-2 backdrop-blur-md text-white justify-center items-center py-3 px-5 ml-3 w-fit rounded-xl border duration-200 group bg-page-gradient border-white/30 text-md font-geistSans hover:border-zinc-600 hover:bg-transparent/10 hover:text-zinc-100"
                   >
-                    <span className="inline-flex relative items-center">
-                      Buy the full templat{" "}
-                      <span className="ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5">
-                        -&gt;
-                      </span>
-                    </span>
-                  </a>
-                  <a
-                    className="w-full text-gray-800 bg-white shadow sm:ml-4 sm:w-auto hover:bg-gray-50 btn"
-                    href="#0"
-                  >
-                    Learn More
-                  </a>
+                    Buy this template
+                    <div className="flex overflow-hidden relative justify-center items-center ml-1 w-5 h-5">
+                      <ArrowUpRight className="absolute transition-all duration-500 group-hover:translate-x-4 group-hover:-translate-y-5" />
+                      <ArrowUpRight className="absolute transition-all duration-500 -translate-x-4 -translate-y-5 group-hover:translate-x-0 group-hover:translate-y-0" />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -69,15 +66,14 @@ export default function FUIHeroWithJelly() {
             loop
             muted
             playsInline
-            src="/bg/something.mp4"
+            src="https://ease-one.vercel.app/bg/something.mp4"
             className="overflow-hidden w-screen mt-[-100px]"
           />
           <div
             className="mx-auto max-w-3xl"
             data-aos="zoom-y-out"
             data-aos-delay={600}
-          >
-          </div>
+          ></div>
         </div>
       </div>
     </section>
