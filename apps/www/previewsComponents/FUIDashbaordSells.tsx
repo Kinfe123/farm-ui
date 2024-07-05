@@ -7,15 +7,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-import {
-  ArrowDownCircleIcon,
-  ArrowPathIcon,
-  ArrowUpCircleIcon,
-  Bars3Icon,
-  EllipsisHorizontalIcon,
-  PlusSmallIcon,
-} from '@heroicons/react/20/solid'
-import { Bell , X , DollarSign } from 'lucide-react'
+
+import { Bell , X , DollarSign , ArrowDownCircle , ArrowUpCircle , MenuIcon , RotateCcw , EllipsisVerticalIcon , Plus } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const navigation = [
@@ -57,7 +50,7 @@ const days = [
         status: 'Paid',
         client: 'Reform',
         description: 'Website redesign',
-        icon: ArrowUpCircleIcon,
+        icon: ArrowUpCircle,
       },
       {
         id: 2,
@@ -67,7 +60,7 @@ const days = [
         status: 'Withdraw',
         client: 'Tom Cook',
         description: 'Salary',
-        icon: ArrowDownCircleIcon,
+        icon: ArrowDownCircle,
       },
       {
         id: 3,
@@ -78,7 +71,7 @@ const days = [
         status: 'Overdue',
         client: 'Tuple',
         description: 'Logo design',
-        icon: ArrowPathIcon,
+        icon: RotateCcw,
       },
     ],
   },
@@ -95,7 +88,7 @@ const days = [
         status: 'Paid',
         client: 'SavvyCal',
         description: 'Website redesign',
-        icon: ArrowUpCircleIcon,
+        icon: ArrowUpCircle,
       },
     ],
   },
@@ -132,7 +125,7 @@ export default function FUIDashboardSells() {
           <div className="flex flex-1 items-center gap-x-6">
             <button type="button" className="-m-3 p-3 md:hidden" onClick={() => setMobileMenuOpen(true)}>
               <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-5 w-5 text-gray-300" aria-hidden="true" />
+              <MenuIcon className="h-5 w-5 text-gray-300" aria-hidden="true" />
             </button>
             <h1 className='uppercase font-geistMono tracking-tighter'>SHARP.</h1>
           </div>
@@ -177,7 +170,7 @@ export default function FUIDashboardSells() {
                 href="#"
                 className="ml-auto flex items-center gap-x-1 rounded-md bg-purple-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
               >
-                <PlusSmallIcon className="-ml-1.5 h-5 w-5" aria-hidden="true" />
+                <Plus className="-ml-1.5 h-5 w-5" aria-hidden="true" />
                 Add New Count
               </a>
             </div>
@@ -338,7 +331,7 @@ export default function FUIDashboardSells() {
                       <DropdownMenu >
                         <DropdownMenuTrigger className="-m-2.5 block p-2.5 text-gray-400 hover:text-gray-500 ml-auto">
                           <span className="sr-only">Open options</span>
-                          <EllipsisHorizontalIcon className="h-5 w-5" aria-hidden="true" />
+                          <EllipsisVerticalIcon className="h-5 w-5 transform rotate-90 " aria-hidden="true" />
                         </DropdownMenuTrigger>
                         <DropdownMenuContent
                           className="absolute right-0 z-10 mt-0.5 w-32 bg-black origin-top-right rounded-md  py-2 shadow-lg ring-1 ring-gray-300/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
