@@ -22,7 +22,7 @@
   },
   {
     "slug": "/hero-section",
-    "category": "Application",
+    "category": "Marketing",
     "count": 7,
     "cover_url": "FAQS.png",
     "id": "100",
@@ -42,7 +42,7 @@
   },
   {
     "slug": "/pricing",
-    "category": "Application",
+    "category": "Marketing",
     "count": 7,
     "cover_url": "FAQS.png",
     "id": "100",
@@ -52,7 +52,7 @@
   },
   {
     "slug": "/features",
-    "category": "Application",
+    "category": "Marketing",
     "count": 7,
     "cover_url": "FAQS.png",
     "id": "100",
@@ -62,7 +62,7 @@
   },
   {
     "slug": "/newsletter",
-    "category": "Application",
+    "category": "Marketing",
     "count": 7,
     "cover_url": "FAQS.png",
     "id": "100",
@@ -72,12 +72,22 @@
   },
   {
     "slug": "/testimonial",
-    "category": "Application",
+    "category": "Marketing",
     "count": 7,
     "cover_url": "FAQS.png",
     "id": "100",
     "section_name": "Testimonial ",
     "description": "Beautifully designed, fully responsive, expertly crafted Testimonial examples",
+    "isNew": true
+  },
+  {
+    "slug": "/dashboard",
+    "category": "Application",
+    "count": 7,
+    "cover_url": "FAQS.png",
+    "id": "100",
+    "section_name": "Dashboard ",
+    "description": "Beautifully designed, fully responsive, expertly crafted Dashboard examples",
     "isNew": true
   }
   
