@@ -8,6 +8,7 @@ import FUIHeroSectionWithBottomImage from "previewsComponents/FUIHeroSectionWith
 import FUIHeroSectionWithImage from "previewsComponents/FUIHeroSectionWithImage";
 import FUIHeroSectionWithLogoClouds from "previewsComponents/FUIHeroSectionWithLogoClouds";
 import FUIHeroWithGrid from "previewsComponents/FUIHeroWithGrid";
+import FUIHeroWithJelly from "previewsComponents/FUIHeroWithJelly";
 import FUIHeroWithGridSimple from "previewsComponents/FUIHeroWithSimple";
 import FUIHeroWithSlayBackground from "previewsComponents/FUIHeroWithSlayBackground";
 import FUILoginWithCardLayout from "previewsComponents/FUILoginWithCardLayout.tsx";
@@ -315,6 +316,102 @@ export default function FUIHeroSectionWithImage() {
     codeCopy: {
       react: `
       \nimport LinkItem from \"components/ui/LinkItem\";\nimport { IconGithub } from \"components/icons\";\nimport { ChevronRight } from \"lucide-react\";\nimport HeroAnimated from \"components/HeroAnimated\";\nimport BgGradient from \"components/ui/BgGradient\";\nconst FUIHeroWithGridSimple = () => {\n  return (\n    <>\n      <section className=\"min-h-[800px] w-full  mt-0 relative\">\n        <div className=\"absolute -top-0 inset-x-0 opacity-45\">\n          <BgGradient />\n        </div>\n\n        <svg\n          className=\"absolute inset-0 z-1 h-full w-full  stroke-white/5 [mask-image:radial-gradient(100%_100%_at_top_left  ,white,transparent)]\"\n          aria-hidden=\"true\"\n        >\n          <defs>\n            <pattern\n              id=\"983e3e4c-de6d-4c3f-8d64-b9761d1534cc\"\n              width={200}\n              height={200}\n              x=\"50%\"\n              y={-1}\n              patternUnits=\"userSpaceOnUse\"\n            >\n              <path d=\"M.5 200V.5H200\" fill=\"none\" />\n            </pattern>\n          </defs>\n          <svg x=\"50%\" y={-1} className=\"overflow-visible fill-gray-800/20\">\n            <path\n              d=\"M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z\"\n              strokeWidth={0}\n            />\n          </svg>\n          <rect\n            width=\"100%\"\n            height=\"100%\"\n            strokeWidth={0}\n            fill=\"url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)\"\n          />\n        </svg>\n        <div\n          className=\"absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]\"\n          aria-hidden=\"true\"\n        >\n          <div\n            className=\"aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#9c80ff] to-[#e546d5] opacity-20\"\n            style={{\n              clipPath:\n                \"polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)\",\n            }}\n          />\n        </div>\n        {/* <div className=\"absolute -z-1 inset-0 opacity-15  h-[600px] w-full bg-transparent  bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]\"></div> */}\n\n        <div className=\"relative z-10 max-w-4xl ml-5 md:ml-10  translate-y-[33%]  mr-auto  space-y-4\">\n          <h1 className=\"text-sm  text-gray-400 group font-geist mr-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit\">\n            <pre className=\"tracking-tight uppercase\">\n              Build products for everyone\n              <ChevronRight className=\"inline w-4 h-4 ml-2 group-hover:translate-x-1 duration-300\" />\n            </pre>\n          </h1>\n          <HeroAnimated\n            header=\"Take shadcn to the next level for modern web dev experience.\"\n            headerClassName=\"ml-2 text-left tracking-tight max-w-md md:max-w-3xl text-3xl md:text-4xl tracking-tighter mr-auto lg:text-6xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1\"\n            description=\"\"\n            descriptionClassName=\"  \"\n          >\n            <div className=\"mr-auto text-[0.84rem] ml-2 text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-5\">\n              <pre className=\"tracking-tight uppercase max-w-md md:max-w-3xl text-wrap\">\n                Move faster with beautiful responsive UI components and website\n                templates with modern design, 100% free and open-source.\n              </pre>\n            </div>\n          </HeroAnimated>\n            <div className=\"mr-auto ml-2  flex flex-wrap gap-y-4 items-start justify-start gap-x-3\">\n              <LinkItem\n                href=\"/components\"\n                className=\"inline-flex rounded-none uppercase font-mono  text-center group items-center w-full justify-center  bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-zinc-900  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10\"\n              >\n                Browser Components\n                <ChevronRight className=\"w-4 h-4 ml-2 group-hover:translate-x-1 duration-300\" />\n              </LinkItem>\n              <LinkItem\n                href=\"https://github.com/Kinfe123/farm-ui\"\n                variant=\"shiny\"\n                className=\"inline-flex font-mono uppercase tracking-tight rounded-none w-full justify-center items-center gap-x-3 border border-zinc-800 hover:border-zinc-600 bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10\"\n                target=\"_blank\"\n              >\n                <IconGithub className=\"w-5 h-5 \" />\n                Star on GitHub\n              </LinkItem>\n            </div>\n        </div>\n      </section>\n    </>\n  );\n};\nexport default FUIHeroWithGridSimple;\n\n
+      
+      `,
+    },
+  },
+  "farmui-hero-07": {
+    component: <FUIHeroWithJelly />,
+    description: "Hero Section With Simple and Aligned",
+    path: "previewsComponents/FUIHeroWithJelly",
+    codeCopy: {
+      react: `
+
+import Image from "next/image";
+
+export default function FUIHeroWithJelly() {
+  return (
+    <section className="relative dark:text-white">
+      <div className="px-4 mx-auto sm:px-6 md:px-0">
+        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+          <div className="pb-12 text-center md:pb-16">
+          
+            <h1
+              className="mb-6 border-y dark:border-none text-5xl max-w-3xl mx-auto font-normal tracking-tighter [border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.),transparent)1] md:text-6xl"
+              data-aos="zoom-y-out"
+              data-aos-delay={150}
+            >
+              Manage your sales and analytics in one place.
+              <br className="max-lg:hidden" />
+              looking for
+            </h1>
+            <div className="mx-auto max-w-3xl">
+              <p
+                className="mb-8 text-lg text-gray-700"
+                data-aos="zoom-y-out"
+                data-aos-delay={300}
+              >
+                Simple is a modern website builder powered by AI that changes
+                how companies create user interfaces together.
+              </p>
+              <div className="relative before:absolute before:inset-0 before:border-y dark:before:border-none before:[border-image:linear-gradient(to_right,transparent,theme(colors.slate.300/.8),transparent)1]">
+                <div
+                  className="mx-auto z-20 max-w-xs sm:flex sm:justify-center sm:max-w-none"
+                  data-aos="zoom-y-out"
+                  data-aos-delay={450}
+                >
+                  <a
+                    className="btn group z-20 mb-4 w-full bg-gradient-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
+                    href="https://farmui.com/templates/ease"
+                  >
+                    <span className="inline-flex relative items-center">
+                      Buy the full templat{" "}
+                      <span className="ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5">
+                        -&gt;
+                      </span>
+                    </span>
+                  </a>
+                  <a
+                    className="w-full text-gray-800 bg-white shadow sm:ml-4 sm:w-auto hover:bg-gray-50 btn"
+                    href="#0"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Hero image */}
+
+          <div className="relative">
+            <div className="absolute top-0 right-0 left-0 mx-auto mt-12 max-w-6xl border-white/10">
+              <img
+                src="https://framerusercontent.com/images/jvlcne0ABTxg7RFwM1Ra0R1p47E.png?scale-down-to=1024"
+                className="w-full rounded-3xl shadow-lg border-white/10"
+                alt=""
+              />
+            </div>
+          </div>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            src="/bg/something.mp4"
+            className="overflow-hidden w-screen mt-[-100px]"
+          />
+          <div
+            className="mx-auto max-w-3xl"
+            data-aos="zoom-y-out"
+            data-aos-delay={600}
+          >
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
       
       `,
     },
