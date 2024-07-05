@@ -40,10 +40,10 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative h-40 w-52 cursor-pointer bg-page-gradient shadow-neon overflow-hidden rounded-xl border p-4",
+        "relative h-40 w-52 my-2  cursor-pointer bg-page-gradient shadow-neon overflow-hidden rounded-xl border p-4",
         // light styles
         "border-white/10 ",
-        // dark styles
+      // dark styles
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
       )}
     >
@@ -63,18 +63,18 @@ const ReviewCard = ({
 
 const MarqueeDemoVertical = () => {
   return (
-    <div className="flex overflow-hidden relative flex-row justify-center items-center bg-transparent sm:px-20 h-[44rem]">
+    <div className="flex overflow-hidden relative flex-row justify-center items-center bg-transparent sm:px-20 mr-10 h-[44rem]">
       <Marquee pauseOnHover vertical className="[--duration:13s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
+      <Marquee reverse pauseOnHover vertical className="[--duration:20s] hidden xl:block">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <Marquee pauseOnHover vertical className="[--duration:8s]">
+      <Marquee pauseOnHover vertical className="[--duration:8s] hidden 2xl:block">
         {secondRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
