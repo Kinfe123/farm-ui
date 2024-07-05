@@ -26,7 +26,7 @@ const FUIHeroWithGrid = () => {
           >
             <div className="flex flex-wrap items-center justify-center  gap-3">
               <LinkItem
-                href="/components"
+                href="https://farmui.com/templates/curves"
                 variant="default"
                 className="inline-flex text-center group items-center w-full justify-center bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent bg-transparent  border-input border-[1px] hover:bg-transparent/10 transition-colors sm:w-auto py-4 px-10"
               >
