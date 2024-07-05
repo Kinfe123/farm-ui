@@ -1,3 +1,4 @@
+import { TemplateToaster } from "app/(eg)/example/_components/template-toast";
 import Sidebar from "components/ui/Sidebar";
 import { ReactNode } from "react";
 
@@ -28,6 +29,7 @@ export default (props: Props) => {
         <div className="flex-1 overflow-hidden mt-20 mb-12 xl:px-8 xl:mt-10 z-20">
           {children}
         </div>
+        <TemplateToaster />
       </div>
     </main>
   );
