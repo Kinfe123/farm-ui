@@ -32,10 +32,11 @@ export default function FUIHeroSectionWithBottomImage() {
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
                 <div className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-gray-950  text-xs font-medium text-gray-50 backdrop-blur-3xl">
                   <a
-                    href="javascript:void(0)"
+                    href="https://farmui.com/templates/sharps"
+                    target="_blank"
                     className="inline-flex rounded-full text-center group items-center w-full justify-center   bg-gradient-to-tr from-zinc-300/5 via-purple-400/20 to-transparent    text-white border-input border-[1px] hover:bg-transparent/90 transition-colors sm:w-auto py-4 px-10"
                   >
-                    Browse courses
+                    Buy the full template
                   </a>
                 </div>
               </span>
