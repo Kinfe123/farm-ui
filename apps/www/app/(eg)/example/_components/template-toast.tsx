@@ -15,8 +15,9 @@ export function TemplateToaster() {
 
     return (
         isVisibile && (
-            <div className='fixed  font-geist bottom-4 right-4'>
-                <Card className={cn('w-[350px] z-30 bg-white/90 dark:bg-black animate-background-shine dark:bg-[linear-gradient(110deg,#000,55%,#57476e,65%,#000)] bg-opacity-10 bg-[length:250%_100%]  dark:[border:1px_solid_rgba(255,255,255,.1)]')}>
+            <section className='z-30 relative'>
+            <div className='fixed font-geist bottom-4 right-4'>
+                <Card className={cn('w-[350px] bg-white/90 dark:bg-black animate-background-shine dark:bg-[linear-gradient(110deg,#000,55%,#57476e,65%,#000)] bg-opacity-10 bg-[length:250%_100%]  dark:[border:1px_solid_rgba(255,255,255,.1)]')}>
                     <CardHeader>
                         <div className='font-normal font-mono uppercase tracking-tight '>
                             ✨ Access the full template  ✨
@@ -39,6 +40,7 @@ export function TemplateToaster() {
                     </CardFooter>
                 </Card>
             </div>
+            </section>
         )
     )
 }
