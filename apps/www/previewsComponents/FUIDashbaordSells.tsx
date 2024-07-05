@@ -3,15 +3,7 @@ import { Fragment, useState } from 'react'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
@@ -43,10 +35,13 @@ const stats = [
   { name: 'Outstanding invoices', value: '$245,988.00', change: '-1.39%', changeType: 'positive' },
   { name: 'Expenses', value: '$30,156.00', change: '+10.18%', changeType: 'negative' },
 ]
-const statuses = {
-  Paid: 'text-green-700 bg-green-50 ring-green-600/20',
-  Withdraw: 'text-gray-600 bg-transparent  ring-gray-500/10',
-  Overdue: 'text-red-700 bg-red-50 ring-red-600/10',
+type StatusType = {
+  [key: string]: string
+}
+const statuses: StatusType = {
+  'Paid': 'text-green-700 bg-green-50 ring-green-600/20',
+  'Withdraw': 'text-gray-600 bg-transparent  ring-gray-500/10',
+  'Overdue': 'text-red-700 bg-red-50 ring-red-600/10',
 }
 const days = [
   {
@@ -168,7 +163,6 @@ export default function FUIDashboardSells() {
 
       <main>
         <div className="relative isolate overflow-hidden pt-16">
-          {/* Secondary navigation */}
           <header className="pb-4 pt-6 sm:pb-6">
             <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-6 px-4 sm:flex-nowrap sm:px-6 lg:px-8">
               <h1 className="text-base font-semibold leading-7 text-gray-300">Sharps</h1>
@@ -189,7 +183,6 @@ export default function FUIDashboardSells() {
             </div>
           </header>
 
-          {/* Stats */}
           <div className="border-b  border-b-gray-300/10 lg:border-t lg:border-t-gray-300/5 bg-page-gradient bg-opacity-10">
             <dl className="mx-auto  grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:px-2 xl:px-0">
               {stats.map((stat, statIdx) => (
@@ -233,8 +226,7 @@ export default function FUIDashboardSells() {
           </div>
         </div>
 
-        <div className="space-y-16 py-16  max-w-7xl mx-auto xl:space-y-20">
-          {/* Recent activity table */}
+        <div className="space-y-16 py-16  max-w-7xl mx-auto    xl:space-y-20"> 
           <div>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <h2 className="mx-auto max-w-2xl text-base font-semibold leading-6 text-gray-300 lg:mx-0 lg:max-w-none">
@@ -277,7 +269,7 @@ export default function FUIDashboardSells() {
                                       </div>
                                       <div
                                         className={cn(
-                                          statuses[transaction.status],
+                                          statuses[transaction.status] ,
                                           'rounded-md px-2 py-1 text-xs bg-transparent  font-medium ring-1 ring-inset',
                                         )}
                                       >
