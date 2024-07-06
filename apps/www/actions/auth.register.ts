@@ -21,8 +21,10 @@ export async function registerAction(
   console.log('The parsed data is : ' , parsedData)
 
   if (!parsedData.success) {
-    console.log(parsedData.error)
-    throw new Error(parsedData.error.issues[0].message);
+    return {
+      errors: parsedData.error.flatten().formErrors
+    }
+    // throw new Error(parsedData.error.issues[0].message);
   }
 
   const data = parsedData.data;

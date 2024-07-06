@@ -5,13 +5,65 @@ import { signIn } from "next-auth/react";
 import { BottomLine } from "components/LineUtils";
 import { PlusSvg } from "components/SectionSvg";
 import { ChevronRight } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
 import { registerAction } from "actions/auth.register";
-import { useFormStatus } from "react-dom";
+import { useFormState } from "react-dom";
 import { SubmitButton } from "./SubmitChild";
+import { RegisterSchema } from "@/lib/validations/schema";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { toast } from "@/components/ui/use-toast";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 
+const initialState = {
+  message: "",
+};
 export default function FUILoginWithGridProvider() {
   const [reset, setReset] = useState(false);
+  const [state, formAction] = useFormState(registerAction, initialState);
+  const [pending, startTransition] = useTransition();
+  const form = useForm<z.infer<typeof RegisterSchema>>({
+    resolver: zodResolver(RegisterSchema),
+    defaultValues: {
+      username: "",
+      email: "",
+      password: "",
+    },
+  });
+  const handleClick = (data: z.infer<typeof RegisterSchema>) => {
+    const formData = new FormData();
+    for (const [key, value] of Object.entries(data)) {
+      formData.append(key, value);
+    }
+    startTransition(() => {
+      registerAction(formData)
+        .then((res) => {
+          toast({
+            title: "Registered Successfully",
+            description: `Dear ${formData.get(
+              "username"
+            )} , you have successfully registered for CodeNight Dev 2 Meetup. We will send you an email shortly`,
+          });
+        })
+        .catch((err) => {
+          toast({
+            title: "Something went wrong",
+            description: "There is something wrong while registering.",
+            variant: "destructive",
+          });
+        });
+    });
+  };
+
   return (
     <main className="w-full min-h-screen   flex flex-col items-center justify-center sm:px-4 relative">
       <div className="relative w-full bg-page-gradient mt-20 mb-5   space-y-6 text-gray-600 sm:max-w-md md:max-w-xl lg:max-w-xl px-5 py-10  rounded-none  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
@@ -170,41 +222,83 @@ export default function FUILoginWithGridProvider() {
               Or continue with
             </p>
           </div>
-          <form action={registerAction} className="space-y-5">
+          <form onSubmit={form.handleSubmit(handleClick)} className="space-y-5">
             <div>
               <label className="font-medium text-gray-100/50 font-geist">
                 Username
               </label>
-              <Input
-                type="text"
-                required
+              <FormField
+                control={form.control}
                 name="username"
-                className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormControl>
+                      <Input
+                        {...field}
+                        type="text"
+                        id="username"
+                        required
+                        name="username"
+                        className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                      />
+                    </FormControl>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
             </div>
             <div>
               <label className="font-medium text-gray-100/50 font-geist">
                 Email
               </label>
-              <Input
-                type="email"
+              <FormField
+                control={form.control}
                 name="email"
-                required
-                className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormControl>
+                      <Input
+                        {...field}
+                        type="text"
+                        id="email"
+                        required
+                        name="email"
+                        className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                      />
+                    </FormControl>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
             </div>
             <div>
               <label className="font-medium text-gray-100/50 font-geist">
-                Password
+                Passowrd
               </label>
-              <Input
-                type="password"
-                required
+              <FormField
+                control={form.control}
                 name="password"
-                className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormControl>
+                      <Input
+                        {...field}
+                        type="password"
+                        required
+                        name="password"
+                        name="password"
+                        className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                      />
+                    </FormControl>
+
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
             </div>
-            <SubmitButton />
+            <SubmitButton pending_action={pending} />
           </form>
         </div>
         <div className="text-center">
