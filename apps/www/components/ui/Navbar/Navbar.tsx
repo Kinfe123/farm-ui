@@ -52,7 +52,6 @@ export default () => {
     { title: "Templates", path: "/templates" },
     { title: "Demo", path: "/demo" },
     { title: "Logs", path: "/changelog" },
-
     { title: "Join", path: "/join" },
   ];
   useEffect(() => {
