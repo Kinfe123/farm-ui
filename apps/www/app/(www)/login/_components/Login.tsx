@@ -23,8 +23,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { redirect } from "next/navigation";
-import { getGoogleOauthConsentUrl } from "actions/oauth.main";
+import { redirect, useRouter } from "next/navigation";
+import {
+  getGithubOauthUrl,
+  getGoogleOauthConsentUrl,
+} from "actions/oauth.main";
 
 const initialState = {
   message: "",
@@ -34,6 +37,7 @@ export default function FUILoginWithGridProvider() {
   const [state, formAction] = useFormState(registerAction, initialState);
   const [signUp, setSignUp] = useState(true);
   const [pending, startTransition] = useTransition();
+  const router = useRouter();
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
@@ -44,6 +48,7 @@ export default function FUILoginWithGridProvider() {
   });
   const handleRegister = (data: z.infer<typeof RegisterSchema>) => {
     const formData = new FormData();
+
     for (const [key, value] of Object.entries(data)) {
       formData.append(key, value);
     }
@@ -197,7 +202,17 @@ export default function FUILoginWithGridProvider() {
               </svg>
             </button>
             <button
-              onClick={() => signIn("github")}
+              onClick={async () => {
+                const res = await getGithubOauthUrl();
+                if (res.url) {
+                  window.location.href = res.url;
+                } else {
+                  toast({
+                    title: "Something went wrong",
+                    description: "There is something wrong while registering.",
+                  });
+                }
+              }}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
               className="group flex transform-gpu bg-page-gradient dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"

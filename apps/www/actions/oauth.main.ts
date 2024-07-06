@@ -2,7 +2,7 @@
 import { redirect } from "next/navigation"
 import { generateCodeVerifier, generateState } from "arctic"
 import { cookies } from "next/headers"
-import { google } from "@/lib/auth/lucia.auth"
+import { github, google } from "@/lib/auth/lucia.auth"
 
 export const getGoogleOauthConsentUrl = async () => {
     try {
@@ -21,10 +21,28 @@ export const getGoogleOauthConsentUrl = async () => {
         const authUrl = await google.createAuthorizationURL(state, codeVerifier, {
             scopes: ['email', 'profile']
         })
-        console.log(authUrl)
         return { success: true, url: authUrl.toString() }
 
     } catch (error) {
         return { success: false, error: 'Something went wrong' }
+    }
+}
+
+export const getGithubOauthUrl = async () => {
+    try {
+        const state = generateState()
+        const authUrl = await github.createAuthorizationURL(state)
+        console.log(authUrl)
+        cookies().set("github_oauth_state", state, {
+            path: "/",
+            secure: process.env.NODE_ENV === "production",
+            httpOnly: true,
+            
+        });
+        return { success: true, url: authUrl.toString() }
+
+    }catch(err) {
+        return { success: false, error: 'Something went wrong' }
+    
     }
 }
