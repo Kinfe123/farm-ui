@@ -21,7 +21,6 @@ export function TemplateToaster() {
   const route = useRouter();
   const path = usePathname()
   
-  const baseComp = path === '/components' 
   const comps = path.includes('components')
   const example = path.includes("example")
   const isIframe = isInIframe()
@@ -32,7 +31,7 @@ export function TemplateToaster() {
   }
 
   return (
-    (isVisibile && (baseComp ||  example)) && (
+    (isVisibile && (example || comps)) && (
       <section className="z-30 relative">
         <div className="fixed font-geist bottom-4 right-4">
           <Card
