@@ -12,13 +12,10 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export function TemplateToaster() {
-  const shineAnimation =
-    "animate-shine bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.2)_50%,transparent_75%,transparent_100%)] bg-[length:250%_250%,100%_100%] bg-[position:-100%_0,0_0] bg-no-repeat";
   const [isVisibile, setIsVisible] = useState(true);
-  const route = useRouter();
   const path = usePathname()
   
   const comps = path.includes('components')
