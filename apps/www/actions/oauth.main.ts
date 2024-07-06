@@ -32,14 +32,13 @@ export const getGithubOauthUrl = async () => {
     try {
         const state = generateState()
         const authUrl = await github.createAuthorizationURL(state)
-        console.log(authUrl)
         cookies().set("github_oauth_state", state, {
             path: "/",
             secure: process.env.NODE_ENV === "production",
             httpOnly: true,
             
         });
-        return { success: true, url: authUrl.toString() }
+        return { success: true, url: authUrl.href.toString() }
 
     }catch(err) {
         return { success: false, error: 'Something went wrong' }

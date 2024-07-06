@@ -25,6 +25,7 @@ export async function GET(request: Request): Promise<Response> {
         Authorization: `Bearer ${tokens.accessToken}`,
       },
     });
+   
     const githubUser: GitHubUser = await githubUserResponse.json();
     const existingUser = await db.query.userTable.findFirst({
       where: eq(userTable.githubId, githubUser.id),
@@ -38,12 +39,7 @@ export async function GET(request: Request): Promise<Response> {
         sessionCookie.value,
         sessionCookie.attributes
       );
-      return new Response(null, {
-        status: 302,
-        headers: {
-          Location: "/",
-        },
-      });
+      return redirect('/')
     }
 
     const newUser = await db
@@ -51,6 +47,7 @@ export async function GET(request: Request): Promise<Response> {
       .values({
         userName: githubUser.login,
         githubId: githubUser.id,
+        picture: githubUser.avatar_url
       })
       .returning();
 
@@ -82,4 +79,6 @@ export async function GET(request: Request): Promise<Response> {
 interface GitHubUser {
   id: string;
   login: string;
+  avatar_url: string;
 }
+

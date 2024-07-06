@@ -10,7 +10,7 @@ import { SparklesIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ChevronRight, User } from "lucide-react";
-import { useSession } from "next-auth/react";
+import { useSession } from "@/lib/auth/provider/lucia.client";
 import {
   Tooltip,
   TooltipContent,
@@ -29,6 +29,9 @@ export default () => {
   const [state, setState] = useState(false);
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(true);
+  const user = useSession()
+  const u = user.user
+  console.log('the user is : ' , u)
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
@@ -41,7 +44,6 @@ export default () => {
     }
   });
 
-  const session = useSession();
   const [isNewsletterModalActive, setNewsletterModalActive] = useState(false);
   const pathname = usePathname();
   const navigation = [
@@ -59,7 +61,6 @@ export default () => {
     };
   }, []);
 
-  const user = session.data?.user;
 
   function EditorWithAiButton() {
     return (
@@ -155,24 +156,25 @@ export default () => {
                 </ul>
                 <div className="mt-6 md:mt-0">
                   {!!user ? (
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <Avatar>
-                            <AvatarImage
-                              src={user.image!}
-                              alt={user.name ?? "avatar pic"}
-                            />
-                            <AvatarFallback>
-                              {user.name?.slice(0, 2).toUpperCase()}
-                            </AvatarFallback>
-                          </Avatar>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>{user.name}</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    <></>
+                    // <TooltipProvider>
+                    //   <Tooltip>
+                    //     <TooltipTrigger>
+                    //       <Avatar>
+                    //         <AvatarImage
+                    //           src={user.image!}
+                    //           alt={user.name ?? "avatar pic"}
+                    //         />
+                    //         <AvatarFallback>
+                    //           {user.name?.slice(0, 2).toUpperCase()}
+                    //         </AvatarFallback>
+                    //       </Avatar>
+                    //     </TooltipTrigger>
+                    //     <TooltipContent>
+                    //       <p>{user.name}</p>
+                    //     </TooltipContent>
+                    //   </Tooltip>
+                    // </TooltipProvider>
                   ) : (
                     <LinkItem
                       variant="shiny"

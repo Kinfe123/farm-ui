@@ -96,8 +96,6 @@ export var userTable = pgTable("userTable", {
   email: varchar("email", { length: 256 }),
   githubId: varchar("github_id", { length: 256 }),
   picture: varchar("picture", { length: 256 }),
-
-
   hashedPassword: varchar("hashed_password", { length: 256 }),
 });
 

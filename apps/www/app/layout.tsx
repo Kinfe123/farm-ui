@@ -16,7 +16,8 @@ import { GeistMono } from "geist/font/mono";
 import { Toaster } from "@/components/ui/toaster";
 import Loglib from "@loglib/tracker/react";
 import { Analytics } from "@vercel/analytics/react";
-import { SessionProvider } from "next-auth/react";
+import { SessionProvider } from "@/lib/auth/provider/lucia.client";
+import { validateRequest } from "@/lib/auth/lucia.auth";
 const { title, desc, ogImage } = metatag;
 export const metadata = {
   metadataBase: new URL("https://farmui.com"),
@@ -53,13 +54,15 @@ const dmSans = DM_Sans({
   display: "swap",
   variable: "--font-dm-sans",
 });
-export default function RootLayout({
+export default async function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
   children,
 }: {
   children: React.ReactNode;
 }) {
+const sessionData = await validateRequest()
+
   return (
     <html
       lang="en"
@@ -87,7 +90,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
 
-      <SessionProvider>
+      <SessionProvider value={sessionData}>
         <body
           className={cn(
             inter.className,
