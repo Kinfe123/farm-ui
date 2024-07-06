@@ -7,15 +7,14 @@ import { OAuth2RequestError } from "arctic";
 import { userTable } from "db/schema";
 import { eq } from "drizzle-orm";
 import { redirect } from "next/navigation";
-export async function GET(request: Request): Promise<Response> {
+export async function GET(request: Request) {
   const url = new URL(request.url);
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
+  console.log({code , state})
   const storedState = cookies().get("github_oauth_state")?.value ?? null;
   if (!code || !state || !storedState || state !== storedState) {
-    return new Response(null, {
-      status: 400,
-    });
+    return redirect('/login')
   }
 
   try {
@@ -41,10 +40,11 @@ export async function GET(request: Request): Promise<Response> {
       );
       return redirect('/')
     }
-
+    
     const newUser = await db
       .insert(userTable)
       .values({
+        email: githubUser.email,
         userName: githubUser.login,
         githubId: githubUser.id,
         picture: githubUser.avatar_url
@@ -66,19 +66,18 @@ export async function GET(request: Request): Promise<Response> {
       e.message === "bad_verification_code"
     ) {
       // invalid code
-      return new Response(null, {
-        status: 400,
-      });
+      return redirect('/login')
+     
     }
-    return new Response(null, {
-      status: 500,
-    });
+    
   }
+  return redirect("/")
 }
 
 interface GitHubUser {
   id: string;
   login: string;
   avatar_url: string;
+  email: string
 }
 

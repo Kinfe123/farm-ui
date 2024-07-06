@@ -7,7 +7,7 @@ import { OAuth2RequestError } from "arctic";
 import { userTable } from "db/schema";
 import { eq } from "drizzle-orm";
 import { redirect } from "next/navigation";
-export async function GET(request: Request): Promise<Response> {
+export async function GET(request: Request) {
   const url = new URL(request.url);
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
@@ -38,12 +38,8 @@ export async function GET(request: Request): Promise<Response> {
         sessionCookie.value,
         sessionCookie.attributes
       );
-      return new Response(null, {
-        status: 302,
-        headers: {
-          Location: "/",
-        },
-      });
+      return redirect('/')
+      
     }
 
     const newUser = await db
@@ -69,13 +65,9 @@ export async function GET(request: Request): Promise<Response> {
       e.message === "bad_verification_code"
     ) {
       // invalid code
-      return new Response(null, {
-        status: 400,
-      });
+     return redirect('/login')
     }
-    return new Response(null, {
-      status: 500,
-    });
+    
   }
 }
 

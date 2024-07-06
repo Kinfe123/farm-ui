@@ -13,7 +13,7 @@ export const github = new GitHub(
   process.env.GITHUB_CLIENT_SECRET!
 );
 export const google = new Google(
-    process.env.AUTH_GOOGLE_ID!,
+    process.env.AUTH_GOOGLE_ID!, 
     process.env.AUTH_GOOGLE_SECRET!,
     process.env.NEXT_PUBLIC_URL + '/api/auth/google/callback'
 )
@@ -38,7 +38,7 @@ export const lucia = new Lucia(adapter, {
 export const validateRequest = cache(
   async (): Promise<
     { user: User; session: Session } | { user: null; session: null }
-  > => {
+  > => {  
     const sessionId = cookies().get(lucia.sessionCookieName)?.value ?? null;
     if (!sessionId) {
       return {

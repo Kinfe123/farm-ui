@@ -29,9 +29,10 @@ export default () => {
   const [state, setState] = useState(false);
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(true);
-  const user = useSession()
-  const u = user.user
-  console.log('the user is : ' , u)
+  const clientUser = useSession()
+  const user = clientUser.user
+  console.log("The user is still is: " , user)
+
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
@@ -156,25 +157,24 @@ export default () => {
                 </ul>
                 <div className="mt-6 md:mt-0">
                   {!!user ? (
-                    <></>
-                    // <TooltipProvider>
-                    //   <Tooltip>
-                    //     <TooltipTrigger>
-                    //       <Avatar>
-                    //         <AvatarImage
-                    //           src={user.image!}
-                    //           alt={user.name ?? "avatar pic"}
-                    //         />
-                    //         <AvatarFallback>
-                    //           {user.name?.slice(0, 2).toUpperCase()}
-                    //         </AvatarFallback>
-                    //       </Avatar>
-                    //     </TooltipTrigger>
-                    //     <TooltipContent>
-                    //       <p>{user.name}</p>
-                    //     </TooltipContent>
-                    //   </Tooltip>
-                    // </TooltipProvider>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <Avatar>
+                            <AvatarImage
+                              src={""}
+                              alt={user.userName ?? "avatar pic"}
+                            />
+                            <AvatarFallback>
+                              {user.userName?.slice(0, 2).toUpperCase()}
+                            </AvatarFallback>
+                          </Avatar>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{user.userName}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   ) : (
                     <LinkItem
                       variant="shiny"
