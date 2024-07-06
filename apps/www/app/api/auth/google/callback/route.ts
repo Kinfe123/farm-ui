@@ -8,7 +8,9 @@ import { redirect } from "next/navigation";
 import { NextRequest } from "next/server";
 
 // http://localhost:3000/api/auth/google/callback
+
 export async function GET(req: NextRequest, res: Response) {
+    console.log("Hello world")
     const url = req.nextUrl
     const code = url.searchParams.get('code')
     const state = url.searchParams.get('state')
@@ -69,5 +71,5 @@ export async function GET(req: NextRequest, res: Response) {
     const sessionCookie = await lucia.createSessionCookie(session.id)
     cookies().set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes)
 
-    return redirect('/dashboard')
+    return redirect('/')
 }

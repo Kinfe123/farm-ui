@@ -21,6 +21,7 @@ export const getGoogleOauthConsentUrl = async () => {
         const authUrl = await google.createAuthorizationURL(state, codeVerifier, {
             scopes: ['email', 'profile']
         })
+        console.log(authUrl)
         return { success: true, url: authUrl.toString() }
 
     } catch (error) {

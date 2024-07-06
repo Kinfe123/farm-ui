@@ -37,7 +37,7 @@ export const metadata = {
 };
 const LogInPage = async () => {
     const user = await validateRequest()
-    if(user) {
+    if(user.user) {
        return redirect("/")
     }
   return (

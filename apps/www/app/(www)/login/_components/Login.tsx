@@ -23,6 +23,8 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { redirect } from "next/navigation";
+import { getGoogleOauthConsentUrl } from "actions/oauth.main";
 
 const initialState = {
   message: "",
@@ -54,6 +56,7 @@ export default function FUILoginWithGridProvider() {
               "username"
             )} , you have successfully registered.`,
           });
+          return redirect("/");
         })
         .catch((err) => {
           toast({
@@ -78,6 +81,7 @@ export default function FUILoginWithGridProvider() {
               "username"
             )} , you have successfully logged in`,
           });
+          return redirect("/");
         })
         .catch((err) => {
           toast({
@@ -122,7 +126,17 @@ export default function FUILoginWithGridProvider() {
         <div className="shadow p-4 py-6 space-y-8 sm:p-6  sm:rounded-lg">
           <div className="grid grid-cols-3 gap-x-3">
             <button
-              onClick={() => signIn("google")}
+              onClick={async () => {
+                const res = await getGoogleOauthConsentUrl();
+                if (res.url) {
+                  window.location.href = res.url;
+                } else {
+                  toast({
+                    title: "Something went wrong",
+                    description: "There is something wrong while registering.",
+                  });
+                }
+              }}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
               className="group flex  transform-gpu bg-page-gradient  dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
@@ -332,7 +346,7 @@ export default function FUILoginWithGridProvider() {
             </Form>
           ) : (
             <Form {...form}>
-               <form
+              <form
                 onSubmit={form.handleSubmit(hanldeLogin)}
                 className="space-y-5"
               >
@@ -385,7 +399,7 @@ export default function FUILoginWithGridProvider() {
                     )}
                   />
                 </div>
-                </form>
+              </form>
             </Form>
           )}
         </div>
