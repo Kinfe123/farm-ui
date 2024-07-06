@@ -58,7 +58,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
     <>
       <section className="mt-48 custom-screen-lg mx-auto">
         
-        <div className="relative max-w-full md:max-w-3xl mx-auto lg:max-w-4xl z-30">
+        <div className="relative max-w-full md:max-w-3xl mx-auto lg:max-w-4xl z-10">
         <a href="/templates" className="m">  
           <ArrowLeft className="w-5 h-5 cursor-pointer ny-5 text-white/40 border border-white/40 rounded-full" />
         </a>
