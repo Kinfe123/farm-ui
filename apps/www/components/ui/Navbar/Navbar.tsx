@@ -63,17 +63,6 @@ export default () => {
   }, []);
 
 
-  function EditorWithAiButton() {
-    return (
-      <button
-        className="flex gap-2 items-center w-full text-sm font-medium duration-200 text-zinc-400 group hover:text-zinc-200"
-        onClick={() => setNewsletterModalActive(true)}
-      >
-        Editor with AI
-        <SparklesIcon className="w-4 h-4 opacity-0 duration-150 scale-50 group-hover:opacity-100 group-hover:scale-125" />
-      </button>
-    );
-  }
 
   return (
     <AnimatePresence mode="wait">
