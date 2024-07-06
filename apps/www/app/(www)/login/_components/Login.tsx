@@ -6,12 +6,13 @@ import { BottomLine } from "components/LineUtils";
 import { PlusSvg } from "components/SectionSvg";
 import { ChevronRight } from "lucide-react";
 import React, { useState } from "react";
+import { registerAction } from "actions/auth.register";
 
 export default function FUILoginWithGridProvider() {
   const [reset, setReset] = useState(false);
   return (
     <main className="w-full min-h-screen   flex flex-col items-center justify-center sm:px-4 relative">
-      <div className="relative w-full bg-page-gradient   space-y-6 text-gray-600 sm:max-w-md md:max-w-xl lg:max-w-xl px-5 py-10  rounded-none  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
+      <div className="relative w-full bg-page-gradient mt-20 mb-5   space-y-6 text-gray-600 sm:max-w-md md:max-w-xl lg:max-w-xl px-5 py-10  rounded-none  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
         <PlusSvg className="size-5 absolute top-[-6px] left-[-6px]" />
         <PlusSvg className="size-5 absolute top-[-31px] right-[-16px]" />
 
@@ -45,7 +46,7 @@ export default function FUILoginWithGridProvider() {
               onClick={() => signIn("google")}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
-              className="group flex  transform-gpu bg-page-gradient   dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+              className="group flex  transform-gpu bg-page-gradient  dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
             >
               <svg
                 className={cn(
@@ -167,14 +168,25 @@ export default function FUILoginWithGridProvider() {
               Or continue with
             </p>
           </div>
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+          <form  action={registerAction} className="space-y-5">
+          <div>
+              <label className="font-medium text-gray-100/50 font-geist">
+                Username
+              </label>
+              <Input
+                type="text"
+                required
+                name="username"
+                className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+              />
+            </div>
             <div>
               <label className="font-medium text-gray-100/50 font-geist">
                 Email
               </label>
               <Input
                 type="email"
-                readOnly
+                name="email"
                 required
                 className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
               />
@@ -185,13 +197,13 @@ export default function FUILoginWithGridProvider() {
               </label>
               <Input
                 type="password"
-                readOnly
                 required
+                name='password'
                 className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
               />
             </div>
-            <button className="w-full group px-4 py-4 font-geist tracking-tighter text-xl text-white font-medium bg-purple-200/10 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] hover:bg-transparent/10 active:bg-purple-600 rounded-lg duration-150">
-              Sign in
+            <button type="submit" className="w-full group px-4 py-4 font-geist tracking-tighter text-xl text-white font-medium bg-purple-200/10 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] hover:bg-transparent/10 active:bg-purple-600 rounded-lg duration-150">
+              Sign Up
               <ChevronRight className="inline-flex justify-center items-center w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
             </button>
           </form>

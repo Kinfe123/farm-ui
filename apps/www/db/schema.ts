@@ -1,3 +1,5 @@
+import { InferInsertModel, InferSelectModel } from "drizzle-orm";
+import {createInsertSchema} from 'drizzle-zod'
 import {
   pgTable,
   serial,
@@ -8,6 +10,8 @@ import {
   index,
   uniqueIndex,
   primaryKey,
+  varchar,
+  uuid,
 } from "drizzle-orm/pg-core";
 
 export var messages = pgTable("messages", {
@@ -85,3 +89,27 @@ export var verificationTokens = pgTable(
     compoundKey: primaryKey(token.identifier, token.token),
   })
 );
+
+export var userTable = pgTable("userTable", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  userName: varchar("user_name", { length: 256 }),
+  email: varchar("email", { length: 256 }),
+  githubId: varchar("github_id", { length: 256 }),
+  hashedPassword: varchar("hashed_password", { length: 256 }),
+});
+
+export var sessionTable = pgTable("sessionTable", {
+  id: text("id").primaryKey(),
+  userId: uuid("user_id")
+    .notNull()
+    .references(() => userTable.id, { onDelete: "cascade" }),
+  expiresAt: timestamp("expires_at", {
+    withTimezone: true,
+    mode: "date",
+  }).notNull(),
+});
+
+export var insertUserSchema = createInsertSchema(userTable);
+export type User = InferSelectModel<typeof userTable>;
+export type NewUser = InferInsertModel<typeof userTable>;
+export type Session = InferSelectModel<typeof sessionTable>;
