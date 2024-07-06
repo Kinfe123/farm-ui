@@ -31,6 +31,7 @@ export const lucia = new Lucia(adapter, {
       email: attributes.email,
       githubId: attributes.githubId,
       userName: attributes.userName,
+      picture: attributes.picture
     };
   },
 });
@@ -56,7 +57,7 @@ export const validateRequest = cache(
           sessionCookie.name,
           sessionCookie.value,
           sessionCookie.attributes
-        );
+      );
       }
       if (!result.session) {
         const sessionCookie = lucia.createBlankSessionCookie();
@@ -81,4 +82,5 @@ interface DatabaseUserAttributes {
   email: string;
   githubId: string;
   userName: string;
+  picture: string;
 }

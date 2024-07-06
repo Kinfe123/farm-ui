@@ -31,7 +31,7 @@ export default () => {
   const [visible, setVisible] = useState(true);
   const clientUser = useSession()
   const user = clientUser.user
-  console.log("The user is still is: " , user)
+  console.log("The user is still is: " , user?.picture)
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -162,7 +162,7 @@ export default () => {
                         <TooltipTrigger>
                           <Avatar>
                             <AvatarImage
-                              src={""}
+                              src={user.picture ?? ""}
                               alt={user.userName ?? "avatar pic"}
                             />
                             <AvatarFallback>
