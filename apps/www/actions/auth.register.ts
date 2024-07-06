@@ -11,14 +11,12 @@ import { RegisterSchema, LoginSchema } from "@/lib/validations/schema";
 export async function registerAction(
   formData: FormData
 ): Promise<ActionResult> {
-  console.log(formData)
   const parsedData = RegisterSchema.safeParse({
     username: formData.get("username"),
     email: formData.get("email"),
     password: formData.get("password"),
 
   });
-  console.log('The parsed data is : ' , parsedData)
 
   if (!parsedData.success) {
     return {

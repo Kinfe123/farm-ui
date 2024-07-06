@@ -222,84 +222,88 @@ export default function FUILoginWithGridProvider() {
               Or continue with
             </p>
           </div>
-          <form onSubmit={form.handleSubmit(handleClick)} className="space-y-5">
-            <div>
-              <label className="font-medium text-gray-100/50 font-geist">
-                Username
-              </label>
-              <FormField
-                control={form.control}
-                name="username"
-                render={({ field }) => (
-                  <FormItem className="w-full">
-                    <FormControl>
-                      <Input
-                        {...field}
-                        type="text"
-                        id="username"
-                        required
-                        name="username"
-                        className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
-                      />
-                    </FormControl>
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(handleClick)}
+              className="space-y-5"
+            >
+              <div>
+                <label className="font-medium text-gray-100/50 font-geist">
+                  Username
+                </label>
+                <FormField
+                  control={form.control}
+                  name="username"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormControl>
+                        <Input
+                          {...field}
+                          type="text"
+                          id="username"
+                          required
+                          name="username"
+                          className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                        />
+                      </FormControl>
 
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div>
-              <label className="font-medium text-gray-100/50 font-geist">
-                Email
-              </label>
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem className="w-full">
-                    <FormControl>
-                      <Input
-                        {...field}
-                        type="text"
-                        id="email"
-                        required
-                        name="email"
-                        className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
-                      />
-                    </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div>
+                <label className="font-medium text-gray-100/50 font-geist">
+                  Email
+                </label>
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormControl>
+                        <Input
+                          {...field}
+                          type="text"
+                          id="email"
+                          required
+                          name="email"
+                          className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                        />
+                      </FormControl>
 
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div>
-              <label className="font-medium text-gray-100/50 font-geist">
-                Passowrd
-              </label>
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem className="w-full">
-                    <FormControl>
-                      <Input
-                        {...field}
-                        type="password"
-                        required
-                        name="password"
-                        name="password"
-                        className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
-                      />
-                    </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div>
+                <label className="font-medium text-gray-100/50 font-geist">
+                  Passowrd
+                </label>
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormControl>
+                        <Input
+                          {...field}
+                          type="password"
+                          required
+                          name="password"
+                          className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                        />
+                      </FormControl>
 
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <SubmitButton pending_action={pending} />
-          </form>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <SubmitButton pending_action={pending} />
+            </form>
+          </Form>
         </div>
         <div className="text-center">
           <a href="javascript:void(0)" className="hover:text-purple-600">
