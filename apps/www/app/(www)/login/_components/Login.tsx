@@ -5,13 +5,102 @@ import { signIn } from "next-auth/react";
 import { BottomLine } from "components/LineUtils";
 import { PlusSvg } from "components/SectionSvg";
 import { ChevronRight } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
+import { loginAction, registerAction } from "actions/auth.main";
+import { useFormState } from "react-dom";
+import { SubmitButton } from "./SubmitChild";
+import { RegisterSchema } from "@/lib/validations/schema";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { toast } from "@/components/ui/use-toast";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { redirect, useRouter } from "next/navigation";
+import {
+  getGithubOauthUrl,
+  getGoogleOauthConsentUrl,
+} from "actions/oauth.main";
 
+const initialState = {
+  message: "",
+};
 export default function FUILoginWithGridProvider() {
   const [reset, setReset] = useState(false);
+  const [state, formAction] = useFormState(registerAction, initialState);
+  const [signUp, setSignUp] = useState(true);
+  const [pending, startTransition] = useTransition();
+  const router = useRouter();
+  const form = useForm<z.infer<typeof RegisterSchema>>({
+    resolver: zodResolver(RegisterSchema),
+    defaultValues: {
+      username: "",
+      email: "",
+      password: "",
+    },
+  });
+  const handleRegister = (data: z.infer<typeof RegisterSchema>) => {
+    const formData = new FormData();
+
+    for (const [key, value] of Object.entries(data)) {
+      formData.append(key, value);
+    }
+    startTransition(() => {
+      registerAction(formData)
+        .then((res) => {
+          toast({
+            title: "Registered Successfully",
+            description: `Dear ${formData.get(
+              "username"
+            )} , you have successfully registered.`,
+          });
+          return redirect("/");
+        })
+        .catch((err) => {
+          toast({
+            title: "Something went wrong",
+            description: "There is something wrong while registering.",
+            variant: "destructive",
+          });
+        });
+    });
+  };
+  const hanldeLogin = (data: z.infer<typeof RegisterSchema>) => {
+    const formData = new FormData();
+    for (const [key, value] of Object.entries(data)) {
+      formData.append(key, value);
+    }
+    startTransition(() => {
+      loginAction(formData)
+        .then((res) => {
+          toast({
+            title: "Login Successfully",
+            description: `Dear ${formData.get(
+              "username"
+            )} , you have successfully logged in`,
+          });
+          return redirect("/");
+        })
+        .catch((err) => {
+          toast({
+            title: "Something went wrong",
+            description: "There is something wrong while logging you in.",
+            variant: "destructive",
+          });
+        });
+    });
+  };
+
   return (
     <main className="w-full min-h-screen   flex flex-col items-center justify-center sm:px-4 relative">
-      <div className="relative w-full bg-page-gradient   space-y-6 text-gray-600 sm:max-w-md md:max-w-xl lg:max-w-xl px-5 py-10  rounded-none  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
+      <div className="relative z-20 w-full bg-page-gradient mt-20 mb-5   space-y-6 text-gray-600 sm:max-w-md md:max-w-xl lg:max-w-xl px-5 py-10  rounded-none  transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
         <PlusSvg className="size-5 absolute top-[-6px] left-[-6px]" />
         <PlusSvg className="size-5 absolute top-[-31px] right-[-16px]" />
 
@@ -31,7 +120,7 @@ export default function FUILoginWithGridProvider() {
             <p className="text-gray-400">
               Don't have an account?{" "}
               <a
-                href="javascript:void(0)"
+                onClick={() => setSignUp(false)}
                 className="font-medium text-purple-600 hover:text-purple-500"
               >
                 Sign up
@@ -42,10 +131,20 @@ export default function FUILoginWithGridProvider() {
         <div className="shadow p-4 py-6 space-y-8 sm:p-6  sm:rounded-lg">
           <div className="grid grid-cols-3 gap-x-3">
             <button
-              onClick={() => signIn("google")}
+              onClick={async () => {
+                const res = await getGoogleOauthConsentUrl();
+                if (res.url) {
+                  window.location.href = res.url;
+                } else {
+                  toast({
+                    title: "Something went wrong",
+                    description: "There is something wrong while registering.",
+                  });
+                }
+              }}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
-              className="group flex  transform-gpu bg-page-gradient   dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+              className="group flex  transform-gpu bg-page-gradient  dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
             >
               <svg
                 className={cn(
@@ -103,7 +202,17 @@ export default function FUILoginWithGridProvider() {
               </svg>
             </button>
             <button
-              onClick={() => signIn("github")}
+              onClick={async () => {
+                const res = await getGithubOauthUrl();
+                if (res.url) {
+                  window.location.href = res.url;
+                } else {
+                  toast({
+                    title: "Something went wrong",
+                    description: "There is something wrong while registering.",
+                  });
+                }
+              }}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
               className="group flex transform-gpu bg-page-gradient dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
@@ -167,34 +276,147 @@ export default function FUILoginWithGridProvider() {
               Or continue with
             </p>
           </div>
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
-            <div>
-              <label className="font-medium text-gray-100/50 font-geist">
-                Email
-              </label>
-              <Input
-                type="email"
-                readOnly
-                required
-                className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
-              />
-            </div>
-            <div>
-              <label className="font-medium text-gray-100/50 font-geist">
-                Password
-              </label>
-              <Input
-                type="password"
-                readOnly
-                required
-                className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
-              />
-            </div>
-            <button className="w-full group px-4 py-4 font-geist tracking-tighter text-xl text-white font-medium bg-purple-200/10 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] hover:bg-transparent/10 active:bg-purple-600 rounded-lg duration-150">
-              Sign in
-              <ChevronRight className="inline-flex justify-center items-center w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-            </button>
-          </form>
+          {signUp ? (
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(handleRegister)}
+                className="space-y-5"
+              >
+                <div>
+                  <label className="font-medium text-gray-100/50 font-geist">
+                    Username
+                  </label>
+                  <FormField
+                    control={form.control}
+                    name="username"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormControl>
+                          <Input
+                            {...field}
+                            type="text"
+                            id="username"
+                            required
+                            name="username"
+                            className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                          />
+                        </FormControl>
+
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div>
+                  <label className="font-medium text-gray-100/50 font-geist">
+                    Email
+                  </label>
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormControl>
+                          <Input
+                            {...field}
+                            type="text"
+                            id="email"
+                            required
+                            name="email"
+                            className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                          />
+                        </FormControl>
+
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div>
+                  <label className="font-medium text-gray-100/50 font-geist">
+                    Passowrd
+                  </label>
+                  <FormField
+                    control={form.control}
+                    name="password"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormControl>
+                          <Input
+                            {...field}
+                            type="password"
+                            required
+                            name="password"
+                            className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                          />
+                        </FormControl>
+
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <SubmitButton pending_action={pending} />
+              </form>
+            </Form>
+          ) : (
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(hanldeLogin)}
+                className="space-y-5"
+              >
+                <div>
+                  <label className="font-medium text-gray-100/50 font-geist">
+                    Email
+                  </label>
+                  <FormField
+                    control={form.control}
+                    name="username"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormControl>
+                          <Input
+                            {...field}
+                            type="text"
+                            id="email"
+                            required
+                            name="email"
+                            className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                          />
+                        </FormControl>
+
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div>
+                  <label className="font-medium text-gray-100/50 font-geist">
+                    Passowrd
+                  </label>
+                  <FormField
+                    control={form.control}
+                    name="password"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormControl>
+                          <Input
+                            {...field}
+                            type="password"
+                            required
+                            name="password"
+                            className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
+                          />
+                        </FormControl>
+
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </form>
+            </Form>
+          )}
         </div>
         <div className="text-center">
           <a href="javascript:void(0)" className="hover:text-purple-600">

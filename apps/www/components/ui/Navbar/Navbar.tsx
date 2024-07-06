@@ -10,7 +10,7 @@ import { SparklesIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ChevronRight, User } from "lucide-react";
-import { useSession } from "next-auth/react";
+import { useSession } from "@/lib/auth/provider/lucia.client";
 import {
   Tooltip,
   TooltipContent,
@@ -29,6 +29,10 @@ export default () => {
   const [state, setState] = useState(false);
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(true);
+  const clientUser = useSession()
+  const user = clientUser.user
+  console.log("The user is still is: " , user?.picture)
+
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
@@ -41,7 +45,6 @@ export default () => {
     }
   });
 
-  const session = useSession();
   const [isNewsletterModalActive, setNewsletterModalActive] = useState(false);
   const pathname = usePathname();
   const navigation = [
@@ -49,7 +52,6 @@ export default () => {
     { title: "Templates", path: "/templates" },
     { title: "Demo", path: "/demo" },
     { title: "Logs", path: "/changelog" },
-
     { title: "Join", path: "/join" },
   ];
   useEffect(() => {
@@ -59,19 +61,7 @@ export default () => {
     };
   }, []);
 
-  const user = session.data?.user;
 
-  function EditorWithAiButton() {
-    return (
-      <button
-        className="flex gap-2 items-center w-full text-sm font-medium duration-200 text-zinc-400 group hover:text-zinc-200"
-        onClick={() => setNewsletterModalActive(true)}
-      >
-        Editor with AI
-        <SparklesIcon className="w-4 h-4 opacity-0 duration-150 scale-50 group-hover:opacity-100 group-hover:scale-125" />
-      </button>
-    );
-  }
 
   return (
     <AnimatePresence mode="wait">
@@ -160,16 +150,16 @@ export default () => {
                         <TooltipTrigger>
                           <Avatar>
                             <AvatarImage
-                              src={user.image!}
-                              alt={user.name ?? "avatar pic"}
+                              src={user.picture ?? ""}
+                              alt={user.userName ?? "avatar pic"}
                             />
                             <AvatarFallback>
-                              {user.name?.slice(0, 2).toUpperCase()}
+                              {user.userName?.slice(0, 2).toUpperCase()}
                             </AvatarFallback>
                           </Avatar>
                         </TooltipTrigger>
                         <TooltipContent>
-                          <p>{user.name}</p>
+                          <p>{user.userName}</p>
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
