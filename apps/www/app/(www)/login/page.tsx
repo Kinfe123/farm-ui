@@ -7,6 +7,7 @@ import { BottomLine } from "components/LineUtils";
 import { getSession } from "next-auth/react";
 import { auth } from "auth";
 import { redirect } from "next/navigation";
+import { validateRequest } from "@/lib/auth/lucia.auth";
 const { title, description }: { title: string; description: string } = {
   title: "Login - Join FarmUI to grab exlusive perks.",
   description: "Join the community to get fast and up to date informations",
@@ -35,9 +36,9 @@ export const metadata = {
   },
 };
 const LogInPage = async () => {
-    const user = await auth()
-    if(user?.user) {
-        redirect("/")
+    const user = await validateRequest()
+    if(user) {
+       return redirect("/")
     }
   return (
     <div className="lg:mt-14 custom-screen">

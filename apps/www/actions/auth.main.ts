@@ -16,7 +16,7 @@ export async function registerAction(
     email: formData.get("email"),
     password: formData.get("password"),
 
-  });
+});
 
   if (!parsedData.success) {
     return {
