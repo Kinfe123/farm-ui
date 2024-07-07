@@ -4,7 +4,7 @@ import * as React from "react"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 import LazyMotionWrapper from "components/LazyMotionWrapper"
 import { AnimatePresence, motion } from "framer-motion"
-import { Smartphone , Laptop2 , ComputerIcon, AlertCircleIcon, Calendar, Printer } from "lucide-react"
+import { Smartphone , Laptop2 ,  AlertCircleIcon, Calendar, Printer } from "lucide-react"
 
 import {
     Card,
@@ -273,19 +273,19 @@ const formattedDate = date.toLocaleString('en-US', {
                 <div className='flex justify-start items-start flex-col gap-3'>
                     <div className="flex gap-2 justify-center items-center">
                         <Calendar className="w-4 h-4 mb-[1.3px]"/>
-                        <p className="uppercase font-geistMono tracking-tighter">Date{" "} - <span className="font-geist font-semibold">{data.date}</span> </p>
+                        <p className="uppercase font-geistMono tracking-tighter">Date{" "} - <span className="font-geist font-bold">{data.date}</span> </p>
                         
 
                     </div>
                     <div className="flex gap-2 justify-center items-center">
                         <Laptop2 className="w-4 h-4 mb-[1.3px]"/>
-                        <p className="uppercase font-geistMono tracking-tighter">Desktop Views{" "} - <span className="font-geist font-semibold">{data.desktop}</span> </p>
+                        <p className="uppercase font-geistMono tracking-tighter">Desktop Views{" "} - <span className="font-geist font-bold">{data.desktop}</span> </p>
                         
 
                     </div>
                     <div className="flex gap-2 justify-center items-center">
                         <Smartphone className="w-4 h-4 mb-[1.3px]"/>
-                        <p className="uppercase font-geistMono tracking-tighter">Mobile Views{" "} - <span className="font-geist font-semibold">{data.mobile}</span> </p>
+                        <p className="uppercase font-geistMono tracking-tighter">Mobile Views{" "} - <span className="font-geist font-bold">{data.mobile}</span> </p>
                         
 
                     </div>

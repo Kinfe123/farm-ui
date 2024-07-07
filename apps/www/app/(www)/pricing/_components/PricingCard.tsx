@@ -1,6 +1,7 @@
 "use client";
 
 import { useSession } from "@/lib/auth/provider/lucia.client";
+import { Flame, Sparkles } from "lucide-react";
 import React from "react";
 export default function FUIPricingBundle() {
   const clientSession = useSession();
@@ -8,24 +9,22 @@ export default function FUIPricingBundle() {
   const plan = {
     name: "Lifetime Accesss",
     desc: "Get a lifetime access for all the subscription services.",
-    price: 99.9,
+    price: 69.9,
     isMostPop: true,
     features: [
-      "Curabitur faucibus",
-      "Curabitur faucibus",
-      "Curabitur faucibus",
-      "Curabitur faucibus",
-      "Curabitur faucibus",
-      "Curabitur faucibus",
-      "Curabitur faucibus",
-      "Curabitur faucibus",
+      "Access to all paid templates",
+      "Request a new components ",
+      "1-o-1 call with Me",
+      "Early acess to all upcoming updates",
+      "Developing with desired frameworks or templating",
+      "Developing with modern tools and technologies",
     ],
   };
 
   const features = [
     {
       name: "Scalable",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      desc: "Designed to adapt and perform well as the size, complexity, or usage of an application grows over time.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +44,7 @@ export default function FUIPricingBundle() {
     },
     {
       name: "Flexible",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      desc: "Adapt and accommodate a wide range of user needs, preferences, and usage scenarios",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -65,42 +64,16 @@ export default function FUIPricingBundle() {
     },
     {
       name: "Smooth",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      desc: "Provides a seamless, responsive, and visually pleasing interaction experience for the user. ",
       icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
-          />
-        </svg>
+       <Flame />
       ),
     },
     {
-      name: "Secure",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      name: "Beautiful",
+      desc: "Provides interface that has been carefully designed and curated to have a visually appealing, coherent, and consistent aesthetic. ",
       icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
-          />
-        </svg>
+        <Sparkles />
       ),
     },
   ];
