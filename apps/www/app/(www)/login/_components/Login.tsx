@@ -360,7 +360,7 @@ export default function FUILoginWithGridProvider() {
                         <FormControl>
                           <Input
                             {...field}
-                            type="passwordLogin"
+                            type="password"
                             required
                             name="passwordLogin"
                             className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
