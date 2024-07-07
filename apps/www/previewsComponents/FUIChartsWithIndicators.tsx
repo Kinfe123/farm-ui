@@ -3,8 +3,8 @@
 import * as React from "react"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 import LazyMotionWrapper from "components/LazyMotionWrapper"
-import { motion } from "framer-motion"
-import { Smartphone , Laptop2 , ComputerIcon } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
+import { Smartphone , Laptop2 , ComputerIcon, AlertCircleIcon, Calendar } from "lucide-react"
 
 import {
     Card,
@@ -112,7 +112,7 @@ const chartData = [
     { date: "2024-06-29", desktop: 103, mobile: 160 },
     { date: "2024-06-30", desktop: 446, mobile: 400 },
 ]
-
+type ChartType = typeof chartData[number]
 const chartConfig = {
     views: {
         label: "Page Views",
@@ -130,7 +130,12 @@ const chartConfig = {
 export default function FUIChartihIndicators() {
     const [activeChart, setActiveChart] =
         React.useState<keyof typeof chartConfig>("desktop")
-
+    const [selectedData , setSelectedData] = React.useState<ChartType>({
+        date:"",
+        desktop: 0,
+        mobile: 0
+    })
+    const [opened , setOpened] = React.useState<boolean>(false)
     const total = React.useMemo(
         () => ({
             desktop: chartData.reduce((acc, curr) => acc + curr.desktop, 0),
@@ -206,7 +211,7 @@ export default function FUIChartihIndicators() {
                         <ChartTooltip
                             content={
                                 <ChartTooltipContent
-                                    className="w-[150px] bg-muted/50"
+                                    className="w-[150px] bg-gradient-to-tr from-muted/90 via-muted/80 to-muted/60"
                                     nameKey="views"
                                     labelFormatter={(value) => {
                                         return new Date(value).toLocaleDateString("en-US", {
@@ -218,10 +223,95 @@ export default function FUIChartihIndicators() {
                                 />
                             }
                         />
-                        <Bar dataKey={activeChart} fill={`var(--color-${activeChart})`} />
+                        <Bar className="cursor-pointer" dataKey={activeChart} fill={`var(--color-${activeChart})`} onClick={(value: ChartType) => {
+                            setSelectedData(value)
+                            setOpened(true)
+                        }} />
                     </BarChart>
                 </ChartContainer>
             </CardContent>
+            <SpringModal isOpen={opened} setIsOpen={setOpened} data={selectedData} />
         </Card>
     )
 }
+
+
+const SpringModal = ({ isOpen, setIsOpen , data }: {isOpen: boolean , setIsOpen:React.Dispatch<React.SetStateAction<boolean>>, data: ChartType }) => {
+    const date = new Date(data.date);
+const formattedDate = date.toLocaleString('en-US', {
+  day: '2-digit',
+  month: 'short',
+  weekday: 'short',
+  year: 'numeric'
+});
+    return (
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+            className="bg-slate-900/20 font-geist backdrop-blur p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer"
+          >
+            <motion.div
+              initial={{ scale: 0, rotate: "12.5deg" }}
+              animate={{ scale: 1, rotate: "0deg" }}
+              exit={{ scale: 0, rotate: "0deg" }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-black/90  bg-page-gradient border-[1.2px] border-white/20 border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  text-white p-6 rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden"
+            >
+              <AlertCircleIcon className="text-white/10 rotate-12 text-[250px] absolute z-0 -top-24 -left-24" />
+              <div className="relative z-10 flex flex-col justify-center items-start">
+                <div className="bg-hero-gradient w-16 h-16 mb-2 rounded-full text-3xl text-white grid place-items-center mr-auto">
+                  <AlertCircleIcon />
+                </div>
+                <h3 className="text-3xl font-normal tracking-tighter text-center mb-2">
+                  {formattedDate} Details.
+                </h3>
+                <hr className="h-px w-full bg-white/10 mt-2 mb-5" />
+                <div className='flex justify-start items-start flex-col gap-3'>
+                    <div className="flex gap-2 justify-center items-center">
+                        <Calendar className="w-4 h-4 mb-[1.3px]"/>
+                        <p className="uppercase font-geistMono tracking-tighter">Date{" "} - <span className="font-geist font-semibold">{data.date}</span> </p>
+                        
+
+                    </div>
+                    <div className="flex gap-2 justify-center items-center">
+                        <Laptop2 className="w-4 h-4 mb-[1.3px]"/>
+                        <p className="uppercase font-geistMono tracking-tighter">Desktop Views{" "} - <span className="font-geist font-semibold">{data.date}</span> </p>
+                        
+
+                    </div>
+                    <div className="flex gap-2 justify-center items-center">
+                        <Smartphone className="w-4 h-4 mb-[1.3px]"/>
+                        <p className="uppercase font-geistMono tracking-tighter">Mobile Views{" "} - <span className="font-geist font-semibold">{data.date}</span> </p>
+                        
+
+                    </div>
+
+                </div>
+                <p className="text-center mb-6">
+                 
+                </p>
+              </div>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="bg-white hover:opacity-90 transition-opacity text-black font-semibold w-full py-2 rounded"
+                  >
+                    Understood!
+                  </button>
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="bg-transparent hover:bg-white/10 transition-colors text-white font-semibold w-full py-2 rounded"
+                  >
+                    Nah, go back
+                  </button>
+                </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    );
+  };
