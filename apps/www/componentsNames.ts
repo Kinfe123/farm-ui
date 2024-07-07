@@ -120,6 +120,8 @@ import FUIButtonsWithLowColors from "./previewsComponents/FUIButtonsWithLowColor
       
 import FUIStepsWithTitlesOnTheSide from "./previewsComponents/FUIStepsWithTitlesOnTheSide.jsx";
       
+import FUIChartihIndicators from "previewsComponents/FUIChartsWithIndicators.tsx";
+
 import FUIPasswordInput from "./previewsComponents/FUIPasswordInput.jsx";
       
 import FUITabsWithBackgroundColor from "./previewsComponents/FUITabsWithBackgroundColor.jsx";
@@ -502,6 +504,8 @@ FUIAlertInfoLinear,
 FUIFooterWithDescriptionAndTitle,
       
 FUITabsWithIcons,
+
+FUIChartihIndicators, 
       
 FUIContextMenuWithSubmenu,
       
