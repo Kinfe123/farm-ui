@@ -4,7 +4,7 @@ import * as React from "react"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 import LazyMotionWrapper from "components/LazyMotionWrapper"
 import { AnimatePresence, motion } from "framer-motion"
-import { Smartphone , Laptop2 , ComputerIcon, AlertCircleIcon, Calendar } from "lucide-react"
+import { Smartphone , Laptop2 , ComputerIcon, AlertCircleIcon, Calendar, Printer } from "lucide-react"
 
 import {
     Card,
@@ -279,13 +279,13 @@ const formattedDate = date.toLocaleString('en-US', {
                     </div>
                     <div className="flex gap-2 justify-center items-center">
                         <Laptop2 className="w-4 h-4 mb-[1.3px]"/>
-                        <p className="uppercase font-geistMono tracking-tighter">Desktop Views{" "} - <span className="font-geist font-semibold">{data.date}</span> </p>
+                        <p className="uppercase font-geistMono tracking-tighter">Desktop Views{" "} - <span className="font-geist font-semibold">{data.desktop}</span> </p>
                         
 
                     </div>
                     <div className="flex gap-2 justify-center items-center">
                         <Smartphone className="w-4 h-4 mb-[1.3px]"/>
-                        <p className="uppercase font-geistMono tracking-tighter">Mobile Views{" "} - <span className="font-geist font-semibold">{data.date}</span> </p>
+                        <p className="uppercase font-geistMono tracking-tighter">Mobile Views{" "} - <span className="font-geist font-semibold">{data.mobile}</span> </p>
                         
 
                     </div>
@@ -298,9 +298,10 @@ const formattedDate = date.toLocaleString('en-US', {
                 <div className="flex gap-2">
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="bg-white hover:opacity-90 transition-opacity text-black font-semibold w-full py-2 rounded"
+                    className="bg-white flex justify-center items-center hover:opacity-90 transition-opacity text-black font-semibold w-full py-2 rounded"
                   >
-                    Understood!
+
+                   <Printer className="mr-2"/> Print
                   </button>
                   <button
                     onClick={() => setIsOpen(false)}
