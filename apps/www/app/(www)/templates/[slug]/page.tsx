@@ -107,7 +107,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                       target="_blank"
                       href={`${template_mod?.source_code}`}
                       variant="shiny"
-                      className="z-20 inline-block w-full hover:bg-zinc-700 sm:w-auto"
+                    className="z-20 inline-block w-full hover:bg-zinc-700 sm:w-auto"
                     >
                       Download template
                     </LinkItem>

@@ -75,6 +75,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.5",
     "react-resizable-panels": "^2.0.19",
+    "recharts": "2.12.7",
     "rehype-code-titles": "^1.2.0",
     "remark-code-import": "^1.2.0",
     "remove": "^0.1.5",

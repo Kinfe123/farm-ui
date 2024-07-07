@@ -9,7 +9,7 @@ import NewsletterModal from "../NewsletterModal";
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { ChevronRight, User } from "lucide-react";
+import { ChevronRight, LogOut, User } from "lucide-react";
 import { useSession } from "@/lib/auth/provider/lucia.client";
 import {
   Tooltip,
@@ -24,14 +24,24 @@ import {
   useScroll,
   motion,
 } from "framer-motion";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@radix-ui/react-dropdown-menu";
+import { logoutAction } from "actions/auth.main";
+import Button from "../Button";
+import StaggeredDropDown from "./NavbarLists";
 
 export default () => {
   const [state, setState] = useState(false);
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(true);
-  const clientUser = useSession()
-  const user = clientUser.user
-  console.log("The user is still is: " , user?.picture)
+  const clientUser = useSession();
+  const user = clientUser.user;
+  console.log("The user is still is: ", user?.picture);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -60,8 +70,6 @@ export default () => {
       if (target && !target.closest(".menu-btn")) setState(false);
     };
   }, []);
-
-
 
   return (
     <AnimatePresence mode="wait">
@@ -145,24 +153,7 @@ export default () => {
                 </ul>
                 <div className="mt-6 md:mt-0">
                   {!!user ? (
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <Avatar>
-                            <AvatarImage
-                              src={user.picture ?? ""}
-                              alt={user.userName ?? "avatar pic"}
-                            />
-                            <AvatarFallback>
-                              {user.userName?.slice(0, 2).toUpperCase()}
-                            </AvatarFallback>
-                          </Avatar>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>{user.userName}</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+                    <StaggeredDropDown user={user}/>
                   ) : (
                     <LinkItem
                       variant="shiny"
