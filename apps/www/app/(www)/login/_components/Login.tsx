@@ -57,20 +57,34 @@ export default function FUILoginWithGridProvider() {
         .then((res) => {
           toast({
             title: "Registered Successfully",
-            description: `Dear ${formData.get(
-              "username"
-            )} , you have successfully registered.`,
+            description: `You have successfully registered.`,
           });
-          return redirect("/");
+          console.log(res);
         })
         .catch((err) => {
           toast({
             title: "Something went wrong",
-            description: "There is something wrong while registering.",
             variant: "destructive",
+            description: `There is something wrong while regitering.`,
           });
         });
     });
+    // startTransition(async () => {
+    //   try {
+    //     const res = await registerAction(formData);
+
+    //     toast({
+    //       title: "Registered Successfully",
+    //       description: `You have successfully registered.`,
+    //     });
+    //     return redirect("/");
+    //   } catch (err) {
+    //     toast({
+    //       title: "Something went wrong",
+    //       description: `There is something wrong while regitering.`,
+    //     });
+    //   }
+    // });
   };
   const hanldeLogin = (data: z.infer<typeof RegisterSchema>) => {
     const formData = new FormData();
@@ -78,24 +92,37 @@ export default function FUILoginWithGridProvider() {
       formData.append(key, value);
     }
     startTransition(() => {
-      loginAction(formData)
-        .then((res) => {
-          toast({
-            title: "Login Successfully",
-            description: `Dear ${formData.get(
-              "username"
-            )} , you have successfully logged in`,
-          });
-          return redirect("/");
-        })
-        .catch((err) => {
-          toast({
-            title: "Something went wrong",
-            description: "There is something wrong while logging you in.",
-            variant: "destructive",
-          });
+      loginAction(formData).then((res) => {
+        toast({
+          title: "Login Successfully",
+          description: `You have successfully logged in`,
         });
-    });
+      }).catch((err) => {
+        toast({
+          title: "Something went wrong",
+          description: "There is something wrong while logging you in.",
+          variant: "destructive",
+        });
+      })
+    })
+    // startTransition(async () => {
+    //   try {
+    //     const res = await loginAction(formData);
+    //     toast({
+    //       title: "Login Successfully",
+    //       description: `Dear ${formData.get(
+    //         "username"
+    //       )} , you have successfully logged in`,
+    //     });
+    //     return redirect("/");
+    //   } catch (err) {
+    //     toast({
+    //       title: "Something went wrong",
+    //       description: "There is something wrong while logging you in.",
+    //       variant: "destructive",
+    //     });
+    //   }
+    // });
   };
 
   return (

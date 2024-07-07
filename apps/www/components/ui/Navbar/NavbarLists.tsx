@@ -7,6 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { toast } from "@/components/ui/use-toast";
 import { useSession } from "@/lib/auth/provider/lucia.client";
 import { cn } from "@/lib/utils";
 import { AvatarFallback } from "@radix-ui/react-avatar";
@@ -19,6 +20,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 type UserProps = Omit<User, "hashedPassword">;
 const StaggeredDropDown = ({ user }: { user: UserProps }) => {
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   return (
     <div className="flex items-center justify-center bg-transparent">
       <motion.div animate={open ? "open" : "closed"} className="relative">
@@ -34,7 +36,7 @@ const StaggeredDropDown = ({ user }: { user: UserProps }) => {
                     src={user?.picture ?? ""}
                     alt={user?.userName ?? "avatar pic"}
                   />
-                  <AvatarFallback className='flex justify-center items-center'>
+                  <AvatarFallback className="flex justify-center items-center">
                     {user?.userName?.slice(0, 2).toUpperCase()}
                   </AvatarFallback>
                 </Avatar>
@@ -86,8 +88,19 @@ const Option = ({
       variants={itemVariants}
       onClick={async () => {
         setOpen(false);
-    if (actions) {
-          await actions();
+        if (actions) {
+          try {
+            const res = await actions();
+            toast({
+              title: "Successfully LoggedOut",
+              description: "You have successfully logout",
+            });
+          } catch (err) {
+            toast({
+              title: "Something went wrong",
+              description: "There is something while logging out.",
+            });
+          }
         }
       }}
       className={cn(
