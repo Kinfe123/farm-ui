@@ -20,7 +20,6 @@ import { Dispatch, SetStateAction, useState } from "react";
 type UserProps = Omit<User, "hashedPassword">;
 const StaggeredDropDown = ({ user }: { user: UserProps }) => {
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
   return (
     <div className="flex items-center justify-center bg-transparent">
       <motion.div animate={open ? "open" : "closed"} className="relative">
@@ -83,11 +82,13 @@ const Option = ({
   setOpen: Dispatch<SetStateAction<boolean>>;
   actions?: () => {};
 }) => {
+  const [loading, setLoading] = useState(false);
   return (
     <motion.li
       variants={itemVariants}
       onClick={async () => {
         setOpen(false);
+        setLoading(true);
         if (actions) {
           try {
             const res = await actions();
@@ -98,9 +99,11 @@ const Option = ({
           } catch (err) {
             toast({
               title: "Something went wrong",
+              variant: "destructive",
               description: "There is something while logging out.",
             });
           }
+          setLoading(false);
         }
       }}
       className={cn(

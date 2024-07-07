@@ -4,12 +4,12 @@ import { cn } from "@/lib/utils";
 import { signIn } from "next-auth/react";
 import { BottomLine } from "components/LineUtils";
 import { PlusSvg } from "components/SectionSvg";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Loader } from "lucide-react";
 import React, { useState, useTransition } from "react";
 import { loginAction, registerAction } from "actions/auth.main";
 import { useFormState } from "react-dom";
 import { SubmitButton } from "./SubmitChild";
-import { RegisterSchema } from "@/lib/validations/schema";
+import { LoginSchema, RegisterSchema } from "@/lib/validations/schema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -28,6 +28,7 @@ import {
   getGithubOauthUrl,
   getGoogleOauthConsentUrl,
 } from "actions/oauth.main";
+import SignUp from "./SignUp";
 
 const initialState = {
   message: "",
@@ -37,13 +38,21 @@ export default function FUILoginWithGridProvider() {
   const [state, formAction] = useFormState(registerAction, initialState);
   const [signUp, setSignUp] = useState(true);
   const [pending, startTransition] = useTransition();
-  const router = useRouter();
+  const [pending2, startTransition2] = useTransition();
+
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
       username: "",
       email: "",
       password: "",
+    },
+  });
+  const loginForm = useForm<z.infer<typeof LoginSchema>>({
+    resolver: zodResolver(LoginSchema),
+    defaultValues: {
+      emailLogin: "",
+      passwordLogin: "",
     },
   });
   const handleRegister = (data: z.infer<typeof RegisterSchema>) => {
@@ -69,42 +78,28 @@ export default function FUILoginWithGridProvider() {
           });
         });
     });
-    // startTransition(async () => {
-    //   try {
-    //     const res = await registerAction(formData);
-
-    //     toast({
-    //       title: "Registered Successfully",
-    //       description: `You have successfully registered.`,
-    //     });
-    //     return redirect("/");
-    //   } catch (err) {
-    //     toast({
-    //       title: "Something went wrong",
-    //       description: `There is something wrong while regitering.`,
-    //     });
-    //   }
-    // });
   };
-  const hanldeLogin = (data: z.infer<typeof RegisterSchema>) => {
+  const hanldeLogin = (data: z.infer<typeof LoginSchema>) => {
     const formData = new FormData();
     for (const [key, value] of Object.entries(data)) {
       formData.append(key, value);
     }
-    startTransition(() => {
-      loginAction(formData).then((res) => {
-        toast({
-          title: "Login Successfully",
-          description: `You have successfully logged in`,
+    startTransition2(() => {
+      loginAction(formData)
+        .then((res) => {
+          toast({
+            title: "Login Successfully",
+            description: `You have successfully logged in`,
+          });
+        })
+        .catch((err) => {
+          toast({
+            title: "Something went wrong",
+            description: "There is something wrong while logging you in.",
+            variant: "destructive",
+          });
         });
-      }).catch((err) => {
-        toast({
-          title: "Something went wrong",
-          description: "There is something wrong while logging you in.",
-          variant: "destructive",
-        });
-      })
-    })
+    });
     // startTransition(async () => {
     //   try {
     //     const res = await loginAction(formData);
@@ -140,20 +135,37 @@ export default function FUILoginWithGridProvider() {
             width={100}
             className="mx-auto rounded-full"
           />
-          <div className="mt-5 space-y-2">
-            <h3 className="text-gray-200 text-2xl font-normal sm:text-3xl tracking-tighter font-geist">
-              Log in to your account
-            </h3>
-            <p className="text-gray-400">
-              Don't have an account?{" "}
-              <a
-                onClick={() => setSignUp(false)}
-                className="font-medium text-purple-600 hover:text-purple-500"
-              >
-                Sign up
-              </a>
-            </p>
-          </div>
+          {signUp ? (
+            <div className="mt-5 space-y-2">
+              <h3 className="text-gray-200 text-2xl font-normal sm:text-3xl tracking-tighter font-geist">
+                Create an account
+              </h3>
+              <p className="text-gray-400">
+                You have an account?{" "}
+                <a
+                  onClick={() => setSignUp(false)}
+                  className="font-medium cursor-pointer text-purple-600 hover:text-purple-500"
+                >
+                  Sign In
+                </a>
+              </p>
+            </div>
+          ) : (
+            <div className="mt-5 space-y-2">
+              <h3 className="text-gray-200 text-2xl font-normal sm:text-3xl tracking-tighter font-geist">
+                Log in to your account
+              </h3>
+              <p className="text-gray-400">
+                Don't have an account?{" "}
+                <a
+                  onClick={() => setSignUp(true)}
+                  className="font-medium cursor-pointer text-purple-600 hover:text-purple-500"
+                >
+                  Sign up
+                </a>
+              </p>
+            </div>
+          )}
         </div>
         <div className="shadow p-4 py-6 space-y-8 sm:p-6  sm:rounded-lg">
           <div className="grid grid-cols-3 gap-x-3">
@@ -304,92 +316,11 @@ export default function FUILoginWithGridProvider() {
             </p>
           </div>
           {signUp ? (
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(handleRegister)}
-                className="space-y-5"
-              >
-                <div>
-                  <label className="font-medium text-gray-100/50 font-geist">
-                    Username
-                  </label>
-                  <FormField
-                    control={form.control}
-                    name="username"
-                    render={({ field }) => (
-                      <FormItem className="w-full">
-                        <FormControl>
-                          <Input
-                            {...field}
-                            type="text"
-                            id="username"
-                            required
-                            name="username"
-                            className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
-                          />
-                        </FormControl>
-
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div>
-                  <label className="font-medium text-gray-100/50 font-geist">
-                    Email
-                  </label>
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem className="w-full">
-                        <FormControl>
-                          <Input
-                            {...field}
-                            type="text"
-                            id="email"
-                            required
-                            name="email"
-                            className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
-                          />
-                        </FormControl>
-
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div>
-                  <label className="font-medium text-gray-100/50 font-geist">
-                    Passowrd
-                  </label>
-                  <FormField
-                    control={form.control}
-                    name="password"
-                    render={({ field }) => (
-                      <FormItem className="w-full">
-                        <FormControl>
-                          <Input
-                            {...field}
-                            type="password"
-                            required
-                            name="password"
-                            className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
-                          />
-                        </FormControl>
-
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <SubmitButton pending_action={pending} />
-              </form>
-            </Form>
+            <SignUp />
           ) : (
-            <Form {...form}>
+            <Form {...loginForm}>
               <form
-                onSubmit={form.handleSubmit(hanldeLogin)}
+                onSubmit={loginForm.handleSubmit(hanldeLogin)}
                 className="space-y-5"
               >
                 <div>
@@ -397,17 +328,17 @@ export default function FUILoginWithGridProvider() {
                     Email
                   </label>
                   <FormField
-                    control={form.control}
-                    name="username"
+                    control={loginForm.control}
+                    name="emailLogin"
                     render={({ field }) => (
                       <FormItem className="w-full">
                         <FormControl>
                           <Input
                             {...field}
                             type="text"
-                            id="email"
+                            id="emailLogin"
                             required
-                            name="email"
+                            name="emailLogin"
                             className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
                           />
                         </FormControl>
@@ -419,19 +350,19 @@ export default function FUILoginWithGridProvider() {
                 </div>
                 <div>
                   <label className="font-medium text-gray-100/50 font-geist">
-                    Passowrd
+                    Password
                   </label>
                   <FormField
-                    control={form.control}
-                    name="password"
+                    control={loginForm.control}
+                    name="passwordLogin"
                     render={({ field }) => (
                       <FormItem className="w-full">
                         <FormControl>
                           <Input
                             {...field}
-                            type="password"
+                            type="passwordLogin"
                             required
-                            name="password"
+                            name="passwordLogin"
                             className="w-full mt-2 px-3 py-6 text-gray-500 bg-transparent outline-none border focus:border-purple-600 shadow-sm rounded-lg"
                           />
                         </FormControl>
@@ -441,6 +372,16 @@ export default function FUILoginWithGridProvider() {
                     )}
                   />
                 </div>
+                <button
+                  type="submit"
+                  disabled={pending2}
+                  className="w-full group px-4 py-4 font-geist flex justify-center items-center gap-1 tracking-tighter text-xl text-white font-medium bg-purple-200/10 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] hover:bg-transparent/10 active:bg-purple-600 rounded-lg duration-150"
+                >
+                  {pending2 && <Loader className="animate-spin w-4 h-4 mr-2" />}
+                  Login
+                  <ChevronRight className="inline-flex justify-center items-center w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+                </button>
+                {/* <SubmitButton pending_action={pending2} label={"Sign In"} /> */}
               </form>
             </Form>
           )}

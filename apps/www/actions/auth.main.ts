@@ -63,19 +63,18 @@ export async function registerAction(
 
 export async function loginAction(formData: FormData): Promise<ActionResult> {
   const parsedData = LoginSchema.safeParse({
-    email: formData.get("email"),
-    password: formData.get("password"),
+    emailLogin: formData.get("emailLogin"),
+    passwordLogin: formData.get("passwordLogin"),
   });
 
   if (!parsedData.success) {
-    return {
-      message: parsedData.error.issues[0].message,
-    };
+    throw new Error("Parsing Failed");
+
+   
   }
   const data = parsedData.data;
-
   const existingUser = await db.query.userTable.findFirst({
-    where: eq(userTable.email, data.email),
+    where: eq(userTable.email, data.emailLogin),
   });
 
   if (!existingUser) {
@@ -84,7 +83,7 @@ export async function loginAction(formData: FormData): Promise<ActionResult> {
 
   const validPassword = await new Argon2id().verify(
     existingUser.hashedPassword ?? "",
-    data.password
+    data.passwordLogin
   );
 
   if (!validPassword) {
