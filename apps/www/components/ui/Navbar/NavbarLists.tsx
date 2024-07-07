@@ -7,6 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { toast } from "@/components/ui/use-toast";
 import { useSession } from "@/lib/auth/provider/lucia.client";
 import { cn } from "@/lib/utils";
 import { AvatarFallback } from "@radix-ui/react-avatar";
@@ -24,7 +25,7 @@ const StaggeredDropDown = ({ user }: { user: UserProps }) => {
       <motion.div animate={open ? "open" : "closed"} className="relative">
         <button
           onClick={() => setOpen((pv) => !pv)}
-          className="flex items-center gap-2 px-3 py-q rounded-full text-indigo-50 bg-hero-gradient hover:bg-opacity-80 duration-500 transition-colors"
+          className="flex justify-center items-center gap-2 px-3 py-q rounded-full text-indigo-50 bg-hero-gradient hover:bg-opacity-80 duration-500 transition-colors"
         >
           <TooltipProvider>
             <Tooltip>
@@ -34,7 +35,7 @@ const StaggeredDropDown = ({ user }: { user: UserProps }) => {
                     src={user?.picture ?? ""}
                     alt={user?.userName ?? "avatar pic"}
                   />
-                  <AvatarFallback>
+                  <AvatarFallback className="flex justify-center items-center">
                     {user?.userName?.slice(0, 2).toUpperCase()}
                   </AvatarFallback>
                 </Avatar>
@@ -81,13 +82,28 @@ const Option = ({
   setOpen: Dispatch<SetStateAction<boolean>>;
   actions?: () => {};
 }) => {
+  const [loading, setLoading] = useState(false);
   return (
     <motion.li
       variants={itemVariants}
       onClick={async () => {
         setOpen(false);
-    if (actions) {
-          await actions();
+        setLoading(true);
+        if (actions) {
+          try {
+            const res = await actions();
+            toast({
+              title: "Successfully LoggedOut",
+              description: "You have successfully logout",
+            });
+          } catch (err) {
+            toast({
+              title: "Something went wrong",
+              variant: "destructive",
+              description: "There is something while logging out.",
+            });
+          }
+          setLoading(false);
         }
       }}
       className={cn(
