@@ -163,7 +163,7 @@ export default function FUIChartihIndicators() {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration:1 }}
                                     data-active={activeChart === chart}
-                                    className="relative z-30 group overflow-hidden flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l bg-hero-gradient border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
+                                    className="relative z-30 group overflow-hidden flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l bg-hero-gradient border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  data-[active=true]:bg-muted/40 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
                                     onClick={() => setActiveChart(chart)}
                                 >
                                     <span className="text-xs text-muted-foreground">
