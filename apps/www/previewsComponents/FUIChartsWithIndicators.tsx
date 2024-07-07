@@ -4,6 +4,7 @@ import * as React from "react"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 import LazyMotionWrapper from "components/LazyMotionWrapper"
 import { motion } from "framer-motion"
+import { Smartphone , Laptop2 , ComputerIcon } from "lucide-react"
 
 import {
     Card,
@@ -147,7 +148,7 @@ export default function FUIChartihIndicators() {
                         Showing total visitors for the last 3 months
                     </CardDescription>
                 </div>
-                <div className="flex">
+                <div className="flex overflow-clip">
                     {["desktop", "mobile"].map((key) => {
                         const chart = key as keyof typeof chartConfig
                         return (
@@ -157,7 +158,7 @@ export default function FUIChartihIndicators() {
                                     animate={{ opacity: 1 }}
                                     transition={{ duration:1 }}
                                     data-active={activeChart === chart}
-                                    className="relative z-30 flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l bg-page-gradient  data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
+                                    className="relative z-30 group overflow-hidden flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l bg-hero-gradient border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  data-[active=true]:bg-muted/50 sm:border-l sm:border-t-0 sm:px-8 sm:py-6"
                                     onClick={() => setActiveChart(chart)}
                                 >
                                     <span className="text-xs text-muted-foreground">
@@ -166,6 +167,7 @@ export default function FUIChartihIndicators() {
                                     <span className="text-lg font-bold leading-none sm:text-3xl">
                                         {total[key as keyof typeof total].toLocaleString()}
                                     </span>
+                                    {key === "desktop" ? <Laptop2 className="absolute bottom-0 right-[-20px] w-28 h-28  translate-y-16 text-sm  group-hover:translate-y-4 duration-500 transition-all group-hover:opacity-80 opacity-50 text-white/10 group-hover:text-white/30" /> : <Smartphone className="absolute bottom-0 right-[-20px] w-28 h-28  translate-y-16 text-sm  group-hover:translate-y-4 duration-500 transition-all group-hover:opacity-80 opacity-50 text-white/10 group-hover:text-white/30" /> }
                                 </motion.button>
                             </LazyMotionWrapper>
 
@@ -204,7 +206,7 @@ export default function FUIChartihIndicators() {
                         <ChartTooltip
                             content={
                                 <ChartTooltipContent
-                                    className="w-[150px]"
+                                    className="w-[150px] bg-muted/50"
                                     nameKey="views"
                                     labelFormatter={(value) => {
                                         return new Date(value).toLocaleDateString("en-US", {
