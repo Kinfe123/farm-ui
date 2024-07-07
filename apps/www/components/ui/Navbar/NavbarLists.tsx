@@ -10,12 +10,13 @@ import {
 import { useSession } from "@/lib/auth/provider/lucia.client";
 import { cn } from "@/lib/utils";
 import { AvatarFallback } from "@radix-ui/react-avatar";
+import { logoutAction } from "actions/auth.main";
 import { User } from "db/schema";
 import { motion } from "framer-motion";
 import { BarChart, ChevronDown, LogOut, Mail } from "lucide-react";
 import { Dispatch, SetStateAction, useState } from "react";
 
-type UserProps =  Omit<User , "hashedPassword">
+type UserProps = Omit<User, "hashedPassword">;
 const StaggeredDropDown = ({ user }: { user: UserProps }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -23,7 +24,7 @@ const StaggeredDropDown = ({ user }: { user: UserProps }) => {
       <motion.div animate={open ? "open" : "closed"} className="relative">
         <button
           onClick={() => setOpen((pv) => !pv)}
-          className="flex items-center gap-2 px-3 py-2 rounded-md text-indigo-50 bg-glass-gradient hover:bg-opacity-80 duration-500 transition-colors"
+          className="flex items-center gap-2 px-3 py-q rounded-full text-indigo-50 bg-hero-gradient hover:bg-opacity-80 duration-500 transition-colors"
         >
           <TooltipProvider>
             <Tooltip>
@@ -53,10 +54,16 @@ const StaggeredDropDown = ({ user }: { user: UserProps }) => {
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: "top", translateX: "-50%" }}
-          className="flex flex-col gap-2 p-2 rounded-lg bg-white shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden"
+          className="flex flex-col gap-2 p-2 rounded-lg bg-black/70 [border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset] shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden"
         >
           <Option setOpen={setOpen} Icon={<BarChart />} text="Dashboard" />
-          <Option setOpen={setOpen} Icon={<LogOut />} text="Logout" />
+          <hr className="bg-white/20 w-full h-px" />
+          <Option
+            setOpen={setOpen}
+            Icon={<LogOut />}
+            text="Logout"
+            actions={logoutAction}
+          />
         </motion.ul>
       </motion.div>
     </div>
@@ -67,16 +74,28 @@ const Option = ({
   text,
   Icon,
   setOpen,
+  actions,
 }: {
   text: string;
   Icon: React.ReactNode;
   setOpen: Dispatch<SetStateAction<boolean>>;
+  actions?: () => {};
 }) => {
   return (
     <motion.li
       variants={itemVariants}
-      onClick={() => setOpen(false)}
-      className={cn("flex items-center gap-2 w-full p-2 text-xs font-medium whitespace-nowrap rounded-md hover:bg-indigo-100  transition-colors cursor-pointer" , text === 'Logout' ? 'text-red-900 hover:text-red-600' : 'text-slate-700 hover:text-indigo-500' )}
+      onClick={async () => {
+        setOpen(false);
+        if (actions) {
+          await actions();
+        }
+      }}
+      className={cn(
+        "flex items-center gap-2 w-full px-2 py-1 text-xs font-medium whitespace-nowrap rounded-md hover:bg-indigo-100  transition-colors cursor-pointer",
+        text === "Logout"
+          ? "text-red-900 font-semibold hover:text-red-600"
+          : "text-slate-200 hover:text-indigo-500"
+      )}
     >
       <motion.span variants={actionIconVariants}>{Icon}</motion.span>
       <span>{text}</span>
