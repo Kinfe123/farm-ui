@@ -124,7 +124,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function Component() {
+export default function FUIChartihIndicators() {
   const [activeChart, setActiveChart] =
     React.useState<keyof typeof chartConfig>("desktop")
 

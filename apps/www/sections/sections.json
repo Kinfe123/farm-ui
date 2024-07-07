@@ -89,6 +89,16 @@
     "section_name": "Dashboard ",
     "description": "Beautifully designed, fully responsive, expertly crafted Dashboard examples",
     "isNew": true
+  },
+  {
+    "slug": "/charts",
+    "category": "Application",
+    "count": 7,
+    "cover_url": "FAQS.png",
+    "id": "100",
+    "section_name": "Chart",
+    "description": "Beautifully designed, fully responsive, expertly crafted Chart examples",
+    "isNew": true
   }
   
 ]

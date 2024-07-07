@@ -86,7 +86,7 @@ const Option = ({
       variants={itemVariants}
       onClick={async () => {
         setOpen(false);
-        if (actions) {
+    if (actions) {
           await actions();
         }
       }}
