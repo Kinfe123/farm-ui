@@ -48,7 +48,7 @@ export default ({ item }: { item: Templates }) => {
         <LinkItem
           href={`${item.slug}`}
           variant="default"
-          className="inline-flex z-20 group items-center w-full bg-transparent  border-input border-none hover:bg-transparent/10 transition-colors mr-auto"
+          className="inline-flex z-20 group font-bold tracking-tighter items-center w-full bg-transparent  border-input border-none hover:bg-transparent/10 transition-colors mr-auto"
         >
           Explore more
           <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
