@@ -60,6 +60,7 @@ export default ({
 }) => {
   const [selectedFramework, setFramework] = useState("react");
   const [copied, setCopyed] = useState(false);
+  const [screenWidth , setScreenWidth] = useState(window.innerWidth -500)
   const fullTech = {
     react: "jsxTail",
     vue: "vueTail",
@@ -81,9 +82,24 @@ export default ({
       setTimeout(() => setCopyed(false), 2000);
     }
   }, [copied]);
+
+
   const reactCompToRender = componentToPreview[item?.id] ?? <></>;
   const ref = useRef<ImperativePanelHandle>(null);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth - 500);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  console.log('SImple' , screenWidth)
   return (
     <>
       <ShadTab
@@ -146,7 +162,7 @@ export default ({
             {tabs.map((tab, idx) => (
               <Tabs.Content
                 key={idx}
-                className="max-w-[76rem] overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1"
+                className={`max-w-[30rem] sm:max-w-[38rem] md:max-w-[65rem] lg:max-w-[70rem] 2xl:max-w-[76rem] overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1`}
                 value={tab.value}
               >
                 {!!reactCompToRender.codeCopy[tab.value] && tab.value === selectedFramework ? (
