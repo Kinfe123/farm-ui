@@ -9,6 +9,7 @@ import { m } from "framer-motion";
 import TemplateCard from ".";
 import { dateConvert } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 const TemplateDisplay = () => {
   const [selectedTab, setSelectedTab] = useState("all");
@@ -68,16 +69,19 @@ const TemplateDisplay = () => {
       </Tabs.List>
       <Separator className="mx-auto max-w-3xl mb-10 h-[2px] bg-white/5" />
       {selectedTab === "all" &&
-        templates.map((template) => {
+        templates.map((template , idx) => {
           return (
             <LazyMotionWrapper>
-              <m.div
-                className="opacity-0"
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.9 }}
-              >
-                <TemplateCard item={template} />
-              </m.div>
+              <Link href={template.slug}>
+                <m.div
+                  key={idx}
+                  className="opacity-0"
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.9 }}
+                >
+                  <TemplateCard item={template} />
+                </m.div>
+              </Link>
             </LazyMotionWrapper>
           );
         })}
@@ -85,13 +89,16 @@ const TemplateDisplay = () => {
         return (
           <Tabs.Content key={idx} className="" value={template.kind ?? "all"}>
             <LazyMotionWrapper>
-              <m.div
-                className="opacity-0"
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.9 }}
-              >
-                <TemplateCard item={template} />
-              </m.div>
+              <Link href={template.slug}>
+                <m.div
+                  key={idx}
+                  className="opacity-0"
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.9 }}
+                >
+                  <TemplateCard item={template} />
+                </m.div>
+              </Link>
             </LazyMotionWrapper>
           </Tabs.Content>
         );
