@@ -16,7 +16,7 @@ export default ({
 
   return (
     <pre>
-      <code className={mergeTW(`lang-jsx text-sm ${className}`)}>{code}</code>
+      <code className={mergeTW(`lang-jsx text-sm w-1/2 ${className}`)}>{code}</code>
     </pre>
   );
 };

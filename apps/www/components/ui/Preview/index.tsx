@@ -60,6 +60,7 @@ export default ({
 }) => {
   const [selectedFramework, setFramework] = useState("react");
   const [copied, setCopyed] = useState(false);
+  const [screenWidth , setScreenWidth] = useState(window.innerWidth -500)
   const fullTech = {
     react: "jsxTail",
     vue: "vueTail",
@@ -81,9 +82,24 @@ export default ({
       setTimeout(() => setCopyed(false), 2000);
     }
   }, [copied]);
+
+
   const reactCompToRender = componentToPreview[item?.id] ?? <></>;
   const ref = useRef<ImperativePanelHandle>(null);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth - 500);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  console.log('SImple' , screenWidth)
   return (
     <>
       <ShadTab
@@ -106,7 +122,7 @@ export default ({
         <TabsContent value="code">
           <Tabs.Root
             onValueChange={(val) => setFramework(val)}
-            className="relative flex-1 overflow-hidden border rounded-2xl border-zinc-800"
+            className="relative nax-w-[76rem] border rounded-2xl border-zinc-800"
             defaultValue={selectedFramework}
           >
             <Tabs.List
@@ -146,12 +162,12 @@ export default ({
             {tabs.map((tab, idx) => (
               <Tabs.Content
                 key={idx}
-                className="max-w-[76rem] overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1"
+                className={`max-w-full overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1`}
                 value={tab.value}
               >
                 {!!reactCompToRender.codeCopy[tab.value] && tab.value === selectedFramework ? (
                   <motion.div
-                    className="opacity-0 h-[640px] w-full"
+                    className="opacity-0 h-[640px] max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl 2xl:max-w-5xl relative"
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.9 }}
                   >
@@ -159,6 +175,7 @@ export default ({
                   <CodeBlockServerComp path={comp} />
                     </Suspense> */}
                     <SyntaxHeighlight
+                    className=""
                       code={
                         reactCompToRender.codeCopy[tab.value]
                         // item.ltr[selectedFramework][fullTech as string][0]?.code

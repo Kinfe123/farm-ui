@@ -18,6 +18,7 @@ import Loglib from "@loglib/tracker/react";
 import { Analytics } from "@vercel/analytics/react";
 import { SessionProvider } from "@/lib/auth/provider/lucia.client";
 import { validateRequest } from "@/lib/auth/lucia.auth";
+import { TailwindIndicator } from "components/TailwindIndicator";
 const { title, desc, ogImage } = metatag;
 export const metadata = {
   metadataBase: new URL("https://farmui.com"),
@@ -114,6 +115,7 @@ const sessionData = await validateRequest()
               }}
             />
             <Analytics />
+            <TailwindIndicator />
           </ThemeProvider>
         </body>
       </SessionProvider>
