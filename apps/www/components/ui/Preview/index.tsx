@@ -162,7 +162,7 @@ export default ({
             {tabs.map((tab, idx) => (
               <Tabs.Content
                 key={idx}
-                className={`max-w-[30rem] sm:max-w-[38rem] md:max-w-[65rem] lg:max-w-[70rem] 2xl:max-w-[76rem] overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1`}
+                className={`max-w-[30rem] sm:max-w-[38rem] md:max-w-[45rem] lg:max-w-[70rem] 2xl:max-w-[76rem] w-full overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1`}
                 value={tab.value}
               >
                 {!!reactCompToRender.codeCopy[tab.value] && tab.value === selectedFramework ? (
@@ -175,6 +175,7 @@ export default ({
                   <CodeBlockServerComp path={comp} />
                     </Suspense> */}
                     <SyntaxHeighlight
+                      className="max-w-full"
                       code={
                         reactCompToRender.codeCopy[tab.value]
                         // item.ltr[selectedFramework][fullTech as string][0]?.code
