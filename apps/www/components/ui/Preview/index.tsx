@@ -122,7 +122,7 @@ export default ({
         <TabsContent value="code">
           <Tabs.Root
             onValueChange={(val) => setFramework(val)}
-            className="relative flex-1 overflow-hidden border rounded-2xl border-zinc-800"
+            className="relative nax-w-[76rem] border rounded-2xl border-zinc-800"
             defaultValue={selectedFramework}
           >
             <Tabs.List
@@ -162,12 +162,12 @@ export default ({
             {tabs.map((tab, idx) => (
               <Tabs.Content
                 key={idx}
-                className={`max-w-[30rem] sm:max-w-[38rem] md:max-w-[45rem] lg:max-w-[70rem] 2xl:max-w-[76rem] w-full overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1`}
+                className={`max-w-full overflow-auto p-4 delay-1000 duration-1000 data-[state=inactive]:opacity-0 data-[state=active]:opacity-1`}
                 value={tab.value}
               >
                 {!!reactCompToRender.codeCopy[tab.value] && tab.value === selectedFramework ? (
                   <motion.div
-                    className="opacity-0 h-[640px] w-full"
+                    className="opacity-0 h-[640px] max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl 2xl:max-w-5xl relative"
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.9 }}
                   >
@@ -175,7 +175,7 @@ export default ({
                   <CodeBlockServerComp path={comp} />
                     </Suspense> */}
                     <SyntaxHeighlight
-                      className="max-w-full"
+                    className=""
                       code={
                         reactCompToRender.codeCopy[tab.value]
                         // item.ltr[selectedFramework][fullTech as string][0]?.code
