@@ -50,8 +50,7 @@ export async function GET(req: Request) {
 
     let userId: string = ''
     // if the email exists in our record, we can create a cookie for them and sign them in
-    // if the email doesn't exist, we create a new user, then craete cookie to sign them in
-
+    // if the email doesn't exist, we create a new user, then craete cookie to sign them 
     const existingUser = await db.query.userTable.findFirst({
         where: eq(userTable.email, googleData.email),
       });
