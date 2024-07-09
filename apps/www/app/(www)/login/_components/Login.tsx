@@ -183,7 +183,7 @@ export default function FUILoginWithGridProvider() {
               }}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
-              className="group flex  transform-gpu bg-page-gradient  dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+              className="group flex  transform-gpu bg-page-gradient  dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-xl hover:bg-transparent/50 duration-150 active:bg-transparent/50"
             >
               <svg
                 className={cn(
@@ -223,7 +223,7 @@ export default function FUILoginWithGridProvider() {
               disabled={true}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
-              className="group flex transform-gpu bg-page-gradient bg-page-gradient dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+              className="group flex transform-gpu bg-page-gradient bg-page-gradient dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-xl hover:bg-transparent/50 duration-150 active:bg-transparent/50"
             >
               <svg
                 className={cn(
@@ -254,7 +254,7 @@ export default function FUILoginWithGridProvider() {
               }}
               onMouseEnter={() => setReset(false)}
               onMouseLeave={() => setReset(true)}
-              className="group flex transform-gpu bg-page-gradient dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-lg hover:bg-transparent/50 duration-150 active:bg-transparent/50"
+              className="group flex transform-gpu bg-page-gradient dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  border-white/10  items-center justify-center py-5 border rounded-xl hover:bg-transparent/50 duration-150 active:bg-transparent/50"
             >
               <svg
                 className={cn(
