@@ -167,7 +167,7 @@ export default ({
               >
                 {!!reactCompToRender.codeCopy[tab.value] && tab.value === selectedFramework ? (
                   <motion.div
-                    className="opacity-0 h-[640px] max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl 2xl:max-w-5xl relative"
+                    className="opacity-0 h-[640px] max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl 2xl:max-w-5xl relative"
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.9 }}
                   >
