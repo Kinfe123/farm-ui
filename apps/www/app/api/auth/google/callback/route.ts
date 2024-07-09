@@ -9,11 +9,12 @@ import { NextRequest } from "next/server";
 
 // http://localhost:3000/api/auth/google/callback
 
-export async function GET(req: NextRequest, res: Response) {
-    console.log("Hello world")
-    const url = req.nextUrl
-    const code = url.searchParams.get('code')
-    const state = url.searchParams.get('state')
+export async function GET(req: Request) {
+    const url = req.url
+    const {searchParams} = new URL(url)
+    
+    const code = searchParams.get('code')
+    const state = searchParams.get('state')
 
     if (!code || !state) {
         console.error('no code or state')
