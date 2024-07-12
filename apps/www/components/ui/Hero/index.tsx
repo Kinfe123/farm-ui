@@ -106,7 +106,7 @@ export default async function () {
           {/* Background image */}
           <Image
             src={bghero}
-            className="w-full h-full object-cover hidden sm:block"
+            className="w-full h-full object-cover hidden md:block"
             alt="Hero Image"
           />
 
