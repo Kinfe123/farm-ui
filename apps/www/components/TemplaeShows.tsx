@@ -54,7 +54,7 @@ const Card = ({ card }) => {
       className="group relative h-[550px] w-[700px]  rounded-xl dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  p-20 md:shadow-xl overflow-hidden bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,176,225,0.12),rgba(255,255,255,0))]  border-1 border-white"
     >
         {/* <div className="group-hover:absolute bottom-0 left-1/2 h-[100px] w-[700px] right-1/2 bg-gradient-to-b from-transparent to-black/60" /> */}
-        <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.06] group-hover:dark:bg-neutral-800/40" />
+        <div className="pointer-events-none absolute z-20 inset-0 transform-gpu transition-all duration-300 group-hover:bg-gradient-to-b  group-hover:from-transparent group-hover:via-black/20 group-hover:to-black " />
 
       <div
         style={{
@@ -71,7 +71,7 @@ const Card = ({ card }) => {
       </div>
       <div
         className={cn(
-          "pointer-events-none absolute bottom-10 left-1/2 right-1/2 -translate-x-1/2 flex w-full translate-y-10 transform-gpu flex-row items-left p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+          "pointer-events-none absolute z-30 bottom-10 left-1/2 right-1/2 -translate-x-1/2 flex w-full translate-y-10 transform-gpu flex-row items-left p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
         )}
       >
 
@@ -80,7 +80,7 @@ const Card = ({ card }) => {
           variant="default"
           asChild
           size="sm"
-          className="pointer-events-auto"
+          className="pointer-events-auto z-30"
         >
           <a href={card.href}>
             {card.title}
@@ -117,7 +117,7 @@ const cards = [
     id: 3,
   },
   {
-    url: "/templates/shadow.png",
+    url: "/templates//shadow.png",
     title: "Title 5",
     id: 5,
   },
