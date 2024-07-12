@@ -19,6 +19,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SessionProvider } from "@/lib/auth/provider/lucia.client";
 import { validateRequest } from "@/lib/auth/lucia.auth";
 import { TailwindIndicator } from "components/TailwindIndicator";
+import Example from "components/TemplaeShows";
 const { title, desc, ogImage } = metatag;
 export const metadata = {
   metadataBase: new URL("https://farmui.com"),
@@ -62,7 +63,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-const sessionData = await validateRequest()
+  const sessionData = await validateRequest();
 
   return (
     <html
@@ -98,7 +99,7 @@ const sessionData = await validateRequest()
             displayFont.variable,
             dmSans.variable,
             GeistSans.variable,
-            "bg-black overflow-x-hidden"
+            "bg-black"
           )}
         >
           <ThemeProvider
@@ -108,7 +109,7 @@ const sessionData = await validateRequest()
             disableTransitionOnChange
           >
             <Toaster />
-            <main>{children}</main>
+              <main>{children}</main>
             <Loglib
               config={{
                 id: "farmui_vercel",
@@ -117,6 +118,7 @@ const sessionData = await validateRequest()
             <Analytics />
             <TailwindIndicator />
           </ThemeProvider>
+
         </body>
       </SessionProvider>
     </html>

@@ -104,6 +104,23 @@
   @apply max-w-screen-xl mx-auto px-4 md:px-8;
 }
 
+.sticky-scroll {
+  position: sticky;
+  top: 0;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sticky-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.sticky-scroll > * {
+  flex-shrink: 0;
+}
 .custom-screen-lg {
   max-width: 1600px;
   @apply mx-auto px-4;

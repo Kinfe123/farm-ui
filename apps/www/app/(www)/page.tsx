@@ -8,22 +8,25 @@ import Hero from "components/ui/Hero";
 import GridSlide from "components/ui/ShowRetro";
 import { GetStarted } from "components/ui/Subscribe";
 import SupportedFrameworks from "components/ui/SupportedFrameworks";
+import TemplateShowCases from "components/TemplaeShows";
 
 export default async () => {
   return (
     <>
-      <Hero />
-      <div className="relative mb-20">
-        <DashboardDemo />
-      </div>
-      <Features />
-      <GridSlide />
-      <Calendy />
-      <GridFeatureDemo />
-      <NpmCommandGetStarted />
-      <SupportedFrameworks />
-      <CTAshow />
-      <GetStarted />
+        <Hero />
+        <div className="relative mb-20">
+          <DashboardDemo />
+        </div>
+
+        <TemplateShowCases />
+        <Features />
+        <GridSlide />
+        <Calendy />
+        <GridFeatureDemo />
+        <NpmCommandGetStarted />
+        <SupportedFrameworks />
+        <CTAshow />
+        <GetStarted />
     </>
   );
 };
