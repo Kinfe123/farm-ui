@@ -44,8 +44,11 @@ const HorizontalScrollCarousel = () => {
     </section>
   );
 };
-// @ts-ignore
-const Card = ({ card }) => {
+const Card = ({
+  card,
+}: {
+  card: { url: string; id: number; title: string; href: string };
+}) => {
   return (
     <div
       key={card.id}
@@ -62,11 +65,19 @@ const Card = ({ card }) => {
         }}
         className="absolute inset-0 z-0 scale-95 transition-transform duration-300 group-hover:scale-100"
       ></div>
-      <div className="absolute inset-0 z-10 grid place-content-end">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-4 rounded-tl-xl text-5xl font-black uppercase text-white backdrop-blur-lg">
-          {card.title}
-        </p>
-      </div>
+      {card.id === 8 ? (
+        <div className="absolute inset-0 z-10 grid place-content-center">
+          <p className="bg-gradient-to-br from-white/20 to-white/0 p-4 rounded-tl-xl text-5xl font-black uppercase text-white backdrop-blur-lg">
+            {card.title}
+          </p>
+        </div>
+      ) : (
+        <div className="absolute inset-0 z-10 grid place-content-end">
+          <p className="bg-gradient-to-br from-white/20 to-white/0 p-4 rounded-tl-xl text-5xl font-black uppercase text-white backdrop-blur-lg">
+            {card.title}
+          </p>
+        </div>
+      )}
       <div
         className={cn(
           " absolute z-30 bottom-5 left-0  flex w-full translate-y-10 transform-gpu flex-row items-left p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
@@ -78,7 +89,7 @@ const Card = ({ card }) => {
           size="lg"
           className="cursor-pointer z-30 font-medium tracking-tight text-md"
         >
-          <a href={card.href}>
+          <a href={card.href} target="_blank">
             {card.title}
             <ArrowUpRight className="ml-2 h-4 w-4" />
           </a>
