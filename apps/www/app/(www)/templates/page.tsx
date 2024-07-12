@@ -75,7 +75,7 @@ const Template = async () => {
           </div>
           <div className="flex relative flex-col gap-2">
             <div className="opacity-50">
-              <BgGradient />
+              {/* <BgGradient /> */}
             </div>
             <Stats
               free={`${free_templates.length}`}
@@ -83,6 +83,10 @@ const Template = async () => {
               total={`${templates.length}`}
               purchased={`${total_purchased}`}
             />
+              <div
+                className="absolute left-0 top-0 h-32 w-[90%] opacity-40 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
+                style={{ transform: "rotate(-30deg)" }}
+              />
           </div>
           <ul
             id="templates"
