@@ -11,6 +11,7 @@ import heroStyle from "components/HeroNit/hero.module.css";
 import NumberTicker from "components/NumberCounter";
 import { signIn } from "../../../auth";
 import bgback from "../../../public/bg-back.png";
+import Ripple from "components/CirclePattern/Ripple";
 
 async function getGitHubStars() {
   try {
@@ -36,7 +37,8 @@ export default async function () {
   const stars = await getGitHubStars();
   return (
     <>
-      <section className="custom-screen mt-48">
+      <section className="custom-screen mt-48 relative">
+
         <div className="relative z-20 max-w-5xl mx-auto space-y-4">
           <h1
             className={
@@ -66,13 +68,13 @@ export default async function () {
             templates with modern design, 100% free and open-source."
             descriptionClassName="mx-auto text-zinc-300 text-center text-lg  max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl  py-5"
           >
-            <Image
+            {/* <Image
               src={bgback}
               width={1000}
               height={1000}
               alt="Shadow image"
               className="absolute top-[-200px] bottom-0 -z-10 opacity-100"
-            />
+            /> */}
             <div className="flex flex-wrap items-center justify-center  gap-3">
               <LinkItem
                 href="/templates"
@@ -98,7 +100,7 @@ export default async function () {
         </div>
 
         <HeroBgGradientClient />
-      </section>
+    </section>
       <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute sm:block md:-top-2 right-0 min-h-screen">
         <div className="relative w-full h-full">
           {/* Background image */}
@@ -109,8 +111,8 @@ export default async function () {
           />
 
           {/* Overlay */}
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60"></div>
-          <div className="absolute top-0 left-0 bg-gradient-to-t from-transparent/30 to-transparent w-[100px] h-[400px]  opacity-40"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
+          <div className="absolute top-0 left-0 bg-gradient-to-t from-transparent/30 to-transparent w-[100px] h-[400px]  opacity-80"></div>
         </div>
       </div>
     </>

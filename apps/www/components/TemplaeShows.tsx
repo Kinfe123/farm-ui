@@ -4,16 +4,17 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Ripple from "./CirclePattern/Ripple";
 
 const TemplateShowCases = () => {
   return (
     <div className="bg-transparent relative">
       <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll down
-        </span>
+        Hello world
       </div>
       <div className="relative">
+        
+      
         <HorizontalScrollCarousel />
         <div
           className="absolute left-0 top-0 h-80 w-[90%] opacity-40 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
@@ -35,7 +36,7 @@ const HorizontalScrollCarousel = () => {
   return (
     <section ref={targetRef} className=" h-[300vh] bg-transparent/90 relative">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-4">
+        <motion.div style={{ x }} className="flex gap-4 z-30">
           {cards.map((card) => {
             return <Card card={card} key={card.id} />;
           })}
@@ -52,7 +53,7 @@ const Card = ({
   return (
     <div
       key={card.id}
-      className="group relative h-[550px] w-[700px]  rounded-xl dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  p-20 md:shadow-xl overflow-hidden bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,176,225,0.12),rgba(255,255,255,0))]  border-1 border-white"
+      className="group z-40 relative h-[550px] w-[700px]  rounded-xl dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  p-20 md:shadow-xl overflow-hidden bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,176,225,0.12),rgba(255,255,255,0))]  border-1 border-white"
     >
       {/* <div className="group-hover:absolute bottom-0 left-1/2 h-[100px] w-[700px] right-1/2 bg-gradient-to-b from-transparent to-black/60" /> */}
       <div className="pointer-events-none absolute z-20 inset-0 transform-gpu transition-all duration-300 group-hover:bg-gradient-to-b  group-hover:from-transparent group-hover:via-black/20 group-hover:to-black " />
@@ -63,7 +64,7 @@ const Card = ({
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="absolute inset-0 z-0 scale-95 transition-transform duration-300 group-hover:scale-100"
+        className="absolute inset-0  scale-95 transition-transform duration-300 group-hover:scale-100"
       ></div>
       {card.id === 8 ? (
         <div className="absolute inset-0 z-10 grid place-content-center">
