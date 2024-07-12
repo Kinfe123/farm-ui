@@ -20,6 +20,7 @@ import { SessionProvider } from "@/lib/auth/provider/lucia.client";
 import { validateRequest } from "@/lib/auth/lucia.auth";
 import { TailwindIndicator } from "components/TailwindIndicator";
 import Example from "components/TemplaeShows";
+import { TemplateToaster } from "./(eg)/example/_components/template-toast";
 const { title, desc, ogImage } = metatag;
 export const metadata = {
   metadataBase: new URL("https://farmui.com"),
@@ -116,6 +117,7 @@ export default async function RootLayout({
               }}
             />
             <Analytics />
+            <TemplateToaster />
             <TailwindIndicator />
           </ThemeProvider>
 

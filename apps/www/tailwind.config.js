@@ -144,7 +144,7 @@ module.exports = {
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "background-shine": "background-shine 5s linear infinite",
-         ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite"
+         ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.4s) infinite"
 
 
       },

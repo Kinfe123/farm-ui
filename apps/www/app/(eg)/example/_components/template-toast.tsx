@@ -18,8 +18,7 @@ export function TemplateToaster() {
   const [isVisibile, setIsVisible] = useState(true);
   const path = usePathname()
   
-  const comps = path.includes('components')
-  const example = path.includes("example")
+  const templates = path.includes('templates')
   const isIframe = isInIframe()
   if(isIframe){
     return (
@@ -28,7 +27,7 @@ export function TemplateToaster() {
   }
 
   return (
-    (isVisibile && (example || comps)) && (
+    (isVisibile && !templates) && (
       <section className="z-30 relative">
         <div className="fixed font-geist bottom-4 right-4">
           <Card
@@ -41,7 +40,7 @@ export function TemplateToaster() {
                 ✨ Access the full template ✨
               </div>
               <CardDescription className="mt-4 text-black/90 dark:text-white/70">
-                Go get the full access of template with almost for free
+                Go get the full access of template with almost for free and more than <span className="font-bold">50% discount</span>  if you buy couple and more! 
               </CardDescription>
             </CardHeader>
             <CardFooter className="flex justify-end gap-4">
