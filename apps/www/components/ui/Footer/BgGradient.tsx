@@ -5,7 +5,7 @@ export default ({ className = "" }: { className: string }) => (
     width="675"
     height="251"
     viewBox="0 0 675 251"
-    fill="none"
+    fill="#9336fd"
     xmlns="http://www.w3.org/2000/svg"
     className={mergeTW(className)}
   >
@@ -46,8 +46,8 @@ export default ({ className = "" }: { className: string }) => (
         y2="170.009"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#F4F4F5" />
-        <stop offset="1" stop-color="#F4F4F5" stop-opacity="0" />
+        <stop stop-color="#9336fd" />
+        <stop offset="1" stop-color="#9336fd" stop-opacity="0" />
       </linearGradient>
     </defs>
   </svg>
