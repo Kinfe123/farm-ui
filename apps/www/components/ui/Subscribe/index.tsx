@@ -64,12 +64,12 @@ export function GetStarted() {
     <section
       id="newsletter"
       aria-label="Newsletter"
-      className="font-display relative "
+      className="font-geist tracking-tighter relative "
     >
       <div className="absolute -z-1 inset-0  h-[600px] w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
 
       <div className="rounded-3xl custom-screen-lg mx-auto mt-[-20px] -z-1">
-        <div className="relative font-display -mx-4 overflow-hidden bg-gradient-to-tr from-transparent via-transparent/10 to-transparent/5 px-4 py-20 sm:-mx-6 sm:px-6 md:mx-0 md:rounded-[2.0rem] md:px-16 xl:px-24 xl:py-36">
+        <div className="relative font-geist tracking-tighter -mx-4 overflow-hidden bg-gradient-to-tr from-transparent via-transparent/10 to-transparent/5 px-4 py-20 sm:-mx-6 sm:px-6 md:mx-0 md:rounded-[2.0rem] md:px-16 xl:px-24 xl:py-36">
           <div className="absolute left-1/2 top-0 translate-x-[-10%] h-full w-[1450px] hidden translate-y-[-45%] lg:translate-x-[-32%] animate-pulse duration-[4s] linear infinite" />
           <Image
             src={bgback}
@@ -89,10 +89,10 @@ export function GetStarted() {
         
 
             <div>
-              <p className="font-display text-4xl font-medium tracking-tighter text-white sm:text-5xl">
+              <p className="font-geist tracking-tighter text-4xl font-medium tracking text-white sm:text-5xl">
                 Stay up to date
               </p>
-              <p className="mt-4 text-lg tracking-tight text-white">
+              <p className="mt-4 text-lg tracking-tight text-white/80">
                 Get updates on all of our events and be the first to get
                 notified when we launch something cool.
               </p>

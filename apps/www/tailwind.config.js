@@ -111,6 +111,14 @@ module.exports = {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
+        ripple: {
+          "0%, 100%": {
+            transform: "translate(-50%, -50%) scale(1)",
+          },
+          "50%": {
+            transform: "translate(-50%, -50%) scale(0.9)",
+          },
+        },
       },
       backgroundImage: {
         'glass-gradient':
@@ -135,7 +143,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
-        "background-shine": "background-shine 5s linear infinite"
+        "background-shine": "background-shine 5s linear infinite",
+         ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.4s) infinite"
 
 
       },

@@ -18,7 +18,11 @@ export default () => {
           {/* <PreviewCard /> */}
         </div>
       </div>
-      <Image src={bgback} className="hidden sm:block absolute -top-60 left-0 -z-2 opacity-45" alt="bgbackimage" />
+      <div
+          className="absolute left-0 top-20 h-60 w-[90%] opacity-30 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
+          style={{ transform: "rotate(-30deg)" }}
+        />
+      {/* <Image src={bgback} className="hidden sm:block absolute -top-60 left-0 -z-2 opacity-45" alt="bgbackimage" /> */}
     </section>
   );
 };

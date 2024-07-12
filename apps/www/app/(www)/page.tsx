@@ -8,14 +8,18 @@ import Hero from "components/ui/Hero";
 import GridSlide from "components/ui/ShowRetro";
 import { GetStarted } from "components/ui/Subscribe";
 import SupportedFrameworks from "components/ui/SupportedFrameworks";
+import TemplateShowCases from "components/TemplaeShows";
+import Ripple from "components/CirclePattern/Ripple";
 
 export default async () => {
   return (
     <>
       <Hero />
+      <Ripple />
       <div className="relative mb-20">
         <DashboardDemo />
       </div>
+      <TemplateShowCases />
       <Features />
       <GridSlide />
       <Calendy />

@@ -37,7 +37,7 @@ export default () => (
       />
       <div className="custom-screen-lg z-20 pb-6 gap-x-8 items-start justify-between flex-wrap relative sm:flex">
         <div className="max-w-xs space-y-3">
-          <h1 className="font-display font-semibold bg-gradient-to-tr from-white/70 via-white/90 to-white/50 bg-clip-text text-transparent  text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="font-display tracking-tighter font-semibold bg-gradient-to-tr from-white/70 via-white/90 to-white/50 bg-clip-text text-transparent  text-4xl md:text-5xl lg:text-6xl">
             FarmUI
           </h1>
           <p className="text-sm text-zinc-300">
@@ -97,14 +97,14 @@ export default () => (
       </div>
     </div>
       <div className="text-sm custom-screen-lg text-center">
-        <div className="text-zinc-300 py-8  ">
+        <div className="text-zinc-100 py-8  ">
           &copy; {new Date().getFullYear()} - FarmUI All rights reserved.
           <div className="mx-auto max-w-full mt-4">
             <Command className="z-[20] bg-transparent">
               <h1>
                 Made with{" "}
                 <CommandShortcut className="bg-gradient-to-tr from-zinc-600 via-zinc-600/90 to-zinc-500 rounded-xl px-2">
-                  <code>:cup-of-tea:</code>
+                  <code className="text-white">:cup-of-tea</code>
                 </CommandShortcut>{" "}
                 by{" "}
                 <a
