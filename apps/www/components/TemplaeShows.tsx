@@ -5,16 +5,20 @@ import { Button } from "@/components/ui/button";
 import { ArrowRightIcon, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Ripple from "./CirclePattern/Ripple";
+import HeroAnimated from "./HeroAnimated";
 
 const TemplateShowCases = () => {
   return (
     <div className="bg-transparent relative">
-      <div className="flex h-48 items-center justify-center">
-        Hello world
+      <div className="flex h-48 items-center mx-auto place-content-center justify-center">
+        <HeroAnimated
+          header="Awesome Templates built internally by farmUI"
+          headerClassName="text-center max-w-lg  sm:max-w-xl md:max-w-xl mt-5  lg:max-w-3xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+          description="all the free and paid template built internally from componnents that opensourced here."
+          descriptionClassName="z-20 relative mx-auto text-zinc-400 text-center text-lg  max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl"
+        />
       </div>
-      <div className="relative">
-        
-      
+      <div className="relative mt-[-50px]">
         <HorizontalScrollCarousel />
         <div
           className="absolute left-0 top-0 h-80 w-[90%] opacity-40 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
