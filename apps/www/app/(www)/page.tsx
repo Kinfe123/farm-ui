@@ -16,11 +16,9 @@ export default async () => {
     <>
       <Hero />
       <Ripple />
-
       <div className="relative mb-20">
         <DashboardDemo />
       </div>
-  
       <TemplateShowCases />
       <Features />
       <GridSlide />

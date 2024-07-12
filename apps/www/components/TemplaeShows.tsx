@@ -95,7 +95,7 @@ const Card = ({
           className="cursor-pointer z-30 font-medium tracking-tight text-md"
         >
           <a href={card.href} target="_blank">
-            {card.title}
+          Get  {card.title}
             <ArrowUpRight className="ml-2 h-4 w-4" />
           </a>
         </Button>
