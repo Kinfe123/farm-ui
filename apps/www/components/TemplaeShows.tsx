@@ -71,7 +71,7 @@ const Card = ({ card }) => {
       </div>
       <div
         className={cn(
-          "pointer-events-none absolute bottom-0 left-1/2 right-1/2 -translate-x-1/2 flex w-full translate-y-10 transform-gpu flex-row items-left p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+          "pointer-events-none absolute bottom-10 left-1/2 right-1/2 -translate-x-1/2 flex w-full translate-y-10 transform-gpu flex-row items-left p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
         )}
       >
 
@@ -117,7 +117,7 @@ const cards = [
     id: 3,
   },
   {
-    url: "/templates/spotter/spotter.png",
+    url: "/templates/shadow.png",
     title: "Title 5",
     id: 5,
   },
