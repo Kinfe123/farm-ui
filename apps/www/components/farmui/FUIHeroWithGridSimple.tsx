@@ -67,7 +67,7 @@ const NpmCommandGetStarted = () => {
           </h1>
 
           <HeroAnimated
-            header="Get your component up and running with just one command - our CLI."
+            header="Get your component up and running with just one command."
             headerClassName="text-center tracking-tight max-w-md md:max-w-4xl text-3xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful responsive UI components and website
               templates with modern design, 100% free and open-source."

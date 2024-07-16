@@ -117,7 +117,7 @@ export default async function RootLayout({
               }}
             />
             <Analytics />
-            {/* <TemplateToaster /> */}
+            <TemplateToaster />
             <TailwindIndicator />
           </ThemeProvider>
 
