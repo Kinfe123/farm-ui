@@ -71,7 +71,7 @@ export default () => {
   }, []);
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" >
       <motion.nav
         initial={{
           y: -130,

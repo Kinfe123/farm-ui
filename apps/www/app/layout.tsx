@@ -19,7 +19,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SessionProvider } from "@/lib/auth/provider/lucia.client";
 import { validateRequest } from "@/lib/auth/lucia.auth";
 import { TailwindIndicator } from "components/TailwindIndicator";
-import Example from "components/TemplaeShows";
+import Example from "components/TemplateShows";
 import { TemplateToaster } from "./(eg)/example/_components/template-toast";
 const { title, desc, ogImage } = metatag;
 export const metadata = {
@@ -100,7 +100,7 @@ export default async function RootLayout({
             displayFont.variable,
             dmSans.variable,
             GeistSans.variable,
-            "bg-black"
+            "bg-black overflow-clip"
           )}
         >
           <ThemeProvider
@@ -110,14 +110,14 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <Toaster />
-              <main>{children}</main>
+            <main>{children}</main>
             <Loglib
               config={{
                 id: "farmui_vercel",
               }}
             />
             <Analytics />
-            <TemplateToaster />
+            {/* <TemplateToaster /> */}
             <TailwindIndicator />
           </ThemeProvider>
 

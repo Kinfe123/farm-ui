@@ -45,7 +45,7 @@ const NpmCommandGetStarted = () => {
             fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
           />
         </svg>
-        <div
+        {/* <div
           className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
           aria-hidden="true"
         >
@@ -56,9 +56,9 @@ const NpmCommandGetStarted = () => {
                 "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
             }}
           />
-        </div>
+        </div> */}
 
-        <div className="relative z-10 max-w-full  translate-y-[33%]  mx-auto space-y-4">
+        <div className="relative z-30 max-w-full  translate-y-[33%]  mx-auto space-y-4">
           <h1 className="text-sm  text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit">
             <pre className="tracking-tight uppercase">
               Build products for everyone
@@ -68,7 +68,7 @@ const NpmCommandGetStarted = () => {
 
           <HeroAnimated
             header="Get your component up and running with just one command - our CLI."
-            headerClassName="text-center tracking-tight max-w-md md:max-w-6xl text-3xl md:text-7xl tracking-tighter mx-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+            headerClassName="text-center tracking-tight max-w-md md:max-w-4xl text-3xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful responsive UI components and website
               templates with modern design, 100% free and open-source."
             descriptionClassName=" tracking-tighter mx-auto text-[0.84rem] text-zinc-400 text-center md:text-lg lg:max-w-2xl md:py-2"
