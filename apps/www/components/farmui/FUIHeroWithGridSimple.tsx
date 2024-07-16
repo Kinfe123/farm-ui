@@ -5,13 +5,12 @@ import HeroAnimated from "components/HeroAnimated";
 import BgGradient from "components/ui/BgGradient";
 import { CopyNpmCommandButton } from "./CopyButton";
 import Section from "components/SectionView";
-import { BottomLine } from "components/LineUtils";
 import Ripple from "components/CirclePattern/Ripple";
 const NpmCommandGetStarted = () => {
   return (
     <>
       <section className="custom-screen-lg relative min-h-[800px] w-full mt-10 bg-opacity-10">
-        <div
+      <div
           className="absolute left-0 top-0 h-80 w-[90%] opacity-50 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
           style={{ transform: "rotate(-30deg)" }}
         />
@@ -45,8 +44,20 @@ const NpmCommandGetStarted = () => {
             fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
           />
         </svg>
-       
-        <div className="relative z-10 max-w-full  translate-y-[33%]  mx-auto space-y-4">
+        {/* <div
+          className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
+          aria-hidden="true"
+        >
+          <div
+            className="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#9c80ff] to-[#e546d5] opacity-20"
+            style={{
+              clipPath:
+                "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
+            }}
+          />
+        </div> */}
+
+        <div className="relative z-20 max-w-full  translate-y-[33%]  mx-auto space-y-4">
           <h1 className="text-sm  text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit">
             <pre className="tracking-tight uppercase">
               Build products for everyone
@@ -61,7 +72,7 @@ const NpmCommandGetStarted = () => {
               templates with modern design, 100% free and open-source."
             descriptionClassName=" tracking-tighter mx-auto text-[0.84rem] text-zinc-400 text-center md:text-lg lg:max-w-2xl md:py-2"
           >
-            <div className="mx-auto text-[0.84rem] text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-2 ">
+            <div className="mx-auto text-[0.84rem] text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-2 relative">
               <p className=" tracking-tighter mx-auto max-w-md md:max-w-3xl text-wrap"></p>
               <div className="mt-2 mb-3 w-fit  border-input animate-background-shine bg-[linear-gradient(110deg,#000,55%,#4D4B4B,65%,#000)] bg-opacity-20 bg-[length:250%_100%]   border-[2px] py-2 px-4 rounded-lg flex gap-2 justify-center items-center">
                 <Terminal className="w-4 h-4 text-white/80" />
