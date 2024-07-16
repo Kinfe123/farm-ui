@@ -36,8 +36,10 @@ async function getGitHubStars() {
 export default async function () {
   const stars = await getGitHubStars();
   return (
-    <>
-      <section className="custom-screen mt-48 relative">
+    <div className="relative pt-10">
+      <Ripple />
+
+      <section className="custom-screen mt-48 relative overflow-hidden">
 
         <div className="relative z-20 max-w-5xl mx-auto space-y-4">
           <h1
@@ -56,7 +58,7 @@ export default async function () {
                   </span>{" "}
                   stars on Github
                   <ChevronRight className="inline w-4 h-4 ml-1 group-hover:translate-x-1 duration-300" />
-              </a>
+                </a>
               </Suspense>
             </span>
           </h1>
@@ -79,9 +81,9 @@ export default async function () {
               <LinkItem
                 href="/templates"
                 variant="shiny"
-              className="z-20 group inline-flex w-full bg-page-gradient justify-center items-center gap-x-2 border border-input hover:border-zinc-600 hover:bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
+                className="z-20 group inline-flex w-full bg-page-gradient justify-center items-center gap-x-2 border border-input hover:border-zinc-600 hover:bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
 
-                // className="inline-flex w-full  group justify-center items-center bg-zinc-900 bg-page-gradient   border-white/5 border-[1px] sm:w-auto hover:bg-transparent/50  py-4 px-10 "
+              // className="inline-flex w-full  group justify-center items-center bg-zinc-900 bg-page-gradient   border-white/5 border-[1px] sm:w-auto hover:bg-transparent/50  py-4 px-10 "
               >
                 Cooked for you
                 <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
@@ -100,7 +102,8 @@ export default async function () {
         </div>
 
         <HeroBgGradientClient />
-    </section>
+
+      </section>
       <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute sm:block md:-top-2 right-0 min-h-screen">
         <div className="relative w-full h-full">
           {/* Background image */}
@@ -115,7 +118,7 @@ export default async function () {
           <div className="absolute top-0 left-0 bg-gradient-to-t from-transparent/30 to-transparent w-[100px] h-[400px]  opacity-80"></div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
