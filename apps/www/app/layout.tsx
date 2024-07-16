@@ -100,7 +100,7 @@ export default async function RootLayout({
             displayFont.variable,
             dmSans.variable,
             GeistSans.variable,
-            "bg-black"
+            "bg-black overflow-x-hidden"
           )}
         >
           <ThemeProvider
@@ -110,7 +110,7 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             <Toaster />
-              <main>{children}</main>
+            <main>{children}</main>
             <Loglib
               config={{
                 id: "farmui_vercel",
