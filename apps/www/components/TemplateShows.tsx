@@ -4,12 +4,11 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Ripple from "./CirclePattern/Ripple";
 import HeroAnimated from "./HeroAnimated";
 
 const TemplateShowCases = () => {
   return (
-    <div className="bg-transparent relative">
+    <div className="bg-transparent relative w-screen">
       <div className="flex h-48 items-center mx-auto place-content-center justify-center">
         <HeroAnimated
           header="Awesome Templates built internally by farmUI"

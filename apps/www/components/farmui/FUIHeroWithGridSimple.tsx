@@ -2,48 +2,18 @@ import LinkItem from "components/ui/LinkItem";
 import { IconGithub } from "components/icons";
 import { ChevronRight, Terminal } from "lucide-react";
 import HeroAnimated from "components/HeroAnimated";
-import BgGradient from "components/ui/BgGradient";
 import { CopyNpmCommandButton } from "./CopyButton";
-import Section from "components/SectionView";
 import Ripple from "components/CirclePattern/Ripple";
 const NpmCommandGetStarted = () => {
   return (
     <>
-      <section className="custom-screen-lg relative min-h-[800px] w-full mt-10 bg-opacity-10">
+      <section className="custom-screen-lg overflow-hidden relative min-h-[800px] w-full mt-10 bg-opacity-10">
       <div
           className="absolute left-0 top-0 h-80 w-[90%] opacity-50 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
           style={{ transform: "rotate(-30deg)" }}
         />
         <Ripple />
-        <svg
-          className="absolute inset-0 z-1 h-full w-full opacity-0  stroke-white/5 [mask-image:radial-gradient(100%_100%_at_top_left  ,white,transparent)]"
-          aria-hidden="true"
-        >
-          <defs>
-            <pattern
-              id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
-              width={200}
-              height={200}
-              x="50%"
-              y={-1}
-              patternUnits="userSpaceOnUse"
-            >
-              <path d="M.5 200V.5H200" fill="none" />
-            </pattern>
-          </defs>
-          <svg x="50%" y={-1} className="overflow-visible fill-gray-800/20">
-            <path
-              d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-              strokeWidth={0}
-            />
-          </svg>
-          <rect
-            width="100%"
-            height="100%"
-            strokeWidth={0}
-            fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
-          />
-        </svg>
+       
         {/* <div
           className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
           aria-hidden="true"
@@ -57,7 +27,7 @@ const NpmCommandGetStarted = () => {
           />
         </div> */}
 
-        <div className="relative z-20 max-w-full  translate-y-[33%]  mx-auto space-y-4">
+        <div className="relative z-20 max-w-full  translate-y-[33%]  mx-auto space-y-4 overflow-hidden">
           <h1 className="text-sm  text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit">
             <pre className="tracking-tight uppercase">
               Build products for everyone

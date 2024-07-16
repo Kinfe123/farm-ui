@@ -8,7 +8,7 @@ import Hero from "components/ui/Hero";
 import GridSlide from "components/ui/ShowRetro";
 import { GetStarted } from "components/ui/Subscribe";
 import SupportedFrameworks from "components/ui/SupportedFrameworks";
-import TemplateShowCases from "components/TemplaeShows";
+import TemplateShowCases from "components/TemplateShows";
 
 export default async () => {
   return (
