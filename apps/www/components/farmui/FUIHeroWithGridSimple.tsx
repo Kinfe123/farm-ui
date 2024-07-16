@@ -2,18 +2,49 @@ import LinkItem from "components/ui/LinkItem";
 import { IconGithub } from "components/icons";
 import { ChevronRight, Terminal } from "lucide-react";
 import HeroAnimated from "components/HeroAnimated";
+import BgGradient from "components/ui/BgGradient";
 import { CopyNpmCommandButton } from "./CopyButton";
+import Section from "components/SectionView";
+import { BottomLine } from "components/LineUtils";
 import Ripple from "components/CirclePattern/Ripple";
 const NpmCommandGetStarted = () => {
   return (
     <>
-      <section className="custom-screen-lg overflow-hidden relative min-h-[800px] w-full mt-10 bg-opacity-10">
+      <section className="custom-screen-lg relative min-h-[800px] w-full mt-10 bg-opacity-10">
       <div
           className="absolute left-0 top-0 h-80 w-[90%] opacity-50 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
           style={{ transform: "rotate(-30deg)" }}
         />
         <Ripple />
-       
+        <svg
+          className="absolute inset-0 z-1 h-full w-full opacity-0  stroke-white/5 [mask-image:radial-gradient(100%_100%_at_top_left  ,white,transparent)]"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
+              width={200}
+              height={200}
+              x="50%"
+              y={-1}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M.5 200V.5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="overflow-visible fill-gray-800/20">
+            <path
+              d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+              strokeWidth={0}
+            />
+          </svg>
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth={0}
+            fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
+          />
+        </svg>
         {/* <div
           className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
           aria-hidden="true"
@@ -27,7 +58,7 @@ const NpmCommandGetStarted = () => {
           />
         </div> */}
 
-        <div className="relative z-20 max-w-full  translate-y-[33%]  mx-auto space-y-4 overflow-hidden">
+        <div className="relative z-30 max-w-full  translate-y-[33%]  mx-auto space-y-4">
           <h1 className="text-sm  text-gray-400 group font-geist mx-auto px-5 py-2 bg-gradient-to-tr from-zinc-300/5 via-gray-400/5 to-transparent  border-[2px] border-white/5 rounded-3xl w-fit">
             <pre className="tracking-tight uppercase">
               Build products for everyone
@@ -37,12 +68,12 @@ const NpmCommandGetStarted = () => {
 
           <HeroAnimated
             header="Get your component up and running with just one command - our CLI."
-            headerClassName="text-center tracking-tight max-w-md md:max-w-6xl text-3xl md:text-7xl tracking-tighter mx-auto lg:text-8xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+            headerClassName="text-center tracking-tight max-w-md md:max-w-4xl text-3xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful responsive UI components and website
               templates with modern design, 100% free and open-source."
             descriptionClassName=" tracking-tighter mx-auto text-[0.84rem] text-zinc-400 text-center md:text-lg lg:max-w-2xl md:py-2"
           >
-            <div className="mx-auto text-[0.84rem] text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-2 relative">
+            <div className="mx-auto text-[0.84rem] text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-2 ">
               <p className=" tracking-tighter mx-auto max-w-md md:max-w-3xl text-wrap"></p>
               <div className="mt-2 mb-3 w-fit  border-input animate-background-shine bg-[linear-gradient(110deg,#000,55%,#4D4B4B,65%,#000)] bg-opacity-20 bg-[length:250%_100%]   border-[2px] py-2 px-4 rounded-lg flex gap-2 justify-center items-center">
                 <Terminal className="w-4 h-4 text-white/80" />
