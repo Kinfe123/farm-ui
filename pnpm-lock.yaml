@@ -51,6 +51,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.6.0
         version: 3.6.0(react-hook-form@7.51.5)
+      '@kinfe123/farm-ui':
+        specifier: workspace:^
+        version: link:../../packages/cli
       '@loglib/tracker':
         specifier: ^0.8.0
         version: 0.8.0(react@18.3.1)
