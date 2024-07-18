@@ -4,6 +4,7 @@
   "compilerOptions": {
     "isolatedModules": false,
     "esModuleInterop": true,
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
