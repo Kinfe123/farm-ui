@@ -18,7 +18,7 @@ export const google = new Google(
     process.env.NEXT_PUBLIC_URL + '/api/auth/google/callback'
 )
 
-export const lucia =722243102308-cl094not4ic84cod6q1iudvno50beaa6.apps.googleusercontent.com new Lucia(adapter, {
+export const lucia = new Lucia(adapter, {
   sessionExpiresIn: new TimeSpan(30, "d"),
   sessionCookie: {
     expires: true,
