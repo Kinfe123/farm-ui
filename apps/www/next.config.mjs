@@ -21,7 +21,9 @@ const nextConfig = {
     UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
     UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
     REDIS_URL: process.env.REDIS_URL,
-    REDIS_TOKEN: process.env.REDIS_TOKEN
+    REDIS_TOKEN: process.env.REDIS_TOKEN,
+    AUTH_GOOGLE_SECRET: process.env.AUTH_GOOGLE_SECRET,
+    AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID
   },
   images: {
     remotePatterns: [
