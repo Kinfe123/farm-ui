@@ -3,8 +3,10 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "isolatedModules": false,
+    
     "esModuleInterop": true,
     "noEmit": true,
+    "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
