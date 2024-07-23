@@ -2,9 +2,11 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, ArrowUpRight } from "lucide-react";
+import { ArrowRightIcon, ArrowUpRight, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import HeroAnimated from "./HeroAnimated";
+import LinkItem from "./ui/LinkItem";
+import { IconGithub } from "./icons";
 
 const TemplateShowCases = () => {
   return (
@@ -17,7 +19,17 @@ const TemplateShowCases = () => {
           descriptionClassName="z-20 relative mx-auto text-zinc-400 text-center text-lg  max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl"
         />
       </div>
-      <div className="relative mt-[-50px]">
+        <LinkItem
+          href="/pricing"
+          variant="shiny"
+          className="relative group z-50 mx-auto mt-4 flex w-fit justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950/80 hover:text-zinc-100 duration-200 sm:w-fit py-4 px-10"
+          target="_blank"
+        >
+          Get LifeTime Access
+          <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+
+        </LinkItem>
+      <div className="relative mt-[-40px]">
         <HorizontalScrollCarousel />
         <div
           className="absolute left-0 top-0 h-80 w-[90%] opacity-40 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
@@ -107,16 +119,16 @@ export default TemplateShowCases;
 
 const cards = [
   {
-    url: "/templates/docy/docy-1.png",
-    href: "/templates/docy",
-    title: "Docy",
-    id: 0,
-  },
-  {
     url: "/templates/ease/ease-1.png",
     href: "/templates/ease",
     title: "Ease",
     id: 1,
+  },
+  {
+    url: "/templates/docy/docy-1.png",
+    href: "/templates/docy",
+    title: "Docy",
+    id: 0,
   },
   {
     url: "/templates/spotter/spotter.png",
