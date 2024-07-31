@@ -23,7 +23,6 @@ const TemplateShowCases = () => {
           href="/pricing"
           variant="shiny"
           className="relative group z-50 mx-auto mt-4 flex w-fit justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950/80 hover:text-zinc-100 duration-200 sm:w-fit py-4 px-10"
-          target="_blank"
         >
           Get LifeTime Access
           <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
