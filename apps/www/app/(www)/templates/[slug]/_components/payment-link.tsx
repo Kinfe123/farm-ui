@@ -72,7 +72,7 @@ const PaymentLink = ({ template_title, amount }: { template_title: string, amoun
             last_name: lastName,
             phone_number: phoneNumber, //the phone number must not include +251
             tx_ref: refNumber,
-            callback_url: `${process.env.NEXT_PUBLIC_URL}/success`,
+            callback_url: `${process.env.NEXT_PUBLIC_URL_CALLBACL}`,
             return_url: `${process.env.NEXT_PUBLIC_URL}/verify-payment?tnx_ref=` + refNumber,
             customization: {
                 title: "Paymeent to farmUI",

@@ -26,6 +26,7 @@ const nextConfig = {
     AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID,
     CHAPA_PUBLIC_KEY: process.env.CHAPA_PUBLIC_KEY,
     CHAPA_SECRET_KEY: process.env.CHAPA_SECRET_KEY,
+    NEXT_PUBLIC_URL_CALLBACK: process.env.NEXT_PUBLIC_URL_CALLBACK
 
   },
   images: {
