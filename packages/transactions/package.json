@@ -1,17 +1,21 @@
 {
   "name": "email",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    ".react-email"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"email dev"
+    "dev": "email dev",
+    "build": "email build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "@react-email/components": "^0.0.22",
-    "react-email": "2.1.6"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-email": "2.1.0-canary.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.4"
   }
 }
