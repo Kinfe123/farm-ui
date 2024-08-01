@@ -49,11 +49,7 @@ export async function POST(req: Request) {
       }
       return new Response(JSON.stringify(resp), { status: 200 });
     }
-    // console.log("THe val is here : ", resp)
-    // res.status(200).json({
-    //     message : "Payment successfull",
-    //     status : "success"
-    // });
+    
   } catch (e) {
     return new Response(JSON.stringify(e), { status: 400 });
   }
