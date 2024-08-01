@@ -23,7 +23,10 @@ const nextConfig = {
     REDIS_URL: process.env.REDIS_URL,
     REDIS_TOKEN: process.env.REDIS_TOKEN,
     AUTH_GOOGLE_SECRET: process.env.AUTH_GOOGLE_SECRET,
-    AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID
+    AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID,
+    CHAPA_PUBLIC_KEY: process.env.CHAPA_PUBLIC_KEY,
+    CHAPA_SECRET_KEY: process.env.CHAPA_SECRET_KEY,
+
   },
   images: {
     remotePatterns: [
