@@ -110,6 +110,17 @@ export var sessionTable = pgTable("sessionTable", {
   }).notNull(),
 });
 
+export var payments = pgTable("payments", {
+  id: text("id").primaryKey(),
+  tnxRef: text("tnx_ref"),
+  amount: integer("amount"),
+  email: text("email"),
+  firstName: text("first_namee"),
+  lastName: text("last_name"),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+
+});
+
 export var insertUserSchema = createInsertSchema(userTable);
 export type User = InferSelectModel<typeof userTable>;
 export type NewUser = InferInsertModel<typeof userTable>;

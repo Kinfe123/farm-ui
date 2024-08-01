@@ -115,7 +115,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                   ) : (
 
                     <div className='flex gap-2 items-center'>
-                      <PaymentLink template_title={template_mod?.title} />
+                      <PaymentLink template_title={template_mod?.title ?? ""} amount={template_mod!.price} />
 
 
                       <LinkItem
