@@ -14,6 +14,7 @@ export default async () => {
   return (
     <>
       <Hero />
+  
       <div className="relative mb-20">
         <DashboardDemo />
       </div>

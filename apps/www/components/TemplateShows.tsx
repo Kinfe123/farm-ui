@@ -7,10 +7,12 @@ import { cn } from "@/lib/utils";
 import HeroAnimated from "./HeroAnimated";
 import LinkItem from "./ui/LinkItem";
 import { IconGithub } from "./icons";
+import axios from "axios";
 
 const TemplateShowCases = () => {
+
   return (
-    <div className="relative w-screen bg-transparent">
+    <div className="relative mx-10 sm:mx-4 md:mx-0 mx-auto w-screen bg-transparent">
       <div className="flex justify-center items-center place-content-center mx-auto h-48">
         <HeroAnimated
           header="Awesome Templates built internally by farmUI"
@@ -19,6 +21,7 @@ const TemplateShowCases = () => {
           descriptionClassName="z-20 relative mx-auto text-zinc-400 text-center text-lg  max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl"
         />
       </div>
+        
         <LinkItem
           href="/pricing"
           variant="shiny"
