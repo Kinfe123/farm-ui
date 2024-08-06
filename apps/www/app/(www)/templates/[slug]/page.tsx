@@ -63,6 +63,8 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
           <a href="/templates" className="m">
             <ArrowLeft className="w-5 h-5 cursor-pointer ny-5 text-white/40 border border-white/40 rounded-full" />
           </a>
+        <Link>
+        </Link>
           <div className="text-zinc-50 mr-auto text-left mt-3">
             <h1 className="text-4xl font-geist md:text-6xl tracking-tighter">
               {template_mod?.title}

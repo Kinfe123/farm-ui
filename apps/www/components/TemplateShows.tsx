@@ -12,7 +12,7 @@ import axios from "axios";
 const TemplateShowCases = () => {
 
   return (
-    <div className="relative mx-10 sm:mx-4 md:mx-0 mx-auto w-screen bg-transparent">
+    <div className="relative mx-10 sm:mx-4 md:mx-0 md w-screen bg-transparent">
       <div className="flex justify-center items-center place-content-center mx-auto h-48">
         <HeroAnimated
           header="Awesome Templates built internally by farmUI"
