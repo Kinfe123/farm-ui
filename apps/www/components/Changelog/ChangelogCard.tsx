@@ -101,7 +101,7 @@ const ChangeLogCard = ({ index, item }: ChangelogProps) => {
     }
     const parsedFmt = parseData()
     return (
-        <div key={`content-${index}`} className="mb-10">
+        <div key={`content-${index}`} className="mb-4">
             <h2 className="text-white rounded-full text-sm max-w-xl md:max-w-3xl lg:max-w-5xl px-4 py-1 mb-4">
                 {formatDate(item.date)} -   {item.kind}
             </h2>
@@ -113,7 +113,7 @@ const ChangeLogCard = ({ index, item }: ChangelogProps) => {
                 {item.summary}
             </p>
 
-            <Separator className="h-[1px] bg-white/10 mb-5" />
+            <Separator className="h-[1px] bg-white/10 mb-2" />
             <div className="text-sm  prose prose-sm dark:prose-invert">
                 {item?.image && (
                     <Image
@@ -124,7 +124,7 @@ const ChangeLogCard = ({ index, item }: ChangelogProps) => {
                         className="rounded-lg mb-10 object-cover w-full"
                     />
                 )}
-                <div className="h-15 mt-10  mb-2 w-full relative">
+                <div className="h-10 mt-0  mb-2 w-full relative">
                     <AnimatedTooltip items={parsedFmt} />
 
                 </div>
