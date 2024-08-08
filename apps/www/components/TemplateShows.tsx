@@ -10,7 +10,7 @@ import { IconGithub } from "./icons";
 
 const TemplateShowCases = () => {
   return (
-    <div className="relative w-screen bg-transparent overflow-hidden">
+    <div className="relative w-screen bg-transparent">
       <div className="flex justify-center items-center place-content-center mx-auto h-48">
         <HeroAnimated
           header="Awesome Templates built internally by farmUI"
