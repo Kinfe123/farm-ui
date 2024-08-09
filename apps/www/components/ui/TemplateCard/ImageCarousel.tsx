@@ -26,7 +26,7 @@ export function ImageSlider({
     >
       <a
         className="z-40 relative cursor-pointer bg-red-900"
-        href={`/${slug}`}
+        href={`${slug}`}
       >
         <CarouselContent>
           {images.map((image, index) => (
