@@ -14,7 +14,7 @@ const TemplateShowCases = () => {
       <div className="flex justify-center items-center place-content-center mx-auto h-48">
         <HeroAnimated
           header="Awesome Templates built internally by farmUI"
-          headerClassName="text-center max-w-lg  sm:max-w-xl md:max-w-xl mt-5  lg:max-w-3xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+          headerClassName="text-center max-w-lg  sm:max-w-xl md:max-w-xl mt-5  lg:max-w-3xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1 mx-5 mt-10 sm:mt-2 md:mt-0"
           description="all the free and paid template built internally from componnents that opensourced here."
           descriptionClassName="z-20 relative mx-auto text-zinc-400 text-center text-lg  max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl"
         />
@@ -22,7 +22,7 @@ const TemplateShowCases = () => {
         <LinkItem
           href="/pricing"
           variant="shiny"
-          className="relative group z-50 mx-auto mt-4 flex w-fit justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950/80 hover:text-zinc-100 duration-200 sm:w-fit py-4 px-10"
+          className="relative group z-50  mx-auto mt-10 flex w-fit justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950/80 hover:text-zinc-100 duration-200 sm:w-fit py-4 px-10"
         >
           Get LifeTime Access
           <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />

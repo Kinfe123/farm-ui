@@ -13,7 +13,9 @@ export default ({ item }: { item: Templates }) => {
   return (
     <li className="relative pt-10 mb-10 border border-white/10 lg:pt-0 h-fit overflow-hidden rounded-3xl dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  pb-10 ">
       <div className="flex-1 w-full block z-30">
-        <ImageSlider images={item.images} />
+
+        <ImageSlider images={item.images} slug={item.slug} />
+
         {/* <img src={item.image} className="rounded-lg" alt="Website template" /> */}
       </div>
       <div className="flex-1 mt-6 px-5 flex flex-col justify-between sm:mt-0 ">
@@ -45,14 +47,24 @@ export default ({ item }: { item: Templates }) => {
             className="justify-end z-20 cursor-pointer    hover:"
           />
         </div>
-        <LinkItem
+        <a
           href={`${item.slug}`}
-          variant="default"
+        >
+
+          <button className="group w-[18%] px-0 mr-auto z-40 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-neutral-100/20 bg-transparent  text-white"><span className="relative inline-flex overflow-hidden"><div className="absolute origin-bottom transition duration-500 [transform:translateX(-150%)_skewX(33deg)] group-hover:[transform:translateX(0)_skewX(0deg)]">View More</div><div className="transition duration-500 [transform:translateX(0%)_skewX(0deg)] group-hover:[transform:translateX(150%)_skewX(33deg)]">Purchase it</div></span>
+            <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+
+          </button>
+
+        </a>
+        {/* <LinkItem
+          href={`${item.slug}`}
+          variant="shiny"
           className="inline-flex z-20 group items-center w-full bg-transparent  border-input border-none hover:bg-transparent/10 transition-colors mr-auto"
         >
-          Explore more
+          Purchase it
           <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-        </LinkItem>
+        </LinkItem> */}
         <Image
           src={bgback}
           className="absolute top-0 translate-y-30  z-1 opacity-30 w-[1000px] h-[800px] overflow-hidden"
