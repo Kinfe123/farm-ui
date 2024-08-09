@@ -86,7 +86,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
             </div>
           </div>
           <div className="gap-10 flex flex-col">
-            <div className="flex-1 space-y-6 mt-12 lg:max-w-sm lg:mt-0 xl:max-w-md ml-auto">
+            <div className="flex-1 space-y-6 mt-4 lg:max-w-sm lg:mt-0 xl:max-w-md mr-auto sm:mt-12 sm:ml-auto">
               <div>
                 <h3 className="text-zinc-200 font-medium">
                   Built with modern technologies
@@ -126,6 +126,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
             </div>
             <div className="flex-1 rounded-xl">
               <ImageSlider
+                slug={slug}
                 images={template_mod?.images!}
                 imgClassName="border-[1px] border-white/20 rounded-2xl"
               />
