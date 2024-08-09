@@ -51,7 +51,7 @@ export default ({ item }: { item: Templates }) => {
           href={`${item.slug}`}
         >
 
-          <button className="group w-[18%] px-10 mr-auto z-40 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-neutral-100/20 bg-transparent  text-white"><span className="w-full relative inline-flex overflow-hidden"><div className="w-full absolute origin-bottom transition duration-500 [transform:translateX(-150%)_skewX(33deg)] group-hover:[transform:translateX(0)_skewX(0deg)]">View More</div><div className="transition duration-500 [transform:translateX(0%)_skewX(0deg)] group-hover:[transform:translateX(150%)_skewX(33deg)]">Purchase it</div></span>
+          <button className="group w-[18%] px-0 mr-auto z-40 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-neutral-100/20 bg-transparent  text-white"><span className="relative inline-flex overflow-hidden"><div className="absolute origin-bottom transition duration-500 [transform:translateX(-150%)_skewX(33deg)] group-hover:[transform:translateX(0)_skewX(0deg)]">View More</div><div className="transition duration-500 [transform:translateX(0%)_skewX(0deg)] group-hover:[transform:translateX(150%)_skewX(33deg)]">Purchase it</div></span>
             <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
 
           </button>
