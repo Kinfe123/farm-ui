@@ -13,28 +13,36 @@ import { cn } from "@/lib/utils";
 export function ImageSlider({
   images,
   imgClassName,
+  slug
 }: {
   images: string[];
   imgClassName?: string;
+  slug: string
 }) {
   return (
     <Carousel
       orientation="horizontal"
       className="w-full max-w-full max-h-full relative"
     >
-      <CarouselContent>
-        {images.map((image, index) => (
-          <CarouselItem key={index} className="w-full">
-            <div className="w-full h-full">
-              <img
-                className={cn(imgClassName, "z-30")}
-                src={`/${image}`}
-                alt="template preview image"
-              />
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
+      <a
+        className="z-40 relative cursor-pointer bg-red-900"
+        href={`/${slug}`}
+      >
+        <CarouselContent>
+          {images.map((image, index) => (
+            <CarouselItem key={index} className="w-full">
+              <div className="w-full h-full">
+                <img
+                  className={cn(imgClassName, "z-30")}
+                  src={`/${image}`}
+                  alt="template preview image"
+                />
+              </div>
+            </CarouselItem>
+
+          ))}
+        </CarouselContent>
+      </a>
       <div className="flex flex-col justify-start items-start">
         <div className="absolute ml-[1.74rem] left-0 z-20 bottom-24">
           <CarouselPrevious />

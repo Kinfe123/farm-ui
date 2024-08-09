@@ -13,7 +13,9 @@ export default ({ item }: { item: Templates }) => {
   return (
     <li className="relative pt-10 mb-10 border border-white/10 lg:pt-0 h-fit overflow-hidden rounded-3xl dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  pb-10 ">
       <div className="flex-1 w-full block z-30">
-        <ImageSlider images={item.images} />
+     
+          <ImageSlider images={item.images} slug={item.slug}/>
+
         {/* <img src={item.image} className="rounded-lg" alt="Website template" /> */}
       </div>
       <div className="flex-1 mt-6 px-5 flex flex-col justify-between sm:mt-0 ">
