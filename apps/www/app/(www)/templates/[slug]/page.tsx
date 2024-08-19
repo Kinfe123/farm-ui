@@ -57,11 +57,11 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
   return (
     <>
       <section className="mt-48 custom-screen-lg mx-auto">
-        
+
         <div className="relative max-w-full md:max-w-3xl mx-auto lg:max-w-4xl z-10">
-        <a href="/templates" className="m">  
-          <ArrowLeft className="w-5 h-5 cursor-pointer ny-5 text-white/40 border border-white/40 rounded-full" />
-        </a>
+          <a href="/templates" className="m">
+            <ArrowLeft className="w-5 h-5 cursor-pointer ny-5 text-white/40 border border-white/40 rounded-full" />
+          </a>
           <div className="text-zinc-50 mr-auto text-left mt-3">
             <h1 className="text-4xl font-geist md:text-6xl tracking-tighter">
               {template_mod?.title}
@@ -86,7 +86,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
             </div>
           </div>
           <div className="gap-10 flex flex-col">
-            <div className="flex-1 space-y-6 mt-4 lg:max-w-sm lg:mt-0 xl:max-w-md mr-auto sm:mt-12 sm:ml-auto">
+            <div className="flex-1 space-y-6 mt-4 lg:max-w-sm lg:mt-0 xl:max-w-md sm:mt-12 sm:ml-auto">
               <div>
                 <h3 className="text-zinc-200 font-medium">
                   Built with modern technologies
@@ -107,7 +107,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                       target="_blank"
                       href={`${template_mod?.source_code}`}
                       variant="shiny"
-                    className="z-20 inline-block w-full hover:bg-zinc-700 sm:w-auto"
+                      className="z-20 inline-block w-full hover:bg-zinc-700 sm:w-auto"
                     >
                       Download template
                     </LinkItem>
@@ -126,6 +126,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
             </div>
             <div className="flex-1 rounded-xl">
               <ImageSlider
+                isDetails={true}
                 slug={slug}
                 images={template_mod?.images!}
                 imgClassName="border-[1px] border-white/20 rounded-2xl"
