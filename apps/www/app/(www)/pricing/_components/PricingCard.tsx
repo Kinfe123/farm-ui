@@ -12,12 +12,12 @@ export default function FUIPricingBundle() {
     price: 69.9,
     isMostPop: true,
     features: [
-      "Access to all paid templates",
-      "Request a new components ",
-      "1-o-1 call with Me",
-      "Early acess to all upcoming updates",
-      "Developing with desired frameworks or templating",
-      "Developing with modern tools and technologies",
+      "Access to all templates",
+      "New component request ",
+      "1-o-1 call",
+      "Instant Update",
+      "Framework agnostic",
+      "Modern technologies",
     ],
   };
 
