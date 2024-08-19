@@ -126,6 +126,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
             </div>
             <div className="flex-1 rounded-xl">
               <ImageSlider
+                isDetails={true}
                 slug={slug}
                 images={template_mod?.images!}
                 imgClassName="border-[1px] border-white/20 rounded-2xl"
