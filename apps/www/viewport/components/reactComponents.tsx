@@ -7,6 +7,7 @@ import FUIFaqsWithDividedRows from "previewsComponents/FUIFaqsWithDividedRows";
 import FUIFaqsWithSearchBox from "previewsComponents/FUIFaqsWithSearchBox";
 import FUIFeatureSectionWithCards from "previewsComponents/FUIFeatureSectionWithCards";
 import FUIForm from "previewsComponents/FUIForm";
+import FUIHeadingBlog from "previewsComponents/FUIHeadingBlog";
 import FUIHeroSectionWithBottomImage from "previewsComponents/FUIHeroSectionWithBottomImage";
 import FUIHeroSectionWithImage from "previewsComponents/FUIHeroSectionWithImage";
 import FUIHeroSectionWithLogoClouds from "previewsComponents/FUIHeroSectionWithLogoClouds";
@@ -739,6 +740,101 @@ const logos = [
     codeCopy: {
       react: `\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { Input } from \"@/components/ui/input\";\nimport Link from \"next/link\";\n\nexport default function FUILoginWithCardLayout() {\n  return (\n    <div className=\"flex min-h-[100dvh] relative items-center justify-center bg-gray-100 px-4 dark:bg-white\">\n      <div className=\"absolute inset-0 z-0 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]\">\n        <div className=\"absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]\"></div>\n      </div>\n      <div className=\"absolute top-0 z-[-1] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]\"></div>\n      <div className=\"mx-auto z-10 text-gray-700 w-full max-w-[500px]\">\n        <div className=\"mb-8 text-center\">\n          <h1 className=\"text-3xl font-normal font-geist tracking-tighter\">\n            Welcome back\n          </h1>\n          <p className=\"text-gray-800/90 dark:text-gray-400 font-geist font-normal\">\n            Sign in to your account to continue\n          </p>\n        </div>\n        <form className=\"space-y-4\">\n          <div>\n            <Label htmlFor=\"email\">Email</Label>\n            <Input\n              id=\"email\"\n              placeholder=\"m@example.com\"\n              required\n              type=\"email\"\n            />\n          </div>\n          <div>\n            <Label htmlFor=\"password\">Password</Label>\n            <Input\n              id=\"password\"\n              placeholder=\"••••••••\"\n              required\n              type=\"password\"\n            />\n          </div>\n          <button className=\"relative h-12 w-full mx-auto text-center font-geist tracking-tighter  overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2\">\n            <span className=\"relative\">Sign In</span>\n          </button>\n        </form>\n        <div className=\"mt-6 text-center text-sm\">\n          <p className=\"text-gray-500 dark:text-gray-400\">\n            Don't have an account?\n            <Link\n              className=\"font-medium text-gray-900 underline-offset-4 hover:underline dark:text-gray-500 ml-2\"\n              href=\"#\"\n            >\n              Sign up\n            </Link>\n          </p>\n          <p className=\"mt-4 text-gray-500 dark:text-gray-400\">\n            Forgot your password?\n            <Link\n              className=\"font-medium text-gray-900 underline-offset-4 hover:underline dark:text-gray-500 ml-2\"\n              href=\"#\"\n            >\n              Reset password\n            </Link>\n          </p>\n        </div>\n        <div className=\"mt-6 border-t pt-6\">\n          <div className=\"flex items-center justify-center gap-4\">\n           \n            <button className=\"relative flex justify-center items-center  h-12 w-full mx-auto text-center font-geist tracking-tighter  overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2\">\n              <GithubIcon className=\"mr-2 h-4 w-4\" />\n              Sign in with GitHub\n            </button>\n            <button className=\"relative flex justify-center items-center  h-12 w-full mx-auto text-center font-geist tracking-tighter  overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2\">\n              <ChromeIcon className=\"mr-2 h-4 w-4\" />\n              Sign in with Google\n            </button>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n\nfunction ChromeIcon(props:any) {\n  return (\n    <svg\n      {...props}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"24\"\n      height=\"24\"\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke=\"currentColor\"\n      strokeWidth=\"2\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n    >\n      <circle cx=\"12\" cy=\"12\" r=\"10\" />\n      <circle cx=\"12\" cy=\"12\" r=\"4\" />\n      <line x1=\"21.17\" x2=\"12\" y1=\"8\" y2=\"8\" />\n      <line x1=\"3.95\" x2=\"8.54\" y1=\"6.06\" y2=\"14\" />\n      <line x1=\"10.88\" x2=\"15.46\" y1=\"21.94\" y2=\"14\" />\n    </svg>\n  );\n}\n\nfunction GithubIcon(props:any) {\n  return (\n    <svg\n      {...props}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"24\"\n      height=\"24\"\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke=\"currentColor\"\n      strokeWidth=\"2\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n    >\n      <path d=\"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4\" />\n      <path d=\"M9 18c-4.51 2-5-2-7-2\" />\n    </svg>\n  );\n}\n\n\n\n\n        \n\n\n\n
 
+      `,
+    },
+  },
+  "farmui-heading-00": {
+    component: <FUIHeadingBlog />,
+    description: "CTA with Github",
+    path: "previewsComponents/FUIHeadingBlog",
+    codeCopy: {
+      react: `
+      export default function FUIHeadingBlog() {
+    return (
+      <section className="bg-transparent py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
+          <div className="mr-auto max-w-2xl text-left mb-20 ">
+            <h2 className="text-4xl font-semibold tracking-tighter text-white/70 sm:text-6xl">
+              What others say
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-300">
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
+              fugiat aliqua.
+            </p>
+            <hr className="border-1 border-white/10 mt-10 w-[70vw]" />
+          </div>
+          <div
+            className="absolute left-0 top-0 h-80 w-[90%] opacity-55 overflow-x-hidden bg-[rgb(54,157,253)] bg-opacity-40 blur-[337.4px]"
+            style={{ transform: "rotate(-30deg)" }}
+          />
+          <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
+              <img
+                className="h-12 self-start"
+                src="https://tailwindui.com/img/logos/tuple-logo-white.svg"
+                alt=""
+              />
+              <figure className="mt-10 flex flex-auto flex-col justify-between">
+                <blockquote className="text-lg leading-8 text-gray-400">
+                  <p>
+                    “Amet amet eget scelerisque tellus sit neque faucibus non
+                    eleifend. Integer eu praesent at a. Ornare arcu gravida
+                    natoque erat et cursus tortor consequat at. Vulputate gravida
+                    sociis enim nullam ultricies habitant malesuada lorem ac.
+                    Tincidunt urna dui pellentesque sagittis.”
+                  </p>
+                </blockquote>
+                <figcaption className="mt-10 flex items-center gap-x-6">
+                  <img
+                    className="h-14 w-14 rounded-full bg-white brightness-200"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                  <div className="text-base">
+                    <div className="font-semibold text-gray-300">
+                      Judith Black
+                    </div>
+                    <div className="mt-1 text-gray-500">CEO of Tuple</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div className="flex flex-col border-t border-gray-300/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20">
+              <img
+                className="h-12 self-start"
+                src="https://tailwindui.com/img/logos/reform-logo-white.svg"
+                alt=""
+              />
+              <figure className="mt-10 flex flex-auto flex-col justify-between">
+                <blockquote className="text-lg leading-8 text-gray-400">
+                  <p>
+                    “Excepteur veniam labore ullamco eiusmod. Pariatur consequat
+                    proident duis dolore nulla veniam reprehenderit nisi officia
+                    voluptate incididunt exercitation exercitation elit. Nostrud
+                    veniam sint dolor nisi ullamco.”
+                  </p>
+                </blockquote>
+                <figcaption className="mt-10 flex items-center gap-x-6">
+                  <img
+                    className="h-14 w-14 rounded-full bg-gray-50"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                  <div className="text-base">
+                    <div className="font-semibold text-gray-300">
+                      Joseph Rodriguez
+                    </div>
+                    <div className="mt-1 text-gray-500">CEO of Reform</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
       `,
     },
   },
