@@ -14,7 +14,7 @@ export default function FUIHeadingBlog() {
             <hr className="border-1 border-white/10 mt-10 w-[70vw]" />
           </div>
           <div
-            className="absolute left-0 top-0 h-80 w-[90%] opacity-35 overflow-x-hidden bg-[rgb(54,157,253)] bg-opacity-40 blur-[337.4px]"
+            className="absolute left-0 top-0 h-80 w-[90%] opacity-35 overflow-x-hidden bg-[rgb(130,54,253)] bg-opacity-40 blur-[337.4px]"
             style={{ transform: "rotate(-30deg)" }}
           />
           <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
