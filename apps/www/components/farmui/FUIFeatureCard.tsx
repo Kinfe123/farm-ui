@@ -21,7 +21,7 @@ export default function FUIFeatureSectionWithCards() {
         </svg>
       ),
       title: 'Blazingly fast UI',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
+      desc: 'Experience ultra-fast user interface performance, designed to ensure rapid response times and a seamless user experience.',
     },
     {
       icon: (
@@ -40,8 +40,8 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Dashboard UI ',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
+      title: 'Dashboard UI',
+      desc: 'An intuitive and dynamic dashboard interface, crafted to provide a clear and organized view of essential metrics and information.',
     },
     {
       icon: (
@@ -61,7 +61,7 @@ export default function FUIFeatureSectionWithCards() {
         </svg>
       ),
       title: 'Auth Starter UI',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
+      desc: 'Get a head start on authentication with a ready-to-use UI, featuring essential components for secure user access and management.',
     },
     {
       icon: (
@@ -81,7 +81,7 @@ export default function FUIFeatureSectionWithCards() {
         </svg>
       ),
       title: 'Team UI',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
+      desc: 'A collaborative and interactive UI designed to facilitate team management and communication, making teamwork more efficient and effective.',
     },
     {
       icon: (
@@ -100,8 +100,8 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Toast & Alert UI ',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
+      title: 'Toast & Alert UI',
+      desc: 'Implement toast notifications and alert dialogs with ease, enhancing user engagement and providing timely feedback within your application.',
     },
     {
       icon: (
@@ -121,9 +121,10 @@ export default function FUIFeatureSectionWithCards() {
         </svg>
       ),
       title: 'Hero UI',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius.',
+      desc: 'A bold and visually striking UI component, designed to captivate attention and deliver impactful messaging with a modern aesthetic.',
     },
   ]
+    
 
   return (
     <section className="relative pb-14 z-20">

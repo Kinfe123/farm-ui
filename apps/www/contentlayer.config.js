@@ -226,7 +226,7 @@ export const Templates = defineDocumentType(() => ({
     source_code: {
       type: "string",
     },
-    kind:{
+    kind: {
       type: "string"
     },
     stack_used: {
@@ -240,7 +240,7 @@ export const Templates = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Templates, Doc, Guide, Post, Author, Changelog , Components],
+  documentTypes: [Templates, Doc, Guide, Post, Author, Changelog, Components],
   mdx: {
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [

@@ -1,13 +1,17 @@
 import FUIChartihIndicators from "previewsComponents/FUIChartsWithIndicators";
+import FUICTAWithGithub from "previewsComponents/FUICTAWithGithub";
+import FUICTAWithInput from "previewsComponents/FUICTAWithInput";
 import FUIDarkHeroSection from "previewsComponents/FUIDarkHeroSection";
 import FUIDashboardSells from "previewsComponents/FUIDashbaordSells";
 import FUIFaqsWithDividedRows from "previewsComponents/FUIFaqsWithDividedRows";
 import FUIFaqsWithSearchBox from "previewsComponents/FUIFaqsWithSearchBox";
 import FUIFeatureSectionWithCards from "previewsComponents/FUIFeatureSectionWithCards";
 import FUIForm from "previewsComponents/FUIForm";
+import FUIHeadingBlog from "previewsComponents/FUIHeadingBlog";
 import FUIHeroSectionWithBottomImage from "previewsComponents/FUIHeroSectionWithBottomImage";
 import FUIHeroSectionWithImage from "previewsComponents/FUIHeroSectionWithImage";
 import FUIHeroSectionWithLogoClouds from "previewsComponents/FUIHeroSectionWithLogoClouds";
+import FUIHeroWithBorders from "previewsComponents/FUIHeroWithBorders";
 import FUIHeroWithGrid from "previewsComponents/FUIHeroWithGrid";
 import FUIHeroWithJelly from "previewsComponents/FUIHeroWithJelly";
 import FUIDarkHeroSectionWithScrolls from "previewsComponents/FUIHeroWithScrolls";
@@ -24,6 +28,7 @@ import FUIPricingWithSpecialTwo from "previewsComponents/FUIPricingWithSpecialTw
 import FUISignUpWithLeftBackground from "previewsComponents/FUISignUpWithLeftBackground";
 import FUITestimonialWithGrid from "previewsComponents/FUITestimonialGrid";
 import FUITestimonialWithThreeColumn from "previewsComponents/FUITestimonialWithThreeColumn";
+import FUITestimonialWithSlide from "previewsComponents/FUITestomonialSlide";
 import React from "react";
 
 type ComponentProps = {
@@ -523,6 +528,161 @@ export function Container({
       `,
     },
   },
+  "farmui-hero-09": {
+    component: <FUIHeroWithBorders />,
+    description: "Hero Section With Borders and Slider",
+    path: "previewsComponents/FUIHeroWithBorders",
+    codeCopy: {
+      react: `
+      import clsx from 'clsx'
+
+const FUIHeroWithBorders = () => {
+    return (
+        <section className="relative min-h-[calc(100vh-50px)] overflow-hidden bg-[linear-gradient(to_bottom,#fff,#b49de0_40%,#A46EDB_88%)]  dark:bg-[linear-gradient(to_bottom,#000,#200D42_40%,#4F21A1_74%,#A46EDB_88%_50%)]">
+
+            <div className="absolute left-1/2 top-[calc(100%-90px)]  lg:top-[calc(100%-150px)] h-[500px] w-[700px]   md:h-[500px] md:w-[1100px] lg:h-[750px] lg:w-[100%] -translate-x-1/2 rounded-[100%] border-[#B48CDE] bg-black bg-[radial-gradient(closest-side,#000_82%,#9560EB)]"></div>
+            <div className="dark:border-dark-border absolute left-0 top-0 z-0 grid h-full w-full grid-cols-[clamp(28px,10vw,120px)_auto_clamp(28px,10vw,120px)] border-b border-border">
+                <div className="col-span-1 flex h-full items-center justify-center" />
+                <div className="dark:border-dark-border col-span-1 flex h-full items-center justify-center border-x border-white/10" />
+                <div className="col-span-1 flex h-full items-center justify-center" />
+            </div>
+            <figure className="bg-accent-500/40 pointer-events-none absolute -bottom-[70%] left-1/2 z-0 block aspect-square w-[520px] -translate-x-1/2 rounded-full blur-[200px]" />
+            <figure className="bg-surface-primary dark:bg-dark-surface-primary pointer-events-none absolute left-[4vw] top-[64px] z-20 hidden aspect-square w-[32vw] rounded-full opacity-50 blur-[100px] md:block" />
+            <figure className="bg-surface-primary dark:bg-dark-surface-primary pointer-events-none absolute bottom-[-50px] right-[7vw] z-20 hidden aspect-square w-[30vw] rounded-full opacity-50 blur-[100px] md:block" />
+            <div className="dark:divide-dark-border relative z-10 flex flex-col divide-y divide-white/10 pt-[35px]">
+                <div className="flex flex-col items-center justify-end">
+                    <div className="dark:border-dark-border flex items-center gap-2 !border !border-b-0 border-white/5 px-4 py-2">
+                        <p className="text-text-tertiary dark:text-dark-text-tertiary text-sm tracking-tight">
+                            1000 peoples
+                        </p>
+                    </div>
+                </div>
+            <div>
+                    <div className="mx-auto flex h-[288px] max-w-[80vw] shrink-0 flex-col items-center justify-center gap-2 px-2 py-4 sm:px-10 lg:px-24">
+                        <h1 className="text-text-primary dark:text-dark-text-primary text-pretty text-center text-4xl  sm:text-5xl md:text-6xl  lg:text-[clamp(50px,7vw,75px)] font-medium leading-none tracking-[-1.44px] md:max-w-screen-lg md:tracking-[-2.16px]">
+                            Developer First Headless CMS for solo&apos;s and enterprice
+                        </h1>
+                        <h2 className="text-md text-text-tertiary dark:text-dark-text-tertiary max-w-2xl text-pretty text-center md:text-lg">
+                            You can put any thing as sub heading for SDK wrrapper thing here
+                            with some details
+                        </h2>
+                    </div>
+                </div>
+
+                <div className=" dark:divide-dark-border flex items-start justify-center divide-y divide-white/10  px-8 sm:px-24">
+                    <div className="flex w-full max-w-[80vw] flex-col items-center justify-start md:!max-w-[392px]">
+                        <a href="/docs" className="cursor-pointer w-full">
+                            <div
+                                className={clsx(
+                                    '!h-14 flex-col items-center justify-center rounded-none !text-base',
+                                    'max-w-sm:!border-x-0 dark:border-dark-border flex w-full !border-x !border-y-0 border-white/10 !bg-transparent backdrop-blur-xl transition-colors duration-150 hover:!bg-black/5 dark:hover:!bg-white/5',
+                                )}
+                            >
+                                Learn more
+                            </div>
+                        </a>
+                        <a href="/docs" className="cursor-pointer w-full">
+                            <div
+                                className={clsx(
+                                    'text-white dark:text-black boder-2 !h-14 flex-col items-center justify-center rounded-none border-none !text-base',
+                                    'flex w-full border-[1.2px] border-white/5 bg-gradient-to-tr from-purple-800 via-purple-700 to-purple-400',
+                                )}
+                            >
+                                Get started
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div className="mx-auto max-w-7xl">
+                    <AnimatedLogoCloud />
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default FUIHeroWithBorders
+
+
+
+const logos = [
+    {
+      name: 'Vercel',
+      url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881430/vercel_wordmark_dark_mhv8u8.svg',
+    },
+    {
+      name: 'Nextjs',
+      url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881475/nextjs_logo_dark_gfkf8m.svg',
+    },
+    {
+      name: 'Prime',
+      url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/t2awrrfzdvmg1chnzyfr.svg',
+    },
+    {
+      name: 'Trustpilot',
+      url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/tkfspxqmjflfllbuqxsi.svg',
+    },
+    {
+      name: 'Webflow',
+      url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/nymiivu48d5lywhf9rpf.svg',
+    },
+  
+    {
+      name: 'Airbnb',
+      url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/pmblusboe7vkw8vxdknx.svg',
+    },
+    {
+      name: 'Tina',
+      url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/afqhiygywyphuou6xtxc.svg',
+    },
+    {
+      name: 'Stackoverflow',
+      url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/ts1j4mkooxqmscgptafa.svg',
+    },
+    {
+      name: 'mistral',
+      url: 'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/tyos2ayezryjskox3wzs.svg',
+    },
+  ]
+  
+  const AnimatedLogoCloud = () => {
+    return (
+      <div className="w-full py-12">
+        <div className="mx-auto w-full px-4 md:px-8">
+          <div
+            className="group relative mt-6 flex gap-6 overflow-hidden p-2"
+            style={{
+              maskImage:
+                'linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 95%)',
+            }}
+          >
+            {Array(5)
+              .fill(null)
+              .map((index) => (
+                <div
+                  key={index}
+                  className="flex shrink-0 animate-x-slider flex-row justify-around gap-6"
+                >
+                  {logos.map((logo, key) => (
+                    <img
+                      key={key}
+                      src={logo.url}
+                      className="h-10 w-28 px-2 flex-none brightness-0  dark:invert"
+                      alt={logo.name}
+
+                    />
+                  ))}
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+  
+        `,
+    },
+  },
   "farmui-faq-00": {
     component: <FUIFaqsWithSearchBox />,
     description: "FAQ with Search Box",
@@ -580,6 +740,251 @@ export function Container({
     codeCopy: {
       react: `\"use client\";\n\nimport { Label } from \"@/components/ui/label\";\nimport { Input } from \"@/components/ui/input\";\nimport Link from \"next/link\";\n\nexport default function FUILoginWithCardLayout() {\n  return (\n    <div className=\"flex min-h-[100dvh] relative items-center justify-center bg-gray-100 px-4 dark:bg-white\">\n      <div className=\"absolute inset-0 z-0 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]\">\n        <div className=\"absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]\"></div>\n      </div>\n      <div className=\"absolute top-0 z-[-1] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]\"></div>\n      <div className=\"mx-auto z-10 text-gray-700 w-full max-w-[500px]\">\n        <div className=\"mb-8 text-center\">\n          <h1 className=\"text-3xl font-normal font-geist tracking-tighter\">\n            Welcome back\n          </h1>\n          <p className=\"text-gray-800/90 dark:text-gray-400 font-geist font-normal\">\n            Sign in to your account to continue\n          </p>\n        </div>\n        <form className=\"space-y-4\">\n          <div>\n            <Label htmlFor=\"email\">Email</Label>\n            <Input\n              id=\"email\"\n              placeholder=\"m@example.com\"\n              required\n              type=\"email\"\n            />\n          </div>\n          <div>\n            <Label htmlFor=\"password\">Password</Label>\n            <Input\n              id=\"password\"\n              placeholder=\"••••••••\"\n              required\n              type=\"password\"\n            />\n          </div>\n          <button className=\"relative h-12 w-full mx-auto text-center font-geist tracking-tighter  overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2\">\n            <span className=\"relative\">Sign In</span>\n          </button>\n        </form>\n        <div className=\"mt-6 text-center text-sm\">\n          <p className=\"text-gray-500 dark:text-gray-400\">\n            Don't have an account?\n            <Link\n              className=\"font-medium text-gray-900 underline-offset-4 hover:underline dark:text-gray-500 ml-2\"\n              href=\"#\"\n            >\n              Sign up\n            </Link>\n          </p>\n          <p className=\"mt-4 text-gray-500 dark:text-gray-400\">\n            Forgot your password?\n            <Link\n              className=\"font-medium text-gray-900 underline-offset-4 hover:underline dark:text-gray-500 ml-2\"\n              href=\"#\"\n            >\n              Reset password\n            </Link>\n          </p>\n        </div>\n        <div className=\"mt-6 border-t pt-6\">\n          <div className=\"flex items-center justify-center gap-4\">\n           \n            <button className=\"relative flex justify-center items-center  h-12 w-full mx-auto text-center font-geist tracking-tighter  overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2\">\n              <GithubIcon className=\"mr-2 h-4 w-4\" />\n              Sign in with GitHub\n            </button>\n            <button className=\"relative flex justify-center items-center  h-12 w-full mx-auto text-center font-geist tracking-tighter  overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2\">\n              <ChromeIcon className=\"mr-2 h-4 w-4\" />\n              Sign in with Google\n            </button>\n          </div>\n        </div>\n      </div>\n    </div>\n  );\n}\n\nfunction ChromeIcon(props:any) {\n  return (\n    <svg\n      {...props}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"24\"\n      height=\"24\"\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke=\"currentColor\"\n      strokeWidth=\"2\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n    >\n      <circle cx=\"12\" cy=\"12\" r=\"10\" />\n      <circle cx=\"12\" cy=\"12\" r=\"4\" />\n      <line x1=\"21.17\" x2=\"12\" y1=\"8\" y2=\"8\" />\n      <line x1=\"3.95\" x2=\"8.54\" y1=\"6.06\" y2=\"14\" />\n      <line x1=\"10.88\" x2=\"15.46\" y1=\"21.94\" y2=\"14\" />\n    </svg>\n  );\n}\n\nfunction GithubIcon(props:any) {\n  return (\n    <svg\n      {...props}\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"24\"\n      height=\"24\"\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      stroke=\"currentColor\"\n      strokeWidth=\"2\"\n      strokeLinecap=\"round\"\n      strokeLinejoin=\"round\"\n    >\n      <path d=\"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4\" />\n      <path d=\"M9 18c-4.51 2-5-2-7-2\" />\n    </svg>\n  );\n}\n\n\n\n\n        \n\n\n\n
 
+      `,
+    },
+  },
+  "farmui-heading-00": {
+    component: <FUIHeadingBlog />,
+    description: "CTA with Github",
+    path: "previewsComponents/FUIHeadingBlog",
+    codeCopy: {
+      react: `
+      export default function FUIHeadingBlog() {
+    return (
+      <section className="bg-transparent py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
+          <div className="mr-auto max-w-2xl text-left mb-20 ">
+            <h2 className="text-4xl font-semibold tracking-tighter text-white/70 sm:text-6xl">
+              What others say
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-300">
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
+              fugiat aliqua.
+            </p>
+            <hr className="border-1 border-white/10 mt-10 w-[70vw]" />
+          </div>
+          <div
+            className="absolute left-0 top-0 h-80 w-[90%] opacity-55 overflow-x-hidden bg-[rgb(54,157,253)] bg-opacity-40 blur-[337.4px]"
+            style={{ transform: "rotate(-30deg)" }}
+          />
+          <div className="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div className="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
+              <img
+                className="h-12 self-start"
+                src="https://tailwindui.com/img/logos/tuple-logo-white.svg"
+                alt=""
+              />
+              <figure className="mt-10 flex flex-auto flex-col justify-between">
+                <blockquote className="text-lg leading-8 text-gray-400">
+                  <p>
+                    “Amet amet eget scelerisque tellus sit neque faucibus non
+                    eleifend. Integer eu praesent at a. Ornare arcu gravida
+                    natoque erat et cursus tortor consequat at. Vulputate gravida
+                    sociis enim nullam ultricies habitant malesuada lorem ac.
+                    Tincidunt urna dui pellentesque sagittis.”
+                  </p>
+                </blockquote>
+                <figcaption className="mt-10 flex items-center gap-x-6">
+                  <img
+                    className="h-14 w-14 rounded-full bg-white brightness-200"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                  <div className="text-base">
+                    <div className="font-semibold text-gray-300">
+                      Judith Black
+                    </div>
+                    <div className="mt-1 text-gray-500">CEO of Tuple</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div className="flex flex-col border-t border-gray-300/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20">
+              <img
+                className="h-12 self-start"
+                src="https://tailwindui.com/img/logos/reform-logo-white.svg"
+                alt=""
+              />
+              <figure className="mt-10 flex flex-auto flex-col justify-between">
+                <blockquote className="text-lg leading-8 text-gray-400">
+                  <p>
+                    “Excepteur veniam labore ullamco eiusmod. Pariatur consequat
+                    proident duis dolore nulla veniam reprehenderit nisi officia
+                    voluptate incididunt exercitation exercitation elit. Nostrud
+                    veniam sint dolor nisi ullamco.”
+                  </p>
+                </blockquote>
+                <figcaption className="mt-10 flex items-center gap-x-6">
+                  <img
+                    className="h-14 w-14 rounded-full bg-gray-50"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt=""
+                  />
+                  <div className="text-base">
+                    <div className="font-semibold text-gray-300">
+                      Joseph Rodriguez
+                    </div>
+                    <div className="mt-1 text-gray-500">CEO of Reform</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+      `,
+    },
+  },
+  "farmui-cta-00": {
+    component: <FUICTAWithGithub />,
+    description: "CTA with Github",
+    path: "previewsComponents/FUICTAWithGithub",
+    codeCopy: {
+      react: `
+      "use client";
+import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { HeroMainboardStuff } from "components/Svgs/ShinyLighs";
+import GithubSvg from "../public/github.svg";
+import { Github } from "lucide-react";
+import { OssLight } from "components/Svgs/OssLights";
+import { OssChip } from "components/Svgs/OssChips";
+const FUICTAWithGithub = () => {
+  return (
+    <div>
+      <div className="md:mt-14 mx-auto text-gray-400 md:px-8 relative py-20 flex flex-col justify-center items-center overflow-hidden">
+        <p className="mt-8 max-w-2xl mx-auto  font-geist text-center text-5xl font-normal tracking-tight text-gray-800 dark:text-gray-200">
+          Proudly OpenSource.
+        </p>
+        <HeroMainboardStuff className="absolute top-[-100px] invert brightness-50 block dark:hidden" />
+        <p className="mt-4 max-w-xl mx-auto  text-lg text-center tracking-tight text-slate-400">
+          Design assets, icon teardowns, and a community of fellow icon
+          designers where you can ask questions.
+        </p>
+        <div className="relative flex flex-col justify-center gap-6 items-center">
+          <div className="absolute top-[-100px]  left-1/2 -translate-x-1/2">
+            <OssLight />
+          </div>
+          <a href="/docs" className="mt-4">
+            <button className="container inline-flex -translate-y-1/4 gap-2 justify-center items-center py-2 px-10 mt-5 text-lg tracking-tighter text-center bg-gradient-to-br rounded-md ring-2 ring-offset-2 transition-all hover:ring-transparent group/button  from-zinc-100 to-zinc-300 font-geist text-md text-zinc-900 dark:ring-zinc-500/80 dark:ring-offset-zinc-950 hover:scale-[1.02] active:scale-[0.98] active:dark:ring-zinc-500/70 ring-black/20">
+              <Github className="w-4 h-4" /> Get Started
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 opacity-0 group-hover/button:[animation-delay:.2s] group-hover/button:animate-shineButton rounded-[inherit] bg-[length:200%_100%] bg-[linear-gradient(110deg,transparent,35%,rgba(255,255,255,.7),75%,transparent)]"
+              />
+            </button>
+          </a>
+        </div>
+
+        <div className="relative flex justify-center items-center md:mt-[-40px]">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            <Image
+              alt="Github logo"
+              src={GithubSvg}
+              className="mt-24 hidden dark:block"
+            />
+            <div className="absolute -z-50 top-[150px] left-[-50px] lg:w-[1000px] lg:h-[400px] lg:top-[400px] lg:left-[150px]">
+              <OssChip className="flex" />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FUICTAWithGithub;
+
+      `,
+    },
+  },
+  "farmui-cta-01": {
+    component: <FUICTAWithInput />,
+    description: "CTA with Input",
+    path: "previewsComponents/FUICTAWithInput",
+    codeCopy: {
+      react: `
+      import Image from 'next/image'
+import { Button } from '@/components/Button'
+import { OssLight } from 'components/Svgs/OssLights'
+import { HeroMainboardStuff } from 'components/Svgs/ShinyLighs'
+
+function ArrowRightIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" {...props}>
+      <path
+        d="m14 7 5 5-5 5M19 12H5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+export default function FUICTAWithInput() {
+  return (
+    <div >
+
+    <section id="newsletter" aria-label="Newsletter" className=''>
+      <div className='max-w-7xl mx-auto rounded-xl'>
+        <div className="relative -mx-4 overflow-hidden bg-indigo-50 bg-opacity-35 bg-[linear-gradient(to_bottom,#fff,#c9c8c7_100%)] dark:bg-[linear-gradient(to_bottom,#000,#200D42_40%,#4F21A1_74%,#A46EDB_88%_50%)] px-4 py-20 sm:-mx-6 sm:px-6 md:mx-0 md:rounded-3xl ring-black/20 ring-2 ring-offset-2 ring-offset-white dark:border-white/10 dark:ring-0 dark:ring-offset-0 md:px-16 xl:px-24 xl:py-36">
+        <div className='hidden dark:block'>
+        <div className="absolute left-1/2 top-[calc(100%-90px)] h-[750px] w-screen -translate-x-1/2 rounded-[100%] border-[#B48CDE] bg-black bg-[radial-gradient(closest-side,#000_82%,#9560EB)]"></div>
+
+        </div>
+        
+        <HeroMainboardStuff className="absolute left-1/2 top-0 -translate-x-1/2 invert brightness-100"/>
+          <OssLight className='absolute' />
+          <div className="relative mx-auto grid max-w-2xl grid-cols-1 gap-x-32 gap-y-14 xl:max-w-none xl:grid-cols-2">
+            <div>
+              <p className="font-display text-4xl font-medium tracking-tighter  text-zinc-900 dark:text-zinc-200 sm:text-5xl">
+                Stay up to date
+              </p>
+              <p className="mt-4 text-lg tracking-tight text-zinc-900 dark:text-zinc-200">
+                Get updates on all of our events and be the first to get
+                notified when tickets go on sale.
+              </p>
+            </div>
+            <form>
+              <h3 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-zinc-200">
+                Sign up to our newsletter <span aria-hidden="true">&darr;</span>
+              </h3>
+              <div className="mt-5 flex rounded-3xl focus:border-0 focus:border-transparent bg-white py-2.5 pr-2.5 shadow-xl shadow-zinc-900/5">
+                <input
+                  type="email"
+                  required
+                  placeholder="Email address"
+                  aria-label="Email address"
+                  className="-my-2.5 border-0 flex-auto rounded-full focus:border-none  bg-transparent pl-6 pr-2.5 text-base text-slate-900 placeholder:text-slate-400 focus:border-0 focus:border-transparent"
+                />
+                <Button type="submit">
+                  <span className="sr-only sm:not-sr-only">Sign up today</span>
+                  <span className="sm:hidden">
+                    <ArrowRightIcon className="h-6 w-6" />
+                  </span>
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+
+  )
+}
       `,
     },
   },
@@ -1323,6 +1728,121 @@ export function Container({
   `,
     },
   },
+  "farmui-testimonial-02": {
+    component: <FUITestimonialWithSlide />,
+    description: "Testimonial with animated slide",
+    path: "previewsComponents/FUITestimonialWithSlide",
+    codeCopy: {
+      react: `import Image from 'next/image'
+const testimonials = [
+    {
+        name: "Alena Zhukova",
+        profession: "Software Engineer",
+        description: "Simple is the perfect tool for building user interfaces. It's easy to use and has a lot of features. I've been using it for a while now and I'm really happy with the results.",
+        avatar: "https://assets.basehub.com/fa068a12/uXVXN7g1Fc2EjO8OWn0HG/09.png?width=64&quality=90&format=auto",
+        image: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881430/vercel_wordmark_dark_mhv8u8.svg",
+    },
+    {
+        name: "Aiko",
+        profession: "Design Engineer",
+        description:
+            "Simple is a great tool for building user interfaces. It's easy to use and has a lot of features. I've been using it for a while now and I'm really happy with the results.",
+        avatar: "https://assets.basehub.com/fa068a12/uXVXN7g1Fc2EjO8OWn0HG/09.png?width=64&quality=90&format=auto",
+        image: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881430/vercel_wordmark_dark_mhv8u8.svg",
+    },
+    {
+        name: "Alena Zhukova",
+        profession: "Software Engineer",
+        description:
+            "Simple is the perfect tool for building user interfaces. It's easy to use and has a lot of features. I've been using it for a while now and I'm really happy with the results..",
+        avatar: "https://assets.basehub.com/fa068a12/uXVXN7g1Fc2EjO8OWn0HG/09.png?width=64&quality=90&format=auto",
+        image: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881430/vercel_wordmark_dark_mhv8u8.svg",
+    },
+
+    {
+        name: "Lisa Kemp",
+        profession: "Frontend Developer",
+        description:
+            "Simple is a great tool for building user interfaces. It's easy to use and has a lot of features. I've been using it for a while now and I'm really happy with the results..",
+        avatar: "https://assets.basehub.com/fa068a12/uXVXN7g1Fc2EjO8OWn0HG/09.png?width=64&quality=90&format=auto",
+        image: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881430/vercel_wordmark_dark_mhv8u8.svg",
+    },
+    {
+        name: "Saud",
+        profession: "Game Developer",
+        description:
+            "Simple is a great tool for building user interfaces. It's easy to use and has a lot of features. I've been using it for a while now and I'm really happy with the results.",
+        avatar: "https://assets.basehub.com/fa068a12/uXVXN7g1Fc2EjO8OWn0HG/09.png?width=64&quality=90&format=auto",
+        image: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881430/vercel_wordmark_dark_mhv8u8.svg",
+    },
+    {
+        name: "Paula Smith",
+        profession: "UX Designer",
+        description:
+            "Simple is a great tool for building user interfaces. It's easy to use and has a lot of features. I've been using it for a while now and I'm really happy with the results.",
+        avatar: "https://assets.basehub.com/fa068a12/uXVXN7g1Fc2EjO8OWn0HG/09.png?width=64&quality=90&format=auto",
+        image: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881430/vercel_wordmark_dark_mhv8u8.svg",
+    },
+];
+const FUITestimonialWithSlide = () => {
+    return (
+        <div className='max-w-8xl mx-auto'>
+            <div className="w-full mx-auto px-10">
+                <div className='mb-10'>
+
+                    <p className="mt-8 max-w-2xl mx-auto  font-geist text-center text-5xl font-normal tracking-tight text-gray-800 dark:text-gray-200">
+                        What clients says
+                    </p>
+                    <p className="mt-4 max-w-xl mx-auto  text-lg text-center tracking-tight text-zinc-600">
+                        Design assets, icon teardowns, and a community of fellow icon
+                        designers where you can ask questions.
+                    </p>
+
+                </div>
+                <div style={{
+                    maskImage:
+                        'linear-gradient(to left, transparent 0%, black 20%, black 80%, transparent 95%)',
+                }} className="flex relative overflow-hidden  gap-5 justify-around shrink-0">
+                    {testimonials.map((testimonial, indx) => {
+                        return (
+
+                            <div key={indx} className="border-[1.2px] animate-logo-cloud flex flex-col bg-page-gradient border-black/20  dark:border-white/10  rounded-lg shrink-0 grow-0 w-[600px] h-full">
+                                <p className="px-5 py-5 text-pretty text-xl font-extralight  text-text-primary dark:text-dark-text-primary sm:text-2xl md:text-3xl tracking-tighter">
+                                    &quot;{testimonial.description}.&quot;
+
+
+                                </p>
+                                <div className="border-t-[1.2px]  w-full flex gap-1 overflow-hidden">
+                                    <div className="w-3/4 flex gap-3 items-center px-4 py-3">
+                                        <img src={testimonial.avatar} alt='avatar' />
+                                        <div className='flex flex-col flex-1 gap-0 justify-start items-start'>
+                                            <h5 className='text-base font-medium md:text-lg'>{testimonial.name}</h5>
+                                            <p className='text-black/30 dark:text-white/50 mt-[-4px] text-sm text-text-tertiary dark:text-dark-text-tertiary md:text-base'>{testimonial.profession}</p>
+
+                                        </div>
+
+                                    </div>
+                                    <div className='w-[1px] bg-black/20 dark:bg-white/20' />
+
+                                    <div className='max-w-full self-center pl-2'>
+                                        <img src={testimonial.image} className='h-10 w-28 px-2 flex-none brightness-0  dark:invert' alt='company_logo' />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
+        </div>
+    )
+}
+export default FUITestimonialWithSlide`,
+    },
+  },
+
   "farmui-dashboard-00": {
     component: <FUIDashboardSells />,
     description: "Dashboard page With Sells and Client ",
@@ -1731,8 +2251,7 @@ export default function FUIDashboardSells() {
     description: "Charts with Indicators",
     path: "previewsComponents/FUIChartihIndicators",
     codeCopy: {
-      react: `\n\n\"use client\"\n\nimport * as React from \"react\"\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\"\nimport LazyMotionWrapper from \"components/LazyMotionWrapper\"\nimport { AnimatePresence, motion } from \"framer-motion\"\nimport { Smartphone , Laptop2 ,  AlertCircleIcon, Calendar, Printer } from \"lucide-react\"\n\nimport {\n    Card,\n    CardContent,\n    CardDescription,\n    CardHeader,\n    CardTitle,\n} from \"@/components/ui/card\"\nimport {\n    ChartConfig,\n    ChartContainer,\n    ChartTooltip,\n    ChartTooltipContent,\n} from \"@/components/ui/chart\"\nconst chartData = [\n    { date: \"2024-04-01\", desktop: 222, mobile: 150 },\n    { date: \"2024-04-02\", desktop: 97, mobile: 180 },\n    { date: \"2024-04-03\", desktop: 167, mobile: 120 },\n    { date: \"2024-04-04\", desktop: 242, mobile: 260 },\n    { date: \"2024-04-05\", desktop: 373, mobile: 290 },\n    { date: \"2024-04-06\", desktop: 301, mobile: 340 },\n    { date: \"2024-04-07\", desktop: 245, mobile: 180 },\n    { date: \"2024-04-08\", desktop: 409, mobile: 320 },\n    { date: \"2024-04-09\", desktop: 59, mobile: 110 },\n    { date: \"2024-04-10\", desktop: 261, mobile: 190 },\n    { date: \"2024-04-11\", desktop: 327, mobile: 350 },\n    { date: \"2024-04-12\", desktop: 292, mobile: 210 },\n    { date: \"2024-04-13\", desktop: 342, mobile: 380 },\n    { date: \"2024-04-14\", desktop: 137, mobile: 220 },\n    { date: \"2024-04-15\", desktop: 120, mobile: 170 },\n    { date: \"2024-04-16\", desktop: 138, mobile: 190 },\n    { date: \"2024-04-17\", desktop: 446, mobile: 360 },\n    { date: \"2024-04-18\", desktop: 364, mobile: 410 },\n    { date: \"2024-04-19\", desktop: 243, mobile: 180 },\n    { date: \"2024-04-20\", desktop: 89, mobile: 150 },\n    { date: \"2024-04-21\", desktop: 137, mobile: 200 },\n    { date: \"2024-04-22\", desktop: 224, mobile: 170 },\n    { date: \"2024-04-23\", desktop: 138, mobile: 230 },\n    { date: \"2024-04-24\", desktop: 387, mobile: 290 },\n    { date: \"2024-04-25\", desktop: 215, mobile: 250 },\n    { date: \"2024-04-26\", desktop: 75, mobile: 130 },\n    { date: \"2024-04-27\", desktop: 383, mobile: 420 },\n    { date: \"2024-04-28\", desktop: 122, mobile: 180 },\n    { date: \"2024-04-29\", desktop: 315, mobile: 240 },\n    { date: \"2024-04-30\", desktop: 454, mobile: 380 },\n    { date: \"2024-05-01\", desktop: 165, mobile: 220 },\n    { date: \"2024-05-02\", desktop: 293, mobile: 310 },\n    { date: \"2024-05-03\", desktop: 247, mobile: 190 },\n    { date: \"2024-05-04\", desktop: 385, mobile: 420 },\n    { date: \"2024-05-05\", desktop: 481, mobile: 390 },\n    { date: \"2024-05-06\", desktop: 498, mobile: 520 },\n    { date: \"2024-05-07\", desktop: 388, mobile: 300 },\n    { date: \"2024-05-08\", desktop: 149, mobile: 210 },\n    { date: \"2024-05-09\", desktop: 227, mobile: 180 },\n    { date: \"2024-05-10\", desktop: 293, mobile: 330 },\n    { date: \"2024-05-11\", desktop: 335, mobile: 270 },\n    { date: \"2024-05-12\", desktop: 197, mobile: 240 },\n    { date: \"2024-05-13\", desktop: 197, mobile: 160 },\n    { date: \"2024-05-14\", desktop: 448, mobile: 490 },\n    { date: \"2024-05-15\", desktop: 473, mobile: 380 },\n    { date: \"2024-05-16\", desktop: 338, mobile: 400 },\n    { date: \"2024-05-17\", desktop: 499, mobile: 420 },\n    { date: \"2024-05-18\", desktop: 315, mobile: 350 },\n    { date: \"2024-05-19\", desktop: 235, mobile: 180 },\n    { date: \"2024-05-20\", desktop: 177, mobile: 230 },\n    { date: \"2024-05-21\", desktop: 82, mobile: 140 },\n    { date: \"2024-05-22\", desktop: 81, mobile: 120 },\n    { date: \"2024-05-23\", desktop: 252, mobile: 290 },\n    { date: \"2024-05-24\", desktop: 294, mobile: 220 },\n    { date: \"2024-05-25\", desktop: 201, mobile: 250 },\n    { date: \"2024-05-26\", desktop: 213, mobile: 170 },\n    { date: \"2024-05-27\", desktop: 420, mobile: 460 },\n    { date: \"2024-05-28\", desktop: 233, mobile: 190 },\n    { date: \"2024-05-29\", desktop: 78, mobile: 130 },\n    { date: \"2024-05-30\", desktop: 340, mobile: 280 },\n    { date: \"2024-05-31\", desktop: 178, mobile: 230 },\n    { date: \"2024-06-01\", desktop: 178, mobile: 200 },\n    { date: \"2024-06-02\", desktop: 470, mobile: 410 },\n    { date: \"2024-06-03\", desktop: 103, mobile: 160 },\n    { date: \"2024-06-04\", desktop: 439, mobile: 380 },\n    { date: \"2024-06-05\", desktop: 88, mobile: 140 },\n    { date: \"2024-06-06\", desktop: 294, mobile: 250 },\n    { date: \"2024-06-07\", desktop: 323, mobile: 370 },\n    { date: \"2024-06-08\", desktop: 385, mobile: 320 },\n    { date: \"2024-06-09\", desktop: 438, mobile: 480 },\n    { date: \"2024-06-10\", desktop: 155, mobile: 200 },\n    { date: \"2024-06-11\", desktop: 92, mobile: 150 },\n    { date: \"2024-06-12\", desktop: 492, mobile: 420 },\n    { date: \"2024-06-13\", desktop: 81, mobile: 130 },\n    { date: \"2024-06-14\", desktop: 426, mobile: 380 },\n    { date: \"2024-06-15\", desktop: 307, mobile: 350 },\n    { date: \"2024-06-16\", desktop: 371, mobile: 310 },\n    { date: \"2024-06-17\", desktop: 475, mobile: 520 },\n    { date: \"2024-06-18\", desktop: 107, mobile: 170 },\n    { date: \"2024-06-19\", desktop: 341, mobile: 290 },\n    { date: \"2024-06-20\", desktop: 408, mobile: 450 },\n    { date: \"2024-06-21\", desktop: 169, mobile: 210 },\n    { date: \"2024-06-22\", desktop: 317, mobile: 270 },\n    { date: \"2024-06-23\", desktop: 480, mobile: 530 },\n    { date: \"2024-06-24\", desktop: 132, mobile: 180 },\n    { date: \"2024-06-25\", desktop: 141, mobile: 190 },\n    { date: \"2024-06-26\", desktop: 434, mobile: 380 },\n    { date: \"2024-06-27\", desktop: 448, mobile: 490 },\n    { date: \"2024-06-28\", desktop: 149, mobile: 200 },\n    { date: \"2024-06-29\", desktop: 103, mobile: 160 },\n    { date: \"2024-06-30\", desktop: 446, mobile: 400 },\n]\ntype ChartType = typeof chartData[number]\nconst chartConfig = {\n    views: {\n        label: \"Page Views\",\n    },\n    desktop: {\n        label: \"Desktop\",\n        color: \"hsl(var(--chart-1))\",\n    },\n    mobile: {\n        label: \"Mobile\",\n        color: \"hsl(var(--chart-2))\",\n    },\n} satisfies ChartConfig\n\nexport default function FUIChartihIndicators() {\n    const [activeChart, setActiveChart] =\n        React.useState<keyof typeof chartConfig>(\"desktop\")\n    const [selectedData , setSelectedData] = React.useState<ChartType>({\n        date:\"\",\n        desktop: 0,\n        mobile: 0\n    })\n    const [opened , setOpened] = React.useState<boolean>(false)\n    const total = React.useMemo(\n        () => ({\n            desktop: chartData.reduce((acc, curr) => acc + curr.desktop, 0),\n            mobile: chartData.reduce((acc, curr) => acc + curr.mobile, 0),\n        }),\n        []\n    )\n\n    return (\n        <Card>\n            <CardHeader className=\"flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row\">\n                <div className=\"flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6\">\n                    <CardTitle>Bar Chart - Interactive</CardTitle>\n                    <CardDescription>\n                        Showing total visitors for the last 3 months\n                    </CardDescription>\n                </div>\n                <div className=\"flex overflow-clip\">\n                    {[\"desktop\", \"mobile\"].map((key) => {\n                        const chart = key as keyof typeof chartConfig\n                        return (\n                            <LazyMotionWrapper>\n                                <motion.button\n                                    key={chart}\n                                    animate={{ opacity: 1 }}\n                                    transition={{ duration:1 }}\n                                    data-active={activeChart === chart}\n                                    className=\"relative z-30 group overflow-hidden flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l bg-hero-gradient border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  data-[active=true]:bg-muted/40 sm:border-l sm:border-t-0 sm:px-8 sm:py-6\"\n                                    onClick={() => setActiveChart(chart)}\n                                >\n                                    <span className=\"text-xs text-muted-foreground\">\n                                        {chartConfig[chart].label}\n                                    </span>\n                                    <span className=\"text-lg font-bold leading-none sm:text-3xl\">\n                                        {total[key as keyof typeof total].toLocaleString()}\n                                    </span>\n                                    {key === \"desktop\" ? <Laptop2 className=\"absolute bottom-0 right-[-20px] w-28 h-28  translate-y-16 text-sm  group-hover:translate-y-4 duration-500 transition-all group-hover:opacity-80 opacity-50 text-white/10 group-hover:text-white/30\" /> : <Smartphone className=\"absolute bottom-0 right-[-20px] w-28 h-28  translate-y-16 text-sm  group-hover:translate-y-4 duration-500 transition-all group-hover:opacity-80 opacity-50 text-white/10 group-hover:text-white/30\" /> }\n                                </motion.button>\n                            </LazyMotionWrapper>\n\n                        )\n                    })}\n                </div>\n            </CardHeader>\n            <CardContent className=\"px-2 sm:p-6 bg-glass-gradient\">\n                <ChartContainer\n                    config={chartConfig}\n                    className=\"aspect-auto h-[300px] w-full\"\n                >\n                    <BarChart\n                        accessibilityLayer\n                        data={chartData}\n                        margin={{\n                            left: 12,\n                            right: 12,\n                        }}\n                    >\n                        <CartesianGrid vertical={false} />\n                        <XAxis\n                            dataKey=\"date\"\n                            tickLine={false}\n                            axisLine={false}\n                            tickMargin={8}\n                            minTickGap={32}\n                            tickFormatter={(value) => {\n                                const date = new Date(value)\n                                return date.toLocaleDateString(\"en-US\", {\n                                    month: \"short\",\n                                    day: \"numeric\",\n                                })\n                            }}\n                        />\n                        <ChartTooltip\n                            content={\n                                <ChartTooltipContent\n                                    className=\"w-[150px] bg-gradient-to-tr from-muted/90 via-muted/80 to-muted/60\"\n                                    nameKey=\"views\"\n                                    labelFormatter={(value) => {\n                                        return new Date(value).toLocaleDateString(\"en-US\", {\n                                            month: \"short\",\n                                            day: \"numeric\",\n                                            year: \"numeric\",\n                                        })\n                                    }}\n                                />\n                            }\n                        />\n                        <Bar className=\"cursor-pointer\" dataKey={activeChart} fill={\`var(--color-activeChart)\`} onClick={(value: ChartType) => {\n                            setSelectedData(value)\n                            setOpened(true)\n                        }} />\n                    </BarChart>\n                </ChartContainer>\n            </CardContent>\n            <SpringModal isOpen={opened} setIsOpen={setOpened} data={selectedData} />\n        </Card>\n    )\n}\n" \n\n\nconst SpringModal = ({ isOpen, setIsOpen , data }: {isOpen: boolean , setIsOpen:React.Dispatch<React.SetStateAction<boolean>>, data: ChartType }) => {\n    const date = new Date(data.date);\nconst formattedDate = date.toLocaleString('en-US', {\n  day: '2-digit',\n  month: 'short',\n  weekday: 'short',\n  year: 'numeric'\n});\n    return (\n      <AnimatePresence>\n        {isOpen && (\n          <motion.div\n            initial={{ opacity: 0 }}\n            animate={{ opacity: 1 }}\n            exit={{ opacity: 0 }}\n            onClick={() => setIsOpen(false)}\n            className=\"bg-slate-900/20 font-geist backdrop-blur p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer\"\n          >\n            <motion.div\n              initial={{ scale: 0, rotate: \"12.5deg\" }}\n              animate={{ scale: 1, rotate: \"0deg\" }}\n              exit={{ scale: 0, rotate: \"0deg\" }}\n              onClick={(e) => e.stopPropagation()}\n              className=\"bg-black/90  bg-page-gradient border-[1.2px] border-white/20 border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  text-white p-6 rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden\"\n            >\n              <AlertCircleIcon className=\"text-white/10 rotate-12 text-[250px] absolute z-0 -top-24 -left-24\" />\n              <div className=\"relative z-10 flex flex-col justify-center items-start\">\n                <div className=\"bg-hero-gradient w-16 h-16 mb-2 rounded-full text-3xl text-white grid place-items-center mr-auto\">\n                  <AlertCircleIcon />\n                </div>\n                <h3 className=\"text-3xl font-normal tracking-tighter text-center mb-2\">\n                  {formattedDate} Details.\n                </h3>\n                <hr className=\"h-px w-full bg-white/10 mt-2 mb-5\" />\n                <div className='flex justify-start items-start flex-col gap-3'>\n                    <div className=\"flex gap-2 justify-center items-center\">\n                        <Calendar className=\"w-4 h-4 mb-[1.3px]\"/>\n                        <p className=\"uppercase font-geistMono tracking-tighter\">Date{\" \"} - <span className=\"font-geist font-bold\">{data.date}</span> </p>\n                        \n\n                    </div>\n                    <div className=\"flex gap-2 justify-center items-center\">\n                        <Laptop2 className=\"w-4 h-4 mb-[1.3px]\"/>\n                        <p className=\"uppercase font-geistMono tracking-tighter\">Desktop Views{\" \"} - <span className=\"font-geist font-bold\">{data.desktop}</span> </p>\n                        \n\n                    </div>\n                    <div className=\"flex gap-2 justify-center items-center\">\n                        <Smartphone className=\"w-4 h-4 mb-[1.3px]\"/>\n                        <p className=\"uppercase font-geistMono tracking-tighter\">Mobile Views{\" \"} - <span className=\"font-geist font-bold\">{data.mobile}</span> </p>\n                        \n\n                    </div>\n\n                </div>\n                <p className=\"text-center mb-6\">\n                 \n                </p>\n              </div>\n                <div className=\"flex gap-2\">\n                  <button\n                    onClick={() => setIsOpen(false)}\n                    className=\"bg-white flex justify-center items-center hover:opacity-90 transition-opacity text-black font-semibold w-full py-2 rounded\"\n                  >\n\n                   <Printer className=\"mr-2\"/> Print\n                  </button>\n                  <button\n                    onClick={() => setIsOpen(false)}\n                    className=\"bg-transparent hover:bg-white/10 transition-colors text-white font-semibold w-full py-2 rounded\"\n                  >\n                    Nah, go back\n                  </button>\n                </div>\n            </motion.div>\n          </motion.div>\n        )}\n      </AnimatePresence>\n    );\n  };\n"
-"
+      react: `\n\n\"use client\"\n\nimport * as React from \"react\"\nimport { Bar, BarChart, CartesianGrid, XAxis } from \"recharts\"\nimport LazyMotionWrapper from \"components/LazyMotionWrapper\"\nimport { AnimatePresence, motion } from \"framer-motion\"\nimport { Smartphone , Laptop2 ,  AlertCircleIcon, Calendar, Printer } from \"lucide-react\"\n\nimport {\n    Card,\n    CardContent,\n    CardDescription,\n    CardHeader,\n    CardTitle,\n} from \"@/components/ui/card\"\nimport {\n    ChartConfig,\n    ChartContainer,\n    ChartTooltip,\n    ChartTooltipContent,\n} from \"@/components/ui/chart\"\nconst chartData = [\n    { date: \"2024-04-01\", desktop: 222, mobile: 150 },\n    { date: \"2024-04-02\", desktop: 97, mobile: 180 },\n    { date: \"2024-04-03\", desktop: 167, mobile: 120 },\n    { date: \"2024-04-04\", desktop: 242, mobile: 260 },\n    { date: \"2024-04-05\", desktop: 373, mobile: 290 },\n    { date: \"2024-04-06\", desktop: 301, mobile: 340 },\n    { date: \"2024-04-07\", desktop: 245, mobile: 180 },\n    { date: \"2024-04-08\", desktop: 409, mobile: 320 },\n    { date: \"2024-04-09\", desktop: 59, mobile: 110 },\n    { date: \"2024-04-10\", desktop: 261, mobile: 190 },\n    { date: \"2024-04-11\", desktop: 327, mobile: 350 },\n    { date: \"2024-04-12\", desktop: 292, mobile: 210 },\n    { date: \"2024-04-13\", desktop: 342, mobile: 380 },\n    { date: \"2024-04-14\", desktop: 137, mobile: 220 },\n    { date: \"2024-04-15\", desktop: 120, mobile: 170 },\n    { date: \"2024-04-16\", desktop: 138, mobile: 190 },\n    { date: \"2024-04-17\", desktop: 446, mobile: 360 },\n    { date: \"2024-04-18\", desktop: 364, mobile: 410 },\n    { date: \"2024-04-19\", desktop: 243, mobile: 180 },\n    { date: \"2024-04-20\", desktop: 89, mobile: 150 },\n    { date: \"2024-04-21\", desktop: 137, mobile: 200 },\n    { date: \"2024-04-22\", desktop: 224, mobile: 170 },\n    { date: \"2024-04-23\", desktop: 138, mobile: 230 },\n    { date: \"2024-04-24\", desktop: 387, mobile: 290 },\n    { date: \"2024-04-25\", desktop: 215, mobile: 250 },\n    { date: \"2024-04-26\", desktop: 75, mobile: 130 },\n    { date: \"2024-04-27\", desktop: 383, mobile: 420 },\n    { date: \"2024-04-28\", desktop: 122, mobile: 180 },\n    { date: \"2024-04-29\", desktop: 315, mobile: 240 },\n    { date: \"2024-04-30\", desktop: 454, mobile: 380 },\n    { date: \"2024-05-01\", desktop: 165, mobile: 220 },\n    { date: \"2024-05-02\", desktop: 293, mobile: 310 },\n    { date: \"2024-05-03\", desktop: 247, mobile: 190 },\n    { date: \"2024-05-04\", desktop: 385, mobile: 420 },\n    { date: \"2024-05-05\", desktop: 481, mobile: 390 },\n    { date: \"2024-05-06\", desktop: 498, mobile: 520 },\n    { date: \"2024-05-07\", desktop: 388, mobile: 300 },\n    { date: \"2024-05-08\", desktop: 149, mobile: 210 },\n    { date: \"2024-05-09\", desktop: 227, mobile: 180 },\n    { date: \"2024-05-10\", desktop: 293, mobile: 330 },\n    { date: \"2024-05-11\", desktop: 335, mobile: 270 },\n    { date: \"2024-05-12\", desktop: 197, mobile: 240 },\n    { date: \"2024-05-13\", desktop: 197, mobile: 160 },\n    { date: \"2024-05-14\", desktop: 448, mobile: 490 },\n    { date: \"2024-05-15\", desktop: 473, mobile: 380 },\n    { date: \"2024-05-16\", desktop: 338, mobile: 400 },\n    { date: \"2024-05-17\", desktop: 499, mobile: 420 },\n    { date: \"2024-05-18\", desktop: 315, mobile: 350 },\n    { date: \"2024-05-19\", desktop: 235, mobile: 180 },\n    { date: \"2024-05-20\", desktop: 177, mobile: 230 },\n    { date: \"2024-05-21\", desktop: 82, mobile: 140 },\n    { date: \"2024-05-22\", desktop: 81, mobile: 120 },\n    { date: \"2024-05-23\", desktop: 252, mobile: 290 },\n    { date: \"2024-05-24\", desktop: 294, mobile: 220 },\n    { date: \"2024-05-25\", desktop: 201, mobile: 250 },\n    { date: \"2024-05-26\", desktop: 213, mobile: 170 },\n    { date: \"2024-05-27\", desktop: 420, mobile: 460 },\n    { date: \"2024-05-28\", desktop: 233, mobile: 190 },\n    { date: \"2024-05-29\", desktop: 78, mobile: 130 },\n    { date: \"2024-05-30\", desktop: 340, mobile: 280 },\n    { date: \"2024-05-31\", desktop: 178, mobile: 230 },\n    { date: \"2024-06-01\", desktop: 178, mobile: 200 },\n    { date: \"2024-06-02\", desktop: 470, mobile: 410 },\n    { date: \"2024-06-03\", desktop: 103, mobile: 160 },\n    { date: \"2024-06-04\", desktop: 439, mobile: 380 },\n    { date: \"2024-06-05\", desktop: 88, mobile: 140 },\n    { date: \"2024-06-06\", desktop: 294, mobile: 250 },\n    { date: \"2024-06-07\", desktop: 323, mobile: 370 },\n    { date: \"2024-06-08\", desktop: 385, mobile: 320 },\n    { date: \"2024-06-09\", desktop: 438, mobile: 480 },\n    { date: \"2024-06-10\", desktop: 155, mobile: 200 },\n    { date: \"2024-06-11\", desktop: 92, mobile: 150 },\n    { date: \"2024-06-12\", desktop: 492, mobile: 420 },\n    { date: \"2024-06-13\", desktop: 81, mobile: 130 },\n    { date: \"2024-06-14\", desktop: 426, mobile: 380 },\n    { date: \"2024-06-15\", desktop: 307, mobile: 350 },\n    { date: \"2024-06-16\", desktop: 371, mobile: 310 },\n    { date: \"2024-06-17\", desktop: 475, mobile: 520 },\n    { date: \"2024-06-18\", desktop: 107, mobile: 170 },\n    { date: \"2024-06-19\", desktop: 341, mobile: 290 },\n    { date: \"2024-06-20\", desktop: 408, mobile: 450 },\n    { date: \"2024-06-21\", desktop: 169, mobile: 210 },\n    { date: \"2024-06-22\", desktop: 317, mobile: 270 },\n    { date: \"2024-06-23\", desktop: 480, mobile: 530 },\n    { date: \"2024-06-24\", desktop: 132, mobile: 180 },\n    { date: \"2024-06-25\", desktop: 141, mobile: 190 },\n    { date: \"2024-06-26\", desktop: 434, mobile: 380 },\n    { date: \"2024-06-27\", desktop: 448, mobile: 490 },\n    { date: \"2024-06-28\", desktop: 149, mobile: 200 },\n    { date: \"2024-06-29\", desktop: 103, mobile: 160 },\n    { date: \"2024-06-30\", desktop: 446, mobile: 400 },\n]\ntype ChartType = typeof chartData[number]\nconst chartConfig = {\n    views: {\n        label: \"Page Views\",\n    },\n    desktop: {\n        label: \"Desktop\",\n        color: \"hsl(var(--chart-1))\",\n    },\n    mobile: {\n        label: \"Mobile\",\n        color: \"hsl(var(--chart-2))\",\n    },\n} satisfies ChartConfig\n\nexport default function FUIChartihIndicators() {\n    const [activeChart, setActiveChart] =\n        React.useState<keyof typeof chartConfig>(\"desktop\")\n    const [selectedData , setSelectedData] = React.useState<ChartType>({\n        date:\"\",\n        desktop: 0,\n        mobile: 0\n    })\n    const [opened , setOpened] = React.useState<boolean>(false)\n    const total = React.useMemo(\n        () => ({\n            desktop: chartData.reduce((acc, curr) => acc + curr.desktop, 0),\n            mobile: chartData.reduce((acc, curr) => acc + curr.mobile, 0),\n        }),\n        []\n    )\n\n    return (\n        <Card>\n            <CardHeader className=\"flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row\">\n                <div className=\"flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6\">\n                    <CardTitle>Bar Chart - Interactive</CardTitle>\n                    <CardDescription>\n                        Showing total visitors for the last 3 months\n                    </CardDescription>\n                </div>\n                <div className=\"flex overflow-clip\">\n                    {[\"desktop\", \"mobile\"].map((key) => {\n                        const chart = key as keyof typeof chartConfig\n                        return (\n                            <LazyMotionWrapper>\n                                <motion.button\n                                    key={chart}\n                                    animate={{ opacity: 1 }}\n                                    transition={{ duration:1 }}\n                                    data-active={activeChart === chart}\n                                    className=\"relative z-30 group overflow-hidden flex flex-1 flex-col justify-center gap-1 border-t px-6 py-4 text-left even:border-l bg-hero-gradient border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  data-[active=true]:bg-muted/40 sm:border-l sm:border-t-0 sm:px-8 sm:py-6\"\n                                    onClick={() => setActiveChart(chart)}\n                                >\n                                    <span className=\"text-xs text-muted-foreground\">\n                                        {chartConfig[chart].label}\n                                    </span>\n                                    <span className=\"text-lg font-bold leading-none sm:text-3xl\">\n                                        {total[key as keyof typeof total].toLocaleString()}\n                                    </span>\n                                    {key === \"desktop\" ? <Laptop2 className=\"absolute bottom-0 right-[-20px] w-28 h-28  translate-y-16 text-sm  group-hover:translate-y-4 duration-500 transition-all group-hover:opacity-80 opacity-50 text-white/10 group-hover:text-white/30\" /> : <Smartphone className=\"absolute bottom-0 right-[-20px] w-28 h-28  translate-y-16 text-sm  group-hover:translate-y-4 duration-500 transition-all group-hover:opacity-80 opacity-50 text-white/10 group-hover:text-white/30\" /> }\n                                </motion.button>\n                            </LazyMotionWrapper>\n\n                        )\n                    })}\n                </div>\n            </CardHeader>\n            <CardContent className=\"px-2 sm:p-6 bg-glass-gradient\">\n                <ChartContainer\n                    config={chartConfig}\n                    className=\"aspect-auto h-[300px] w-full\"\n                >\n                    <BarChart\n                        accessibilityLayer\n                        data={chartData}\n                        margin={{\n                            left: 12,\n                            right: 12,\n                        }}\n                    >\n                        <CartesianGrid vertical={false} />\n                        <XAxis\n                            dataKey=\"date\"\n                            tickLine={false}\n                            axisLine={false}\n                            tickMargin={8}\n                            minTickGap={32}\n                            tickFormatter={(value) => {\n                                const date = new Date(value)\n                                return date.toLocaleDateString(\"en-US\", {\n                                    month: \"short\",\n                                    day: \"numeric\",\n                                })\n                            }}\n                        />\n                        <ChartTooltip\n                            content={\n                                <ChartTooltipContent\n                                    className=\"w-[150px] bg-gradient-to-tr from-muted/90 via-muted/80 to-muted/60\"\n                                    nameKey=\"views\"\n                                    labelFormatter={(value) => {\n                                        return new Date(value).toLocaleDateString(\"en-US\", {\n                                            month: \"short\",\n                                            day: \"numeric\",\n                                            year: \"numeric\",\n                                        })\n                                    }}\n                                />\n                            }\n                        />\n                        <Bar className=\"cursor-pointer\" dataKey={activeChart} fill={\`var(--color-activeChart)\`} onClick={(value: ChartType) => {\n                            setSelectedData(value)\n                            setOpened(true)\n                        }} />\n                    </BarChart>\n                </ChartContainer>\n            </CardContent>\n            <SpringModal isOpen={opened} setIsOpen={setOpened} data={selectedData} />\n        </Card>\n    )\n}\n \n\n\nconst SpringModal = ({ isOpen, setIsOpen , data }: {isOpen: boolean , setIsOpen:React.Dispatch<React.SetStateAction<boolean>>, data: ChartType }) => {\n    const date = new Date(data.date);\nconst formattedDate = date.toLocaleString('en-US', {\n  day: '2-digit',\n  month: 'short',\n  weekday: 'short',\n  year: 'numeric'\n});\n    return (\n      <AnimatePresence>\n        {isOpen && (\n          <motion.div\n            initial={{ opacity: 0 }}\n            animate={{ opacity: 1 }}\n            exit={{ opacity: 0 }}\n            onClick={() => setIsOpen(false)}\n            className=\"bg-slate-900/20 font-geist backdrop-blur p-8 fixed inset-0 z-50 grid place-items-center overflow-y-scroll cursor-pointer\"\n          >\n            <motion.div\n              initial={{ scale: 0, rotate: \"12.5deg\" }}\n              animate={{ scale: 1, rotate: \"0deg\" }}\n              exit={{ scale: 0, rotate: \"0deg\" }}\n              onClick={(e) => e.stopPropagation()}\n              className=\"bg-black/90  bg-page-gradient border-[1.2px] border-white/20 border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  text-white p-6 rounded-lg w-full max-w-lg shadow-xl cursor-default relative overflow-hidden\"\n            >\n              <AlertCircleIcon className=\"text-white/10 rotate-12 text-[250px] absolute z-0 -top-24 -left-24\" />\n              <div className=\"relative z-10 flex flex-col justify-center items-start\">\n                <div className=\"bg-hero-gradient w-16 h-16 mb-2 rounded-full text-3xl text-white grid place-items-center mr-auto\">\n                  <AlertCircleIcon />\n                </div>\n                <h3 className=\"text-3xl font-normal tracking-tighter text-center mb-2\">\n                  {formattedDate} Details.\n                </h3>\n                <hr className=\"h-px w-full bg-white/10 mt-2 mb-5\" />\n                <div className='flex justify-start items-start flex-col gap-3'>\n                    <div className=\"flex gap-2 justify-center items-center\">\n                        <Calendar className=\"w-4 h-4 mb-[1.3px]\"/>\n                        <p className=\"uppercase font-geistMono tracking-tighter\">Date{\" \"} - <span className=\"font-geist font-bold\">{data.date}</span> </p>\n                        \n\n                    </div>\n                    <div className=\"flex gap-2 justify-center items-center\">\n                        <Laptop2 className=\"w-4 h-4 mb-[1.3px]\"/>\n                        <p className=\"uppercase font-geistMono tracking-tighter\">Desktop Views{\" \"} - <span className=\"font-geist font-bold\">{data.desktop}</span> </p>\n                        \n\n                    </div>\n                    <div className=\"flex gap-2 justify-center items-center\">\n                        <Smartphone className=\"w-4 h-4 mb-[1.3px]\"/>\n                        <p className=\"uppercase font-geistMono tracking-tighter\">Mobile Views{\" \"} - <span className=\"font-geist font-bold\">{data.mobile}</span> </p>\n                        \n\n                    </div>\n\n                </div>\n                <p className=\"text-center mb-6\">\n                 \n                </p>\n              </div>\n                <div className=\"flex gap-2\">\n                  <button\n                    onClick={() => setIsOpen(false)}\n                    className=\"bg-white flex justify-center items-center hover:opacity-90 transition-opacity text-black font-semibold w-full py-2 rounded\"\n                  >\n\n                   <Printer className=\"mr-2\"/> Print\n                  </button>\n                  <button\n                    onClick={() => setIsOpen(false)}\n                    className=\"bg-transparent hover:bg-white/10 transition-colors text-white font-semibold w-full py-2 rounded\"\n                  >\n                    Nah, go back\n                  </button>\n                </div>\n            </motion.div>\n          </motion.div>\n        )}\n      </AnimatePresence>\n    );\n  };\n
 
       `,
     },

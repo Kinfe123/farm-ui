@@ -91,6 +91,10 @@ module.exports = {
             "backgroundPosition": "-200% 0"
           }
         },
+        "x-slider" : {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: 'translateX(calc(-100% - 4rem))' },
+        },
         grid: {
           "0%": { transform: "translateY(-50%)" },
           "100%": { transform: "translateY(0)" },
@@ -144,7 +148,8 @@ module.exports = {
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "background-shine": "background-shine 5s linear infinite",
-         ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.4s) infinite"
+         ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.4s) infinite",
+         "x-slider": "x-slider linear 10s infinite"
 
 
       },

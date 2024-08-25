@@ -99,6 +99,26 @@
     "section_name": "Chart",
     "description": "Beautifully designed, fully responsive, expertly crafted Chart examples",
     "isNew": true
+  },
+  {
+    "slug": "/cta",
+    "category": "Application",
+    "count": 7,
+    "cover_url": "FAQS.png",
+    "id": "100",
+    "section_name": "CTA",
+    "description": "Beautifully designed, fully responsive, expertly crafted CTA examples",
+    "isNew": true
+  },
+  {
+    "slug": "/heading",
+    "category": "Marketing",
+    "count": 7,
+    "cover_url": "FAQS.png",
+    "id": "100",
+    "section_name": "Heading",
+    "description": "Beautifully designed, fully responsive, expertly crafted Heading examples",
+    "isNew": true
   }
   
 ]
