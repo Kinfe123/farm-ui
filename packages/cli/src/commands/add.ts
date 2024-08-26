@@ -75,6 +75,22 @@ export const add = new Command()
           defaultDir = dir;
         }
       }
+      const { srcDir } = await prompts({
+        type: "select",
+        name: "srcDir",
+        message: "Do you have use /src directory ?",
+        hint: "Space to select and Enter to submit.",
+        instructions: false,
+        choices: ['Yes', 'No'].map((resp) => ({
+          title: resp,
+          value: resp,
+          selected: resp === "Yes",
+        })),
+      });
+      if (srcDir === "Yes") {
+        defaultDir = '/src' + defaultDir
+      }
+
       const { fm } = await prompts({
         type: "select",
         name: "fm",
