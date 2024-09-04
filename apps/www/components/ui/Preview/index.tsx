@@ -119,7 +119,7 @@ export default ({
         >
           <Viewport id={item.id} height={item.height ?? 800} resizablePanelRef={ref} />
         </TabsContent>
-        <TabsContent value="code">
+        <TabsContent value="code" className="overflow-hidden">
           <Tabs.Root
             onValueChange={(val) => setFramework(val)}
             className="relative nax-w-[76rem] border rounded-2xl border-zinc-800"
