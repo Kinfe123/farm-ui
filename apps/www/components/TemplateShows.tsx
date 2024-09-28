@@ -19,15 +19,14 @@ const TemplateShowCases = () => {
           descriptionClassName="z-20 relative mx-auto text-zinc-400 text-center text-lg  max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl mb-5  md:mb-0"
         />
       </div>
-        <LinkItem
-          href="/pricing"
-          variant="shiny"
-          className="relative group z-50  mx-auto mt-10 flex w-fit justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950/80 hover:text-zinc-100 duration-200 sm:w-fit py-4 px-10"
-        >
-          Get LifeTime Access
-          <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-
-        </LinkItem>
+      <LinkItem
+        href="/pricing"
+        variant="shiny"
+        className="relative group z-50  mx-auto mt-10 flex w-fit justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950/80 hover:text-zinc-100 duration-200 sm:w-fit py-4 px-10"
+      >
+        Get LifeTime Access
+        <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
+      </LinkItem>
       <div className="relative mt-[-40px]">
         <HorizontalScrollCarousel />
         <div
@@ -118,16 +117,22 @@ export default TemplateShowCases;
 
 const cards = [
   {
+    url: "/templates/perkai/perkai-1.png",
+    href: "/templates/perkai",
+    title: "Perk.ai",
+    id: 1,
+  },
+  {
     url: "/templates/ease/ease-1.png",
     href: "/templates/ease",
     title: "Ease",
-    id: 1,
+    id: 2,
   },
   {
     url: "/templates/arc/arc-1.png",
     href: "/templates/arc",
     title: "Arc",
-    id: 9,
+    id: 10,
   },
   {
     url: "/templates/docy/docy-1.png",
@@ -139,7 +144,7 @@ const cards = [
     url: "/templates/spotter/spotter.png",
     href: "/templates/spotter",
     title: "Spotter",
-    id: 2,
+    id: 3,
   },
   {
     url: "/templates/sharps/sharps-1.png",
@@ -151,30 +156,30 @@ const cards = [
     url: "/templates/curves/curves.png",
     href: "/templates/curves",
     title: "Curves",
-    id: 3,
+    id: 5,
   },
   {
     url: "/templates//shadow.png",
     href: "/templates/shadow",
     title: "Shadow",
-    id: 5,
+    id: 6,
   },
   {
     url: "/templates/megamess/megamess.png",
     href: "/templates/megamess",
     title: "MegaMess",
-    id: 6,
+    id: 7,
   },
   {
     url: "/templates/chacha/chacha.png",
     href: "/templates/chacha",
     title: "Chacha",
-    id: 7,
+    id: 8,
   },
   {
     url: "",
     href: "/templates",
     title: "More",
-    id: 8,
+    id: 9,
   },
 ];

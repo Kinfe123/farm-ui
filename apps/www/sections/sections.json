@@ -1,5 +1,4 @@
 [
-
   {
     "slug": "/faqs",
     "category": "Marketing",
@@ -119,6 +118,15 @@
     "section_name": "Heading",
     "description": "Beautifully designed, fully responsive, expertly crafted Heading examples",
     "isNew": true
+  },
+  {
+    "slug": "/bento",
+    "category": "Marketing",
+    "count": 7,
+    "cover_url": "FAQS.png",
+    "id": "100",
+    "section_name": "Bento",
+    "description": "Beautifully designed, fully responsive, expertly crafted Bento examples",
+    "isNew": true
   }
-  
 ]
