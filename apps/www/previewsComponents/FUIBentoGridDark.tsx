@@ -73,7 +73,7 @@ export function BentoCard({
   eyebrow: React.ReactNode;
   title: React.ReactNode;
   description: React.ReactNode;
-  graphic: React.ReactNode;
+  graphic?: React.ReactNode;
   fade?: ("top" | "bottom")[];
 }) {
   return (
