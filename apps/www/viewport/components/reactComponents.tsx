@@ -690,8 +690,121 @@ const logos = [
     path: "previewsComponents/FUIBentoGridDark",
     codeCopy: {
       react: `
-        \nimport React from \"react\";\n\nexport default function FUIFaqsWithSearchBox() {\n  const faqsList = [\n    {\n      q: \"What are some random questions to ask?\",\n      a: \"That's exactly the reason we created this random question generator. There are hundreds of random questions to choose from so you're able to find the perfect random question.\",\n      href: \"javascript:void(0)\",\n    },\n    {\n      q: \"Do you include common questions?\",\n      a: \"This generator doesn't include most common questions. The thought is that you can come up with common questions on your own so most of the questions in this generator.\",\n      href: \"javascript:void(0)\",\n    },\n    {\n      q: \"Can I use this for 21 questions?\",\n      a: \"Yes! there are two ways that you can use this question generator depending on what you're after. You can indicate that you want 21 questions generated.\",\n      href: \"javascript:void(0)\",\n    },\n    {\n      q: \"Are these questions for girls or for boys?\",\n      a: \"The questions in this generator are gender neutral and can be used to ask either male of females (or any other gender the person identifies with).\",\n      href: \"javascript:void(0)\",\n    },\n    {\n      q: \"What do you wish you had more talent doing?\",\n      a: \"If you've been searching for a way to get random questions, you've landed on the correct webpage. We created the Random Question Generator to ask you as many random questions as your heart desires.\",\n      href: \"javascript:void(0)\",\n    },\n  ];\n\n  return (\n    <section className=\"relative\">\n      <img\n        className=\"absolute inset-x-0 -top-20 opacity-25 \"\n        src={\n          \"https://pipe.com/_next/image?url=%2Fassets%2Fimg%2Fhero-left.png&w=384&q=75\"\n        }\n        width={1000}\n        height={1000}\n        alt=\"back bg\"\n      />\n\n      <div className=\"absolute -z-1 inset-0  h-[600px] w-full bg-transparent opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]\"></div>\n\n      <div className=\"pt-10 max-w-screen-xl mx-auto px-4 md:px-8\">\n        <div className=\"space-y-5 sm:text-left sm:max-w-md sm:mr-auto\">\n          <h3 className=\"text-gray-300 font-geist text-3xl font-extrabold sm:text-4xl\">\n            How can we help?\n          </h3>\n          <p className=\"text-gray-100\">\n            Everything you need to know about the product. Can’t find the answer\n            you’re looking for? feel free to{\" \"}\n            <a\n              className=\"text-cyan-700 font-semibold whitespace-nowrap\"\n              href=\"javascript:void(0)\"\n            >\n              contact us\n            </a>\n            .\n          </p>\n          <form\n            onSubmit={(e) => e.preventDefault()}\n            className=\"mx-auto sm:mx-auto \"\n          >\n            <div className=\"relative\">\n              <Mail className=\"w-6 h-6 text-gray-500 absolute left-3 inset-y-0 my-auto\" />\n              <input\n                type=\"text\"\n                placeholder=\"Enter your email\"\n                className=\"w-full pl-12 pr-3 py-2 text-gray-200 bg-transparent outline-none border focus:border-cyan-600 shadow-sm rounded-lg\"\n              />\n            </div>\n          </form>\n        </div>\n        <Separator className=\"h-[1px] bg-white/10 mt-4\" />\n        <div className=\"mt-12\">\n          <ul className=\"space-y-8 gap-12 grid-cols-2 sm:grid sm:space-y-0 lg:grid-cols-3\">\n            {faqsList.map((item, idx) => (\n              <li key={idx} className=\"space-y-3\">\n                <summary className=\"flex items-center justify-between font-semibold text-gray-500\">\n                  {item.q}\n                </summary>\n                <p\n                  dangerouslySetInnerHTML={{ __html: item.a }}\n                  className=\"text-gray-200 leading-relaxed\"\n                ></p>\n                <a\n                  href={item.href}\n                  className=\"flex items-center gap-x-1 text-sm text-cyan-600 hover:text-cyan-400 duration-150 font-medium\"\n                >\n                  Read more\n                  <svg\n                    xmlns=\"http://www.w3.org/2000/svg\"\n                    viewBox=\"0 0 20 20\"\n                    fill=\"currentColor\"\n                    className=\"w-5 h-5\"\n                  >\n                    <path\n                      fillRule=\"evenodd\"\n                      d=\"M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z\"\n                      clipRule=\"evenodd\"\n                    />\n                  </svg>\n                </a>\n              </li>\n            ))}\n          </ul>\n        </div>\n      </div>\n    </section>\n  );\n}\n\n
-              `,
+      "use client";
+      import { clsx } from "clsx";
+      import { motion } from "framer-motion";
+
+      export default function FUIBentoGridDark() {
+        return (
+          <div className="pt-32 container mx-auto">
+            <h1 className="font-geistMono tracking-tight text-3xl md:text-5xl">
+              Sales
+            </h1>
+            <p className="max-w-3xl text-2xl/8 font-medium tracking-tight mt-2 bg-gradient-to-br from-black/90 to-black/80 bg-clip-text text-transparent dark:from-white dark:to-white/40">
+              Know more about your customers than they do.
+            </p>
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+              <BentoCard
+                eyebrow="Insight"
+                title="Get perfect clarity"
+                description="PerkAI uses social engineering to build a detailed financial picture of your leads. Know their budget, compensation package, social security number, and more."
+                graphic={
+                  <div className="absolute inset-0 bg-[url(https://framerusercontent.com/images/ghyfFEStl6BNusZl0ZQd5r7JpM.png)] object-fill" />
+                }
+                className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
+              />
+              <BentoCard
+                eyebrow="Analysis"
+                title="Undercut your competitors"
+                description="With our advanced data mining, you’ll know which companies your leads are talking to and exactly how much they’re being charged."
+                graphic={
+                  <div className="absolute inset-0 bg-[url(https://framerusercontent.com/images/7CJtT0Pu3w1vNADktNltoMFC9J4.png)] object-fill" />
+                }
+                className="lg:col-span-3 lg:rounded-tr-4xl"
+              />
+              <BentoCard
+                eyebrow="Speed"
+                title="Built for power users"
+                description="It’s never been faster to cold email your entire contact list using our streamlined keyboard shortcuts."
+                graphic={
+                  <div className="absolute  inset-0 -top-20 -left-60 bg-[url(https://framerusercontent.com/images/gR21e8Wh6l3pU6CciDrqt8wjHM.png)] object-scale-down" />
+                }
+                className="lg:col-span-2 lg:rounded-bl-4xl"
+              />
+              <BentoCard
+                eyebrow="Source"
+                title="Get the furthest reach"
+                description="Bypass those inconvenient privacy laws to source leads from the most unexpected places."
+                graphic={
+                  <div className="absolute inset-0 bg-[url(https://framerusercontent.com/images/PTO3RQ3S65zfZRFEGZGpiOom6aQ.png)] object-contain" />
+                }
+                className="lg:col-span-2"
+              />
+              <BentoCard
+                eyebrow="Limitless"
+                title="Sell globally"
+                description="PerkAI helps you sell in locations currently under international embargo."
+                graphic={
+                  <div className="absolute inset-0 -top-44 -left-60 bg-[url(https://framerusercontent.com/images/h496iPSwtSnGZwpJyErl6cLWdtE.png)] object-contain" />
+                }
+                className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
+              />
+            </div>
+          </div>
+        );
+      }
+      export function BentoCard({
+        dark = false,
+        className = "",
+        eyebrow,
+        title,
+        description,
+        graphic,
+        fade = [],
+      }: {
+        dark?: boolean;
+        className?: string;
+        eyebrow: React.ReactNode;
+        title: React.ReactNode;
+        description: React.ReactNode;
+        graphic?: React.ReactNode;
+        fade?: ("top" | "bottom")[];
+      }) {
+        return (
+          <motion.div
+            initial="idle"
+            whileHover="active"
+            variants={{ idle: {}, active: {} }}
+            data-dark={dark ? "true" : undefined}
+            className={clsx(
+              className,
+              "group relative flex flex-col overflow-hidden rounded-lg",
+              "bg-transparent transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]   shadow-sm ring-1 ring-black/5",
+              "data-[dark]:bg-gray-800 data-[dark]:ring-white/15"
+            )}
+          >
+            <div className="relative h-[29rem] shrink-0">
+              {graphic}
+              {fade.includes("top") && (
+                <div className="absolute inset-0 bg-gradient-to-b from-white to-50% group-data-[dark]:from-gray-800 group-data-[dark]:from-[-25%] opacity-25" />
+              )}
+              {fade.includes("bottom") && (
+                <div className="absolute inset-0 bg-gradient-to-t from-white to-50% group-data-[dark]:from-gray-800 group-data-[dark]:from-[-25%] opacity-25" />
+              )}
+            </div>
+            <div className="relative p-10  z-20 isolate mt-[-110px] h-[14rem] backdrop-blur-xl">
+              <h1>{eyebrow}</h1>
+              <p className="mt-1 text-2xl/8 font-medium tracking-tight dark:text-gray-100 text-gray-950 group-data-[dark]:text-white">
+                {title}
+              </p>
+              <p className="mt-2 max-w-[600px] text-sm/6 text-gray-600 dark:text-gray-300 group-data-[dark]:text-gray-400">
+                {description}
+              </p>
+            </div>
+          </motion.div>
+        );
+      }
+      `,
     },
   },
   "farmui-faq-00": {
