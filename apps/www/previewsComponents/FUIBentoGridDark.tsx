@@ -6,11 +6,12 @@ import { motion } from "framer-motion";
 export default function FUIBentoGridDark() {
   return (
     <div className="pt-32 container mx-auto">
-      <h1 className="font-geistMono tracking-tighter text-3xl">Sales</h1>
-      <p className="max-w-3xl bg-gradient-to-br from-black/90 to-black/80 bg-clip-text text-transparent dark:from-white dark:to-white/40">
+      <h1 className="font-geistMono tracking-tight text-3xl md:text-5xl">
+        Sales
+      </h1>
+      <p className="max-w-3xl text-2xl/8 font-medium tracking-tight mt-2 bg-gradient-to-br from-black/90 to-black/80 bg-clip-text text-transparent dark:from-white dark:to-white/40">
         Know more about your customers than they do.
       </p>
-
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
         <BentoCard
           eyebrow="Insight"
