@@ -37,7 +37,7 @@ export default function FUIBentoGridDark() {
           title="Built for power users"
           description="It’s never been faster to cold email your entire contact list using our streamlined keyboard shortcuts."
           graphic={
-            <div className="absolute inset-0 bg-[url(https://framerusercontent.com/images/WvnImeOEfWGMgECUmlE19W69HQ.png)] object-cover" />
+            <div className="absolute  inset-0 -top-20 -left-60 bg-[url(https://framerusercontent.com/images/gR21e8Wh6l3pU6CciDrqt8wjHM.png)] object-scale-down" />
           }
           className="lg:col-span-2 lg:rounded-bl-4xl"
         />
@@ -45,14 +45,18 @@ export default function FUIBentoGridDark() {
           eyebrow="Source"
           title="Get the furthest reach"
           description="Bypass those inconvenient privacy laws to source leads from the most unexpected places."
-          // graphic={<LogoCluster />}
+          graphic={
+            <div className="absolute inset-0 bg-[url(https://framerusercontent.com/images/PTO3RQ3S65zfZRFEGZGpiOom6aQ.png)] object-contain" />
+          }
           className="lg:col-span-2"
         />
         <BentoCard
           eyebrow="Limitless"
           title="Sell globally"
           description="PerkAI helps you sell in locations currently under international embargo."
-          // graphic={<Map />}
+          graphic={
+            <div className="absolute inset-0 -top-44 -left-60 bg-[url(https://framerusercontent.com/images/h496iPSwtSnGZwpJyErl6cLWdtE.png)] object-contain" />
+          }
           className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
         />
       </div>
