@@ -9,6 +9,7 @@ import { Mdx } from "components/MdxComponent";
 import { ImageSlider } from "components/ui/TemplateCard/ImageCarousel";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft } from "lucide-react";
+import { TemplateDataBilling } from "constants/template-data";
 
 type Params = {
   slug: string;
@@ -53,11 +54,12 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
     (t) => t.slug === `/templates/${slug}`
   );
   const del_price = 10.99 + +(template_mod?.price?.split("$")[1] ?? "0");
-
+  const purchaselink =
+    TemplateDataBilling[`${slug}`] ??
+    `mailto:kinfetare83@gmail.com?subject=New%20Order%20for%20${template_mod?.title}`;
   return (
     <>
       <section className="mt-48 custom-screen-lg mx-auto">
-
         <div className="relative max-w-full md:max-w-3xl mx-auto lg:max-w-4xl z-10">
           <a href="/templates" className="m">
             <ArrowLeft className="w-5 h-5 cursor-pointer ny-5 text-white/40 border border-white/40 rounded-full" />
@@ -114,7 +116,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                   ) : (
                     <LinkItem
                       target="_blank"
-                      href={`mailto:kinfetare83@gmail.com?subject=New%20Order%20for%20${template_mod?.title}`}
+                      href={purchaseLink}
                       variant="shiny"
                       className="z-20 inline-block w-full hover:bg-zinc-700 sm:w-auto"
                     >
