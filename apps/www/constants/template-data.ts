@@ -1,11 +1,11 @@
 export const TemplateDataBilling = {
   docy: "https://9697820927999.gumroad.com/l/docy",
-  perkai: "",
-  ease: "",
+  perkai: "https://9697820927999.gumroad.com/l/perkai",
+  ease: "https://9697820927999.gumroad.com/l/ease",
   sharp: "",
   spotter: "",
-  arc: "",
-  curve: "",
+  arc: "https://9697820927999.gumroad.com/l/arc",
+  curve: "https://9697820927999.gumroad.com/l/curve",
   chacha: "",
-  notFound: "",
+  notFound: `mailto:kinfetare83@gmail.com?subject=New%20Order%20`,
 };
