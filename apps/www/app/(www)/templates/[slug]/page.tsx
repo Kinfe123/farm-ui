@@ -55,7 +55,8 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
   );
   const del_price = 10.99 + +(template_mod?.price?.split("$")[1] ?? "0");
   const purchaselink =
-    TemplateDataBilling[`${slug}`] ??
+    // @ts-expect-error ts retardedness
+    TemplateDataBilling.get[`${slug}`] ??
     `mailto:kinfetare83@gmail.com?subject=New%20Order%20for%20${template_mod?.title}`;
   return (
     <>
@@ -116,7 +117,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                   ) : (
                     <LinkItem
                       target="_blank"
-                      href={purchaseLink}
+                      href={purchaselink}
                       variant="shiny"
                       className="z-20 inline-block w-full hover:bg-zinc-700 sm:w-auto"
                     >
