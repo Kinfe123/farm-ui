@@ -55,27 +55,26 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
   const purchaseBaseLink = "https://9697820927999.gumroad.com";
   const del_price = 10.99 + +(template_mod?.price?.split("$")[1] ?? "0");
   const purchaselink =
-    // @ts-expect-error ts retardedness
     `${purchaseBaseLink}/l/${slug}` ??
     `mailto:kinfetare83@gmail.com?subject=New%20Order%20for%20${template_mod?.title}`;
   return (
     <>
-      <section className="mt-48 custom-screen-lg mx-auto">
-        <div className="relative max-w-full md:max-w-3xl mx-auto lg:max-w-4xl z-10">
+      <section className="mx-auto mt-48 custom-screen-lg">
+        <div className="relative z-10 mx-auto max-w-full md:max-w-3xl lg:max-w-4xl">
           <a href="/templates" className="m">
-            <ArrowLeft className="w-5 h-5 cursor-pointer ny-5 text-white/40 border border-white/40 rounded-full" />
+            <ArrowLeft className="w-5 h-5 rounded-full border cursor-pointer ny-5 text-white/40 border-white/40" />
           </a>
-          <div className="text-zinc-50 mr-auto text-left mt-3">
-            <h1 className="text-4xl font-geist md:text-6xl tracking-tighter">
+          <div className="mt-3 mr-auto text-left text-zinc-50">
+            <h1 className="text-4xl tracking-tighter md:text-6xl font-geist">
               {template_mod?.title}
             </h1>
             <div>
-              <p className="mt-6 text-zinc-300 md:text-lg">
+              <p className="mt-6 md:text-lg text-zinc-300">
                 {template_mod?.description}
               </p>
-              <Separator className="h-[1px] bg-white/10 my-3" />
+              <Separator className="my-3 h-[1px] bg-white/10" />
 
-              <div className="flex  items-center gap-x-2">
+              <div className="flex gap-x-2 items-center">
                 <span className="text-xl sm:text-2xl">
                   ${template_mod?.is_free ? `0` : template_mod?.price}
                 </span>
@@ -88,19 +87,19 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
               </div>
             </div>
           </div>
-          <div className="gap-10 flex flex-col">
-            <div className="flex-1 space-y-6 mt-4 lg:max-w-sm lg:mt-0 xl:max-w-md sm:mt-12 sm:ml-auto">
+          <div className="flex flex-col gap-10">
+            <div className="flex-1 mt-4 space-y-6 sm:mt-12 sm:ml-auto lg:mt-0 lg:max-w-sm xl:max-w-md">
               <div>
-                <h3 className="text-zinc-200 font-medium">
+                <h3 className="font-medium text-zinc-200">
                   Built with modern technologies
                 </h3>
                 <TechStackDisplay icons={template_mod!.stack_used} />
               </div>
-              <div className="text-sm font-medium mt-6 z-20">
-                <div className="flex flex-wrap items-center gap-3">
+              <div className="z-20 mt-6 text-sm font-medium">
+                <div className="flex flex-wrap gap-3 items-center">
                   <LinkItem
                     href={template_mod?.live_preview || ""}
-                    className="z-20 inline-flex text-black w-full justify-center items-center gap-x-2 duration-200 shadow hover:bg-zinc-100 group sm:w-auto"
+                    className="inline-flex z-20 gap-x-2 justify-center items-center w-full text-black shadow duration-200 sm:w-auto group hover:bg-zinc-100"
                   >
                     Full preview
                     <ArrowTopRightOnSquareIcon className="w-4 h-4 duration-200 group-hover:translate-x-1" />
@@ -110,7 +109,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                       target="_blank"
                       href={`${template_mod?.source_code}`}
                       variant="shiny"
-                      className="z-20 inline-block w-full hover:bg-zinc-700 sm:w-auto"
+                      className="inline-block z-20 w-full sm:w-auto hover:bg-zinc-700"
                     >
                       Download template
                     </LinkItem>
@@ -119,7 +118,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
                       target="_blank"
                       href={purchaselink}
                       variant="shiny"
-                      className="z-20 inline-block w-full hover:bg-zinc-700 sm:w-auto"
+                      className="inline-block z-20 w-full sm:w-auto hover:bg-zinc-700"
                     >
                       Buy template
                     </LinkItem>
@@ -136,12 +135,12 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
               />
               {/* <img
                 src={`/${template_mod?.images[0]}`}
-                className="rounded-xl z-40 border-[1px] border-white/20"
+                className="z-40 rounded-xl border-[1px] border-white/20"
               />
             */}
             </div>
           </div>
-          <div className="mt-20 leading-relaxed prose prose-invert max-w-full">
+          <div className="mt-20 max-w-full leading-relaxed prose prose-invert">
             <Mdx code={template_mod?.body.code ?? ""} />
           </div>
         </div>
