@@ -9,7 +9,6 @@ import { Mdx } from "components/MdxComponent";
 import { ImageSlider } from "components/ui/TemplateCard/ImageCarousel";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft } from "lucide-react";
-import { TemplateDataBilling } from "constants/template-data";
 
 type Params = {
   slug: string;
@@ -53,10 +52,11 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
   const template_mod = allTemplates.find(
     (t) => t.slug === `/templates/${slug}`
   );
+  const purchaseBaseLink = "https://9697820927999.gumroad.com";
   const del_price = 10.99 + +(template_mod?.price?.split("$")[1] ?? "0");
   const purchaselink =
     // @ts-expect-error ts retardedness
-    TemplateDataBilling.get[`${slug}`] ??
+    `${purchaseBaseLink}/l/${slug}` ??
     `mailto:kinfetare83@gmail.com?subject=New%20Order%20for%20${template_mod?.title}`;
   return (
     <>
