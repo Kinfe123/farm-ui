@@ -35,7 +35,7 @@ const ChangeLogPage = () => {
       <RetroGrid />
 
       <div className="relative">
-        <section className="relative max-w-full mr-auto mt-24 z-1">
+        <section className="relative max-w-full mr-auto mt-32 z-1">
           <div className="max-w-screen-xl md z-30  px-4 py-28 gap-12 text-gray-600 md:px-8">
             <div className="space-y-5 max-w-[60rem] px-[-40px] leading-0  lg:leading-0 mr-auto text-left">
               <h2 className=" text-5xl md:text-6xl tracking-tighter font-geist  bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] text-transparent   mr-auto lg:text-7xl ">
@@ -80,9 +80,9 @@ const ChangeLogPage = () => {
             </div>
           </div>
         </section>
-        <div className="h-full">
+        <div className="h-full ml-[80px]">
           <ChangelogDisplay />
-        </div>
+        </div>{" "}
       </div>
     </div>
   );
