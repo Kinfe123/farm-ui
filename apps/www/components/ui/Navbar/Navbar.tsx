@@ -71,7 +71,7 @@ export default () => {
   }, []);
 
   return (
-    <AnimatePresence mode="wait" >
+    <AnimatePresence mode="wait">
       <motion.nav
         initial={{
           y: -130,
@@ -86,7 +86,7 @@ export default () => {
           type: "spring",
         }}
       >
-        <header className="fixed top-0 right-0 left-0 z-30 px-2 mx-auto h-[3rem]">
+        <header className="fixed top-0 right-0 left-0 z-50 px-2 mx-auto h-[3rem]">
           <nav
             className={` ${
               state
@@ -152,7 +152,7 @@ export default () => {
                 </ul>
                 <div className="mt-6 md:mt-0">
                   {!!user ? (
-                    <StaggeredDropDown user={user}/>
+                    <StaggeredDropDown user={user} />
                   ) : (
                     <LinkItem
                       variant="shiny"
