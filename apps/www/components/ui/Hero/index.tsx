@@ -40,7 +40,6 @@ export default async function () {
       <Ripple />
 
       <section className="custom-screen mt-48 relative overflow-hidden">
-
         <div className="relative z-20 max-w-5xl mx-auto space-y-4">
           <h1
             className={
@@ -70,20 +69,11 @@ export default async function () {
             templates with modern design, 100% free and open-source."
             descriptionClassName="mx-auto text-zinc-300 text-center text-lg  max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl  py-5"
           >
-            {/* <Image
-              src={bgback}
-              width={1000}
-              height={1000}
-              alt="Shadow image"
-              className="absolute top-[-200px] bottom-0 -z-10 opacity-100"
-            /> */}
             <div className="flex flex-wrap items-center justify-center  gap-3">
               <LinkItem
                 href="/templates"
                 variant="shiny"
                 className="z-20 group inline-flex w-full bg-page-gradient justify-center items-center gap-x-2 border border-input hover:border-zinc-600 hover:bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
-
-              // className="inline-flex w-full  group justify-center items-center bg-zinc-900 bg-page-gradient   border-white/5 border-[1px] sm:w-auto hover:bg-transparent/50  py-4 px-10 "
               >
                 Cooked for you
                 <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
@@ -102,7 +92,6 @@ export default async function () {
         </div>
 
         <HeroBgGradientClient />
-
       </section>
       <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute sm:block md:-top-2 right-0 min-h-screen">
         <div className="relative w-full h-full">
@@ -113,7 +102,6 @@ export default async function () {
             alt="Hero Image"
           />
 
-          {/* Overlay */}
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
           <div className="absolute top-0 left-0 bg-gradient-to-t from-transparent/30 to-transparent w-[100px] h-[400px]  opacity-80"></div>
         </div>
