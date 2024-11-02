@@ -4,7 +4,9 @@ import ChangeLogCard from "./ChangelogCard";
 import { dateConvert } from "@/lib/utils";
 
 const ChangelogDisplay = () => {
-  const changelogs = allChangelogs.sort((a , b ) => dateConvert(a.date) - dateConvert(b.date) )
+  const changelogs = allChangelogs.sort(
+    (a, b) => dateConvert(b.date) - dateConvert(a.date)
+  );
   return (
     <TracingBeam className="h-full bg-transparent ">
       <div className="max-w-full gap-x-10 mx-auto antialiased pt-4 relative">
