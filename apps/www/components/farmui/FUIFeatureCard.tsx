@@ -1,5 +1,5 @@
-import { GlareCard } from 'components/GlareCard'
-import React from 'react'
+import { GlareCard } from "components/GlareCard";
+import React from "react";
 
 export default function FUIFeatureSectionWithCards() {
   const features = [
@@ -20,8 +20,8 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Blazingly fast UI',
-      desc: 'Experience ultra-fast user interface performance, designed to ensure rapid response times and a seamless user experience.',
+      title: "Blazingly fast UI",
+      desc: "Experience ultra-fast user interface performance, designed to ensure rapid response times and a seamless user experience.",
     },
     {
       icon: (
@@ -40,8 +40,8 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Dashboard UI',
-      desc: 'An intuitive and dynamic dashboard interface, crafted to provide a clear and organized view of essential metrics and information.',
+      title: "Dashboard UI",
+      desc: "An intuitive and dynamic dashboard interface, crafted to provide a clear and organized view of essential metrics and information.",
     },
     {
       icon: (
@@ -60,8 +60,8 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Auth Starter UI',
-      desc: 'Get a head start on authentication with a ready-to-use UI, featuring essential components for secure user access and management.',
+      title: "Auth Starter UI",
+      desc: "Get a head start on authentication with a ready-to-use UI, featuring essential components for secure user access and management.",
     },
     {
       icon: (
@@ -80,8 +80,8 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Team UI',
-      desc: 'A collaborative and interactive UI designed to facilitate team management and communication, making teamwork more efficient and effective.',
+      title: "Team UI",
+      desc: "A collaborative and interactive UI designed to facilitate team management and communication, making teamwork more efficient and effective.",
     },
     {
       icon: (
@@ -100,8 +100,8 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Toast & Alert UI',
-      desc: 'Implement toast notifications and alert dialogs with ease, enhancing user engagement and providing timely feedback within your application.',
+      title: "Toast & Alert UI",
+      desc: "Implement toast notifications and alert dialogs with ease, enhancing user engagement and providing timely feedback within your application.",
     },
     {
       icon: (
@@ -120,15 +120,14 @@ export default function FUIFeatureSectionWithCards() {
           />
         </svg>
       ),
-      title: 'Hero UI',
-      desc: 'A bold and visually striking UI component, designed to captivate attention and deliver impactful messaging with a modern aesthetic.',
+      title: "Hero UI",
+      desc: "A bold and visually striking UI component, designed to captivate attention and deliver impactful messaging with a modern aesthetic.",
     },
-  ]
-    
+  ];
 
   return (
     <section className="relative pb-14 z-20">
-
+      <div className="-z-1 absolute inset-x-0 top-10 h-screen w-full bg-transparent bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)]  bg-[size:6rem_4rem] opacity-5 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
       <div className="mx-auto max-w-full text-gray-400 md:px-0">
         <div className="relative mx-auto max-w-2xl sm:text-center">
           <div className="relative z-10">
@@ -140,12 +139,12 @@ export default function FUIFeatureSectionWithCards() {
               congue, nisl eget molestie varius, enim ex faucibus purus.
             </p> */}
           </div>
-          
+
           <div
             className="absolute inset-0 mx-auto h-44 max-w-xs blur-[118px]"
             style={{
               background:
-                'linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%)',
+                "linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.26) 34.2%, rgba(192, 132, 252, 0.1) 77.55%)",
             }}
           ></div>
         </div>
@@ -172,5 +171,5 @@ export default function FUIFeatureSectionWithCards() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,4 +1,3 @@
-
 // @ts-nocheck
 "use client";
 import React, { useEffect, useRef, useState } from "react";
@@ -35,7 +34,7 @@ export const TracingBeam = ({
   }, []);
   useEffect(() => {
     return scrollYProgressVelocity.onChange((latestVelocity) => {
-      setVelocity(latestVelocity );
+      setVelocity(latestVelocity);
     });
   }, []);
 
@@ -56,7 +55,7 @@ export const TracingBeam = ({
 
   return (
     <motion.div
-      className={cn("relative w-full max-w-4xl   mx-auto h-full", className)}
+      className={cn("relative w-full max-w-4xl mr-auto h-full", className)}
     >
       <div className="absolute -left-20 top-3">
         <motion.div
