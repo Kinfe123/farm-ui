@@ -52,11 +52,11 @@ const CTAshow = () => {
           <div className="absolute  top-0 left-0 w-full h-full bg-black opacity-20 -z-10"></div>
 
           <h2 className="max-w-ful mt-8 flex items-center justify-start font-geist font-nomral tracking-tighter md:max-w-5xl lg:max-w-full text-center  lg:text-left text-balance text-4xl sm:text-5xl md:text-5xl lg:text-6xl  bg-gradient-to-tr from-zinc-100 via-zinc-50 to-zinc-100/50 text-transparent bg-clip-text ">
-            Treating UI component as first class citizen cost
+            Treating UI component as first class citizen.
           </h2>
           <p className="mt-10 md:max-w-full  lg:max-w-[26rem] text-center lg:text-left text-neutral-200">
-            With over 100,000 mothly active bot users, Gippity AI is the most
-            popular AI platform for developers.
+            FarmUI offers all the vital building blocks you need to transform
+            your idea into a great-looking startup.
           </p>
           <LinkItem
             href="/components"

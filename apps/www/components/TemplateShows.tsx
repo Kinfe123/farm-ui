@@ -81,13 +81,13 @@ const Card = ({
       ></div>
       {card.id === 9 ? (
         <div className="grid absolute inset-0 z-10 place-content-center">
-          <p className="p-4 text-5xl font-black text-white uppercase bg-gradient-to-br rounded-tl-xl from-white/20 to-white/0 backdrop-blur-lg">
+          <p className="p-4 text-3xl md:text-5xl font-black text-white uppercase bg-gradient-to-br rounded-tl-xl from-white/20 to-white/0 backdrop-blur-lg">
             {card.title}
           </p>
         </div>
       ) : (
         <div className="grid absolute inset-0 z-10 place-content-end">
-          <p className="p-4 text-5xl font-black text-white uppercase bg-gradient-to-br rounded-tl-xl from-white/20 to-white/0 backdrop-blur-lg">
+          <p className="p-4 text-3xl md:text-5xl font-black text-white uppercase bg-gradient-to-br rounded-tl-xl from-white/20 to-white/0 backdrop-blur-lg">
             {card.title}
           </p>
         </div>
