@@ -74,7 +74,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
               </p>
               <Separator className="my-3 h-[1px] bg-white/10" />
 
-              <div className="flex gap-x-2 items-center">
+              <div className="flex font-geist gap-x-2 items-center">
                 <span className="text-xl sm:text-2xl">
                   ${template_mod?.is_free ? `0` : template_mod?.price}
                 </span>
