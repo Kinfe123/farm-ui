@@ -56,7 +56,7 @@ const TemplatePage = async ({ params: { slug } }: { params: Params }) => {
   const purchaseBaseLink = "https://9697820927999.gumroad.com";
   const del_price = 10.99 + +(template_mod?.price?.split("$")[1] ?? "0");
   const purchaselink =
-    `${purchaseBaseLink}/l/${slug === "curves" ? "curve" : slug}` ??
+    `${purchaseBaseLink}/l/${slug}` ??
     `mailto:kinfetare83@gmail.com?subject=New%20Order%20for%20${template_mod?.title}`;
   return (
     <>
