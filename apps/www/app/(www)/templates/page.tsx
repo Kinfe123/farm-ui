@@ -50,7 +50,7 @@ const Template = async () => {
 
   const free_templates = templates.filter((temp) => temp.is_free);
   const paid_templates = templates.filter((temp) => !temp.is_free);
-  const total_purchased = 20; // to be later moved to an endpoint
+  const total_purchased = 50; // to be later moved to an endpoint
 
   return (
     <>
@@ -74,19 +74,17 @@ const Template = async () => {
             </HeroAnimated>
           </div>
           <div className="flex relative flex-col gap-2">
-            <div className="opacity-50">
-              {/* <BgGradient /> */}
-            </div>
+            <div className="opacity-50">{/* <BgGradient /> */}</div>
             <Stats
               free={`${free_templates.length}`}
               paid={`${paid_templates.length}`}
               total={`${templates.length}`}
               purchased={`${total_purchased}`}
             />
-              <div
-                className="absolute left-0 top-0 h-32 w-[90%] opacity-40 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
-                style={{ transform: "rotate(-30deg)" }}
-              />
+            <div
+              className="absolute left-0 top-0 h-32 w-[90%] opacity-40 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
+              style={{ transform: "rotate(-30deg)" }}
+            />
           </div>
           <ul
             id="templates"
@@ -189,7 +187,7 @@ function Stats({
                   <p className="flex gap-x-2 justify-center items-center mt-2 md:justify-start md:items-baseline">
                     <span
                       className={cn(
-                        "text-4xl font-semibold tracking-tight text-white",
+                        "text-4xl font-geist font-semibold tracking-tight text-white",
                         stat.name === "Purchased Website" ? "blur-sm" : "blur-0"
                       )}
                     >

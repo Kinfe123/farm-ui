@@ -11,7 +11,7 @@ const NpmCommandGetStarted = () => {
   return (
     <>
       <section className="custom-screen-lg relative min-h-[800px] w-full mt-10 bg-opacity-10">
-      <div
+        <div
           className="absolute left-0 top-0 h-80 w-[90%] opacity-50 overflow-x-hidden bg-[#9336fd] bg-opacity-40 blur-[337.4px]"
           style={{ transform: "rotate(-30deg)" }}
         />
@@ -71,7 +71,7 @@ const NpmCommandGetStarted = () => {
             headerClassName="text-center tracking-tight max-w-md md:max-w-4xl text-3xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful responsive UI components and website
               templates with modern design, 100% free and open-source."
-            descriptionClassName=" tracking-tighter mx-auto text-[0.84rem] text-zinc-400 text-center md:text-lg lg:max-w-2xl md:py-2"
+            descriptionClassName="tracking-tight mx-auto  text-zinc-400 text-center lg:max-w-2xl md:py-2"
           >
             <div className="mx-auto text-[0.84rem] text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-2 ">
               <p className=" tracking-tighter mx-auto max-w-md md:max-w-3xl text-wrap"></p>
@@ -82,9 +82,7 @@ const NpmCommandGetStarted = () => {
                   <span className="text-white/90">farm-ui</span> add{" "}
                   <span className="text-purple-100/80">farmui-hero-03 </span>
                 </pre>
-                <CopyNpmCommandButton
-                  commands={`farm-ui add farmui-hero-03`}
-                />
+                <CopyNpmCommandButton commands={`farm-ui add farmui-hero-03`} />
               </div>
             </div>
           </HeroAnimated>
@@ -109,7 +107,6 @@ const NpmCommandGetStarted = () => {
           </div>
         </div>
       </section>
-
     </>
   );
 };

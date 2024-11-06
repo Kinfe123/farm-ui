@@ -50,7 +50,7 @@ export const TechStackDisplay = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex gap-3 mt-3 items-center", className)}>
+    <div className={cn("flex gap-3 mb-7 md:mb-0 mt-3 items-center", className)}>
       {icons.map((icon) => {
         return (
           <TooltipProvider>

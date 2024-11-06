@@ -94,7 +94,7 @@ const ChangeLogCard = ({ index, item }: ChangelogProps) => {
   const parsedFmt = parseData();
   return (
     <div key={`content-${index}`} className="mb-20">
-      <h2 className="text-white rounded-full text-sm max-w-xl md:max-w-3xl lg:max-w-6xl px-4 py-1 mb-4">
+      <h2 className="text-white rounded-full text-sm max-w-xl md:max-w-3xl lg:max-w-6xl px-2 md:px-4 py-1 mb-4">
         {formatDate(item.date)} - {item.kind}
       </h2>
 
@@ -104,7 +104,7 @@ const ChangeLogCard = ({ index, item }: ChangelogProps) => {
       <p className={cn("text-md mb-4 text-gray-400/90")}>{item.summary}</p>
 
       <Separator className="h-[1px] bg-white/10 mb-2" />
-      <div className="text-sm max-w-[80%]  prose-sm dark:prose-invert w-full">
+      <div className="text-sm max-w-[80%]  prose-h2:text-[1.5rem] md:prose-h2:text-inherit md:prose-sm dark:prose-invert w-full">
         {item?.image && (
           <Image
             src={item.image}

@@ -62,7 +62,7 @@ export default function Calendly() {
               </span>
               <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300 z-20 group">
                 <a href="/changelog" className="cursor-pointer">
-                  Just shipped v1.0
+                  Just shipped beta
                 </a>
                 <ChevronRightIcon
                   className="h-5 w-5 text-gray-500 group-hover:translate-x-1  duration-400"

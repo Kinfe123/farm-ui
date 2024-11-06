@@ -86,10 +86,8 @@ export function GetStarted() {
             className="absolute inset-x-0 top-[-300px] z-10 -translate-x-10 max-w-full mx-auto"
           /> */}
           <div className="relative z-10  mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-32 gap-y-14 xl:max-w-none xl:grid-cols-2">
-        
-
             <div>
-              <p className="font-geist tracking-tighter text-4xl font-medium tracking text-white sm:text-5xl">
+              <p className="font-geist tracking-tighter text-4xl  tracking text-white sm:text-5xl">
                 Stay up to date
               </p>
               <p className="mt-4 text-lg tracking-tight text-white/80">
@@ -98,7 +96,7 @@ export function GetStarted() {
               </p>
             </div>
             <form>
-              <h3 className="text-lg font-semibold tracking-tight text-white">
+              <h3 className="text-lg font-medium tracking-tight text-white">
                 Sign up to our newsletter <span aria-hidden="true">&darr;</span>
               </h3>
               <div className="mt-5 overflow-clip flex w-full ml-auto rounded-3xl bg-white py-2.5 pr-2.5">
@@ -112,11 +110,13 @@ export function GetStarted() {
                   className="-my-2.5 flex-auto  bg-transparent pl-6 pr-2.5 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-none border-none active:border-none"
                 />
                 <LinkItem
-                  
                   onClick={handleSubmit}
                   variant="shiny"
                   href=""
-                  className={cn(`group w-fit px-10 ml-[-33px]  bg-zinc-800 hover:bg-zinc-700 py-4`, pending ? "bg-opacity-75 cursor-not-allowed" : "")}
+                  className={cn(
+                    `group w-fit px-10 ml-[-33px]  bg-zinc-800 hover:bg-zinc-700 py-4`,
+                    pending ? "bg-opacity-75 cursor-not-allowed" : ""
+                  )}
                 >
                   Subscribe{" "}
                   {pending ? (

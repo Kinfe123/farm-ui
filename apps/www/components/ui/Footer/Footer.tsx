@@ -26,10 +26,10 @@ export default () => (
     <div>
       <BorderGradient className=" absolute inset-x-0 top-0  mx-auto" />
       <BorderGradient className=" absolute left-0 top-0  mx-auto" />
-     
+
       <BgGradient className="absolute inset-x-0 top-0 mx-auto" />
       <BgGradient className="absolute  bottom-0 -left-40 top-0" />
-      
+
       <Image
         src={githubIcon}
         alt="github icon"
@@ -41,8 +41,7 @@ export default () => (
             FarmUI
           </h1>
           <p className="text-sm text-zinc-300">
-            We are in a mission to make the proccess of building UI components
-            easier.
+            Radix on Steriods. Beautiful. Animated. Composable. Agnostic
           </p>
           <div className="flex items-center gap-3">
             <a
@@ -96,28 +95,28 @@ export default () => (
         </div>
       </div>
     </div>
-      <div className="text-sm custom-screen-lg text-center">
-        <div className="text-zinc-100 py-8  ">
-          &copy; {new Date().getFullYear()} - FarmUI All rights reserved.
-          <div className="mx-auto max-w-full mt-4">
-            <Command className="z-[20] bg-transparent">
-              <h1>
-                Made with{" "}
-                <CommandShortcut className="bg-gradient-to-tr from-zinc-600 via-zinc-600/90 to-zinc-500 rounded-xl px-2">
-                  <code className="text-white">:cup-of-tea</code>
-                </CommandShortcut>{" "}
-                by{" "}
-                <a
-                  target="_blank"
-                  href="https://github.com/Kinfe123"
-                  className="cursor-pointer z-20 underline underline-offset-2 underline-red-900"
-                >
-                  KiNFiSH
-                </a>
-              </h1>
-            </Command>
-          </div>
+    <div className="text-sm custom-screen-lg text-center">
+      <div className="text-zinc-100 py-8  ">
+        &copy; {new Date().getFullYear()} - FarmUI All rights reserved.
+        <div className="mx-auto max-w-full mt-4">
+          <Command className="z-[20] bg-transparent">
+            <h1>
+              Made with{" "}
+              <CommandShortcut className="bg-gradient-to-tr from-zinc-600 via-zinc-600/90 to-zinc-500 rounded-xl px-2">
+                <code className="text-white">:cup-of-tea</code>
+              </CommandShortcut>{" "}
+              by{" "}
+              <a
+                target="_blank"
+                href="https://github.com/Kinfe123"
+                className="cursor-pointer z-20 underline underline-offset-2 underline-red-900"
+              >
+                KiNFiSH
+              </a>
+            </h1>
+          </Command>
         </div>
       </div>
+    </div>
   </footer>
 );

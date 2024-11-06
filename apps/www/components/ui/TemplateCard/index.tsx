@@ -9,29 +9,28 @@ import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import bgback from "/public/bg-back.png";
 import { ImageSlider } from "./ImageCarousel";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 
 export default ({ item }: { item: Templates }) => {
   return (
     <li className="relative pt-10 mb-10 border border-white/10 lg:pt-0 h-fit overflow-hidden rounded-3xl dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  pb-10 ">
       <div className="flex-1 w-full block z-30">
-
-        <ImageSlider  images={item.images} slug={item.slug} />
+        <ImageSlider images={item.images} slug={item.slug} />
 
         {/* <img src={item.image} className="rounded-lg" alt="Website template" /> */}
       </div>
       <div className="flex-1 mt-6 px-5 flex flex-col justify-between sm:mt-0 ">
         <div>
-          <div className="text-gray-100 text-lg font-semibold flex justify-between items-center">
+          <div className="text-gray-100 text-lg font-semibold flex justify-between items-end mb-1">
             <h3 className="font-geist mt-4 font-bold text-2xl">{item.title}</h3>
-            <div className="flex items-center gap-x-2">
+            <div className="flex font-geistMono items-center gap-x-2">
               <del className="text-base">
                 $
                 {item.price
                   ? `${(parseInt(item.price) + 10.99).toFixed(2)}`
                   : `10.99`}
               </del>
-              <span className="text-xl sm:text-2xl">
+              <span className="text-xl tracking-tight sm:text-2xl">
                 ${item?.is_free ? `0` : item?.price}
               </span>
             </div>
@@ -40,7 +39,7 @@ export default ({ item }: { item: Templates }) => {
           <p className="mt-6 text-gray-300">{item.description}</p>
         </div>
         {/* this has to be dynamic - should come from markdown. */}
-        <div className="py-2 ml-auto z-20">
+        <div className="py-2 ml-auto mt-2 md:mt-0 z-20">
           <h3 className="text-zinc-200 font-medium">
             Built with modern technologies
           </h3>
@@ -49,15 +48,18 @@ export default ({ item }: { item: Templates }) => {
             className="justify-end z-20 cursor-pointer    hover:"
           />
         </div>
-        <a
-          href={`${item.slug}`}
-        >
-
-          <button className="group w-fit px-5 mr-auto z-40 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-neutral-100/20 bg-transparent  text-white"><span className="relative inline-flex overflow-hidden"><div className="absolute origin-bottom transition duration-500 [transform:translateX(-150%)_skewX(33deg)] group-hover:[transform:translateX(0)_skewX(0deg)]">View More</div><div className="transition duration-500 [transform:translateX(0%)_skewX(0deg)] group-hover:[transform:translateX(150%)_skewX(33deg)]">Purchase it</div></span>
+        <a href={`${item.slug}`}>
+          <button className="group w-fit px-5 mr-auto z-40 relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-neutral-100/20 bg-transparent  text-white">
+            <span className="relative inline-flex overflow-hidden">
+              <div className="absolute origin-bottom transition duration-500 [transform:translateX(-150%)_skewX(33deg)] group-hover:[transform:translateX(0)_skewX(0deg)]">
+                View More
+              </div>
+              <div className="transition duration-500 [transform:translateX(0%)_skewX(0deg)] group-hover:[transform:translateX(150%)_skewX(33deg)]">
+                Purchase it
+              </div>
+            </span>
             <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
-
           </button>
-
         </a>
         {/* <LinkItem
           href={`${item.slug}`}
