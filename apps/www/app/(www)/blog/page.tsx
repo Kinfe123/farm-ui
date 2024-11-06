@@ -37,7 +37,7 @@ export default async ({
   return (
     <>
       <section className="max-w-7xl px-4 mx-auto mt-base">
-        <div className="text-center mt-20">
+        <div className="text-center mt-44">
           <HeroAnimated
             header="Collections of beautifully crafted thoughts and dumps."
             headerClassName="text-left w-full  text-5xl md:text-7xl tracking-tighter mr-auto lg:text-8xl  font-geist font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-4 mt-1"
@@ -46,7 +46,9 @@ export default async ({
           >
             <div className="flex flex-wrap items-center justify-center  gap-3"></div>
           </HeroAnimated>
-          <p className="mt-3 text-2xl text-gray-400/50 font-geist">Coming soon.</p>
+          <p className="mt-3 text-2xl text-gray-400/50 font-geist">
+            Coming soon.
+          </p>
         </div>
       </section>
     </>
