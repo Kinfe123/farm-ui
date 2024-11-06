@@ -15,7 +15,7 @@ const TemplateShowCases = () => {
         <HeroAnimated
           header="Awesome Templates built internally by farmUI"
           headerClassName="text-center max-w-lg  sm:max-w-xl md:max-w-xl mt-5  lg:max-w-3xl text-5xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1 mx-5 mt-10 sm:mt-2 md:mt-0"
-          description="all the free and paid template built internally from componnents that opensourced here."
+          description="All the free and paid template built internally from componnents that opensourced here."
           descriptionClassName="z-20 relative mx-auto text-zinc-400 text-center text-lg  max-w-lg  sm:max-w-xl md:max-w-xl  lg:max-w-3xl mb-5  md:mb-0"
         />
       </div>

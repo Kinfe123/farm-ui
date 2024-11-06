@@ -23,14 +23,14 @@ export default ({ item }: { item: Templates }) => {
         <div>
           <div className="text-gray-100 text-lg font-semibold flex justify-between items-end mb-1">
             <h3 className="font-geist mt-4 font-bold text-2xl">{item.title}</h3>
-            <div className="font-geistMono flex items-center gap-x-2">
-              <del className="text-base font-geist">
+            <div className="flex font-geistMono items-center gap-x-2">
+              <del className="text-base">
                 $
                 {item.price
                   ? `${(parseInt(item.price) + 10.99).toFixed(2)}`
                   : `10.99`}
               </del>
-              <span className="text-xl font-geist sm:text-2xl">
+              <span className="text-xl tracking-tight sm:text-2xl">
                 ${item?.is_free ? `0` : item?.price}
               </span>
             </div>

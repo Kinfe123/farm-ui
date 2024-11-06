@@ -100,7 +100,8 @@ export default async function RootLayout({
             displayFont.variable,
             dmSans.variable,
             GeistSans.variable,
-            "bg-black overflow-clip"
+            GeistMono.variable,
+            "bg-black overflow-clip font-geist"
           )}
         >
           <ThemeProvider
@@ -120,7 +121,6 @@ export default async function RootLayout({
             <TemplateToaster />
             <TailwindIndicator />
           </ThemeProvider>
-
         </body>
       </SessionProvider>
     </html>
