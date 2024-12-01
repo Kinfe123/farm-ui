@@ -14,7 +14,7 @@ async function main() {
     .name("farmui")
     .description("Add natively farmed farmUI blocks ")
     .version(
-      packageInfo.version || "0.1.0",
+      packageInfo.version || "1.0.2",
       "-v, --version",
       "display the version number",
     );

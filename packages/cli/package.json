@@ -1,7 +1,7 @@
 {
   "name": "@kinfe123/farm-ui",
-  "version": "1.0.12",
-  "description": "Add farmui components and building blocks",
+  "version": "1.0.2",
+  "description": "CLI tool for adding farmui components and building blocks",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
@@ -71,7 +71,6 @@
     "type-fest": "^4.18.3",
     "tsup": "^6.6.3",
     "zod": "^3.20.2"
-
   },
   "devDependencies": {
     "@types/babel__core": "^7.20.1",
