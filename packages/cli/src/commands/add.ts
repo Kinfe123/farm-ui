@@ -18,7 +18,7 @@ import { TAILWIND_CONFIG } from "../utils/templates";
 process.on("SIGINT", () => process.exit(0));
 process.on("SIGTERM", () => process.exit(0));
 
-const COMPONENT_REGISTERY_URL = "https://farmui-api.vercel.app/api/components";
+const COMPONENT_REGISTERY_URL = "https://api.farmui.com/ui/components";
 type CompToAddProps = {
   comp_path: string;
   comp_content: string;
@@ -57,7 +57,7 @@ export const add = new Command()
       logger.error(`There is no ${custom_cwd} exists your paths.`);
       process.exit(0);
     }
-    let defaultDir = "components";
+    let defaultDir = "/components";
 
     const custom_cwd_flag = process.cwd() === options.cwd;
     // already found the id and next will be finding the component id
@@ -81,14 +81,14 @@ export const add = new Command()
         message: "Do you have use /src directory ?",
         hint: "Space to select and Enter to submit.",
         instructions: false,
-        choices: ['Yes', 'No'].map((resp) => ({
+        choices: ["Yes", "No"].map((resp) => ({
           title: resp,
           value: resp,
           selected: resp === "Yes",
         })),
       });
       if (srcDir === "Yes") {
-        defaultDir = '/src' + defaultDir
+        defaultDir = "/src" + defaultDir;
       }
 
       const { fm } = await prompts({
@@ -125,7 +125,7 @@ export const add = new Command()
       let comp_fetch = null;
       let comp_db: any[] = [];
       try {
-        comp_fetch = await fetch(COMPONENT_REGISTERY_URL!);
+        comp_fetch = await fetch(COMPONENT_REGISTERY_URL! + `/${options.id}`);
 
         comp_db = await comp_fetch.json();
       } catch (err) {
@@ -141,7 +141,7 @@ export const add = new Command()
         `Found the component. Preview here - https://farmui.com/example/${options.id}`
       );
       comp_spinner.stop();
-      const select_files_by_id = comp_db.find((x) => x.id === options.id);
+      const select_files_by_id = comp_db;
       if (!select_files_by_id) {
         logger.error(
           "No such component exists with in this ID, Please hop on https://farmui.com/components to double check the component ID"

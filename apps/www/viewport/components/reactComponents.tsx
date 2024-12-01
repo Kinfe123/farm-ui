@@ -968,7 +968,7 @@ export default function FUIBentoGridDark() {
     path: "previewsComponents/FUICTAWithGithub",
     codeCopy: {
       react: `
-      "use client";
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -1037,7 +1037,7 @@ export default FUICTAWithGithub;
     path: "previewsComponents/FUICTAWithInput",
     codeCopy: {
       react: `
-      import Image from 'next/image'
+import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { OssLight } from 'components/Svgs/OssLights'
 import { HeroMainboardStuff } from 'components/Svgs/ShinyLighs'
