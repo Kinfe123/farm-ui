@@ -17,9 +17,9 @@ import { usePathname } from "next/navigation";
 export function TemplateToaster() {
   const [isVisibile, setIsVisible] = useState(true);
   const path = usePathname();
-  const notificationStatus: string = localStorage.getItem(
+  const notificationStatus = localStorage.getItem(
     "farmui-notification"
-  );
+  ) as string;
   const templates = path.includes("templates");
   const isIframe = isInIframe();
   if (isIframe || notificationStatus === "off") {
