@@ -577,12 +577,12 @@
 
   {
     "id": "farmui-bento-01",
-    "name": "FUITestimonialWithGrid",
+    "name": "FUIBentoDark",
     "dependencies": ["clsx", "tailwind-merge"],
     "files": [
       {
         "root": {
-          "name": "FUITestimonialWithGrid",
+          "name": "FUIBentoDark",
           "contents": {
             "react": {
               "code_for": "react",
