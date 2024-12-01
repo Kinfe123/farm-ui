@@ -631,5 +631,24 @@
       }
     ],
     "type": "ui"
+  },
+  {
+    "id": "farmui-heading-00",
+    "name": "FUIHeadingBlog",
+    "dependencies": [],
+    "files": [
+      {
+        "root": {
+          "name": "FUIHeadingBlog",
+          "contents": {
+            "react": {
+              "code_for": "react",
+              "content": "\n\n      export default function FUIHeadingBlog() {\n    return (\n      <section className=\"bg-transparent py-24 sm:py-32\">\n        <div className=\"mx-auto max-w-7xl px-6 lg:px-8 relative\">\n          <div className=\"mr-auto max-w-2xl text-left mb-20 \">\n            <h2 className=\"text-4xl font-semibold tracking-tighter text-white/70 sm:text-6xl\">\n              What others say\n            </h2>\n            <p className=\"mt-6 text-lg leading-8 text-gray-300\">\n              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui\n              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat\n              fugiat aliqua.\n            </p>\n            <hr className=\"border-1 border-white/10 mt-10 w-[70vw]\" />\n          </div>\n          <div\n            className=\"absolute left-0 top-0 h-80 w-[90%] opacity-55 overflow-x-hidden bg-[rgb(54,157,253)] bg-opacity-40 blur-[337.4px]\"\n            style={{ transform: \"rotate(-30deg)\" }}\n          />\n          <div className=\"mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2\">\n            <div className=\"flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20\">\n              <img\n                className=\"h-12 self-start\"\n                src=\"https://tailwindui.com/img/logos/tuple-logo-white.svg\"\n                alt=\"\"\n              />\n              <figure className=\"mt-10 flex flex-auto flex-col justify-between\">\n                <blockquote className=\"text-lg leading-8 text-gray-400\">\n                  <p>\n                    “Amet amet eget scelerisque tellus sit neque faucibus non\n                    eleifend. Integer eu praesent at a. Ornare arcu gravida\n                    natoque erat et cursus tortor consequat at. Vulputate gravida\n                    sociis enim nullam ultricies habitant malesuada lorem ac.\n                    Tincidunt urna dui pellentesque sagittis.”\n                  </p>\n                </blockquote>\n                <figcaption className=\"mt-10 flex items-center gap-x-6\">\n                  <img\n                    className=\"h-14 w-14 rounded-full bg-white brightness-200\"\n                    src=\"https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80\"\n                    alt=\"\"\n                  />\n                  <div className=\"text-base\">\n                    <div className=\"font-semibold text-gray-300\">\n                      Judith Black\n                    </div>\n                    <div className=\"mt-1 text-gray-500\">CEO of Tuple</div>\n                  </div>\n                </figcaption>\n              </figure>\n            </div>\n            <div className=\"flex flex-col border-t border-gray-300/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20\">\n              <img\n                className=\"h-12 self-start\"\n                src=\"https://tailwindui.com/img/logos/reform-logo-white.svg\"\n                alt=\"\"\n              />\n              <figure className=\"mt-10 flex flex-auto flex-col justify-between\">\n                <blockquote className=\"text-lg leading-8 text-gray-400\">\n                  <p>\n                    “Excepteur veniam labore ullamco eiusmod. Pariatur consequat\n                    proident duis dolore nulla veniam reprehenderit nisi officia\n                    voluptate incididunt exercitation exercitation elit. Nostrud\n                    veniam sint dolor nisi ullamco.”\n                  </p>\n                </blockquote>\n                <figcaption className=\"mt-10 flex items-center gap-x-6\">\n                  <img\n                    className=\"h-14 w-14 rounded-full bg-gray-50\"\n                    src=\"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80\"\n                    alt=\"\"\n                  />\n                  <div className=\"text-base\">\n                    <div className=\"font-semibold text-gray-300\">\n                      Joseph Rodriguez\n                    </div>\n                    <div className=\"mt-1 text-gray-500\">CEO of Reform</div>\n                  </div>\n                </figcaption>\n              </figure>\n            </div>\n          </div>\n        </div>\n      </section>\n    );\n  }\n      \n"
+            }
+          }
+        }
+      }
+    ],
+    "type": "ui"
   }
 ]

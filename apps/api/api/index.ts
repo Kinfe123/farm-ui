@@ -12,5 +12,9 @@ app.get("/", (c) => {
 app.get("/components", (c) => {
   return c.json(components);
 });
-
+app.get("/components/:id", async (c) => {
+  const compId = c.req.param("id");
+  const comp = components.find((comp) => comp.id === compId);
+  return c.json(comp);
+});
 export default handle(app);
