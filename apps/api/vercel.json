@@ -1,11 +1,11 @@
 {
   "framework": null,
-	"installCommand": null,
-	"buildCommand": "",
-	"outputDirectory": "public",
+  "installCommand": null,
+  "buildCommand": "",
+  "outputDirectory": "public",
   "rewrites": [
     {
-      "source": "/api/(.*)",
+      "source": "/ui/(.*)",
       "destination": "/api"
     }
   ]
