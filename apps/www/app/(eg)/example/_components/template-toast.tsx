@@ -16,18 +16,19 @@ import { usePathname } from "next/navigation";
 
 export function TemplateToaster() {
   const [isVisibile, setIsVisible] = useState(true);
-  const path = usePathname()
-  
-  const templates = path.includes('templates')
-  const isIframe = isInIframe()
-  if(isIframe){
-    return (
-        <div></div>
-    )
+  const path = usePathname();
+  const notificationStatus: string = localStorage.getItem(
+    "farmui-notification"
+  );
+  const templates = path.includes("templates");
+  const isIframe = isInIframe();
+  if (isIframe || notificationStatus === "off") {
+    return <div></div>;
   }
 
   return (
-    (isVisibile && !templates) && (
+    isVisibile &&
+    !templates && (
       <section className="z-30 relative">
         <div className="fixed font-geist bottom-4 right-4">
           <Card
@@ -37,20 +38,25 @@ export function TemplateToaster() {
           >
             <CardHeader>
               <div className="font-normal font-mono uppercase tracking-tight ">
-                ✨Access the full template ✨  <br />
+                ✨Access the full template ✨ <br />
                 <span className="font-bold mt-1">
-                50% discount is now available.
-                  </span>
+                  50% discount is now available.
+                </span>
               </div>
               <CardDescription className="mt-4 text-black/90 dark:text-white/70">
-                Go get the full access of template with almost for free and more than <span className="font-bold">50% discount</span>  if you buy couple and more! 
+                Go get the full access of template with almost for free and more
+                than <span className="font-bold">50% discount</span> if you buy
+                couple and more!
               </CardDescription>
             </CardHeader>
             <CardFooter className="flex justify-end gap-4">
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setIsVisible(false)}
+                onClick={() => {
+                  localStorage.setItem("farmui-notification", "off");
+                  setIsVisible(false);
+                }}
               >
                 Cancel
               </Button>
@@ -68,9 +74,9 @@ export function TemplateToaster() {
 }
 
 function isInIframe() {
-    try {
-      return window.self !== window.top;
-    } catch (e) {
-      return true;
-    }
+  try {
+    return window.self !== window.top;
+  } catch (e) {
+    return true;
   }
+}

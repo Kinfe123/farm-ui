@@ -4,8 +4,6 @@ import Image from "next/image";
 import bgback from "/public/bg-back.png";
 import { Toaster } from "@/components/ui/toaster";
 
-
-
 export default function RootLayout({
   children,
 }: {
@@ -13,7 +11,6 @@ export default function RootLayout({
 }) {
   return (
     <>
-  
       <Image
         className="absolute top-0 z-10 translate-x-0 -translate-y-1/2 md:translate-x-1/3 lg:translate-x-1/2 opacity-80  "
         src={bgback}
