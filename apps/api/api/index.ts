@@ -1,14 +1,14 @@
-import { Hono } from 'hono'
-import { handle } from 'hono/vercel'
-import  componenents from '../constants/components.json'
+import { Hono } from "hono";
+import { handle } from "hono/vercel";
+import componenents from "../constants/components.json";
 export const config = {
-  runtime: 'edge'
-}
+  runtime: "edge",
+};
 
-const app = new Hono().basePath('/api')
+const app = new Hono().basePath("/");
 
-app.get('/components', (c) => {
-  return c.json(componenents)
-})
+app.get("/components", (c) => {
+  return c.json(componenents);
+});
 
-export default handle(app)
+export default handle(app);
