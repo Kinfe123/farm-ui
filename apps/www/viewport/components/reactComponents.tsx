@@ -690,12 +690,12 @@ const logos = [
     path: "previewsComponents/FUIBentoGridDark",
     codeCopy: {
       react: `
-      "use client";
-      import { clsx } from "clsx";
-      import { motion } from "framer-motion";
+"use client";
+import { clsx } from "clsx";
+import { motion } from "framer-motion";
 
-      export default function FUIBentoGridDark() {
-        return (
+export default function FUIBentoGridDark() {
+     return (
           <div className="pt-32 container mx-auto">
             <h1 className="font-geistMono tracking-tight text-3xl md:text-5xl">
               Sales
@@ -753,23 +753,23 @@ const logos = [
           </div>
         );
       }
-      export function BentoCard({
-        dark = false,
-        className = "",
-        eyebrow,
-        title,
-        description,
-        graphic,
-        fade = [],
-      }: {
-        dark?: boolean;
-        className?: string;
-        eyebrow: React.ReactNode;
-        title: React.ReactNode;
-        description: React.ReactNode;
-        graphic?: React.ReactNode;
-        fade?: ("top" | "bottom")[];
-      }) {
+  export function BentoCard({
+     dark = false,
+     className = "",
+     eyebrow,
+     title,
+     description,
+     graphic,
+     fade = [],
+   }: {
+      dark?: boolean;
+      className?: string;
+      eyebrow: React.ReactNode;
+      title: React.ReactNode;
+      description: React.ReactNode;
+      graphic?: React.ReactNode;
+      fade?: ("top" | "bottom")[];
+    }) {
         return (
           <motion.div
             initial="idle"
@@ -873,7 +873,7 @@ const logos = [
     path: "previewsComponents/FUIHeadingBlog",
     codeCopy: {
       react: `
-      export default function FUIHeadingBlog() {
+ export default function FUIHeadingBlog() {
     return (
       <section className="bg-transparent py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
