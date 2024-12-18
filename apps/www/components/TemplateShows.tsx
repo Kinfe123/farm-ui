@@ -117,6 +117,11 @@ export default TemplateShowCases;
 
 const cards = [
   {
+    url: "/templates/assetx/assetx-1.png",
+    href: "/templates/assetx",
+    title: "AssetX",
+    id: 0,
+  }, {
     url: "/templates/perkai/perkai-1.png",
     href: "/templates/perkai",
     title: "Perk.ai",
