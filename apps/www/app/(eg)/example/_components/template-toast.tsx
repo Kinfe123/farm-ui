@@ -29,7 +29,7 @@ export function TemplateToaster() {
   return (
     isVisibile &&
     !templates && (
-      <section className="z-30 relative">
+      <section className="z-50 relative">
         <div className="fixed font-geist bottom-4 right-4">
           <Card
             className={cn(
