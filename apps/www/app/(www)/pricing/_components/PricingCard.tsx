@@ -92,8 +92,8 @@ export default function FUIPricingBundle() {
           </p>
           <div className="max-w-xl">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              efficitur consequat nunc.
+              Get a lifetime access for all the subscription services for all current and upcoming templates.
+
             </p>
           </div>
         </div>
