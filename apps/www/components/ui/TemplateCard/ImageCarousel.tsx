@@ -14,12 +14,12 @@ export function ImageSlider({
   images,
   imgClassName,
   slug,
-  isDetails
+  isDetails,
 }: {
   images: string[];
   imgClassName?: string;
   slug: string;
-  isDetails?  : boolean
+  isDetails?: boolean;
 }) {
   return (
     <Carousel
@@ -27,9 +27,7 @@ export function ImageSlider({
       className="w-full max-w-full max-h-full relative"
     >
       {isDetails ? (
-        <div
-          className="z-40 relative cursor-pointer"
-        >
+        <div className="z-40 relative cursor-pointer">
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index} className="w-full">
@@ -41,15 +39,11 @@ export function ImageSlider({
                   />
                 </div>
               </CarouselItem>
-
             ))}
           </CarouselContent>
         </div>
       ) : (
-        <a
-          className="z-40 relative cursor-pointer "
-          href={`${slug}`}
-        >
+        <a className="z-40 relative cursor-pointer " href={`${slug}`}>
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index} className="w-full">
@@ -61,17 +55,16 @@ export function ImageSlider({
                   />
                 </div>
               </CarouselItem>
-
             ))}
           </CarouselContent>
         </a>
       )}
 
       <div className="flex flex-col justify-start items-start">
-        <div className="absolute ml-[1.74rem] left-0 z-40 bottom-24">
+        <div className="absolute ml-[1.74rem] left-0 z-40 bottom-20">
           <CarouselPrevious />
         </div>
-        <div className="absolute ml-2 left-0 z-40 mt-40 bottom-10">
+        <div className="absolute ml-2 left-6 z-40 mt-40 bottom-10">
           <CarouselNext />
         </div>
       </div>
