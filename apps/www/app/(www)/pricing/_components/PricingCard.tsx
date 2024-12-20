@@ -92,7 +92,8 @@ export default function FUIPricingBundle() {
           </p>
           <div className="max-w-xl">
             <p>
-              Pay only once and access all the befores and afters of farmui.com
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              efficitur consequat nunc.
             </p>
           </div>
         </div>
@@ -123,11 +124,12 @@ export default function FUIPricingBundle() {
                 </div>
                 <div className="flex-none text-gray-100  text-2xl font-semibold font-geist sm:text-3xl">
                   ${plan.price}{" "}
+                  <span className="text-xl text-gray-400 font-normal">/mo</span>
                 </div>
               </div>
               {!!session ? (
                 <a
-                  href={`mailto:kinfetare83@gmail.com?subject=Lifetime%20Access%20Order`}
+                  href={`https://9697820927999.gumroad.com`}
                 >
                   <button className="mt-4 w-full font-geist tracking-tighter text-center rounded-md bg-page-gradient text-md bg-gradient-to-br from-purple-400/5 to-purple-700/40 px-4 py-2 text-lg text-zinc-50 ring-2 ring-purple-500/50 ring-offset-2 ring-offset-zinc-950 transition-all hover:scale-[1.02] hover:ring-transparent active:scale-[0.98] active:ring-purple-500/70 flex items-center justify-center gap-2">
                     Purchase
