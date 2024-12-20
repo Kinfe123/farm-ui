@@ -7,7 +7,7 @@ export default function FUIPricingBundle() {
   const clientSession = useSession();
   const session = clientSession.session;
   const plan = {
-    name: "Lifetime Accesss",
+    name: "Lifetime Access",
     desc: "Get a lifetime access for all the subscription services.",
     price: 69.9,
     isMostPop: true,
