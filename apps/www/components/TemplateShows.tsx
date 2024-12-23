@@ -119,6 +119,16 @@ export default TemplateShowCases;
 
 const cards = [
   {
+    url: "/templates/remak/remak-1.png",
+    href: "/templates/remak",
+    title: "Remak",
+  },
+  {
+    url: "/templates/spacehole/spacehole-1.png",
+    href: "/templates/spacehole",
+    title: "Spacehole",
+  },
+  {
     url: "/templates/xship/xship-1.png",
     href: "/templates/xship",
     title: "Xship",
