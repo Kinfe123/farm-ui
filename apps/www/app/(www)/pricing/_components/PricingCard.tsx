@@ -10,6 +10,7 @@ export default function FUIPricingBundle() {
     name: "Lifetime Access",
     desc: "Get a lifetime access for all the subscription services.",
     price: 69.9,
+    latestPrice: 49.9,
     isMostPop: true,
     features: [
       "Access to all templates",
@@ -123,8 +124,8 @@ export default function FUIPricingBundle() {
                   <p className="mt-3 sm:text-sm">{plan.desc}</p>
                 </div>
                 <div className="flex-none text-gray-100  text-2xl font-semibold font-geist sm:text-3xl">
-                  ${plan.price}{" "}
-                  <span className="text-xl text-gray-400 font-normal">/mo</span>
+                  <del className="text-[20px] inline-flex items-end mr-2">${plan.price}</del>
+                  {" "}  ${plan.latestPrice}{" "}
                 </div>
               </div>
               {!!session ? (
