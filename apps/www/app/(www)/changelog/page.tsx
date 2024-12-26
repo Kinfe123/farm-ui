@@ -1,5 +1,4 @@
 import ChangelogDisplay from "components/Changelog/ChangelogDisplay";
-import RetroGrid from "components/ui/Grid";
 import LinkItem from "components/ui/LinkItem";
 import { ChevronRight } from "lucide-react";
 const { title, description }: { title: string; description: string } = {
@@ -32,8 +31,6 @@ export const metadata = {
 const ChangeLogPage = () => {
   return (
     <div className="lg:mt-[-40px] custom-screen">
-      <RetroGrid />
-
       <div className="relative">
         <section className="relative max-w-full mr-auto mt-32 z-1">
           <div className="max-w-screen-xl md z-30  px-4 py-28 gap-12 text-gray-600 md:px-8">
