@@ -67,8 +67,8 @@ const NpmCommandGetStarted = () => {
           </h1>
 
           <HeroAnimated
-            header="Get your component up and running with just one command."
-            headerClassName="text-center tracking-tight max-w-md md:max-w-4xl text-3xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
+            header="Just one command and ready to go."
+            headerClassName="text-center tracking-tight max-w-md md:max-w-2xl pb-3 text-3xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful responsive UI components and website
               templates with modern design, 100% free and open-source."
             descriptionClassName="tracking-tight mx-auto  text-zinc-400 text-center lg:max-w-2xl md:py-2"
@@ -80,7 +80,9 @@ const NpmCommandGetStarted = () => {
                 <pre className="mt-1 mx-5 text-sm tracking-tight text-white/50">
                   <span className="font-extrabold text-white">pnpm</span>{" "}
                   <span className="text-white/90">farm-ui</span> add{" "}
-                  <span className="text-purple-100/80">farmui-hero-03 </span>
+                  <span className="text-purple-100/80">
+                    [farmui-component-id]{" "}
+                  </span>
                 </pre>
                 <CopyNpmCommandButton commands={`farm-ui add farmui-hero-03`} />
               </div>
