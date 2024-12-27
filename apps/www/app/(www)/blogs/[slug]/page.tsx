@@ -83,7 +83,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <>
-      <article className="container font-geist relative max-w-4xl mt-20 py-24 md:py-7 lg:py-16">
+      <article className="container z-[99] font-geist relative max-w-4xl mt-20 py-24 md:py-7 lg:py-16">
         <Link
           href="/blog"
           className={cn(
