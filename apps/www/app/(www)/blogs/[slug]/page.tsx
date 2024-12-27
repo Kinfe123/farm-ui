@@ -114,7 +114,7 @@ export default async function PostPage({ params }: PostPageProps) {
                   <div className="flex flex-col gap-1 justify-center items-center">
                     <Link
                       key={author._id}
-                      href={`https://twitter.com/${author.twitter}`}
+                      href={`${author.twitter}`}
                       className="flex items-center space-x-2 text-sm"
                     >
                       <img
