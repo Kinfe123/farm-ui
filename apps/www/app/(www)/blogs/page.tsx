@@ -6,7 +6,7 @@ import { getPosts } from "utils/seobot";
 import { BlogPost } from "types/types";
 import Pagination from "components/ui/Pagination";
 import HeroAnimated from "components/HeroAnimated";
-import { allPosts, allAuthors } from "contentlayer/generated";
+import { allPosts, allAuthors, Post } from "contentlayer/generated";
 import { Border } from "components/Blog/Border";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
@@ -39,7 +39,10 @@ export default async function PostsPage({
 }) {
   const pageNumber = Math.max((page || 0) - 1, 0);
 
-  const getAuthor = (post) => {
+  const getAuthor = (post: Post | undefined) => {
+    if (!post) {
+      return null;
+    }
     const authors = post.authors.map((author) =>
       allAuthors.find(({ slugAsParams }) => slugAsParams === `${author}`)
     );

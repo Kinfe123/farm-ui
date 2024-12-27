@@ -82,7 +82,6 @@ export default async function PostPage({ params }: PostPageProps) {
   const authors = post.authors.map((author) =>
     allAuthors.find(({ slug }) => slug === `/authors/${author}`)
   );
-  console.log({ authors, post });
 
   return (
     <>
@@ -106,7 +105,7 @@ export default async function PostPage({ params }: PostPageProps) {
               {formatDate(post.date)}
             </time>
           )}
-          <h1 className="mt-2 inline-block text-left tracking-tighter  font-geist text-5xl dark:bg-gradient-to-tr dark:from-zinc-400/10 dark:via-white/90 dark:text-transparent dark:bg-clip-text dark:to-white/10  leading-tight lg:text-6xl">
+          <h1 className="mt-2 inline-block text-left tracking-tighter  font-geist text-5xl 0 dark:bg-clip-text  leading-tight lg:text-6xl text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] ">
             {post.title}
           </h1>
           <hr className="h-[1px] w-full bg-black/5 my-3" />
@@ -128,12 +127,14 @@ export default async function PostPage({ params }: PostPageProps) {
                         className="rounded-full bg-white"
                       />
                       <br />
-                      <div className="flex-1 text-left leading-tight">
-                        <p className="font-medium">{author.title}</p>
-                        <p className="text-[12px] text-muted-foreground">
-                          @{author.twitter}
-                        </p>
-                      </div>
+                      <Link href={author.twitter}>
+                        <div className="flex-1 text-left leading-tight">
+                          <p className="font-medium">{author.title}</p>
+                          <p className="text-[12px] text-muted-foreground">
+                            {author.designation}
+                          </p>
+                        </div>
+                      </Link>
                     </Link>
                     <p className="text-muted-foreground">
                       {author.description}
