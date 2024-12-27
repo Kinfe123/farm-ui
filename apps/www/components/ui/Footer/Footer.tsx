@@ -10,15 +10,7 @@ const navigation = [
   { name: "Demo", href: "/demo" },
   { name: "License", href: "/license" },
   { name: "Privacy Policy", href: "/privacy-policy" },
-  { name: "Blog", href: "/blog" },
-];
-
-const marsNavigation = [
-  { name: "FarmX", href: "https://www.farmui.dev/" },
-  { name: "Unicorn Platform", href: "https://unicornplatform.com" },
-  { name: "UI generator", href: "https://uigenerator.org/" },
-  { name: "E-commerce store generator", href: "https://marketsy.ai/" },
-  { name: "Dev Hunt", href: "https://devhunt.org" },
+  { name: "Blog", href: "/blogs" },
 ];
 
 export default () => (
@@ -79,19 +71,6 @@ export default () => (
               </li>
             ))}
           </ul>
-          {/* <ul className="space-y-2">
-            <li className="text-zinc-100 font-medium">More from us</li>
-            {marsNavigation.map((item, idx) => (
-              <li
-                key={idx}
-                className="text-sm text-zinc-400 hover:text-zinc-100 duration-200"
-              >
-                <Link href={item.href} target="_blank" className="block">
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul> */}
         </div>
       </div>
     </div>

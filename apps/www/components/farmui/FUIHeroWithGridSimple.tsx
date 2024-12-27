@@ -71,7 +71,7 @@ const NpmCommandGetStarted = () => {
             headerClassName="text-center tracking-tight max-w-md md:max-w-2xl pb-3 text-3xl md:text-6xl tracking-tighter mx-auto lg:text-7xl font-bold font-geist  font-normal  text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-0 md:pb-0 mt-1"
             description="Move faster with beautiful responsive UI components and website
               templates with modern design, 100% free and open-source."
-            descriptionClassName="tracking-tight mx-auto  text-zinc-400 text-center lg:max-w-2xl md:py-2"
+            descriptionClassName="tracking-tight mx-auto  text-zinc-400 text-center lg:max-w-xl md:py-2"
           >
             <div className="mx-auto text-[0.84rem] text-zinc-400 text-left md:text-lg lg:max-w-2xl md:py-2 ">
               <p className=" tracking-tighter mx-auto max-w-md md:max-w-3xl text-wrap"></p>

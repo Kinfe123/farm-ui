@@ -107,7 +107,7 @@ export const Changelog = defineDocumentType(() => ({
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: `blog/**/*.mdx`,
+  filePathPattern: `blogs/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -227,7 +227,7 @@ export const Templates = defineDocumentType(() => ({
       type: "string",
     },
     kind: {
-      type: "string"
+      type: "string",
     },
     stack_used: {
       type: "list",

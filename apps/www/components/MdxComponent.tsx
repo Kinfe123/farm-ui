@@ -146,12 +146,11 @@ export const components = {
       {...props}
     />
   ),
-  // Steps,
+  Image: (props) => <Image {...props} />,
   toast,
   useToast,
   Tab: MdxTab,
   Tabs: MdxTabs,
-  Image: Image as any,
   Callout,
 };
 
