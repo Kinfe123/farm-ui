@@ -32,20 +32,24 @@ export async function generateMetadata({
   params: Params;
 }) {
   const headline = "farmui";
-  const metaDescription = "FarmUI";
+  const metaDescription = "An article related to farmui";
 
+  const post = await getPostFromParams(params: Params);
+  if (!post) {
+    return null;
+  }
   return {
     metadataBase: new URL("https://farmui.com"),
-    title: `${headline} - FarmUI Blog`,
-    description: metaDescription,
+    title: `${post.title} - FarmUI Blog`,
+    description: post.description ?? metaDescription,
     alternates: {
-      canonical: `/blog/${slug}`,
+      canonical: `/blogs/${slug}`,
     },
 
     openGraph: {
       type: "article",
-      title: `${headline} - FarmUI Blog`,
-      description: metaDescription,
+      title: `${post.title} - FarmUI Blog`,
+      description: post.description ?? metaDescription,
       images: [
         {
           url: ogImage,
@@ -53,12 +57,12 @@ export async function generateMetadata({
       ],
     },
     twitter: {
-      title: `${headline} - FarmUI Blog`,
-      description: metaDescription,
+      title: `${post.title} - FarmUI Blog`,
+      description: post.description ?? metaDescription,
     },
   };
 }
-async function getPostFromParams(params) {
+async function getPostFromParams(params: Params) {
   console.log({ params });
   const slug = params?.slug;
   const post = allPosts.find((post) => post.slugAsParams === slug);
