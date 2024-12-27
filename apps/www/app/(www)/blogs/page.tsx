@@ -32,11 +32,11 @@ export const metadata = {
   },
 };
 
-export default async ({
+export default async function PostsPage({
   searchParams: { page },
 }: {
   searchParams: { page: number };
-}) => {
+}) {
   const pageNumber = Math.max((page || 0) - 1, 0);
 
   const getAuthor = (post) => {
@@ -120,7 +120,7 @@ export default async ({
       </section>
     </>
   );
-};
+}
 
 import { forwardRef } from "react";
 import clsx from "clsx";
