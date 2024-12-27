@@ -125,7 +125,7 @@ export default async function PostsPage({
 import { forwardRef } from "react";
 import clsx from "clsx";
 
-export const ContainerOuter = forwardRef<
+const ContainerOuter = forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div">
 >(function OuterContainer({ className, children, ...props }, ref) {
@@ -136,7 +136,7 @@ export const ContainerOuter = forwardRef<
   );
 });
 
-export const ContainerInner = forwardRef<
+const ContainerInner = forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div">
 >(function InnerContainer({ className, children, ...props }, ref) {
@@ -151,7 +151,7 @@ export const ContainerInner = forwardRef<
   );
 });
 
-export const Container = forwardRef<
+const Container = forwardRef<
   React.ElementRef<typeof ContainerOuter>,
   React.ComponentPropsWithoutRef<typeof ContainerOuter>
 >(function Container({ children, ...props }, ref) {
