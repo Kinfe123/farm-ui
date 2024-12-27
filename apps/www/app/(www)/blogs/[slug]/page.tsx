@@ -16,7 +16,7 @@ type Params = {
 
 interface PostPageProps {
   params: {
-    slug: string[];
+    slug: string;
   };
 }
 
@@ -33,7 +33,6 @@ export async function generateMetadata({
 }) {
   const headline = "farmui";
   const metaDescription = "An article related to farmui";
-
   const post = await getPostFromParams(params);
   if (!post) {
     return null;
@@ -68,7 +67,7 @@ async function getPostFromParams(params: Params) {
   const post = allPosts.find((post) => post.slugAsParams === slug);
 
   if (!post) {
-    null;
+    return null;
   }
 
   return post;
