@@ -51,14 +51,14 @@ export default async function PostsPage({
       <section className="max-w-7xl px-4 mx-auto mt-base">
         <div className="text-left mt-44">
           <HeroAnimated
-            header="Collections of beautifully crafted thoughts and dumps."
-            headerClassName="text-left w-full  text-5xl md:text-7xl tracking-tighter mr-auto lg:text-8xl  font-geist font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-4 mt-1"
+            header="Thoughts and technical dumps."
+            headerClassName="text-left max-w-4xl mr-auto text-5xl md:text-7xl tracking-tighter mr-auto lg:text-8xl  font-geist font-normal text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] leading-0 md:leading-4 mt-1"
             description="The latest about FarmUI, and some technical stuff."
             descriptionClassName="ml-2 text-zinc-400 max-w-full mr-auto text-sm sm:text-md md:text-lg lg:text-lg mr-auto text-left"
           >
             <div className="flex flex-wrap items-center justify-center  gap-3"></div>
           </HeroAnimated>
-          <Container>
+          <Container className="">
             <div className="space-y-24 lg:space-y-32">
               {allPosts.map((article) => (
                 <div key={`/blog/${article.slug}`}>
@@ -130,8 +130,8 @@ const ContainerOuter = forwardRef<
   React.ComponentPropsWithoutRef<"div">
 >(function OuterContainer({ className, children, ...props }, ref) {
   return (
-    <div ref={ref} className={clsx("sm:px-8", className)} {...props}>
-      <div className="mx-auto w-full max-w-7xl lg:px-8">{children}</div>
+    <div ref={ref} className={clsx("sm:px-2", className)} {...props}>
+      <div className="mr-auto w-full max-w-7xl lg:px-0">{children}</div>
     </div>
   );
 });
@@ -143,10 +143,10 @@ const ContainerInner = forwardRef<
   return (
     <div
       ref={ref}
-      className={clsx("relative px-4 sm:px-8 lg:px-12", className)}
+      className={clsx("relative px-2 sm:px-0 lg:px-0", className)}
       {...props}
     >
-      <div className="mx-auto max-w-2xl lg:max-w-5xl">{children}</div>
+      <div className="mr-auto max-w-2xl lg:max-w-5xl">{children}</div>
     </div>
   );
 });
