@@ -34,7 +34,7 @@ const ChangeLogPage = () => {
       <div className="relative">
         <section className="relative max-w-full mr-auto mt-32 z-1">
           <div className="max-w-screen-xl md z-30  px-4 py-28 gap-12 text-gray-600 md:px-8">
-            <div className="space-y-5 max-w-[60rem] px-[-40px] leading-0  lg:leading-0 mr-auto text-left">
+            <div className="space-y-5 max-w-[60rem] px-[-40px] leading-0  lg:leading-0 ml-auto text-right">
               <h2 className=" text-5xl md:text-6xl tracking-tighter font-geist  bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.00)_202.08%)] text-transparent   mr-auto lg:text-7xl ">
                 <span className="bg-gradient-to-r from-purple-50 to-orange-200 text-transparent bg-clip-text">
                   Changes{" "}
@@ -50,7 +50,7 @@ const ChangeLogPage = () => {
                   <br /> dumped here.
                 </span>
               </h2>
-              <p className="max-w-2xl mr-auto text-gray-300">
+              <p className="max-w-2xl ml-auto text-gray-300">
                 We will update you on our iterations.
               </p>
               <LinkItem

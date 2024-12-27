@@ -66,16 +66,12 @@ export default function FUIPricingBundle() {
     {
       name: "Smooth",
       desc: "Provides a seamless, responsive, and visually pleasing interaction experience for the user. ",
-      icon: (
-        <Flame />
-      ),
+      icon: <Flame />,
     },
     {
       name: "Beautiful",
       desc: "Provides interface that has been carefully designed and curated to have a visually appealing, coherent, and consistent aesthetic. ",
-      icon: (
-        <Sparkles />
-      ),
+      icon: <Sparkles />,
     },
   ];
 
@@ -93,8 +89,8 @@ export default function FUIPricingBundle() {
           </p>
           <div className="max-w-xl">
             <p>
-              Get a lifetime access for all the subscription services for all current and upcoming templates.
-
+              Get a lifetime access for all the subscription services for all
+              current and upcoming templates.
             </p>
           </div>
         </div>
@@ -114,7 +110,10 @@ export default function FUIPricingBundle() {
               </li>
             ))}
           </ul>
-          <div className="flex-1 flex flex-col border-y mt-6 md:max-w-xl md:rounded-xl md:border md:border-x-none md:shadow-lg md:mt-0 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
+          <div className="relative flex-1 flex flex-col border-y mt-6 md:max-w-xl md:rounded-xl md:border md:border-x-none md:shadow-lg md:mt-0 transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]">
+            <div className="absolute transform text-sm dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#8686f01f_inset]  text-white rotate-45 -top-3  -right-4 bg-transparent  w-fit h-fit p-2">
+              40% off{" "}
+            </div>
             <div className="p-4 py-8 border-b md:p-8">
               <div className="justify-between flex">
                 <div className="max-w-xs">
@@ -124,8 +123,10 @@ export default function FUIPricingBundle() {
                   <p className="mt-3 sm:text-sm">{plan.desc}</p>
                 </div>
                 <div className="flex-none text-gray-100  text-2xl font-semibold font-geist sm:text-3xl">
-                  <del className="text-[20px] inline-flex items-end mr-2">${plan.price}</del>
-                  {" "}  ${plan.latestPrice}{" "}
+                  <del className="text-[20px] inline-flex items-end mr-2">
+                    ${plan.price}
+                  </del>{" "}
+                  ${plan.latestPrice}{" "}
                 </div>
               </div>
               {!!session ? (
@@ -138,7 +139,8 @@ export default function FUIPricingBundle() {
                 </a>
               ) : (
                 <a
-                  href={`https://9697820927999.gumroad.com//l/farmui-lifetime`}>
+                  href={`https://9697820927999.gumroad.com//l/farmui-lifetime`}
+                >
                   <button className="mt-4 w-full font-geist tracking-tighter text-center rounded-md bg-page-gradient text-md bg-gradient-to-br from-purple-400/5 to-purple-700/40 px-4 py-2 text-lg text-zinc-50 ring-2 ring-purple-500/50 ring-offset-2 ring-offset-zinc-950 transition-all hover:scale-[1.02] hover:ring-transparent active:scale-[0.98] active:ring-purple-500/70 flex items-center justify-center gap-2">
                     Purchase
                   </button>
