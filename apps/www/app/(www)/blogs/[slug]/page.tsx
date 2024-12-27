@@ -34,7 +34,7 @@ export async function generateMetadata({
   const headline = "farmui";
   const metaDescription = "An article related to farmui";
 
-  const post = await getPostFromParams(params: Params);
+  const post = await getPostFromParams(params);
   if (!post) {
     return null;
   }
