@@ -40,9 +40,6 @@ export default async function PostsPage({
   const pageNumber = Math.max((page || 0) - 1, 0);
 
   const getAuthor = (post: Post) => {
-    if (!post) {
-      return null;
-    }
     const authors = post.authors.map((author) =>
       allAuthors.find(({ slugAsParams }) => slugAsParams === `${author}`)
     );
@@ -85,26 +82,16 @@ export default async function PostsPage({
                             <dd className="mt-6 flex gap-x-4">
                               <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
                                 <img
-                                  alt={`${
-                                    getAuthor(article) &&
-                                    getAuthor(article)[0].title
-                                  }`}
-                                  src={`${
-                                    getAuthor(article)[0] &&
-                                    getAuthor(article)[0].avatar
-                                  }`}
+                                  alt={`${getAuthor(article)[0]?.title}`}
+                                  src={`${getAuthor(article)[0]?.avatar}`}
                                   className="h-12 w-12 object-cover grayscale"
                                 />
                               </div>
                               <div className="text-sm text-neutral-950 dark:text-neutral-400">
                                 <div className="font-semibold">
-                                  {getAuthor(article)[0] &&
-                                    getAuthor(article)[0].title}
+                                  {getAuthor(article)[0]?.title}
                                 </div>
-                                <div>
-                                  {getAuthor(article)[0] &&
-                                    getAuthor(article)[0]?.designation}
-                                </div>
+                                <div>{getAuthor(article)[0]?.designation}</div>
                               </div>
                             </dd>
                           </dl>
