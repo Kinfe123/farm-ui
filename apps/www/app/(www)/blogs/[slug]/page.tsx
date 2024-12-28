@@ -87,7 +87,7 @@ export default async function PostPage({ params }: PostPageProps) {
     <>
       <article className="container z-[99] font-geist relative max-w-4xl mt-20 py-24 md:py-7 lg:py-16">
         <Link
-          href="/blog"
+          href="/blogs"
           className={cn(
             buttonVariants({ variant: "ghost" }),
             "absolute left-[-200px] top-14 hidden xl:inline-flex"
