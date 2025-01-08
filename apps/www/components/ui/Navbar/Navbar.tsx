@@ -86,16 +86,18 @@ export default () => {
           type: "spring",
         }}
       >
-        <header className="fixed top-0 right-0 left-0 z-50 px-2 mx-auto h-[3rem]">
+        <header className="fixed top-0 right-0 left-0 z-[99] px-2 mx-auto h-[3rem]">
           <nav
-            className={` ${state
+            className={` ${
+              state
                 ? "absolute inset-x-0 shadow-lg rounded-xl bg-gradient-to-tr from-transparent via-transparent/10 to-transparent/5 backdrop-blur-lg border border-zinc-800 mx-2 pb-5 mt-2 md:shadow-none md:border-none md:mx-2 md:mt-0 md:bg-transparent md:pb-0"
                 : ""
-              }`}
+            }`}
           >
             <div
-              className={`mt-5 max-w-3xl mx-auto border-2 py-3  px-10 backdrop-blur-md rounded-3xl gp-x-14 items-center md:flex border-white/10 ${state ? "border-none" : ""
-                }`}
+              className={`mt-5 max-w-3xl mx-auto border-2 py-3  px-10 backdrop-blur-md rounded-3xl gp-x-14 items-center md:flex border-white/10 ${
+                state ? "border-none" : ""
+              }`}
             >
               <div className="flex justify-between items-center py-1 md:block">
                 <Link
@@ -122,8 +124,9 @@ export default () => {
                 </div>
               </div>
               <div
-                className={`flex-1 items-center mt-8 md:mt-0 md:flex ${state ? "block" : "hidden"
-                  } `}
+                className={`flex-1 items-center mt-8 md:mt-0 md:flex ${
+                  state ? "block" : "hidden"
+                } `}
               >
                 <ul className="z-30 flex-1 justify-center items-center space-y-6 md:flex md:space-y-0 md:space-x-6">
                   {navigation.map((item, idx) => {
