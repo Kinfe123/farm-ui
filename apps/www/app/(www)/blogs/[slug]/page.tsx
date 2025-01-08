@@ -18,7 +18,7 @@ interface PostPageProps {
   params: {
     slug: string;
   };
-
+}
 interface AuthorProps {
   id: string;
   name: string;
