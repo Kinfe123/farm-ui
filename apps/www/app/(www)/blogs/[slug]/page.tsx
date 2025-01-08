@@ -18,7 +18,6 @@ interface PostPageProps {
   params: {
     slug: string;
   };
-}
 
 interface AuthorProps {
   id: string;
@@ -29,8 +28,6 @@ interface AuthorProps {
 export async function generateMetadata({
   params: { slug },
 }: {
-  params: Params;
-}) {
   const headline = "farmui";
   const metaDescription = "An article related to farmui";
   const post = await getPostFromParams({ slug });
