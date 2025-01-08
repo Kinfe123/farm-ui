@@ -25,9 +25,7 @@ interface AuthorProps {
   designation: string;
   image: string;
 }
-export async function generateMetadata({
-  params: { slug },
-}: {
+export async function generateMetadata({ params: { slug } }: PostPageProps) {
   const headline = "farmui";
   const metaDescription = "An article related to farmui";
   const post = await getPostFromParams({ slug });
@@ -59,7 +57,6 @@ export async function generateMetadata({
   };
 }
 async function getPostFromParams(params: Params) {
-  console.log({ params });
   const slug = params?.slug;
   const post = allPosts.find((post) => post.slugAsParams === slug);
 
