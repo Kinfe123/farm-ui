@@ -123,7 +123,6 @@ const cards = [
     href: "/templates/remak",
     title: "Remak",
   },
-
   {
     url: "/templates/spacehole/spacehole-1.png",
     href: "/templates/spacehole",
