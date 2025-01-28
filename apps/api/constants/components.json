@@ -236,12 +236,12 @@
   },
   {
     "id": "farmui-hero-09",
-    "name": "FUIDarkHeroSectionWithScrolls",
+    "name": "FUIHeroWithBorders",
     "dependencies": [],
     "files": [
       {
         "root": {
-          "name": "FUIDarkHeroSectionWithScrolls",
+          "name": "FUIHeroWithBorders",
           "contents": {
             "react": {
               "code_for": "react",
