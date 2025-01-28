@@ -1,6 +1,6 @@
 {
   "name": "@kinfe123/farm-ui",
-  "version": "1.0.3",
+  "version": "1.0.13",
   "description": "CLI tool for adding farmui components and building blocks",
   "main": "index.js",
   "publishConfig": {
