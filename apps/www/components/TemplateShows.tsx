@@ -81,7 +81,7 @@ const Card = ({
         }}
         className="absolute inset-0 transition-transform duration-300 scale-95 group-hover:scale-100"
       ></div>
-      {id === 12 ? (
+      {id === 13 ? (
         <div className="grid absolute inset-0 z-10 place-content-center">
           <p className="p-4 text-3xl md:text-5xl font-black text-white uppercase bg-gradient-to-br rounded-tl-xl from-white/20 to-white/0 backdrop-blur-lg">
             {card.title}
@@ -127,6 +127,11 @@ const cards = [
     url: "/templates/spacehole/spacehole-1.png",
     href: "/templates/spacehole",
     title: "Spacehole",
+  },
+  {
+    url: "/templates/revamp-ai/revamp-ai-1.png",
+    href: "/templates/revamp-ai",
+    title: "RevampAI",
   },
   {
     url: "/templates/xship/xship-1.png",
