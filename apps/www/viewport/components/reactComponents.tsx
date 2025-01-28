@@ -535,7 +535,7 @@ export function Container({
     path: "previewsComponents/FUIHeroWithBorders",
     codeCopy: {
       react: `
-      import clsx from 'clsx'
+import clsx from 'clsx'
 
 const FUIHeroWithBorders = () => {
     return (
