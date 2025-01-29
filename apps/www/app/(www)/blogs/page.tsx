@@ -67,9 +67,7 @@ export default async function PostsPage({
                       <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                         <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
                           <h2 className="font-geist text-2xl tracking-tighter font-semibold text-neutral-950 dark:text-neutral-300">
-                            <Link href={`/blog/${article.slug}`}>
-                              {article.title}
-                            </Link>
+                            <Link href={article.slug}>{article.title}</Link>
                           </h2>
                           <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                             <dt className="sr-only">Published</dt>
