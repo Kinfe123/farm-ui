@@ -63,6 +63,13 @@ export default () => {
     { title: "Logs", path: "/changelog" },
     { title: "Join", path: "/join" },
   ];
+  const mobNavigation = [
+    ...navigation,
+    {
+      title: "Blogs",
+      path: "/blogs",
+    },
+  ];
   useEffect(() => {
     document.onclick = (e) => {
       const target = e.target as HTMLElement;
@@ -129,7 +136,7 @@ export default () => {
                 } `}
               >
                 <ul className="z-30 flex-1 justify-center items-center space-y-6 md:flex md:space-y-0 md:space-x-6">
-                  {navigation.map((item, idx) => {
+                  {mobNavigation.map((item, idx) => {
                     return (
                       <li
                         key={idx}
