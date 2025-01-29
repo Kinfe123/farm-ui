@@ -136,7 +136,7 @@ export default () => {
                 } `}
               >
                 <ul className="z-30 flex-1 justify-center items-center space-y-6 md:flex md:space-y-0 md:space-x-6">
-                  {mobNavigation.map((item, idx) => {
+                  {navigation.map((item, idx) => {
                     return (
                       <li
                         key={idx}
