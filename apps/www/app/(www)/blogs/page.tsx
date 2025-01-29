@@ -84,7 +84,7 @@ export default async function PostsPage({
                                 <img
                                   alt={`${getAuthor(article)[0]?.title}`}
                                   src={`${getAuthor(article)[0]?.avatar}`}
-                                  className="h-12 w-12 object-cover grayscale"
+                                  className="h-12 w-12 object-cover"
                                 />
                               </div>
                               <div className="text-sm text-neutral-950 dark:text-neutral-400">
