@@ -19,7 +19,7 @@ export default () => {
       value: "html",
     },
     {
-      name: "React.js",
+      name: "Nextjs / React",
       icon: <IconReact />,
       value: "react",
     },
