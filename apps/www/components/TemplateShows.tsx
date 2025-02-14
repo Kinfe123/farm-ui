@@ -119,6 +119,11 @@ export default TemplateShowCases;
 
 const cards = [
   {
+    url: "/templates/builder/builder-1.png",
+    href: "/templates/builder",
+    title: "Builder",
+  }, 
+  {
     url: "/templates/remak/remak-1.png",
     href: "/templates/remak",
     title: "Remak",
