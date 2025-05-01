@@ -22,7 +22,7 @@ FarmUI is client first and animation rich ui component library built on top of r
 pnpm add @kinfe123/farm-ui
 ```
 
-2. Go to https://farmui.com and grab the id of the UI or component that you want
+2. Go to [farmui components](https://farmui.com/components) and grab the id of the UI or component that you want
 
 3. Adding the UI or component based on that ID
 
@@ -30,7 +30,7 @@ pnpm add @kinfe123/farm-ui
 pnpm farm-ui add {id}
 ```
 
-**id** - being the id of the component from farmui.com
+**id** - being the id of the component from [farmui](https://farmui.com/components)
 
 4. Specify the directory where you want the componnt to be installed or it uses **components** dir by default.
 
