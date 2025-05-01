@@ -36,7 +36,6 @@ pnpm farm-ui add {id}
 
 5. Finally you get to see the component or UI block inside of **farmui** directory nested on directory you have mentioned on step 4.
 
-**Enjoy!**
 
 ## Contributing
 
