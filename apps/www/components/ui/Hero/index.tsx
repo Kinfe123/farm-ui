@@ -75,11 +75,11 @@ export default async function () {
                 variant="shiny"
                 className="z-20 group inline-flex w-full bg-page-gradient justify-center items-center gap-x-2 border border-input hover:border-zinc-600 hover:bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
               >
-                Cooked for you
+                Curated for you
                 <ChevronRight className="inline-flex justify-center items-center  w-4 h-4 ml-2 group-hover:translate-x-1 duration-300" />
               </LinkItem>
               <LinkItem
-                href="https://github.com/Kinfe123/"
+                href="https://github.com/Kinfe123/farm-ui"
                 variant="shiny"
                 className="inline-flex w-full justify-center items-center gap-x-2 border border-zinc-800 hover:border-zinc-600 bg-zinc-950 hover:text-zinc-100 duration-200 sm:w-auto py-4 px-10"
                 target="_blank"
