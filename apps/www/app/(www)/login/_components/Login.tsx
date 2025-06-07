@@ -386,11 +386,6 @@ export default function FUILoginWithGridProvider() {
             </Form>
           )}
         </div>
-        <div className="text-center">
-          <a href="javascript:void(0)" className="hover:text-purple-600">
-            Forgot password?
-          </a>
-        </div>
         <div className="absolute bottom-0 bg-page-gradient"></div>
       </div>
     </main>
