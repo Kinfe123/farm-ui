@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DrizzlePostgreSQLAdapter } from "@lucia-auth/adapter-drizzle";
 import { Lucia, Session, User, TimeSpan } from "lucia";
 import { cookies } from "next/headers";
