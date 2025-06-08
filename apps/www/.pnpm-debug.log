@@ -1,0 +1,3861 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 6,
+    "total": 6,
+    "workspacePrefix": "/Users/kinfish/farms/farm-ui"
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "farmui",
+      "version": "0.1.0",
+      "private": true,
+      "packageManager": "pnpm@6.14.1",
+      "scripts": {
+        "dev": "turbo dev",
+        "api:build": "dotenv -- turbo --filter api build",
+        "web:build": "dotenv -- turbo --filter web build",
+        "api:dev": "dotenv -- turbo --filter api dev",
+        "web:dev": "dotenv -- turbo --filter web dev",
+        "test": "turbo test"
+      },
+      "dependencies": {
+        "@changesets/changelog-github": "^0.4.8",
+        "@changesets/cli": "^2.26.1",
+        "dotenv-cli": "^7.4.2",
+        "vite-tsconfig-paths": "^4.2.0",
+        "vitest": "^0.31.1"
+      }
+    },
+    "prefix": "/Users/kinfish/farms/farm-ui"
+  },
+  "2 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "api",
+      "version": "0.0.1",
+      "private": "true",
+      "scripts": {
+        "start": "vercel dev",
+        "deploy": "vercel"
+      },
+      "dependencies": {
+        "hono": "^4.4.0"
+      },
+      "devDependencies": {
+        "vercel": "^32.4.1"
+      }
+    },
+    "prefix": "/Users/kinfish/farms/farm-ui/apps/api"
+  },
+  "3 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "@kinfe123/farm-ui",
+      "version": "1.0.13",
+      "description": "CLI tool for adding farmui components and building blocks",
+      "main": "index.js",
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "kinfish",
+        "url": "https://twitter.com/KinfishT"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/Kinfe123/farm-ui.git",
+        "directory": "packages/cli"
+      },
+      "files": [
+        "dist"
+      ],
+      "keywords": [
+        "farrmui",
+        "components",
+        "ui",
+        "tailwind",
+        "radix-ui",
+        "shadcn",
+        "floatui"
+      ],
+      "type": "module",
+      "exports": "./dist/index.js",
+      "bin": "./dist/index.js",
+      "scripts": {
+        "dev": "tsup --watch",
+        "build": "tsup",
+        "typecheck": "tsc --noEmit",
+        "clean": "rimraf dist && rimraf components",
+        "start:dev": "dotenv -e COMPONENTS_REGISTRY_URL=http://localhost:3001 node dist/index.js",
+        "start": "node dist/index.js",
+        "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+        "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+        "release": "changeset version",
+        "pub:beta": "pnpm build && pnpm publish --no-git-checks --access public --tag beta",
+        "pub:next": "pnpm build && pnpm publish --no-git-checks --access public --tag next",
+        "pub:release": "pnpm build && pnpm publish --access public",
+        "test": "vitest run"
+      },
+      "dependencies": {
+        "@antfu/ni": "^0.21.4",
+        "@babel/core": "^7.22.1",
+        "@babel/parser": "^7.22.6",
+        "@babel/plugin-transform-typescript": "^7.22.5",
+        "chalk": "5.2.0",
+        "commander": "^10.0.0",
+        "cosmiconfig": "^8.1.3",
+        "diff": "^5.1.0",
+        "dotenv": "^16.4.5",
+        "execa": "^7.0.0",
+        "fast-glob": "^3.3.2",
+        "fs-extra": "^11.1.0",
+        "gradient-string": "^2.0.2",
+        "https-proxy-agent": "^6.2.0",
+        "lodash.template": "^4.5.0",
+        "node-fetch": "^3.3.0",
+        "ora": "^6.1.2",
+        "prompts": "^2.4.2",
+        "recast": "^0.23.2",
+        "terminal-block-fonts": "^1.0.2",
+        "ts-morph": "^18.0.0",
+        "tsconfig-paths": "^4.2.0",
+        "type-fest": "^4.18.3",
+        "tsup": "^6.6.3",
+        "zod": "^3.20.2"
+      },
+      "devDependencies": {
+        "@types/babel__core": "^7.20.1",
+        "@types/diff": "^5.0.3",
+        "@types/fs-extra": "^11.0.1",
+        "@types/lodash.template": "^4.5.1",
+        "@types/node": "^18.0.4",
+        "@types/prompts": "^2.4.2",
+        "rimraf": "^4.1.3",
+        "tailwindcss": "^3.3.2",
+        "type-fest": "^3.8.0",
+        "typescript": "^4.9.3"
+      },
+      "license": "ISC"
+    },
+    "prefix": "/Users/kinfish/farms/farm-ui/packages/cli"
+  },
+  "4 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "db",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "dev": "tsup --watch",
+        "studio": "dotenv -e ../../.env drizzle-kit studio",
+        "push:pg": "dotenv  drizzle-kit push:pg"
+      },
+      "dependencies": {
+        "dotenv": "^16.3.1",
+        "drizzle-orm": "^0.29.2",
+        "postgres": "^3.4.4",
+        "tsup": "^6.6.3"
+      },
+      "devDependencies": {
+        "@types/node": "^18.0.4",
+        "drizzle-kit": "^0.20.9"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+    },
+    "prefix": "/Users/kinfish/farms/farm-ui/packages/db"
+  },
+  "5 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "ui",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+    },
+    "prefix": "/Users/kinfish/farms/farm-ui/packages/ui"
+  },
+  "6 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "web",
+      "version": "0.1.0",
+      "private": true,
+      "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "tailwind": "npx tailwindcss -i ./styles/tailwind.css -o ./public/tailwind.css --watch",
+        "generate:pg": "node -r esbuild-register db/migrator.ts"
+      },
+      "dependencies": {
+        "@auth/drizzle-adapter": "^1.2.0",
+        "@babel/core": "^7.18.6",
+        "@babel/preset-react": "^7.18.6",
+        "@heroicons/react": "^2.0.18",
+        "@hookform/resolvers": "^3.6.0",
+        "@kinfe123/farm-ui": "workspace:^",
+        "@loglib/tracker": "^0.8.0",
+        "@lucia-auth/adapter-drizzle": "^1.0.7",
+        "@motionone/utils": "^10.18.0",
+        "@neondatabase/serverless": "^0.9.3",
+        "@next/third-parties": "^14.0.3",
+        "@node-rs/argon2": "^1.8.3",
+        "@node-rs/bcrypt": "^1.10.4",
+        "@radix-ui/react-avatar": "^1.0.4",
+        "@radix-ui/react-context-menu": "^2.1.5",
+        "@radix-ui/react-dialog": "^1.0.5",
+        "@radix-ui/react-dropdown-menu": "^2.0.6",
+        "@radix-ui/react-label": "^2.0.2",
+        "@radix-ui/react-select": "^2.0.0",
+        "@radix-ui/react-separator": "^1.0.3",
+        "@radix-ui/react-slot": "^1.0.2",
+        "@radix-ui/react-tabs": "^1.0.4",
+        "@radix-ui/react-toast": "^1.1.5",
+        "@radix-ui/react-toggle": "^1.0.3",
+        "@radix-ui/react-toggle-group": "^1.0.4",
+        "@radix-ui/react-tooltip": "^1.0.7",
+        "@tailwindcss/typography": "^0.5.0",
+        "@types/babel__core": "^7.1.19",
+        "@upstash/ratelimit": "^1.2.1",
+        "@upstash/redis": "^1.27.1",
+        "@usermaven/sdk-js": "^1.1.9",
+        "@vercel/analytics": "^1.2.2",
+        "arctic": "^1.9.1",
+        "axios": "^0.24.0",
+        "bcryptjs": "^2.4.3",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.1",
+        "cmdk": "^1.0.0",
+        "contentlayer": "^0.3.2",
+        "date-fns": "^3.6.0",
+        "dotenv": "^16.4.5",
+        "drizzle-orm": "^0.29.2",
+        "drizzle-zod": "^0.5.1",
+        "embla-carousel-react": "^8.1.3",
+        "firebase": "^9.9.0",
+        "framer-motion": "^10.16.4",
+        "fs": "^0.0.1-security",
+        "geist": "^1.3.0",
+        "google": "link:@next/third-parties/google",
+        "gray-matter": "^4.0.3",
+        "highlight.js": "^11.9.0",
+        "hono": "^4.3.8",
+        "lucia": "^3.2.0",
+        "lucide-react": "^0.378.0",
+        "moment": "^2.29.4",
+        "next": "14.0.3",
+        "next-auth": "5.0.0-beta.19",
+        "next-contentlayer": "^0.3.2",
+        "next-mdx-remote": "^3.0.8",
+        "next-themes": "^0.2.1",
+        "oslo": "^1.2.0",
+        "path": "^0.12.7",
+        "postgres": "^3.4.4",
+        "prismjs": "^1.29.0",
+        "react": "^18.2.0",
+        "react-day-picker": "^8.10.1",
+        "react-dom": "^18.2.0",
+        "react-hook-form": "^7.51.5",
+        "react-resizable-panels": "^2.0.19",
+        "recharts": "2.12.7",
+        "rehype-code-titles": "^1.2.0",
+        "remark-code-import": "^1.2.0",
+        "remove": "^0.1.5",
+        "shiki": "^0.14.6",
+        "tailwind-merge": "^1.14.0",
+        "tailwindcss-animate": "^1.0.7",
+        "uuid": "^8.3.2",
+        "zod": "^3.23.8"
+      },
+      "devDependencies": {
+        "@tailwindcss/forms": "^0.5.3",
+        "@types/node": "^18.0.4",
+        "@types/prismjs": "^1.26.0",
+        "@types/react": "18.2.8",
+        "@types/react-dom": "^18.0.6",
+        "@types/uuid": "^8.3.4",
+        "autoprefixer": "^10.4.0",
+        "drizzle-kit": "^0.20.9",
+        "esbuild-register": "^3.5.0",
+        "eslint": "7.32.0",
+        "eslint-config-next": "12.0.3",
+        "husky": "^8.0.3",
+        "postcss": "^8.4.5",
+        "prettier": "2.7.1",
+        "rehype": "^13.0.1",
+        "rehype-autolink-headings": "^7.1.0",
+        "rehype-pretty-code": "^0.12.1",
+        "rehype-slug": "^6.0.0",
+        "remark": "^15.0.1",
+        "remark-gfm": "^3.0.1",
+        "tailwindcss": "^3.3.2",
+        "typescript": "5.1.3",
+        "unist-util-visit": "^5.0.0"
+      },
+      "browser": {
+        "fs": true,
+        "path": true,
+        "os": false
+      }
+    },
+    "prefix": "/Users/kinfish/farms/farm-ui/apps/www"
+  },
+  "7 warn pnpm": {
+    "message": "Ignoring broken lockfile at /Users/kinfish/farms/farm-ui: Lockfile /Users/kinfish/farms/farm-ui/pnpm-lock.yaml not compatible with current pnpm",
+    "prefix": "/Users/kinfish/farms/farm-ui"
+  },
+  "8 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/Users/kinfish/.pnpm-store/v3",
+    "virtualStoreDir": "/Users/kinfish/farms/farm-ui/node_modules/.pnpm"
+  },
+  "9 debug pnpm:stage": {
+    "prefix": "/Users/kinfish/farms/farm-ui",
+    "stage": "resolution_started"
+  },
+  "10 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/vite-tsconfig-paths/4.3.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "vite-tsconfig-paths",
+      "rawSpec": "^4.2.0"
+    }
+  },
+  "11 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vite-tsconfig-paths/4.3.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "12 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/dotenv-cli/7.4.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "dotenv-cli",
+      "rawSpec": "^7.4.2"
+    }
+  },
+  "13 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/dotenv-cli/7.4.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "14 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/dotenv-cli/7.4.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "15 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vite-tsconfig-paths/4.3.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "16 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/rimraf/4.4.1",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "rimraf",
+      "rawSpec": "^4.1.3"
+    }
+  },
+  "17 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rimraf/4.4.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "18 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/prompts/2.4.9",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "@types/prompts",
+      "rawSpec": "^2.4.2"
+    }
+  },
+  "19 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/prompts/2.4.9",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "20 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/fs-extra/11.0.4",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "@types/fs-extra",
+      "rawSpec": "^11.0.1"
+    }
+  },
+  "21 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/fs-extra/11.0.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "22 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rimraf/4.4.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "23 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/prompts/2.4.9",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "24 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/fs-extra/11.0.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "25 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@changesets/changelog-github/0.4.8",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@changesets/changelog-github",
+      "rawSpec": "^0.4.8"
+    }
+  },
+  "26 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@changesets/changelog-github/0.4.8",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "27 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/chalk/5.2.0",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "chalk",
+      "rawSpec": "5.2.0"
+    }
+  },
+  "28 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/chalk/5.2.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "29 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@changesets/changelog-github/0.4.8",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "30 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/chalk/5.2.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "31 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@changesets/cli/2.29.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@changesets/cli",
+      "rawSpec": "^2.26.1"
+    }
+  },
+  "32 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@changesets/cli/2.29.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "33 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@changesets/cli/2.29.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "34 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/lodash.template/4.5.3",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "@types/lodash.template",
+      "rawSpec": "^4.5.1"
+    }
+  },
+  "35 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/lodash.template/4.5.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "36 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/diff/5.2.3",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "@types/diff",
+      "rawSpec": "^5.0.3"
+    }
+  },
+  "37 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/diff/5.2.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "38 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/diff/5.2.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "39 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/lodash.template/4.5.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "40 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/cosmiconfig/8.3.6",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "cosmiconfig",
+      "rawSpec": "^8.1.3"
+    }
+  },
+  "41 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cosmiconfig/8.3.6",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "42 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/vitest/0.31.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "vitest",
+      "rawSpec": "^0.31.1"
+    }
+  },
+  "43 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vitest/0.31.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "44 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/babel__core/7.20.5",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "@types/babel__core",
+      "rawSpec": "^7.20.1"
+    }
+  },
+  "45 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/babel__core/7.20.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "46 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/hono/4.7.11",
+    "wanted": {
+      "dependentId": "apps/api",
+      "name": "hono",
+      "rawSpec": "^4.4.0"
+    }
+  },
+  "47 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/hono/4.7.11",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "48 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/commander/10.0.1",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "commander",
+      "rawSpec": "^10.0.0"
+    }
+  },
+  "49 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/commander/10.0.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "50 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@babel/plugin-transform-typescript/7.27.1",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "@babel/plugin-transform-typescript",
+      "rawSpec": "^7.22.5"
+    }
+  },
+  "51 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@babel/plugin-transform-typescript/7.27.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "52 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@babel/core/7.27.4",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "@babel/core",
+      "rawSpec": "^7.22.1"
+    }
+  },
+  "53 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@babel/core/7.27.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "54 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/babel__core/7.20.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "55 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vitest/0.31.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "56 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cosmiconfig/8.3.6",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "57 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/commander/10.0.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "58 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/hono/4.7.11",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "59 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@babel/plugin-transform-typescript/7.27.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "60 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@babel/core/7.27.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "61 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/type-fest/4.41.0",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "type-fest",
+      "rawSpec": "^4.18.3"
+    }
+  },
+  "62 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/type-fest/4.41.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "63 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/type-fest/4.41.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "64 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@antfu/ni/0.21.12",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "@antfu/ni",
+      "rawSpec": "^0.21.4"
+    }
+  },
+  "65 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@antfu/ni/0.21.12",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "66 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/node/18.19.111",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "@types/node",
+      "rawSpec": "^18.0.4"
+    }
+  },
+  "67 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/node/18.19.111",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "68 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@antfu/ni/0.21.12",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "69 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/node/18.19.111",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "70 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/fs-extra/11.3.0",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "fs-extra",
+      "rawSpec": "^11.1.0"
+    }
+  },
+  "71 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/fs-extra/11.3.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "72 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/fs-extra/11.3.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "73 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/https-proxy-agent/6.2.1",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "https-proxy-agent",
+      "rawSpec": "^6.2.0"
+    }
+  },
+  "74 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/https-proxy-agent/6.2.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "75 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gradient-string/2.0.2",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "gradient-string",
+      "rawSpec": "^2.0.2"
+    }
+  },
+  "76 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gradient-string/2.0.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "77 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/lodash.template/4.5.0",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "lodash.template",
+      "rawSpec": "^4.5.0"
+    }
+  },
+  "78 debug pnpm:deprecation": {
+    "deprecated": "This package is deprecated. Use https://socket.dev/npm/package/eta instead.",
+    "depth": 0,
+    "pkgId": "registry.npmjs.org/lodash.template/4.5.0",
+    "pkgName": "lodash.template",
+    "pkgVersion": "4.5.0",
+    "prefix": "/Users/kinfish/farms/farm-ui/packages/cli"
+  },
+  "79 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/lodash.template/4.5.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "80 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/https-proxy-agent/6.2.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "81 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gradient-string/2.0.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "82 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/lodash.template/4.5.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "83 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/node-fetch/3.3.2",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "node-fetch",
+      "rawSpec": "^3.3.0"
+    }
+  },
+  "84 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/node-fetch/3.3.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "85 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/ora/6.3.1",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "ora",
+      "rawSpec": "^6.1.2"
+    }
+  },
+  "86 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ora/6.3.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "87 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/node/18.19.111",
+    "wanted": {
+      "dependentId": "packages/db",
+      "name": "@types/node",
+      "rawSpec": "^18.0.4"
+    }
+  },
+  "88 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/node-fetch/3.3.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "89 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/vercel/32.7.2",
+    "wanted": {
+      "dependentId": "apps/api",
+      "name": "vercel",
+      "rawSpec": "^32.4.1"
+    }
+  },
+  "90 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vercel/32.7.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "91 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@babel/parser/7.27.5",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "@babel/parser",
+      "rawSpec": "^7.22.6"
+    }
+  },
+  "92 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@babel/parser/7.27.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "93 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ora/6.3.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "94 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/vercel/32.7.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "95 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@babel/parser/7.27.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "96 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/prompts/2.4.2",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "prompts",
+      "rawSpec": "^2.4.2"
+    }
+  },
+  "97 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prompts/2.4.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "98 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prompts/2.4.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "99 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/recast/0.23.11",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "recast",
+      "rawSpec": "^0.23.2"
+    }
+  },
+  "100 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/recast/0.23.11",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "101 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/recast/0.23.11",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "102 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/terminal-block-fonts/1.0.2",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "terminal-block-fonts",
+      "rawSpec": "^1.0.2"
+    }
+  },
+  "103 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/terminal-block-fonts/1.0.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "104 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/terminal-block-fonts/1.0.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "105 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tsconfig-paths/4.2.0",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "tsconfig-paths",
+      "rawSpec": "^4.2.0"
+    }
+  },
+  "106 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tsconfig-paths/4.2.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "107 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/node/18.19.111",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@types/node",
+      "rawSpec": "^18.0.4"
+    }
+  },
+  "108 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tsconfig-paths/4.2.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "109 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/ts-morph/18.0.0",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "ts-morph",
+      "rawSpec": "^18.0.0"
+    }
+  },
+  "110 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ts-morph/18.0.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "111 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tsup/6.7.0",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "tsup",
+      "rawSpec": "^6.6.3"
+    }
+  },
+  "112 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tsup/6.7.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "113 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tsup/6.7.0",
+    "wanted": {
+      "dependentId": "packages/db",
+      "name": "tsup",
+      "rawSpec": "^6.6.3"
+    }
+  },
+  "114 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/react/18.2.8",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@types/react",
+      "rawSpec": "18.2.8"
+    }
+  },
+  "115 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react/18.2.8",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "116 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/ts-morph/18.0.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "117 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react/18.2.8",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "118 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tsup/6.7.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "119 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/zod/3.25.56",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "zod",
+      "rawSpec": "^3.20.2"
+    }
+  },
+  "120 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/zod/3.25.56",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "121 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/postgres/3.4.7",
+    "wanted": {
+      "dependentId": "packages/db",
+      "name": "postgres",
+      "rawSpec": "^3.4.4"
+    }
+  },
+  "122 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/postgres/3.4.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "123 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tailwindcss/3.4.17",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "tailwindcss",
+      "rawSpec": "^3.3.2"
+    }
+  },
+  "124 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tailwindcss/3.4.17",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "125 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/zod/3.25.56",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "126 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@tailwindcss/forms/0.5.10",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@tailwindcss/forms",
+      "rawSpec": "^0.5.3"
+    }
+  },
+  "127 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@tailwindcss/forms/0.5.10",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "128 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/prismjs/1.26.5",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@types/prismjs",
+      "rawSpec": "^1.26.0"
+    }
+  },
+  "129 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/prismjs/1.26.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "130 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/uuid/8.3.4",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@types/uuid",
+      "rawSpec": "^8.3.4"
+    }
+  },
+  "131 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/uuid/8.3.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "132 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/autoprefixer/10.4.21",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "autoprefixer",
+      "rawSpec": "^10.4.0"
+    }
+  },
+  "133 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/autoprefixer/10.4.21",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "134 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/react-dom/18.3.7",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@types/react-dom",
+      "rawSpec": "^18.0.6"
+    }
+  },
+  "135 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react-dom/18.3.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "136 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/prettier/2.7.1",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "prettier",
+      "rawSpec": "2.7.1"
+    }
+  },
+  "137 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.7.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "138 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint/7.32.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "eslint",
+      "rawSpec": "7.32.0"
+    }
+  },
+  "139 debug pnpm:deprecation": {
+    "deprecated": "This version is no longer supported. Please see https://eslint.org/version-support for other options.",
+    "depth": 0,
+    "pkgId": "registry.npmjs.org/eslint/7.32.0",
+    "pkgName": "eslint",
+    "pkgVersion": "7.32.0",
+    "prefix": "/Users/kinfish/farms/farm-ui/apps/www"
+  },
+  "140 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/7.32.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "141 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/typescript/4.9.5",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "typescript",
+      "rawSpec": "^4.9.3"
+    }
+  },
+  "142 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "143 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/drizzle-kit/0.20.18",
+    "wanted": {
+      "dependentId": "packages/db",
+      "name": "drizzle-kit",
+      "rawSpec": "^0.20.9"
+    }
+  },
+  "144 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/drizzle-kit/0.20.18",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "145 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/drizzle-kit/0.20.18",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "drizzle-kit",
+      "rawSpec": "^0.20.9"
+    }
+  },
+  "146 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/postgres/3.4.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "147 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/fast-glob/3.3.3",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "fast-glob",
+      "rawSpec": "^3.3.2"
+    }
+  },
+  "148 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/fast-glob/3.3.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "149 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/esbuild-register/3.6.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "esbuild-register",
+      "rawSpec": "^3.5.0"
+    }
+  },
+  "150 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/esbuild-register/3.6.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "151 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/tailwindcss/3.4.17",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "tailwindcss",
+      "rawSpec": "^3.3.2"
+    }
+  },
+  "152 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/typescript/5.1.3",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "typescript",
+      "rawSpec": "5.1.3"
+    }
+  },
+  "153 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "154 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/husky/8.0.3",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "husky",
+      "rawSpec": "^8.0.3"
+    }
+  },
+  "155 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/husky/8.0.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "156 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/postcss/8.5.4",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "postcss",
+      "rawSpec": "^8.4.5"
+    }
+  },
+  "157 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/postcss/8.5.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "158 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@babel/core/7.27.4",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@babel/core",
+      "rawSpec": "^7.18.6"
+    }
+  },
+  "159 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/rehype/13.0.2",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "rehype",
+      "rawSpec": "^13.0.1"
+    }
+  },
+  "160 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rehype/13.0.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "161 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/rehype-autolink-headings/7.1.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "rehype-autolink-headings",
+      "rawSpec": "^7.1.0"
+    }
+  },
+  "162 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rehype-autolink-headings/7.1.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "163 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/rehype-pretty-code/0.12.6",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "rehype-pretty-code",
+      "rawSpec": "^0.12.1"
+    }
+  },
+  "164 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rehype-pretty-code/0.12.6",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "165 debug pnpm:_dependency_resolved": {
+    "resolution": "link:../../packages/cli",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@kinfe123/farm-ui",
+      "rawSpec": "workspace:^"
+    }
+  },
+  "166 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-config-next/12.0.3",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "eslint-config-next",
+      "rawSpec": "12.0.3"
+    }
+  },
+  "167 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-next/12.0.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "168 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/drizzle-orm/0.29.5",
+    "wanted": {
+      "dependentId": "packages/db",
+      "name": "drizzle-orm",
+      "rawSpec": "^0.29.2"
+    }
+  },
+  "169 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/drizzle-orm/0.29.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "170 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/remark/15.0.1",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "remark",
+      "rawSpec": "^15.0.1"
+    }
+  },
+  "171 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/remark/15.0.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "172 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/remark-gfm/3.0.1",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "remark-gfm",
+      "rawSpec": "^3.0.1"
+    }
+  },
+  "173 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/remark-gfm/3.0.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "174 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "size": 11620433,
+    "status": "started"
+  },
+  "175 debug pnpm:fetching-progress": {
+    "downloaded": 3294,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "176 debug pnpm:fetching-progress": {
+    "downloaded": 19678,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "177 debug pnpm:fetching-progress": {
+    "downloaded": 36062,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "178 debug pnpm:fetching-progress": {
+    "downloaded": 52446,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "179 debug pnpm:fetching-progress": {
+    "downloaded": 68830,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "180 debug pnpm:fetching-progress": {
+    "downloaded": 85214,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "181 debug pnpm:fetching-progress": {
+    "downloaded": 101598,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "182 debug pnpm:fetching-progress": {
+    "downloaded": 117982,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "183 debug pnpm:fetching-progress": {
+    "downloaded": 134366,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "184 debug pnpm:fetching-progress": {
+    "downloaded": 150750,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "185 debug pnpm:fetching-progress": {
+    "downloaded": 167134,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "186 debug pnpm:fetching-progress": {
+    "downloaded": 183518,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "187 debug pnpm:fetching-progress": {
+    "downloaded": 199902,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "188 debug pnpm:fetching-progress": {
+    "downloaded": 216286,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "189 debug pnpm:fetching-progress": {
+    "downloaded": 232670,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "190 debug pnpm:fetching-progress": {
+    "downloaded": 249054,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "191 debug pnpm:fetching-progress": {
+    "downloaded": 265438,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "192 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/tailwindcss/3.4.17",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "193 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/prismjs/1.26.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "194 debug pnpm:fetching-progress": {
+    "downloaded": 281822,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "195 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@tailwindcss/forms/0.5.10",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "196 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/uuid/8.3.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "197 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react-dom/18.3.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "198 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/autoprefixer/10.4.21",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "199 debug pnpm:fetching-progress": {
+    "downloaded": 298206,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "200 debug pnpm:fetching-progress": {
+    "downloaded": 314590,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "201 debug pnpm:fetching-progress": {
+    "downloaded": 330974,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "202 debug pnpm:fetching-progress": {
+    "downloaded": 347358,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "203 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/rehype-slug/6.0.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "rehype-slug",
+      "rawSpec": "^6.0.0"
+    }
+  },
+  "204 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rehype-slug/6.0.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "205 debug pnpm:fetching-progress": {
+    "downloaded": 363742,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "206 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.7.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "207 debug pnpm:fetching-progress": {
+    "downloaded": 380126,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "208 debug pnpm:fetching-progress": {
+    "downloaded": 396510,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "209 debug pnpm:fetching-progress": {
+    "downloaded": 412894,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "210 debug pnpm:fetching-progress": {
+    "downloaded": 429278,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "211 debug pnpm:fetching-progress": {
+    "downloaded": 445662,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "212 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/unist-util-visit/5.0.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "unist-util-visit",
+      "rawSpec": "^5.0.0"
+    }
+  },
+  "213 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/unist-util-visit/5.0.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "214 debug pnpm:fetching-progress": {
+    "downloaded": 462046,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "215 debug pnpm:fetching-progress": {
+    "downloaded": 478430,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "216 debug pnpm:fetching-progress": {
+    "downloaded": 494814,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "217 debug pnpm:fetching-progress": {
+    "downloaded": 511198,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "218 debug pnpm:fetching-progress": {
+    "downloaded": 527582,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "219 debug pnpm:fetching-progress": {
+    "downloaded": 543966,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "220 debug pnpm:fetching-progress": {
+    "downloaded": 560350,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "221 debug pnpm:fetching-progress": {
+    "downloaded": 576734,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "222 debug pnpm:fetching-progress": {
+    "downloaded": 593118,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "223 debug pnpm:fetching-progress": {
+    "downloaded": 609502,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "224 debug pnpm:fetching-progress": {
+    "downloaded": 625886,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "225 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/7.32.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "226 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/drizzle-kit/0.20.18",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "227 debug pnpm:fetching-progress": {
+    "downloaded": 642270,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "228 debug pnpm:fetching-progress": {
+    "downloaded": 658654,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "229 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/fast-glob/3.3.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "230 debug pnpm:fetching-progress": {
+    "downloaded": 675038,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "231 debug pnpm:fetching-progress": {
+    "downloaded": 691422,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "232 debug pnpm:fetching-progress": {
+    "downloaded": 707806,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "233 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/husky/8.0.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "234 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/esbuild-register/3.6.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "235 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rehype/13.0.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "236 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/postcss/8.5.4",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "237 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rehype-autolink-headings/7.1.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "238 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rehype-pretty-code/0.12.6",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "239 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-next/12.0.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "240 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/remark/15.0.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "241 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/remark-gfm/3.0.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "242 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/rehype-slug/6.0.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "243 debug pnpm:fetching-progress": {
+    "downloaded": 724190,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "244 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/unist-util-visit/5.0.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "245 debug pnpm:fetching-progress": {
+    "downloaded": 740574,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "246 debug pnpm:fetching-progress": {
+    "downloaded": 756958,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "247 debug pnpm:fetching-progress": {
+    "downloaded": 773342,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "248 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/diff/5.2.0",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "diff",
+      "rawSpec": "^5.1.0"
+    }
+  },
+  "249 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/diff/5.2.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "250 debug pnpm:fetching-progress": {
+    "downloaded": 789726,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "251 debug pnpm:fetching-progress": {
+    "downloaded": 806110,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "252 debug pnpm:fetching-progress": {
+    "downloaded": 822494,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "253 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/diff/5.2.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "254 debug pnpm:fetching-progress": {
+    "downloaded": 834782,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "255 debug pnpm:fetching-progress": {
+    "downloaded": 851166,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "256 debug pnpm:fetching-progress": {
+    "downloaded": 867550,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "257 debug pnpm:fetching-progress": {
+    "downloaded": 883934,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "258 debug pnpm:fetching-progress": {
+    "downloaded": 900318,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "259 debug pnpm:fetching-progress": {
+    "downloaded": 916702,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "260 debug pnpm:fetching-progress": {
+    "downloaded": 933086,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "261 debug pnpm:fetching-progress": {
+    "downloaded": 949470,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "262 debug pnpm:fetching-progress": {
+    "downloaded": 965854,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "263 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/dotenv/16.5.0",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "dotenv",
+      "rawSpec": "^16.4.5"
+    }
+  },
+  "264 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/dotenv/16.5.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "265 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/dotenv/16.5.0",
+    "wanted": {
+      "dependentId": "packages/db",
+      "name": "dotenv",
+      "rawSpec": "^16.3.1"
+    }
+  },
+  "266 debug pnpm:fetching-progress": {
+    "downloaded": 982238,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "267 debug pnpm:fetching-progress": {
+    "downloaded": 998622,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "268 debug pnpm:fetching-progress": {
+    "downloaded": 1015006,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "269 debug pnpm:fetching-progress": {
+    "downloaded": 1031390,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "270 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/dotenv/16.5.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "271 debug pnpm:fetching-progress": {
+    "downloaded": 1047774,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "272 debug pnpm:fetching-progress": {
+    "downloaded": 1064158,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "273 debug pnpm:fetching-progress": {
+    "downloaded": 1080542,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "274 debug pnpm:fetching-progress": {
+    "downloaded": 1096926,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "275 debug pnpm:fetching-progress": {
+    "downloaded": 1113310,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "276 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@babel/preset-react/7.27.1",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@babel/preset-react",
+      "rawSpec": "^7.18.6"
+    }
+  },
+  "277 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@babel/preset-react/7.27.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "278 debug pnpm:fetching-progress": {
+    "downloaded": 1129694,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "279 debug pnpm:fetching-progress": {
+    "downloaded": 1146078,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "280 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@hookform/resolvers/3.10.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@hookform/resolvers",
+      "rawSpec": "^3.6.0"
+    }
+  },
+  "281 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@hookform/resolvers/3.10.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "282 debug pnpm:fetching-progress": {
+    "downloaded": 1162462,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "283 debug pnpm:fetching-progress": {
+    "downloaded": 1178846,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "284 debug pnpm:fetching-progress": {
+    "downloaded": 1195230,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "285 debug pnpm:fetching-progress": {
+    "downloaded": 1211614,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "286 debug pnpm:fetching-progress": {
+    "downloaded": 1227998,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "287 debug pnpm:fetching-progress": {
+    "downloaded": 1244382,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "288 debug pnpm:fetching-progress": {
+    "downloaded": 1260766,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "289 debug pnpm:fetching-progress": {
+    "downloaded": 1277150,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "290 debug pnpm:fetching-progress": {
+    "downloaded": 1293534,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "291 debug pnpm:fetching-progress": {
+    "downloaded": 1309918,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "292 debug pnpm:fetching-progress": {
+    "downloaded": 1326302,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "293 debug pnpm:fetching-progress": {
+    "downloaded": 1342686,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "294 debug pnpm:fetching-progress": {
+    "downloaded": 1359070,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "295 debug pnpm:fetching-progress": {
+    "downloaded": 1375454,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "296 debug pnpm:fetching-progress": {
+    "downloaded": 1391838,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "297 debug pnpm:fetching-progress": {
+    "downloaded": 1408222,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "298 debug pnpm:fetching-progress": {
+    "downloaded": 1424606,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "299 debug pnpm:fetching-progress": {
+    "downloaded": 1440990,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "300 debug pnpm:fetching-progress": {
+    "downloaded": 1457374,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "301 debug pnpm:fetching-progress": {
+    "downloaded": 1473758,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "302 debug pnpm:fetching-progress": {
+    "downloaded": 1490142,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "303 debug pnpm:fetching-progress": {
+    "downloaded": 1506526,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "304 debug pnpm:fetching-progress": {
+    "downloaded": 1522910,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "305 debug pnpm:fetching-progress": {
+    "downloaded": 1539294,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "306 debug pnpm:fetching-progress": {
+    "downloaded": 1555678,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "307 debug pnpm:fetching-progress": {
+    "downloaded": 1572062,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "308 debug pnpm:fetching-progress": {
+    "downloaded": 1588446,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "309 debug pnpm:fetching-progress": {
+    "downloaded": 1604830,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "310 debug pnpm:fetching-progress": {
+    "downloaded": 1621214,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "311 debug pnpm:fetching-progress": {
+    "downloaded": 1637598,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "312 debug pnpm:fetching-progress": {
+    "downloaded": 1653982,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "313 debug pnpm:fetching-progress": {
+    "downloaded": 1670366,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "314 debug pnpm:fetching-progress": {
+    "downloaded": 1686750,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "315 debug pnpm:fetching-progress": {
+    "downloaded": 1703134,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "316 debug pnpm:fetching-progress": {
+    "downloaded": 1719518,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "317 debug pnpm:fetching-progress": {
+    "downloaded": 1735902,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "318 debug pnpm:fetching-progress": {
+    "downloaded": 1752286,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "319 debug pnpm:fetching-progress": {
+    "downloaded": 1768670,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "320 debug pnpm:fetching-progress": {
+    "downloaded": 1785054,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "321 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@babel/preset-react/7.27.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "322 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@hookform/resolvers/3.10.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "323 debug pnpm:fetching-progress": {
+    "downloaded": 1801438,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "324 debug pnpm:fetching-progress": {
+    "downloaded": 1817822,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "325 debug pnpm:fetching-progress": {
+    "downloaded": 1834206,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "326 debug pnpm:fetching-progress": {
+    "downloaded": 1850590,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "327 debug pnpm:fetching-progress": {
+    "downloaded": 1866974,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "328 debug pnpm:fetching-progress": {
+    "downloaded": 1883358,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "329 debug pnpm:fetching-progress": {
+    "downloaded": 1899742,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "330 debug pnpm:fetching-progress": {
+    "downloaded": 1916126,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "331 debug pnpm:fetching-progress": {
+    "downloaded": 1932510,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "332 debug pnpm:fetching-progress": {
+    "downloaded": 1948894,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "333 debug pnpm:fetching-progress": {
+    "downloaded": 1965278,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "334 debug pnpm:fetching-progress": {
+    "downloaded": 1981662,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "335 debug pnpm:fetching-progress": {
+    "downloaded": 1998046,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "336 debug pnpm:fetching-progress": {
+    "downloaded": 2014430,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "337 debug pnpm:fetching-progress": {
+    "downloaded": 2030814,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "338 debug pnpm:fetching-progress": {
+    "downloaded": 2047198,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "339 debug pnpm:fetching-progress": {
+    "downloaded": 2063582,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "340 debug pnpm:fetching-progress": {
+    "downloaded": 2066564,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "341 debug pnpm:fetching-progress": {
+    "downloaded": 2082948,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "342 debug pnpm:fetching-progress": {
+    "downloaded": 2099332,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "343 debug pnpm:fetching-progress": {
+    "downloaded": 2115716,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "344 debug pnpm:fetching-progress": {
+    "downloaded": 2132100,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "345 debug pnpm:fetching-progress": {
+    "downloaded": 2148484,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "346 debug pnpm:fetching-progress": {
+    "downloaded": 2164868,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "347 debug pnpm:fetching-progress": {
+    "downloaded": 2181252,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "348 debug pnpm:fetching-progress": {
+    "downloaded": 2197636,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "349 debug pnpm:fetching-progress": {
+    "downloaded": 2214020,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "350 debug pnpm:fetching-progress": {
+    "downloaded": 2230404,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "351 debug pnpm:fetching-progress": {
+    "downloaded": 2246788,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "352 debug pnpm:fetching-progress": {
+    "downloaded": 2263172,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "353 debug pnpm:fetching-progress": {
+    "downloaded": 2279556,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "354 debug pnpm:fetching-progress": {
+    "downloaded": 2295940,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "355 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/drizzle-orm/0.29.5",
+    "size": 653980,
+    "status": "started"
+  },
+  "356 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "size": 7147721,
+    "status": "started"
+  },
+  "357 debug pnpm:fetching-progress": {
+    "downloaded": 16384,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "358 debug pnpm:fetching-progress": {
+    "downloaded": 32768,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "359 debug pnpm:fetching-progress": {
+    "downloaded": 49152,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "360 debug pnpm:fetching-progress": {
+    "downloaded": 65536,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "361 debug pnpm:fetching-progress": {
+    "downloaded": 81920,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "362 debug pnpm:fetching-progress": {
+    "downloaded": 98304,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "363 debug pnpm:fetching-progress": {
+    "downloaded": 114688,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "364 debug pnpm:fetching-progress": {
+    "downloaded": 131072,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "365 debug pnpm:fetching-progress": {
+    "downloaded": 147456,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "366 debug pnpm:fetching-progress": {
+    "downloaded": 163840,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "367 debug pnpm:fetching-progress": {
+    "downloaded": 180224,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "368 debug pnpm:fetching-progress": {
+    "downloaded": 196608,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "369 debug pnpm:fetching-progress": {
+    "downloaded": 212992,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "370 debug pnpm:fetching-progress": {
+    "downloaded": 229376,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "371 debug pnpm:fetching-progress": {
+    "downloaded": 245760,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "372 debug pnpm:fetching-progress": {
+    "downloaded": 262144,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "373 debug pnpm:fetching-progress": {
+    "downloaded": 278528,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "374 debug pnpm:fetching-progress": {
+    "downloaded": 294912,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "375 debug pnpm:fetching-progress": {
+    "downloaded": 311296,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "376 debug pnpm:fetching-progress": {
+    "downloaded": 327680,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "377 debug pnpm:fetching-progress": {
+    "downloaded": 344064,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "378 debug pnpm:fetching-progress": {
+    "downloaded": 360448,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "379 debug pnpm:fetching-progress": {
+    "downloaded": 376832,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "380 debug pnpm:fetching-progress": {
+    "downloaded": 393216,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "381 debug pnpm:fetching-progress": {
+    "downloaded": 409600,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "382 debug pnpm:fetching-progress": {
+    "downloaded": 425984,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "383 debug pnpm:fetching-progress": {
+    "downloaded": 442368,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "384 debug pnpm:fetching-progress": {
+    "downloaded": 458752,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "385 debug pnpm:fetching-progress": {
+    "downloaded": 475136,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "386 debug pnpm:fetching-progress": {
+    "downloaded": 491520,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "387 debug pnpm:fetching-progress": {
+    "downloaded": 507904,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "388 debug pnpm:fetching-progress": {
+    "downloaded": 524288,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "389 debug pnpm:fetching-progress": {
+    "downloaded": 540672,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "390 debug pnpm:fetching-progress": {
+    "downloaded": 557056,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "391 debug pnpm:fetching-progress": {
+    "downloaded": 573440,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "392 debug pnpm:fetching-progress": {
+    "downloaded": 589824,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "393 debug pnpm:fetching-progress": {
+    "downloaded": 606208,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "394 debug pnpm:fetching-progress": {
+    "downloaded": 622592,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "395 debug pnpm:fetching-progress": {
+    "downloaded": 638976,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "396 debug pnpm:fetching-progress": {
+    "downloaded": 655360,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "397 debug pnpm:fetching-progress": {
+    "downloaded": 671744,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "398 debug pnpm:fetching-progress": {
+    "downloaded": 688128,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "399 debug pnpm:fetching-progress": {
+    "downloaded": 704512,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "400 debug pnpm:fetching-progress": {
+    "downloaded": 720896,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "401 debug pnpm:fetching-progress": {
+    "downloaded": 737280,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "402 debug pnpm:fetching-progress": {
+    "downloaded": 753664,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "403 debug pnpm:fetching-progress": {
+    "downloaded": 770048,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "404 debug pnpm:fetching-progress": {
+    "downloaded": 786432,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "405 debug pnpm:fetching-progress": {
+    "downloaded": 802816,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "406 debug pnpm:fetching-progress": {
+    "downloaded": 819200,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "407 debug pnpm:fetching-progress": {
+    "downloaded": 835584,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "408 debug pnpm:fetching-progress": {
+    "downloaded": 851968,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "409 debug pnpm:fetching-progress": {
+    "downloaded": 868352,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "410 debug pnpm:fetching-progress": {
+    "downloaded": 884736,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "411 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@motionone/utils/10.18.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@motionone/utils",
+      "rawSpec": "^10.18.0"
+    }
+  },
+  "412 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@motionone/utils/10.18.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "413 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@heroicons/react/2.2.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@heroicons/react",
+      "rawSpec": "^2.0.18"
+    }
+  },
+  "414 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@heroicons/react/2.2.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "415 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@lucia-auth/adapter-drizzle/1.1.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@lucia-auth/adapter-drizzle",
+      "rawSpec": "^1.0.7"
+    }
+  },
+  "416 debug pnpm:deprecation": {
+    "deprecated": "This package has been deprecated. Please see https://lucia-auth.com/lucia-v3/migrate.",
+    "depth": 0,
+    "pkgId": "registry.npmjs.org/@lucia-auth/adapter-drizzle/1.1.0",
+    "pkgName": "@lucia-auth/adapter-drizzle",
+    "pkgVersion": "1.1.0",
+    "prefix": "/Users/kinfish/farms/farm-ui/apps/www"
+  },
+  "417 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@lucia-auth/adapter-drizzle/1.1.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "418 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@motionone/utils/10.18.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "419 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@lucia-auth/adapter-drizzle/1.1.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "420 debug pnpm:fetching-progress": {
+    "downloaded": 2300036,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "421 debug pnpm:fetching-progress": {
+    "downloaded": 2308228,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "422 debug pnpm:fetching-progress": {
+    "downloaded": 2320516,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "423 debug pnpm:fetching-progress": {
+    "downloaded": 2324612,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "424 debug pnpm:fetching-progress": {
+    "downloaded": 2332804,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "425 debug pnpm:fetching-progress": {
+    "downloaded": 2340996,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "426 debug pnpm:fetching-progress": {
+    "downloaded": 2345092,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "427 debug pnpm:fetching-progress": {
+    "downloaded": 2349188,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "428 debug pnpm:fetching-progress": {
+    "downloaded": 2353284,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "429 debug pnpm:fetching-progress": {
+    "downloaded": 2361476,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "430 debug pnpm:fetching-progress": {
+    "downloaded": 2369668,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "431 debug pnpm:fetching-progress": {
+    "downloaded": 2377860,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "432 debug pnpm:fetching-progress": {
+    "downloaded": 2386052,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "433 debug pnpm:fetching-progress": {
+    "downloaded": 2390148,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "434 debug pnpm:fetching-progress": {
+    "downloaded": 2402436,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "435 debug pnpm:fetching-progress": {
+    "downloaded": 2410628,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "436 debug pnpm:fetching-progress": {
+    "downloaded": 2418820,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "437 debug pnpm:fetching-progress": {
+    "downloaded": 2435204,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "438 debug pnpm:fetching-progress": {
+    "downloaded": 901120,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "439 debug pnpm:fetching-progress": {
+    "downloaded": 917504,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "440 debug pnpm:fetching-progress": {
+    "downloaded": 933888,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "441 debug pnpm:fetching-progress": {
+    "downloaded": 950272,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "442 debug pnpm:fetching-progress": {
+    "downloaded": 966656,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "443 debug pnpm:fetching-progress": {
+    "downloaded": 983040,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "444 debug pnpm:fetching-progress": {
+    "downloaded": 999424,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "445 debug pnpm:fetching-progress": {
+    "downloaded": 1015808,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "446 debug pnpm:fetching-progress": {
+    "downloaded": 1032192,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "447 debug pnpm:fetching-progress": {
+    "downloaded": 1048576,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "448 debug pnpm:fetching-progress": {
+    "downloaded": 1064960,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "449 debug pnpm:fetching-progress": {
+    "downloaded": 1081344,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "450 debug pnpm:fetching-progress": {
+    "downloaded": 1097728,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "451 debug pnpm:fetching-progress": {
+    "downloaded": 1114112,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "452 debug pnpm:fetching-progress": {
+    "downloaded": 1130496,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "453 debug pnpm:fetching-progress": {
+    "downloaded": 1146880,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "454 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@loglib/tracker/0.8.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@loglib/tracker",
+      "rawSpec": "^0.8.0"
+    }
+  },
+  "455 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@loglib/tracker/0.8.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "456 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@loglib/tracker/0.8.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "457 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@auth/drizzle-adapter/1.9.1",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@auth/drizzle-adapter",
+      "rawSpec": "^1.2.0"
+    }
+  },
+  "458 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@auth/drizzle-adapter/1.9.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "459 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-dialog/1.1.14",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-dialog",
+      "rawSpec": "^1.0.5"
+    }
+  },
+  "460 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-dialog/1.1.14",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "461 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@auth/drizzle-adapter/1.9.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "462 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-dialog/1.1.14",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "463 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-avatar/1.1.10",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-avatar",
+      "rawSpec": "^1.0.4"
+    }
+  },
+  "464 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-avatar/1.1.10",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "465 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-avatar/1.1.10",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "466 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/execa/7.2.0",
+    "wanted": {
+      "dependentId": "packages/cli",
+      "name": "execa",
+      "rawSpec": "^7.0.0"
+    }
+  },
+  "467 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/execa/7.2.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "468 debug pnpm:fetching-progress": {
+    "downloaded": 1163264,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "469 debug pnpm:fetching-progress": {
+    "downloaded": 1179648,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "470 debug pnpm:fetching-progress": {
+    "downloaded": 1196032,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "471 debug pnpm:fetching-progress": {
+    "downloaded": 1212416,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "472 debug pnpm:fetching-progress": {
+    "downloaded": 1228800,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "473 debug pnpm:fetching-progress": {
+    "downloaded": 1245184,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "474 debug pnpm:fetching-progress": {
+    "downloaded": 1261568,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "475 debug pnpm:fetching-progress": {
+    "downloaded": 1277952,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "476 debug pnpm:fetching-progress": {
+    "downloaded": 1294336,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "477 debug pnpm:fetching-progress": {
+    "downloaded": 1310720,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "478 debug pnpm:fetching-progress": {
+    "downloaded": 1327104,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "479 debug pnpm:fetching-progress": {
+    "downloaded": 1343488,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "480 debug pnpm:fetching-progress": {
+    "downloaded": 1359872,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "481 debug pnpm:fetching-progress": {
+    "downloaded": 1376256,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "482 debug pnpm:fetching-progress": {
+    "downloaded": 1392640,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "483 debug pnpm:fetching-progress": {
+    "downloaded": 1409024,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "484 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/execa/7.2.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "485 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@node-rs/bcrypt/1.10.7",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@node-rs/bcrypt",
+      "rawSpec": "^1.10.4"
+    }
+  },
+  "486 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@node-rs/bcrypt/1.10.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "487 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@neondatabase/serverless/0.9.5",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@neondatabase/serverless",
+      "rawSpec": "^0.9.3"
+    }
+  },
+  "488 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@neondatabase/serverless/0.9.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "489 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@node-rs/bcrypt/1.10.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "490 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-context-menu/2.2.15",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-context-menu",
+      "rawSpec": "^2.1.5"
+    }
+  },
+  "491 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-context-menu/2.2.15",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "492 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@neondatabase/serverless/0.9.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "493 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@node-rs/argon2/1.8.3",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@node-rs/argon2",
+      "rawSpec": "^1.8.3"
+    }
+  },
+  "494 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@node-rs/argon2/1.8.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "495 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-context-menu/2.2.15",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "496 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@node-rs/argon2/1.8.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "497 debug pnpm:fetching-progress": {
+    "downloaded": 2439300,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "498 debug pnpm:fetching-progress": {
+    "downloaded": 2447492,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "499 debug pnpm:fetching-progress": {
+    "downloaded": 2451588,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "500 debug pnpm:fetching-progress": {
+    "downloaded": 2455684,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "501 debug pnpm:fetching-progress": {
+    "downloaded": 2463876,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "502 debug pnpm:fetching-progress": {
+    "downloaded": 2476164,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "503 debug pnpm:fetching-progress": {
+    "downloaded": 2492548,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "504 debug pnpm:fetching-progress": {
+    "downloaded": 2496644,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "505 debug pnpm:fetching-progress": {
+    "downloaded": 2508932,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "506 debug pnpm:fetching-progress": {
+    "downloaded": 2525316,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "507 debug pnpm:fetching-progress": {
+    "downloaded": 2541700,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "508 debug pnpm:fetching-progress": {
+    "downloaded": 2558084,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "509 debug pnpm:fetching-progress": {
+    "downloaded": 2574468,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "510 debug pnpm:fetching-progress": {
+    "downloaded": 2590852,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "511 debug pnpm:fetching-progress": {
+    "downloaded": 2607236,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "512 debug pnpm:fetching-progress": {
+    "downloaded": 2623620,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "513 debug pnpm:fetching-progress": {
+    "downloaded": 2640004,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "514 debug pnpm:fetching-progress": {
+    "downloaded": 2656388,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "515 debug pnpm:fetching-progress": {
+    "downloaded": 2672772,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "516 debug pnpm:fetching-progress": {
+    "downloaded": 2689156,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "517 debug pnpm:fetching-progress": {
+    "downloaded": 2705540,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "518 debug pnpm:fetching-progress": {
+    "downloaded": 2721924,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "519 debug pnpm:fetching-progress": {
+    "downloaded": 2738308,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "520 debug pnpm:fetching-progress": {
+    "downloaded": 2754692,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "521 debug pnpm:fetching-progress": {
+    "downloaded": 2771076,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "522 debug pnpm:fetching-progress": {
+    "downloaded": 2787460,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "523 debug pnpm:fetching-progress": {
+    "downloaded": 2803844,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "524 debug pnpm:fetching-progress": {
+    "downloaded": 2820228,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "525 debug pnpm:fetching-progress": {
+    "downloaded": 2836612,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "526 debug pnpm:fetching-progress": {
+    "downloaded": 2852996,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "527 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-dropdown-menu/2.1.15",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-dropdown-menu",
+      "rawSpec": "^2.0.6"
+    }
+  },
+  "528 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-dropdown-menu/2.1.15",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "529 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/babel__core/7.20.5",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@types/babel__core",
+      "rawSpec": "^7.1.19"
+    }
+  },
+  "530 debug pnpm:fetching-progress": {
+    "downloaded": 1425408,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "531 debug pnpm:fetching-progress": {
+    "downloaded": 1441792,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "532 debug pnpm:fetching-progress": {
+    "downloaded": 1458176,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "533 debug pnpm:fetching-progress": {
+    "downloaded": 1474560,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "534 debug pnpm:fetching-progress": {
+    "downloaded": 1490944,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "535 debug pnpm:fetching-progress": {
+    "downloaded": 1507328,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "536 debug pnpm:fetching-progress": {
+    "downloaded": 1523712,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "537 debug pnpm:fetching-progress": {
+    "downloaded": 1540096,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "538 debug pnpm:fetching-progress": {
+    "downloaded": 1556480,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "539 debug pnpm:fetching-progress": {
+    "downloaded": 1572864,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "540 debug pnpm:fetching-progress": {
+    "downloaded": 1589248,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "541 debug pnpm:fetching-progress": {
+    "downloaded": 1605632,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "542 debug pnpm:fetching-progress": {
+    "downloaded": 1622016,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "543 debug pnpm:fetching-progress": {
+    "downloaded": 1638400,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "544 debug pnpm:fetching-progress": {
+    "downloaded": 1654784,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "545 debug pnpm:fetching-progress": {
+    "downloaded": 1671168,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "546 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-label/2.1.7",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-label",
+      "rawSpec": "^2.0.2"
+    }
+  },
+  "547 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-label/2.1.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "548 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-dropdown-menu/2.1.15",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "549 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/@heroicons/react/2.2.0",
+    "size": 286052,
+    "status": "started"
+  },
+  "550 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-label/2.1.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "551 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-tabs/1.1.12",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-tabs",
+      "rawSpec": "^1.0.4"
+    }
+  },
+  "552 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-tabs/1.1.12",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "553 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-tabs/1.1.12",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "554 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-slot/1.2.3",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-slot",
+      "rawSpec": "^1.0.2"
+    }
+  },
+  "555 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-slot/1.2.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "556 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-separator/1.1.7",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-separator",
+      "rawSpec": "^1.0.3"
+    }
+  },
+  "557 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-separator/1.1.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "558 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-slot/1.2.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "559 debug pnpm:fetching-progress": {
+    "downloaded": 2869380,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "560 debug pnpm:fetching-progress": {
+    "downloaded": 2885764,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "561 debug pnpm:fetching-progress": {
+    "downloaded": 2902148,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "562 debug pnpm:fetching-progress": {
+    "downloaded": 2918532,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "563 debug pnpm:fetching-progress": {
+    "downloaded": 2934916,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "564 debug pnpm:fetching-progress": {
+    "downloaded": 2951300,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "565 debug pnpm:fetching-progress": {
+    "downloaded": 2967684,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "566 debug pnpm:fetching-progress": {
+    "downloaded": 2984068,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "567 debug pnpm:fetching-progress": {
+    "downloaded": 3000452,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "568 debug pnpm:fetching-progress": {
+    "downloaded": 3016836,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "569 debug pnpm:fetching-progress": {
+    "downloaded": 3033220,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "570 debug pnpm:fetching-progress": {
+    "downloaded": 3049604,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "571 debug pnpm:fetching-progress": {
+    "downloaded": 3065988,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "572 debug pnpm:fetching-progress": {
+    "downloaded": 3082372,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "573 debug pnpm:fetching-progress": {
+    "downloaded": 3098756,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "574 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-toggle-group/1.1.10",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-toggle-group",
+      "rawSpec": "^1.0.4"
+    }
+  },
+  "575 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-toggle-group/1.1.10",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "576 debug pnpm:fetching-progress": {
+    "downloaded": 3115140,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "577 debug pnpm:fetching-progress": {
+    "downloaded": 3131524,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "578 debug pnpm:fetching-progress": {
+    "downloaded": 3147908,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "579 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-separator/1.1.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "580 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-toggle/1.1.9",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-toggle",
+      "rawSpec": "^1.0.3"
+    }
+  },
+  "581 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-toggle/1.1.9",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "582 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-toggle-group/1.1.10",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "583 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-toggle/1.1.9",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "584 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-tooltip/1.2.7",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-tooltip",
+      "rawSpec": "^1.0.7"
+    }
+  },
+  "585 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-tooltip/1.2.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "586 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-tooltip/1.2.7",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "587 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/drizzle-orm/0.29.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "fetched"
+  },
+  "588 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@next/third-parties/14.2.29",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@next/third-parties",
+      "rawSpec": "^14.0.3"
+    }
+  },
+  "589 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@next/third-parties/14.2.29",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "590 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-toast/1.2.14",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-toast",
+      "rawSpec": "^1.1.5"
+    }
+  },
+  "591 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-toast/1.2.14",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "592 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@radix-ui/react-select/2.2.5",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@radix-ui/react-select",
+      "rawSpec": "^2.0.0"
+    }
+  },
+  "593 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-select/2.2.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "594 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@next/third-parties/14.2.29",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "595 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-toast/1.2.14",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "596 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@radix-ui/react-select/2.2.5",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "597 debug pnpm:fetching-progress": {
+    "downloaded": 1687552,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "598 debug pnpm:fetching-progress": {
+    "downloaded": 1703936,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "599 debug pnpm:fetching-progress": {
+    "downloaded": 1720320,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "600 debug pnpm:fetching-progress": {
+    "downloaded": 1736704,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "601 debug pnpm:fetching-progress": {
+    "downloaded": 1753088,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "602 debug pnpm:fetching-progress": {
+    "downloaded": 1769472,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "603 debug pnpm:fetching-progress": {
+    "downloaded": 1785856,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "604 debug pnpm:fetching-progress": {
+    "downloaded": 1802240,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "605 debug pnpm:fetching-progress": {
+    "downloaded": 1818624,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "606 debug pnpm:fetching-progress": {
+    "downloaded": 1835008,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "607 debug pnpm:fetching-progress": {
+    "downloaded": 1851392,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "608 debug pnpm:fetching-progress": {
+    "downloaded": 1867776,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "609 debug pnpm:fetching-progress": {
+    "downloaded": 1884160,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "610 debug pnpm:fetching-progress": {
+    "downloaded": 1900544,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "611 debug pnpm:fetching-progress": {
+    "downloaded": 1916928,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "612 debug pnpm:fetching-progress": {
+    "downloaded": 1933312,
+    "packageId": "registry.npmjs.org/typescript/5.1.3",
+    "status": "in_progress"
+  },
+  "613 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/axios/0.24.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "axios",
+      "rawSpec": "^0.24.0"
+    }
+  },
+  "614 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/axios/0.24.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "615 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/dotenv/16.5.0",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "dotenv",
+      "rawSpec": "^16.4.5"
+    }
+  },
+  "616 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/drizzle-orm/0.29.5",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "drizzle-orm",
+      "rawSpec": "^0.29.2"
+    }
+  },
+  "617 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/arctic/1.9.2",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "arctic",
+      "rawSpec": "^1.9.1"
+    }
+  },
+  "618 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/arctic/1.9.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "619 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/bcryptjs/2.4.3",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "bcryptjs",
+      "rawSpec": "^2.4.3"
+    }
+  },
+  "620 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/bcryptjs/2.4.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "621 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/class-variance-authority/0.7.1",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "class-variance-authority",
+      "rawSpec": "^0.7.0"
+    }
+  },
+  "622 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/class-variance-authority/0.7.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "623 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/clsx/2.1.1",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "clsx",
+      "rawSpec": "^2.1.1"
+    }
+  },
+  "624 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/clsx/2.1.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "625 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/axios/0.24.0",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "626 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/arctic/1.9.2",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "627 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/bcryptjs/2.4.3",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "628 debug pnpm:fetching-progress": {
+    "downloaded": 3164292,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "629 debug pnpm:fetching-progress": {
+    "downloaded": 3180676,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "630 debug pnpm:fetching-progress": {
+    "downloaded": 3197060,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "631 debug pnpm:fetching-progress": {
+    "downloaded": 3213444,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "632 debug pnpm:fetching-progress": {
+    "downloaded": 3229828,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "633 debug pnpm:fetching-progress": {
+    "downloaded": 3246212,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "634 debug pnpm:fetching-progress": {
+    "downloaded": 3262596,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "635 debug pnpm:fetching-progress": {
+    "downloaded": 3278980,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "636 debug pnpm:fetching-progress": {
+    "downloaded": 3295364,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "637 debug pnpm:fetching-progress": {
+    "downloaded": 3311748,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "638 debug pnpm:fetching-progress": {
+    "downloaded": 3328132,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "639 debug pnpm:fetching-progress": {
+    "downloaded": 3344516,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "640 debug pnpm:fetching-progress": {
+    "downloaded": 3360900,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "641 debug pnpm:fetching-progress": {
+    "downloaded": 3377284,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "642 debug pnpm:fetching-progress": {
+    "downloaded": 3393668,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "643 debug pnpm:fetching-progress": {
+    "downloaded": 3410052,
+    "packageId": "registry.npmjs.org/typescript/4.9.5",
+    "status": "in_progress"
+  },
+  "644 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/class-variance-authority/0.7.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "645 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/clsx/2.1.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "found_in_store"
+  },
+  "646 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@tailwindcss/typography/0.5.16",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "@tailwindcss/typography",
+      "rawSpec": "^0.5.0"
+    }
+  },
+  "647 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@tailwindcss/typography/0.5.16",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "648 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/cmdk/1.1.1",
+    "wanted": {
+      "dependentId": "apps/www",
+      "name": "cmdk",
+      "rawSpec": "^1.0.0"
+    }
+  },
+  "649 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cmdk/1.1.1",
+    "requester": "/Users/kinfish/farms/farm-ui",
+    "status": "resolved"
+  },
+  "650 error pnpm": {
+    "code": "ERR_PNPM_LINKED_PKG_DIR_NOT_FOUND",
+    "pkgsStack": [],
+    "err": {
+      "name": "Error",
+      "message": "Could not install from \"/Users/kinfish/farms/farm-ui/apps/www/@next/third-parties/google\" as it does not exist.",
+      "code": "ERR_PNPM_LINKED_PKG_DIR_NOT_FOUND",
+      "stack": "Error: Could not install from \"/Users/kinfish/farms/farm-ui/apps/www/@next/third-parties/google\" as it does not exist.\n    at Object.resolveLocal [as default] (/Users/kinfish/Library/pnpm/.tools/pnpm/6.14.1/node_modules/pnpm/dist/pnpm.cjs:83963:17)\n    at async Object.resolve (/Users/kinfish/Library/pnpm/.tools/pnpm/6.14.1/node_modules/pnpm/dist/pnpm.cjs:84845:309)\n    at async run (/Users/kinfish/Library/pnpm/.tools/pnpm/6.14.1/node_modules/pnpm/dist/pnpm.cjs:70815:23)"
+    }
+  }
+}
