@@ -12,8 +12,6 @@
     "test": "turbo test"
   },
   "dependencies": {
-    "@changesets/changelog-github": "^0.4.8",
-    "@changesets/cli": "^2.26.1",
     "dotenv-cli": "^7.4.2",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.31.1"
