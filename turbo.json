@@ -5,10 +5,10 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
       "env": ["NEXT_PUBLIC_VERCEL_ENV", "NEXT_PUBLIC_VERCEL_ENV"]
     },
-    "wev:dev": {
+    "web:dev": {
       "outputs": ["dist/**", ".next/**"],
       "env": ["NEXT_PUBLIC_VERCEL_ENV", "NEXT_PUBLIC_VERCEL_ENV"]
     },

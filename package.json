@@ -2,9 +2,10 @@
   "name": "farmui",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@6.14.1",
+  "packageManager": "pnpm@9.15.1",
   "scripts": {
     "dev": "turbo dev",
+    "build": "turbo build",
     "api:build": "dotenv -- turbo --filter api build",
     "web:build": "dotenv -- turbo --filter web build",
     "api:dev": "dotenv -- turbo --filter api dev",
