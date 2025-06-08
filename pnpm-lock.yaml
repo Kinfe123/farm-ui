@@ -4954,13 +4954,13 @@ packages:
     dev: false
 
   /@upstash/ratelimit/1.2.1:
-    resolution: {integrity: sha512-o01lV1yFS5Fzj5KONZmNyVch/Qrlj785B2ob+kStUmxn8F6xXk7IHTQqVcHE+Ce3CmT/qQIwvMxDZftyJ5wYpQ==, tarball: '@upstash/ratelimit/-/ratelimit-1.2.1.tgz'}
+    resolution: {integrity: sha512-o01lV1yFS5Fzj5KONZmNyVch/Qrlj785B2ob+kStUmxn8F6xXk7IHTQqVcHE+Ce3CmT/qQIwvMxDZftyJ5wYpQ==}
     dependencies:
       '@upstash/core-analytics': 0.0.9
     dev: false
 
   /@upstash/redis/1.35.0:
-    resolution: {integrity: sha512-WUm0Jz1xN4DBDGeJIi2Y0kVsolWRB2tsVds4SExaiLg4wBdHFMB+8IfZtBWr+BP0FvhuBr5G1/VLrJ9xzIWHsg==, tarball: '@upstash/redis/-/redis-1.35.0.tgz'}
+    resolution: {integrity: sha512-WUm0Jz1xN4DBDGeJIi2Y0kVsolWRB2tsVds4SExaiLg4wBdHFMB+8IfZtBWr+BP0FvhuBr5G1/VLrJ9xzIWHsg==}
     dependencies:
       uncrypto: 0.1.3
     dev: false
