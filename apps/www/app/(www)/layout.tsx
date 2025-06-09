@@ -3,6 +3,7 @@ import Footer from "components/ui/Footer";
 import Image from "next/image";
 import bgback from "/public/bg-back.png";
 import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 export default function RootLayout({
   children,
@@ -28,7 +29,9 @@ export default function RootLayout({
 
       <Navbar />
       <Toaster />
-      <main>{children}</main>
+      <TooltipProvider>
+        <main>{children}</main>
+      </TooltipProvider>
       <Footer />
     </>
   );
