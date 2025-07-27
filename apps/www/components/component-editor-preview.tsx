@@ -54,7 +54,7 @@ async function runModule(code: string, imports: Record<string, any>) {
 const preprocessCode = (code: string): string => {
   const removeDirective = code.replace(/^\s*["']use client["'];?\s*/i, "").trimStart();
   const removeImports = removeDirective.replace(/^\s*import[\s\S]*?from\s+['"][^'"]+['"];?\s*$/gm, "").trim();
-  const footerCleanup =  removeImports.replace(/export\s+default\s+([a-zA-Z0-9_]+);?/, "module.exports.default = $1;") 
+  const footerCleanup = removeImports.replace(/export\s+default\s+([a-zA-Z0-9_]+);?/, "module.exports.default = $1;") 
   return footerCleanup;
 };
 const transpile = (code: string): string => {
