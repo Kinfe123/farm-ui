@@ -150,6 +150,9 @@ importers:
       '@types/babel__core':
         specifier: ^7.1.19
         version: 7.20.5
+      '@types/prop-types':
+        specifier: ^15.7.15
+        version: 15.7.15
       '@upstash/ratelimit':
         specifier: ^1.2.1
         version: 1.2.1
@@ -267,6 +270,9 @@ importers:
       prismjs:
         specifier: ^1.29.0
         version: 1.30.0
+      prop-types:
+        specifier: ^15.8.1
+        version: 15.8.1
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -3112,6 +3118,9 @@ packages:
 
   '@types/prop-types@15.7.14':
     resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
+
+  '@types/prop-types@15.7.15':
+    resolution: {integrity: sha512-F6bEyamV9jKGAFBEmlQnesRPGOQqS2+Uwi0Em15xenOxHaf2hv6L8YCVn3rPdPJOiJfPiCnLIRyvwVaqMY3MIw==}
 
   '@types/react-dom@18.3.7':
     resolution: {integrity: sha512-MEe3UeoENYVFXzoXEWsvcpg6ZvlrFNlOQ7EOsvhI3CfAXwzPfO8Qwuxd40nepsYKqyyVQnTdEfv68q91yLcKrQ==}
@@ -10877,7 +10886,10 @@ snapshots:
       '@types/node': 18.19.111
       kleur: 3.0.3
 
-  '@types/prop-types@15.7.14': {}
+  '@types/prop-types@15.7.14':
+    optional: true
+
+  '@types/prop-types@15.7.15': {}
 
   '@types/react-dom@18.3.7(@types/react@18.2.8)':
     dependencies:
@@ -10885,7 +10897,7 @@ snapshots:
 
   '@types/react@18.2.8':
     dependencies:
-      '@types/prop-types': 15.7.14
+      '@types/prop-types': 15.7.15
       '@types/scheduler': 0.26.0
       csstype: 3.1.3
 
@@ -15239,7 +15251,7 @@ snapshots:
   react-markdown@8.0.7(@types/react@18.2.8)(react@18.3.1):
     dependencies:
       '@types/hast': 2.3.10
-      '@types/prop-types': 15.7.14
+      '@types/prop-types': 15.7.15
       '@types/react': 18.2.8
       '@types/unist': 2.0.11
       comma-separated-tokens: 2.0.3

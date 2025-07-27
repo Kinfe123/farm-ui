@@ -31,7 +31,7 @@ import * as dropdown from "@/components/ui/dropdown-menu";
 import * as popover from "@/components/ui/popover";
 import * as label from "@/components/ui/label";
 import * as scroll from "@/components/ui/scroll-area";
-
+import * as propsTypes from "prop-types";
 /**
  * Runs the component code in a module-like environment with all necessary imports
  */
@@ -99,6 +99,7 @@ function ComponentRenderer({ code }: { code: string }) {
           ...popover,
           ...label,
           ...scroll,
+          ...propsTypes,
         };
         console.log("Import is: " , imports)
         const codeMod = code.replace(/```tsx\n/, "").replace(/\n```/, "");
