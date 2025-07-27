@@ -12,6 +12,7 @@ import NumberTicker from "components/NumberCounter";
 import { signIn } from "../../../auth";
 import bgback from "../../../public/bg-back.png";
 import Ripple from "components/CirclePattern/Ripple";
+import EmptyScreenBackground from "components/empty-screen-background";
 
 async function getGitHubStars() {
   try {
@@ -37,8 +38,7 @@ export default async function () {
   const stars = await getGitHubStars();
   return (
     <div className="relative pt-10">
-      <Ripple />
-
+      <EmptyScreenBackground />
       <section className="custom-screen mt-48 relative overflow-hidden">
         <div className="relative z-20 max-w-5xl mx-auto space-y-4">
           <h1
@@ -96,12 +96,11 @@ export default async function () {
       <div className="flex justify-center items-center bg-center overflow-x-hidden w-screen absolute sm:block md:-top-2 right-0 min-h-screen">
         <div className="relative w-full h-full">
           {/* Background image */}
-          <Image
+          {/* <Image
             src={bghero}
             className="w-full h-full object-cover hidden md:block"
             alt="Hero Image"
-          />
-
+          /> */}
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
           <div className="absolute top-0 left-0 bg-gradient-to-t from-transparent/30 to-transparent w-[100px] h-[400px]  opacity-80"></div>
         </div>

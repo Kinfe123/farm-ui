@@ -3,6 +3,8 @@ import Footer from "components/ui/Footer";
 import Image from "next/image";
 import bgback from "/public/bg-back.png";
 import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 export default function RootLayout({
   children,
@@ -11,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <Image
+      {/* <Image
         className="absolute top-0 z-10 translate-x-0 -translate-y-1/2 md:translate-x-1/3 lg:translate-x-1/2 opacity-80  "
         src={bgback}
         width={1000}
@@ -24,12 +26,15 @@ export default function RootLayout({
         width={1000}
         height={1000}
         alt="back bg"
-      />
+      /> */}
 
       <Navbar />
       <Toaster />
-      <main>{children}</main>
-      <Footer />
+      <SidebarProvider>
+        <TooltipProvider>
+          <main>{children}</main>
+        </TooltipProvider>
+      </SidebarProvider>
     </>
   );
 }

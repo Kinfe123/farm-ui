@@ -184,7 +184,7 @@ export default function FUIHeroSectionWithImage() {
       ></div>
       <div className="relative">
         <header>
-          <div className={\`md:hidden ${"state" ? "mx-2 pb-5" : "hidden"}\`}>
+          <div className={\`md:hidden \${"state" ? "mx-2 pb-5" : "hidden"}\`}>
             <Brand />
           </div>
           <nav
