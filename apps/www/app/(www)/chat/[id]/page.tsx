@@ -1,11 +1,7 @@
 import { Chat } from "components/chat";
 import { getMissingKeys } from "@/lib/actions/chat";
 import { AI } from "@/lib/core/ai";
-import { generateId } from "ai";
 import { notFound } from "next/navigation";
-
-export const runtime = "edge";
-export const preferredRegion = "home";
 
 export const metadata = {
   title: "Chat Details - Synth UI",

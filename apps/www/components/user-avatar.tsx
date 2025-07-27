@@ -8,11 +8,21 @@ import { useEffect, useState } from "react";
 import { useAppState } from "@/lib/hooks/use-app-state";
 import { UserIcon } from "hugeicons-react";
 
-interface UserAvatarProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface UserAvatarProps extends React.HTMLAttributes<HTMLDivElement> { }
 
 export default function UserAvatar({ className, ...props }: UserAvatarProps) {
   const [isMounted, setIsMounted] = useState<boolean>(false);
-  const { user } = useUser();
+  const user = {
+    id: "123",
+    email: "test@test.com",
+    firstName: "Test",
+    imageUrl: "https://github.com/shadcn.png",
+    lastName: "User",
+    emailAddresses: [{ emailAddress: "test@test.com" }],
+    publicMetadata: {
+      role: "user",
+    },
+  };
   const { chat } = useAppState();
 
   useEffect(() => {

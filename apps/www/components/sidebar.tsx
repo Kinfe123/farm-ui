@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import {
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import Logo from "components/logo";
@@ -25,7 +26,7 @@ const ChatHistoryWidget = dynamic(
       <div
         className={cn(
           buttonVariants({ variant: "ghost" }),
-          "aspect-square h-full w-full rounded-lg bg-transparent px-0 py-0",
+          "aspect-square h-full w-full rounded-lg bg-transparent px-0 py-0 hover:dark:bg-zinc-800 hover:bg-zinc-800",
         )}
       >
         <Clock04Icon className="h-full w-full p-2" />
@@ -66,7 +67,7 @@ const SidebarButton = ({
         className={cn(
           buttonVariants({ variant: "ghost" }),
           "aspect-square p-2",
-          bordered && "border",
+          bordered && "border border-white/10 hover:bg-zinc-800",
         )}
       >
         <Icon className="h-5 w-5" />
@@ -82,12 +83,12 @@ const SidebarButton = ({
 export default function Sidebar() {
   return (
     <AceternitySidebar animate={false}>
-      <SidebarBody className="flex h-screen flex-col justify-between p-3 md:items-center">
+      <div className="flex w-[70px] py-6 h-[99vh] ml-2 mt-2 mb-2 p-3 flex-col  justify-between md:items-center rounded-2xl border border-white/10 backdrop-blur-xl bg-white/10 dark:bg-zinc-900/30 shadow-lg glassy-sidebar">
         <div className="flex w-full flex-col items-center gap-4">
           <Link href="/">
             <Logo className="aspect-square h-full w-full p-1" />
           </Link>
-          <div className="flex w-full flex-col gap-2">
+          <div className="flex w-full flex-col gap-4">
             <SidebarButton
               href="/chat"
               icon={PlusSignIcon}
@@ -103,7 +104,6 @@ export default function Sidebar() {
             />
           </div>
         </div>
-        {/* @ts-ignore */}
         <UserPanelDialog>
           <Button
             variant="ghost"
@@ -113,7 +113,7 @@ export default function Sidebar() {
             <UserAvatar className="h-full w-full" />
           </Button>
         </UserPanelDialog>
-      </SidebarBody>
+      </div>
     </AceternitySidebar>
   );
 }

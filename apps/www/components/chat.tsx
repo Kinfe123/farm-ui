@@ -85,10 +85,10 @@ export function Chat({ missingKeys }: ChatProps) {
     }
 
     return pathname !== "/chat" && messages.length > 0 ? (
-      <div className="relative flex h-screen max-h-screen flex-col overflow-hidden">
+      <div className="relative w-screen px-10 flex h-screen max-h-screen flex-col overflow-hidden">
         <ChatHeader />
         <div
-          className="flex flex-1 flex-col overflow-auto"
+          className="flex flex-1 pt-32 flex-col overflow-auto"
           ref={messagesContainerRef}
         >
           <ScrollArea className="h-full w-full overflow-auto pb-32">

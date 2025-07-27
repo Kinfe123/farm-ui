@@ -50,7 +50,7 @@ export default function DisclaimerBadge({
         </div>
       </div>
       <Badge className="w-max rounded-full border border-border bg-transparent px-3 text-[11px] text-muted-foreground hover:bg-transparent">
-        Synth UI can make mistakes. Review and validate generated code.
+         FARMUI can make mistakes. Review and validate generated code.
       </Badge>
     </div>
   );

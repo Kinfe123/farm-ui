@@ -25,7 +25,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
 import { ChatPublicBadge } from "components/chat-public-badge";
 import { useChatStore } from "@/lib/stores/chatStore";
-import { useUser } from "@clerk/nextjs";
+// import { useUser } from "@clerk/nextjs";
 import { Chat } from "@/lib/types";
 
 const searchFormSchema = z.object({
@@ -36,7 +36,16 @@ export default function ChatHistoryWidget() {
   const [query, setQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { chats, fetchChats } = useChatStore();
-  const { user } = useUser();
+  const user = {
+    id: "123",
+    email: "test@test.com",
+    firstName: "Test",
+    lastName: "User",
+    emailAddresses: [{ emailAddress: "test@test.com" }],
+    publicMetadata: {
+      role: "user",
+    },
+  };
 
   const form = useForm<z.infer<typeof searchFormSchema>>({
     resolver: zodResolver(searchFormSchema),

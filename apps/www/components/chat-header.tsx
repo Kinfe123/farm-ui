@@ -32,7 +32,7 @@ export default function ChatHeader() {
   }
 
   return (
-    <header className="flex justify-between px-5 py-2">
+    <header className="flex relative z-[9999] justify-between px-5 py-2">
       <div className="flex items-center gap-3">
         <Button
           variant="ghost"

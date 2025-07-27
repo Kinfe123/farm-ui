@@ -9,6 +9,7 @@ import GridSlide from "components/ui/ShowRetro";
 import { GetStarted } from "components/ui/Subscribe";
 import SupportedFrameworks from "components/ui/SupportedFrameworks";
 import TemplateShowCases from "components/TemplateShows";
+import Footer from "components/ui/Footer";
 
 export default async () => {
   return (
@@ -26,6 +27,7 @@ export default async () => {
       <SupportedFrameworks />
       <CTAshow />
       <GetStarted />
+      <Footer />
     </>
   );
 };

@@ -17,10 +17,11 @@ export default function ComponentPreviewPanel() {
     typeof window !== "undefined" ? window.innerWidth : 0,
   );
   const [isMounted, setIsMounted] = useState(false);
-
+  
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleResize = () => {
+        console.log("handleResize");
         setWidth(window.innerWidth);
       };
 
@@ -31,6 +32,7 @@ export default function ComponentPreviewPanel() {
 
   useEffect(() => {
     setIsMounted(true);
+    console.log("isMounted the code preview pannel")
   }, []);
 
   if (!isPreviewOpen || !isMounted || pathname === "/chat/history") return null;

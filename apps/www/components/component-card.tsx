@@ -33,10 +33,11 @@ export default function ComponentCard({
     activeMessageId,
   } = useComponentPreview();
   const streamedCode = useStreamableText(code);
-  const [isMounted, setIsMounted] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState<boolean>(true);
 
   useEffect(() => {
     setIsMounted(true);
+    togglePreview(messageId, streamedCode, title, fileName);
   }, []);
 
   useEffect(() => {
@@ -73,7 +74,7 @@ export default function ComponentCard({
       <Button
         variant={"outline"}
         className={cn(
-          "relative my-3 h-[55px] max-h-full w-full justify-start gap-3 rounded-lg bg-background p-1.5 hover:bg-secondary/50 md:w-[400px]",
+          "relative my-3 z-[999] cursor-pointer h-[55px] max-h-full w-full justify-start gap-3 rounded-lg bg-background p-1.5 hover:bg-secondary/50 md:w-[400px]",
           isPreviewOpen &&
             activeMessageId === messageId &&
             "ring-1 ring-primary/15",

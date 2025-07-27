@@ -21,97 +21,97 @@ export function MarkdownBlock({
 }) {
   return (
     <div className="flex-1 space-y-2">
-      <MemoizedReactMarkdown
-        className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 break-words"
-        remarkPlugins={[remarkGfm, remarkMath]}
-        components={{
-          ul({ children }: { children: React.ReactNode }) {
-            return (
-              <ul className="my-3 list-outside list-disc pl-6 marker:text-muted-foreground">
-                {children}
-              </ul>
-            );
-          },
-          ol({ children }: { children: React.ReactNode }) {
-            return (
-              <ol className="my-3 list-outside list-decimal pl-3 marker:text-muted-foreground">
-                {children}
-              </ol>
-            );
-          },
-          li({ children }: { children: React.ReactNode }) {
-            return <li className="relative pl-1">{children}</li>;
-          },
-          b({ children, node }: { children: React.ReactNode, node: any }) {
-            return <b className="px-1 font-bold">{children}</b>;
-          },
-          p({ children }: { children: React.ReactNode }) {
-            return (
-              <p className="mb-3 text-base leading-loose last:mb-0">
-                {children}
-              </p>
-            );
-          },
-          h1({ children }: { children: React.ReactNode }) {
-            return <h1 className="mb-3 text-2xl font-semibold">{children}</h1>;
-          },
-          h2({ children }: { children: React.ReactNode }) {
-            return <h2 className="mb-3 text-xl font-semibold">{children}</h2>;
-          },
-          h3({ children }: { children: React.ReactNode }) {
-            return <h3 className="mb-3 text-lg font-semibold">{children}</h3>;
-          },
-          h4({ children }: { children: React.ReactNode }) {
-            return <h4 className="mb-3 text-base font-semibold">{children}</h4>;
-          },
-          h5({ children }: { children: React.ReactNode }) {
-            return <h5 className="mb-3 text-sm font-semibold">{children}</h5>;
-          },
-          h6({ children }: { children: React.ReactNode }) {
-            return <h6 className="mb-3 text-xs font-semibold">{children}</h6>;
-          },
-          // @ts-ignore
-          code({ node, inline, className, children, ...props }) {
-            if (children.length) {
-              if (children[0] == "▍") {
+      <div className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:p-0 break-words">
+        <MemoizedReactMarkdown
+          remarkPlugins={[remarkGfm, remarkMath]}
+          components={{
+            ul({ children }: { children: React.ReactNode }) {
+              return (
+                <ul className="my-3 list-outside list-disc pl-6 marker:text-muted-foreground">
+                  {children}
+                </ul>
+              );
+            },
+            ol({ children }: { children: React.ReactNode }) {
+              return (
+                <ol className="my-3 list-outside list-decimal pl-3 marker:text-muted-foreground">
+                  {children}
+                </ol>
+              );
+            },
+            li({ children }: { children: React.ReactNode }) {
+              return <li className="relative pl-1">{children}</li>;
+            },
+            b({ children, node }: { children: React.ReactNode, node: any }) {
+              return <b className="px-1 font-bold">{children}</b>;
+            },
+            p({ children }: { children: React.ReactNode }) {
+              return (
+                <p className="mb-3 text-base leading-loose last:mb-0">
+                  {children}
+                </p>
+              );
+            },
+            h1({ children }: { children: React.ReactNode }) {
+              return <h1 className="mb-3 text-2xl font-semibold">{children}</h1>;
+            },
+            h2({ children }: { children: React.ReactNode }) {
+              return <h2 className="mb-3 text-xl font-semibold">{children}</h2>;
+            },
+            h3({ children }: { children: React.ReactNode }) {
+              return <h3 className="mb-3 text-lg font-semibold">{children}</h3>;
+            },
+            h4({ children }: { children: React.ReactNode }) {
+              return <h4 className="mb-3 text-base font-semibold">{children}</h4>;
+            },
+            h5({ children }: { children: React.ReactNode }) {
+              return <h5 className="mb-3 text-sm font-semibold">{children}</h5>;
+            },
+            h6({ children }: { children: React.ReactNode }) {
+              return <h6 className="mb-3 text-xs font-semibold">{children}</h6>;
+            },
+            // @ts-expect-error - TODO: fix this
+            code({ node, inline, className, children, ...props }) {
+              if (children.length) {
+                if (children[0] == "▍") {
+                  return (
+                    <span className="mt-1 animate-pulse cursor-default">▍</span>
+                  );
+                }
+                children[0] = (children[0] as string).replace("`▍`", "▍");
+              }
+
+              const match = /language-(\w+)/.exec(className || "");
+
+              if (inline) {
                 return (
-                  <span className="mt-1 animate-pulse cursor-default">▍</span>
+                  <code
+                    className={cn(
+                      className,
+                      "my-3 rounded-md border bg-secondary px-1 text-sm font-medium text-secondary-foreground shadow-sm",
+                    )}
+                    {...props}
+                  >
+                    {children}
+                  </code>
                 );
               }
 
-              children[0] = (children[0] as string).replace("`▍`", "▍");
-            }
-
-            const match = /language-(\w+)/.exec(className || "");
-
-            if (inline) {
               return (
-                <code
-                  className={cn(
-                    className,
-                    "my-3 rounded-md border bg-secondary px-1 text-sm font-medium text-secondary-foreground shadow-sm",
-                  )}
+                <CodeBlock
+                  key={Math.random()}
+                  language={(match && match[1]) || ""}
+                  value={String(children).replace(/\n$/, "")}
+                  raw={raw}
                   {...props}
-                >
-                  {children}
-                </code>
+                />
               );
-            }
-
-            return (
-              <CodeBlock
-                key={Math.random()}
-                language={(match && match[1]) || ""}
-                value={String(children).replace(/\n$/, "")}
-                raw={raw}
-                {...props}
-              />
-            );
-          },
-        }}
-      >
-        {content}
-      </MemoizedReactMarkdown>
+            },
+          }}
+        >
+          {content}
+        </MemoizedReactMarkdown>
+      </div>
     </div>
   );
 }

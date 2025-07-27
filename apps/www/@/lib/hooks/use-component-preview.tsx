@@ -17,6 +17,7 @@ interface PreviewState {
   code: string;
   title: string;
   fileName: string;
+  previewHtml: string;
 }
 
 interface ComponentPreviewContext {
@@ -30,11 +31,13 @@ interface ComponentPreviewContext {
   previewCode: string;
   previewTitle: string;
   previewFileName: string;
+  previewHtml: string;
   activeMessageId: string | null;
   componentCards: AIMessage[];
   setPreviewCode: (code: string) => void;
   setComponentCards: (cards: AIMessage[]) => void;
   closePreview: () => void;
+  setPreviewHtml: (html: string) => void;
 }
 
 const ComponentPreviewContext = createContext<
@@ -66,11 +69,25 @@ export function ComponentPreviewProvider({
       if (savedState && savedState !== "undefined") {
         return JSON.parse(savedState ?? {});
       } else {
-        return { isOpen: false, code: "", messageId: null, title: "" };
+        return { 
+          isOpen: false, 
+          code: "", 
+          messageId: null, 
+          title: "", 
+          fileName: "",
+          previewHtml: "" 
+        };
       }
     }
 
-    return { isOpen: false, code: "", messageId: null, title: "" };
+    return { 
+      isOpen: false, 
+      code: "", 
+      messageId: null, 
+      title: "", 
+      fileName: "",
+      previewHtml: "" 
+    };
   });
 
   const [componentCards, setComponentCards] = useState<AIMessage[]>([]);
@@ -98,6 +115,10 @@ export function ComponentPreviewProvider({
     setState((prevState) => ({ ...prevState, isOpen: false, messageId: null }));
   }, []);
 
+  const setPreviewHtml = useCallback((html: string) => {
+    setState((prevState) => ({ ...prevState, previewHtml: html }));
+  }, []);
+
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(state));
   }, [state]);
@@ -107,12 +128,14 @@ export function ComponentPreviewProvider({
     previewCode: state.code,
     previewTitle: state.title,
     previewFileName: state.fileName,
+    previewHtml: state.previewHtml,
     activeMessageId: state.messageId,
     componentCards,
     togglePreview,
     setPreviewCode,
     setComponentCards,
     closePreview,
+    setPreviewHtml,
   };
 
   return (

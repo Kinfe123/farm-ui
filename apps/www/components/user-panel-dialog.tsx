@@ -17,7 +17,7 @@ import { UserRole } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import UILibrarySelector from "components/ui-library-selector";
 
-interface UserPanelDialogProps extends React.ComponentPropsWithoutRef<"div"> {}
+interface UserPanelDialogProps extends React.ComponentPropsWithoutRef<"div"> { }
 
 const userRoleMap: Record<UserRole, string> = {
   user: "bg-secondary text-secondary-foreground hover:bg-secondary/90",
@@ -27,9 +27,18 @@ const userRoleMap: Record<UserRole, string> = {
 };
 
 export default function UserPanelDialog({ children }: UserPanelDialogProps) {
-  const { user } = useUser();
-  const role: UserRole = (user?.publicMetadata?.role as UserRole) || "user";
+  const user = {
+    id: "123",
+    email: "test@test.com",
+    firstName: "Test",
+    lastName: "User",
+    emailAddresses: [{ emailAddress: "test@test.com" }],
+    publicMetadata: {
+      role: "user",
+    },
+  };
 
+  const role: UserRole = (user?.publicMetadata?.role as UserRole) || "user";
   return (
     <Popover>
       <PopoverTrigger asChild>{children}</PopoverTrigger>
@@ -83,7 +92,7 @@ export default function UserPanelDialog({ children }: UserPanelDialogProps) {
         <Separator />
         <div className="flex flex-col gap-2">
           <span className="text-center text-sm">
-            Synth UI is an
+            FARMUI is an
             <Link
               href={process.env.NEXT_PUBLIC_GITHUB_URL!}
               className={cn(
